@@ -1,0 +1,11 @@
+{
+  "http://purl.org/dc/terms/title": "title",
+  "http://purl.org/dc/terms/description": "description",
+  "http://purl.org/dc/terms/creator": "creator",
+  "http://purl.org/dc/terms/created": "created",
+  "http://www.eea.europa.eu/portal_types#topic": "topic",
+  "http://www.eea.europa.eu/portal_types/DavizVisualization#temporalCoverage": "temporalCoverage",
+  "http://www.eea.europa.eu/portal_types/DavizVisualization#themes": "themes",
+  "http://www.w3.org/ns/dcat#theme": "theme",
+  "http://purl.org/dc/terms/subject": "subject"
+}

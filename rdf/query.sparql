@@ -1,0 +1,15 @@
+construct {?s ?p ?o}
+WHERE {
+  ?s a <http://www.eea.europa.eu/portal_types/DavizVisualization#DavizVisualization>; ?p ?o
+  FILTER (?p = <http://purl.org/dc/terms/subject> ||
+   ?p = <http://purl.org/dc/terms/title> ||
+   ?p = <http://purl.org/dc/terms/description> ||
+   ?p = <http://purl.org/dc/terms/creator> ||
+   ?p = <http://purl.org/dc/terms/created> ||
+   ?p = <http://www.eea.europa.eu/portal_types#topic> ||
+   ?p = <http://www.eea.europa.eu/portal_types/DavizVisualization#temporalCoverage> ||
+   ?p = <http://www.eea.europa.eu/portal_types/DavizVisualization#themes> ||
+   ?p = <http://www.w3.org/ns/dcat#theme> ||
+   ?p = <http://purl.org/dc/terms/subject>
+  )
+}
