@@ -4,6 +4,7 @@ esbootstrap configs repository
 ## Setup
 
 All configurations are place in the **config** folder. This folder contains the configuration files for our apps.
+
 For example *default* contains these files:
 
 <pre>
