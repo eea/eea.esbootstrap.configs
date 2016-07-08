@@ -4,7 +4,7 @@ esbootstrap configs repository
 ## Setup
 
 All configurations are place in the **config** folder. This folder contains the configuration files for our apps.
-For example ```default``` contains these files:
+For example *default* contains these files:
 
 <pre>
     ├── config
@@ -18,7 +18,7 @@ For example ```default``` contains these files:
 
 ### __Configure settings.json__
 
-The **app/config/settings.json** is the place where external templates, customstring and the elastic index is configure. The external templates should remain unchanged, but the **index** and **layout_vars**
+The **/config/*default*/settings.json** is the place where external templates, customstring and the elastic index is configure. The external templates should remain unchanged, but the **index** and **layout_vars**
 should be configured for the new application.
 
 #### __Configure the elastic index__
@@ -89,7 +89,7 @@ Depending on the query you have, there are several options.
 If it's a select query which returns the data structured in the table, once you tried and tested your query on the endpoint, just paste it in the indexing/query.sparql file.
 **Important:** All indexing queries should contain a unique _id column.
 In our example we use a simple query what returns all daviz visualizations:
-**app/config/query.sparql**
+**/config/*default*/query.sparql**
 <pre>
 PREFIX daviz: &lt;http://www.eea.europa.eu/portal_types/DavizVisualization#&gt;
 PREFIX dct: &lt;http://purl.org/dc/terms/&gt;
@@ -105,7 +105,7 @@ WHERE {
 #### __Filtered Select queries__
 Depending on the number of rows returned by your query, you might run into a timeout when indexing. If this occures, you should split up the indexing using a filter (ex. year of creation).
 Supposing we have too many visualizations we can split up the results using a filter on the creator.
-Create **app/config/filterQuery.sparql** and fill it with:
+Create **/config/*default*/filterQuery.sparql** and fill it with:
 <pre>
 PREFIX daviz: &lt;http://www.eea.europa.eu/portal_types/DavizVisualization#&gt;
 PREFIX dct: &lt;http://purl.org/dc/terms/&gt;
@@ -115,7 +115,7 @@ WHERE {
      optional{?visualization dct:creator ?creator}
 }
 </pre>
-This query will return all **creators** for DavizVisualiztaions, so we have to update our **app/config/query.sparql** to use the **creator** as a filter value.
+This query will return all **creators** for DavizVisualiztaions, so we have to update our **/config/*default*/query.sparql** to use the **creator** as a filter value.
 <pre>
 PREFIX daviz: &lt;http://www.eea.europa.eu/portal_types/DavizVisualization#&gt;
 PREFIX dct: &lt;http://purl.org/dc/terms/>&gt;
@@ -129,15 +129,13 @@ WHERE {
   FILTER (?creator = '&lt;<b>creator</b>&gt;')
 }
 </pre>
-Notice the **FILTER** clause in the **app/config/query.sparql** as this query will be executed for each creator from the filterQuery.sparql query.
+Notice the **FILTER** clause in the **/config/*default*/query.sparql** as this query will be executed for each creator from the filterQuery.sparql query.
 
 #### __Construct query__
-A demo how the query and the config files in case of a construct query is used can be seen in **app/config_rdf**
-
 If you have a **construct** query or a **select** query that returns SPO triples, you will use our rdfriver plugin for elasticsearch. This is transparent, in normal cases you shouldn't do any extra configuration. Only when you have a **select** query, it is required to put a comment on the top of the sparql query what contains the string "construct".
 
 ##### __Normalize properties for construct queries__
-When a **construct** query is used, the properties will be long strings. As these properties will appear in all queries and url's you might want to replace them with  shorter names. For this you can use **app/config_rdf/normalize.json** where you have to define the pairs of property-replacement.
+When a **construct** query is used, the properties will be long strings. As these properties will appear in all queries and url's you might want to replace them with  shorter names. For this you can use **normalize.json** where you have to define the pairs of property-replacement.
 Ex:
 <pre>
 {
@@ -157,7 +155,7 @@ After the normalize.json is set up, you can use your short names in the **mappin
 
 ### __Data mapping for indexing in Elasticsearch__
 When new data is indexed, by default Elasticsearch tries to make a guess on the data type for each attribute, but sometimes it's useful to specify it explicitly.
-Data mapping for elasticsearch is done within **app/config/dataMapping.json**.
+Data mapping for elasticsearch is done within **/config/*default*/dataMapping.json**.
 example of mapping for a field:
 <pre>  "visualization" : {
         "type" : "string",
@@ -183,7 +181,7 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-types.ht
 
 #### __Configure fields definition for the presentation layer__
 In this paragraph we describe how we can configure what data to be displayed on the listing and detail pages, what data to be used as facets, and what data should appear in the csv/tsv export.
-All of these settings can be configured within **app/config/mapping.json**. Based on this configuration file the data retrieved from Elasticsearch will be displayed on the views.
+All of these settings can be configured within **/config/*default*/mapping.json**. Based on this configuration file the data retrieved from Elasticsearch will be displayed on the views.
 <pre>
 {
     "details_settings" : {
@@ -323,7 +321,7 @@ The main blocks are already specified, in most cases only the labels like title 
 #### __Adding custom js code__
 The location for js files is **app/public/javascripts**.
 We have a default js for creating the listing page for the application, called: **app/public/javascripts/esbootstrap.facetview.js**.
-Once a new application is created, it's recommended to rename it to **app/public/javascripts/newesapp.facetview.js** and update the url in **js_resources** block in **app/config/settings.json**.
+Once a new application is created, it's recommended to rename it to **app/public/javascripts/newesapp.facetview.js** and update the url in **js_resources** block in **/config/*default*/settings.json**.
 **js_resources** is the place where you have to add any extra libraries:
 
 <pre>
