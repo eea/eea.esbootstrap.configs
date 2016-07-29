@@ -1,0 +1,20 @@
+{
+"_id" : {"type" :"text" },
+"CountryOrTerritory" : {"type" :"text" },
+"AssessmentId" : {"type" :"text" },
+"Namespace" : {"type" :"text" },
+"Pollutant" : {"type" :"text" },
+"ZoneId" : {"type" :"text" },
+"ReportingYear" : {"type" :"integer" },
+"ObjectiveType" : {"type" :"text" },
+"ReportingMetric" : {"type" :"text" },
+"ProtectionTarget" : {"type" :"text" },
+"ExceedanceAttainment" : {"type" :"text" },
+"ClassificationDate" : {"type" :"text" },
+"ClassificationReport" : {"type" :"text" },
+"AssessmentType" : {"type" :"text" },
+"Description" : {"type" :"text" },
+"ModelId" : {"type" :"text" },
+"SamplingPointId" : {"type" :"text" },
+"envelope" : {"type" :"text" }
+}

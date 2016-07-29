@@ -1,0 +1,64 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX cr: <http://cr.eionet.europa.eu/ontologies/contreg.rdf#>
+PREFIX aq: <http://rdfdata.eionet.europa.eu/airquality/ontology/>
+PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/>
+PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
+
+SELECT 
+concat(xsd:string(?envelope), ?pollURI ) as ?_id
+
+?CountryOrTerritory ?ZoneCode ?LocalId as ?ZoneId ?Namespace (YEAR(?ReportingBegin) AS ?ReportingYear) ?GeographicalName (xsd:date(?BeginTime) AS ?BeginTime) ?AQDZoneType ?ResidentPopulation (substr(?ResidentPopulationYear,1,4) AS ?ResidentPopulationYear) ?Area ?TimeExtensionExemption ?Pollutant ?ProtectionTarget ?CompetentAuthority ?ContactName ?Telephone ?Address ?Email ?Website ?envelope
+
+ WHERE {
+
+  ?zoneURI a aqr:Zone;
+
+            dcterms:source ?source; 
+
+            aqr:inspireId ?LocalId;
+            aqr:inspireNamespace ?Namespace;
+            
+            rdfs:label ?GeographicalName;
+            aqr:zoneCode ?ZoneCode;
+            aqr:aqdZoneType ?aqdzonetype;
+            aqr:residentPopulation ?ResidentPopulation;
+            aqr:reportingBegin ?ReportingBegin ;
+            aqr:area ?Area ;
+
+            aqr:pollutants ?pollURI .
+
+?pollURI aqr:pollutantCode ?PollutantURI ;
+         aqr:protectionTarget ?Protection .
+
+                       ?PollutantURI rdfs:label ?Pollutant .
+                       ?Protection rdfs:label ?ProtectionTarget .
+
+   OPTIONAL{?zoneURI aqr:residentPopulationYear ?popYearURI} .
+   OPTIONAL{?zoneURI aqr:designationPeriodBegin ?BeginTime} .
+   OPTIONAL{?zoneURI aqr:designationPeriodEnd ?EndTime} .
+   OPTIONAL{?popYearURI rdfs:label ?ResidentPopulationYear} .
+
+   OPTIONAL{?zoneURI aqr:caOrganisationName ?CompetentAuthority} .
+   OPTIONAL{?zoneURI aqr:timeExtensionExemption ?timeextensionexemption} .
+   OPTIONAL{?timeextensionexemption rdfs:label ?TimeExtensionExemption} .
+
+   OPTIONAL{?zoneURI aqr:caIndividualName ?ContactName} .
+   OPTIONAL{?zoneURI aqr:caOrganisationName ?CompetentAuthority} .
+   OPTIONAL{?zoneURI aqr:caAdminUnit ?Address} .
+   OPTIONAL{?zoneURI aqr:caEmail  ?Email} .
+   OPTIONAL{?zoneURI aqr:caTelephone ?Telephone} .
+   OPTIONAL{?zoneURI aqr:caWebsite ?Website} .
+
+   ?aqdzonetype rdfs:label ?AQDZoneType .
+
+ ?envelope rod:hasFile ?source .
+ ?envelope rod:locality ?locURI .
+ ?locURI rdfs:label ?CountryOrTerritory .
+ ?envelope rod:obligation <http://rod.eionet.europa.eu/obligations/670> .
+ <http://rod.eionet.europa.eu/obligations/670> dcterms:title ?Obligation .
+
+#FILTER regex(?Namespace,"AT.0008.20.AQ") .
+#FILTER (YEAR(?ReportingBegin) < YEAR(NOW())) .
+
+} ORDER BY ?CountryOrTerritory ?LocalId

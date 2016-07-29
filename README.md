@@ -167,7 +167,7 @@ example of mapping for a field:
     - Also it is possible to create your own analyzer
 TODO
 - for **type** the most common data types are:
-	-  string,
+	- string,
 	- long,
 	- integer,
 	- double,

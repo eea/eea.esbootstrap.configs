@@ -1,0 +1,75 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX cr: <http://cr.eionet.europa.eu/ontologies/contreg.rdf#>
+PREFIX aq: <http://rdfdata.eionet.europa.eu/airquality/ontology/>
+PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/>
+PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
+
+SELECT DISTINCT 
+concat(xsd:string(?envelope), xsd:string(?assmURI)) as ?_id
+?CountryOrTerritory 
+?AssessmentId 
+?Namespace 
+?Pollutant 
+?Zone as ?ZoneId 
+YEAR(?ReportingBegin) AS ?ReportingYear 
+?ObjectiveType 
+?ReportingMetric 
+?ProtectionTarget 
+?ExceedanceAttainment 
+?ClassificationDate 
+?ClassificationReport 
+?AssessmentType 
+?Description 
+?ModelId 
+?SamplingPointId 
+?envelope
+
+ WHERE {
+
+  ?areURI a aqr:AssessmentRegime;
+            dcterms:source ?source;
+            aqr:inspireId ?AssessmentId;
+            aqr:inspireNamespace ?Namespace;
+            aqr:pollutant ?PollutantURI;
+            aqr:zone ?ZoneURI;
+            aqr:reportingBegin ?ReportingBegin ;
+            aqr:assessmentMethods ?assmURI ;
+            aqr:assessmentThreshold ?assURI .
+               ?assURI aqr:objectiveType ?ObjectiveTypeURI .           
+               ?assURI aqr:reportingMetric ?ReportingMetricURI .
+               ?assURI aqr:protectionTarget ?ProtectionTargetURI .
+               ?assURI aqr:exceedanceAttainment ?ExceedanceAttainmentURI .
+               ?assURI aq:classificationDate ?classdateURI .
+    ?classdateURI rdfs:label ?ClassificationDate .       
+
+
+?assmURI aqr:assessmentType ?AssessmentTypeURI .     
+?AssessmentTypeURI rdfs:label ?AssessmentType .
+
+OPTIONAL{?assmURI aqr:assessmentTypeDescription ?Description} . 
+OPTIONAL{?assmURI aqr:modelAssessmentMetadata ?ModelAssessmentMetadataURI} . 
+OPTIONAL{?assmURI aqr:samplingPointAssessmentMetadata ?samplingPointURI} . 
+
+OPTIONAL{?ModelAssessmentMetadataURI aqr:inspireId ?ModelId} .
+OPTIONAL{?samplingPointURI aqr:inspireId ?SamplingPointId} .
+
+?ZoneURI aqr:inspireId ?Zone .
+?PollutantURI rdfs:label ?Pollutant .
+?ObjectiveTypeURI rdfs:label ?ObjectiveType .
+?ReportingMetricURI rdfs:label ?ReportingMetric .
+?ProtectionTargetURI rdfs:label ?ProtectionTarget .
+?ExceedanceAttainmentURI rdfs:label ?ExceedanceAttainment .
+
+ ?envelope rod:hasFile ?source .
+ ?envelope rod:locality ?locURI .
+ ?locURI rdfs:label ?CountryOrTerritory .
+ ?envelope rod:obligation <http://rod.eionet.europa.eu/obligations/671> .
+ <http://rod.eionet.europa.eu/obligations/671> dcterms:title ?Obligation .
+
+OPTIONAL{?assURI aqr:classificationReport ?ClassificationReport} .
+
+#FILTER regex(?Namespace,"ES.BDCA.AQ") .
+#FILTER regex(?PollutantURI, "") .
+            
+} ORDER BY ?ReportingBegin ?Pollutant ?ReportingMetric

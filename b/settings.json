@@ -1,0 +1,48 @@
+{
+    "http": {
+        "port": 3000
+    },
+    "elastic": {
+        "index": "esbootstrapdata-b",
+        "type": "resources",
+        "field_base":""
+    },
+    "external_templates": {
+        "local_path": "/external_templates",
+        "host": "www.eea.europa.eu",
+        "head_path": "/templates/v2/getRequiredHead?jsdisable=all",
+        "header_path": "/templates/v2/getHeader?jsdisable=all",
+        "footer_path": "/templates/v2/getFooter"
+    },
+    "layout_vars": {
+        "head_title": "AQ zones (B)",
+        "css_resources": {
+            "index_page": [
+                "css/no-more-tables.css",
+                "css/esbootstrap.facetview.css"
+            ],
+            "details_page": [
+                "css/esbootstrap.facetview.css"
+            ]
+        },
+        "js_resources": {
+            "index_page": [
+                "javascripts/esbootstrap.facetview.js"
+            ],
+            "details_page": [
+                "javascripts/jq.tools.js",
+                "http://www.eea.europa.eu/register_function.js",
+                "http://www.eea.europa.eu/nodeutilities.js",
+                "http://www.eea.europa.eu/mark_special_links.js"
+            ]
+        },
+        "site_title": "AQ zones (B)",
+        "site_description": "AQ zones (B)",
+        "enableBreadcrumbs": true,
+        "breadcrumbs": "esbootstrap",
+        "dataprovencance_info_text": "ES bootstrap",
+        "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/daviz",
+        "further_info": ""
+    },
+    "endpoint": "http://cr.eionet.europa.eu/sparql"
+}

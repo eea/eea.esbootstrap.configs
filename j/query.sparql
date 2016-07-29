@@ -1,0 +1,68 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX cr: <http://cr.eionet.europa.eu/ontologies/contreg.rdf#>
+PREFIX aq: <http://rdfdata.eionet.europa.eu/airquality/ontology/>
+PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX aqdd: <http://dd.eionet.europa.eu/property/>
+PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#> 
+
+SELECT 
+
+concat(csd:string(?scenariosXMLURI), xsd:string(?declURI)) as ?_id
+
+?Country as ?CountryOrTerritory YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear ?AttainmentYear ?Namespace ?ScenariosId ?VersionId ?CodeOfScenario ?BaselineDescription ?BaselineComment ?BaselineEmissions ?BaselineExpectedConcentration ?ProjectionDescription ?ProjectionComment ?ProjectionEmissions ?ProjectionExpectedConcentration ?SourceApportionmentId ?PlanId ?envelope
+
+
+ WHERE {
+
+{
+SELECT ?scenariosXMLURI IRI(substr(str(?URL),1,49)) AS ?envelope
+WHERE 
+{
+?scenariosXMLURI a aq:AQD_EvaluationScenario ; 
+              aq:declarationFor ?declURI .
+
+?declURI aqr:hasDeclaration ?URL .
+}
+}
+
+   ?scenariosXMLURI a aq:AQD_EvaluationScenario ;
+                      aq:attainmentYear ?attyearURI ; 
+                      aq:codeOfScenario ?CodeOfScenario ;
+                      aq:sourceApportionment ?SourceApportionmentId ;
+                      aq:usedInPlan ?PlanId ;  
+                      aq:baselineScenario ?baselineURI ;
+                      aq:projectionScenario ?projectionURI ;
+                      aq:publication ?publicationURI ; 
+                      aq:inspireId ?inspireURI . 
+
+OPTIONAL {?baselineURI aq:description ?BaselineDescription} .
+OPTIONAL {?baselineURI aq:comment ?BaselineComment} .
+OPTIONAL {?baselineURI aq:totalEmissions ?BaselineEmissions} .
+OPTIONAL {?baselineURI aq:expectedConcentration ?BaselineExpectedConcentration} .
+#OPTIONAL {?baselineURI aq:measuresApplied ?BaselineMeasuresApplied} .
+
+OPTIONAL {?projectionURI aq:description ?ProjectionDescription} .
+OPTIONAL {?projectionURI aq:comment ?ProjectionComment} .
+OPTIONAL {?projectionURI aq:totalEmissions ?ProjectionEmissions} .
+OPTIONAL {?projectionURI aq:expectedConcentration ?ProjectionExpectedConcentration} .
+#OPTIONAL {?projectionURI aq:measuresApplied ?ProjectionMeasuresApplied} .
+
+
+?attyearURI rdfs:label ?AttainmentYear .
+
+?inspireURI aq:namespace ?Namespace ;
+            aq:localId ?ScenariosId ;
+            aq:versionId ?VersionId .
+
+?envelope rod:locality ?locality ;
+          rod:obligation ?obliURI ;
+          rod:endOfPeriod ?endOfPeriod .
+
+?locality rod:localityName ?Country .
+?obliURI rdfs:label ?Obligation .
+
+#FILTER regex(?Country,"United Kingdom") .
+   
+}

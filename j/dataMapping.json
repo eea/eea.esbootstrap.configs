@@ -1,0 +1,21 @@
+{
+"_id" : {"type" :"text" },
+"CountryOrTerritory" : {"type" :"text" },
+"ReportingYear" : {"type" :"integer" },
+"AttainmentYear" : {"type" :"text" },
+"Namespace" : {"type" :"text" },
+"ScenariosId" : {"type" :"text" },
+"VersionId" : {"type" :"text" },
+"CodeOfScenario" : {"type" :"text" },
+"BaselineDescription" : {"type" :"text" },
+"BaselineComment" : {"type" :"text" },
+"BaselineEmissions" : {"type" :"text" },
+"BaselineExpectedConcentration" : {"type" :"text" },
+"ProjectionDescription" : {"type" :"text" },
+"ProjectionComment" : {"type" :"text" },
+"ProjectionEmissions" : {"type" :"text" },
+"ProjectionExpectedConcentration" : {"type" :"text" },
+"SourceApportionmentId" : {"type" :"text" },
+"PlanId" : {"type" :"text" },
+"envelope" : {"type" :"text" }
+}

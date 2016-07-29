@@ -1,0 +1,107 @@
+{
+          "_id" : {
+            "type" : "text"
+          },
+          "Attainment" : {
+            "type" : "text"
+          },
+          "Comment" : {
+            "type" : "text"
+          },
+          "Country" : {
+            "type" : "text"
+          },
+          "Namespace" : {
+            "type" : "text"
+          },
+          "NumberOfExceedances" : {
+            "type" : "double"
+          },
+          "NumericalExceedance" : {
+            "type" : "double"
+          },
+          "PlanId" : {
+            "type" : "text"
+          },
+          "ReasonOfExceedance" : {
+            "type" : "text"
+          },
+          "ReportingYear" : {
+            "type" : "double"
+          },
+          "SourceAppId" : {
+            "type" : "text"
+          },
+          "TotalIncrementComment" : {
+            "type" : "text"
+          },
+          "TotalIncrementQuantity" : {
+            "type" : "double"
+          },
+          "TotalRegionalComment" : {
+            "type" : "text"
+          },
+          "TotalRegionalQuantity" : {
+            "type" : "double"
+          },
+          "TotalUrbanComment" : {
+            "type" : "text"
+          },
+          "TotalUrbanQuantity" : {
+            "type" : "double"
+          },
+          "VersionId" : {
+            "type" : "text"
+          },
+          "Attainment" : {
+            "type" : "text"
+          },
+          "Comment" : {
+            "type" : "text"
+          },
+          "Country" : {
+            "type" : "text"
+          },
+          "Namespace" : {
+            "type" : "text"
+          },
+          "NumberOfExceedances" : {
+            "type" : "double"
+          },
+          "NumericalExceedance" : {
+            "type" : "double"
+          },
+          "PlanId" : {
+            "type" : "text"
+          },
+          "ReasonOfExceedance" : {
+            "type" : "text"
+          },
+          "ReportingYear" : {
+            "type" : "double"
+          },
+          "SourceAppId" : {
+            "type" : "text"
+          },
+          "TotalIncrementComment" : {
+            "type" : "text"
+          },
+          "TotalIncrementQuantity" : {
+            "type" : "double"
+          },
+          "TotalRegionalComment" : {
+            "type" : "text"
+          },
+          "TotalRegionalQuantity" : {
+            "type" : "double"
+          },
+          "TotalUrbanComment" : {
+            "type" : "text"
+          },
+          "TotalUrbanQuantity" : {
+            "type" : "double"
+          },
+          "VersionId" : {
+            "type" : "date"
+          }
+}
