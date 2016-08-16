@@ -6,9 +6,30 @@ PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/>
 PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
 
 SELECT 
-concat(xsd:string(?envelope), ?pollURI ) as ?_id
+concat(xsd:string(?envelope), ?Pollutant, ?ZoneId, ?ReportingYear, ?ProtectionTarget, xsd:string(?ResidentPopulation)) as ?_id
+#concat(xsd:string(?envelope), ?ZoneId, ?ReportingYear, ?Pollutant, ?ProtectionTarget, xsd:string(?ResidentPopulation),?CompetentAuthority)  as ?_id
 
-?CountryOrTerritory ?ZoneCode ?LocalId as ?ZoneId ?Namespace (YEAR(?ReportingBegin) AS ?ReportingYear) ?GeographicalName (xsd:date(?BeginTime) AS ?BeginTime) ?AQDZoneType ?ResidentPopulation (substr(?ResidentPopulationYear,1,4) AS ?ResidentPopulationYear) ?Area ?TimeExtensionExemption ?Pollutant ?ProtectionTarget ?CompetentAuthority ?ContactName ?Telephone ?Address ?Email ?Website ?envelope
+?CountryOrTerritory 
+?ZoneCode 
+?LocalId as ?ZoneId 
+?Namespace 
+(YEAR(?ReportingBegin) AS ?ReportingYear) 
+?GeographicalName 
+(xsd:date(?BeginTime) AS ?BeginTime) 
+?AQDZoneType 
+?ResidentPopulation 
+(substr(?ResidentPopulationYear,1,4) AS ?ResidentPopulationYear) 
+?Area 
+?TimeExtensionExemption 
+?Pollutant 
+?ProtectionTarget 
+?CompetentAuthority 
+?ContactName 
+?Telephone 
+?Address 
+?Email 
+?Website 
+?envelope
 
  WHERE {
 
@@ -40,8 +61,8 @@ concat(xsd:string(?envelope), ?pollURI ) as ?_id
    OPTIONAL{?popYearURI rdfs:label ?ResidentPopulationYear} .
 
    OPTIONAL{?zoneURI aqr:caOrganisationName ?CompetentAuthority} .
-   OPTIONAL{?zoneURI aqr:timeExtensionExemption ?timeextensionexemption} .
-   OPTIONAL{?timeextensionexemption rdfs:label ?TimeExtensionExemption} .
+   OPTIONAL{?zoneURI aqr:timeExtensionExemption ?timeextensionexemptionURI} .
+   OPTIONAL{?timeextensionexemptionURI rdfs:label ?TimeExtensionExemption} .
 
    OPTIONAL{?zoneURI aqr:caIndividualName ?ContactName} .
    OPTIONAL{?zoneURI aqr:caOrganisationName ?CompetentAuthority} .
