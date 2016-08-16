@@ -8,9 +8,23 @@ PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/>
 PREFIX aqdd: <http://dd.eionet.europa.eu/property/>
 
 SELECT DISTINCT  
-bif:concat( ?CountryOrTerritory, '-',  xsd:string(YEAR(?reportingBegin)), '-', ?AttainmentId ) as ?_id
-?CountryOrTerritory YEAR(?reportingBegin) as ?ReportingYear ?Namespace ?AttainmentId ?AssessmentId ?ZoneId ?ResidentPopulation ?Pollutant ?ObjectiveType ?ReportingMetric ?ProtectionTarget (bif:either(?Exceedance > 0,"TRUE","FALSE") as ?ExceedanceFinal) ?ExceedanceThreshold ?AggregationType ?FinalNumericalExceedance ?FinalNumberExceedances 
-
+bif:concat(xsd:string(YEAR(?reportingBegin)), '-', ?AttainmentId ) as ?_id
+?CountryOrTerritory 
+YEAR(?reportingBegin) as ?ReportingYear 
+?Namespace 
+?AttainmentId 
+?AssessmentId 
+?ZoneId 
+?ResidentPopulation 
+?Pollutant 
+?ObjectiveType 
+?ReportingMetric 
+?ProtectionTarget 
+(bif:either(?Exceedance > 0,"TRUE","FALSE") as ?ExceedanceFinal) 
+?ExceedanceThreshold 
+?AggregationType 
+?FinalNumericalExceedance 
+?FinalNumberExceedances 
 ?ClassificationArea
 ?SurfaceAreaFinal
 ?RoadLengthFinal
@@ -19,10 +33,18 @@ bif:concat( ?CountryOrTerritory, '-',  xsd:string(YEAR(?reportingBegin)), '-', ?
 ?EcosystemAreaExposedFinal
 ?InfrastructureServicesFinal
 ?ReferenceYearFinal
-#?ExceedanceDurationBegin ?ExceedanceDurationEnd
-
-?BaseNumericalExceedance ?BaseNumberExceedances ?Adjustment ?AdjustmentSource ?AdjustmentType ?AssessmentType ?AssessmentTypeDescription ?ModellingAdjustment ?SamplingAdjustment ?Comment 
-
+#?ExceedanceDurationBegin 
+#?ExceedanceDurationEnd
+?BaseNumericalExceedance 
+?BaseNumberExceedances 
+?Adjustment 
+?AdjustmentSource 
+?AdjustmentType 
+?AssessmentType 
+?AssessmentTypeDescription 
+?ModellingAdjustment 
+?SamplingAdjustment 
+?Comment 
 ?envelope
 
 
