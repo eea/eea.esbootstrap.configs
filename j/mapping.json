@@ -15,17 +15,129 @@
     "fields_mapping": [
         {
             "name": "CountryOrTerritory",
-            "listing": { "title": "CountryOrTerritory", "visible" : true, "pos" : 0, "display": { "pre": "", "field": "CountryOrTerritory", "post": "</td>" } },
+            "listing": { "title": "Country or Territory", "visible" : true, "pos" : 0, "display": { "pre": "", "field": "CountryOrTerritory", "post": "</td>" } },
             "details": { "title": "CountryOrTerritory", "pos" : 0, "section": "info", "visible": true },
-            "facet": { "visible": true, "title": "CountryOrTerritory", "pos": 0, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Country or Territory", "pos": 0, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "CountryOrTerritory", "visible": true, "pos": 0 }
         },
         {
             "name": "ReportingYear",
-            "listing": { "title": "ReportingYear", "visible" : true, "pos" : 3 },
+            "listing": { "title": "Reporting Year", "visible" : true, "pos" : 3 },
             "details": { "title": "ReportingYear", "pos" : 3, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "ReportingYear", "pos": 1, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Reporting Year", "pos": 1, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "ReportingYear", "visible": true, "pos": 3 }
+        },
+        {
+            "name": "AttainmentYear",
+            "listing": { "title": "Attainment Year", "visible" : true, "pos" : 4 },
+            "details": { "title": "AttainmentYear", "pos" : 3, "section": "info", "visible": false },
+            "facet": { "visible": true, "title": "Attainment Year", "pos": 2, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "csv_tsv": { "title": "AttainmentYear", "visible": true, "pos": 3 }
+        },
+        {
+            "name": "Namespace",
+            "listing": { "title": "Namespace", "visible" : true, "pos" : 5 },
+            "details": { "title": "Namespace", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+            "csv_tsv": { "title": "Namespace", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "ScenariosId",
+            "listing": { "title": "Scenarios Id", "visible" : true, "pos" : 6 },
+            "details": { "title": "ScenariosId", "pos" : 3, "section": "info", "visible": false },
+            "facet": { "visible": true, "title": "Scenarios Id", "pos": 3, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "csv_tsv": { "title": "ScenariosId", "visible": true, "pos": 3 }
+        },
+        {
+            "name": "VersionId",
+            "listing": { "title": "Version Id", "visible" : true, "pos" : 7 },
+            "details": { "title": "VersionId", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+            "csv_tsv": { "title": "VersionId", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "CodeOfScenario",
+            "listing": { "title": "Code of Scenario", "visible" : true, "pos" : 8 },
+            "details": { "title": "CodeOfScenario", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+            "csv_tsv": { "title": "CodeOfScenario", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "BaselineDescription",
+            "listing": { "title": "Baseline Description", "visible" : true, "pos" : 9 },
+            "details": { "title": "BaselineDescription", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+            "csv_tsv": { "title": "BaselineDescription", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "BaselineComment",
+            "listing": { "title": "Baseline Comment", "visible" : true, "pos" : 10 },
+            "details": { "title": "BaselineComment", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+            "csv_tsv": { "title": "BaselineComment", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "BaselineEmissions",
+            "listing": { "title": "Baseline Emissions", "visible" : true, "pos" : 11 },
+            "details": { "title": "BaselineEmissions", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+            "csv_tsv": { "title": "BaselineEmissions", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "BaselineExpectedConcentration",
+            "listing": { "title": "Baseline Expected Concentration", "visible" : true, "pos" : 12 },
+            "details": { "title": "BaselineExpectedConcentration", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+            "csv_tsv": { "title": "BaselineExpectedConcentration", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "ProjectionDescription",
+            "listing": { "title": "Projection Description", "visible" : true, "pos" : 13 },
+            "details": { "title": "ProjectionDescription", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+            "csv_tsv": { "title": "ProjectionDescription", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "ProjectionComment",
+            "listing": { "title": "Projection Comment", "visible" : true, "pos" : 14 },
+            "details": { "title": "ProjectionComment", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+            "csv_tsv": { "title": "ProjectionComment", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "ProjectionEmissions",
+            "listing": { "title": "Projection Emissions", "visible" : true, "pos" : 15 },
+            "details": { "title": "ProjectionEmissions", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+            "csv_tsv": { "title": "ProjectionEmissions", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "ProjectionExpectedConcentration",
+            "listing": { "title": "Projection Expected Concentration", "visible" : true, "pos" : 16 },
+            "details": { "title": "ProjectionExpectedConcentration", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+            "csv_tsv": { "title": "ProjectionExpectedConcentration", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "SourceApportionmentId",
+            "listing": { "title": "Source Apportionment Id", "visible" : true, "pos" : 17 },
+            "details": { "title": "SourceApportionmentId", "pos" : 3, "section": "info", "visible": false },
+            "facet": { "visible": true, "title": "Source Apportionment Id", "pos": 4, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "csv_tsv": { "title": "ScenariosId", "visible": true, "pos": 3 }
+        },
+        {
+            "name": "PlanId",
+            "listing": { "title": "Plan Id", "visible" : true, "pos" : 18 },
+            "details": { "title": "PlanId", "pos" : 3, "section": "info", "visible": false },
+            "facet": { "visible": true, "title": "Plan Id", "pos": 5, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "csv_tsv": { "title": "PlanId", "visible": true, "pos": 3 }
+        },
+        {
+            "name": "envelope",
+            "listing": { "title": "Envelope URL", "visible" : true, "pos" : 19 },
+            "details": { "title": "envelope", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+            "csv_tsv": { "title": "envelope", "visible": true, "pos": 4 }
         }
     ]
 }

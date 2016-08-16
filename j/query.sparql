@@ -8,24 +8,60 @@ PREFIX aqdd: <http://dd.eionet.europa.eu/property/>
 PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#> 
 
 SELECT 
-
-concat(csd:string(?scenariosXMLURI), xsd:string(?declURI)) as ?_id
-
-?Country as ?CountryOrTerritory YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear ?AttainmentYear ?Namespace ?ScenariosId ?VersionId ?CodeOfScenario ?BaselineDescription ?BaselineComment ?BaselineEmissions ?BaselineExpectedConcentration ?ProjectionDescription ?ProjectionComment ?ProjectionEmissions ?ProjectionExpectedConcentration ?SourceApportionmentId ?PlanId ?envelope
+#?scenariosXMLURI 
+bif:concat(xsd:string(YEAR(?endOfPeriod)), '-', ?ScenariosId) as ?_id
+?Country as ?CountryOrTerritory 
+YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear 
+?AttainmentYear 
+?Namespace 
+?ScenariosId 
+?VersionId 
+?CodeOfScenario 
+?BaselineDescription 
+?BaselineComment 
+?BaselineEmissions 
+?BaselineExpectedConcentration 
+?ProjectionDescription 
+?ProjectionComment 
+?ProjectionEmissions 
+?ProjectionExpectedConcentration 
+?SourceApportionmentId 
+?PlanId 
+?envelope
 
 
  WHERE {
 
-{
-SELECT ?scenariosXMLURI IRI(substr(str(?URL),1,49)) AS ?envelope
-WHERE 
-{
-?scenariosXMLURI a aq:AQD_EvaluationScenario ; 
-              aq:declarationFor ?declURI .
+{SELECT 
+?scenariosXMLURI 
+(IRI(substr(str(?scenariosXMLURI),1,49)) AS ?envelope) 
 
-?declURI aqr:hasDeclaration ?URL .
+WHERE {
+?scenariosXMLURI a aq:AQD_EvaluationScenario .
 }
 }
+
+?envelope rod:released ?released .
+
+{
+SELECT DISTINCT 
+?Country 
+?obligation 
+(YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear) 
+(max(?released) AS ?released) 
+
+WHERE {
+?envelope rod:released ?released ;
+          rod:startOfPeriod ?startOfPeriod ;
+          rod:obligation <http://rod.eionet.europa.eu/obligations/682> ; 
+          rod:obligation ?obligation ;
+          rod:locality ?locality .
+
+?locality rod:localityName ?Country .
+
+}
+}
+
 
    ?scenariosXMLURI a aq:AQD_EvaluationScenario ;
                       aq:attainmentYear ?attyearURI ; 
