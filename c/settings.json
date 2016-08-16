@@ -36,12 +36,12 @@
                 "http://www.eea.europa.eu/mark_special_links.js"
             ]
         },
-        "site_title": "Assessment Regimes (C)",
-        "site_description": "Assessment Regimes (C)",
+        "site_title": "Air Quality Assessment Regimes (C)",
+        "site_description": "Information on air quality assessment regimes, data flow C (http://rod.eionet.europa.eu/obligations/671)",
         "enableBreadcrumbs": true,
-        "breadcrumbs": "esbootstrap",
-        "dataprovencance_info_text": "ES bootstrap",
-        "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/daviz",
+        "breadcrumbs": "aqregimes",
+        "dataprovencance_info_text": "Air Quality e-Reporting",
+        "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/data/aqereporting-1",
         "further_info": ""
     },
     "endpoint": "http://cr.eionet.europa.eu/sparql"

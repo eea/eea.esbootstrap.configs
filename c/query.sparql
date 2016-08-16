@@ -6,7 +6,8 @@ PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/>
 PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
 
 SELECT DISTINCT 
-concat(xsd:string(?envelope), xsd:string(?assmURI)) as ?_id
+#concat(xsd:string(?envelope), xsd:string(?assmURI)) as ?_id
+concat(?AssessmentId, ?ReportingYear, ?ModelId, ?SamplingPointId)  as ?_id
 ?CountryOrTerritory 
 ?AssessmentId 
 ?Namespace 
