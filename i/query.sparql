@@ -8,24 +8,61 @@ PREFIX aqdd: <http://dd.eionet.europa.eu/property/>
 PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#> 
 
 SELECT 
-?sourceappXMLURI as ?_id
-?Country YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear ?Namespace ?SourceAppId ?VersionId ?ReasonOfExceedance ?NumericalExceedance ?NumberOfExceedances ?TotalIncrementQuantity ?TotalIncrementComment ?TotalRegionalQuantity ?TotalRegionalComment ?TotalUrbanQuantity ?TotalUrbanComment ?Comment ?Attainment ?PlanId
+#?sourceappXMLURI
+bif:concat(xsd:string(YEAR(?endOfPeriod)), '-', ?SourceApportionmentId ) as ?_id
+?Country as ?CountryOrTerritory 
+YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear 
+?Namespace 
+?SourceApportionmentId 
+?VersionId 
+?ReasonOfExceedance 
+?NumericalExceedance 
+?NumberOfExceedances 
+?TotalIncrementQuantity 
+?TotalIncrementComment 
+?TotalRegionalQuantity 
+?TotalRegionalComment 
+?TotalUrbanQuantity 
+?TotalUrbanComment 
+?Comment 
+?AttainmentId 
+?PlanId 
+?envelope
 
  WHERE {
 
-{
-SELECT ?sourceappXMLURI IRI(substr(str(?URL),1,49)) AS ?envelope
-WHERE 
-{
-?sourceappXMLURI a aq:AQD_SourceApportionment ; 
-              aq:declarationFor ?declURI .
+{SELECT 
+?sourceappXMLURI 
+(IRI(substr(str(?sourceappXMLURI),1,49)) AS ?envelope) 
 
-?declURI aqr:hasDeclaration ?URL .
+WHERE {
+?sourceappXMLURI a aq:AQD_SourceApportionment .
+}
+}
+
+?envelope rod:released ?released .
+
+{
+SELECT DISTINCT 
+?Country 
+?obligation 
+(YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear) 
+(max(?released) AS ?released) 
+
+WHERE {
+?envelope rod:released ?released ;
+          rod:startOfPeriod ?startOfPeriod ;
+          rod:obligation <http://rod.eionet.europa.eu/obligations/681> ; 
+          rod:obligation ?obligation ;
+          rod:locality ?locality .
+
+?locality rod:localityName ?Country .
+
 }
 }
 
    ?sourceappXMLURI a aq:AQD_SourceApportionment ;
-                      aq:parentExceedanceSituation ?Attainment ;
+                      aq:parentExceedanceSituation ?AttainmentId ;
                       aq:macroExceedanceSituation ?macroURI ;
                       aq:usedInPlan ?PlanId ;
                       aq:localIncrement ?incrementURI ;
@@ -54,7 +91,7 @@ OPTIONAL {?macroURI aq:numericalExceedance ?NumericalExceedance} .
 OPTIONAL {?macroURI aq:numberExceedances ?NumberOfExceedances} . 
 
 ?inspireURI aq:namespace ?Namespace ;
-            aq:localId ?SourceAppId ;
+            aq:localId ?SourceApportionmentId ;
             aq:versionId ?VersionId .
 
 ?envelope rod:locality ?locality ;
@@ -63,4 +100,7 @@ OPTIONAL {?macroURI aq:numberExceedances ?NumberOfExceedances} .
 
 ?locality rod:localityName ?Country .
 ?obliURI rdfs:label ?Obligation .
+
+
+   
 }

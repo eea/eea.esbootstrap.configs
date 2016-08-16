@@ -1,107 +1,22 @@
 {
-          "_id" : {
-            "type" : "text"
-          },
-          "Attainment" : {
-            "type" : "text"
-          },
-          "Comment" : {
-            "type" : "text"
-          },
-          "Country" : {
-            "type" : "text"
-          },
-          "Namespace" : {
-            "type" : "text"
-          },
-          "NumberOfExceedances" : {
-            "type" : "double"
-          },
-          "NumericalExceedance" : {
-            "type" : "double"
-          },
-          "PlanId" : {
-            "type" : "text"
-          },
-          "ReasonOfExceedance" : {
-            "type" : "text"
-          },
-          "ReportingYear" : {
-            "type" : "double"
-          },
-          "SourceAppId" : {
-            "type" : "text"
-          },
-          "TotalIncrementComment" : {
-            "type" : "text"
-          },
-          "TotalIncrementQuantity" : {
-            "type" : "double"
-          },
-          "TotalRegionalComment" : {
-            "type" : "text"
-          },
-          "TotalRegionalQuantity" : {
-            "type" : "double"
-          },
-          "TotalUrbanComment" : {
-            "type" : "text"
-          },
-          "TotalUrbanQuantity" : {
-            "type" : "double"
-          },
-          "VersionId" : {
-            "type" : "text"
-          },
-          "Attainment" : {
-            "type" : "text"
-          },
-          "Comment" : {
-            "type" : "text"
-          },
-          "Country" : {
-            "type" : "text"
-          },
-          "Namespace" : {
-            "type" : "text"
-          },
-          "NumberOfExceedances" : {
-            "type" : "double"
-          },
-          "NumericalExceedance" : {
-            "type" : "double"
-          },
-          "PlanId" : {
-            "type" : "text"
-          },
-          "ReasonOfExceedance" : {
-            "type" : "text"
-          },
-          "ReportingYear" : {
-            "type" : "double"
-          },
-          "SourceAppId" : {
-            "type" : "text"
-          },
-          "TotalIncrementComment" : {
-            "type" : "text"
-          },
-          "TotalIncrementQuantity" : {
-            "type" : "double"
-          },
-          "TotalRegionalComment" : {
-            "type" : "text"
-          },
-          "TotalRegionalQuantity" : {
-            "type" : "double"
-          },
-          "TotalUrbanComment" : {
-            "type" : "text"
-          },
-          "TotalUrbanQuantity" : {
-            "type" : "double"
-          },
-          "VersionId" : {
-            "type" : "date"
-          }
+"_id" : {"type" :"string" },
+"CountryOrTerritory" : {"type" :"string", "analyzer" : "coma" },
+"ReportingYear" : {"type" :"integer" },
+"referenceYear" : {"type" :"integer" },
+"Namespace" : {"type" :"string" },
+"SourceApportionmentId" : {"type" :"string", "analyzer" : "coma" },
+"VersionId" : {"type" :"string" },
+"ReasonOfExceedance" : {"type" :"string" },
+"NumericalExceedance" : {"type" :"string" },
+"NumberOfExceedances" : {"type" :"string" },
+"TotalIncrementQuantity" : {"type" :"string" },
+"TotalIncrementComment" : {"type" :"string" },
+"TotalRegionalQuantity" : {"type" :"string" },
+"TotalRegionalComment" : {"type" :"string" },
+"TotalUrbanQuantity" : {"type" :"string" },
+"TotalUrbanComment" : {"type" :"string" },
+"Comment" : {"type" :"string" },
+"AttainmentId" : {"type" :"string", "analyzer" : "coma" },
+"PlanId" : {"type" :"string", "analyzer" : "coma" },
+"envelope" : {"type" :"string" }
 }

@@ -15,7 +15,7 @@
         "footer_path": "/templates/v2/getFooter"
     },
     "layout_vars": {
-        "head_title": "Elasticsearch bootstrap application",
+        "head_title": "AQ Source Apportionments (I)",
         "css_resources": {
             "index_page": [
                 "css/no-more-tables.css",
@@ -37,11 +37,11 @@
             ]
         },
         "site_title": "AQ Source Apportionments (I)",
-        "site_description": "AQ Source Apportionments (I)",
+        "site_description": "Information on source apportionments, data flow I (http://rod.eionet.europa.eu/obligations/681)",
         "enableBreadcrumbs": true,
-        "breadcrumbs": "esbootstrap",
-        "dataprovencance_info_text": "ES bootstrap",
-        "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/daviz",
+        "breadcrumbs": "aqsources",
+        "dataprovencance_info_text": "Air Quality e-Reporting",
+        "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/data/aqereporting-1",
         "further_info": ""
     },
     "endpoint": "http://cr.eionet.europa.eu/sparql"
