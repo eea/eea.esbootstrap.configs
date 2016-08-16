@@ -7,26 +7,74 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX aqdd: <http://dd.eionet.europa.eu/property/>
 PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#> 
 
-SELECT 
-
-?measuresXMLURI as ?_id
-?Country as ?CountryOrTerritory  YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear ?Namespace ?MeasureId ?VersionId ?CodeOfMeasure ?Name ?Description ?MeasureClassification ?MeasureType ?AdministrativeLevel ?TimeScale ?SpatialScale ?SourceSectors ?estimatedImplementationCosts ?Currency ?CommentOnCosts ?Status ?ImplementationBegin ?ImplementationEnd ?PlannedFullEffectDate ?MonitoringProgressIndicators ?QuantityOfReducedEmissions ?CommentOnEmissionReductions ?LevelOfConcentration ?NumberOfExceedances ?SpecificationOfHours ?CommentOnExpectedImpact ?exceedanceAffectedURI as ?SourceApportionmentId ?usedForScenarioURI as ?ScenariosId ?envelope
-
+SELECT DISTINCT
+bif:concat(xsd:string(?ReportingYear), '-', ?measuresXMLURI, '-', ?SpatialScale, '-', ?TimeScale, '-', ?envelope, '-', ?exceedanceAffectedURI,'-',?usedForScenarioURI ) as ?_id
+?Country as ?CountryOrTerritory  
+?ReportingYear 
+?Namespace 
+?MeasureId 
+?VersionId 
+?CodeOfMeasure 
+?Name 
+?Description 
+?MeasureClassification 
+?MeasureType 
+?AdministrativeLevel 
+?TimeScale 
+?SpatialScale 
+?SourceSectors 
+?EstimatedImplementationCosts 
+?Currency 
+?CommentOnCosts 
+?Status 
+?ImplementationBegin 
+?ImplementationEnd 
+?PlannedFullEffectDate 
+?MonitoringProgressIndicators 
+?QuantityOfReducedEmissions 
+?CommentOnEmissionReductions 
+?LevelOfConcentration 
+?NumberOfExceedances 
+?SpecificationOfHours 
+?CommentOnExpectedImpact 
+?exceedanceAffectedURI as ?SourceApportionmentId 
+?usedForScenarioURI as ?ScenariosId 
+?envelope
 
  WHERE {
 
-{
-SELECT ?measuresXMLURI IRI(substr(str(?URL),1,49)) AS ?envelope
-WHERE 
-{
-?measuresXMLURI a aq:AQD_Measures ; 
-              aq:declarationFor ?declURI .
-
-?declURI aqr:hasDeclaration ?URL .
+{SELECT 
+?measuresXMLURI 
+(IRI(substr(str(?measuresXMLURI),1,49)) AS ?envelope)
+ 
+WHERE {
+?measuresXMLURI a aq:AQD_Measures .
 }
 }
 
-   ?measuresXMLURI a aq:AQD_Measures ;
+?envelope rod:released ?released .
+
+{
+SELECT DISTINCT 
+?Country 
+?obligation 
+(YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear) 
+(max(?released) AS ?released) 
+
+WHERE {
+?envelope rod:released ?released ;
+          rod:startOfPeriod ?startOfPeriod ;
+          rod:obligation <http://rod.eionet.europa.eu/obligations/683> ; 
+          rod:obligation ?obligation ;
+          rod:locality ?locality .
+
+?locality rod:localityName ?Country .
+
+}
+}
+
+
+?measuresXMLURI a aq:AQD_Measures ;
                      aq:inspireId ?inspireURI ;
                      aq:code ?CodeOfMeasure ;
                      aq:name ?Name ;
@@ -80,14 +128,5 @@ OPTIONAL{?expectedImpactURI aq:comment ?CommentOnExpectedImpact} .
 ?inspireURI aq:namespace ?Namespace ;
             aq:localId ?MeasureId ;
             aq:versionId ?VersionId .
-
-?envelope rod:locality ?locality ;
-          rod:obligation ?obliURI ;
-          rod:endOfPeriod ?endOfPeriod .
-
-?locality rod:localityName ?Country .
-?obliURI rdfs:label ?Obligation .
-
-#FILTER regex(?Country,"Italy") .
-   
+  
 }
