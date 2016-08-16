@@ -22,9 +22,9 @@
         },
         {
             "name": "ReportingYear",
-            "listing": { "title": "ReportingYear", "visible" : true, "pos" : 3 },
+            "listing": { "title": "Reporting Year", "visible" : true, "pos" : 3 },
             "details": { "title": "ReportingYear", "pos" : 3, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "ReportingYear", "pos": 1, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Reporting Year", "pos": 1, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "ReportingYear", "visible": true, "pos": 3 }
         },
         {
@@ -34,11 +34,18 @@
             "facet": { "visible": false },
             "csv_tsv": { "title": "Namespace", "visible": true, "pos": 4 }
         },
+                {
+            "name": "ResponsibleParty",
+            "listing": { "title": "Responsible Party", "visible" : true, "pos" : 5 },
+            "details": { "title": "ResponsibleParty", "pos" : 5, "section": "info", "visible": false },
+            "facet": { "visible": false },
+            "csv_tsv": { "title": "ResponsibleParty", "visible": true, "pos": 5 }
+        },
         {
             "name": "Network",
             "listing": { "title": "Network", "visible" : true, "pos" : 5 },
             "details": { "title": "Network", "pos" : 5, "section": "info", "visible": false },
-            "facet": { "visible": false },
+            "facet": { "visible": true, "title": "Network", "pos": 6, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "Network", "visible": true, "pos": 5 }
         },
         {
@@ -49,57 +56,64 @@
             "csv_tsv": { "title": "Timezone", "visible": true, "pos": 6 }
         },
         {
+            "name": "StationName",
+            "listing": { "title": "Station Name", "visible" : true, "pos" : 7 },
+            "details": { "title": "StationName", "pos" : 7, "section": "info", "visible": false },
+            "facet": { "visible": true, "title": "Station Name", "pos": 7, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "csv_tsv": { "title": "StationName", "visible": true, "pos": 7 }
+        },
+        {
             "name": "EoICode",
-            "listing": { "title": "EoICode", "visible" : true, "pos" : 7 },
+            "listing": { "title": "EoI Station Code", "visible" : true, "pos" : 7 },
             "details": { "title": "EoICode", "pos" : 7, "section": "info", "visible": false },
-            "facet": { "visible": false },
+            "facet": { "visible": true, "title": "EoI Station Code", "pos": 8, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "EoICode", "visible": true, "pos": 7 }
         },
         {
             "name": "StationType",
-            "listing": { "title": "StationType", "visible" : true, "pos" : 8 },
+            "listing": { "title": "Station Type", "visible" : true, "pos" : 8 },
             "details": { "title": "StationType", "pos" : 8, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "StationType", "pos": 2, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Station Type", "pos": 3, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "StationType", "visible": true, "pos": 8 }
         },
         {
             "name": "StationArea",
-            "listing": { "title": "StationArea", "visible" : true, "pos" : 9 },
+            "listing": { "title": "Station Area", "visible" : true, "pos" : 9 },
             "details": { "title": "StationArea", "pos" : 9, "section": "info", "visible": false },
-            "facet": { "visible": false },
+            "facet": { "visible": true, "title": "Station Area", "pos": 4, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "StationArea", "visible": true, "pos": 9 }
         },
         {
             "name": "Pollutant",
             "listing": { "title": "Pollutant", "visible" : true, "pos" : 10 },
             "details": { "title": "Pollutant", "pos" : 10, "section": "info", "visible": false },
-            "facet": { "visible": false },
+            "facet": { "visible": true, "title": "Pollutant", "pos": 2, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "Pollutant", "visible": true, "pos": 10 }
         },
         {
             "name": "SamplingPointId",
-            "listing": { "title": "SamplingPointId", "visible" : true, "pos" : 11 },
+            "listing": { "title": "Sampling Point Id", "visible" : true, "pos" : 11 },
             "details": { "title": "SamplingPointId", "pos" : 11, "section": "info", "visible": false },
-            "facet": { "visible": false },
+            "facet": { "visible": true, "title": "Sampling Point Id", "pos": 9, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "SamplingPointId", "visible": true, "pos": 11 }
         },
         {
             "name": "MeasurementRegime",
-            "listing": { "title": "MeasurementRegime", "visible" : true, "pos" : 12 },
+            "listing": { "title": "Measurement Regime", "visible" : true, "pos" : 12 },
             "details": { "title": "MeasurementRegime", "pos" : 12, "section": "info", "visible": false },
-            "facet": { "visible": false },
+            "facet": { "visible": true, "title": "Measurement Regime", "pos": 5, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "MeasurementRegime", "visible": true, "pos": 12 }
         },
         {
             "name": "OperationalActivityBegin",
-            "listing": { "title": "OperationalActivityBegin", "visible" : true, "pos" : 13 },
+            "listing": { "title": "Operational Activity Begin", "visible" : true, "pos" : 13 },
             "details": { "title": "OperationalActivityBegin", "pos" : 13, "section": "info", "visible": false },
             "facet": { "visible": false },
             "csv_tsv": { "title": "OperationalActivityBegin", "visible": true, "pos": 13 }
         },
         {
             "name": "OperationalActivityEnd",
-            "listing": { "title": "OperationalActivityEnd", "visible" : true, "pos" : 14 },
+            "listing": { "title": "Operational Activity End", "visible" : true, "pos" : 14 },
             "details": { "title": "OperationalActivityEnd", "pos" : 14, "section": "info", "visible": false },
             "facet": { "visible": false },
             "csv_tsv": { "title": "OperationalActivityEnd", "visible": true, "pos": 14 }
@@ -113,35 +127,35 @@
         },
         {
             "name": "SamplingProcess",
-            "listing": { "title": "SamplingProcess", "visible" : true, "pos" : 16 },
+            "listing": { "title": "Sampling Process", "visible" : true, "pos" : 16 },
             "details": { "title": "SamplingProcess", "pos" : 16, "section": "info", "visible": false },
             "facet": { "visible": false },
             "csv_tsv": { "title": "SamplingProcess", "visible": true, "pos": 16 }
         },
         {
             "name": "MeasurementEquipment",
-            "listing": { "title": "MeasurementEquipment", "visible" : true, "pos" : 17 },
+            "listing": { "title": "Measurement Equipment", "visible" : true, "pos" : 17 },
             "details": { "title": "MeasurementEquipment", "pos" : 17, "section": "info", "visible": false },
             "facet": { "visible": false },
             "csv_tsv": { "title": "MeasurementEquipment", "visible": true, "pos": 17 }
         },
         {
             "name": "MeasurementMethod",
-            "listing": { "title": "MeasurementMethod", "visible" : true, "pos" : 18 },
+            "listing": { "title": "Measurement Method", "visible" : true, "pos" : 18 },
             "details": { "title": "MeasurementMethod", "pos" : 18, "section": "info", "visible": false },
             "facet": { "visible": false },
             "csv_tsv": { "title": "MeasurementMethod", "visible": true, "pos": 18 }
         },
         {
             "name": "SamplingEquipment",
-            "listing": { "title": "SamplingEquipment", "visible" : true, "pos" : 19 },
+            "listing": { "title": "Sampling Equipment", "visible" : true, "pos" : 19 },
             "details": { "title": "SamplingEquipment", "pos" : 19, "section": "info", "visible": false },
             "facet": { "visible": false },
             "csv_tsv": { "title": "SamplingEquipment", "visible": true, "pos": 19 }
         },
         {
             "name": "envelope",
-            "listing": { "title": "envelope", "visible" : true, "pos" : 20 },
+            "listing": { "title": "Envelope URL", "visible" : true, "pos" : 20 },
             "details": { "title": "envelope", "pos" : 20, "section": "info", "visible": false },
             "facet": { "visible": false },
             "csv_tsv": { "title": "envelope", "visible": true, "pos": 20 }

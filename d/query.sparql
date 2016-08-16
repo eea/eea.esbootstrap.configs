@@ -7,7 +7,8 @@ PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/>
 PREFIX rod-schema: <http://rod.eionet.europa.eu/schema.rdf#>
 
 SELECT DISTINCT 
-?spoURI as ?_id
+#?spoURI as ?_id
+concat(?SamplingPointId, ?Sample, ?SamplingProcess)  as ?_id
 ?CountryOrTerritory 
 YEAR(?startOfPeriod) as ?ReportingYear 
 ?Namespace 

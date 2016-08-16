@@ -15,7 +15,7 @@
         "footer_path": "/templates/v2/getFooter"
     },
     "layout_vars": {
-        "head_title": "Elasticsearch bootstrap application",
+        "head_title": "Assessment Methods (D)",
         "css_resources": {
             "index_page": [
                 "css/no-more-tables.css",
@@ -36,12 +36,12 @@
                 "http://www.eea.europa.eu/mark_special_links.js"
             ]
         },
-        "site_title": "Assessment Methods (D)",
-        "site_description": "Assessment Methods (D)",
+        "site_title": "Air Quality Assessment Methods (D)",
+        "site_description": "Information on air quality assessment methods for fixed and indicative measurements, data flow D (http://rod.eionet.europa.eu/obligations/672)",
         "enableBreadcrumbs": true,
-        "breadcrumbs": "esbootstrap",
-        "dataprovencance_info_text": "ES bootstrap",
-        "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/daviz",
+        "breadcrumbs": "aqmethods",
+        "dataprovencance_info_text": "Air Quality e-Reporting",
+        "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/data/aqereporting-1",
         "further_info": ""
     },
     "endpoint": "http://cr.eionet.europa.eu/sparql"
