@@ -1,0 +1,84 @@
+PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX cr: <http://cr.eionet.europa.eu/ontologies/contreg.rdf#>
+PREFIX aq: <http://rdfdata.eionet.europa.eu/airquality/ontology/>
+PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/>
+PREFIX aqdd: <http://dd.eionet.europa.eu/property/>
+
+
+
+SELECT DISTINCT 
+
+?statsURI as ?_id
+?CountryOrTerritory
+?Namespace
+YEAR(?BeginPosition) as ?ReportingYear
+replace(replace(replace(str(?StationLocalId_URI),"http://reference.eionet.europa.eu/aq/",""),?Namespace,""),"/","") as ?StationLocalId
+replace(replace(replace(str(?SamplingPointLocalId_URI),"http://reference.eionet.europa.eu/aq/",""),?Namespace,""),"/","") as ?SamplingPointLocalId
+#?Station_Latitude
+#?Station_Longitude
+?SamplingPoint_Latitude
+?SamplingPoint_Longitude
+?Pollutant
+?AggregationType
+#?ExceedanceThreshold
+?AQValue
+#replace(str(?Unit_URI),"http://dd.eionet.europa.eu/vocabulary/uom/concentration/","") as ?Unit
+(bif:either(substr(str(?Unit_URI),1,56) = "http://dd.eionet.europa.eu/vocabulary/uom/concentration/",REPLACE(str(?Unit_URI),"http://dd.eionet.europa.eu/vocabulary/uom/concentration/",""),REPLACE(str(?Unit_URI),"http://dd.eionet.europa.eu/vocabulary/uom/statistics/","")) as ?Unit)
+?BeginPosition
+?EndPosition
+?Validity
+?Verification
+?DataCoverage
+?DataCapture
+?TimeCoverage
+?UpdateTime
+
+
+WHERE {
+
+?statsURI a aqr:ValidatedExceedence ;
+            aqr:inspireNamespace ?Namespace ;
+            aqr:station ?StationLocalId_URI ;
+            aqr:samplingPoint ?SamplingPointLocalId_URI ;
+            aqr:station_lat ?Station_Latitude ;  
+            aqr:station_lon ?Station_Longitude ;
+            aqr:samplingpoint_lat ?SamplingPoint_Latitude ;
+            aqr:samplingpoint_lon ?SamplingPoint_Longitude ;
+            aqr:pollutant ?Pollutant_URI ;
+            aqr:aggregationType ?AggregationType_URI ; 
+            aqr:airqualityValue ?AQValue ;
+            aqr:unit ?Unit_URI ;
+            aqr:beginPosition ?BeginPosition ;
+            aqr:endPosition ?EndPosition ;
+            aqr:observationValidity ?Validity_URI ;
+            aqr:observationVerification ?Verification_URI ;
+            aqr:datacoveragePct ?DataCoverage ;
+            aqr:datacapturePct ?DataCapture ;
+            aqr:timecoveragePct ?TimeCoverage ;                  
+            aqr:inserted ?UpdateTime .
+
+?Pollutant_URI rdfs:label ?Pollutant .
+?AggregationType_URI rdfs:label ?AggregationType .
+?Validity_URI rdfs:label ?Validity .
+?Verification_URI rdfs:label ?Verification .
+
+OPTIONAL{?AggregationType_URI rdfs:label ?AggregationType} .
+OPTIONAL{?AggregationType_URI aqdd:broaderMetric ?ReportingMetric_URI} .
+
+?thresURI aqdd:aggregationProcess ?AggregationType_URI .
+?thresURI aqdd:relatedPollutant ?Pollutant_URI .
+?thresURI aqdd:hasReportingMetric ?ReportingMetric_URI .
+#OPTIONAL{?thresURI aqdd:exceedanceThreshold ?ExceedanceThreshold} .
+
+
+?namespaces skos:inScheme <http://dd.eionet.europa.eu/vocabulary/aq/namespace/> .
+?namespaces rdfs:label ?Namespace .
+?namespaces aqdd:inCountry ?cntry_URI .
+?cntry_URI rdfs:label ?CountryOrTerritory .
+
+#FILTER (YEAR(?BeginPosition) = 2014) .
+
+}
