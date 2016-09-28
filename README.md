@@ -7,7 +7,7 @@ All apps configurations are place in the config folder. An app folder contains t
 
 <pre>
     ├── default
-    │   ├── dataMapping.json
+    │   ├── facets.json
     │   └── query.sparql
     │   └── mapping.json
     │   └── settings.json
@@ -149,12 +149,12 @@ Ex:
   "http://purl.org/dc/terms/subject": "subject"
 }
 </pre>
-After the normalize.json is set up, you can use your short names in the **mapping.json**. 
-**Note: ** in the dataMapping.json you still have to use the original property names.
+After the normalize.json is set up, you can use your short names in the **facets.json**. 
+**Note: ** in the mapping.json you still have to use the original property names.
 
 ### __Data mapping for indexing in Elasticsearch__
 When new data is indexed, by default Elasticsearch tries to make a guess on the data type for each attribute, but sometimes it's useful to specify it explicitly.
-Data mapping for elasticsearch is done within **/*default*/dataMapping.json**.
+Data mapping for elasticsearch is done within **/*default*/mapping.json**.
 example of mapping for a field:
 <pre>  "visualization" : {
         "type" : "string",
@@ -180,7 +180,7 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-types.ht
 
 #### __Configure fields definition for the presentation layer__
 In this paragraph we describe how we can configure what data to be displayed on the listing and detail pages, what data to be used as facets, and what data should appear in the csv/tsv export.
-All of these settings can be configured within **/*default*/mapping.json**. Based on this configuration file the data retrieved from Elasticsearch will be displayed on the views.
+All of these settings can be configured within **/*default*/facets.json**. Based on this configuration file the data retrieved from Elasticsearch will be displayed on the views.
 <pre>
 {
     "details_settings" : {
