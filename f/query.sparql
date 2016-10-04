@@ -80,5 +80,6 @@ OPTIONAL{?AggregationType_URI aqdd:broaderMetric ?ReportingMetric_URI} .
 ?cntry_URI rdfs:label ?CountryOrTerritory .
 
 #FILTER (YEAR(?BeginPosition) = 2014) .
+FILTER (?Namespace = '<Namespace>') 
 
 }

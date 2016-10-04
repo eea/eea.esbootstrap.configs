@@ -5,10 +5,11 @@ PREFIX aq: <http://rdfdata.eionet.europa.eu/airquality/ontology/>
 PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/>
 PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
 
-SELECT 
-concat(xsd:string(?envelope), ?Pollutant, ?ZoneId, ?ReportingYear, ?ProtectionTarget, xsd:string(?ResidentPopulation)) as ?_id
+SELECT DISTINCT
+?LocalId as ?_id
+#concat(?LocalId, xsd:string(YEAR(?ReportingBegin)), ?Pollutant, ?ProtectionTarget, xsd:string(?ResidentPopulation), ?ContactName)  as ?_id
+#concat(?ZoneId, ?ReportingYear, ?Pollutant, ?ProtectionTarget, xsd:string(?ResidentPopulation), ?ContactName)  as ?_id
 #concat(xsd:string(?envelope), ?ZoneId, ?ReportingYear, ?Pollutant, ?ProtectionTarget, xsd:string(?ResidentPopulation),?CompetentAuthority)  as ?_id
-
 ?CountryOrTerritory 
 ?ZoneCode 
 ?LocalId as ?ZoneId 
