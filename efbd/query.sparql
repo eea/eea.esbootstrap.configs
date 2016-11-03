@@ -1,0 +1,37 @@
+PREFIX tableFile: <http://semantic.eea.europa.eu/project/EFDB/EFDB_2016.tsv#>
+
+SELECT 
+?_id
+concat(?NFR, ' ', ?Sector) as ?code
+?NFR
+?Sector
+?Table
+?Type
+?Technology
+?Fuel
+?Abatement
+?Region
+?Pollutant
+?Value
+?Unit
+?CI_lower
+?CI_upper
+?Reference
+FROM <http://semantic.eea.europa.eu/project/EFDB/EFDB_2016.tsv>
+WHERE {
+ _:rec tableFile:_id ?_id .
+ _:rec tableFile:NFR ?NFR  .
+ _:rec tableFile:Sector ?Sector .
+ _:rec tableFile:Table ?Table .
+ _:rec tableFile:Type ?Type .
+ OPTIONAL { _:rec tableFile:Technology ?Technology } .
+ OPTIONAL { _:rec tableFile:Fuel ?Fuel } .
+ OPTIONAL { _:rec tableFile:Abatement ?Abatement } .
+ OPTIONAL { _:rec tableFile:Region ?Region } .
+ OPTIONAL { _:rec tableFile:Pollutant ?Pollutant } .
+ _:rec tableFile:Value ?Value .
+ OPTIONAL { _:rec tableFile:Unit ?Unit } .
+ OPTIONAL { _:rec tableFile:CI_lower ?CI_lower } .
+ OPTIONAL { _:rec tableFile:CI_upper ?CI_upper } .
+ OPTIONAL { _:rec tableFile:Reference ?Reference } .
+}

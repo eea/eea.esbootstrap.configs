@@ -1,0 +1,122 @@
+{
+    "details_settings" : {
+        "sections": [
+            {"name":"info",
+             "title":"General info",
+             "pos":0},
+            {"name":"created",
+             "title":"Created",
+             "pos":1}
+        ]
+    },
+    "listing_settings" : {
+        "show_links": false
+    },
+    "fields_mapping": [
+        {
+            "name": "code",
+            "listing": { "title": "code", "visible" : false, "pos" : 0, "display": { "pre": "", "field": "code", "post": "</td>" } },
+            "details": { "title": "code", "pos" : 0, "section": "info", "visible": false },
+            "facet": { "visible": true, "title": "NFR - Sector", "pos": 0, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "csv_tsv": { "title": "code", "visible": false, "pos": 0 }
+        },
+        {
+            "name": "NFR",
+            "listing": { "title": "NFR", "visible" : true, "pos" : 0, "display": { "pre": "", "field": "NFR", "post": "</td>" } },
+            "details": { "title": "NFR", "pos" : 0, "section": "info", "visible": true },
+            "facet": { "visible": false },
+            "csv_tsv": { "title": "NFR", "visible": true, "pos": 0 }
+        },
+        {
+            "name": "Sector",
+            "listing": { "title": "Sector", "visible" : true, "pos" : 3 },
+            "details": { "title": "Sector", "pos" : 3, "section": "info", "visible": false },
+            "facet": { "visible": false },
+            "csv_tsv": { "title": "Sector", "visible": true, "pos": 3 }
+        },
+        {
+            "name": "Table",
+            "listing": { "title": "Table", "visible" : true, "pos" : 4 },
+            "details": { "title": "Table", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+            "csv_tsv": { "title": "Table", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "Type",
+            "listing": { "title": "Type", "visible" : true, "pos" : 5 },
+            "details": { "title": "Type", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": true, "title": "Type", "pos": 10, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "csv_tsv": { "title": "Type", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "Technology",
+            "listing": { "title": "Technology", "visible" : true, "pos" : 6 },
+            "details": { "title": "Technology", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+           "csv_tsv": { "title": "Technology", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "Fuel",
+            "listing": { "title": "Fuel", "visible" : true, "pos" : 6 },
+            "details": { "title": "Fuel", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": true, "title": "Fuel", "pos": 1, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "csv_tsv": { "title": "Fuel", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "Abatement",
+            "listing": { "title": "Abatement", "visible" : true, "pos" : 6 },
+            "details": { "title": "Abatement", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+           "csv_tsv": { "title": "Abatement", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "Region",
+            "listing": { "title": "Region", "visible" : true, "pos" : 6 },
+            "details": { "title": "Region", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+           "csv_tsv": { "title": "Region", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "Pollutant",
+            "listing": { "title": "Pollutant", "visible" : true, "pos" : 6 },
+            "details": { "title": "Pollutant", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": true, "title": "Pollutant", "pos": 1, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+           "csv_tsv": { "title": "Pollutant", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "Value",
+            "listing": { "title": "Value", "visible" : true, "pos" : 6 },
+            "details": { "title": "Value", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+           "csv_tsv": { "title": "Value", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "Unit",
+            "listing": { "title": "Unit", "visible" : true, "pos" : 6 },
+            "details": { "title": "Unit", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+           "csv_tsv": { "title": "Unit", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "CI_lower",
+            "listing": { "title": "CI_lower", "visible" : true, "pos" : 6 },
+            "details": { "title": "CI_lower", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+           "csv_tsv": { "title": "CI_lower", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "CI_upper",
+            "listing": { "title": "CI_upper", "visible" : true, "pos" : 6 },
+            "details": { "title": "CI_upper", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+           "csv_tsv": { "title": "CI_upper", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "Reference",
+            "listing": { "title": "Reference", "visible" : true, "pos" : 6 },
+            "details": { "title": "Reference", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+           "csv_tsv": { "title": "Reference", "visible": true, "pos": 4 }
+        }
+    ]
+}
