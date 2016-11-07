@@ -1,0 +1,21 @@
+{
+"_id" : {"type" :"string" },
+"CountryOrTerritory" : {"type" :"string", "analyzer" : "coma" },
+"ReportingYear" : {"type" :"integer" },
+"AttainmentYear" : {"type" :"string" },
+"Namespace" : {"type" :"string" },
+"ScenariosId" : {"type" :"string", "analyzer" : "coma"  },
+"VersionId" : {"type" :"string" },
+"CodeOfScenario" : {"type" :"string" },
+"BaselineDescription" : {"type" :"string" },
+"BaselineComment" : {"type" :"string" },
+"BaselineEmissions" : {"type" :"string" },
+"BaselineExpectedConcentration" : {"type" :"string" },
+"ProjectionDescription" : {"type" :"string" },
+"ProjectionComment" : {"type" :"string" },
+"ProjectionEmissions" : {"type" :"string" },
+"ProjectionExpectedConcentration" : {"type" :"string" },
+"SourceApportionmentId" : {"type" :"string", "analyzer" : "coma"  },
+"PlanId" : {"type" :"string", "analyzer" : "coma"  },
+"envelope" : {"type" :"string" }
+}
