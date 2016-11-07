@@ -7,11 +7,16 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX aqdd: <http://dd.eionet.europa.eu/property/>
 PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#> 
 
-SELECT 
+SELECT DISTINCT
+
+md5(concat(?Country, xsd:string(?ReportingYear),?PlanCode ,?Namespace ,?PlanId ,?VersionId ,?Name, xsd:string(?FirstExceedanceYear) ,xsd:string(?AdoptionDate) ,?Status ,xsd:string(?TimeTable) ,?ReferenceAQPlan ,?ReferenceImplementation,?Pollutant ,?ProtectionTarget ,?PublicationTitle ,xsd:string(?PublicationDate) ,?PublicationAuthor,?PublicationDescription ,?Publisher ,?PublicationWeblink ,?Organisation ,?IndividualName,?Email ,xsd:string(?Phone) ,?Website ,?Address ,?Comment ,?AttainmentId ,?envelope
+)
+)  as ?_id
+
 #?planXMLURI
-bif:concat(xsd:string(YEAR(?endOfPeriod)), '-', ?PlanId ) as ?_id
+#bif:concat(xsd:string(YEAR(?endOfPeriod)), '-', ?PlanId ) as ?_id
 ?Country as ?CountryOrTerritory 
-YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear 
+?ReportingYear 
 ?PlanCode 
 ?Namespace 
 ?PlanId 
@@ -43,35 +48,68 @@ YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear
 
  WHERE {
 
-{SELECT 
-?planXMLURI 
-(IRI(substr(str(?planXMLURI),1,49)) AS ?envelope) 
-
-WHERE {
-?planXMLURI a aq:AQD_Plan .
-}
-}
-
-?envelope rod:released ?released .
-
 {
 SELECT DISTINCT 
 ?Country 
-?obligation 
-(YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear) 
+(YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear)
+?PlanId 
 (max(?released) AS ?released) 
 
 WHERE {
 ?envelope rod:released ?released ;
-          rod:startOfPeriod ?startOfPeriod ;
+          rod:endOfPeriod ?endOfPeriod ;
           rod:obligation <http://rod.eionet.europa.eu/obligations/680> ; 
-          rod:obligation ?obligation ;
+          rod:hasFile ?source ;
           rod:locality ?locality .
 
 ?locality rod:localityName ?Country .
 
+{SELECT 
+?planXMLURI
+?PlanId 
+(IRI(substr(str(?planXMLURI),1,bif:strchr(str(?planXMLURI),"#"))) AS ?source) 
+
+WHERE {
+?planXMLURI a aq:AQD_Plan ;
+              aq:inspireId ?inspireURI .
+?inspireURI aq:localId ?PlanId .
 }
 }
+}
+}
+
+{
+SELECT DISTINCT 
+?Country 
+(YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear)
+?planXMLURI
+?PlanId 
+?released
+?envelope
+
+WHERE {
+?envelope rod:released ?released ;
+          rod:endOfPeriod ?endOfPeriod ;
+          rod:obligation <http://rod.eionet.europa.eu/obligations/680> ; 
+          rod:hasFile ?source ;
+          rod:locality ?locality .
+
+?locality rod:localityName ?Country .
+
+{SELECT 
+?planXMLURI
+?PlanId 
+(IRI(substr(str(?planXMLURI),1,bif:strchr(str(?planXMLURI),"#"))) AS ?source) 
+
+WHERE {
+?planXMLURI a aq:AQD_Plan ;
+              aq:inspireId ?inspireURI .
+?inspireURI aq:localId ?PlanId .
+}
+}
+}
+}
+
 
    ?planXMLURI a aq:AQD_Plan ;
                  aq:inspireId ?inspireURI ;
@@ -85,18 +123,17 @@ WHERE {
                  aq:referenceImplementation ?ReferenceImplementation ;
                  aq:pollutants ?pollURI ;
                  aq:publication ?publURI ;
-                 aq:status ?StatusURI ;
-                 aq:comment ?Comment . 
+                 aq:status ?StatusURI .
 
-
+OPTIONAL{?planXMLURI aq:comment ?Comment} . 
 OPTIONAL{?planXMLURI aq:exceedanceSituation ?excURI} .
 OPTIONAL{?excURI aqr:inspireId ?AttainmentId} .
 OPTIONAL{?excURI dcterms:source ?source} .
 OPTIONAL{?excenvelope rod:hasFile ?source} .
 
 ?inspireURI aq:namespace ?Namespace ;
-            aq:localId ?PlanId ;
-            aq:versionId ?VersionId .
+            aq:localId ?PlanId .
+OPTIONAL{?inspireURI aq:versionId ?VersionId} .
 
 ?compAuthorityURI aq:organisationName ?Organisation ;
                   aq:individualName ?IndividualName ;
@@ -118,20 +155,17 @@ OPTIONAL{?excenvelope rod:hasFile ?source} .
 ?proTargetURI rdfs:label ?ProtectionTarget .
 
 ?publURI aq:title ?PublicationTitle ;
-         aq:author ?PublicationAuthor ;
          aq:description ?PublicationDescription ;
          aq:publisher ?Publisher ;
          aq:webLink ?PublicationWeblink ;
          aq:publicationDate ?DateURI .
 
+OPTIONAL{?publURI aq:author ?PublicationAuthor}.
+
 ?DateURI aq:timePosition ?PublicationDate . 
 ?StatusURI rdfs:label ?Status .
 
-?envelope rod:locality ?locality ;
-          rod:obligation ?obliURI ;
-          rod:endOfPeriod ?endOfPeriod .
-
-?locality rod:localityName ?Country .
-?obliURI rdfs:label ?Obligation .
-         
+#FILTER regex(?Country, "Poland") .
+#FILTER regex(?Country, "United Kingdom") .
+     
 }
