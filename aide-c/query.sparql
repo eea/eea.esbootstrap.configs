@@ -2,75 +2,124 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX cr: <http://cr.eionet.europa.eu/ontologies/contreg.rdf#>
 PREFIX aq: <http://rdfdata.eionet.europa.eu/airquality/ontology/>
-PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/>
+#PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/>
 PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
 
-SELECT DISTINCT 
-#concat(xsd:string(?envelope), xsd:string(?assmURI)) as ?_id
-concat(?AssessmentId, ?ReportingYear, ?ModelId, ?SamplingPointId)  as ?_id
-?CountryOrTerritory 
-?AssessmentId 
-?Namespace 
-?Pollutant 
-?Zone as ?ZoneId 
-YEAR(?ReportingBegin) AS ?ReportingYear 
-?ObjectiveType 
-?ReportingMetric 
-?ProtectionTarget 
-?ExceedanceAttainment 
-?ClassificationDate 
-?ClassificationReport 
-?AssessmentType 
-?Description 
-?ModelId 
-?SamplingPointId 
+SELECT DISTINCT
+
+md5(concat(?Country, ?AssessmentId, ?Namespace, ?ZoneURI, xsd:string(?startOfPeriod), ?ObjectiveType, ?ReportingMetric, ?ExceedanceAttainment, xsd:string(?ClassificationDate), ?ClassificationReport, ?AssessmentType, ?Pollutant, ?ProtectionTarget, ?Description, ?samplingPointURI, ?ModelAssessmentMetadataURI, ?envelope))  as ?_id
+
+?Country as ?CountryOrTerritory
+?AssessmentId
+?Namespace
+?Pollutant
+
+replace(replace(replace(str(?ZoneURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace,""),"/","") as
+?ZoneId
+
+YEAR(?startOfPeriod) AS ?ReportingYear
+?ObjectiveType
+?ReportingMetric
+?ProtectionTarget
+?ExceedanceAttainment
+?ClassificationDate
+?ClassificationReport
+?AssessmentType
+?Description
+
+replace (replace(replace(str(?samplingPointURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace,""),"/","") as ?samplingPointId
+
+replace (replace(replace(str(?ModelAssessmentMetadataURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace,""),"/","") as ?ModelId
+
 ?envelope
 
  WHERE {
 
-  ?areURI a aqr:AssessmentRegime;
-            dcterms:source ?source;
-            aqr:inspireId ?AssessmentId;
-            aqr:inspireNamespace ?Namespace;
-            aqr:pollutant ?PollutantURI;
-            aqr:zone ?ZoneURI;
-            aqr:reportingBegin ?ReportingBegin ;
-            aqr:assessmentMethods ?assmURI ;
-            aqr:assessmentThreshold ?assURI .
-               ?assURI aqr:objectiveType ?ObjectiveTypeURI .           
-               ?assURI aqr:reportingMetric ?ReportingMetricURI .
-               ?assURI aqr:protectionTarget ?ProtectionTargetURI .
-               ?assURI aqr:exceedanceAttainment ?ExceedanceAttainmentURI .
-               ?assURI aq:classificationDate ?classdateURI .
-    ?classdateURI rdfs:label ?ClassificationDate .       
+{SELECT DISTINCT
+?areXMLURI
+(IRI(substr(str(?areXMLURI ),1,bif:strchr(str(?areXMLURI),"#"))) AS ?source) 
+##(IRI(substr(str(?areXMLURI),1,49)) AS ?envelope) ## first 49 characters of the URI of the item as ?envelope
 
+#bif:either(
+#substr(str(?areXMLURI),1,30) ="http://cdr.eionet.europa.eu/de",
+#IRI(substr(str(?areXMLURI),1,59)),
+#IRI(substr(str(?areXMLURI),1,49))
+#) #1st bif
+#AS ?envelope
 
-?assmURI aqr:assessmentType ?AssessmentTypeURI .     
-?AssessmentTypeURI rdfs:label ?AssessmentType .
+WHERE {
+?areXMLURI a aq:AQD_AssessmentRegime.
+}
+}
 
-OPTIONAL{?assmURI aqr:assessmentTypeDescription ?Description} . 
-OPTIONAL{?assmURI aqr:modelAssessmentMetadata ?ModelAssessmentMetadataURI} . 
-OPTIONAL{?assmURI aqr:samplingPointAssessmentMetadata ?samplingPointURI} . 
+?envelope rod:released ?released ;
+          rod:locality ?locality ;
+          rod:obligation ?obliURI ;
+          rod:hasFile ?source ;
+          rod:startOfPeriod ?startOfPeriod .
 
-OPTIONAL{?ModelAssessmentMetadataURI aqr:inspireId ?ModelId} .
-OPTIONAL{?samplingPointURI aqr:inspireId ?SamplingPointId} .
+?locality rod:localityName ?Country .
+?obliURI rdfs:label ?Obligation .
 
-?ZoneURI aqr:inspireId ?Zone .
-?PollutantURI rdfs:label ?Pollutant .
+{SELECT DISTINCT
+?Country
+?obligation
+(YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear)
+(max(?released) AS ?released) ## subquery to select only latest releases within reporting years
+
+WHERE {
+?envelope rod:released ?released ;
+          rod:startOfPeriod ?startOfPeriod ;
+          rod:obligation <http://rod.eionet.europa.eu/obligations/671> ;
+          rod:obligation ?obligation ;
+          rod:locality ?locality .
+
+?locality rod:localityName ?Country .
+
+}
+}
+
+?areXMLURI a aq:AQD_AssessmentRegime;
+          aq:assessmentMethods ?assesmentMethodsURI ;
+          aq:assessmentThreshold ?assesmentThresoldURI ;
+          aq:inspireId ?inspireURI;
+          aq:pollutant ?polltargetURI;
+          aq:declarationFor ?declaration ;
+          aq:zone ?ZoneURI .
+?inspireURI aq:localId ?AssessmentId;
+            aq:namespace ?Namespace.
+
+?polltargetURI skos:notation ?Pollutant .
+
+?assesmentThresoldURI aq:environmentalObjective ?environmentalObjective ;   
+                      aq:exceedanceAttainment ?ExceedanceAttainmentURI ;
+                      aq:classificationDate ?classdateURI .
+
+?assesmentMethodsURI  aq:assessmentType ?AssessmentTypeURI;
+                      aq:samplingPointAssessmentMetadata ?samplingPointURI.
+
+?environmentalObjective  aq:objectiveType   ?ObjectiveTypeURI;    
+                      aq:reportingMetric ?ReportingMetricURI ;
+                      aq:protectionTarget ?ProtectionTargetURI .
+
 ?ObjectiveTypeURI rdfs:label ?ObjectiveType .
 ?ReportingMetricURI rdfs:label ?ReportingMetric .
 ?ProtectionTargetURI rdfs:label ?ProtectionTarget .
-?ExceedanceAttainmentURI rdfs:label ?ExceedanceAttainment .
 
- ?envelope rod:hasFile ?source .
- ?envelope rod:locality ?locURI .
- ?locURI rdfs:label ?CountryOrTerritory .
- ?envelope rod:obligation <http://rod.eionet.europa.eu/obligations/671> .
- <http://rod.eionet.europa.eu/obligations/671> dcterms:title ?Obligation .
+?ExceedanceAttainmentURI skos:notation ?ExceedanceAttainment .
+?classdateURI rdfs:label ?ClassificationDate .       
 
-OPTIONAL{?assURI aqr:classificationReport ?ClassificationReport} .
+?AssessmentTypeURI rdfs:label ?AssessmentType .
 
-#FILTER regex(?Namespace,"ES.BDCA.AQ") .
-#FILTER regex(?PollutantURI, "") .
-            
-} ORDER BY ?ReportingBegin ?Pollutant ?ReportingMetric
+OPTIONAL{?assesmentThresoldURI aq:classificationReport ?ClassificationReport} .
+OPTIONAL{?assesmentMethodsURI aq:assessmentTypeDescription ?Description} .
+
+OPTIONAL{?assesmentMethodsURI aq:modelAssessmentMetadata ?ModelAssessmentMetadataURI} .
+OPTIONAL{?assesmentMethodsURI aq:samplingPointAssessmentMetadata ?samplingPointURI} .
+
+OPTIONAL{?assesmentThresoldURI aq:classificationReport ?ClassificationReport} .
+
+#FILTER regex(?Namespace,"http://gdi.uba.de/arcgis/rest/services/inspire/DE.UBA.AQD") .
+#FILTER regex(?polltargetURI, "") .
+#FILTER (YEAR(?startOfPeriod) = 2014) .
+}
