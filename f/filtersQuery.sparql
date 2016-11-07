@@ -1,7 +1,0 @@
-PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/>
-
-SELECT DISTINCT ?Namespace
- WHERE {
-  ?SamplingPointURI a aqr:SamplingPoint ;
-            aqr:inspireNamespace ?Namespace .
-}
