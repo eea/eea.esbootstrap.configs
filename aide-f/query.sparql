@@ -5,16 +5,15 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX cr: <http://cr.eionet.europa.eu/ontologies/contreg.rdf#>
 PREFIX aq: <http://rdfdata.eionet.europa.eu/airquality/ontology/>
 PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/>
-PREFIX aqdd: <http://dd.eionet.europa.eu/property/>
-
-
+PREFIX dd: <http://dd.eionet.europa.eu/property/>
 
 SELECT DISTINCT 
 
-?statsURI as ?_id
+md5(concat(?CountryOrTerritory, ?Namespace, xsd:string(?StationLocalId_URI), xsd:string(?SamplingPointLocalId_URI), xsd:string(?SamplingPoint_Latitude), xsd:string(?SamplingPoint_Longitude), ?AggregationType,?Pollutant, xsd:string(?AQValue), xsd:string(?Unit_URI), xsd:string(?BeginPosition), xsd:string(?EndPosition), xsd:string(?Validity), xsd:string(?Verification),xsd:string(?DataCoverage),xsd:string(?DataCapture), xsd:string(?TimeCoverage), xsd:string(?UpdateTime)))  as ?_id
+
+#?statsURI as ?_id
 ?CountryOrTerritory
 ?Namespace
-YEAR(?BeginPosition) as ?ReportingYear
 replace(replace(replace(str(?StationLocalId_URI),"http://reference.eionet.europa.eu/aq/",""),?Namespace,""),"/","") as ?StationLocalId
 replace(replace(replace(str(?SamplingPointLocalId_URI),"http://reference.eionet.europa.eu/aq/",""),?Namespace,""),"/","") as ?SamplingPointLocalId
 #?Station_Latitude
@@ -23,7 +22,6 @@ replace(replace(replace(str(?SamplingPointLocalId_URI),"http://reference.eionet.
 ?SamplingPoint_Longitude
 ?Pollutant
 ?AggregationType
-#?ExceedanceThreshold
 ?AQValue
 #replace(str(?Unit_URI),"http://dd.eionet.europa.eu/vocabulary/uom/concentration/","") as ?Unit
 (bif:either(substr(str(?Unit_URI),1,56) = "http://dd.eionet.europa.eu/vocabulary/uom/concentration/",REPLACE(str(?Unit_URI),"http://dd.eionet.europa.eu/vocabulary/uom/concentration/",""),REPLACE(str(?Unit_URI),"http://dd.eionet.europa.eu/vocabulary/uom/statistics/","")) as ?Unit)
@@ -65,21 +63,12 @@ WHERE {
 ?Validity_URI rdfs:label ?Validity .
 ?Verification_URI rdfs:label ?Verification .
 
-OPTIONAL{?AggregationType_URI rdfs:label ?AggregationType} .
-OPTIONAL{?AggregationType_URI aqdd:broaderMetric ?ReportingMetric_URI} .
-
-?thresURI aqdd:aggregationProcess ?AggregationType_URI .
-?thresURI aqdd:relatedPollutant ?Pollutant_URI .
-?thresURI aqdd:hasReportingMetric ?ReportingMetric_URI .
-#OPTIONAL{?thresURI aqdd:exceedanceThreshold ?ExceedanceThreshold} .
-
-
 ?namespaces skos:inScheme <http://dd.eionet.europa.eu/vocabulary/aq/namespace/> .
 ?namespaces rdfs:label ?Namespace .
-?namespaces aqdd:inCountry ?cntry_URI .
+?namespaces dd:inCountry ?cntry_URI .
 ?cntry_URI rdfs:label ?CountryOrTerritory .
 
-#FILTER (YEAR(?BeginPosition) = 2014) .
 FILTER (?Namespace = '<Namespace>') 
-
 }
+
+
