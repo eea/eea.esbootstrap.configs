@@ -8,7 +8,11 @@ PREFIX aqdd: <http://dd.eionet.europa.eu/property/>
 PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#> 
 
 SELECT DISTINCT
-bif:concat(xsd:string(?ReportingYear), '-', ?measuresXMLURI, '-', ?SpatialScale, '-', ?TimeScale, '-', ?envelope, '-', ?exceedanceAffectedURI,'-',?usedForScenarioURI ) as ?_id
+
+md5(concat(?Country, xsd:string(?ReportingYear),?Namespace ,?MeasureId  ,?VersionId , ?CodeOfMeasure, ?Name, ?Description ,?MeasureClassification ,?MeasureType ,?AdministrativeLevel ,xsd:string(?TimeScale) ,xsd:string(?SpatialScale),?SourceSectors ,xsd:string(?EstimatedImplementationCosts) ,?Currency  ,?CommentOnCosts,?Status,xsd:string(?ImplementationBegin) ,xsd:string(?ImplementationEnd) ,xsd:string(?PlannedFullEffectDate) ,?MonitoringProgressIndicators ,xsd:string(?QuantityOfReducedEmissions),?CommentOnEmissionReductions ,xsd:string(?LevelOfConcentration) ,xsd:string(?NumberOfExceedances) ,xsd:string(?SpecificationOfHours) ,?CommentOnExpectedImpact ,xsd:string(?exceedanceAffectedURI) ,xsd:string(?usedForScenarioURI),?envelope
+)
+)  as ?_id
+
 ?Country as ?CountryOrTerritory  
 ?ReportingYear 
 ?Namespace 
@@ -43,33 +47,65 @@ bif:concat(xsd:string(?ReportingYear), '-', ?measuresXMLURI, '-', ?SpatialScale,
 
  WHERE {
 
-{SELECT 
-?measuresXMLURI 
-(IRI(substr(str(?measuresXMLURI),1,49)) AS ?envelope)
- 
-WHERE {
-?measuresXMLURI a aq:AQD_Measures .
-}
-}
-
-?envelope rod:released ?released .
-
 {
 SELECT DISTINCT 
 ?Country 
-?obligation 
-(YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear) 
+(YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear)
+?MeasureId 
 (max(?released) AS ?released) 
 
 WHERE {
 ?envelope rod:released ?released ;
-          rod:startOfPeriod ?startOfPeriod ;
+          rod:endOfPeriod ?endOfPeriod ;
           rod:obligation <http://rod.eionet.europa.eu/obligations/683> ; 
-          rod:obligation ?obligation ;
+          rod:hasFile ?source ;
           rod:locality ?locality .
 
 ?locality rod:localityName ?Country .
 
+{SELECT 
+?measuresXMLURI
+?MeasureId
+(IRI(substr(str(?measuresXMLURI),1,bif:strchr(str(?measuresXMLURI),"#"))) AS ?source) 
+
+WHERE {
+?measuresXMLURI a aq:AQD_Measures ;
+              aq:inspireId ?inspireURI .
+?inspireURI aq:localId ?MeasureId .
+}
+}
+}
+}
+
+{
+SELECT DISTINCT 
+?Country 
+(YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear)
+?measuresXMLURI
+?MeasureId 
+?released
+?envelope
+
+WHERE {
+?envelope rod:released ?released ;
+          rod:endOfPeriod ?endOfPeriod ;
+          rod:obligation <http://rod.eionet.europa.eu/obligations/683> ; 
+          rod:hasFile ?source ;
+          rod:locality ?locality .
+
+?locality rod:localityName ?Country .
+
+{SELECT 
+?measuresXMLURI
+?MeasureId 
+(IRI(substr(str(?measuresXMLURI),1,bif:strchr(str(?measuresXMLURI),"#"))) AS ?source) 
+
+WHERE {
+?measuresXMLURI a aq:AQD_Measures ;
+              aq:inspireId ?inspireURI .
+?inspireURI aq:localId ?MeasureId .
+}
+}
 }
 }
 
@@ -128,5 +164,7 @@ OPTIONAL{?expectedImpactURI aq:comment ?CommentOnExpectedImpact} .
 ?inspireURI aq:namespace ?Namespace ;
             aq:localId ?MeasureId ;
             aq:versionId ?VersionId .
+
+#FILTER regex(?Country,"Belgium") .
   
 }
