@@ -292,6 +292,11 @@ with the attributes:
 	    - **range**: numeric field
 	    - **geo**: geo_point* field
   - **size**: size of the facet if it's a simple facet
+  - **order**: order can be one of the following
+  	    - **term**: sorted by alphanumeric order "a-z"
+	    - **reverse_term**: or "rterm" for reversed alphanumeric order "z-a"
+	    - **count**: sorted by count, smaller on top
+	    - **reverse_count**: or "rcount", sorted by count, largest on top
   - **facet_display_options**: options for the simple facet, usually enough to have "sort" and "checkbox"
   - TODO: list all available options
 
