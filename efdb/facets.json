@@ -15,17 +15,21 @@
     "fields_mapping": [
         {
             "name": "code",
-            "listing": { "title": "code", "visible" : false, "pos" : 0, "display": { "pre": "", "field": "code", "post": "</td>" } },
+            "listing": { "title": "code", "visible" : false, "pos" : 0 },
             "details": { "title": "code", "pos" : 0, "section": "info", "visible": false },
             "facet": { "visible": true, "title": "NFR - Sector", "pos": 0, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "code", "visible": false, "pos": 0 }
         },
+        { 
+           "name": "dummy", 
+            "listing": { "visible": true, "title": "", "pos": 1, "display": { "pre": "<a class='details_link' href='", "field": "Link", "post":"'>" } },
+            "facet": { "visible": false },
+            "csv_tsv": { "visible": false }
+        },
         {
             "name": "NFR",
-            "listing": { "title": "NFR", "visible" : true, "pos" : 0, "display": { "pre": "", "field": "NFR", "post": "</td>" } },
-            "details": { "title": "NFR", "pos" : 0, "section": "info", "visible": true },
-            "facet": { "visible": false },
-            "csv_tsv": { "title": "NFR", "visible": true, "pos": 0 }
+            "listing": { "visible": true, "title": "NFR", "pos": 2, "display": { "pre": "", "field": "NFR", "post":"</a></td>" } },
+            "csv_tsv": { "title": "NFR", "visible": true, "pos": 1 }
         },
         {
             "name": "Sector",
@@ -99,24 +103,24 @@
         },
         {
             "name": "CI_lower",
-            "listing": { "title": "CI_lower", "visible" : true, "pos" : 6 },
-            "details": { "title": "CI_lower", "pos" : 4, "section": "info", "visible": false },
+            "listing": { "title": "Confidence interval - lower", "visible" : true, "pos" : 6 },
+            "details": { "title": "Confidence interval - lower", "pos" : 4, "section": "info", "visible": false },
             "facet": { "visible": false },
            "csv_tsv": { "title": "CI_lower", "visible": true, "pos": 4 }
         },
         {
             "name": "CI_upper",
-            "listing": { "title": "CI_upper", "visible" : true, "pos" : 6 },
-            "details": { "title": "CI_upper", "pos" : 4, "section": "info", "visible": false },
+            "listing": { "title": "Confidence interval - upper", "visible" : true, "pos" : 6 },
+            "details": { "title": "Confidence interval - upper", "pos" : 4, "section": "info", "visible": false },
             "facet": { "visible": false },
            "csv_tsv": { "title": "CI_upper", "visible": true, "pos": 4 }
         },
         {
             "name": "Reference",
-            "listing": { "title": "Reference", "visible" : true, "pos" : 6 },
-            "details": { "title": "Reference", "pos" : 4, "section": "info", "visible": false },
+            "listing": { "title": "Reference", "visible" : true, "pos" : 10 },
+            "details": { "title": "Reference", "pos" : 10, "section": "info", "visible": false },
             "facet": { "visible": false },
-           "csv_tsv": { "title": "Reference", "visible": true, "pos": 4 }
+           "csv_tsv": { "title": "Reference", "visible": true, "pos": 10 }
         }
     ]
 }

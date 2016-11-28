@@ -4,7 +4,7 @@
 "NFR" : {"type" :"string", "analyzer" : "coma" },
 "Sector" : {"type" :"string", "analyzer" : "coma" },
 "Table" : {"type" :"string", "analyzer" : "coma" },
-"Type" : {"type" :"string" },
+"Type" : {"type" :"string" , "index": "not_analyzed"},
 "Technology" : {"type" :"string" },
 "Fuel" : {"type" :"string", "analyzer" : "coma" },
 "Abatement" : {"type" :"string" },
@@ -14,5 +14,6 @@
 "Unit" : {"type" :"string" },
 "CI_lower" : {"type" :"double" },
 "CI_upper " : {"type" :"double" },
-"Reference" : {"type" :"string" }
+"Reference" : {"type" :"string" },
+"Link" : {"type" :"string" }
 }

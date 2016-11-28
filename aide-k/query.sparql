@@ -1,20 +1,17 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX cr: <http://cr.eionet.europa.eu/ontologies/contreg.rdf#>
 PREFIX aq: <http://rdfdata.eionet.europa.eu/airquality/ontology/>
-PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX aqdd: <http://dd.eionet.europa.eu/property/>
-PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#> 
+PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
+PREFIX obligations: <http://rod.eionet.europa.eu/obligations/>
 
 SELECT DISTINCT
 
-md5(concat(?Country, xsd:string(?ReportingYear),?Namespace ,?MeasureId  ,?VersionId , ?CodeOfMeasure, ?Name, ?Description ,?MeasureClassification ,?MeasureType ,?AdministrativeLevel ,xsd:string(?TimeScale) ,xsd:string(?SpatialScale),?SourceSectors ,xsd:string(?EstimatedImplementationCosts) ,?Currency  ,?CommentOnCosts,?Status,xsd:string(?ImplementationBegin) ,xsd:string(?ImplementationEnd) ,xsd:string(?PlannedFullEffectDate) ,?MonitoringProgressIndicators ,xsd:string(?QuantityOfReducedEmissions),?CommentOnEmissionReductions ,xsd:string(?LevelOfConcentration) ,xsd:string(?NumberOfExceedances) ,xsd:string(?SpecificationOfHours) ,?CommentOnExpectedImpact ,xsd:string(?exceedanceAffectedURI) ,xsd:string(?usedForScenarioURI),?envelope
-)
-)  as ?_id
+md5(concat(?Country, xsd:string(?ReportingYear),?Namespace ,?MeasureId  ,?VersionId , ?CodeOfMeasure, ?Name, ?Description ,?MeasureClassification ,?MeasureType ,?AdministrativeLevel ,xsd:string(?TimeScale) ,xsd:string(?SpatialScale),?SourceSectors ,xsd:string(?EstimatedImplementationCosts) ,?Currency  ,?CommentOnCosts,?Status,xsd:string(?ImplementationBegin) ,xsd:string(?ImplementationEnd) ,xsd:string(?PlannedFullEffectDate) ,?MonitoringProgressIndicators ,xsd:string(?QuantityOfReducedEmissions),?CommentOnEmissionReductions ,xsd:string(?LevelOfConcentration) ,xsd:string(?NumberOfExceedances) ,xsd:string(?SpecificationOfHours) ,?CommentOnExpectedImpact ,xsd:string(?exceedanceAffectedURI) ,xsd:string(?usedForScenarioURI),?envelope))  as ?_id
 
 ?Country as ?CountryOrTerritory  
-?ReportingYear 
+YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear 
 ?Namespace 
 ?MeasureId 
 ?VersionId 
@@ -45,126 +42,73 @@ md5(concat(?Country, xsd:string(?ReportingYear),?Namespace ,?MeasureId  ,?Versio
 ?usedForScenarioURI as ?ScenariosId 
 ?envelope
 
- WHERE {
+WHERE {{
+  GRAPH ?source {
+    ?XMLURI a aq:AQD_Measures .
+    ?XMLURI aq:inspireId ?inspireURI .
+    ?XMLURI aq:code ?CodeOfMeasure .
+    ?XMLURI aq:name ?Name .
+    ?XMLURI aq:description ?Description .
+    ?XMLURI aq:classification ?classificationURI .
+    ?XMLURI aq:measureType ?measureTypeURI .
+    ?XMLURI aq:administrativeLevel ?administrativeLevelURI .
+    ?XMLURI aq:timeScale ?timeScaleURI .
+    ?XMLURI aq:spatialScale ?spatialScaleURI .
+    ?XMLURI aq:sourceSectors ?sourceSectorsURI .
+    ?XMLURI aq:plannedImplementation ?plannedImplementationURI .
+    ?XMLURI aq:reductionOfEmissions ?reductionOfEmissionsURI .
+  }
+  ?source dcterms:isPartOf ?envelope .
+  ?envelope rod:released ?released .
+  ?envelope rod:locality ?locality .
+  ?envelope rod:obligation ?obliURI .
+  ?envelope rod:startOfPeriod ?startOfPeriod .
+  ?envelope rod:endOfPeriod ?endOfPeriod .
 
-{
-SELECT DISTINCT 
-?Country 
-(YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear)
-?MeasureId 
-(max(?released) AS ?released) 
+  OPTIONAL {?XMLURI aq:costs ?costsURI} .
+  OPTIONAL{?XMLURI aq:expectedImpact ?expectedImpactURI} .
+  OPTIONAL{?XMLURI aq:exceedanceAffected ?exceedanceAffectedURI} .
+  OPTIONAL{?XMLURI aq:usedForScenario ?usedForScenarioURI} .
 
-WHERE {
-?envelope rod:released ?released ;
-          rod:endOfPeriod ?endOfPeriod ;
-          rod:obligation <http://rod.eionet.europa.eu/obligations/683> ; 
-          rod:hasFile ?source ;
-          rod:locality ?locality .
+  ?classificationURI rdfs:label ?MeasureClassification .
+  ?measureTypeURI rdfs:label ?MeasureType .
+  ?administrativeLevelURI rdfs:label ?AdministrativeLevel .
+  ?timeScaleURI rdfs:label ?TimeScale .
+  ?spatialScaleURI rdfs:label ?SpatialScale .
+  ?sourceSectorsURI rdfs:label ?SourceSectors .
 
-?locality rod:localityName ?Country .
+  OPTIONAL{?costsURI aq:comment ?CommentOnCosts} .
+  OPTIONAL{?costsURI aq:estimatedImplementationCosts ?estimatedImplementationCosts} .
+  OPTIONAL{?costsURI aq:currency ?currencyURI} .
+  OPTIONAL{?currencyURI rdfs:label ?Currency} .
 
-{SELECT 
-?measuresXMLURI
-?MeasureId
-(IRI(substr(str(?measuresXMLURI),1,bif:strchr(str(?measuresXMLURI),"#"))) AS ?source) 
+  OPTIONAL{?plannedImplementationURI aq:status ?statusURI} .
+  OPTIONAL{?plannedImplementationURI aq:implementationPlannedTimePeriod ?implementationPlannedTimePeriodURI} .
+  OPTIONAL{?plannedImplementationURI aq:plannedFullEffectDate ?plannedFullEffectDateURI} .
+  OPTIONAL{?plannedImplementationURI aq:comment ?CommentOnImplementation} .
+  OPTIONAL{?plannedImplementationURI aq:monitoringProgressIndicators ?MonitoringProgressIndicators} .
 
-WHERE {
-?measuresXMLURI a aq:AQD_Measures ;
-              aq:inspireId ?inspireURI .
-?inspireURI aq:localId ?MeasureId .
-}
-}
-}
-}
+  OPTIONAL{?statusURI rdfs:label ?Status} .
+  OPTIONAL{?plannedFullEffectDateURI rdfs:label ?PlannedFullEffectDate} .
+  OPTIONAL{?implementationPlannedTimePeriodURI aq:beginPosition ?ImplementationBegin} .
+  OPTIONAL{?implementationPlannedTimePeriodURI aq:endPosition ?ImplementationEnd} .
 
-{
-SELECT DISTINCT 
-?Country 
-(YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear)
-?measuresXMLURI
-?MeasureId 
-?released
-?envelope
+  OPTIONAL{?reductionOfEmissionsURI aq:quantity ?QuantityOfReducedEmissions} .
+  OPTIONAL{?reductionOfEmissionsURI aq:comment ?CommentOnEmissionReductions} .
+  #OPTIONAL{?reductionOfEmissionsURI aq:unit ?unitURI} .
 
-WHERE {
-?envelope rod:released ?released ;
-          rod:endOfPeriod ?endOfPeriod ;
-          rod:obligation <http://rod.eionet.europa.eu/obligations/683> ; 
-          rod:hasFile ?source ;
-          rod:locality ?locality .
+  OPTIONAL{?expectedImpactURI aq:levelOfConcentration ?LevelOfConcentration} .
+  OPTIONAL{?expectedImpactURI aq:numberOfExceedances ?NumberOfExceedances} .
+  OPTIONAL{?expectedImpactURI aq:specificationOfHours ?SpecificationOfHours} .
+  OPTIONAL{?expectedImpactURI aq:comment ?CommentOnExpectedImpact} .
+ 
+  ?locality rod:localityName ?Country .
+  ?obliURI rdfs:label ?Obligation .
 
-?locality rod:localityName ?Country .
+  ?inspireURI aq:namespace ?Namespace .
+  ?inspireURI aq:localId ?MeasureId .
+  ?inspireURI aq:versionId ?VersionId .
 
-{SELECT 
-?measuresXMLURI
-?MeasureId 
-(IRI(substr(str(?measuresXMLURI),1,bif:strchr(str(?measuresXMLURI),"#"))) AS ?source) 
-
-WHERE {
-?measuresXMLURI a aq:AQD_Measures ;
-              aq:inspireId ?inspireURI .
-?inspireURI aq:localId ?MeasureId .
-}
-}
-}
-}
-
-
-?measuresXMLURI a aq:AQD_Measures ;
-                     aq:inspireId ?inspireURI ;
-                     aq:code ?CodeOfMeasure ;
-                     aq:name ?Name ;
-                     aq:description ?Description ;
-                     aq:classification ?classificationURI ;
-                     aq:measureType ?measureTypeURI ;
-                     aq:administrativeLevel ?administrativeLevelURI ;
-                     aq:timeScale ?timeScaleURI ;
-                     aq:spatialScale ?spatialScaleURI ;
-                     aq:sourceSectors ?sourceSectorsURI ;
-                     aq:costs ?costsURI ;
-                     aq:plannedImplementation ?plannedImplementationURI ;
-                     aq:reductionOfEmissions ?reductionOfEmissionsURI .
-
-OPTIONAL{?measuresXMLURI aq:expectedImpact ?expectedImpactURI} .
-OPTIONAL{?measuresXMLURI aq:exceedanceAffected ?exceedanceAffectedURI} .
-OPTIONAL{?measuresXMLURI aq:usedForScenario ?usedForScenarioURI} .
-
-?classificationURI rdfs:label ?MeasureClassification .
-?measureTypeURI rdfs:label ?MeasureType .
-?administrativeLevelURI rdfs:label ?AdministrativeLevel .
-?timeScaleURI rdfs:label ?TimeScale .
-?spatialScaleURI rdfs:label ?SpatialScale .
-?sourceSectorsURI rdfs:label ?SourceSectors .
-
-OPTIONAL{?costsURI aq:comment ?CommentOnCosts} .
-OPTIONAL{?costsURI aq:estimatedImplementationCosts ?estimatedImplementationCosts} .
-OPTIONAL{?costsURI aq:currency ?currencyURI} .
-OPTIONAL{?currencyURI rdfs:label ?Currency} .
-
-OPTIONAL{?plannedImplementationURI aq:status ?statusURI} .
-OPTIONAL{?plannedImplementationURI aq:implementationPlannedTimePeriod ?implementationPlannedTimePeriodURI} .
-OPTIONAL{?plannedImplementationURI aq:plannedFullEffectDate ?plannedFullEffectDateURI} .
-OPTIONAL{?plannedImplementationURI aq:comment ?CommentOnImplementation} .
-OPTIONAL{?plannedImplementationURI aq:monitoringProgressIndicators ?MonitoringProgressIndicators} .
-
-OPTIONAL{?statusURI rdfs:label ?Status} .
-OPTIONAL{?plannedFullEffectDateURI rdfs:label ?PlannedFullEffectDate} .
-OPTIONAL{?implementationPlannedTimePeriodURI aq:beginPosition ?ImplementationBegin} .
-OPTIONAL{?implementationPlannedTimePeriodURI aq:endPosition ?ImplementationEnd} .
-
-OPTIONAL{?reductionOfEmissionsURI aq:quantity ?QuantityOfReducedEmissions} .
-OPTIONAL{?reductionOfEmissionsURI aq:comment ?CommentOnEmissionReductions} .
-#OPTIONAL{?reductionOfEmissionsURI aq:unit ?unitURI} .
-
-OPTIONAL{?expectedImpactURI aq:levelOfConcentration ?LevelOfConcentration} .
-OPTIONAL{?expectedImpactURI aq:numberOfExceedances ?NumberOfExceedances} .
-OPTIONAL{?expectedImpactURI aq:specificationOfHours ?SpecificationOfHours} .
-OPTIONAL{?expectedImpactURI aq:comment ?CommentOnExpectedImpact} .
-
-?inspireURI aq:namespace ?Namespace ;
-            aq:localId ?MeasureId ;
-            aq:versionId ?VersionId .
-
-#FILTER regex(?Country,"Belgium") .
-  
-}
+  #FILTER (?envelope = <http://cdr.eionet.europa.eu/bg/eu/aqd/k/envvjk7zg>)
+  FILTER (?envelope = <<envelope>>)
+}}

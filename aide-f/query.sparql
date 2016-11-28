@@ -14,6 +14,7 @@ md5(concat(?CountryOrTerritory, ?Namespace, xsd:string(?StationLocalId_URI), xsd
 #?statsURI as ?_id
 ?CountryOrTerritory
 ?Namespace
+year(?BeginPosition) as ?ReportingYear
 replace(replace(replace(str(?StationLocalId_URI),"http://reference.eionet.europa.eu/aq/",""),?Namespace,""),"/","") as ?StationLocalId
 replace(replace(replace(str(?SamplingPointLocalId_URI),"http://reference.eionet.europa.eu/aq/",""),?Namespace,""),"/","") as ?SamplingPointLocalId
 #?Station_Latitude
@@ -34,41 +35,38 @@ replace(replace(replace(str(?SamplingPointLocalId_URI),"http://reference.eionet.
 ?TimeCoverage
 ?UpdateTime
 
-
 WHERE {
 
-?statsURI a aqr:ValidatedExceedence ;
-            aqr:inspireNamespace ?Namespace ;
-            aqr:station ?StationLocalId_URI ;
-            aqr:samplingPoint ?SamplingPointLocalId_URI ;
-            aqr:station_lat ?Station_Latitude ;  
-            aqr:station_lon ?Station_Longitude ;
-            aqr:samplingpoint_lat ?SamplingPoint_Latitude ;
-            aqr:samplingpoint_lon ?SamplingPoint_Longitude ;
-            aqr:pollutant ?Pollutant_URI ;
-            aqr:aggregationType ?AggregationType_URI ; 
-            aqr:airqualityValue ?AQValue ;
-            aqr:unit ?Unit_URI ;
-            aqr:beginPosition ?BeginPosition ;
-            aqr:endPosition ?EndPosition ;
-            aqr:observationValidity ?Validity_URI ;
-            aqr:observationVerification ?Verification_URI ;
-            aqr:datacoveragePct ?DataCoverage ;
-            aqr:datacapturePct ?DataCapture ;
-            aqr:timecoveragePct ?TimeCoverage ;                  
-            aqr:inserted ?UpdateTime .
+  ?statsURI a aqr:ValidatedExceedence .
+  ?statsURI aqr:inspireNamespace ?Namespace .
+  ?statsURI aqr:station ?StationLocalId_URI .
+  ?statsURI aqr:samplingPoint ?SamplingPointLocalId_URI .
+  ?statsURI aqr:station_lat ?Station_Latitude . 
+  ?statsURI aqr:station_lon ?Station_Longitude .
+  ?statsURI aqr:samplingpoint_lat ?SamplingPoint_Latitude .
+  ?statsURI aqr:samplingpoint_lon ?SamplingPoint_Longitude .
+  ?statsURI aqr:pollutant ?Pollutant_URI .
+  ?statsURI aqr:aggregationType ?AggregationType_URI .
+  ?statsURI aqr:airqualityValue ?AQValue .
+  ?statsURI aqr:unit ?Unit_URI .
+  ?statsURI aqr:beginPosition ?BeginPosition .
+  ?statsURI aqr:endPosition ?EndPosition .
+  ?statsURI aqr:observationValidity ?Validity_URI .
+  ?statsURI aqr:observationVerification ?Verification_URI .
+  ?statsURI aqr:datacoveragePct ?DataCoverage .
+  ?statsURI aqr:datacapturePct ?DataCapture .
+  ?statsURI aqr:timecoveragePct ?TimeCoverage .
+  ?statsURI aqr:inserted ?UpdateTime .
 
-?Pollutant_URI rdfs:label ?Pollutant .
-?AggregationType_URI rdfs:label ?AggregationType .
-?Validity_URI rdfs:label ?Validity .
-?Verification_URI rdfs:label ?Verification .
+  ?Pollutant_URI rdfs:label ?Pollutant .
+  ?AggregationType_URI rdfs:label ?AggregationType .
+  ?Validity_URI rdfs:label ?Validity .
+  ?Verification_URI rdfs:label ?Verification .
 
-?namespaces skos:inScheme <http://dd.eionet.europa.eu/vocabulary/aq/namespace/> .
-?namespaces rdfs:label ?Namespace .
-?namespaces dd:inCountry ?cntry_URI .
-?cntry_URI rdfs:label ?CountryOrTerritory .
+  ?namespaces rdfs:label ?Namespace .
+  ?namespaces skos:inScheme <http://dd.eionet.europa.eu/vocabulary/aq/namespace/> .
+  ?namespaces dd:inCountry ?cntry_URI .
+  ?cntry_URI rdfs:label ?CountryOrTerritory .
 
-FILTER (?Namespace = '<Namespace>') 
 }
-
-
+LIMIT 80000 OFFSET <offset>

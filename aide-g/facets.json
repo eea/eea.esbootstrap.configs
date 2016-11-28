@@ -59,7 +59,7 @@
             "name": "ResidentPopulation",
             "listing": { "title": "Resident Population", "visible" : true, "pos" : 8 },
             "details": { "title": "ResidentPopulation", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Resident Population", "pos": 6, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": false },
           "csv_tsv": { "title": "ResidentPopulation", "visible": true, "pos": 4 }
         },
         {

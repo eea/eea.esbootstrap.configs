@@ -69,3 +69,4 @@ WHERE {
 ?cntry_URI rdfs:label ?CountryOrTerritory .
 
 }
+LIMIT 5000 OFFSET <offset>

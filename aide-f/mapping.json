@@ -1,5 +1,6 @@
 {
 "_id" : {"type" :"string", "analyzer" : "none" },
+"CountryOrTerritory" : {"type" :"string", "analyzer" : "coma" },
 "title" : {"type" :"string", "analyzer" : "coma" },
 "Namespace" : {"type" :"string" },
 "ReportingYear" : {"type" :"integer" },

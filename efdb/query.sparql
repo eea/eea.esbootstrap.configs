@@ -17,6 +17,7 @@ concat(?NFR, ' ', ?Sector) as ?code
 ?CI_lower
 ?CI_upper
 ?Reference
+?Link
 FROM <http://semantic.eea.europa.eu/project/EFDB/EFDB_2016.tsv>
 WHERE {
  _:rec tableFile:_id ?_id .
@@ -34,4 +35,6 @@ WHERE {
  OPTIONAL { _:rec tableFile:CI_lower ?CI_lower } .
  OPTIONAL { _:rec tableFile:CI_upper ?CI_upper } .
  OPTIONAL { _:rec tableFile:Reference ?Reference } .
+ OPTIONAL { _:rec tableFile:Link ?Link } .
 }
+ORDER BY ?code

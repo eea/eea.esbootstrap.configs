@@ -1,0 +1,87 @@
+PREFIX cr: <http://cr.eionet.europa.eu/ontologies/contreg.rdf#>
+
+SELECT DISTINCT ?offset WHERE
+{{
+    ?bookmark a cr:SparqlBookmark
+    { SELECT 0 AS ?offset {} }
+    UNION
+    { SELECT 5000 AS ?offset {} }
+    UNION
+    {  SELECT 10000 AS ?offset {} }
+    UNION
+    {  SELECT 15000 AS ?offset {} }
+    UNION
+    {  SELECT 20000 AS ?offset {} }
+    UNION
+    {  SELECT 25000 AS ?offset {} }
+    UNION
+    {  SELECT 30000 AS ?offset {} }
+    UNION
+    {  SELECT 35000 AS ?offset {} }
+    UNION
+    {  SELECT 40000 AS ?offset {} }
+    UNION
+    {  SELECT 45000 AS ?offset {} }
+    UNION
+    {  SELECT 50000 AS ?offset {} }
+    UNION
+    {  SELECT 55000 AS ?offset {} }
+    UNION
+    {  SELECT 60000 AS ?offset {} }
+    UNION
+    {  SELECT 65000 AS ?offset {} }
+    UNION
+    {  SELECT 70000 AS ?offset {} }
+    UNION
+    {  SELECT 75000 AS ?offset {} }
+    UNION
+    {  SELECT 80000 AS ?offset {} }
+    UNION
+    {  SELECT 85000 AS ?offset {} }
+    UNION
+    {  SELECT 90000 AS ?offset {} }
+    UNION
+    {  SELECT 95000 AS ?offset {} }
+    UNION
+    {  SELECT 100000 AS ?offset {} }
+    UNION
+    {  SELECT 105000 AS ?offset {} }
+    UNION
+    {  SELECT 110000 AS ?offset {} }
+    UNION
+    {  SELECT 115000 AS ?offset {} }
+    UNION
+    {  SELECT 120000 AS ?offset {} }
+    UNION
+    {  SELECT 125000 AS ?offset {} }
+    UNION
+    {  SELECT 130000 AS ?offset {} }
+    UNION
+    {  SELECT 135000 AS ?offset {} }
+    UNION
+    {  SELECT 140000 AS ?offset {} }
+    UNION
+    {  SELECT 145000 AS ?offset {} }
+    UNION
+    {  SELECT 150000 AS ?offset {} }
+    UNION
+    {  SELECT 155000 AS ?offset {} }
+    UNION
+    {  SELECT 1600000 AS ?offset {} }
+    UNION
+    {  SELECT 165000 AS ?offset {} }
+    UNION
+    {  SELECT 170000 AS ?offset {} }
+    UNION
+    {  SELECT 175000 AS ?offset {} }
+    UNION
+    {  SELECT 180000 AS ?offset {} }
+    UNION
+    {  SELECT 185000 AS ?offset {} }
+    UNION
+    {  SELECT 190000 AS ?offset {} }
+    UNION
+    {  SELECT 195000 AS ?offset {} }
+    UNION
+    {  SELECT 200000 AS ?offset {} }
+}}

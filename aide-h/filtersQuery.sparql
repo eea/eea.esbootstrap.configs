@@ -1,0 +1,43 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
+PREFIX obligation: <http://rod.eionet.europa.eu/obligations/>
+PREFIX aq: <http://rdfdata.eionet.europa.eu/airquality/ontology/>
+
+SELECT DISTINCT
+?envelope
+WHERE {{
+  SELECT DISTINCT
+    ?Country
+    YEAR(?endOfPeriod) as ?reportingYear
+    max(?released) as ?released
+    ?PlanId
+  WHERE {
+    ?envelope rod:released ?released .
+    ?envelope rod:endOfPeriod ?endOfPeriod .
+    ?envelope rod:obligation ?obligation .
+    ?envelope rod:hasFile ?source .
+    ?envelope rod:locality ?locality .
+    FILTER (?obligation = obligation:680) 
+    ?locality rod:localityName ?Country .
+
+
+{SELECT 
+?XMLURI
+?PlanId 
+(IRI(substr(str(?XMLURI),1,bif:strchr(str(?XMLURI),"#"))) AS ?source) 
+
+WHERE {
+?XMLURI a aq:AQD_Plan ;
+          aq:inspireId ?inspireURI .
+?inspireURI aq:localId ?PlanId .
+}
+}
+
+
+
+  } GROUP BY ?Country YEAR(?endOfPeriod) ?PlanId
+}
+?envelope rod:released ?released .
+?envelope rdf:type rod:Delivery .
+}
+ORDER BY ?endOfPeriod ?Country

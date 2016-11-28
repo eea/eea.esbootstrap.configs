@@ -80,7 +80,7 @@
             "name": "AQValue",
             "listing": { "title": "AQ Value", "visible" : true, "pos" : 13 },
             "details": { "title": "AQValue", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": false },
+            "facet": { "visible": true, "title": "AQ Value", "pos": 5, "type": "range", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "AQValue", "visible": true, "pos": 4 }
         },
         {
@@ -108,35 +108,35 @@
             "name": "Validity",
             "listing": { "title": "Validity", "visible" : true, "pos" : 14 },
             "details": { "title": "Validity", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Validity", "pos": 5, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Validity", "pos": 6, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "Validity", "visible": true, "pos": 4 }
         },
         {
             "name": "Verification",
             "listing": { "title": "Verification", "visible" : true, "pos" : 15 },
             "details": { "title": "Verification", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Verification", "pos": 6, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Verification", "pos": 7, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "Verification", "visible": true, "pos": 4 }
         },
         {
             "name": "DataCoverage",
             "listing": { "title": "Data Coverage", "visible" : true, "pos" : 17 },
             "details": { "title": "DataCoverage", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": false },
+            "facet": { "visible": true, "title": "Data Coverage", "pos": 8, "type": "range", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "DataCoverage", "visible": true, "pos": 4 }
         },
         {
             "name": "DataCapture",
             "listing": { "title": "Data Capture", "visible" : true, "pos" : 18},
             "details": { "title": "DataCapture", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": false },
+            "facet": { "visible": true, "title": "Data Capture", "pos": 9, "type": "range", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "DataCapture", "visible": true, "pos": 4 }
         },
         {
             "name": "TimeCoverage",
             "listing": { "title": "Time Coverage", "visible" : true, "pos" : 19},
             "details": { "title": "TimeCoverage", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": false },
+            "facet": { "visible": true, "title": "Time Coverage", "pos": 10, "type": "range", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "TimeCoverage", "visible": true, "pos": 4 }
         },
         {

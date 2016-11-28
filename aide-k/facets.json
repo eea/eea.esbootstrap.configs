@@ -225,7 +225,7 @@
         },
         {
             "name": "envelope",
-            "listing": { "title": "Envelope URL", "visible" : true, "pos" : 19 },
+            "listing": { "title": "Envelope URL", "visible" : true, "pos" : 32 },
             "details": { "title": "envelope", "pos" : 4, "section": "info", "visible": false },
             "facet": { "visible": false },
             "csv_tsv": { "title": "envelope", "visible": true, "pos": 4 }

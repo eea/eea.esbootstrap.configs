@@ -4,7 +4,7 @@
 "AssessmentId" : {"type" :"string" },
 "Namespace" : {"type" :"string" },
 "Pollutant" : {"type" :"string", "analyzer" : "coma" },
-"ZoneId" : {"type" :"string" },
+"ZoneId" : {"type" :"string", "analyzer" : "coma" },
 "ReportingYear" : {"type" :"integer" },
 "ObjectiveType" : {"type" :"string", "analyzer" : "coma" },
 "ReportingMetric" : {"type" :"string", "analyzer" : "coma" },

@@ -1,22 +1,20 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX cr: <http://cr.eionet.europa.eu/ontologies/contreg.rdf#>
 PREFIX aq: <http://rdfdata.eionet.europa.eu/airquality/ontology/>
-PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
+PREFIX obligations: <http://rod.eionet.europa.eu/obligations/>
 PREFIX aqdd: <http://dd.eionet.europa.eu/property/>
-PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#> 
 
 SELECT DISTINCT
 
-md5(concat(?Country, xsd:string(?ReportingYear),xsd:string(?referenceYear),?Namespace ,?SourceApportionmentId ,?VersionId ,?ReasonOfExceedance, xsd:string(?NumericalExceedance) ,xsd:string(?NumberOfExceedances) ,xsd:string(?TotalIncrementQuantity),?TotalIncrementComment ,xsd:string(?TotalRegionalQuantity) ,?TotalRegionalComment,xsd:string(?TotalUrbanQuantity) ,?TotalUrbanComment ,?Comment ,?AttainmentId ,?PlanId ,?envelope
-)
-)  as ?_id
+md5(concat(?Country, xsd:string(?ReportingYear),xsd:string(?referenceYear),?Namespace ,?SourceApportionmentId ,?VersionId ,?ReasonOfExceedance, xsd:string(?NumericalExceedance) ,xsd:string(?NumberOfExceedances) ,xsd:string(?TotalIncrementQuantity),?TotalIncrementComment ,xsd:string(?TotalRegionalQuantity) ,?TotalRegionalComment,xsd:string(?TotalUrbanQuantity) ,?TotalUrbanComment ,?Comment ,?AttainmentId ,?PlanId ,?envelope))  as ?_id
 
-#?sourceappXMLURI
+#?XMLURI
 #bif:concat(xsd:string(YEAR(?endOfPeriod)), '-', ?SourceApportionmentId ) as ?_id
 ?Country as ?CountryOrTerritory 
-?ReportingYear 
+YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear
 ?referenceYear
 ?Namespace 
 ?SourceApportionmentId 
@@ -31,111 +29,58 @@ md5(concat(?Country, xsd:string(?ReportingYear),xsd:string(?referenceYear),?Name
 ?TotalUrbanQuantity 
 ?TotalUrbanComment 
 ?Comment 
-?AttainmentId 
-?PlanId 
+replace(replace(replace(str(?AttainmentId),"http://reference.eionet.europa.eu/aq/",""),?Namespace ,""),"/","") as ?AttainmentId 
+replace(replace(replace(str(?PlanId),"http://reference.eionet.europa.eu/aq/",""),?Namespace ,""),"/","") as ?PlanId  
 ?envelope
 
- WHERE {
+WHERE {{
+  GRAPH ?source {
+    ?XMLURI a aq:AQD_SourceApportionment .
+    ?XMLURI aq:macroExceedanceSituation ?macroURI .
+    ?XMLURI aq:usedInPlan ?PlanId .
+    ?XMLURI aq:inspireId ?inspireURI .
+  }
+  ?source dcterms:isPartOf ?envelope .
+  ?envelope rod:released ?released .
+  ?envelope rod:locality ?locality .
+  ?envelope rod:obligation ?obliURI .
+  ?envelope rod:startOfPeriod ?startOfPeriod .
+  ?envelope rod:endOfPeriod ?endOfPeriod .
 
-{
-SELECT DISTINCT 
-?Country 
-(YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear)
-?SourceApportionmentId 
-(max(?released) AS ?released) 
+  OPTIONAL {?XMLURI aq:localIncrement ?incrementURI} .
+  OPTIONAL {?XMLURI aq:urbanBackground ?urbanURI} .
+  OPTIONAL {?XMLURI aq:regionalBackground ?regURI} .
+  OPTIONAL {?XMLURI aq:parentExceedanceSituation ?AttainmentId} .
 
-WHERE {
-?envelope rod:released ?released ;
-          rod:endOfPeriod ?endOfPeriod ;
-          rod:obligation <http://rod.eionet.europa.eu/obligations/681> ; 
-          rod:hasFile ?source ;
-          rod:locality ?locality .
+  OPTIONAL {?XMLURI aq:comment ?Comment} .
+  OPTIONAL {?XMLURI aq:referenceYear ?referenceYearURI} .
+  OPTIONAL {?referenceYearURI rdfs:label ?referenceYear} .
 
-?locality rod:localityName ?Country .
+  OPTIONAL {?incrementURI aq:total ?totalincrementURI} .
+  OPTIONAL {?regURI aq:total ?totalregURI} .
+  OPTIONAL {?urbanURI aq:total ?totalurbanURI} .
 
-{SELECT 
-?sourceappXMLURI
-?SourceApportionmentId 
-(IRI(substr(str(?sourceappXMLURI),1,bif:strchr(str(?sourceappXMLURI),"#"))) AS ?source) 
+  OPTIONAL {?totalincrementURI aq:comment ?TotalIncrementComment} .
+  OPTIONAL {?totalincrementURI aq:quantity ?TotalIncrementQuantity} . 
 
-WHERE {
-?sourceappXMLURI a aq:AQD_SourceApportionment ;
-              aq:inspireId ?inspireURI .
-?inspireURI aq:localId ?SourceApportionmentId .
-}
-}
-}
-}
+  OPTIONAL {?totalregURI aq:comment ?TotalRegionalComment} .
+  OPTIONAL {?totalregURI aq:quantity ?TotalRegionalQuantity} . 
 
-{
-SELECT DISTINCT 
-?Country 
-(YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear)
-?sourceappXMLURI
-?SourceApportionmentId
-?released
-?envelope
+  OPTIONAL {?totalurbanURI aq:comment ?TotalUrbanComment} .
+  OPTIONAL {?totalurbanURI aq:quantity ?TotalUrbanQuantity} . 
 
-WHERE {
-?envelope rod:released ?released ;
-          rod:endOfPeriod ?endOfPeriod ;
-          rod:obligation <http://rod.eionet.europa.eu/obligations/681> ; 
-          rod:hasFile ?source ;
-          rod:locality ?locality .
+  OPTIONAL {?macroURI aq:reason ?reasonURI} . 
+  OPTIONAL {?reasonURI rdfs:label ?ReasonOfExceedance} .
+  OPTIONAL {?macroURI aq:numericalExceedance ?NumericalExceedance} . 
+  OPTIONAL {?macroURI aq:numberExceedances ?NumberOfExceedances} . 
 
-?locality rod:localityName ?Country .
+  ?inspireURI aq:namespace ?Namespace .
+  ?inspireURI aq:localId ?SourceApportionmentId .
+  ?inspireURI  aq:versionId ?VersionId .
 
-{SELECT 
-?sourceappXMLURI
-?SourceApportionmentId 
-(IRI(substr(str(?sourceappXMLURI),1,bif:strchr(str(?sourceappXMLURI),"#"))) AS ?source) 
+  ?locality rod:localityName ?Country .
+  ?obliURI rdfs:label ?Obligation .
 
-WHERE {
-?sourceappXMLURI a aq:AQD_SourceApportionment ;
-              aq:inspireId ?inspireURI .
-?inspireURI aq:localId ?SourceApportionmentId .
-}
-}
-}
-}
-
-
-
-
-   ?sourceappXMLURI a aq:AQD_SourceApportionment ;
-                      aq:macroExceedanceSituation ?macroURI ;
-                      aq:usedInPlan ?PlanId ;
-                      aq:inspireId ?inspireURI . 
-
-OPTIONAL {?sourceappXMLURI aq:localIncrement ?incrementURI} .
-OPTIONAL {?sourceappXMLURI aq:urbanBackground ?urbanURI} .
-OPTIONAL {?sourceappXMLURI aq:regionalBackground ?regURI} .
-OPTIONAL {?sourceappXMLURI aq:parentExceedanceSituation ?AttainmentId} .
-
-OPTIONAL {?sourceappXMLURI aq:comment ?Comment} .
-OPTIONAL {?sourceappXMLURI aq:referenceYear ?referenceYearURI} .
-OPTIONAL {?referenceYearURI rdfs:label ?referenceYear} .
-
-OPTIONAL {?incrementURI aq:total ?totalincrementURI} .
-OPTIONAL {?regURI aq:total ?totalregURI} .
-OPTIONAL {?urbanURI aq:total ?totalurbanURI} .
-
-OPTIONAL {?totalincrementURI aq:comment ?TotalIncrementComment} .
-OPTIONAL {?totalincrementURI aq:quantity ?TotalIncrementQuantity} . 
-
-OPTIONAL {?totalregURI aq:comment ?TotalRegionalComment} .
-OPTIONAL {?totalregURI aq:quantity ?TotalRegionalQuantity} . 
-
-OPTIONAL {?totalurbanURI aq:comment ?TotalUrbanComment} .
-OPTIONAL {?totalurbanURI aq:quantity ?TotalUrbanQuantity} . 
-
-OPTIONAL {?macroURI aq:reason ?reasonURI} . 
-OPTIONAL {?reasonURI rdfs:label ?ReasonOfExceedance} .
-OPTIONAL {?macroURI aq:numericalExceedance ?NumericalExceedance} . 
-OPTIONAL {?macroURI aq:numberExceedances ?NumberOfExceedances} . 
-
-?inspireURI aq:namespace ?Namespace ;
-            aq:localId ?SourceApportionmentId ;
-            aq:versionId ?VersionId .
-
-}
+  #FILTER (?envelope = <http://cdr.eionet.europa.eu/bg/eu/aqd/i/envvnkgpw>)
+  FILTER (?envelope = <<envelope>>)
+}}

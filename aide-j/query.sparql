@@ -30,8 +30,8 @@ md5(concat(?Country, xsd:string(?ReportingYear),xsd:string(?AttainmentYear),?Nam
 ?ProjectionComment 
 ?ProjectionEmissions 
 ?ProjectionExpectedConcentration 
-?SourceApportionmentId 
-?PlanId 
+replace(replace(replace(str(?SourceApportionmentId),"http://reference.eionet.europa.eu/aq/",""),?Namespace ,""),"/","") as ?SourceApportionmentId
+replace(replace(replace(str(?PlanId),"http://reference.eionet.europa.eu/aq/",""),?Namespace ,""),"/","") as ?PlanId 
 ?envelope
 
 
