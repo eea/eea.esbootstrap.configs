@@ -2,22 +2,24 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX cr: <http://cr.eionet.europa.eu/ontologies/contreg.rdf#>
-PREFIX aq: <http://rdfdata.eionet.europa.eu/airquality/ontology/> ## I use 'aq' as ref to rdf.data.eionet.europa.eu
-#PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/> ## no ref to the reference.eionet.europa.eu
+PREFIX aq: <http://rdfdata.eionet.europa.eu/airquality/ontology/>
 PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
+PREFIX obligations: <http://rod.eionet.europa.eu/obligations/>
 
 SELECT DISTINCT
+
 md5(concat(?Country, ?ZoneCode, ?LocalId, ?Namespace, ?GeographicalName, xsd:string(?startOfPeriod), xsd:string(?BeginTime), ?AQDZoneType, xsd:string(?ResidentPopulation), xsd:string(?ResidentPopulationYear), xsd:string(?Area), ?TimeExtensionExemption, ?Pollutant, ?ProtectionTarget, ?CompetentAuthority, ?ContactName, ?Telephone, ?Address, ?Email, ?Website, ?envelope))  as ?_id
 
-#?zoneXMLURI ## I use the URIs to identify structure and locations
+#?XMLURI
+#?source     
+#?envelope     
+#?obliURI     
 ?Country as ?CountryOrTerritory 
 ?ZoneCode
 ?LocalId as ?ZoneId
 ?Namespace
 YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear 
 ?GeographicalName
-#(xsd:date(?BeginTime) AS ?BeginTime)
-#(xsd:date(?EndTime) AS ?EndTime)
 ?BeginTime
 ?EndTime
 ?AQDZoneType
@@ -35,96 +37,51 @@ YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear
 ?Website
 ?envelope
 
+WHERE {{
+  GRAPH ?source {
+    ?XMLURI a aq:AQD_Zone .
+    ?XMLURI aq:inspireId ?inspireURI .
+    ?XMLURI aq:name ?GeographicalName .
+    ?XMLURI aq:zoneCode ?ZoneCode .
+    ?XMLURI aq:aqdZoneType ?aqdzonetype .
+    ?XMLURI aq:residentPopulation ?ResidentPopulation .
+    ?XMLURI aq:area ?Area .
+    ?XMLURI aq:designationPeriod ?timeURI .
+    ?XMLURI aq:pollutants ?polltargetURI .
+  }
+  ?source dcterms:isPartOf ?envelope .
+  ?envelope rod:released ?released .
+  ?envelope rod:locality ?locality .
+  ?envelope rod:obligation ?obliURI .
+  ?envelope rod:startOfPeriod ?startOfPeriod .
 
-WHERE {
+  ?inspireURI aq:localId ?LocalId .
+  ?inspireURI aq:namespace ?Namespace .
+  ?polltargetURI aq:protectionTarget ?Protection .
+  ?polltargetURI aq:pollutantCode ?pollURI .
+  ?pollURI skos:notation ?Pollutant .
+  ?Protection rdfs:label ?ProtectionTarget .
+  ?aqdzonetype rdfs:label ?AQDZoneType .
+  ?timeURI aq:beginPosition ?BeginTime .
 
-{SELECT DISTINCT
-?zoneXMLURI 
-(IRI(substr(str(?zoneXMLURI ),1,bif:strchr(str(?zoneXMLURI),"#"))) AS ?source) 
-##(IRI(substr(str(?zoneXMLURI),1,49)) AS ?envelope) ## first 49 characters of the URI of the item as ?envelope
+  OPTIONAL{?timeURI aq:endPosition ?EndTime} .
+  OPTIONAL{?XMLURI aq:residentPopulationYear ?popYearURI} .
+  OPTIONAL{?popYearURI rdfs:label ?ResidentPopulationYear} .
 
-##bif:either(
-##substr(str(?zoneXMLURI),1,30) ="http://cdr.eionet.europa.eu/de",
-##IRI(substr(str(?zoneXMLURI),1,59)),
-##IRI(substr(str(?zoneXMLURI),1,49))
-##) #1st bif
-##AS ?envelope
+  OPTIONAL{?XMLURI aq:timeExtensionExemption ?timeextensionexemptionURI} .
+  OPTIONAL{?timeextensionexemptionURI rdfs:label ?TimeExtensionExemption} .
+  OPTIONAL{?XMLURI aq:competentAuthority ?CompetentAuthorityURI} .
+  OPTIONAL{?CompetentAuthorityURI rdfs:label ?CompetentAuthority} .
+  OPTIONAL{?CompetentAuthorityURI aq:individualName ?ContactName} .
+  OPTIONAL{?CompetentAuthorityURI aq:contact ?ContactURI} .
+  OPTIONAL{?ContactURI aq:address ?AddressURI} .
+  OPTIONAL{?AddressURI aq:adminUnit ?Address} .
+  OPTIONAL{?ContactURI aq:electronicMailAddress ?Email} .
+  OPTIONAL{?ContactURI aq:telephoneVoice ?Telephone} .
+  OPTIONAL{?ContactURI aq:website ?Website} .
 
+  ?locality rod:localityName ?Country .
+  ?obliURI rdfs:label ?Obligation .
 
-WHERE {
-?zoneXMLURI a aq:AQD_Zone . 
-}
-}
-
-?envelope rod:released ?released .  ## ?envelope used for identifying further items such as ?Country ?released etc.
-?envelope rod:locality ?locality ;
-          rod:obligation ?obliURI ;
-          rod:hasFile ?source ;
-          rod:startOfPeriod ?startOfPeriod .
-
-?locality rod:localityName ?Country .
-?obliURI rdfs:label ?Obligation .
-
-{ 
-SELECT DISTINCT 
-?Country 
-?obligation 
-(YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear) 
-(max(?released) AS ?released) ## subquery to select only latest releases within reporting years
-
-WHERE {
-?envelope rod:released ?released ;
-          rod:startOfPeriod ?startOfPeriod ;
-          rod:obligation <http://rod.eionet.europa.eu/obligations/670> ; 
-          rod:obligation ?obligation ;
-          rod:locality ?locality .
-
-?locality rod:localityName ?Country .
-
-}
-}
-
-
- ?zoneXMLURI a aq:AQD_Zone ;
-            aq:inspireId ?inspireURI ;
-            aq:name ?GeographicalName ;
-            aq:zoneCode ?ZoneCode ;
-            aq:aqdZoneType ?aqdzonetype ;
-            aq:residentPopulation ?ResidentPopulation ;
-            aq:area ?Area ;
-            aq:designationPeriod ?timeURI ;
-            aq:pollutants ?polltargetURI .
-
-
-?inspireURI aq:localId ?LocalId .
-?inspireURI aq:namespace ?Namespace .
-
-?polltargetURI aq:protectionTarget ?Protection ;
-               aq:pollutantCode ?pollURI .
-
-?pollURI skos:notation ?Pollutant .
-?Protection rdfs:label ?ProtectionTarget .
-
-?aqdzonetype rdfs:label ?AQDZoneType .
-?timeURI aq:beginPosition ?BeginTime .
-
-OPTIONAL{?timeURI aq:endPosition ?EndTime} .
-OPTIONAL{?zoneXMLURI aq:residentPopulationYear ?popYearURI} .
-OPTIONAL{?popYearURI rdfs:label ?ResidentPopulationYear} .
-
-OPTIONAL{?zoneXMLURI aq:timeExtensionExemption ?timeextensionexemptionURI} .
-OPTIONAL{?timeextensionexemptionURI rdfs:label ?TimeExtensionExemption} .
-
-OPTIONAL{?zoneXMLURI aq:competentAuthority ?CompetentAuthorityURI} . ## no need to repeat when calling nested items
-OPTIONAL{?CompetentAuthorityURI rdfs:label ?CompetentAuthority} .
-OPTIONAL{?CompetentAuthorityURI aq:individualName ?ContactName} .
-OPTIONAL{?CompetentAuthorityURI aq:contact ?ContactURI} .
-OPTIONAL{?ContactURI aq:address ?AddressURI} .
-OPTIONAL{?AddressURI aq:adminUnit ?Address} .
-OPTIONAL{?ContactURI aq:electronicMailAddress ?Email} .
-OPTIONAL{?ContactURI aq:telephoneVoice ?Telephone} .
-OPTIONAL{?ContactURI aq:website ?Website} .
-
-#FILTER regex(?Namespace,"AT.0008.20.AQ") .
-
-} ORDER BY ?CountryOrTerritory YEAR(xsd:date(?startOfPeriod)) ?LocalId
+  FILTER (?envelope = <<envelope>>)
+}}
