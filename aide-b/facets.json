@@ -87,7 +87,7 @@
             "name": "ResidentPopulation",
             "listing": { "title": "Resident Population", "visible" : true, "pos" : 12 },
             "details": { "title": "ResidentPopulation", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Resident Population", "pos": 7, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Resident Population", "pos": 7, "type": "range", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
           "csv_tsv": { "title": "ResidentPopulation", "visible": true, "pos": 4 }
         },
         {
@@ -101,7 +101,7 @@
             "name": "Area",
             "listing": { "title": "Area", "visible" : true, "pos" : 14 },
             "details": { "title": "Area", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Area", "pos": 8, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Area", "pos": 8, "type": "range", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "Area", "visible": true, "pos": 4 }
         },
         {
