@@ -18,18 +18,22 @@
         "head_title": "Elasticsearch bootstrap application",
         "css_resources": {
             "index_page": [
+                "/custom.css",
                 "css/no-more-tables.css",
                 "css/esbootstrap.facetview.css"
             ],
             "details_page": [
+                "/custom.css",
                 "css/esbootstrap.facetview.css"
             ]
         },
         "js_resources": {
             "index_page": [
+                "/custom.js",
                 "javascripts/esbootstrap.facetview.js"
             ],
             "details_page": [
+                "/custom.js",
                 "javascripts/jq.tools.js",
                 "http://www.eea.europa.eu/register_function.js",
                 "http://www.eea.europa.eu/nodeutilities.js",
