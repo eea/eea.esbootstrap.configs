@@ -18,6 +18,7 @@
         "head_title": "AQ zones (B)",
         "css_resources": {
             "index_page": [
+                "custom.css",
                 "css/no-more-tables.css",
                 "css/esbootstrap.facetview.css"
             ],
