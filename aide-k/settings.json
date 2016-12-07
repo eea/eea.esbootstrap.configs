@@ -18,26 +18,30 @@
         "head_title": "AQ Measures (K)",
         "css_resources": {
             "index_page": [
+                "custom.css",
                 "css/no-more-tables.css",
                 "css/esbootstrap.facetview.css"
             ],
             "details_page": [
+                "custom.css",
                 "css/esbootstrap.facetview.css"
             ]
         },
         "js_resources": {
             "index_page": [
+                "custom.js",
                 "javascripts/esbootstrap.facetview.js"
             ],
             "details_page": [
+                "custom.js",
                 "javascripts/jq.tools.js",
                 "http://www.eea.europa.eu/register_function.js",
                 "http://www.eea.europa.eu/nodeutilities.js",
                 "http://www.eea.europa.eu/mark_special_links.js"
             ]
         },
-        "site_title": "AQ Measures (K)",
-        "site_description": "Information on air quality measures, data flow K (http://rod.eionet.europa.eu/obligations/683)",
+        "site_title": "Air quality measures (data flow K)",
+        "site_description": "Information on air quality measures (AQ Measures), <a href='http://rod.eionet.europa.eu/obligations/683'>data flow K</a>.",
         "enableBreadcrumbs": true,
         "breadcrumbs": "aqmeasures",
         "dataprovencance_info_text": "Air Quality e-Reporting",

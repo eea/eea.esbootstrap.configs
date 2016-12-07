@@ -18,25 +18,29 @@
         "head_title": "AQ statistics calculated by the EEA (F)",
         "css_resources": {
             "index_page": [
+                "custom.css",
                 "css/no-more-tables.css",
                 "css/esbootstrap.facetview.css"
             ],
             "details_page": [
+                "custom.css",
                 "css/esbootstrap.facetview.css"
             ]
         },
         "js_resources": {
             "index_page": [
+                "custom.js",
                 "javascripts/esbootstrap.facetview.js"
             ],
             "details_page": [
+                "custom.js",
                 "javascripts/jq.tools.js",
                 "http://www.eea.europa.eu/register_function.js",
                 "http://www.eea.europa.eu/nodeutilities.js",
                 "http://www.eea.europa.eu/mark_special_links.js"
             ]
         },
-        "site_title": "AQ statistics calculated by the EEA (F)",
+        "site_title": "Air quality statistics calculated by the EEA (F)",
         "site_description": "Information on air quality statistics, calculated by the EEA based on data delivered within data flow E1a",
         "enableBreadcrumbs": true,
         "breadcrumbs": "aqstatistics",

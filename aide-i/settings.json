@@ -18,26 +18,30 @@
         "head_title": "AQ Source Apportionments (I)",
         "css_resources": {
             "index_page": [
+                "custom.css",
                 "css/no-more-tables.css",
                 "css/esbootstrap.facetview.css"
             ],
             "details_page": [
+                "custom.css",
                 "css/esbootstrap.facetview.css"
             ]
         },
         "js_resources": {
             "index_page": [
+                "custom.js",
                 "javascripts/esbootstrap.facetview.js"
             ],
             "details_page": [
+                "custom.js",
                 "javascripts/jq.tools.js",
                 "http://www.eea.europa.eu/register_function.js",
                 "http://www.eea.europa.eu/nodeutilities.js",
                 "http://www.eea.europa.eu/mark_special_links.js"
             ]
         },
-        "site_title": "AQ Source Apportionments (I)",
-        "site_description": "Information on source apportionments, data flow I (http://rod.eionet.europa.eu/obligations/681)",
+        "site_title": "Air quality source apportionments (data flow I)",
+        "site_description": "Information on air quality source apportionments, <a href='http://rod.eionet.europa.eu/obligations/681'>data flow I</a>.",
         "enableBreadcrumbs": true,
         "breadcrumbs": "aqsources",
         "dataprovencance_info_text": "Air Quality e-Reporting",

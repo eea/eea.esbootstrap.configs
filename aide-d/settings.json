@@ -18,26 +18,30 @@
         "head_title": "Assessment Methods (D)",
         "css_resources": {
             "index_page": [
+                "custom.css",
                 "css/no-more-tables.css",
                 "css/esbootstrap.facetview.css"
             ],
             "details_page": [
+                "custom.css",
                 "css/esbootstrap.facetview.css"
             ]
         },
         "js_resources": {
             "index_page": [
+                "custom.js"
                 "javascripts/esbootstrap.facetview.js"
             ],
             "details_page": [
+                "custom.js",
                 "javascripts/jq.tools.js",
                 "http://www.eea.europa.eu/register_function.js",
                 "http://www.eea.europa.eu/nodeutilities.js",
                 "http://www.eea.europa.eu/mark_special_links.js"
             ]
         },
-        "site_title": "Air Quality Assessment Methods (D)",
-        "site_description": "Information on air quality assessment methods for fixed and indicative measurements, data flow D (http://rod.eionet.europa.eu/obligations/672)",
+        "site_title": "Air quality assessment methods (data flow D)",
+        "site_description": "Information on air quality assessment methods for fixed and indicative measurements, <a href='http://rod.eionet.europa.eu/obligations/672'>data flow D</a>",
         "enableBreadcrumbs": true,
         "breadcrumbs": "aqmethods",
         "dataprovencance_info_text": "Air Quality e-Reporting",

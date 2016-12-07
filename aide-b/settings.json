@@ -23,22 +23,25 @@
                 "css/esbootstrap.facetview.css"
             ],
             "details_page": [
+                "custom.css",
                 "css/esbootstrap.facetview.css"
             ]
         },
         "js_resources": {
             "index_page": [
+                "custom.js",
                 "javascripts/esbootstrap.facetview.js"
             ],
             "details_page": [
+                "custom.js",
                 "javascripts/jq.tools.js",
                 "http://www.eea.europa.eu/register_function.js",
                 "http://www.eea.europa.eu/nodeutilities.js",
                 "http://www.eea.europa.eu/mark_special_links.js"
             ]
         },
-        "site_title": "Air Quality Zones (B)",
-        "site_description": "Information on air quality zones, data flow B (http://rod.eionet.europa.eu/obligations/670)",
+        "site_title": "Air quality zones (data flow B)",
+        "site_description": "Information on air quality zones (AQ Zones), <a href='http://rod.eionet.europa.eu/obligations/670'>data flow B</a>.",
         "enableBreadcrumbs": true,
         "breadcrumbs": "aqzones",
         "dataprovencance_info_text": "Air Quality e-Reporting",
