@@ -29,7 +29,7 @@
         },
         "js_resources": {
             "index_page": [
-                "custom.js"
+                "custom.js",
                 "javascripts/esbootstrap.facetview.js"
             ],
             "details_page": [
