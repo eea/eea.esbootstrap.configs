@@ -15,6 +15,10 @@ All apps configurations are place in the config folder. An app folder contains t
     ├── ...
 </pre>
 
+### Development environment
+
+If the image is launched with **DEV_CONFIG** environment variable, repository will clone/pull in **/code/config**.
+
 ### __Configure settings.json__
 
 The **/*default*/settings.json** is the place where external templates, customstring and the elastic index is configure. The external templates should remain unchanged, but the **index** and **layout_vars**
