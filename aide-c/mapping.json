@@ -1,7 +1,7 @@
 {
 "_id" : {"type" :"string" },
 "CountryOrTerritory" : {"type" :"string", "analyzer" : "coma" },
-"AssessmentId" : {"type" :"string" },
+"AssessmentId" : {"type" :"string", "analyzer" : "coma"  },
 "Namespace" : {"type" :"string" },
 "Pollutant" : {"type" :"string", "analyzer" : "coma" },
 "ZoneId" : {"type" :"string", "analyzer" : "coma" },
@@ -14,7 +14,7 @@
 "ClassificationReport" : {"type" :"string" },
 "AssessmentType" : {"type" :"string", "analyzer" : "coma" },
 "Description" : {"type" :"string" },
-"ModelId" : {"type" :"string" },
 "SamplingPointId" : {"type" :"string" },
+"ModelId" : {"type" :"string" },
 "envelope" : {"type" :"string" }
 }

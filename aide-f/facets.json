@@ -17,7 +17,7 @@
             "name": "CountryOrTerritory",
             "listing": { "title": "Country Or Territory", "visible" : true, "pos" : 0, "display": { "pre": "", "field": "CountryOrTerritory", "post": "</td>" } },
             "details": { "title": "CountryOrTerritory", "pos" : 0, "section": "info", "visible": true },
-            "facet": { "visible": true, "title": "Country Or Territory", "pos": 0, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Country Or Territory", "pos": 0, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "CountryOrTerritory", "visible": true, "pos": 0 }
         },
         {
@@ -31,21 +31,21 @@
             "name": "ReportingYear",
             "listing": { "title": "Reporting Year", "visible" : true, "pos" : 3 },
             "details": { "title": "ReportingYear", "pos" : 3, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Reporting Year", "pos": 1, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Reporting Year", "pos": 1, "type": "facet", "size": 50, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "ReportingYear", "visible": true, "pos": 3 }
         },
         {
             "name": "StationLocalId",
             "listing": { "title": "Station LocalId", "visible" : true, "pos" : 5 },
             "details": { "title": "StationLocalId", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Station LocalId", "pos": 1, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Station LocalId", "pos": 11, "type": "facet", "size": 5000, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "StationLocalId", "visible": true, "pos": 4 }
         },
         {
             "name": "SamplingPointLocalId",
             "listing": { "title": "Sampling Point LocalId", "visible" : true, "pos" : 7 },
             "details": { "title": "SamplingPointLocalId", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Sampling Point LocalId", "pos": 2, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Sampling Point LocalId", "pos": 12, "type": "facet", "size": 5000, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "SamplingPointLocalId", "visible": true, "pos": 4 }
         },
         {
@@ -66,14 +66,14 @@
             "name": "Pollutant",
             "listing": { "title": "Pollutant", "visible" : true, "pos" : 10 },
             "details": { "title": "Pollutant", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Pollutant", "pos": 3, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Pollutant", "pos": 3, "type": "facet", "size": 1000, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "Pollutant", "visible": true, "pos": 4 }
         },
         {
             "name": "AggregationType",
             "listing": { "title": "Aggregation Type", "visible" : true, "pos" : 11 },
             "details": { "title": "AggregationType", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Aggregation Type", "pos": 4, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Aggregation Type", "pos": 4, "type": "facet", "size": 500, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "AggregationType", "visible": true, "pos": 4 }
         },
         {
@@ -108,14 +108,14 @@
             "name": "Validity",
             "listing": { "title": "Validity", "visible" : true, "pos" : 14 },
             "details": { "title": "Validity", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Validity", "pos": 6, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Validity", "pos": 6, "type": "facet", "size": 10, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "Validity", "visible": true, "pos": 4 }
         },
         {
             "name": "Verification",
             "listing": { "title": "Verification", "visible" : true, "pos" : 15 },
             "details": { "title": "Verification", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Verification", "pos": 7, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Verification", "pos": 7, "type": "facet", "size": 10, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "Verification", "visible": true, "pos": 4 }
         },
         {

@@ -5,6 +5,7 @@ PREFIX cr: <http://cr.eionet.europa.eu/ontologies/contreg.rdf#>
 PREFIX aq: <http://rdfdata.eionet.europa.eu/airquality/ontology/>
 PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
 PREFIX obligations: <http://rod.eionet.europa.eu/obligations/>
+PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/>
 
 SELECT DISTINCT
 
@@ -38,8 +39,10 @@ YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear
 ?NumberOfExceedances 
 ?SpecificationOfHours 
 ?CommentOnExpectedImpact 
-?exceedanceAffectedURI as ?SourceApportionmentId 
-?usedForScenarioURI as ?ScenariosId 
+#?exceedanceAffectedURI as ?SourceApportionmentId1 
+replace(replace(replace(str(?exceedanceAffectedURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace ,""),"/","") as ?SourceApportionmentId 
+#?usedForScenarioURI as ?ScenariosId1 
+replace(replace(replace(str(?usedForScenarioURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace ,""),"/","") as ?ScenariosId
 ?envelope
 
 WHERE {{
@@ -67,8 +70,10 @@ WHERE {{
 
   OPTIONAL {?XMLURI aq:costs ?costsURI} .
   OPTIONAL{?XMLURI aq:expectedImpact ?expectedImpactURI} .
-  OPTIONAL{?XMLURI aq:exceedanceAffected ?exceedanceAffectedURI} .
+  #OPTIONAL{?XMLURI aq:exceedanceAffected ?exceedanceAffectedURI} .
   OPTIONAL{?XMLURI aq:usedForScenario ?usedForScenarioURI} .
+  OPTIONAL{?usedForScenarioURI aqr:hasDeclaration ?scenariosXMLURI} .
+  OPTIONAL {?scenariosXMLURI aq:sourceApportionment ?exceedanceAffectedURI} .
 
   ?classificationURI rdfs:label ?MeasureClassification .
   ?measureTypeURI rdfs:label ?MeasureType .
@@ -110,5 +115,5 @@ WHERE {{
   ?inspireURI aq:versionId ?VersionId .
 
   #FILTER (?envelope = <http://cdr.eionet.europa.eu/bg/eu/aqd/k/envvjk7zg>)
-  FILTER (?envelope = <<envelope>>)
+  #FILTER (?envelope = <<envelope>>)
 }}

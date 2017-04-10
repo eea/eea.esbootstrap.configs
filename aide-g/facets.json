@@ -17,14 +17,14 @@
             "name": "CountryOrTerritory",
             "listing": { "title": "Country or Territory", "visible" : true, "pos" : 0, "display": { "pre": "", "field": "CountryOrTerritory", "post": "</td>" } },
             "details": { "title": "CountryOrTerritory", "pos" : 0, "section": "info", "visible": true },
-            "facet": { "visible": true, "title": "Country or Territory", "pos": 0, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Country or Territory", "pos": 0, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "CountryOrTerritory", "visible": true, "pos": 0 }
         },
         {
             "name": "ReportingYear",
             "listing": { "title": "Reporting Year", "visible" : true, "pos" : 3 },
             "details": { "title": "ReportingYear", "pos" : 3, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Reporting Year", "pos": 1, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Reporting Year", "pos": 1, "type": "facet", "size": 50, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "ReportingYear", "visible": true, "pos": 3 }
         },
         {
@@ -38,21 +38,21 @@
             "name": "AttainmentId",
             "listing": { "title": "Attainment Id", "visible" : true, "pos" : 5 },
             "details": { "title": "AttainmentId", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Attainment Id", "pos": 13, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Attainment Id", "pos": 13, "type": "facet", "size": 5000, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "AttainmentId", "visible": true, "pos": 4 }
         },
         {
             "name": "AssessmentId",
             "listing": { "title": "Assessment Id", "visible" : true, "pos" : 6 },
             "details": { "title": "AssessmentId", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Assessment Id", "pos": 14, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Assessment Id", "pos": 14, "type": "facet", "size": 5000, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "AssessmentId", "visible": true, "pos": 4 }
         },
         {
             "name": "ZoneId",
             "listing": { "title": "Zone Id", "visible" : true, "pos" : 7 },
             "details": { "title": "ZoneId", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Zone Id", "pos": 15, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Zone Id", "pos": 15, "type": "facet", "size": 1000, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "ZoneId", "visible": true, "pos": 4 }
         },
         {
@@ -66,49 +66,49 @@
             "name": "Pollutant",
             "listing": { "title": "Pollutant", "visible" : true, "pos" : 9 },
             "details": { "title": "Pollutant", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Pollutant", "pos": 2, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Pollutant", "pos": 2, "type": "facet", "size": 1000, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "Pollutant", "visible": true, "pos": 4 }
         },
         {
             "name": "ProtectionTarget",
             "listing": { "title": "Protection Target", "visible" : true, "pos" : 10 },
             "details": { "title": "ProtectionTarget", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Protection Target", "pos": 3, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Protection Target", "pos": 3, "type": "facet", "size": 10, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "ProtectionTarget", "visible": true, "pos": 4 }
         },
         {
             "name": "ObjectiveType",
             "listing": { "title": "Objective Type", "visible" : true, "pos" : 11 },
             "details": { "title": "ObjectiveType", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Objective Type", "pos": 4, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Objective Type", "pos": 4, "type": "facet", "size": 20, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "ObjectiveType", "visible": true, "pos": 4 }
         },
         {
             "name": "ReportingMetric",
             "listing": { "title": "Reporting Metric", "visible" : true, "pos" : 12 },
             "details": { "title": "ReportingMetric", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Reporting Metric", "pos": 5, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Reporting Metric", "pos": 5, "type": "facet", "size": 20, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "ReportingMetric", "visible": true, "pos": 4 }
         },
         {
             "name": "ExceedanceFinal",
             "listing": { "title": "Exceedance Final", "visible" : true, "pos" : 13 },
             "details": { "title": "ExceedanceFinal", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Exceedance Final", "pos": 7, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Exceedance Final", "pos": 7, "type": "facet", "size": 10, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "ExceedanceFinal", "visible": true, "pos": 4 }
         },
         {
             "name": "ExceedanceThreshold",
             "listing": { "title": "Exceedance Threshold", "visible" : true, "pos" : 14 },
             "details": { "title": "ExceedanceThreshold", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Exceedance Threshold", "pos": 8, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": false },
            "csv_tsv": { "title": "ExceedanceThreshold", "visible": true, "pos": 4 }
         },
         {
             "name": "AggregationType",
             "listing": { "title": "Aggregation Type", "visible" : true, "pos" : 15 },
             "details": { "title": "AggregationType", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Aggregation Type", "pos": 9, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Aggregation Type", "pos": 9, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "AggregationType", "visible": true, "pos": 4 }
         },
         {
@@ -199,7 +199,7 @@
             "name": "Adjustment",
             "listing": { "title": "Adjustment", "visible" : true, "pos" : 28 },
             "details": { "title": "Adjustment", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Adjustment", "pos": 10, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Adjustment", "pos": 10, "type": "facet", "size": 10, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "Adjustment", "visible": true, "pos": 4 }
         },
         {
@@ -213,14 +213,14 @@
             "name": "AdjustmentType",
             "listing": { "title": "Adjustment Type", "visible" : true, "pos" : 30 },
             "details": { "title": "AdjustmentType", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Adjustment Type", "pos": 11, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Adjustment Type", "pos": 11, "type": "facet", "size": 10, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "AdjustmentType", "visible": true, "pos": 4 }
         },
         {
             "name": "AssessmentType",
             "listing": { "title": "Assessment Type", "visible" : true, "pos" : 31 },
             "details": { "title": "AssessmentType", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Assessment Type", "pos": 12, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Assessment Type", "pos": 12, "type": "facet", "size": 10, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "AssessmentType", "visible": true, "pos": 4 }
         },
         {
@@ -232,14 +232,14 @@
         },
         {
             "name": "ModellingAdjustment",
-            "listing": { "title": "Modelling Adjustment", "visible" : true, "pos" : 33 },
+            "listing": { "title": "Model Id", "visible" : true, "pos" : 33 },
             "details": { "title": "ModellingAdjustment", "pos" : 4, "section": "info", "visible": false },
             "facet": { "visible": false },
             "csv_tsv": { "title": "ModellingAdjustment", "visible": true, "pos": 4 }
         },
         {
             "name": "SamplingAdjustment",
-            "listing": { "title": "SamplingAdjustment", "visible" : true, "pos" : 34 },
+            "listing": { "title": "Sampling Point Id", "visible" : true, "pos" : 34 },
             "details": { "title": "SamplingAdjustment", "pos" : 4, "section": "info", "visible": false },
             "facet": { "visible": false },
             "csv_tsv": { "title": "SamplingAdjustment", "visible": true, "pos": 4 }

@@ -41,9 +41,9 @@
             ]
         },
         "site_title": "Air quality assessment methods (data flow D)",
-        "site_description": "Information on air quality assessment methods for fixed and indicative measurements, <a href='http://rod.eionet.europa.eu/obligations/672'>data flow D</a>",
+        "site_description": "Information on air quality assessment methods, <a href='http://rod.eionet.europa.eu/obligations/672'>data flow D</a>.",
         "enableBreadcrumbs": true,
-        "breadcrumbs": "aqmethods",
+        "breadcrumbs": "aqregimes",
         "dataprovencance_info_text": "Air Quality e-Reporting",
         "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/data/aqereporting-1",
         "further_info": ""

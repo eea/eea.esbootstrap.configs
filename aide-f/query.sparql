@@ -67,6 +67,7 @@ WHERE {
   ?namespaces skos:inScheme <http://dd.eionet.europa.eu/vocabulary/aq/namespace/> .
   ?namespaces dd:inCountry ?cntry_URI .
   ?cntry_URI rdfs:label ?CountryOrTerritory .
-
+  
+  FILTER (?Pollutant_URI = <<Pollutant_URI>>)
 }
 LIMIT 80000 OFFSET <offset>

@@ -16,8 +16,8 @@
 "EndPosition" : {"type" :"date" },
 "Validity" : {"type" :"string", "analyzer" : "coma" },
 "Verification" : {"type" :"string", "analyzer" : "coma" },
-"DataCoverage" : {"type" :"string" },
+"DataCoverage" : {"type" :"double" },
 "DataCapture" : {"type" :"double" },
-"TimeCoverage" : {"type" :"string" },
+"TimeCoverage" : {"type" :"double" },
 "created" : {"type" :"date" }
 }

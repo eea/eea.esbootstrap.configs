@@ -1,95 +1,29 @@
+PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX cr: <http://cr.eionet.europa.eu/ontologies/contreg.rdf#>
+PREFIX aq: <http://rdfdata.eionet.europa.eu/airquality/ontology/>
+PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/>
+PREFIX dd: <http://dd.eionet.europa.eu/property/>
 
-SELECT DISTINCT ?offset WHERE
-{{
-    ?bookmark a cr:SparqlBookmark
-    { SELECT 0 AS ?offset {} }
-    UNION
-    { SELECT 80000 AS ?offset {} }
-    UNION
-    {  SELECT 160000 AS ?offset {} }
-    UNION
-    {  SELECT 240000 AS ?offset {} }
-    UNION
-    {  SELECT 320000 AS ?offset {} }
-    UNION
-    {  SELECT 400000 AS ?offset {} }
-    UNION
-    {  SELECT 480000 AS ?offset {} }
-    UNION
-    {  SELECT 560000 AS ?offset {} }
-    UNION
-    {  SELECT 640000 AS ?offset {} }
-    UNION
-    {  SELECT 720000 AS ?offset {} }
-    UNION
-    {  SELECT 800000 AS ?offset {} }
-    UNION
-    {  SELECT 880000 AS ?offset {} }
-    UNION
-    {  SELECT 960000 AS ?offset {} }
-    UNION
-    {  SELECT 1040000 AS ?offset {} }
-    UNION
-    {  SELECT 1120000 AS ?offset {} }
-    UNION
-    {  SELECT 1200000 AS ?offset {} }
-    UNION
-    {  SELECT 1280000 AS ?offset {} }
-    UNION
-    {  SELECT 1360000 AS ?offset {} }
-    UNION
-    {  SELECT 1440000 AS ?offset {} }
-    UNION
-    {  SELECT 1520000 AS ?offset {} }
-    UNION
-    {  SELECT 1600000 AS ?offset {} }
-    UNION
-    {  SELECT 1680000 AS ?offset {} }
-    UNION
-    {  SELECT 1760000 AS ?offset {} }
-    UNION
-    {  SELECT 1840000 AS ?offset {} }
-    UNION
-    {  SELECT 1920000 AS ?offset {} }
-    UNION
-    {  SELECT 2000000 AS ?offset {} }
-    UNION
-    {  SELECT 2080000 AS ?offset {} }
-    UNION
-    {  SELECT 2160000 AS ?offset {} }
-    UNION
-    {  SELECT 2320000 AS ?offset {} }
-    UNION
-    {  SELECT 2400000 AS ?offset {} }
-    UNION
-    {  SELECT 2480000 AS ?offset {} }
-    UNION
-    {  SELECT 2560000 AS ?offset {} }
-    UNION
-    {  SELECT 2640000 AS ?offset {} }
-    UNION
-    {  SELECT 2720000 AS ?offset {} }
-    UNION
-    {  SELECT 2800000 AS ?offset {} }
-    UNION
-    {  SELECT 2880000 AS ?offset {} }
-    UNION
-    {  SELECT 2960000 AS ?offset {} }
-    UNION
-    {  SELECT 3040000 AS ?offset {} }
-    UNION
-    {  SELECT 3120000 AS ?offset {} }
-    UNION
-    {  SELECT 3200000 AS ?offset {} }
-    UNION
-    {  SELECT 3280000 AS ?offset {} }
-    UNION
-    {  SELECT 3360000 AS ?offset {} }
-    UNION
-    {  SELECT 3440000 AS ?offset {} }
-    UNION
-    {  SELECT 3520000 AS ?offset {} }
-    UNION
-    {  SELECT 3600000 AS ?offset {} }    
-}}
+SELECT DISTINCT 
+
+?Pollutant_URI 
+?offset
+WHERE {
+  ?statsURI aqr:pollutant ?Pollutant_URI .
+  {{
+    SELECT DISTINCT ?offset WHERE
+    {{
+      ?bookmark a cr:SparqlBookmark
+      { SELECT 0 AS ?offset {} }
+        UNION
+      { SELECT 80000 AS ?offset {} }
+        UNION
+      {  SELECT 160000 AS ?offset {} }
+        UNION
+      {  SELECT 240000 AS ?offset {} }
+    }}
+  }}
+}

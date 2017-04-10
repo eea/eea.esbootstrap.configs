@@ -28,7 +28,7 @@
 "NumberOfExceedances" : {"type" :"string" },
 "SpecificationOfHours" : {"type" :"string" },
 "CommentOnExpectedImpact" : {"type" :"string" },
-"SourceApportionmentId" : {"type" :"string" },
-"ScenariosId" : {"type" :"string" },
+"SourceApportionmentId" : {"type" :"string", "analyzer" : "coma"  },
+"ScenariosId" : {"type" :"string", "analyzer" : "coma"  },
 "envelope" : {"type" :"string" }
 }

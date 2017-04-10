@@ -7,6 +7,7 @@
 "ReportingYear" : {"type" :"integer" },
 "GeographicalName" : {"type" :"string", "analyzer" : "coma" },
 "BeginTime" : {"type" :"date" },
+"EndTime" : {"type" :"date" },
 "AQDZoneType" : {"type" :"string", "analyzer" : "coma" },
 "ResidentPopulation" : {"type" :"double" },
 "ResidentPopulationYear" : {"type" :"string" },

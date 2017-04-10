@@ -28,7 +28,7 @@ YEAR(?startOfPeriod) AS ?ReportingYear
 ?AssessmentType
 ?Description
 
-replace (replace(replace(str(?samplingPointURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace,""),"/","") as ?samplingPointId
+replace (replace(replace(str(?samplingPointURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace,""),"/","") as ?SamplingPointId
 
 replace (replace(replace(str(?ModelAssessmentMetadataURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace,""),"/","") as ?ModelId
 
