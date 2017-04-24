@@ -17,7 +17,7 @@
             "name": "CountryOrTerritory",
             "listing": { "title": "Country or Territory", "visible" : true, "pos" : 0, "display": { "pre": "", "field": "CountryOrTerritory", "post": "</td>" } },
             "details": { "title": "CountryOrTerritory", "pos" : 0, "section": "info", "visible": true },
-            "facet": { "visible": true, "title": "Country or Territory", "pos": 0, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Country or Territory", "pos": 0, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Country or Territory" },
             "csv_tsv": { "title": "CountryOrTerritory", "visible": true, "pos": 0 }
         },
         {
@@ -38,21 +38,21 @@
             "name": "AttainmentId",
             "listing": { "title": "Attainment Id", "visible" : true, "pos" : 5 },
             "details": { "title": "AttainmentId", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Attainment Id", "pos": 13, "type": "facet", "size": 5000, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Attainment Id", "pos": 13, "type": "facet", "size": 5000, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Attainment Id" },
            "csv_tsv": { "title": "AttainmentId", "visible": true, "pos": 4 }
         },
         {
             "name": "AssessmentId",
             "listing": { "title": "Assessment Id", "visible" : true, "pos" : 6 },
             "details": { "title": "AssessmentId", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Assessment Id", "pos": 14, "type": "facet", "size": 5000, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Assessment Id", "pos": 14, "type": "facet", "size": 5000, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Assessment Id" },
            "csv_tsv": { "title": "AssessmentId", "visible": true, "pos": 4 }
         },
         {
             "name": "ZoneId",
             "listing": { "title": "Zone Id", "visible" : true, "pos" : 7 },
             "details": { "title": "ZoneId", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Zone Id", "pos": 15, "type": "facet", "size": 1000, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Zone Id", "pos": 15, "type": "facet", "size": 1000, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Zone Id" },
            "csv_tsv": { "title": "ZoneId", "visible": true, "pos": 4 }
         },
         {
@@ -66,7 +66,7 @@
             "name": "Pollutant",
             "listing": { "title": "Pollutant", "visible" : true, "pos" : 9 },
             "details": { "title": "Pollutant", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Pollutant", "pos": 2, "type": "facet", "size": 1000, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Pollutant", "pos": 2, "type": "facet", "size": 1000, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Pollutant" },
            "csv_tsv": { "title": "Pollutant", "visible": true, "pos": 4 }
         },
         {

@@ -17,7 +17,7 @@
             "name": "CountryOrTerritory",
             "listing": { "title": "Country Or Territory", "visible" : true, "pos" : 0, "display": { "pre": "", "field": "CountryOrTerritory", "post": "</td>" } },
             "details": { "title": "CountryOrTerritory", "pos" : 0, "section": "info", "visible": true },
-            "facet": { "visible": true, "title": "Country Or Territory", "pos": 0, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Country Or Territory", "pos": 0, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Country or Territory" },
             "csv_tsv": { "title": "CountryOrTerritory", "visible": true, "pos": 0 }
         },
         {
@@ -38,14 +38,14 @@
             "name": "StationLocalId",
             "listing": { "title": "Station LocalId", "visible" : true, "pos" : 5 },
             "details": { "title": "StationLocalId", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Station LocalId", "pos": 11, "type": "facet", "size": 5000, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Station LocalId", "pos": 11, "type": "facet", "size": 5000, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Station LocalId" },
             "csv_tsv": { "title": "StationLocalId", "visible": true, "pos": 4 }
         },
         {
             "name": "SamplingPointLocalId",
             "listing": { "title": "Sampling Point LocalId", "visible" : true, "pos" : 7 },
             "details": { "title": "SamplingPointLocalId", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Sampling Point LocalId", "pos": 12, "type": "facet", "size": 5000, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Sampling Point LocalId", "pos": 12, "type": "facet", "size": 5000, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Sampling Point LocalId" },
            "csv_tsv": { "title": "SamplingPointLocalId", "visible": true, "pos": 4 }
         },
         {
@@ -66,7 +66,7 @@
             "name": "Pollutant",
             "listing": { "title": "Pollutant", "visible" : true, "pos" : 10 },
             "details": { "title": "Pollutant", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Pollutant", "pos": 3, "type": "facet", "size": 1000, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Pollutant", "pos": 3, "type": "facet", "size": 1000, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Pollutant" },
            "csv_tsv": { "title": "Pollutant", "visible": true, "pos": 4 }
         },
         {
