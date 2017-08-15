@@ -1,14 +1,14 @@
 {
 "_id" : {"type" :"string" },
 "CountryOrTerritory" : {"type" :"string", "analyzer" : "coma" },
-"ReportingYear" : {"type" :"integer" },
+"ReportingYear" : {"type" :"string" },
 "Namespace" : {"type" :"string" },
-"PlanCode" : {"type" :"string" },
-"PlanId" : {"type" :"string" },
+"PlanCode" : {"type" :"string", "analyzer" : "coma" },
+"PlanId" : {"type" :"string", "analyzer" : "coma" },
 "VersionId" : {"type" :"string" },
 "Name" : {"type" :"string" },
 "FirstExceedanceYear" : {"type" :"string" },
-"AdoptionDate" : {"type" :"date" },
+"AdoptionDate" : {"type" :"string" },
 "Status" : {"type" :"string", "analyzer" : "coma" },
 "TimeTable" : {"type" :"string" },
 "ReferenceAQPlan" : {"type" :"string" },
@@ -16,7 +16,7 @@
 "Pollutant" : {"type" :"string", "analyzer" : "coma" },
 "ProtectionTarget" : {"type" :"string", "analyzer" : "coma" },
 "PublicationTitle" : {"type" :"string" },
-"PublicationDate" : {"type" :"integer" },
+"PublicationDate" : {"type" :"string" },
 "PublicationAuthor" : {"type" :"string" },
 "PublicationDescription" : {"type" :"string" },
 "Publisher" : {"type" :"string", "analyzer" : "coma" },
@@ -27,8 +27,8 @@
 "Phone" : {"type" :"string" },
 "Website" : {"type" :"string" },
 "Address" : {"type" :"string" },
-"Comment" : {"type" :"string" },
-"AttainmentId" : {"type" :"string" },
+"Comment" : {"type" :"string", "analyzer" : "coma" },
+"AttainmentId" : {"type" :"string", "analyzer" : "coma" },
 "?envelope" : {"type" :"string" }
 }
 

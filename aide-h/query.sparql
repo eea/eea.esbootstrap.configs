@@ -42,7 +42,7 @@ year(?endOfPeriod) AS ?ReportingYear
 ?Website 
 ?Address 
 sql:GROUP_CONCAT(?Comment,' ') AS ?Comment
-?AttainmentId 
+#replace(replace(replace(str(?excURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace ,""),"/","") as ?AttainmentId 
 ?envelope
 
 WHERE {{
@@ -110,6 +110,6 @@ WHERE {{
   ?locality rod:localityName ?Country .
   ?obliURI rdfs:label ?Obligation .
  
-  #FILTER (?envelope = <http://cdr.eionet.europa.eu/gb/eu/aqd/h/envvryhbq>)
+  #FILTER (?envelope = <http://cdr.eionet.europa.eu/cz/eu/aqd/h/envwfeulw>)
   FILTER (?envelope = <<envelope>>)
 }}

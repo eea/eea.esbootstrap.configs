@@ -3,10 +3,10 @@
         "sections": [
             {"name":"info",
              "title":"General info",
-             "pos":0},
+             "pos": 0},
             {"name":"created",
              "title":"Created",
-             "pos":1}
+             "pos": 1}
         ]
     },
     "listing_settings" : {
@@ -31,7 +31,7 @@
             "name": "PlanCode",
             "listing": { "title": "Plan Code", "visible" : true, "pos" : 4 },
             "details": { "title": "PlanCode", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": false },
+            "facet": { "visible": true, "title": "Plan Code", "pos": 10, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "PlanCode", "visible": true, "pos": 4 }
         },
         {
@@ -208,13 +208,6 @@
             "details": { "title": "Comment", "pos" : 4, "section": "info", "visible": false },
             "facet": { "visible": false },
             "csv_tsv": { "title": "Comment", "visible": true, "pos": 4 }
-        },
-        {
-            "name": "AttainmentId",
-            "listing": { "title": "Attainment Id", "visible" : true, "pos" : 29 },
-            "details": { "title": "AttainmentId", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Attainment Id", "pos": 10, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
-           "csv_tsv": { "title": "AttainmentId", "visible": true, "pos": 4 }
         },
         {
             "name": "envelope",

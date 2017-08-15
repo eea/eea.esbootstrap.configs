@@ -11,10 +11,12 @@
 "BaselineComment" : {"type" :"string" },
 "BaselineEmissions" : {"type" :"string" },
 "BaselineExpectedConcentration" : {"type" :"string" },
+"BaselineExpectedNrExceedances" : {"type" :"string" },
 "ProjectionDescription" : {"type" :"string" },
 "ProjectionComment" : {"type" :"string" },
 "ProjectionEmissions" : {"type" :"string" },
 "ProjectionExpectedConcentration" : {"type" :"string" },
+"ProjectionExpectedNrExceedances" : {"type" :"string" },
 "SourceApportionmentId" : {"type" :"string", "analyzer" : "coma"  },
 "PlanId" : {"type" :"string", "analyzer" : "coma"  },
 "envelope" : {"type" :"string" }

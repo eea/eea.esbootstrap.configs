@@ -13,10 +13,11 @@ md5(concat(?Country, xsd:string(?ReportingYear),xsd:string(?AttainmentYear),?Nam
 )
 )  as ?_id
 
-#?scenariosXMLURI 
+
+?XMLURI 
 #bif:concat(xsd:string(YEAR(?endOfPeriod)), '-', ?ScenariosId ) as ?_id
 ?Country as ?CountryOrTerritory 
-?ReportingYear 
+year(?endOfPeriod) AS ?ReportingYear 
 ?AttainmentYear 
 ?Namespace 
 ?ScenariosId 
@@ -26,113 +27,59 @@ md5(concat(?Country, xsd:string(?ReportingYear),xsd:string(?AttainmentYear),?Nam
 ?BaselineComment 
 ?BaselineEmissions 
 ?BaselineExpectedConcentration 
+?BaselineExpectedNrExceedances
 ?ProjectionDescription 
 ?ProjectionComment 
 ?ProjectionEmissions 
 ?ProjectionExpectedConcentration 
+?ProjectionExpectedNrExceedances
 replace(replace(replace(str(?SourceApportionmentId),"http://reference.eionet.europa.eu/aq/",""),?Namespace ,""),"/","") as ?SourceApportionmentId
 replace(replace(replace(str(?PlanId),"http://reference.eionet.europa.eu/aq/",""),?Namespace ,""),"/","") as ?PlanId 
 ?envelope
 
+ WHERE {{
+  GRAPH ?source {
+    ?XMLURI a aq:AQD_EvaluationScenario .
+    ?XMLURI aq:inspireId ?inspireURI .
+  }
+  ?source dcterms:isPartOf ?envelope .
+  ?envelope rod:released ?released .
+  ?envelope rod:locality ?locality .
+  ?envelope rod:obligation ?obliURI .
+  ?envelope rod:endOfPeriod ?endOfPeriod .
 
- WHERE {
+  ?inspireURI aq:namespace ?Namespace .
+  ?inspireURI aq:localId ?ScenariosId .
 
-{
-SELECT DISTINCT 
-?Country 
-(YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear)
-?ScenariosId
-(max(?released) AS ?released) 
+   OPTIONAL {?XMLURI aq:versionId ?VersionId} .
+   OPTIONAL {?XMLURI aq:attainmentYear ?attyearURI} . 
+   OPTIONAL {?XMLURI aq:codeOfScenario ?CodeOfScenario} . 
+   OPTIONAL {?XMLURI aq:sourceApportionment ?SourceApportionmentId} . 
+   OPTIONAL {?XMLURI aq:usedInPlan ?PlanId} .   
+   OPTIONAL {?XMLURI aq:baselineScenario ?baselineURI} . 
+   OPTIONAL {?XMLURI aq:projectionScenario ?projectionURI} . 
+   OPTIONAL {?XMLURI aq:publication ?publicationURI} .  
 
-WHERE {
-?envelope rod:released ?released ;
-          rod:endOfPeriod ?endOfPeriod ;
-          rod:obligation <http://rod.eionet.europa.eu/obligations/682> ; 
-          rod:hasFile ?source ;
-          rod:locality ?locality .
+   OPTIONAL {?baselineURI aq:description ?BaselineDescription} .
+   OPTIONAL {?baselineURI aq:comment ?BaselineComment} .
+   OPTIONAL {?baselineURI aq:totalEmissions ?BaselineEmissions} .
+   OPTIONAL {?baselineURI aq:expectedConcentration ?BaselineExpectedConcentration} .
+   OPTIONAL {?baselineURI aq:expectedExceedances ?BaselineExpectedNrExceedances} .
+   ##OPTIONAL {?baselineURI aq:measuresApplied ?BaselineMeasuresApplied} .
 
-?locality rod:localityName ?Country .
+   OPTIONAL {?projectionURI aq:description ?ProjectionDescription} .
+   OPTIONAL {?projectionURI aq:comment ?ProjectionComment} .
+   OPTIONAL {?projectionURI aq:totalEmissions ?ProjectionEmissions} .
+   OPTIONAL {?projectionURI aq:expectedConcentration ?ProjectionExpectedConcentration} .
+   OPTIONAL {?projectionURI aq:expectedExceedances ?ProjectionExpectedNrExceedances} .
+   ##OPTIONAL {?projectionURI aq:measuresApplied ?ProjectionMeasuresApplied} .
 
-{SELECT 
-?scenariosXMLURI
-?ScenariosId 
-(IRI(substr(str(?scenariosXMLURI),1,bif:strchr(str(?scenariosXMLURI),"#"))) AS ?source) 
+   OPTIONAL {?attyearURI rdfs:label ?AttainmentYear} .
 
-WHERE {
-?scenariosXMLURI a aq:AQD_EvaluationScenario ;
-              aq:inspireId ?inspireURI .
-?inspireURI aq:localId ?ScenariosId .
-}
-}
-}
-}
+   ?locality rod:localityName ?Country .
+   ?obliURI rdfs:label ?Obligation .
 
-{
-SELECT DISTINCT 
-?Country 
-(YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear)
-?scenariosXMLURI
-?ScenariosId
-?released
-?envelope
-
-WHERE {
-?envelope rod:released ?released ;
-          rod:endOfPeriod ?endOfPeriod ;
-          rod:obligation <http://rod.eionet.europa.eu/obligations/682> ; 
-          rod:hasFile ?source ;
-          rod:locality ?locality .
-
-?locality rod:localityName ?Country .
-
-{SELECT 
-?scenariosXMLURI
-?ScenariosId 
-(IRI(substr(str(?scenariosXMLURI),1,bif:strchr(str(?scenariosXMLURI),"#"))) AS ?source) 
-
-WHERE {
-?scenariosXMLURI a aq:AQD_EvaluationScenario  ;
-              aq:inspireId ?inspireURI .
-?inspireURI aq:localId ?ScenariosId .
-}
-}
-}
-}
-
-
-   ?scenariosXMLURI a aq:AQD_EvaluationScenario ;
-                      aq:inspireId ?inspireURI . 
-
-
-?inspireURI aq:localId ?ScenariosId ;
-            aq:namespace ?Namespace .
-
-OPTIONAL {?scenariosXMLURI aq:versionId ?VersionId} .
-
-OPTIONAL {?scenariosXMLURI aq:attainmentYear ?attyearURI} . 
-OPTIONAL {?scenariosXMLURI aq:codeOfScenario ?CodeOfScenario} . 
-OPTIONAL {?scenariosXMLURI aq:sourceApportionment ?SourceApportionmentId} . 
-OPTIONAL {?scenariosXMLURI aq:usedInPlan ?PlanId} .   
-OPTIONAL {?scenariosXMLURI aq:baselineScenario ?baselineURI} . 
-OPTIONAL {?scenariosXMLURI aq:projectionScenario ?projectionURI} . 
-OPTIONAL {?scenariosXMLURI aq:publication ?publicationURI} .  
-
-OPTIONAL {?baselineURI aq:description ?BaselineDescription} .
-OPTIONAL {?baselineURI aq:comment ?BaselineComment} .
-OPTIONAL {?baselineURI aq:totalEmissions ?BaselineEmissions} .
-OPTIONAL {?baselineURI aq:expectedConcentration ?BaselineExpectedConcentration} .
-##OPTIONAL {?baselineURI aq:measuresApplied ?BaselineMeasuresApplied} .
-
-OPTIONAL {?projectionURI aq:description ?ProjectionDescription} .
-OPTIONAL {?projectionURI aq:comment ?ProjectionComment} .
-OPTIONAL {?projectionURI aq:totalEmissions ?ProjectionEmissions} .
-OPTIONAL {?projectionURI aq:expectedConcentration ?ProjectionExpectedConcentration} .
-##OPTIONAL {?projectionURI aq:measuresApplied ?ProjectionMeasuresApplied} .
-
-
-OPTIONAL {?attyearURI rdfs:label ?AttainmentYear} .
-
-
-#FILTER regex(?Country,"United Kingdom") .
+  #FILTER (?envelope = <http://cdr.eionet.europa.eu/dk/eu/aqd/j/envvngbuq>)
+  FILTER (?envelope = <<envelope>>)
    
-}
+}}

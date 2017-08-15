@@ -91,6 +91,13 @@
             "csv_tsv": { "title": "BaselineExpectedConcentration", "visible": true, "pos": 4 }
         },
         {
+            "name": "BaselineExpectedNrExceedances",
+            "listing": { "title": "Baseline Expected Nr Exceedances", "visible" : true, "pos" : 12 },
+            "details": { "title": "BaselineExpectedNrExceedances", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+            "csv_tsv": { "title": "BaselineExpectedNrExceedances", "visible": true, "pos": 4 }
+        },
+        {
             "name": "ProjectionDescription",
             "listing": { "title": "Projection Description", "visible" : true, "pos" : 13 },
             "details": { "title": "ProjectionDescription", "pos" : 4, "section": "info", "visible": false },
@@ -117,6 +124,13 @@
             "details": { "title": "ProjectionExpectedConcentration", "pos" : 4, "section": "info", "visible": false },
             "facet": { "visible": false },
             "csv_tsv": { "title": "ProjectionExpectedConcentration", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "ProjectionExpectedNrExceedances",
+            "listing": { "title": "Projection Expected Nr Exceedances", "visible" : true, "pos" : 16 },
+            "details": { "title": "ProjectionExpectedNrExceedances", "pos" : 4, "section": "info", "visible": false },
+            "facet": { "visible": false },
+            "csv_tsv": { "title": "ProjectionExpectedNrExceedances", "visible": true, "pos": 4 }
         },
         {
             "name": "SourceApportionmentId",

@@ -3,7 +3,7 @@
 "CountryOrTerritory" : {"type" :"string", "analyzer" : "coma" },
 "ReportingYear" : {"type" :"integer" },
 "Namespace" : {"type" :"string" },
-"MeasureId" : {"type" :"string" },
+"MeasureId" : {"type" :"string", "analyzer" : "coma"  },
 "VersionId" : {"type" :"string" },
 "CodeOfMeasure" : {"type" :"string" },
 "Name" : {"type" :"string" },
