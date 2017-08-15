@@ -1,0 +1,128 @@
+PREFIX aq: <http://rdfdata.eionet.europa.eu/airquality/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX cr: <http://cr.eionet.europa.eu/ontologies/contreg.rdf#>
+PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
+PREFIX ddaq: <http://dd.eionet.europa.eu/vocabulary/aq/#>
+
+SELECT DISTINCT
+
+md5(concat(?CountryOrTerritory,xsd:string(?startOfPeriod),?Namespace,?Network,?TimeZone,?responsibleParty,?StationName,?EoICode,?StationType,?StationArea,?Pollutant,?SamplingPointId,xsd:string(?Longitude),xsd:string(?Latitude),?MeasurementRegime,xsd:string(?beginPosition),?Sample,?SamplingProcess,?MeasurementEquipment,?MeasurementMethod,?SamplingMethod,?AnalyticalTechnique)) as ?_id
+
+?CountryOrTerritory
+YEAR(?startOfPeriod) AS ?ReportingYear
+?Namespace
+?Network
+?TimeZone
+?responsibleParty AS ?ResponsibleParty
+?StationName
+?EoICode
+?StationType
+?StationArea
+?Pollutant
+?SamplingPointId
+?Longitude
+?Latitude
+?MeasurementRegime
+?beginPosition AS ?OperationalActivityBegin
+?endPosition AS ?OperationalActivityEnd
+?Sample
+?SamplingProcess
+?MeasurementEquipment
+?MeasurementMethod
+?SamplingMethod
+?AnalyticalTechnique
+?envelope
+#?netURI
+#?staURI
+#?samplPointURI
+#?sampleURI
+#?processURI
+
+WHERE {{
+  GRAPH ?source {
+    ?netURI a aq:AQD_Network .
+    ?netURI aq:aggregationTimeZone ?TimeZoneURI .
+    ?netURI aq:name ?Network .
+    ?netURI aq:responsibleParty ?ResponsibleURI .
+    ?netURI aq:declarationFor ?net .
+
+    OPTIONAL{?ResponsibleURI aq:organisationName ?responsibleParty} .
+
+    ?staURI a aq:AQD_Station .
+    ?staURI aq:name ?StationName . 
+    ?staURI aq:EUStationCode ?EoICode .
+    ?staURI aq:areaClassification ?areaClassification .
+    ?staURI aq:declarationFor ?sta .
+
+    ?samplPointURI a aq:AQD_SamplingPoint .
+    ?samplPointURI geo:lat ?Latitude .
+    ?samplPointURI geo:long ?Longitude . 
+    ?samplPointURI aq:inspireId ?inspireSPO .
+    ?samplPointURI aq:observingCapability ?observingCapability .
+    ?samplPointURI aq:relevantEmissions ?relevantEmissions .
+    ?samplPointURI aq:measurementRegime ?measurementRegimeURI .
+    ?samplPointURI aq:operationalActivityPeriod ?operationalActivityPeriod .
+    ?samplPointURI aq:belongsTo ?net .
+    ?samplPointURI aq:broader ?sta .
+
+    ?inspireSPO aq:localId ?SamplingPointId .
+    ?inspireSPO aq:namespace ?Namespace .
+
+    ?relevantEmissions aq:stationClassification ?stationClassification .
+    ?operationalActivityPeriod aq:activityTime ?activityTime .
+    ?activityTime aq:beginPosition ?beginPosition .
+
+    OPTIONAL{?activityTime aq:endPosition ?endPosition} .
+
+    ?observingCapability aq:featureOfInterest ?sample .
+    ?observingCapability aq:procedure ?process .
+    ?observingCapability aq:observedProperty ?observedProperty .
+
+    ?sampleURI a aq:AQD_Sample .
+    ?sampleURI aq:inspireId ?inspireSAM .
+    ?sampleURI aq:declarationFor ?sample .
+
+    ?inspireSAM aq:localId ?Sample .
+
+    ?processURI a aq:AQD_SamplingPointProcess .
+    ?processURI aq:inspireId ?inspireSPP .
+    ?processURI aq:declarationFor ?process .
+
+    ?inspireSPP aq:localId ?SamplingProcess .
+
+    OPTIONAL{?processURI aq:measurementEquipment ?measurementEquipment} .
+    OPTIONAL{?measurementEquipment aq:equipment ?equipment} .
+    OPTIONAL{?processURI aq:measurementMethod ?measurementMethod1} .
+    OPTIONAL{?measurementMethod1 aq:measurementMethod ?measurementMethod2} .
+    OPTIONAL{?processURI aq:samplingMethod ?samplingMethod1} .
+    OPTIONAL{?samplingMethod1 aq:samplingMethod ?samplingMethod2} .
+    OPTIONAL{?processURI aq:analyticalTechnique ?analyticalTechnique1} .
+    OPTIONAL{?analyticalTechnique1 aq:analyticalTechnique ?analyticalTechnique2} .
+}    
+
+  ?source dcterms:isPartOf ?envelope .
+  ?envelope rod:released ?released .
+  ?envelope rod:locality ?locality .
+  ?envelope rod:obligation ?obliURI .
+  ?envelope rod:startOfPeriod ?startOfPeriod .
+  ?locality rod:localityName ?CountryOrTerritory .
+
+  #FILTER (?envelope = <http://cdr.eionet.europa.eu/al/eu/aqd/d/envwhiua>) .
+  FILTER (?envelope = <<envelope>>)
+
+}
+
+OPTIONAL{?TimeZoneURI skos:notation ?TimeZone} .
+OPTIONAL{?stationClassification skos:prefLabel ?StationType} .
+OPTIONAL{?areaClassification skos:prefLabel ?StationArea} .
+OPTIONAL{?observedProperty rdfs:label ?Pollutant} .
+OPTIONAL{?measurementRegimeURI rdfs:label ?MeasurementRegime} .
+OPTIONAL{?equipment rdfs:label ?MeasurementEquipment} .
+OPTIONAL{?measurementMethod2 rdfs:label ?MeasurementMethod} .
+OPTIONAL{?samplingMethod2 rdfs:label ?SamplingMethod} .
+OPTIONAL{?analyticalTechnique2 rdfs:label ?AnalyticalTechnique} .
+
+}
