@@ -10,7 +10,7 @@
 "Abatement" : {"type" :"string" },
 "Region" : {"type" :"string", "analyzer" : "coma" },
 "Pollutant" : {"type" :"string", "analyzer" : "coma" },
-"Value" : {"type" :"double" },
+"Value" : {"type" :"string" },
 "Unit" : {"type" :"string" },
 "CI_lower" : {"type" :"double" },
 "CI_upper " : {"type" :"double" },
