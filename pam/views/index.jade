@@ -1,0 +1,25 @@
+block title
+    title!= head_title
+
+block extrajavascripts
+    each script in js_resources.index_page
+        script(type='text/javascript', src=script)
+
+block extrastyles
+    each style in css_resources.index_page
+        link(rel='stylesheet', href=style)
+
+block content
+    div(id="slider")
+
+    if (enableBreadcrumbs)
+        +portal_breadcrumbs (breadcrumbs)
+
+    h1!= site_title
+    +download_data
+    p!= site_description
+    .facet-view-simple
+
+    +visualization_info (dataprovencance_info_url,dataprovencance_info_text)
+
+    div!= further_info

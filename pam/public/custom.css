@@ -1,1 +1,19 @@
-/* Add custom css here */
+.span3.order-by {
+    height:49px;
+}
+
+.span3.order-by > span.orderby,
+.span3.order-by > select.facetview_orderby {
+    display:none;
+}
+
+a.details_link {
+    text-decoration:underline;
+}
+a.details_link:visited {
+    color: #346f83;
+}
+.eea-pam-element{
+  max-height:45px;
+  overflow:hidden;
+}
