@@ -1,4 +1,4 @@
-PREFIX tableFile: <http://semantic.eea.europa.eu/project/pam/pam2015.csv#>
+PREFIX tableFile: <http://semantic.eea.europa.eu/project/pam/pam2016.csv#>
 SELECT 
 concat(?Country, "_", ?ID_of_policy_or_measure) as ?_id
 ?Country
@@ -23,7 +23,6 @@ concat(?Country, "_", ?ID_of_policy_or_measure) as ?_id
 ?GHG_s__affected
 ?Projection_scenario_in_which_the_policy_or_measure_is_included
 ?Link_to_national_report
-?Submission_year
 ?Description
 ?Quantified_objective
 ?Implementation_period_finish
@@ -75,9 +74,11 @@ concat(?Country, "_", ?ID_of_policy_or_measure) as ?_id
 ?Projection_scenario_in_which_the_policy_or_measure_is_included_clean
 ?Is_the_policy_or_measure_related_to_a_Union_policy__clean
 ?Union_policy_lookup_only4facets_clean
+?Projected_net_cost_per_year__EUR_
+?Realised_net_cost_per_year__EUR_
 
 
-FROM <http://semantic.eea.europa.eu/project/pam/pam2015.csv>
+FROM <http://semantic.eea.europa.eu/project/pam/pam2016.csv>
 WHERE {
 _:rec tableFile:Country ?Country .
 _:rec tableFile:ID_of_policy_or_measure ?ID_of_policy_or_measure .
@@ -101,7 +102,6 @@ _:rec tableFile:Union_policy_which_resulted_in_the_implementation_of_the_policy_
 _:rec tableFile:GHG_s__affected ?GHG_s__affected .
 _:rec tableFile:Projection_scenario_in_which_the_policy_or_measure_is_included ?Projection_scenario_in_which_the_policy_or_measure_is_included .
 _:rec tableFile:Link_to_national_report ?Link_to_national_report .
-_:rec tableFile:Submission_year ?Submission_year .
 _:rec tableFile:Description ?Description .
 _:rec tableFile:Quantified_objective ?Quantified_objective .
 _:rec tableFile:Implementation_period_finish ?Implementation_period_finish .
@@ -153,4 +153,6 @@ _:rec tableFile:Implementation_period_start_clean ?Implementation_period_start_c
 _:rec tableFile:Projection_scenario_in_which_the_policy_or_measure_is_included_clean ?Projection_scenario_in_which_the_policy_or_measure_is_included_clean .
 _:rec tableFile:Is_the_policy_or_measure_related_to_a_Union_policy__clean ?Is_the_policy_or_measure_related_to_a_Union_policy__clean .
 _:rec tableFile:Union_policy_lookup_only4facets_clean ?Union_policy_lookup_only4facets_clean .
+_:rec tableFile:Projected_net_cost_per_year__EUR_ ?Projected_net_cost_per_year__EUR_ .
+_:rec tableFile:Realised_net_cost_per_year__EUR_ ?Realised_net_cost_per_year__EUR_ .
 }

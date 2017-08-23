@@ -38,7 +38,7 @@
     },
     "Objective_s__lookup_only4facets" : {
         "type" : "string",
-        "analyzer" : "semicolon"
+        "analyzer" : "coma"
     },
     "Entities_lookup_only4facets"  : {
         "type" : "string",

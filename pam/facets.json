@@ -9,29 +9,12 @@
         "show_links": false
     },
 
-     "visualization" : {              
-         "none": {                    
-             "type": "keyword"        
-         },                           
-         "coma": {                    
-             "type": "pattern",       
-             "lowercase": false,      
-             "pattern": ", "          
-         },                           
-         "semicolon": {               
-             "type": "pattern",       
-             "lowercase": false,      
-             "pattern": "; "          
-         }                            
-     },                               
-
-
     "fields_mapping": [
         {
             "name": "Country",
             "listing": {
                 "visible": true,
-                "title": "CountryD",
+                "title": "Country",
                 "width": "100px",
                 "pos": 0,
                 "display": {
@@ -56,7 +39,7 @@
             }
         },
         {
-            "name": "ReportID",
+            "name": "Report ID",
             "listing": {
                 "visible": true,
                 "title": "",
@@ -564,7 +547,8 @@
             "listing": {
                 "visible": true,
                 "title": "Link to national report",
-                "pos": 19
+                "pos": 19,
+                "width": "300px"
             },
             "csv_tsv": {
                 "title": "Link to national report",
@@ -1297,20 +1281,42 @@
             }
         },
         {
-            "name": "Submission_year",
+            "name": "Projected_net_cost_per_year__EUR_",
             "listing": {
                 "visible":false,
-                "title": "Submission year",
+                "title": "Projected net cost per year (EUR)",
                 "pos": 65
             },
             "csv_tsv": {
-                "title": "Submission year",
+                "title": "Projected net cost per year (EUR)",
                 "visible": true,
                 "pos": 66
             },
             "facet": {
                 "visible": false,
-                "title": "Submission year",
+                "title": "Projected net cost per year (EUR)",
+                "pos": 15,
+                "type": "facet",
+                "size": 50,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"]
+            }
+        },
+        {
+            "name": "Realised_net_cost_per_year__EUR_",
+            "listing": {
+                "visible":false,
+                "title": "Realised net cost per year (EUR)",
+                "pos": 65
+            },
+            "csv_tsv": {
+                "title": "Realised net cost per year (EUR)",
+                "visible": true,
+                "pos": 66
+            },
+            "facet": {
+                "visible": false,
+                "title": "Realised net cost per year (EUR)",
                 "pos": 15,
                 "type": "facet",
                 "size": 50,
