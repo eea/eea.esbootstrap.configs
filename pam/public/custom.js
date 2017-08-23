@@ -56,7 +56,7 @@ function viewReady(){
     addHeaders("#facetview_results");
     replaceNumbers();
     fixDataTitles();
-    //removeMissingDetails();
+    removeMissingDetails();
     fixHeights();
 }
 
