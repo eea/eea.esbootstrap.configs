@@ -57,6 +57,7 @@ function viewReady(){
     replaceNumbers();
     fixDataTitles();
     removeMissingDetails();
+    addExactOnCurrentFacets();
     fixHeights();
 }
 

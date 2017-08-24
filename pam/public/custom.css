@@ -17,3 +17,7 @@ a.details_link:visited {
   max-height:45px;
   overflow:hidden;
 }
+
+.facetview_display_type, .facetview_orderby {
+    display: none;
+}
