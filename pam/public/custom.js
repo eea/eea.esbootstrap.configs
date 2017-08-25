@@ -1,10 +1,10 @@
+/* global jQuery, $, window, document */
 function fixHeights(){
     $.each($("#facetview_results tbody tr td"), function (idx, elem){
         var newelem = $("<div class='eea-pam-element' title='"+$(elem).text()+"'>").append($(elem).html());
         $(elem).html("");
         $(elem).append(newelem);
-    })
-    return;
+    });
     $.each($(".eea-pam-element"), function(idx, elem){
         var full_text = $(elem).text();
         var min_length = 0;
@@ -13,7 +13,7 @@ function fixHeights(){
         while (true){
             var visibleWidth = $(elem).width();
             var visibleHeight = $(elem).height();
-            var scrollWidth = $(elem)[0].scrollWdith;
+            var scrollWidth = $(elem)[0].scrollWidth;
             var scrollHeight = $(elem)[0].scrollHeight;
 
             if ((scrollHeight > visibleHeight) || (scrollWidth > visibleWidth)){
@@ -36,14 +36,12 @@ function fixHeights(){
     });
 }
 
-
-
 function removeMissingDetails(){
     $.each($(".details_link"), function(idx, link){
-        href = $(link).attr("href");
+        var href = $(link).attr("href");
         if ((href === undefined) || (href === "")){
             var tmp_text = $(link).text();
-            var container = $(link).parent()
+            var container = $(link).parent();
             $(container).text(tmp_text);
             $(link).remove();
         } else {
@@ -52,39 +50,18 @@ function removeMissingDetails(){
     });
 }
 
-function viewReady(){
-    addHeaders("#facetview_results");
-    replaceNumbers();
-    fixDataTitles();
-    removeMissingDetails();
-    addExactOnCurrentFacets();
-    fixHeights();
-}
+var default_sort = [{}, {}];
+var field_base = window.field_base;
+default_sort[0][field_base + 'Country'] = {"order": 'asc'};
+default_sort[1][field_base + 'ID_of_policy_or_measure'] = {"order": 'asc'};
+
+window.esbootstrap_options = {
+    default_sort: default_sort
+};
 
 jQuery(document).ready(function($) {
-    var default_sort = [{}, {}];
-    default_sort[0][field_base + 'Country'] = {"order": 'asc'};
-    default_sort[1][field_base + 'ID_of_policy_or_measure'] = {"order": 'asc'};
-    eea_facetview('.facet-view-simple',
-        {
-            default_sort: default_sort,
-            search_url: './api',
-            search_index: 'elasticsearch',
-            datatype: 'json',
-            initial_search: false,
-            enable_rangeselect: true,
-            enable_geoselect: true,
-            post_init_callback: function() {
-              add_EEA_settings();
-            },
-            post_search_callback: function() {
-              add_EEA_settings();
-              viewReady();
-              replaceNumbers();
-            },
-            paging: {
-                from: 0,
-                size: 10
-            }
-        });
+    $(window).bind('post_search_callback', function(){
+        removeMissingDetails();
+        fixHeights();
+    });
 });
