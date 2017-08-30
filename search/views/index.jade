@@ -1,0 +1,24 @@
+block title
+    title!= head_title
+
+block extrajavascripts
+    each script in js_resources.index_page
+        script(type='text/javascript', src=script)
+
+block extrastyles
+    if (css_resources.index_page)
+      each style in css_resources.index_page
+          link(rel='stylesheet', href=style)
+
+block content
+    if (enableBreadcrumbs)
+        +portal_breadcrumbs(breadcrumbs)
+    div(class="page-header")
+        h1!= site_title
+        +download_data
+
+    if (site_description)
+        p!= site_description
+    .facet-view-simple
+
+    div!= further_info

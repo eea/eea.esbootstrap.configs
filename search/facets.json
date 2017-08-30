@@ -1,0 +1,824 @@
+{
+    "details_settings" : {
+        "sections": [
+        ]
+    },
+    "listing_settings" : {
+        "show_links": false
+    },
+    "highlights": {
+        "enabled": true,
+        "whitelist": [
+            "http://purl.org/dc/terms/title",
+            "label",
+            "http://purl.org/dc/terms/description",
+            "http://www.eea.europa.eu/portal_types#topic"
+            ],
+        "blacklist": []
+    },
+    "types": {
+        "contentTypeNormalize": {
+            "highlight": "highlight",
+            "press-release": "pressrelease",
+            "news": "highlight",
+            "news-item": "news-item",
+            "event": "event",
+            "promotion": "generic",
+            "article": "article",
+            "eco-tip": "ecotip",
+            "image": "generic",
+            "video": "cloudvideo",
+            "report": "report",
+            "publication": "report",
+            "dataset": "data",
+            "data-(rdf)": "data",
+            "data": "data",
+            "data-visualization": "davizvisualization",
+            "indicator-specification": "specification",
+            "indicator-factsheet": "assessment",
+            "indicator-assessment": "assessment",
+            "infographic": "interactive-data",
+            "briefing": "fiche",
+            "page": "document",
+            "link": "link",
+            "data-file": "datafile",
+            "assessment-part": "assessmentpart",
+            "file": "file",
+            "eea-job-vacancy": "eeavacancy",
+            "epub-file": "epubfile",
+            "external-data-reference": "externaldataspec",
+            "eyewitness-story": "generic",
+            "figure": "eeafigure",
+            "figure-file": "eeafigurefile",
+            "folder": "folder",
+            "gis-map-application": "gis-application",
+            "methodology-reference": "generic",
+            "organization": "organisation",
+            "organisation": "organisation",
+            "policy-question": "policyquestion",
+            "policy-document": "policydocumentreference",
+            "rationale-reference": "rationalereference",
+            "soer-key-fact": "soerkeyfact",
+            "soer-message": "soermessage",
+            "sparql": "sparql",
+            "data-table-via-sparql": "sparql",
+            "speech": "news-item",
+            "text": "document",
+            "work-item": "generic",
+            "collection---old-style ":"topic",
+            "Catalogue---listing":"topic",
+            "legislation-instrument": "legislation-instrument",
+            "legislation": "legislation-instrument",
+            "legislation-data-reporting": "legislation-instrument",
+            "reporting-obligation": "reporting-obligation"
+        },
+        "defaultContentType" : "generic",
+        "images": {
+            "fallback_thumb" : "",
+            "fallback_icon" : "",
+            "rules": [
+                {
+                    "rule": "startsWith",
+                    "operator": "",
+                    "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#about",
+                    "value": "http://www.eea.europa.eu",
+                    "thumb_template": {
+                        "template": "${url}/image_preview",
+                        "variables": [{
+                                "name": "url",
+                                "type" : "field",
+                                "field" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#about"
+                        }]
+                    },
+                    "icon_template": {
+                        "template": "http://www.eea.europa.eu/portal_depiction/${contentType}/image_thumb",
+                        "variables": [{
+                                "name": "contentType",
+                                "type" : "variable",
+                                "variable" : "contentType"
+                        }]
+                    }
+                },
+                {
+                    "rule": "startsWith",
+                    "operator": "not",
+                    "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#about",
+                    "value": "http://www.eea.europa.eu",
+                    "thumb_template": {
+                        "template": "http://www.eea.europa.eu/portal_depiction/${contentType}/image_preview",
+                        "variables": [{
+                                "name": "contentType",
+                                "type" : "variable",
+                                "variable" : "contentType"
+                        }]
+                    },
+                    "icon_template": {
+                        "template": "http://www.eea.europa.eu/portal_depiction/${contentType}/image_thumb",
+                        "variables": [{
+                                "name": "contentType",
+                                "type" : "variable",
+                                "variable" : "contentType"
+                        }]
+                    }
+                }
+            ]
+        }
+    },
+    "fields_mapping": [
+        {
+            "name": "_id",
+            "listing": {
+                "title": "Title",
+                "visible" : true,
+                "pos" : 0,
+                "width": "200px",
+                "display": {
+                    "pre": "<a href=\"",
+                    "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#about",
+                    "post": "\">"
+                }
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
+            }
+        },
+        {
+            "name": "http://www.eea.europa.eu/portal_types#topic",
+            "listing": {
+                "title": "Topics",
+                "visible" : true,
+                "pos" : 5
+            },
+            "csv_tsv": {
+                "title": "topics",
+                "visible": true,
+                "pos": 9
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "allow_exact": true,
+                "visible": true,
+                "title": "Topics",
+                "pos": 1,
+                "type": "facet",
+                "size": 100,
+                "min_size": 10,
+                "order": "term",
+                "operator": "AND",
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for topic",
+                "empty_message": "No topics to show",
+                "short_name": "Topic",
+                "facet_display_options": ["sort", "checkbox"]
+            },
+            "card": {
+                "field": "topics",
+                "default": "",
+                "visible": true,
+                "type": "list"
+            },
+            "list": {
+                "field": "topics",
+                "default": "",
+                "visible": true,
+                "type": "list"
+            }
+        },
+        {
+            "name": "http://purl.org/dc/terms/creator",
+            "listing": {
+                "title": "Creator",
+                "visible" : false,
+                "pos" : 4
+            },
+            "csv_tsv": {
+                "title": "creator",
+                "visible": false,
+                "pos": 0
+            },
+            "details": {
+                "visible": false
+            }
+        },
+        {
+            "name": "http://www.eea.europa.eu/ontologies.rdf#hasWorkflowState",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "WorkflowState",
+                "visible": true,
+                "pos": 7
+            },
+            "details": {
+                "visible": false
+            }
+        },
+        {
+            "name": "http://purl.org/dc/terms/modified",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "modified",
+                "visible": true,
+                "pos": 4
+            },
+            "details": {
+                "visible": false
+            }
+        },
+        {
+            "name": "http://purl.org/dc/terms/expires",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "expires",
+                "visible": true,
+                "pos": 2
+            },
+            "details": {
+                "visible": false
+            }
+        },
+        {
+            "name": "http://purl.org/dc/terms/issued",
+            "listing": {
+                "type": "date",
+                "format": "dd M yy",
+                "title": "Issued",
+                "visible" : true,
+                "pos" : 6
+            },
+            "csv_tsv": {
+                "title": "issued",
+                "visible": true,
+                "pos": 3
+            },
+            "details": {
+                "visible": false
+            },
+            "card": {
+                "type": "date",
+                "format": "dd M yy",
+                "field": "date",
+                "default": "",
+                "visible": true
+            },
+            "list": {
+                "type": "date",
+                "format": "dd M yy",
+                "field": "date",
+                "default": "",
+                "visible": true
+            }
+        },
+        {
+            "name": "http://purl.org/dc/terms/description",
+            "listing": {
+                "title": "description",
+                "visible": true,
+                "pos": 2
+            },
+            "csv_tsv": {
+                "title": "description",
+                "visible": true,
+                "pos": 2
+            },
+            "details": {
+                "visible": false
+            },
+            "card": {
+                "field": "description",
+                "default": "",
+                "visible": true,
+                "type": "simple"
+            },
+            "list": {
+                "field": "description",
+                "default": "",
+                "visible": true,
+                "type": "simple"
+            }
+        },
+        {
+            "name": "http://purl.org/dc/terms/spatial",
+            "values_whitelist":[
+                "Andorra", "United Arab Emirates", "Afghanistan", "Antigua and Barbuda",
+                "Anguilla", "Albania", "Armenia", "Angola", "Antarctica", "Argentina",
+                "American Samoa", "Austria", "Australia", "Aruba", "Åland", "Azerbaijan",
+                "Bosnia and Herzegovina", "Barbados", "Bangladesh", "Belgium", "Burkina Faso",
+                "Bulgaria", "Bahrain", "Burundi", "Benin", "Saint Barthélemy", "Bermuda",
+                "Brunei", "Bolivia", "Bonaire", "Brazil", "Bahamas", "Bhutan", "Bouvet Island",
+                "Botswana", "Belarus", "Belize", "Canada", "Cocos [Keeling] Islands",
+                "Democratic Republic of the Congo", "Central African Republic", "Republic of the Congo",
+                "Switzerland", "Ivory Coast", "Cook Islands", "Chile", "Cameroon", "China", "Colombia",
+                "Costa Rica", "Cuba", "Cape Verde", "Curacao", "Christmas Island", "Cyprus", "Czech Republic",
+                "Germany", "Djibouti", "Denmark", "Dominica", "Dominican Republic", "Algeria", "Ecuador",
+                "Estonia", "Egypt", "Western Sahara", "Eritrea", "Spain", "Ethiopia", "Finland", "Fiji",
+                "Falkland Islands", "Micronesia", "Faroe Islands", "France", "Gabon", "United Kingdom",
+                "Grenada", "Georgia", "French Guiana", "Guernsey", "Ghana", "Gibraltar", "Greenland", "Gambia",
+                "Guinea", "Guadeloupe", "Equatorial Guinea", "Greece", "South Georgia and the South Sandwich Islands",
+                "Guatemala", "Guam", "Guinea-Bissau", "Guyana", "Hong Kong", "Heard Island and McDonald Islands",
+                "Honduras", "Croatia", "Haiti", "Hungary", "Indonesia", "Ireland", "Israel", "Isle of Man", "India",
+                "British Indian Ocean Territory", "Iraq", "Iran", "Iceland", "Italy", "Jersey", "Jamaica", "Jordan",
+                "Japan", "Kenya", "Kyrgyzstan", "Cambodia", "Kiribati", "Comoros", "Saint Kitts and Nevis",
+                "North Korea", "South Korea", "Kuwait", "Cayman Islands", "Kazakhstan", "Laos", "Lebanon",
+                "Saint Lucia", "Liechtenstein", "Sri Lanka", "Liberia", "Lesotho", "Lithuania", "Luxembourg",
+                "Latvia", "Libya", "Morocco", "Monaco", "Moldova", "Montenegro", "Saint Martin", "Madagascar",
+                "Marshall Islands", "Macedonia", "Mali", "Myanmar [Burma]", "Mongolia", "Macao", "Northern Mariana Islands",
+                "Martinique", "Mauritania", "Montserrat", "Malta", "Mauritius", "Maldives", "Malawi", "Mexico",
+                "Malaysia", "Mozambique", "Namibia", "New Caledonia", "Niger", "Norfolk Island", "Nigeria", "Nicaragua",
+                "Netherlands", "Norway", "Nepal", "Nauru", "Niue", "New Zealand", "Oman", "Panama", "Peru",
+                "French Polynesia", "Papua New Guinea", "Philippines", "Pakistan", "Poland", "Saint Pierre and Miquelon",
+                "Pitcairn Islands", "Puerto Rico", "Palestine", "Portugal", "Palau", "Paraguay", "Qatar", "Réunion",
+                "Romania", "Serbia", "Russian Federation", "Rwanda", "Saudi Arabia", "Solomon Islands", "Seychelles", "Sudan",
+                "Sweden", "Singapore", "Saint Helena", "Slovenia", "Svalbard and Jan Mayen", "Slovakia", "Sierra Leone", "San Marino",
+                "Senegal", "Somalia", "Suriname", "South Sudan", "São Tomé and Príncipe", "El Salvador", "Sint Maarten", "Syria",
+                "Swaziland", "Turks and Caicos Islands", "Chad", "French Southern Territories", "Togo", "Thailand",
+                "Tajikistan", "Tokelau", "East Timor", "Turkmenistan", "Tunisia", "Tonga", "Turkey", "Trinidad and Tobago",
+                "Tuvalu", "Taiwan", "Tanzania", "Ukraine", "Uganda", "U.S. Minor Outlying Islands", "United States", "Uruguay",
+                "Uzbekistan", "Vatican City", "Saint Vincent and the Grenadines", "Venezuela", "British Virgin Islands",
+                "U.S. Virgin Islands", "Vietnam", "Vanuatu", "Wallis and Futuna", "Samoa", "Kosovo (UNSCR 1244/99)",
+                "Yemen", "Mayotte", "South Africa", "Zambia", "Zimbabwe", "Russia", "Czechia", "Kosovo", "Macedonia", 
+                "Former Yugoslav Republic of Macedonia, the", "Macedonia (FYR)","England" ,"Scotland","Wales","Northern Ireland",
+                "Congo"],
+            "listing": {
+                "title": "Countries",
+                "visible" : true,
+                "pos" : 2
+            },
+            "csv_tsv": {
+                "title": "Countries",
+                "visible": true,
+                "pos": 5
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "allow_exact": true,
+                "visible": true,
+                "title": "Countries",
+                "pos": 2,
+                "type": "facet",
+                "size": 100,
+                "min_size": 10,
+                "order": "term",
+                "operator": "AND",
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for country",
+                "empty_message": "No countries to show",
+                "short_name": "Country",
+                "facet_display_options": ["sort", "checkbox"]
+            }
+        },
+        {
+            "name": "places",
+            "values_blacklist":[
+                "Andorra", "United Arab Emirates", "Afghanistan", "Antigua and Barbuda",
+                "Anguilla", "Albania", "Armenia", "Angola", "Antarctica", "Argentina",
+                "American Samoa", "Austria", "Australia", "Aruba", "Åland", "Azerbaijan",
+                "Bosnia and Herzegovina", "Barbados", "Bangladesh", "Belgium", "Burkina Faso",
+                "Bulgaria", "Bahrain", "Burundi", "Benin", "Saint Barthélemy", "Bermuda",
+                "Brunei", "Bolivia", "Bonaire", "Brazil", "Bahamas", "Bhutan", "Bouvet Island",
+                "Botswana", "Belarus", "Belize", "Canada", "Cocos [Keeling] Islands",
+                "Democratic Republic of the Congo", "Central African Republic", "Republic of the Congo",
+                "Switzerland", "Ivory Coast", "Cook Islands", "Chile", "Cameroon", "China", "Colombia",
+                "Costa Rica", "Cuba", "Cape Verde", "Curacao", "Christmas Island", "Cyprus", "Czech Republic",
+                "Germany", "Djibouti", "Denmark", "Dominica", "Dominican Republic", "Algeria", "Ecuador",
+                "Estonia", "Egypt", "Western Sahara", "Eritrea", "Spain", "Ethiopia", "Finland", "Fiji",
+                "Falkland Islands", "Micronesia", "Faroe Islands", "France", "Gabon", "United Kingdom",
+                "Grenada", "Georgia", "French Guiana", "Guernsey", "Ghana", "Gibraltar", "Greenland", "Gambia",
+                "Guinea", "Guadeloupe", "Equatorial Guinea", "Greece", "South Georgia and the South Sandwich Islands",
+                "Guatemala", "Guam", "Guinea-Bissau", "Guyana", "Hong Kong", "Heard Island and McDonald Islands",
+                "Honduras", "Croatia", "Haiti", "Hungary", "Indonesia", "Ireland", "Israel", "Isle of Man", "India",
+                "British Indian Ocean Territory", "Iraq", "Iran", "Iceland", "Italy", "Jersey", "Jamaica", "Jordan",
+                "Japan", "Kenya", "Kyrgyzstan", "Cambodia", "Kiribati", "Comoros", "Saint Kitts and Nevis",
+                "North Korea", "South Korea", "Kuwait", "Cayman Islands", "Kazakhstan", "Laos", "Lebanon",
+                "Saint Lucia", "Liechtenstein", "Sri Lanka", "Liberia", "Lesotho", "Lithuania", "Luxembourg",
+                "Latvia", "Libya", "Morocco", "Monaco", "Moldova", "Montenegro", "Saint Martin", "Madagascar",
+                "Marshall Islands", "Macedonia", "Mali", "Myanmar [Burma]", "Mongolia", "Macao", "Northern Mariana Islands",
+                "Martinique", "Mauritania", "Montserrat", "Malta", "Mauritius", "Maldives", "Malawi", "Mexico",
+                "Malaysia", "Mozambique", "Namibia", "New Caledonia", "Niger", "Norfolk Island", "Nigeria", "Nicaragua",
+                "Netherlands", "Norway", "Nepal", "Nauru", "Niue", "New Zealand", "Oman", "Panama", "Peru",
+                "French Polynesia", "Papua New Guinea", "Philippines", "Pakistan", "Poland", "Saint Pierre and Miquelon",
+                "Pitcairn Islands", "Puerto Rico", "Palestine", "Portugal", "Palau", "Paraguay", "Qatar", "Réunion",
+                "Romania", "Serbia", "Russian Federation", "Rwanda", "Saudi Arabia", "Solomon Islands", "Seychelles", "Sudan",
+                "Sweden", "Singapore", "Saint Helena", "Slovenia", "Svalbard and Jan Mayen", "Slovakia", "Sierra Leone", "San Marino",
+                "Senegal", "Somalia", "Suriname", "South Sudan", "São Tomé and Príncipe", "El Salvador", "Sint Maarten", "Syria",
+                "Swaziland", "Turks and Caicos Islands", "Chad", "French Southern Territories", "Togo", "Thailand",
+                "Tajikistan", "Tokelau", "East Timor", "Turkmenistan", "Tunisia", "Tonga", "Turkey", "Trinidad and Tobago",
+                "Tuvalu", "Taiwan", "Tanzania", "Ukraine", "Uganda", "U.S. Minor Outlying Islands", "United States", "Uruguay",
+                "Uzbekistan", "Vatican City", "Saint Vincent and the Grenadines", "Venezuela", "British Virgin Islands",
+                "U.S. Virgin Islands", "Vietnam", "Vanuatu", "Wallis and Futuna", "Samoa", "Kosovo (UNSCR 1244/99)",
+                "Yemen", "Mayotte", "South Africa", "Zambia", "Zimbabwe", "Russia", "Czechia", "Kosovo", "Macedonia", 
+                "Former Yugoslav Republic of Macedonia, the", "Macedonia (FYR)","England" ,"Scotland","Wales","Northern Ireland",
+                "Congo","unknown","undefined","6","8","9","1"],
+            "listing": {
+                "title": "Regions/Places/Cities/Seas...",
+                "visible" : true,
+                "pos" : 2
+            },
+            "csv_tsv": {
+                "title": "Regions/Places/Cities/Seas...",
+                "visible": true,
+                "pos": 5
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "allow_exact": true,
+                "visible": true,
+                "title": "Regions/Places/Cities/Seas...",
+                "pos": 2,
+                "type": "facet",
+                "size": 100,
+                "min_size": 10,
+                "order": "reverse_count",
+                "operator": "OR",
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for regions/places/cities/seas...",
+                "empty_message": "No regions/places/cities/seas... to show",
+                "short_name": "Region",
+                "facet_display_options": ["sort", "checkbox"]
+            }
+        },
+        {
+            "name": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "values_whitelist": [
+                              "Highlight",
+                              "Press Release",
+                              "Promotion",
+                              "Article",
+                              "Eco-Tip",
+                              "Collection",
+                              "Image",
+                              "Video",
+                              "Report",
+                              "Data",
+                              "Data (RDF)",
+                              "Data Visualization",
+                              "Indicator Specification",
+                              "Indicator factsheet",
+                              "Indicator assessment",
+                              "Infographic",
+                              "Briefing",
+                              "Page",
+                              "Link",
+                              "Legislation Instrument",
+                              "Reporting Obligation",
+                              "Data File",
+                              "Assessment part",
+                              "EEA Job Vacancy",
+                              "Epub File",
+                              "External Data Reference",
+                              "Eyewitness story",
+                              "Figure",
+                              "File",
+                              "Folder",
+                              "GIS Map Application",
+                              "Methodology Reference",
+                              "Organisation",
+                              "Policy Question",
+                              "Policy Document",
+                              "Rationale Reference",
+                              "Reporting Obligation",
+                              "Organisation (Reportnet client)",
+                              "Legislation Instrument",
+                              "SOER Key fact",
+                              "SOER Message",
+                              "SPARQL",
+                              "Data table via SPARQL",
+                              "Speech",
+                              "Text",
+                              "Work Item",
+                              "Contract opportunity"
+                          ],
+            "listing": {
+                "title": "Content types (standard)",
+                "visible" : false,
+                "pos" : 3
+            },
+            "csv_tsv": {
+                "title": "Content types (standard)",
+                "visible": false,
+                "pos": 11
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false,
+                "title": "Content types (standard)",
+                "pos": 3,
+                "type": "facet",
+                "size": 50,
+                "min_size": 10,
+                "order": "term",
+                "operator": "OR",
+                "facet_display_options": ["sort", "checkbox"]
+            }
+        },
+        {
+            "name": "http://www.eea.europa.eu/ontologies.rdf#objectProvides",
+            "values_whitelist": [
+                             "Article",
+                             "EEA Job Vacancy",
+                             "Briefing (all)",
+                             "Briefing (Country)",
+                             "News",
+                             "Image",
+                             "File",
+                             "Video",
+                             "Web page",
+                             "Map (interactive)",
+                             "Infographic",
+                             "Data receiver (Reportnet client)",
+                             "Data visualisation",
+                             "Data (at EEA)",
+                             "Data table (via SPARQL)",
+                             "Topic/subtopic site",
+                             "Graph (image)",
+                             "Map (image)",
+                             "Publication / Report",
+                             "Microdata (file)",
+                             "Data provider (organisation)",
+                             "Catalogue / listing",
+                             "Indicator assessment",
+                             "Data (external links)",
+                             "Key message",
+                             "Website main section",
+                             "Organisation",
+                             "Legislation Instrument",
+                             "Legislation",
+                             "Legislation (Data reporting)",
+                             "References and links",
+                             "Environmental question",
+                             "Reporting obligation",
+                             "Contract opportunity"
+                          ],
+            "listing": {
+                "title": "Content types",
+                "visible" : true,
+                "pos" : 3
+            },
+            "csv_tsv": {
+                "title": "Content types",
+                "visible": true,
+                "pos": 11
+            },
+            "details": {
+                "visible": true
+            },
+            "facet": {
+                "visible": true,
+                "title": "Content types",
+                "pos": 5,
+                "type": "facet",
+                "size": 50,
+                "min_size": 10,
+                "order": "term",
+                "operator": "OR",
+                "short_name": "Content type",
+                "facet_display_options": ["sort", "checkbox"]
+            },
+            "card": {
+                "field": "types",
+                "default": "",
+                "visible": true
+            },
+            "list": {
+                "field": "types",
+                "default": "",
+                "visible": true
+            }
+        },
+        {
+            "name": "organisation",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "organisation",
+                "visible": true,
+                "pos": 12
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "allow_exact": true,
+                "visible": true,
+                "title": "Organisations involved",
+                "pos": 6,
+                "type": "facet",
+                "size": 3000,
+                "min_size": 10,
+                "order": "reverse_count",
+                "operator": "OR",
+                "short_name": "Organisation",
+                "facet_display_options": ["sort", "checkbox"]
+            }
+        },
+        {
+            "name": "http://www.w3.org/1999/02/22-rdf-syntax-ns#about",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "url",
+                "visible": true,
+                "pos": 10
+            },
+            "details": {
+                "visible": false
+            },
+            "card": {
+                "field": "url",
+                "default": "",
+                "visible": true,
+                "type": "simple"
+            },
+            "list": {
+                "field": "url",
+                "default": "",
+                "visible": true,
+                "type": "simple"
+            }
+        },
+        {
+            "name": "cluster_name",
+            "listing": {
+                "visible": false
+            },
+            "facet": {
+                "visible": true,
+                "title": "Websites",
+                "pos": 6,
+                "type": "facet",
+                "size": 100,
+                "min_size": 10,
+                "order": "term",
+                "operator": "OR",
+                "short_name": "Website",
+                "facet_display_options": ["sort", "checkbox"]
+            }
+        },
+        {
+            "name": "year",
+            "listing": {
+                "visible": false
+            },
+            "facet": {
+                "visible": true,
+                "title": "Publishing year",
+                "pos": 7,
+                "type": "facet",
+                "size": 100,
+                "min_size": 10,
+                "order": "reverse_term",
+                "operator": "AND",
+                "facet_display_options": ["sort", "checkbox"],
+                "short_name": "Year",
+                "values_blacklist": ["undefined"]
+            }
+        },
+        {
+            "name": "time_coverage",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Time coverage",
+                "visible": true,
+                "pos": 11
+            },
+            "facet": {
+                "visible": true,
+                "title": "Time coverage",
+                "pos": 7,
+                "type": "range"
+            }
+        },
+        {
+            "name": "language",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "language",
+                "visible": true,
+                "pos": 12
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": true,
+                "title": "Languages",
+                "pos": 8,
+                "type": "facet",
+                "size": 100,
+                "min_size": 10,
+                "order": "term",
+                "operator": "OR",
+                "short_name": "Language",
+                "facet_display_options": ["sort", "checkbox"],
+                "default_values": {"operator": "or", "values":["en"]}
+            }
+        },
+        {
+            "name": "http://purl.org/dc/terms/format",
+            "listing": {
+                "title": "Format",
+                "visible": true
+            },
+            "csv_tsv": {
+                "title": "format",
+                "visible": true,
+                "pos": 11
+            },
+            "details": {
+                "visible": false
+            },
+            "list": {
+                "visible": false
+            },
+            "facet": {
+                "visible": true,
+                "title": "Format",
+                "pos": 9,
+                "type": "facet",
+                "size": 100,
+                "min_size": 10,
+                "order": "reverse_count",
+                "operator": "OR",
+                "short_name": "Format",
+                "facet_display_options": ["sort", "checkbox"]
+            }
+
+        },
+        {
+            "name": "label",
+            "listing": {
+                "title": "",
+                "visible" : true,
+                "pos" : 1,
+                "display": {
+                    "pre": "",
+                    "field": "label",
+                    "post": "</td>"
+                }
+            },
+            "csv_tsv": {
+                "title": "label",
+                "visible": true,
+                "pos": 1
+            },
+            "details": {
+                "visible": false
+            },
+            "card": {
+                "field": "title",
+                "default": "",
+                "visible": true,
+                "type" : "simple"
+            },
+            "list": {
+                "field": "title",
+                "default": "",
+                "visible": true,
+                "simple" : true
+            }
+        },
+        {
+            "name": "http://purl.org/dc/terms/references",
+            "listing": {
+                "title": "References",
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "References",
+                "visible": false,
+                "pos": 11
+            },
+            "details": {
+                "visible": false
+            },
+            "list": {
+                "visible": false
+            }
+        }
+    ]
+}
