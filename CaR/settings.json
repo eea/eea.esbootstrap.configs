@@ -1,0 +1,113 @@
+{
+    "http": {
+        "port": 3000
+    },
+    "elastic": {
+        "type": "resource",
+        "enableValuesCounting": true
+    },
+    "external_templates": {
+        "local_path": "/external_templates",
+        "host": "www.eea.europa.eu",
+        "head_path": "/templates/v2/getRequiredHead?jsdisable=all&render_full_html=False",
+        "header_path": "/templates/v2/getHeader?jsdisable=all&render_full_html=False",
+        "footer_path": "/templates/v2/getFooter?render_full_html=False"
+    },
+    "layout_vars": {
+        "head_title": "Global catalogue of the European Environment Agency (EEA)",
+        "css_resources": {
+            "index_page": [
+                "css/esbootstrap.facetview.css",
+                "eeasearch.facetview.css"
+            ]
+        },
+        "js_resources": {
+            "index_page": [
+                "eeasearch.facetview.js"
+            ]
+        },
+        "site_title": "Global search and catalogue <sup style='color:#fbaf33'>beta</sup>",
+        "enableBreadcrumbs": false,
+        "dataprovencance_info_text": "Semantic Data Service (SDS)",
+        "dataprovencance_info_url": "http://semantic.eea.europa.eu",
+        "further_info": "The content of this catalogue has been created thanks to the EU's open data approach and the contribution of many organisations part of EEA's network (Eionet)."
+    },
+    "landingpage_enabled": false,
+    "es_debug_enabled": false,
+    "suggestions_enabled": true,
+    "relevance_enabled": true,
+    "river_configs": {
+        "configs": [
+            {
+                "id": "eea_contracts",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeacontracts.json"
+            },
+            {
+                "id": "eea_reports",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeareports.json"
+            },
+            {
+                "id": "eea_daviz",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeadaviz.json"
+            },
+            {
+                "id": "eea_dataexternal",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeadata_external.json"
+            },
+            {
+                "id": "eea_data",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeadata.json"
+            },
+            {
+                "id": "eea_figures",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeafigures.json"
+            },
+            {
+                "id": "eea_content",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eea.europa.eu.json"
+            },
+            {
+                "id": "eea_vacancies",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeavacancies.json"
+            },
+            {
+                "id": "rod_instruments",
+                "cluster_name": "Eionet > reportnet",
+                "config_file": "riverconfig_instruments.json"
+            },
+            {
+                "id": "rod_obligations_expired",
+                "cluster_name": "Eionet > reportnet",
+                "config_file": "riverconfig_obligations_expired.json"
+            },
+            {
+                "id": "rod_obligations_active",
+                "cluster_name": "Eionet > reportnet",
+                "config_file": "riverconfig_obligations_active.json"
+            },
+            {
+                "id": "rod_clients",
+                "cluster_name": "Eionet > reportnet",
+                "config_file": "riverconfig_clients.json"
+            },
+            {
+                "id": "eea_organisations",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_organisations.json"
+            },
+            {
+                "id": "eea_messages",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_messages.json"
+            }
+        ]
+    }
+}
