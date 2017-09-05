@@ -1,0 +1,307 @@
+/* styles for landing page tiles */
+#landing {
+    margin-top: 2em;
+}
+
+#facetview {
+    margin-bottom: 2em;
+}
+
+.eea_tile {
+    width: 24%;
+    min-height: 230px;
+    float: left;
+    margin: 0 1em 1em 0;
+    background-color: #00918D;
+    padding: 1.5em;
+}
+
+.eea_tile_count {
+    font-size: 60px;
+    font-weight: bold;
+    color: #e9f2f5;
+    vertical-align: bottom;
+}
+
+.documents_count {
+    display: block;
+    margin-bottom: 0.35em;
+}
+
+.documents_count,
+.language_count {
+    height: 18px;
+}
+
+.available_content .eea_tile_count {
+    color: #1b928f;
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.time_coverage p {
+    font-size: 150%;
+    margin-bottom: 1em;
+    float: right;
+    color: #fff;
+}
+#landing .time_coverage > p {
+    margin-bottom: 1.75em;
+}
+
+.latest_objects, .available_content {
+    background-color: #FFF;
+}
+
+#landing h2 {
+    color: #FFF;
+    border-bottom: 1px solid #FFF;
+    font-size: 200%;
+    margin: 0 0 1em 0;
+}
+
+#landing .available_content .eea_tile_content > h2,
+#landing .latest_objects > h2,
+#landing .available_content h3 {
+    color: #115c57;
+}
+
+#landing .available_content h2 {
+    border-bottom: 1px solid #115c57;
+    font-size: 375%;
+    line-height: 1;
+    margin-bottom: 0; 
+}
+#landing .available_content h3 {
+    border-bottom: 0;
+    font-size: 175%;
+}
+.normal_tiles .picture {
+    background: #00918D url("images/search-album-slideshow-bg.png") no-repeat center center;
+    background-size: contain; 
+}
+.normal_tiles .topics {
+    background: #fbaf33 url("images/topics-bg.png") no-repeat 85% 25%;
+    background-size: 85%;
+}
+
+.normal_tiles .time_coverage {
+    background-color: #b0c649;
+}
+
+.normal_tiles .organisations {
+    background: #babbdb url("images/organisations-bg.png") no-repeat 85px 100px;
+    background-size: 70%;
+}
+
+.normal_tiles .content_types {
+    background: #b3548d url("images/content-types-bg.png") no-repeat 85% 55%; 
+    background-size: 90%;
+}
+
+.normal_tiles .countries {
+    background: #1c65a4 url("images/countries-bg.png") no-repeat -1px 1px;
+    padding-top: 138px;
+    background-size: 101%;
+    position: relative;
+}
+.latest_objects_list .ribbon-wrapper {
+    display: none;
+}
+#landing .latest_objects_list {
+    margin-left: 0;
+}
+#landing .latest_objects_list > li { 
+    display: block;
+    margin-bottom: 1em;
+}
+#landing .latest_objects > h2 {
+    border-bottom: 1px solid #1b928f;
+    color: #1b928f;
+    margin-bottom: 0.5em;
+}
+.latest_objects_list a {
+    display: block;
+    color: #1b928f;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.latest_objects_list strong {
+    margin-right: 0.2em;
+}
+
+.latest_objects {
+    overflow:hidden;
+}
+.eea_tile {
+    position: relative;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.grid-item--height2 { height: 350px; }
+
+.mobile_tiles {
+    display: none;
+}
+
+@media (max-width: 479px) {
+    .eea_tile {
+        width: 100%;
+        float: none;
+        min-height: 300px;
+    }
+    .countries {
+        padding-top: 220px; 
+    }
+    .mobile_tiles {
+        display: block;
+        color: #fff;
+        font-size: 1em;
+        font-weight: bold;
+    }
+    .eea_tile {
+        display: none;
+    }
+    .mobile_tiles .eea_tile {
+        display: block;
+        min-height: 100%;
+        padding: 1em;
+        margin: 0 !important;
+    }
+    .latest_objects, .available_content {
+        background-color: #00918D;
+    }
+    .eea_tile_count,
+    .available_content .eea_tile_count {
+        color: #e9f2f5;
+        font-size: 25px;
+        vertical-align: sub;
+        display: inline-block;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 1023px) {
+    .eea_tile {
+        width: 48.5%;
+    }
+    .eea_tile:nth-child(even) {
+        margin-right: 0;
+    }
+    .eea_tile_count {
+        font-size: 50px;
+    }
+    .topics,
+    .time_coverage {
+        height: 245px;
+    }
+    #facetview {
+        margin-bottom: 5em;
+    }
+    .row-fluid .span3 {
+        width: 35%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    div#facetview_rightcol {
+        width: 64%;
+    }
+}
+
+@media (min-width: 1023px) and (max-width: 1279px) {
+    .content_types,
+    .organisations {
+        margin-top: -240px;
+    }
+    .eea_tile {
+        width: 32%;
+    }
+    .grid-item--height2 {
+        height: 330px;
+    }
+    
+    .latest_objects {
+        width: 480px;
+    }
+    .picture {
+       background-position: 30px 25px;
+    }
+    .topics {
+        height: 329px;
+    }
+    .topics, .time_coverage {
+        margin-right: 0;
+    }
+
+    .countries {
+        clear: left;
+        height: 250px;
+    }
+
+}
+@media (min-width: 1280px) {
+    .organisations {
+        clear: both;
+    }
+    .countries,
+    .latest_objects {
+        margin-top: -120px; 
+    }
+    .grid-last-column-item {
+        margin-right: 0;
+    }
+}
+@media (min-width: 1440px) {
+    .countries > h2 {
+        width: 89%;
+    }
+}
+@media (min-width: 1440px) and (max-width: 1679px) {
+    .countries {
+        padding-top: 0;
+    }
+
+    .countries > h2 {
+        position: absolute;
+        top: 39%;
+    }
+    .countries_count {
+        position: absolute;
+        top: 57%;
+    }
+}
+
+@media (min-width: 1680px) {
+    .eea_tile {
+        min-height: 350px;
+    }
+    .normal_tiles .grid-item--height2 {
+        height: 470px;
+    }
+    .normal_tiles .countries {
+        background-size: 73%;
+        background-position: 35px 0;
+    }
+    .countries > h2 {
+        position: absolute;
+        top: 30%;
+    }
+    .countries_count {
+        position: absolute;
+        top: 45%;
+    }
+}
+
+@media (min-width: 1920px) {
+    .countries_count {
+        top: 49%;
+    }
+}
+
