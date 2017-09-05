@@ -366,8 +366,8 @@
                 "visible": false
             },
             "facet": {
-                "allow_exact": true,
-                "visible": true,
+                "allow_exact": false,
+                "visible": false,
                 "title": "Countries",
                 "pos": 2,
                 "type": "facet",
@@ -439,7 +439,7 @@
             },
             "facet": {
                 "allow_exact": true,
-                "visible": true,
+                "visible": false,
                 "title": "Regions/Places/Cities/Seas...",
                 "pos": 2,
                 "type": "facet",
@@ -732,7 +732,7 @@
                 "size": 100,
                 "min_size": 10,
                 "order": "term",
-                "operator": "OR",
+                "operator": "or",
                 "short_name": "Language",
                 "facet_display_options": ["sort", "checkbox"],
                 "default_values": {"operator": "or", "values":["en"]}

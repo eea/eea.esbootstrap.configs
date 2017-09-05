@@ -246,8 +246,23 @@ jQuery(document).ready(function($) {
   var today = getToday();
 
   predefined_filters = [
+        {
+          "range": {
+            "items_count_http://purl.org/dc/terms/spatial": {
+              "from": 1,
+              "to": 1
+            }
+          }
+        },
+        {
+          "term": {
+            "http://purl.org/dc/terms/spatial": "Albania"
+          }
+        },
       {'term': {'http://www.eea.europa.eu/ontologies.rdf#hasWorkflowState':
                   'published'}},
+      {'term': {'language':
+                  'en'}},
       {'constant_score': {
         'filter': {
           'or': [
@@ -258,6 +273,21 @@ jQuery(document).ready(function($) {
       }];
 
   predefined_filters_expired = [
+        {
+          "range": {
+            "items_count_http://purl.org/dc/terms/spatial": {
+              "from": 1,
+              "to": 1
+            }
+          }
+        },
+        {
+          "term": {
+            "http://purl.org/dc/terms/spatial": "Albania"
+          }
+        },
+      {'term': {'language':
+                  'en'}},
       {'constant_score': {
         'filter': {
           'or': [

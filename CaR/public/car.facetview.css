@@ -22,3 +22,14 @@ div.tileItem.ribbon-parent {
 #content {
     background: #FFF none;
 }
+
+.current-filters,
+.facetview_include_expired,
+.facetview_display_type,
+.eea-section-trigger,
+.search-suggestions,
+.facetview_filters,
+.facetview_orderby,
+.facetedview_search {
+    display: none;
+}
