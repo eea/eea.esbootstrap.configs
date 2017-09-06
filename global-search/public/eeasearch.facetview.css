@@ -1,6 +1,6 @@
 .facetview_include_expired {
-    float:right;
-    line-height:24px;
+  float:right;
+  line-height:24px;
 }
 
 #facetview_results td.ribbon-parent,
@@ -16,5 +16,10 @@ div.tileItem.ribbon-parent {
 
 /* For now disable the tree icons on facets, as hierarchy is not working */
 .jstree-default .jstree-leaf>.jstree-ocl {
-    display:none;
+  display:none;
 }
+
+/* remove draft watermark */
+#content {
+  background: white;
+} 
