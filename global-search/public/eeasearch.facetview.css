@@ -18,7 +18,3 @@ div.tileItem.ribbon-parent {
 .jstree-default .jstree-leaf>.jstree-ocl {
     display:none;
 }
-
-#content {
-    background: #FFF none;
-}

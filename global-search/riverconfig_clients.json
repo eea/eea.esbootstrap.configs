@@ -59,7 +59,7 @@
   "normObj": {
     "Organisation" : "Organisation",
     "Czechia" : "Czech Republic",
-    "Russia" : "Russian Federation",
+    "Russian Federation" : "Russia" ,
     "Kosovo" : "Kosovo (UNSCR 1244/99)",
     "Kosova (Kosovo)" : "Kosovo (UNSCR 1244/99)",
     "Kosovo under UNSCR 1244/99" : "Kosovo (UNSCR 1244/99)",
@@ -152,7 +152,9 @@
     "http://purl.org/dc/terms/title": "Title n/a",
     "http://purl.org/dc/terms/format": "text/html",
     "http://www.eea.europa.eu/ontologies.rdf#objectProvides": ["Data receiver (Reportnet client)", "Organisation"],
-    "places" : "unknown"
+    "places" : "unknown",
+    "http://www.eea.europa.eu/ontologies.rdf#fleschReadingEaseScore" : 0,
+    "http://www.eea.europa.eu/ontologies.rdf#readingTime" : -1
   },
   "//": "Sync conditions",
   "syncConditions": [

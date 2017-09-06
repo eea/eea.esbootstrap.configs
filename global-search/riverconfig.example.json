@@ -78,7 +78,7 @@
       "Netherlands", "Norway", "Nepal", "Nauru", "Niue", "New Zealand", "Oman", "Panama", "Peru",
       "French Polynesia", "Papua New Guinea", "Philippines", "Pakistan", "Poland", "Saint Pierre and Miquelon",
       "Pitcairn Islands", "Puerto Rico", "Palestine", "Portugal", "Palau", "Paraguay", "Qatar", "Réunion",
-      "Romania", "Serbia", "Russian Federation", "Rwanda", "Saudi Arabia", "Solomon Islands", "Seychelles", "Sudan",
+      "Romania", "Serbia", "Russia", "Rwanda", "Saudi Arabia", "Solomon Islands", "Seychelles", "Sudan",
       "Sweden", "Singapore", "Saint Helena", "Slovenia", "Svalbard and Jan Mayen", "Slovakia", "Sierra Leone", "San Marino",
       "Senegal", "Somalia", "Suriname", "South Sudan", "São Tomé and Príncipe", "El Salvador", "Sint Maarten", "Syria",
       "Swaziland", "Turks and Caicos Islands", "Chad", "French Southern Territories", "Togo", "Thailand",
@@ -94,7 +94,7 @@
   "normObj": {
     "Organization" : "Organisation",
     "Czechia" : "Czech Republic",
-    "Russia" : "Russian Federation",
+    "Russian Federation" : "Russia" ,
     "Kosovo" : "Kosovo (UNSCR 1244/99)",
     "Macedonia" : "Macedonia (FYR)",
     "Default" : "Various other issues",
