@@ -27,11 +27,10 @@
   "listtype": "white",
    "//": "Normalise Properties uris, imitate owl:sameAs or when you want to use a property instead of another",
   "normProp": {
-    "http://rod.eionet.europa.eu/schema.rdf#lastUpdate":  ["http://purl.org/dc/terms/issued", "year"],
+    "http://rod.eionet.europa.eu/schema.rdf#lastUpdate" : "http://purl.org/dc/terms/issued",
     "http://purl.org/dc/terms/abstract": ["http://purl.org/dc/terms/description","text"],
-    "http://rod.eionet.europa.eu/schema.rdf#formalReporter": ["http://purl.org/dc/terms/spatial","places"],
-    "http://rod.eionet.europa.eu/schema.rdf#requester":["http://purl.org/dc/terms/creator","organisation"],
-    "http://purl.org/dc/terms/title": ["http://purl.org/dc/terms/title","label"]
+    "http://rod.eionet.europa.eu/schema.rdf#clientCountry": ["http://purl.org/dc/terms/spatial","places"],
+    "http://xmlns.com/foaf/0.1/name": ["http://purl.org/dc/terms/title","organisation","label"]
   },
   "//": "Normalise the properties to the given value",
   "normalisedProperties": {
@@ -58,9 +57,9 @@
   },
   "//": "Normalise these following objects to a given value",
   "normObj": {
-    "Organization" : "Organisation",
+    "Organisation" : "Organisation",
     "Czechia" : "Czech Republic",
-    "Russia" : "Russian Federation",
+    "Russian Federation" : "Russia" ,
     "Kosovo" : "Kosovo (UNSCR 1244/99)",
     "Kosova (Kosovo)" : "Kosovo (UNSCR 1244/99)",
     "Kosovo under UNSCR 1244/99" : "Kosovo (UNSCR 1244/99)",
@@ -68,7 +67,6 @@
     "Macedonia (FYR)": "Former Yugoslav Republic of Macedonia, the",
     "Macedonia (ARYM)": "Former Yugoslav Republic of Macedonia, the",
     "The Former Yugoslav Republic of Macedonia": "Former Yugoslav Republic of Macedonia, the",
-    "The former Yugoslav Republic of Macedonia":  "Former Yugoslav Republic of Macedonia, the",
     "Macedonia, the Former Yugoslav Republic of": "Former Yugoslav Republic of Macedonia, the",
     "Bosnia-Herzegovina" : "Bosnia and Herzegovina",
     "Republic of the Congo" : "Congo",
@@ -79,6 +77,7 @@
     "The Netherlands" : "Netherlands",
     "Default" : "Various other issues",
     "Collection - old style" : "Collection",
+    "Reportnet client" : "Organisation (Reportnet client)",
     "http://rod.eionet.europa.eu/spatial/76" : "value not available",
     "http://www.eea.europa.eu/portal_vocabularies/themes/acidification" : "Air pollution",
     "http://www.eea.europa.eu/portal_vocabularies/themes/air_quality" : "Air pollution",
@@ -152,17 +151,15 @@
     "http://purl.org/dc/terms/issued": "2000-01-01",
     "http://purl.org/dc/terms/title": "Title n/a",
     "http://purl.org/dc/terms/format": "text/html",
-    "http://www.eea.europa.eu/ontologies.rdf#objectProvides": "Reporting obligation",
-    "places" : "unknown"
+    "http://www.eea.europa.eu/ontologies.rdf#objectProvides": ["Data receiver (Reportnet client)", "Organisation"],
+    "places" : "unknown",
+    "http://www.eea.europa.eu/ontologies.rdf#fleschReadingEaseScore" : 0,
+    "http://www.eea.europa.eu/ontologies.rdf#readingTime" : -1
   },
   "//": "Sync conditions",
   "syncConditions": [
-    "{?resource a <http://rod.eionet.europa.eu/schema.rdf#Obligation>}"
+    "{?resource a <http://rod.eionet.europa.eu/schema.rdf#Client>}"
   ],
-  "graphSyncConditions": [
-        "FILTER (str(?graph) = 'http://rod.eionet.europa.eu/obligations/rdf')",
-        "OPTIONAL{?resource <http://rod.eionet.europa.eu/schema.rdf#isTerminated> ?expired}",
-        "FILTER (?expired = 0)"
-  ],
+  "graphSyncConditions": ["FILTER (str(?graph) = 'http://rod.eionet.europa.eu/clients/rdf')"],
   "syncTimeProp": "http://cr.eionet.europa.eu/ontologies/contreg.rdf#lastRefreshed"
 }

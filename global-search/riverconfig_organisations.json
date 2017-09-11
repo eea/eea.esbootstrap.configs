@@ -23,22 +23,31 @@
     "http://purl.org/dc/terms/description",
     "http://www.eea.europa.eu/ontologies.rdf#hasWorkflowState",
     "http://www.eea.europa.eu/ontologies.rdf#objectProvides",
-    "http://purl.org/dc/terms/format",
-    "http://purl.org/dc/terms/references",
-    "http://www.eea.europa.eu/portal_types#dataProvider",
-    "http://www.eea.europa.eu/portal_types#dataProcessor"
+    "http://www.eea.europa.eu/ontologies.rdf#fleschReadingEaseScore",
+    "http://www.eea.europa.eu/ontologies.rdf#readingTime"
   ],
   "listtype": "white",
   "normProp": {
     "http://purl.org/dc/terms/issued": ["http://purl.org/dc/terms/issued", "year"],
-    "http://www.eea.europa.eu/portal_types/Report#temporalCoverage": ["time_coverage"],
-    "http://purl.org/dc/terms/creator": ["creator_cms"],
-    "http://purl.org/dc/terms/title": ["http://purl.org/dc/terms/title","label"],
-    "http://purl.org/dc/terms/abstract": "text",
-    "http://purl.org/dc/terms/spatial":["http://purl.org/dc/terms/spatial","places"]
+    "http://purl.org/dc/terms/creator": ["http://purl.org/dc/terms/creator", "creator_cms"],
+    "http://purl.org/dc/terms/title": ["organisation", "http://purl.org/dc/terms/title","label"],
+    "http://purl.org/dc/terms/spatial":["http://purl.org/dc/terms/spatial","places"],
+    "http://purl.org/dc/terms/abstract": "text"
   },
   "//": "Normalise the properties to the given value",
   "normalisedProperties": {
+    "http://www.eea.europa.eu/portal_workflow/daviz_workflow/states/published": "published",
+    "http://www.eea.europa.eu/portal_workflow/eea_simple_approval/states/published": "published",
+    "http://www.eea.europa.eu/portal_workflow/one_state_workflow/states/published": "published",
+    "http://www.eea.europa.eu/portal_workflow/eea_simple_public_approval/states/published": "published",
+    "http://www.eea.europa.eu/portal_workflow/indicators_workflow/states/published": "published",
+    "http://www.eea.europa.eu/portal_workflow/folder_workflow/states/published": "published",
+    "http://www.eea.europa.eu/portal_workflow/plone_workflow/states/published": "published",
+    "http://www.eea.europa.eu/portal_workflow/linguaflow/states/published": "published",
+    "http://www.eea.europa.eu/portal_workflow/eea_default_workflow/states/published": "published",
+    "http://www.eea.europa.eu/portal_workflow/eea_data_workflow/states/published": "published",
+    "http://www.eea.europa.eu/portal_workflow/eea_soer_workflow/states/published": "published",
+    "http://www.eea.europa.eu/ontologies.rdf#objectProvides": ["Data provider (organisation)","Organisation"]
   },
   "//": "Do not index these values for a given properties",
   "blackMap": {
@@ -49,14 +58,11 @@
       "http://www.w3.org/ns/dcat#Distribution"
     ]
   },
-  "//": "Index _only_ these values for given properties",
-  "whiteMap": {
-  },
   "//": "Normalise these following objects to a given value",
   "normObj": {
     "Organization" : "Organisation",
     "Czechia" : "Czech Republic",
-    "Russia" : "Russian Federation",
+    "Russian Federation" : "Russia" ,
     "Kosovo" : "Kosovo (UNSCR 1244/99)",
     "Kosova (Kosovo)" : "Kosovo (UNSCR 1244/99)",
     "Kosovo under UNSCR 1244/99" : "Kosovo (UNSCR 1244/99)",
@@ -94,8 +100,7 @@
     "http://www.eea.europa.eu/portal_workflow/eea_default_workflow/states/published": "published",
     "http://www.eea.europa.eu/portal_workflow/eea_data_workflow/states/published": "published",
     "http://www.eea.europa.eu/portal_workflow/eea_soer_workflow/states/published": "published",
-    "eea.reports.interfaces.IReportContainerEnhanced": "Publication / Report",
-    "plone.app.layout.navigation.interfaces.INavigationRoot": "Website main section"
+    "eea.dataservice.interfaces.IOrganisation": "Data provider (organisation)"
   },
   "//": "Normalise missing properties with the given values",
   "normMissing": {
@@ -103,15 +108,15 @@
     "http://www.eea.europa.eu/portal_types#topic": "Various other issues",
     "http://www.eea.europa.eu/ontologies.rdf#hasWorkflowState": "published",
     "http://purl.org/dc/terms/title": "Title n/a",
-    "http://purl.org/dc/terms/creator": "European Environment Agency (EEA)",
-    "organisation": "European Environment Agency (EEA)",
     "http://purl.org/dc/terms/format": "text/html",
-    "places" : "unknown"
+    "places" : "unknown",
+    "http://www.eea.europa.eu/ontologies.rdf#fleschReadingEaseScore" : 0,
+    "http://www.eea.europa.eu/ontologies.rdf#readingTime" : -1
   },
   "//": "Sync conditions",
   "syncConditions": [
-    "{?resource a <http://www.eea.europa.eu/portal_types/Report#Report>}"
+    "{?resource a <http://www.eea.europa.eu/portal_types/Organisation#Organisation>}"
   ],
-  "graphSyncConditions": ["FILTER (str(?graph) = concat(str(?resource), '/@@rdf')). FILTER (?time > xsd:dateTime('1990-01-01T00:00:00')). FILTER (?time < xsd:dateTime('2100-01-01T00:00:00'))"],
+  "graphSyncConditions": ["FILTER (str(?graph) = concat(str(?resource), '/@@rdf'))."],
   "syncTimeProp": "http://cr.eionet.europa.eu/ontologies/contreg.rdf#lastRefreshed"
 }

@@ -26,7 +26,9 @@
     "http://purl.org/dc/terms/format",
     "http://purl.org/dc/terms/references",
     "http://www.eea.europa.eu/portal_types#dataProvider",
-    "http://www.eea.europa.eu/portal_types#dataProcessor"
+    "http://www.eea.europa.eu/portal_types#dataProcessor",
+    "http://www.eea.europa.eu/ontologies.rdf#fleschReadingEaseScore",
+    "http://www.eea.europa.eu/ontologies.rdf#readingTime"
   ],
   "listtype": "white",
   "normProp": {
@@ -57,7 +59,7 @@
   "normObj": {
     "Organization" : "Organisation",
     "Czechia" : "Czech Republic",
-    "Russia" : "Russian Federation",
+    "Russian Federation" : "Russia" ,
     "Kosovo" : "Kosovo (UNSCR 1244/99)",
     "Kosova (Kosovo)" : "Kosovo (UNSCR 1244/99)",
     "Kosovo under UNSCR 1244/99" : "Kosovo (UNSCR 1244/99)",
@@ -87,7 +89,9 @@
     "http://purl.org/dc/terms/creator": "European Environment Agency (EEA)",
     "organisation": "European Environment Agency (EEA)",
     "http://purl.org/dc/terms/format": "text/html",
-    "places" : "unknown"
+    "places" : "unknown",
+    "http://www.eea.europa.eu/ontologies.rdf#fleschReadingEaseScore" : 0,
+    "http://www.eea.europa.eu/ontologies.rdf#readingTime" : -1
   },
   "//": "Sync conditions",
   "syncConditions": [

@@ -22,15 +22,15 @@
     "http://purl.org/dc/terms/subject",
     "http://purl.org/dc/terms/description",
     "http://www.eea.europa.eu/ontologies.rdf#hasWorkflowState",
-    "http://www.eea.europa.eu/ontologies.rdf#objectProvides"
+    "http://www.eea.europa.eu/ontologies.rdf#objectProvides",
+    "http://www.eea.europa.eu/ontologies.rdf#fleschReadingEaseScore",
+    "http://www.eea.europa.eu/ontologies.rdf#readingTime"
   ],
   "listtype": "white",
-   "//": "Normalise Properties uris, imitate owl:sameAs or when you want to use a property instead of another",
   "normProp": {
-    "http://purl.org/dc/terms/valid" : ["http://purl.org/dc/terms/issued", "year"],
-    "http://purl.org/dc/terms/abstract": ["http://purl.org/dc/terms/description","text"],
-    "http://purl.org/dc/terms/creator": ["http://purl.org/dc/terms/creator","organisation"],
-    "http://purl.org/dc/terms/title": ["http://purl.org/dc/terms/title","label"],
+    "http://purl.org/dc/terms/issued": ["http://purl.org/dc/terms/issued", "year"],
+    "http://purl.org/dc/terms/creator": ["http://purl.org/dc/terms/creator", "creator_cms"],
+    "http://purl.org/dc/terms/description": ["http://purl.org/dc/terms/description","label","text"],
     "http://purl.org/dc/terms/spatial":["http://purl.org/dc/terms/spatial","places"]
   },
   "//": "Normalise the properties to the given value",
@@ -60,7 +60,7 @@
   "normObj": {
     "Organization" : "Organisation",
     "Czechia" : "Czech Republic",
-    "Russia" : "Russian Federation",
+    "Russian Federation" : "Russia" ,
     "Kosovo" : "Kosovo (UNSCR 1244/99)",
     "Kosova (Kosovo)" : "Kosovo (UNSCR 1244/99)",
     "Kosovo under UNSCR 1244/99" : "Kosovo (UNSCR 1244/99)",
@@ -114,6 +114,7 @@
     "Products.EEAContentTypes.content.interfaces.IInteractiveMap": "Map (interactive)",
     "eea.aoamap.browser.interfaces.IMapViewParent": "Map (interactive)",
     "Products.eeawebapplication.interface.IEEAWebApplication": "Topic/subtopic site",
+    "eea.themecentre.interfaces.IThemeCentre": "Topic/subtopic site",
     "eea.app.visualization.subtypes.interfaces.IVisualizationEnabled": "Data visualisation",
     "eea.dataservice.interfaces.IDataset":"Data (at EEA)",
     "eea.dataservice.interfaces.IEEAFigureGraph": "Graph (image)",
@@ -139,7 +140,6 @@
     "eea.soercontent.content.interfaces.IFiche": "Briefing (all)",
     "eea.soercontent.content.interfaces.ISoerContent":"Briefing (SOER)",
     "eea.sparql.interfaces.ISparql":"Data table (via SPARQL)",
-    "eea.themecentre.interfaces.IThemeCentre": "Topic site",
     "plone.app.layout.navigation.interfaces.INavigationRoot": "Website main section"
   },
   "//": "Normalise missing properties with the given values",
@@ -147,16 +147,18 @@
     "http://purl.org/dc/terms/spatial": "Other",
     "http://www.eea.europa.eu/portal_types#topic": "Various other issues",
     "http://www.eea.europa.eu/ontologies.rdf#hasWorkflowState": "published",
-    "http://purl.org/dc/terms/issued": "2000-01-01",
     "http://purl.org/dc/terms/title": "Title n/a",
     "http://purl.org/dc/terms/format": "text/html",
-    "http://www.eea.europa.eu/ontologies.rdf#objectProvides": ["Legislation (Data reporting)"],
-    "places" : "unknown"
+    "places" : "unknown",
+    "http://www.eea.europa.eu/ontologies.rdf#fleschReadingEaseScore" : 0,
+    "http://www.eea.europa.eu/ontologies.rdf#readingTime" : -1
   },
   "//": "Sync conditions",
   "syncConditions": [
-    "{?resource a <http://rod.eionet.europa.eu/schema.rdf#Instrument>}"
+    "{?resource a <http://www.eea.europa.eu/portal_types/KeyMessage#KeyMessage>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/SOERKeyFact#SOERKeyFact>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/SOERMEssage#SOERMEssage>}"
   ],
-  "graphSyncConditions": ["FILTER (str(?graph) = 'http://rod.eionet.europa.eu/instruments/rdf')"],
+  "graphSyncConditions": ["FILTER (str(?graph) = concat(str(?resource), '/@@rdf'))."],
   "syncTimeProp": "http://cr.eionet.europa.eu/ontologies/contreg.rdf#lastRefreshed"
 }

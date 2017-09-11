@@ -81,6 +81,28 @@
                     "rule": "startsWith",
                     "operator": "",
                     "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#about",
+                    "value": "http://www.eea.europa.eu/help/glossary/",
+                    "thumb_template": {
+                        "template": "https://www.eea.europa.eu/portal_depiction/term/image_preview",
+                        "variables": [{
+                                "name": "url",
+                                "type" : "field",
+                                "field" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#about"
+                        }]
+                    },
+                    "icon_template": {
+                        "template": "https://www.eea.europa.eu/portal_depiction/term/image_thumb",
+                        "variables": [{
+                                "name": "url",
+                                "type" : "field",
+                                "field" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#about"
+                        }]
+                    }
+                },
+                {
+                    "rule": "startsWith",
+                    "operator": "",
+                    "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#about",
                     "value": "http://www.eea.europa.eu",
                     "thumb_template": {
                         "template": "${url}/image_preview",
@@ -91,7 +113,7 @@
                         }]
                     },
                     "icon_template": {
-                        "template": "http://www.eea.europa.eu/portal_depiction/${contentType}/image_thumb",
+                        "template": "https://www.eea.europa.eu/portal_depiction/${contentType}/image_thumb",
                         "variables": [{
                                 "name": "contentType",
                                 "type" : "variable",
@@ -105,7 +127,7 @@
                     "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#about",
                     "value": "http://www.eea.europa.eu",
                     "thumb_template": {
-                        "template": "http://www.eea.europa.eu/portal_depiction/${contentType}/image_preview",
+                        "template": "https://www.eea.europa.eu/portal_depiction/${contentType}/image_preview",
                         "variables": [{
                                 "name": "contentType",
                                 "type" : "variable",
@@ -113,7 +135,7 @@
                         }]
                     },
                     "icon_template": {
-                        "template": "http://www.eea.europa.eu/portal_depiction/${contentType}/image_thumb",
+                        "template": "https://www.eea.europa.eu/portal_depiction/${contentType}/image_thumb",
                         "variables": [{
                                 "name": "contentType",
                                 "type" : "variable",
@@ -341,7 +363,7 @@
                 "Netherlands", "Norway", "Nepal", "Nauru", "Niue", "New Zealand", "Oman", "Panama", "Peru",
                 "French Polynesia", "Papua New Guinea", "Philippines", "Pakistan", "Poland", "Saint Pierre and Miquelon",
                 "Pitcairn Islands", "Puerto Rico", "Palestine", "Portugal", "Palau", "Paraguay", "Qatar", "Réunion",
-                "Romania", "Serbia", "Russian Federation", "Rwanda", "Saudi Arabia", "Solomon Islands", "Seychelles", "Sudan",
+                "Romania", "Serbia", "Russia", "Rwanda", "Saudi Arabia", "Solomon Islands", "Seychelles", "Sudan",
                 "Sweden", "Singapore", "Saint Helena", "Slovenia", "Svalbard and Jan Mayen", "Slovakia", "Sierra Leone", "San Marino",
                 "Senegal", "Somalia", "Suriname", "South Sudan", "São Tomé and Príncipe", "El Salvador", "Sint Maarten", "Syria",
                 "Swaziland", "Turks and Caicos Islands", "Chad", "French Southern Territories", "Togo", "Thailand",
@@ -413,7 +435,7 @@
                 "Netherlands", "Norway", "Nepal", "Nauru", "Niue", "New Zealand", "Oman", "Panama", "Peru",
                 "French Polynesia", "Papua New Guinea", "Philippines", "Pakistan", "Poland", "Saint Pierre and Miquelon",
                 "Pitcairn Islands", "Puerto Rico", "Palestine", "Portugal", "Palau", "Paraguay", "Qatar", "Réunion",
-                "Romania", "Serbia", "Russian Federation", "Rwanda", "Saudi Arabia", "Solomon Islands", "Seychelles", "Sudan",
+                "Romania", "Serbia", "Russia", "Rwanda", "Saudi Arabia", "Solomon Islands", "Seychelles", "Sudan",
                 "Sweden", "Singapore", "Saint Helena", "Slovenia", "Svalbard and Jan Mayen", "Slovakia", "Sierra Leone", "San Marino",
                 "Senegal", "Somalia", "Suriname", "South Sudan", "São Tomé and Príncipe", "El Salvador", "Sint Maarten", "Syria",
                 "Swaziland", "Turks and Caicos Islands", "Chad", "French Southern Territories", "Togo", "Thailand",
@@ -441,7 +463,7 @@
                 "allow_exact": true,
                 "visible": true,
                 "title": "Regions/Places/Cities/Seas...",
-                "pos": 2,
+                "pos": 3,
                 "type": "facet",
                 "size": 100,
                 "min_size": 10,
@@ -566,7 +588,8 @@
                              "References and links",
                              "Environmental question",
                              "Reporting obligation",
-                             "Contract opportunity"
+                             "Contract opportunity",
+                             "Glossary term"
                           ],
             "listing": {
                 "title": "Content types",
@@ -584,7 +607,7 @@
             "facet": {
                 "visible": true,
                 "title": "Content types",
-                "pos": 5,
+                "pos": 4,
                 "type": "facet",
                 "size": 50,
                 "min_size": 10,
@@ -621,12 +644,15 @@
                 "allow_exact": true,
                 "visible": true,
                 "title": "Organisations involved",
-                "pos": 6,
+                "pos": 5,
                 "type": "facet",
                 "size": 3000,
                 "min_size": 10,
                 "order": "reverse_count",
                 "operator": "OR",
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for organisations...",
+                "empty_message": "No organisations... to show",
                 "short_name": "Organisation",
                 "facet_display_options": ["sort", "checkbox"]
             }
@@ -819,6 +845,54 @@
             "list": {
                 "visible": false
             }
+        },
+        {
+            "name": "http://www.eea.europa.eu/ontologies.rdf#fleschReadingEaseScore",
+            "listing": {
+                "title": "Reading Ease Score",
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Reading Ease Score",
+                "visible": false,
+                "pos": 11
+            },
+            "details": {
+                "visible": false
+            },
+            "list": {
+                "visible": false
+            },
+           "facet": {
+                "visible": true,
+                "title": "Reading Ease Score",
+                "pos": 11,
+                "type": "range"
+                }
+        },
+        {
+            "name": "http://www.eea.europa.eu/ontologies.rdf#readingTime",
+            "listing": {
+                "title": "Reading time (minutes)",
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Reading time (minutes)",
+                "visible": false,
+                "pos": 11
+            },
+            "details": {
+                "visible": false
+            },
+            "list": {
+                "visible": false
+            },
+           "facet": {
+                "visible": true,
+                "title": "Reading time (minutes)",
+                "pos": 12,
+                "type": "range"
+                }
         }
     ]
 }

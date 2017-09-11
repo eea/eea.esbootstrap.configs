@@ -26,7 +26,9 @@
     "http://purl.org/dc/terms/format",
     "http://purl.org/dc/terms/references",
     "http://www.eea.europa.eu/portal_types#dataProvider",
-    "http://www.eea.europa.eu/portal_types#dataProcessor"
+    "http://www.eea.europa.eu/portal_types#dataProcessor",
+    "http://www.eea.europa.eu/ontologies.rdf#fleschReadingEaseScore",
+    "http://www.eea.europa.eu/ontologies.rdf#readingTime"
   ],
   "listtype": "white",
   "normProp": {
@@ -55,7 +57,7 @@
   "normObj": {
     "Organization" : "Organisation",
     "Czechia" : "Czech Republic",
-    "Russia" : "Russian Federation",
+    "Russian Federation" : "Russia" ,
     "Kosovo" : "Kosovo (UNSCR 1244/99)",
     "Kosova (Kosovo)" : "Kosovo (UNSCR 1244/99)",
     "Kosovo under UNSCR 1244/99" : "Kosovo (UNSCR 1244/99)",
@@ -72,8 +74,9 @@
     "Bulgarien" : "Bulgaria",
     "The Netherlands" : "Netherlands",
     "Default" : "Various other issues",
-    "http://www.eea.europa.eu/portal_workflow/CallForTender/states/published": "published",
-    "Products.ATContentTypes.interfaces.interfaces.IATContentType": "Contract opportunity"
+    "Collection - old style" : "Collection",
+    "http://www.eea.europa.eu/portal_workflow/one_state_workflow/states/published": "published",
+    "eea.indicators.content.interfaces.IExternalDataSpec": "Data (external links)"
   },
   "//": "Normalise missing properties with the given values",
   "normMissing": {
@@ -82,15 +85,14 @@
     "http://www.eea.europa.eu/ontologies.rdf#hasWorkflowState": "published",
     "http://purl.org/dc/terms/title": "Title n/a",
     "http://purl.org/dc/terms/creator": "European Environment Agency (EEA)",
-    "organisation": "European Environment Agency (EEA)",
     "http://purl.org/dc/terms/format": "text/html",
-    "places" : "Copenhagen (Capital Region, Denmark)"
+    "places" : "unknown",
+    "http://www.eea.europa.eu/ontologies.rdf#fleschReadingEaseScore" : 0,
+    "http://www.eea.europa.eu/ontologies.rdf#readingTime" : -1
   },
   "//": "Sync conditions",
   "syncConditions": [
-    "{?resource a <http://www.eea.europa.eu/portal_types/CallForInterest#CallForInterest>} UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/CallForProposal#CallForProposal>} UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/CallForTender#CallForTender>}"
+    "{?resource a <http://www.eea.europa.eu/portal_types/ExternalDataSpec#ExternalDataSpec>}"
   ],
   "graphSyncConditions": ["FILTER (str(?graph) = concat(str(?resource), '/@@rdf')). FILTER (?time > xsd:dateTime('1990-01-01T00:00:00')). FILTER (?time < xsd:dateTime('2100-01-01T00:00:00'))"],
   "syncTimeProp": "http://cr.eionet.europa.eu/ontologies/contreg.rdf#lastRefreshed"

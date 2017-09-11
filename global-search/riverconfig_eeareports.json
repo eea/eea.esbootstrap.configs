@@ -26,11 +26,14 @@
     "http://purl.org/dc/terms/format",
     "http://purl.org/dc/terms/references",
     "http://www.eea.europa.eu/portal_types#dataProvider",
-    "http://www.eea.europa.eu/portal_types#dataProcessor"
+    "http://www.eea.europa.eu/portal_types#dataProcessor",
+    "http://www.eea.europa.eu/ontologies.rdf#fleschReadingEaseScore",
+    "http://www.eea.europa.eu/ontologies.rdf#readingTime"
   ],
   "listtype": "white",
   "normProp": {
     "http://purl.org/dc/terms/issued": ["http://purl.org/dc/terms/issued", "year"],
+    "http://www.eea.europa.eu/portal_types/Report#temporalCoverage": ["time_coverage"],
     "http://purl.org/dc/terms/creator": ["creator_cms"],
     "http://purl.org/dc/terms/title": ["http://purl.org/dc/terms/title","label"],
     "http://purl.org/dc/terms/abstract": "text",
@@ -55,7 +58,7 @@
   "normObj": {
     "Organization" : "Organisation",
     "Czechia" : "Czech Republic",
-    "Russia" : "Russian Federation",
+    "Russian Federation" : "Russia" ,
     "Kosovo" : "Kosovo (UNSCR 1244/99)",
     "Kosova (Kosovo)" : "Kosovo (UNSCR 1244/99)",
     "Kosovo under UNSCR 1244/99" : "Kosovo (UNSCR 1244/99)",
@@ -73,8 +76,28 @@
     "The Netherlands" : "Netherlands",
     "Default" : "Various other issues",
     "Collection - old style" : "Collection",
+    "http://www.eea.europa.eu/portal_vocabularies/themes/acidification" : "Air pollution",
+    "http://www.eea.europa.eu/portal_vocabularies/themes/air_quality" : "Air pollution",
+    "http://www.eea.europa.eu/portal_vocabularies/themes/nature" : "Biodiversity",
+    "http://www.eea.europa.eu/portal_vocabularies/themes/ozone" : "Climate change",
+    "http://www.eea.europa.eu/portal_vocabularies/themes/management" : "Policy instruments",
+    "http://www.eea.europa.eu/portal_vocabularies/themes/information" : "Policy instruments",
+    "http://www.eea.europa.eu/portal_vocabularies/themes/reporting" : "Policy instruments",
+    "http://www.eea.europa.eu/portal_vocabularies/themes/population" : "Green economy",
+    "http://www.eea.europa.eu/portal_vocabularies/themes/health" : "Environment and health",
+    "http://www.eea.europa.eu/portal_workflow/daviz_workflow/states/published" : "published",
+    "http://www.eea.europa.eu/portal_workflow/eea_simple_approval/states/published": "published",
     "http://www.eea.europa.eu/portal_workflow/one_state_workflow/states/published": "published",
-    "eea.indicators.content.interfaces.IExternalDataSpec": "Data (external links)"
+    "http://www.eea.europa.eu/portal_workflow/eea_simple_public_approval/states/published": "published",
+    "http://www.eea.europa.eu/portal_workflow/indicators_workflow/states/published": "published",
+    "http://www.eea.europa.eu/portal_workflow/folder_workflow/states/published": "published",
+    "http://www.eea.europa.eu/portal_workflow/plone_workflow/states/published": "published",
+    "http://www.eea.europa.eu/portal_workflow/linguaflow/states/published": "published",
+    "http://www.eea.europa.eu/portal_workflow/eea_default_workflow/states/published": "published",
+    "http://www.eea.europa.eu/portal_workflow/eea_data_workflow/states/published": "published",
+    "http://www.eea.europa.eu/portal_workflow/eea_soer_workflow/states/published": "published",
+    "eea.reports.interfaces.IReportContainerEnhanced": "Publication / Report",
+    "plone.app.layout.navigation.interfaces.INavigationRoot": "Website main section"
   },
   "//": "Normalise missing properties with the given values",
   "normMissing": {
@@ -83,12 +106,15 @@
     "http://www.eea.europa.eu/ontologies.rdf#hasWorkflowState": "published",
     "http://purl.org/dc/terms/title": "Title n/a",
     "http://purl.org/dc/terms/creator": "European Environment Agency (EEA)",
+    "organisation": "European Environment Agency (EEA)",
     "http://purl.org/dc/terms/format": "text/html",
-    "places" : "unknown"
+    "places" : "unknown",
+    "http://www.eea.europa.eu/ontologies.rdf#fleschReadingEaseScore" : 0,
+    "http://www.eea.europa.eu/ontologies.rdf#readingTime" : -1
   },
   "//": "Sync conditions",
   "syncConditions": [
-    "{?resource a <http://www.eea.europa.eu/portal_types/ExternalDataSpec#ExternalDataSpec>}"
+    "{?resource a <http://www.eea.europa.eu/portal_types/Report#Report>}"
   ],
   "graphSyncConditions": ["FILTER (str(?graph) = concat(str(?resource), '/@@rdf')). FILTER (?time > xsd:dateTime('1990-01-01T00:00:00')). FILTER (?time < xsd:dateTime('2100-01-01T00:00:00'))"],
   "syncTimeProp": "http://cr.eionet.europa.eu/ontologies/contreg.rdf#lastRefreshed"
