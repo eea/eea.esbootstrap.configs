@@ -172,7 +172,7 @@
                 "size": 100,
                 "min_size": 10,
                 "order": "term",
-                "operator": "AND",
+                "operator": "OR",
                 "autocomplete": true,
                 "autocomplete_placeholder": "Search for topic",
                 "empty_message": "No topics to show",

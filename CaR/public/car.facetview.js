@@ -227,6 +227,38 @@ function updateResult(element, result){
     return(result);
 }
 
+function getUrl(options){
+    debugger;
+    var href = window.location.href;
+    var href_parts = href.split("?topics=")
+    if (href_parts.length === 1){
+        return window.location.href;
+    }
+    topics = href_parts[1].split(",");
+    
+}
+
+function setUrl(stateObj, page, url){
+    var query = JSON.parse(decodeURIComponent(url).split("source=")[1])
+    var topics_str = "";
+    try {
+        var topics = query.query.function_score.filter.bool.should;
+        if (topics.length === 0){
+            throw "empty";
+        }
+        topics_str = "?topic=";
+        for (var i = 0; i < topics.length; i++){
+            topics_str += topics[i].term["http://www.eea.europa.eu/portal_types#topic"] + ","
+        }
+        topics_str = topics_str.substring(0, topics_str.length - 1);
+    }
+    catch(err){
+        var href_url = $(location).attr('href')
+        topics_str = href_url.split("/")[href_url.split("/").length - 1].split("?")[0];
+    }
+    window.history.pushState(stateObj, page, topics_str);
+}
+
 jQuery(document).ready(function($) {
   var url = $(location).attr('href');
   var short_spatial = url.split("/")[url.split("/").length - 1].split("?")[0];
@@ -376,7 +408,9 @@ jQuery(document).ready(function($) {
     highlight_blacklist: eea_mapping.highlights.blacklist,
     enable_exact: true,
     relevance: settings_relevance,
-    resultModifier: updateResult
+    resultModifier: updateResult,
+    customSetUrl: setUrl,
+    customGetUrl: getUrl
   });
 });
 
