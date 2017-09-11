@@ -17,12 +17,13 @@
         "head_title": "Global catalogue of the European Environment Agency (EEA)",
         "css_resources": {
             "index_page": [
-                "css/esbootstrap.facetview.css",
+                "/css/esbootstrap.facetview.css",
                 "car.facetview.css"
             ]
         },
         "js_resources": {
             "index_page": [
+                "carmapping.js",
                 "car.facetview.js"
             ]
         },

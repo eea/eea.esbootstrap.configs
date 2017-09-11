@@ -229,6 +229,15 @@ function updateResult(element, result){
 
 jQuery(document).ready(function($) {
   var url = $(location).attr('href');
+  var short_spatial = url.split("/")[url.split("/").length - 1].split("?")[0];
+  var spatial;
+  var spatial_field = "http://purl.org/dc/terms/spatial";
+  if (carmapping[short_spatial] !== undefined){
+    spatial = carmapping[short_spatial].value;
+    if (carmapping[short_spatial].type === 'region') {
+        spatial_field = "places"
+    }
+  }
 
   var hide_expired = true;
   if (url.split("?source=").length === 2){
@@ -246,7 +255,7 @@ jQuery(document).ready(function($) {
   var today = getToday();
 
   predefined_filters = [
-        {
+/*        {
           "range": {
             "items_count_http://purl.org/dc/terms/spatial": {
               "from": 1,
@@ -256,9 +265,9 @@ jQuery(document).ready(function($) {
         },
         {
           "term": {
-            "http://purl.org/dc/terms/spatial": "Albania"
+            "http://purl.org/dc/terms/spatial": spatial
           }
-        },
+        },*/
       {'term': {'http://www.eea.europa.eu/ontologies.rdf#hasWorkflowState':
                   'published'}},
       {'term': {'language':
@@ -273,7 +282,7 @@ jQuery(document).ready(function($) {
       }];
 
   predefined_filters_expired = [
-        {
+/*        {
           "range": {
             "items_count_http://purl.org/dc/terms/spatial": {
               "from": 1,
@@ -283,9 +292,9 @@ jQuery(document).ready(function($) {
         },
         {
           "term": {
-            "http://purl.org/dc/terms/spatial": "Albania"
+            "http://purl.org/dc/terms/spatial": spatial
           }
-        },
+        },*/
       {'term': {'language':
                   'en'}},
       {'constant_score': {
@@ -304,6 +313,15 @@ jQuery(document).ready(function($) {
   if (hide_expired){
     tmp_predefined_filters = tmp_predefined_filters.concat(predefined_filters_expired);
   }
+
+  var tmp_spatial_range = {"range":{}};
+  tmp_spatial_range.range["items_count_" + spatial_field] = {"from": 1, "to": 1};
+  var tmp_spatial_filter = {"term":{}};
+  tmp_spatial_filter.term[spatial_field] = spatial;
+  
+  tmp_predefined_filters.push(tmp_spatial_range);
+  tmp_predefined_filters.push(tmp_spatial_filter);
+
   eea_facetview('.facet-view-simple', 
   {
     search_url: './api',
