@@ -1,4 +1,4 @@
-k title
+block title
     title!= head_title
 
 block extrajavascripts
@@ -13,19 +13,17 @@ block extrastyles
 block content
     div(class="page-header")
         div(class='section-title')
-            img(src!= external_config.flag_url)
-            h1(class='section-header') Austria
+            img(src!=external_config.flag_url)
+            h1(class='section-header')!=external_config.value
         div(class='section-languages')
             a(class='eea_download_btn') EEA content in german
             a(class='eea_download_btn') EEA content in austrian
-        div(class="section-description")
+        div(class="section-description")!=external_config.body
             p Republic of Austria is a federal republic and a landlocked country of over 8.7 million people in Central Europe.
             p It is bordered by the Czech Republic and Germany to the north, Hungary and Slovakia to the east, Slovenia and Italy to the south, and Switzerland and Liechtenstein to the west. The territory of Austria covers 83,879 km2 (32,386 sq mi). The terrain is highly
-        mountainous, lying within the Alps; only 32% of the country is below 500 m (1,640 ft), and its highest point is 3,798 m (12,461 ft).
+                mountainous, lying within the Alps; only 32% of the country is below 500 m (1,640 ft), and its highest point is 3,798 m (12,461 ft).
             p The majority of the population speaks local Bavarian dialects of German as their native language and Austrian German in its standard form is the country's official language.
             a(class="section-description--more") See the state of the environment in Austria
-
-
 
         div(class='section-pages')
             h3 OFFICIAL COUNTRY PAGES
@@ -36,10 +34,7 @@ block content
                     a(href="http://www.austria.info") www.austria.info
         div(class='section-topics')
 
-
     div(class="page-body")
         +download_data
         .facet-view-simple
-
-        div!= further_info
         div!= further_info
