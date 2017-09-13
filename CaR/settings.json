@@ -23,7 +23,6 @@
         },
         "js_resources": {
             "index_page": [
-                "carmapping.js",
                 "car.facetview.js"
             ]
         },
@@ -36,5 +35,11 @@
     "landingpage_enabled": false,
     "es_debug_enabled": true,
     "suggestions_enabled": true,
-    "relevance_enabled": true
+    "relevance_enabled": true,
+    "external_configs": {
+        "host" : "192.168.0.40",
+        "path" : "/www/SITE/viewCountryRegionsJSON",
+        "port" : 8081,
+        "defaults" : "external_configs_defaults.json"
+    }
 }

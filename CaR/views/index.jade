@@ -11,6 +11,7 @@ block extrastyles
           link(rel='stylesheet', href=style)
 
 block content
+    span!= external_config.value
     if (enableBreadcrumbs)
         +portal_breadcrumbs(breadcrumbs)
     div(class="page-header")

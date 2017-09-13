@@ -232,9 +232,9 @@ function getSpatialFromUrl(){
     var short_spatial = url.split("/")[url.split("/").length - 1].split("?")[0];
     var spatial;
     var spatial_field = "http://purl.org/dc/terms/spatial";
-    if (carmapping[short_spatial] !== undefined){
-        spatial = carmapping[short_spatial].value;
-        if (carmapping[short_spatial].type === 'region') {
+    if (settings_default_external_configs[short_spatial] !== undefined){
+        spatial = settings_default_external_configs[short_spatial].value;
+        if (settings_default_external_configs[short_spatial].type === 'region') {
             spatial_field = "places"
         }
     }
@@ -427,6 +427,7 @@ function setUrl(stateObj, page, url){
 }
 
 jQuery(document).ready(function($) {
+  $.extend(true, settings_default_external_configs, settings_external_configs);
   var url = $(location).attr('href');
 
   var spatial_info = getSpatialFromUrl();
