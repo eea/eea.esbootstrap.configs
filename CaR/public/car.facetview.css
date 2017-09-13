@@ -25,11 +25,9 @@ div.tileItem.ribbon-parent {
 
 .current-filters,
 .facetview_include_expired,
-.facetview_display_type,
 .eea-section-trigger,
 .search-suggestions,
 .facetview_filters,
-.facetview_orderby,
 .facetedview_search {
     display: none;
 }
