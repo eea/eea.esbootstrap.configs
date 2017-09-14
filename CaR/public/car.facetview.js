@@ -273,8 +273,8 @@ function getUrl(options){
                                 }
                             }
                         },
-                        {"range":{"items_count_http://purl.org/dc/terms/spatial":{"from":1,"to":1}}},
-                        {"term":{"http://purl.org/dc/terms/spatial":"<country>"}}
+/*                        {"range":{"items_count_http://purl.org/dc/terms/spatial":{"from":1,"to":1}}},
+                        {"term":{"http://purl.org/dc/terms/spatial":"<country>"}}*/
                     ]
                 }
             },

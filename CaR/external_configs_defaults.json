@@ -1,5 +1,5 @@
 {
-    "austria": 
+    "austria":
         {
              "body": "<p>Default text</p>",
              "flag_url": "http://192.168.0.40:8081/www/SITE/austria/flag_mini",
@@ -11,7 +11,7 @@
              "type": "country",
              "value": "Austria"
          },
-    "bulgaria": 
+    "bulgaria":
          {
              "body": "<p>Default text</p>",
              "flag_url": "http://192.168.0.40:8081/www/SITE/bulgaria/flag_mini",
