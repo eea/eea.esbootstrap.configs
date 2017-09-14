@@ -31,3 +31,45 @@ div.tileItem.ribbon-parent {
 .facetedview_search {
     display: none;
 }
+
+
+.car_facet_checkbox[readonly] {
+  pointer-events: none;
+}
+
+.car_facet_value[readonly] {
+  color: gray;
+}
+
+.car_facet_count[readonly] {
+  color: gray;
+}
+
+.car_facet_group_value[readonly] {
+  color: gray;
+}
+
+.car_facet_checkbox{
+    float:left;
+}
+
+.car_facet_value{
+    float:left;
+}
+.car_facet_group_value{
+    float:left;
+}
+
+.car_facet_count{
+    float:right;
+}
+
+.car_facet_group{
+    width:250px;
+    float:left;
+    margin-right:50px;
+}
+
+.eea-right-section {
+    display:none;
+}

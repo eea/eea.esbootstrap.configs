@@ -23,7 +23,8 @@
         },
         "js_resources": {
             "index_page": [
-                "car.facetview.js"
+                "car.facetview.js",
+                "car.facet.js"
             ]
         },
         "site_title": "Global search and catalogue <sup style='color:#fbaf33'>beta</sup>",

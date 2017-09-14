@@ -573,7 +573,10 @@ jQuery(document).ready(function($) {
     relevance: settings_relevance,
     resultModifier: updateResult,
     customSetUrl: setUrl,
-    customGetUrl: getUrl
+    customGetUrl: getUrl,
+    hideCurrentFilters: true
   });
+  $("#car_facet").carFacet();
+
 });
 

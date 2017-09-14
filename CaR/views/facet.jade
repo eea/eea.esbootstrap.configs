@@ -1,0 +1,67 @@
+mixin checkbox(value, option, group_id)
+    input(type="checkbox" value=value facet_type=option, class="car_facet_checkbox", group_id=group_id, readonly="readonly")
+
+mixin facet(option, group_id)
+    div(class="car_facet", rel=option)
+        +checkbox(option, "facet", group_id)
+        div(class="car_facet_value" readonly="readonly")
+            =option
+        div(class="car_facet_count" readonly="readonly")
+            | 0
+    br
+
+
+mixin facet_group(options, group_id)
+    div(class="car_facet_group" group_id=group_id)
+        div(class="car_facet_group_value" readonly="readonly")
+            = options.title
+        +checkbox(options.title, "group", group_id)
+        br
+        each option in options.facets
+            +facet(option, group_id)
+
+mixin facets(options)
+    - var id = 0;
+    each option in options
+        +facet_group(option, id)
+        - id++
+
+#car_facet
+    +facets([
+        {
+            "title": "AIR AND CLIMATE",
+            "facets": [
+                "Air pollution",
+                "Climate change adaptation",
+                "Climate change mitigation"
+            ]
+        },
+        {
+            "title": "NATURE",
+            "facets": [
+                "Biodiversity - Ecosystems",
+                "Land use",
+                "Marine",
+                "Soil",
+                "Water"
+            ]
+        },
+        {
+            "title": "SUSTAINABILITY AND WELL-BEING",
+            "facets": [
+                "Environment and health",
+                "Policy instruments",
+                "Resource efficiency and waste",
+                "Sustainability transitions"
+            ]
+        },
+        {
+            "title": "ECONOMIC SECTORS",
+            "facets": [
+                "Agriculture",
+                "Energy",
+                "Industry",
+                "Transport"
+            ]
+        }
+    ])
