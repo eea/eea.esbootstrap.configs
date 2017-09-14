@@ -1,51 +1,223 @@
 {
-    "austria":
-        {
-             "body": "<p>Default text</p>",
-             "flag_url": "http://192.168.0.40:8081/www/SITE/austria/flag_mini",
-             "languages": [ "de" ],
-             "external_links": [ "http://eea.europa.eu", "http://pam.europa.eu" ],
-             "title": "Austria",
-             "url": "http://car.apps.eea.europa.eu/austria",
-             "bg_url": "http://192.168.0.40:8081/www/SITE/austria/image_panoramic",
-             "type": "country",
-             "value": "Austria"
-         },
-    "bulgaria":
-         {
-             "body": "<p>Default text</p>",
-             "flag_url": "http://192.168.0.40:8081/www/SITE/bulgaria/flag_mini",
-             "languages": [ "bg" ],
-             "external_links": [ "www.bulgaria.net" ],
-             "title": "Bulgaria",
-             "url": "http://car.apps.eea.europa.eu/bulgaria",
-             "bg_url": "http://192.168.0.40:8081/www/SITE/bulgaria/image_panoramic",
-             "type": "country",
-             "value": "Bulgaria"
-         },
-    "romania": {
+    "austria": {
+        "body": "<p>Default text</p>",
+        "flag_url": "http://192.168.0.40:8081/www/SITE/austria/flag_mini",
+        "languages": [ "de" ],
+        "external_links": [ "http://eea.europa.eu", "http://pam.europa.eu" ],
+        "url": "http://car.apps.eea.europa.eu/austria",
+        "bg_url": "http://192.168.0.40:8081/www/SITE/austria/image_panoramic",
+        "title": "Austria",
         "type": "country",
-        "value": "Romania"
+        "value": "Austria"
     },
-    "albania": {
+    "belgium": {
+        "title": "Belgium",
         "type": "country",
-        "value": "Albania"
+        "value": "Belgium"
+    },
+    "bulgaria": {
+        "title": "Bulgaria",
+        "type": "country",
+        "value": "Bulgaria"
+    },
+    "croatia": {
+        "title": "Croatia",
+        "type": "country",
+        "value": "Croatia"
+    },
+    "cyprus": {
+        "title": "Cyprus",
+        "type": "country",
+        "value": "Cyprus"
+    },
+    "czech-republic": {
+        "title": "Czech Republic",
+        "type": "country",
+        "value": "Czech Republic"
+    },
+    "denmark": {
+        "title": "Denmark",
+        "type": "country",
+        "value": "Denmark"
+    },
+    "estonia": {
+        "title": "Estonia",
+        "type": "country",
+        "value": "Estonia"
+    },
+    "finland": {
+        "title": "Finland",
+        "type": "country",
+        "value": "Finland"
+    },
+    "france": {
+        "title": "France",
+        "type": "country",
+        "value": "France"
     },
     "germany": {
+        "title": "Germany",
         "type": "country",
         "value": "Germany"
     },
-    "blacksea": {
+
+    "greece": {
+        "title": "Greece",
+        "type": "country",
+        "value": "Greece"
+    },
+    "hungary": {
+        "title": "Hungary",
+        "type": "country",
+        "value": "Hungary"
+    },
+    "iceland": {
+        "title": "Iceland",
+        "type": "country",
+        "value": "Iceland"
+    },
+    "ireland": {
+        "title": "Ireland",
+        "type": "country",
+        "value": "Ireland"
+    },
+    "italy": {
+        "title": "Italy",
+        "type": "country",
+        "value": "Italy"
+    },
+    "latvia": {
+        "title": "Latvia",
+        "type": "country",
+        "value": "Latvia"
+    },
+    "liechtenstein": {
+        "title": "Liechtenstein",
+        "type": "country",
+        "value": "Liechtenstein"
+    },
+    "lithuania": {
+        "title": "Lithuania",
+        "type": "country",
+        "value": "Lithuania"
+    },
+    "luxembourg": {
+        "title": "Luxembourg",
+        "type": "country",
+        "value": "Luxembourg"
+    },
+    "malta": {
+        "title": "Malta",
+        "type": "country",
+        "value": "Malta"
+    },
+    "norway": {
+        "title": "Norway",
+        "type": "country",
+        "value": "Norway"
+    },
+
+    "poland": {
+        "title": "Poland",
+        "type": "country",
+        "value": "Poland"
+    },
+    "portugal": {
+        "title": "Portugal",
+        "type": "country",
+        "value": "Portugal"
+    },
+    "romania": {
+        "title": "Romania",
+        "type": "country",
+        "value": "Romania"
+    },
+    "serbia": {
+        "title": "Serbia",
+        "type": "country",
+        "value": "Serbia"
+    },
+    "slovakia": {
+        "title": "Slovakia",
+        "type": "country",
+        "value": "Slovakia"
+    },
+    "slovenia": {
+        "title": "Slovenia",
+        "type": "country",
+        "value": "Slovenia"
+    },
+    "spain": {
+        "title": "Spain",
+        "type": "country",
+        "value": "Spain"
+    },
+    "sweden": {
+        "title": "Sweden",
+        "type": "country",
+        "value": "Sweden"
+    },
+    "switzerland": {
+        "title": "Switzerland",
+        "type": "country",
+        "value": "Switzerland"
+    },
+    "netherlands": {
+        "title": "Netherlands",
+        "type": "country",
+        "value": "Netherlands"
+    },
+    "turkey": {
+        "title": "Turkey",
+        "type": "country",
+        "value": "Turkey"
+    },
+    "united-kingdom": {
+        "title": "United Kingdom",
+        "type": "country",
+        "value": "United Kingdom"
+    },
+
+    "albania": {
+        "title": "Albania",
+        "type": "country",
+        "value": "Albania"
+    },
+    "bosnia-and-herzegovina": {
+        "title": "Bosnia and Herzegovina",
+        "type": "country",
+        "value": "Bosnia and Herzegovina"
+    },
+    "kosovo": {
+        "title": "Kosovo",
+        "type": "country",
+        "value": "Kosovo (UNSCR 1244/99)"
+    },
+    "fyr-macedonia": {
+        "title": "The Former Yugoslav Republic of Macedonia",
+        "type": "country",
+        "value": "Former Yugoslav Republic of Macedonia, the"
+    },
+    "montenegro": {
+        "title": "Montenegro",
+        "type": "country",
+        "value": "Montenegro"
+    },
+
+    "arctic": {
+        "title": "Arctic region",
+        "type": "region",
+        "value": "Arctic"
+    },
+
+    "black-sea": {
+        "title": "Black Sea region",
         "type": "region",
         "value": "Black Sea"
     },
     "mediterranean": {
+        "title": "Mediterranean Sea region",
         "type": "region",
-        "value": "Mediterranean Sea"
-    },
-    "arctic": {
-        "type": "region",
-        "value": "Arctic"
+        "value": "Mediterranean"
     }
-
 }
