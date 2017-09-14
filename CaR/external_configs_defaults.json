@@ -1,0 +1,51 @@
+{
+    "austria": 
+        {
+             "body": "<p>Default text</p>",
+             "flag_url": "http://192.168.0.40:8081/www/SITE/austria/flag_mini",
+             "languages": [ "de" ],
+             "external_links": [ "http://eea.europa.eu", "http://pam.europa.eu" ],
+             "title": "Austria",
+             "url": "http://car.apps.eea.europa.eu/austria",
+             "bg_url": "http://192.168.0.40:8081/www/SITE/austria/image_panoramic",
+             "type": "country",
+             "value": "Austria"
+         },
+    "bulgaria": 
+         {
+             "body": "<p>Default text</p>",
+             "flag_url": "http://192.168.0.40:8081/www/SITE/bulgaria/flag_mini",
+             "languages": [ "bg" ],
+             "external_links": [ "www.bulgaria.net" ],
+             "title": "Bulgaria",
+             "url": "http://car.apps.eea.europa.eu/bulgaria",
+             "bg_url": "http://192.168.0.40:8081/www/SITE/bulgaria/image_panoramic",
+             "type": "country",
+             "value": "Bulgaria"
+         },
+    "romania": {
+        "type": "country",
+        "value": "Romania"
+    },
+    "albania": {
+        "type": "country",
+        "value": "Albania"
+    },
+    "germany": {
+        "type": "country",
+        "value": "Germany"
+    },
+    "blacksea": {
+        "type": "region",
+        "value": "Black Sea"
+    },
+    "mediterranean": {
+        "type": "region",
+        "value": "Mediterranean Sea"
+    },
+    "arctic": {
+        "type": "region",
+        "value": "Arctic"
+    }
+
+}

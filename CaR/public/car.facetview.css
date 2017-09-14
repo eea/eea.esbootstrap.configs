@@ -1,0 +1,33 @@
+.facetview_include_expired {
+    float:right;
+    line-height:24px;
+}
+
+#facetview_results td.ribbon-parent,
+a.eea-tileInner.ribbon-parent,
+div.tileItem.ribbon-parent {
+  position: relative;
+  overflow: hidden;
+}
+
+#facetview_results td.ribbon-parent {
+  height: 60px;
+}
+
+/* For now disable the tree icons on facets, as hierarchy is not working */
+.jstree-default .jstree-leaf>.jstree-ocl {
+    display:none;
+}
+
+#content {
+    background: #FFF none;
+}
+
+.current-filters,
+.facetview_include_expired,
+.eea-section-trigger,
+.search-suggestions,
+.facetview_filters,
+.facetedview_search {
+    display: none;
+}
