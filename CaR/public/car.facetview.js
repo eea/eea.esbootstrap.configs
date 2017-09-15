@@ -279,7 +279,7 @@ function getUrl(options){
                 }
             },
             "display_type":"card",
-            "size":20,
+            "size":1000,
             "sort":
                 [{"http://purl.org/dc/terms/issued":{"order":"desc"}}],
             "highlight":{"fields":{"*":{}}}
@@ -362,7 +362,7 @@ function getUrl(options){
                 }
             },
             "display_type":"card",
-            "size":20,
+            "size":1000,
             "sort":[{"http://purl.org/dc/terms/issued":{"order":"desc"}}],"highlight":{"fields":{"*":{}}}
         };
 
@@ -562,7 +562,7 @@ jQuery(document).ready(function($) {
     linkify: false,
     paging: {
       from: from_val,
-      size: 20
+      size: 1000
     },
     display_images: false,
     display_type: 'card',
