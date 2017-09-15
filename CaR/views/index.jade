@@ -12,14 +12,17 @@ block extrastyles
 
 block content
     div(class="page-header")
+        - var ctitle = external_config.title;
         div(class='section-title')
             img(src!=external_config.flag_url)
-            h1(class='section-header')!=external_config.value
+            h1(class='section-header')!=ctitle
+
         div(class='section-languages')
             each language in external_config.languages
-                a(class='eea_download_btn') EEA content in #{language}
+                a(class='eea_btn' href='https://www.eea.europa.eu/' + language[1]) EEA content in #{language[0]}
+
         div(class="section-description")!=external_config.body
-            a(class="section-description--more") See the state of the environment in Austria
+            a(class="section-description--more" href='https://www.eea.europa.eu/soer-2015/countries/' + external_config.obj_id) See the state of the environment in #{ctitle}
 
         div(class='section-pages')
             h3 OFFICIAL COUNTRY PAGES
@@ -31,8 +34,11 @@ block content
                         - var link = values.length > 1 ? values[1] : values[0];
                         - var link = link.indexOf('http://') === -1 ? 'http://' + link : link;
                         a(href=link)=title
+
         div(class='section-topics')
+
         include /code/config/CaR/views/facet.jade
+
     div(class="page-body")
         +download_data
         .facet-view-simple
