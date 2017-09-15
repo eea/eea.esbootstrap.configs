@@ -426,6 +426,11 @@ function setUrl(stateObj, page, url){
     window.history.pushState(stateObj, page, topics_str);
 }
 
+function update_results_count(){
+    $("<span class='car-pagination'><strong class='car_results_count'></strong> results</span>").appendTo(".top-pagination");
+    $(".car_results_count").text($(".eea_results_count").text());
+}
+
 jQuery(document).ready(function($) {
   $.extend(true, settings_default_external_configs, settings_external_configs);
   var url = $(location).attr('href');
@@ -558,6 +563,7 @@ jQuery(document).ready(function($) {
       add_titles();
       mark_expired();
       mark_recent();
+      update_results_count();
     },
     linkify: false,
     paging: {

@@ -28,7 +28,9 @@ div.tileItem.ribbon-parent {
 .eea-section-trigger,
 .search-suggestions,
 .facetview_filters,
-.facetedview_search {
+.facetedview_search,
+.facetview_metadata,
+.default_pagination {
     display: none;
 }
 
