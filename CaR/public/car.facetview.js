@@ -234,88 +234,21 @@ function getSpatialFromUrl(){
     var spatial_field = "http://purl.org/dc/terms/spatial";
     if (settings_default_external_configs[short_spatial] !== undefined){
         spatial = settings_default_external_configs[short_spatial].value;
+        if (typeof spatial === "string"){
+            spatial = [spatial];
+        }
         if (settings_default_external_configs[short_spatial].type === 'region') {
             spatial_field = "places"
         }
     }
     return {
         "spatial_field": spatial_field,
-        "spatial_value": spatial
+        "spatial_values": spatial
     }
 }
 
 function getUrl(options){
-    var default_query_notopic = 
-        {"query":
-            {"bool":
-                {"must":
-                    [
-                        {"term":{"http://www.eea.europa.eu/ontologies.rdf#hasWorkflowState":"published"}},
-                        {"term":{"language":"en"}},
-                        {"constant_score":
-                            {"filter":
-                                {"or":
-                                    [
-                                        {"missing":{"field":"http://purl.org/dc/terms/issued"}},
-                                        {"range":{"http://purl.org/dc/terms/issued":{"lte":"2017-09-12"}}}
-                                    ]
-                                }
-                            }
-                        },
-                        {"term":{"language":"en"}},
-                        {"constant_score":
-                            {"filter":
-                                {"or":
-                                    [
-                                        {"missing":{"field":"http://purl.org/dc/terms/expires"}},
-                                        {"range":{"http://purl.org/dc/terms/expires":{"gte":"2017-09-12"}}}
-                                    ]
-                                }
-                            }
-                        },
-/*                        {"range":{"items_count_http://purl.org/dc/terms/spatial":{"from":1,"to":1}}},
-                        {"term":{"http://purl.org/dc/terms/spatial":"<country>"}}*/
-                    ]
-                }
-            },
-            "display_type":"card",
-            "size":1000,
-            "sort":
-                [{"http://purl.org/dc/terms/issued":{"order":"desc"}}],
-            "highlight":{"fields":{"*":{}}}
-        };
-
-/*    {"query":
-        {"function_score":
-            {"query":
-                {"bool":
-                    {"must":
-                        [
-                            {"term":{"http://www.eea.europa.eu/ontologies.rdf#hasWorkflowState":"published"}},
-                            {"term":{"language":"en"}},
-                            {"constant_score":
-                                {"filter":{"or":[{"missing":{"field":"http://purl.org/dc/terms/issued"}},{"range":{"http://purl.org/dc/terms/issued":{"lte":"2017-09-12"}}}]}}
-                            },
-                            {"term":{"language":"en"}},
-                            {"constant_score":
-                                {"filter":{"or":[{"missing":{"field":"http://purl.org/dc/terms/expires"}},{"range":{"http://purl.org/dc/terms/expires":{"gte":"2017-09-12"}}}]}}
-                            },
-                            {"range":{"items_count_http://purl.org/dc/terms/spatial":{"from":1,"to":1}}},
-                            {"term":{"http://purl.org/dc/terms/spatial":"Albania"}}
-                        ]
-                    }
-                },
-            "filter":
-                {"bool":{"should":[{"term":{"http://www.eea.europa.eu/portal_types#topic":"Policy instruments"}}]}}
-            }
-        },
-        "display_type":"card",
-        "size":20,
-        "sort":[{"http://purl.org/dc/terms/issued":{"order":"desc"}}],
-        "highlight":{"fields":{"*":{}}}
-    };*/
-
-    var default_query_topic = 
+    var query =
         {"query":
             {"function_score":
                 {"query":
@@ -345,19 +278,29 @@ function getUrl(options){
                                         }
                                     }
                                 },
-/*                                {"range":{"items_count_http://purl.org/dc/terms/spatial":{"from":1,"to":1}}},
-                                {"term":{"http://purl.org/dc/terms/spatial":"Albania"}}*/
+/*                                {"range":{"items_count_http://purl.org/dc/terms/spatial":{"from":1,"to":1}}},*/ 
                             ]
                         }
                     },
                 "filter":
-                    {"bool":
-                        {"should":
-                            [
-/*                                    {"term":{"http://www.eea.europa.eu/portal_types#topic":"Policy instruments"}},
-                                {"term":{"http://www.eea.europa.eu/portal_types#topic":"Resource efficiency and waste"}}*/
-                            ]
-                        }
+                    {"and":
+                        [
+                            {"bool":
+                                {"should":
+                                    [
+/*                                        {"term":{"http://purl.org/dc/terms/spatial":"Albania"}}*/
+                                    ]
+                                }
+                            },
+                            {"bool":
+                                {"should":
+                                    [
+/*                                        {"term":{"http://www.eea.europa.eu/portal_types#topic":"Policy instruments"}},
+                                        {"term":{"http://www.eea.europa.eu/portal_types#topic":"Resource efficiency and waste"}}*/
+                                    ]
+                                }
+                            }
+                        ]
                     }
                 }
             },
@@ -371,32 +314,23 @@ function getUrl(options){
         "range":{}
     };
     exact_spatial.range["items_count_" + spatial_info.spatial_field] = {"from":1, "to": 1};
-    var term_spatial = {
-        "term":{}
-    };
-    term_spatial.term[spatial_info.spatial_field] = spatial_info.spatial_value;
 
-/*    default_query.query.function_score.query.bool.must.push(exact_spatial);
-    default_query.query.function_score.query.bool.must.push(term_spatial);*/
+    query.query.function_score.query.bool.must.push(exact_spatial);
 
     var href = window.location.href;
     var href_parts = href.split("?topic=")
-    var query = default_query_notopic;
-    if (href_parts.length === 1){
-        query = default_query_notopic;
-
-        query.query.bool.must.push(exact_spatial);
-        query.query.bool.must.push(term_spatial);
-//        return window.location.href;
+    for (var i = 0; i < spatial_info.spatial_values.length; i++){
+        var term_spatial = {
+            "term":{}
+        };
+        term_spatial.term[spatial_info.spatial_field] = spatial_info.spatial_values[i];
+        query.query.function_score.filter.and[0].bool.should.push(term_spatial);
     }
-    else{
-        query= default_query_topic;
-        query.query.function_score.query.bool.must.push(exact_spatial);
-        query.query.function_score.query.bool.must.push(term_spatial);
+    if (href_parts.length > 1){
         topics = decodeURIComponent(href_parts[1]).split(",");
         for (var i = 0; i < topics.length; i++){
             var term_topic = {"term":{"http://www.eea.europa.eu/portal_types#topic":topics[i]}};
-            query.query.function_score.filter.bool.should.push(term_topic);
+            query.query.function_score.filter.and[1].bool.should.push(term_topic);
         }
     }
     var query_str = encodeURIComponent(JSON.stringify(query));
@@ -409,7 +343,7 @@ function setUrl(stateObj, page, url){
     var query = JSON.parse(decodeURIComponent(url).split("source=")[1])
     var topics_str = "";
     try {
-        var topics = query.query.function_score.filter.bool.should;
+        var topics = query.query.function_score.filter.and[1].bool.should;
         if (topics.length === 0){
             throw "empty";
         }
@@ -455,19 +389,6 @@ jQuery(document).ready(function($) {
   var today = getToday();
 
   predefined_filters = [
-/*        {
-          "range": {
-            "items_count_http://purl.org/dc/terms/spatial": {
-              "from": 1,
-              "to": 1
-            }
-          }
-        },
-        {
-          "term": {
-            "http://purl.org/dc/terms/spatial": spatial
-          }
-        },*/
       {'term': {'http://www.eea.europa.eu/ontologies.rdf#hasWorkflowState':
                   'published'}},
       {'term': {'language':
@@ -482,19 +403,6 @@ jQuery(document).ready(function($) {
       }];
 
   predefined_filters_expired = [
-/*        {
-          "range": {
-            "items_count_http://purl.org/dc/terms/spatial": {
-              "from": 1,
-              "to": 1
-            }
-          }
-        },
-        {
-          "term": {
-            "http://purl.org/dc/terms/spatial": spatial
-          }
-        },*/
       {'term': {'language':
                   'en'}},
       {'constant_score': {
@@ -516,11 +424,8 @@ jQuery(document).ready(function($) {
 
   var tmp_spatial_range = {"range":{}};
   tmp_spatial_range.range["items_count_" + spatial_field] = {"from": 1, "to": 1};
-  var tmp_spatial_filter = {"term":{}};
-  tmp_spatial_filter.term[spatial_field] = spatial;
-  
+
   tmp_predefined_filters.push(tmp_spatial_range);
-  tmp_predefined_filters.push(tmp_spatial_filter);
 
   eea_facetview('.facet-view-simple', 
   {
