@@ -130,8 +130,9 @@ div#facetview_rightcol {
     font-weight: bold;
 }
 .page-header h5 {
-    margin: 0 0 1em 0;
+    margin: 0 0 1em .5em;
     color: #006699;
+    line-height: 1;
 }
 
 .section-title,
@@ -192,7 +193,19 @@ div#facetview_rightcol {
     background-color: #009590; 
     flex: 0.5;
     display: flex;
+    position: relative;
     
+}
+.car_facet_title:after {
+    top: 40%;
+    left: 100%;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border: 13px solid transparent;
+    border-left-color: #009590;
 }
 .car_facet_title--text {
     align-self: center;
@@ -201,6 +214,7 @@ div#facetview_rightcol {
     color: #FFF;
     font-weight: bold;
 }
+
 
 .car_facet_group {
     flex: 1;
