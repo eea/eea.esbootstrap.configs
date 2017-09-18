@@ -230,7 +230,7 @@ function updateWithHTTPS(result){
 }
 function updateResult(element, result){
     result = updateContentTypes(element, result);
-    result = updateImageURL(result);
+    result = updateWithHTTPS(result);
     return(result);
 }
 
