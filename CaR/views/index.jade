@@ -14,7 +14,7 @@ block content
     div(class="page-header")
         - var ctitle = external_config.title;
         div(class='section-title')
-            img(src!=external_config.flag_url)
+            img(class='section-img' src!=external_config.flag_url)
             h1(class='section-header')!=ctitle
 
         div(class='section-languages')
@@ -25,7 +25,7 @@ block content
             a(class="section-description--more" href='https://www.eea.europa.eu/soer-2015/countries/' + external_config.obj_id) See the state of the environment in #{ctitle}
 
         div(class='section-pages')
-            h3(class="section-header section-pages-header") OFFICIAL COUNTRY PAGES
+            h5(class="section-header section-pages-header") OFFICIAL COUNTRY PAGES
             ul(class='eea-no-list-style')
                 each val in external_config.external_links
                     li

@@ -1,3 +1,4 @@
+
 .facetview_include_expired {
     float:right;
     line-height:24px;
@@ -21,7 +22,10 @@ div.tileItem.ribbon-parent {
 
 #content {
     background: none;
+    padding-top: 0 !important;
 }
+
+
 
 .current-filters,
 .facetview_include_expired,
@@ -38,11 +42,12 @@ div.tileItem.ribbon-parent {
 
 #portal-columns {
     position: relative;
+    padding-top: 0 !important;
 }
 #portal-columns:before {
     content: " ";
     position: absolute;
-    background: url(http://localhost:7988/www/SITE/countries-and-regions/austria/image_panoramic) no-repeat top left;
+    background: url(http://localhost:7988/www/SITE/countries-and-regions/austria/image_panoramic) no-repeat top center;
     width: 100%;
     height: 525px;
     top: -16px;
@@ -63,6 +68,7 @@ div#facetview_rightcol {
     border: 1px solid lightgrey;
     background-color: #F6FAFD;
     min-height: 140px;
+    padding-right: 3em;
 }
 
 
@@ -88,6 +94,8 @@ div#facetview_rightcol {
 
 .car_facet_value{
     float:left;
+    line-height: 1;
+    margin-left: 0.5em;
 }
 .car_facet_group_value{
     float:left;
@@ -118,11 +126,27 @@ div#facetview_rightcol {
     flex-wrap: wrap;
     height: 380px;
 }
+.page-header a {
+    font-weight: bold;
+}
+.page-header h5 {
+    margin: 0 0 1em 0;
+    color: #006699;
+}
 
 .section-title,
 .section-description {
     flex-basis: 70%;
     padding-right: 5em;
+}
+
+.section-title {
+    display: flex;
+}
+.section-img {
+    width: 50px;
+    height: 33px;
+    margin-right: 1em;
 }
 .section-languages,
 .section-pages {
@@ -181,6 +205,7 @@ div#facetview_rightcol {
 .car_facet_group {
     flex: 1;
     margin-left: 4em;
+    padding-top: 1em;
 }
 
 
