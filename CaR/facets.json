@@ -91,7 +91,7 @@
                         }]
                     },
                     "icon_template": {
-                        "template": "http://www.eea.europa.eu/portal_depiction/${contentType}/image_thumb",
+                        "template": "https://www.eea.europa.eu/portal_depiction/${contentType}/image_thumb",
                         "variables": [{
                                 "name": "contentType",
                                 "type" : "variable",
@@ -105,7 +105,7 @@
                     "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#about",
                     "value": "http://www.eea.europa.eu",
                     "thumb_template": {
-                        "template": "http://www.eea.europa.eu/portal_depiction/${contentType}/image_preview",
+                        "template": "https://www.eea.europa.eu/portal_depiction/${contentType}/image_preview",
                         "variables": [{
                                 "name": "contentType",
                                 "type" : "variable",
@@ -113,7 +113,7 @@
                         }]
                     },
                     "icon_template": {
-                        "template": "http://www.eea.europa.eu/portal_depiction/${contentType}/image_thumb",
+                        "template": "https://www.eea.europa.eu/portal_depiction/${contentType}/image_thumb",
                         "variables": [{
                                 "name": "contentType",
                                 "type" : "variable",
