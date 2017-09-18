@@ -1,124 +1,83 @@
 {
     "fallback": {
         "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "bg_url": "/images/backgrounds/austria_bg_web.jpg"
-    },
-    "austria": {
-        "body": "",
-        "flag_url": "/images/flags/austria.png",
+        "bg_url": "images/backgrounds/austria_bg_web.jpg",
         "languages": [],
         "external_links": [],
-        "bg_url": "",
+        "bg_url": ""
+    },
+    "austria": {
+        "flag_url": "images/flags/austria.png",
 
         "title": "Austria",
         "type": "country",
         "value": "Austria"
     },
     "belgium": {
-        "body": "",
-        "flag_url": "/images/flags/belgium.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/belgium.png",
 
         "title": "Belgium",
         "type": "country",
         "value": "Belgium"
     },
     "bulgaria": {
-        "body": "",
-        "flag_url": "/images/flags/bulgaria.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/bulgaria.png",
 
         "title": "Bulgaria",
         "type": "country",
         "value": "Bulgaria"
     },
     "croatia": {
-        "body": "",
-        "flag_url": "/images/flags/croatia.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/croatia.png",
 
         "title": "Croatia",
         "type": "country",
         "value": "Croatia"
     },
     "cyprus": {
-        "body": "",
-        "flag_url": "/images/flags/cyprus.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/cyprus.png",
 
         "title": "Cyprus",
         "type": "country",
         "value": "Cyprus"
     },
     "czech-republic": {
-        "body": "",
-        "flag_url": "/images/flags/czech-republic.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/czech-republic.png",
 
         "title": "Czech Republic",
         "type": "country",
         "value": "Czech Republic"
     },
     "denmark": {
-        "body": "",
-        "flag_url": "/images/flags/denmark.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/denmark.png",
 
         "title": "Denmark",
         "type": "country",
         "value": "Denmark"
     },
     "estonia": {
-        "body": "",
-        "flag_url": "/images/flags/estonia.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/estonia.png",
 
         "title": "Estonia",
         "type": "country",
         "value": "Estonia"
     },
     "finland": {
-        "body": "",
-        "flag_url": "/images/flags/finland.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/finland.png",
 
         "title": "Finland",
         "type": "country",
         "value": "Finland"
     },
     "france": {
-        "body": "",
-        "flag_url": "/images/flags/france.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/france.png",
 
         "title": "France",
         "type": "country",
         "value": "France"
     },
     "germany": {
-        "body": "",
-        "flag_url": "/images/flags/germany.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/germany.png",
 
         "title": "Germany",
         "type": "country",
@@ -126,121 +85,77 @@
     },
 
     "greece": {
-        "body": "",
-        "flag_url": "/images/flags/greece.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/greece.png",
 
         "title": "Greece",
         "type": "country",
         "value": "Greece"
     },
     "hungary": {
-        "body": "",
-        "flag_url": "/images/flags/hungary.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/hungary.png",
 
         "title": "Hungary",
         "type": "country",
         "value": "Hungary"
     },
     "iceland": {
-        "body": "",
-        "flag_url": "/images/flags/iceland.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/iceland.png",
 
         "title": "Iceland",
         "type": "country",
         "value": "Iceland"
     },
     "ireland": {
-        "body": "",
-        "flag_url": "/images/flags/ireland.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/ireland.png",
 
         "title": "Ireland",
         "type": "country",
         "value": "Ireland"
     },
     "italy": {
-        "body": "",
-        "flag_url": "/images/flags/italy.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/italy.png",
 
         "title": "Italy",
         "type": "country",
         "value": "Italy"
     },
     "latvia": {
-        "body": "",
-        "flag_url": "/images/flags/latvia.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/latvia.png",
 
         "title": "Latvia",
         "type": "country",
         "value": "Latvia"
     },
     "liechtenstein": {
-        "body": "",
-        "flag_url": "/images/flags/liechtenstein.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/liechtenstein.png",
 
         "title": "Liechtenstein",
         "type": "country",
         "value": "Liechtenstein"
     },
     "lithuania": {
-        "body": "",
-        "flag_url": "/images/flags/lithuania.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/lithuania.png",
 
         "title": "Lithuania",
         "type": "country",
         "value": "Lithuania"
     },
     "luxembourg": {
-        "body": "",
-        "flag_url": "/images/flags/luxembourg.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/luxembourg.png",
 
         "title": "Luxembourg",
         "type": "country",
         "value": "Luxembourg"
     },
     "malta": {
-        "body": "",
-        "flag_url": "/images/flags/malta.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/malta.png",
 
         "title": "Malta",
         "type": "country",
         "value": "Malta"
     },
     "norway": {
-        "body": "",
-        "flag_url": "/images/flags/norway.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/norway.png",
 
         "title": "Norway",
         "type": "country",
@@ -248,132 +163,84 @@
     },
 
     "poland": {
-        "body": "",
-        "flag_url": "/images/flags/poland.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/poland.png",
 
         "title": "Poland",
         "type": "country",
         "value": "Poland"
     },
     "portugal": {
-        "body": "",
-        "flag_url": "/images/flags/portugal.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/portugal.png",
 
         "title": "Portugal",
         "type": "country",
         "value": "Portugal"
     },
     "romania": {
-        "body": "",
-        "flag_url": "/images/flags/romania.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/romania.png",
 
         "title": "Romania",
         "type": "country",
         "value": "Romania"
     },
     "serbia": {
-        "body": "",
-        "flag_url": "/images/flags/serbia.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/serbia.png",
 
         "title": "Serbia",
         "type": "country",
         "value": "Serbia"
     },
     "slovakia": {
-        "body": "",
-        "flag_url": "/images/flags/slovakia.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/slovakia.png",
 
         "title": "Slovakia",
         "type": "country",
         "value": "Slovakia"
     },
     "slovenia": {
-        "body": "",
-        "flag_url": "/images/flags/slovenia.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/slovenia.png",
 
         "title": "Slovenia",
         "type": "country",
         "value": "Slovenia"
     },
     "spain": {
-        "body": "",
-        "flag_url": "/images/flags/spain.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/spain.png",
 
         "title": "Spain",
         "type": "country",
         "value": "Spain"
     },
     "sweden": {
-        "body": "",
-        "flag_url": "/images/flags/sweden.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/sweden.png",
 
         "title": "Sweden",
         "type": "country",
         "value": "Sweden"
     },
     "switzerland": {
-        "body": "",
-        "flag_url": "/images/flags/switzerland.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/switzerland.png",
 
         "title": "Switzerland",
         "type": "country",
         "value": "Switzerland"
     },
     "netherlands": {
-        "body": "",
-        "flag_url": "/images/flags/netherlands.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/netherlands.png",
 
         "title": "Netherlands",
         "type": "country",
         "value": "Netherlands"
     },
     "turkey": {
-        "body": "",
-        "flag_url": "/images/flags/turkey.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/turkey.png",
 
         "title": "Turkey",
         "type": "country",
         "value": "Turkey"
     },
     "united-kingdom": {
-        "body": "",
-        "flag_url": "/images/flags/united-kingdom.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/united-kingdom.png",
 
         "title": "United Kingdom",
         "type": "country",
@@ -381,55 +248,35 @@
     },
 
     "albania": {
-        "body": "",
-        "flag_url": "/images/flags/albania.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/albania.png",
 
         "title": "Albania",
         "type": "country",
         "value": "Albania"
     },
     "bosnia-and-herzegovina": {
-        "body": "",
-        "flag_url": "/images/flags/bosnia-and-herzegovina.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/bosnia-and-herzegovina.png",
 
         "title": "Bosnia and Herzegovina",
         "type": "country",
         "value": "Bosnia and Herzegovina"
     },
     "kosovo": {
-        "body": "",
-        "flag_url": "/images/flags/kosovo.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/kosovo.png",
 
         "title": "Kosovo",
         "type": "country",
         "value": "Kosovo (UNSCR 1244/99)"
     },
     "fyr-macedonia": {
-        "body": "",
-        "flag_url": "/images/flags/fyr-macedonia.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/fyr-macedonia.png",
 
         "title": "The Former Yugoslav Republic of Macedonia",
         "type": "country",
         "value": "Former Yugoslav Republic of Macedonia, the"
     },
     "montenegro": {
-        "body": "",
-        "flag_url": "/images/flags/montenegro.png",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
+        "flag_url": "images/flags/montenegro.png",
 
         "title": "Montenegro",
         "type": "country",
@@ -437,11 +284,7 @@
     },
 
     "arctic": {
-        "body": "",
         "flag_url": "",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
  
         "title": "Arctic region",
         "type": "region",
@@ -449,22 +292,14 @@
     },
 
     "black-sea": {
-        "body": "",
         "flag_url": "",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
 
        "title": "Black Sea region",
         "type": "region",
         "value": ["Marine Black sea", "Black Sea"]
     },
     "mediterranean": {
-        "body": "",
         "flag_url": "",
-        "languages": [],
-        "external_links": [],
-        "bg_url": "",
 
         "title": "Mediterranean Sea region",
         "type": "region",
