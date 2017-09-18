@@ -222,8 +222,15 @@ function updateContentTypes(element, result){
     return(result);
 }
 
+function updateWithHTTPS(result){
+    result.url = result.url.split("http://").join("https://");
+    result.thumbUrl = result.thumbUrl.split("http://").join("https://");
+    result.typeIcon = result.typeIcon.split("http://").join("https://");
+    return result;
+}
 function updateResult(element, result){
     result = updateContentTypes(element, result);
+    result = updateImageURL(result);
     return(result);
 }
 
