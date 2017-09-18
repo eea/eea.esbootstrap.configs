@@ -1,4 +1,7 @@
 
+#content h1 {
+    padding-right: 0;
+}
 .facetview_include_expired {
     float:right;
     line-height:24px;
@@ -43,15 +46,19 @@ div.tileItem.ribbon-parent {
 #portal-columns {
     position: relative;
     padding-top: 0 !important;
+    /*
+    background-repeat: none;
+    background-position: -15px center; */
 }
+
 #portal-columns:before {
     content: " ";
     position: absolute;
-    background: url(http://localhost:7988/www/SITE/countries-and-regions/austria/image_panoramic) no-repeat top center;
+    background: url("http://localhost:7988/www/SITE/countries-and-regions/austria/image_panoramic") no-repeat top center;
     width: 100%;
     height: 525px;
     top: -16px;
-}
+} 
 .content {
     position: relative;
     z-index: 2;
@@ -69,6 +76,10 @@ div#facetview_rightcol {
     background-color: #F6FAFD;
     min-height: 140px;
     padding-right: 3em;
+}
+
+.car_facet {
+    display: flex;
 }
 
 
@@ -94,19 +105,14 @@ div#facetview_rightcol {
 }
 
 .car_facet_value{
-    float:left;
+    flex: 1;
     line-height: 1;
 }
 
 .car_facet_count{
-    float:right;
+    line-height: 1;
 }
 
-/*.car_facet_group{
-    width:250px;
-    float:left;
-    margin-right:50px;
-} */
 
 .eea-right-section {
     display:none;
@@ -121,7 +127,7 @@ div#facetview_rightcol {
 .page-header {
     display: flex;
     flex-wrap: wrap;
-    height: 380px;
+    min-height: 380px;
 }
 .page-header a {
     font-weight: bold;
@@ -134,32 +140,33 @@ div#facetview_rightcol {
 
 .section-title,
 .section-description {
-    flex-basis: 79%;
+    margin-bottom: 2em;
+}
+.section-description {
+    flex-basis: 80%;
     padding-right: 5em;
 }
-
 .section-title {
     display: flex;
+    flex: 1;
+    max-width: 79%;
 }
 .section-img {
     width: 50px;
     height: 33px;
     margin-right: 1em;
 }
-.section-languages,
 .section-pages {
     flex-basis: 20%;
 }
 .section-languages {
-    align-self: center;
+    margin-top: 0.7em;
+    min-width: 185px;
 }
 .section-topics {
     flex-basis: 100%;
 }
 
-/*.section-title > img {
-    display: none;
-}*/
 
 #content .section-header {
     margin: 0;
@@ -184,6 +191,10 @@ div#facetview_rightcol {
 #content .eea-tileTypeHead:hover
 {
     color: #FFF !important;
+    
+}
+#content .eea-tileTypeHead {
+    padding: 0.5em 1em;
 }
 
 .car_facet_title {
@@ -191,6 +202,7 @@ div#facetview_rightcol {
     flex: 0.5;
     display: flex;
     position: relative;
+    min-width: 115px;
     
 }
 .car_facet_title:after {
