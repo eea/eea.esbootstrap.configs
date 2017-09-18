@@ -30,7 +30,8 @@ div.tileItem.ribbon-parent {
 .facetview_filters,
 .facetedview_search,
 .facetview_metadata,
-.default_pagination {
+.default_pagination,
+.facetview_orderby_relevance {
     display: none;
 }
 
@@ -134,9 +135,10 @@ div#facetview_rightcol {
     flex-basis: 100%;
 }
 
-.section-title > img {
+/*.section-title > img {
     display: none;
-}
+}*/
+
 #content .section-header {
     margin: 0;
     border: 0;
