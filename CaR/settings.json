@@ -8,6 +8,7 @@
     },
     "external_templates": {
         "local_path": "/external_templates",
+        "protocol": "https",
         "host": "www.eea.europa.eu",
         "head_path": "/templates/v2/getRequiredHead?jsdisable=all&render_full_html=False",
         "header_path": "/templates/v2/getHeader?jsdisable=all&render_full_html=False",
