@@ -20,7 +20,7 @@ div.tileItem.ribbon-parent {
 }
 
 #content {
-    background: #FFF none;
+    background: none;
 }
 
 .current-filters,
@@ -28,8 +28,40 @@ div.tileItem.ribbon-parent {
 .eea-section-trigger,
 .search-suggestions,
 .facetview_filters,
-.facetedview_search {
+.facetedview_search,
+.facetview_metadata,
+.default_pagination {
     display: none;
+}
+
+
+#portal-columns {
+    position: relative;
+}
+#portal-columns:before {
+    content: " ";
+    position: absolute;
+    background: url(http://localhost:7988/www/SITE/countries-and-regions/austria/image_panoramic) no-repeat top left;
+    width: 100%;
+    height: 525px;
+    top: -16px;
+}
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+div#facetview_rightcol {
+    width: 100%;
+}
+
+#car_facet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 1px solid lightgrey;
+    background-color: #F6FAFD;
+    min-height: 140px;
 }
 
 
@@ -64,12 +96,94 @@ div.tileItem.ribbon-parent {
     float:right;
 }
 
-.car_facet_group{
+/*.car_facet_group{
     width:250px;
     float:left;
     margin-right:50px;
-}
+} */
 
 .eea-right-section {
     display:none;
+}
+.content .page-header, .page-body {
+    background: #FFF;
+    padding: 1em;
+    box-shadow: 1px 1px 5px -1px #9f9f9f;
+
+}
+
+.page-header {
+    display: flex;
+    flex-wrap: wrap;
+    height: 380px;
+}
+
+.section-title,
+.section-description {
+    flex-basis: 70%;
+    padding-right: 5em;
+}
+.section-languages,
+.section-pages {
+    flex-basis: 30%;
+}
+.section-languages {
+    align-self: center;
+}
+.section-topics {
+    flex-basis: 100%;
+}
+
+.section-title > img {
+    display: none;
+}
+#content .section-header {
+    margin: 0;
+    border: 0;
+}
+
+.page-body {
+    margin-top: 1em;
+}
+
+.section-pages-header {
+    margin-top: 0;
+}
+
+#content .eea-no-list-style {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+#content .eea-tileTypeHead,
+#content .eea-tileTypeHead:visited,
+#content .eea-tileTypeHead:hover
+{
+    color: #FFF !important;
+}
+
+.car_facet_title {
+    background-color: #009590; 
+    flex: 0.5;
+    display: flex;
+    
+}
+.car_facet_title--text {
+    align-self: center;
+    margin-left: 2em;
+    display: block;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.car_facet_group {
+    flex: 1;
+    margin-left: 4em;
+}
+
+
+@media screen and (min-width: 1280px) {
+    div.container {
+        width: 75%;
+    }
 }
