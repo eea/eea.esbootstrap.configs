@@ -207,17 +207,17 @@
     "arctic": {
         "title": "Arctic region",
         "type": "region",
-        "value": "Arctic"
+        "value": ["Arctic", "Arctic Ocean", "Arctic Ocean (Alaska, United States)", "Marine Arctic Ocean", "Arctic (Arctic, NY 13730, Statele Unite ale Americii)"]
     },
 
     "black-sea": {
         "title": "Black Sea region",
         "type": "region",
-        "value": "Black Sea"
+        "value": ["Marine Black sea", "Black Sea"]
     },
     "mediterranean": {
         "title": "Mediterranean Sea region",
         "type": "region",
-        "value": "Mediterranean"
+        "value": ["Marea Mediterană", "Eastern Mediterranean", "Western Mediterranean", "Mediterranean", "Mediterranean Sea", "Marine Mediterranean sea"]
     }
 }
