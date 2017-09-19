@@ -90,6 +90,7 @@ div#facetview_rightcol {
 
 .car_facet_value[readonly] {
   color: gray;
+  cursor: auto;
 }
 
 .car_facet_count[readonly] {
@@ -203,25 +204,7 @@ div#facetview_rightcol {
     padding: 0.5em 1em;
 }
 
-.car_facet_title {
-    background-color: #009590; 
-    flex: 0.5;
-    display: flex;
-    position: relative;
-    min-width: 115px;
-    
-}
-.car_facet_title:after {
-    top: 40%;
-    left: 100%;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border: 13px solid transparent;
-    border-left-color: #009590;
-}
+
 .car_facet_title--text {
     align-self: center;
     margin-left: 2em;
@@ -242,6 +225,54 @@ div#facetview_rightcol {
 @media screen and (min-width: 768px) {
     .site_bg {
         top: 165px;
+    }
+}
+
+@media screen and (max-width: 919px) {
+
+    .car_facet_title {
+        position: relative;
+        min-width: 115px;
+        width: 100%;
+    }
+
+    span.car_facet_title--text {
+        margin-left: 2em;
+        display: block;
+        color: #009590;
+        font-weight: bold;
+        position: relative;
+    }
+    span.car_facet_title--text:after {
+        content: " ";
+        height: 2px;
+        width: 92%;
+        background-color: #009590;
+        position: absolute;
+        top: 0.9em;
+        left: 75px;
+    }
+}
+@media screen and (min-width: 920px) {
+
+    .car_facet_title {
+        background-color: #009590; 
+        flex: 0.5;
+        display: flex;
+        position: relative;
+        min-width: 115px;
+        
+    }
+    .car_facet_title:after {
+        top: 40%;
+        left: 100%;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border: 13px solid transparent;
+        border-left-color: #009590;
     }
 }
 

@@ -81,6 +81,9 @@ $.fn.carFacet = function(settings){
 
     $('.car_facet_value, .car_facet_group_value').click(function(ev) {
         var el = $(ev.target);
+        if (el.attr('readonly')) {
+            return;
+        }
         var checkbox = el.prev();
         checkbox.click();
         checkAllFacets(true);
