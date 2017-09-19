@@ -1,4 +1,20 @@
+.site_bg {
+    display: flex;
+    justify-content: center;
+    height: 440px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+    top: 60px;
+    width: 100%;
+}
+.site_bg_img {
+    width: 100%;
+}
 
+#content h1 {
+    padding-right: 0;
+}
 .facetview_include_expired {
     float:right;
     line-height:24px;
@@ -44,14 +60,6 @@ div.tileItem.ribbon-parent {
     position: relative;
     padding-top: 0 !important;
 }
-#portal-columns:before {
-    content: " ";
-    position: absolute;
-    background: url(http://localhost:7988/www/SITE/countries-and-regions/austria/image_panoramic) no-repeat top center;
-    width: 100%;
-    height: 525px;
-    top: -16px;
-}
 .content {
     position: relative;
     z-index: 2;
@@ -71,6 +79,10 @@ div#facetview_rightcol {
     padding-right: 3em;
 }
 
+.car_facet {
+    display: flex;
+}
+
 
 .car_facet_checkbox[readonly] {
   pointer-events: none;
@@ -78,12 +90,18 @@ div#facetview_rightcol {
 
 .car_facet_value[readonly] {
   color: gray;
+  cursor: auto;
 }
 
 .car_facet_count[readonly] {
   color: gray;
 }
 
+.car_facet_value,
+.car_facet_group_value
+ {
+    cursor: pointer;
+}
 .car_facet_group_value[readonly] {
   color: gray;
 }
@@ -94,19 +112,14 @@ div#facetview_rightcol {
 }
 
 .car_facet_value{
-    float:left;
+    flex: 1;
     line-height: 1;
 }
 
 .car_facet_count{
-    float:right;
+    line-height: 1;
 }
 
-/*.car_facet_group{
-    width:250px;
-    float:left;
-    margin-right:50px;
-} */
 
 .eea-right-section {
     display:none;
@@ -121,7 +134,7 @@ div#facetview_rightcol {
 .page-header {
     display: flex;
     flex-wrap: wrap;
-    height: 380px;
+    min-height: 380px;
 }
 .page-header a {
     font-weight: bold;
@@ -134,32 +147,33 @@ div#facetview_rightcol {
 
 .section-title,
 .section-description {
-    flex-basis: 79%;
+    margin-bottom: 2em;
+}
+.section-description {
+    flex-basis: 80%;
     padding-right: 5em;
 }
-
 .section-title {
     display: flex;
+    flex: 1;
+    max-width: 79%;
 }
 .section-img {
     width: 50px;
     height: 33px;
     margin-right: 1em;
 }
-.section-languages,
 .section-pages {
     flex-basis: 20%;
 }
 .section-languages {
-    align-self: center;
+    margin-top: 0.7em;
+    min-width: 185px;
 }
 .section-topics {
     flex-basis: 100%;
 }
 
-/*.section-title > img {
-    display: none;
-}*/
 
 #content .section-header {
     margin: 0;
@@ -184,26 +198,13 @@ div#facetview_rightcol {
 #content .eea-tileTypeHead:hover
 {
     color: #FFF !important;
-}
-
-.car_facet_title {
-    background-color: #009590; 
-    flex: 0.5;
-    display: flex;
-    position: relative;
     
 }
-.car_facet_title:after {
-    top: 40%;
-    left: 100%;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border: 13px solid transparent;
-    border-left-color: #009590;
+#content .eea-tileTypeHead {
+    padding: 0.5em 1em;
 }
+
+
 .car_facet_title--text {
     align-self: center;
     margin-left: 2em;
@@ -217,8 +218,84 @@ div#facetview_rightcol {
     flex: 1;
     margin-left: 4em;
     padding-top: 1em;
+    min-width: 116px;
 }
 
+
+@media screen and (min-width: 768px) {
+    .site_bg {
+        top: 165px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .site_bg {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 805px) {
+    .car_facet_group {
+        flex: auto;
+        margin-left: 2em;
+        flex-basis: 45%;
+    }
+    
+}
+
+
+@media screen and (max-width: 919px) {
+
+    .car_facet_title {
+        position: relative;
+        min-width: 115px;
+        width: 100%;
+        margin-top: 1em;
+    }
+
+    .car_facet_title--text {
+        display: block;
+        color: #009590;
+        font-weight: bold;
+        position: relative;
+        float: left;
+        font-size: 140%;
+        margin: 0 1em 1.5em 1.5em;
+    }
+    .car_facet_title--text-border {
+        display: flex;
+        height: 2px;
+        background-color: #009590;
+        content: " ";
+        margin-top: 1em;
+    }
+}
+@media screen and (min-width: 920px) {
+
+    .car_facet_title {
+        background-color: #009590; 
+        flex: 0.5;
+        display: flex;
+        position: relative;
+        min-width: 115px;
+        
+    }
+    .car_facet_title:after {
+        top: 45%;
+        left: 100%;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border: 13px solid transparent;
+        border-left-color: #009590;
+    }
+
+    .car_facet_title--text-border {
+        display: none;
+    }
+}
 
 @media screen and (min-width: 1280px) {
     div.container {
