@@ -96,6 +96,11 @@ div#facetview_rightcol {
   color: gray;
 }
 
+.car_facet_value,
+.car_facet_group_value
+ {
+    cursor: pointer;
+}
 .car_facet_group_value[readonly] {
   color: gray;
 }

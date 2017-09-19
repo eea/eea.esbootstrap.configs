@@ -79,5 +79,11 @@ $.fn.carFacet = function(settings){
         checkAllFacets(true);
     });
 
+    $('.car_facet_value, .car_facet_group_value').click(function(ev) {
+        var el = $(ev.target);
+        var checkbox = el.prev();
+        checkbox.click();
+        checkAllFacets(true);
+    });
     loadValuesFromFacet();
 };

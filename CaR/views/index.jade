@@ -25,15 +25,16 @@ block content
             a(class="section-description--more" href='https://www.eea.europa.eu/soer-2015/countries/' + external_config.obj_id) See the state of the environment in #{ctitle}
 
         div(class='section-pages')
-            h5(class="section-header section-pages-header") OFFICIAL COUNTRY PAGES
-            ul(class='eea-no-list-style')
-                each val in external_config.external_links
-                    li
-                        - var values = val.split('|');
-                        - var title = values[0];
-                        - var link = values.length > 1 ? values[1] : values[0];
-                        - var link = link.indexOf('http://') === -1 ? 'http://' + link : link;
-                        a(href=link)=title
+            if external_config.external_links.length
+                h5(class="section-header section-pages-header") OFFICIAL COUNTRY PAGES
+                ul(class='eea-no-list-style')
+                    each val in external_config.external_links
+                        li
+                            - var values = val.split('|');
+                            - var title = values[0];
+                            - var link = values.length > 1 ? values[1] : values[0];
+                            - var link = link.indexOf('http://') === -1 ? 'http://' + link : link;
+                            a(href=link)=title
 
         div(class='section-topics')
             include /code/config/CaR/views/facet.jade
