@@ -222,15 +222,25 @@ function updateContentTypes(element, result){
     return(result);
 }
 
+function updateFileURLs(element, result){
+    var types = ["File"]; // the label of the topic, ex: "File", "Graph (image)" etc.
+    if ($.inArray(result.type, types) !== -1){
+        result.url = result.url + "/view";
+    }
+    return result;
+}
+
 function updateWithHTTPS(result){
     result.url = result.url.split("http://").join("https://");
     result.thumbUrl = result.thumbUrl.split("http://").join("https://");
     result.typeIcon = result.typeIcon.split("http://").join("https://");
     return result;
 }
+
 function updateResult(element, result){
     result = updateContentTypes(element, result);
     result = updateWithHTTPS(result);
+    result = updateFileURLs(element, result);
     return(result);
 }
 
