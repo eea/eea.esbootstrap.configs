@@ -14,7 +14,8 @@ block content
     div(class="page-header")
         - var ctitle = external_config.title;
         div(class='section-title')
-            img(class='section-img' src!=external_config.flag_url)
+            if external_config.flag_url
+                img(class='section-img' src!=external_config.flag_url)
             h1(class='section-header')!=ctitle
 
         div(class='section-languages')
