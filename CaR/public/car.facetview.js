@@ -1,3 +1,6 @@
+/* global $, jQuery, window, location, eea_mapping, simple_value, simpleValue,
+   document, get_image, settings_default_external_configs, settings_external_configs,
+    getToday, eea_facetview */
 var blackList = {
   'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' : []};
 
@@ -245,13 +248,13 @@ function getSpatialFromUrl(){
             spatial = [spatial];
         }
         if (settings_default_external_configs[short_spatial].type === 'region') {
-            spatial_field = "places"
+            spatial_field = "places";
         }
     }
     return {
         "spatial_field": spatial_field,
         "spatial_values": spatial
-    }
+    };
 }
 
 function getUrl(options){
@@ -325,7 +328,7 @@ function getUrl(options){
     query.query.function_score.query.bool.must.push(exact_spatial);
 
     var href = window.location.href;
-    var href_parts = href.split("?topic=")
+    var href_parts = href.split("?topic=");
     for (var i = 0; i < spatial_info.spatial_values.length; i++){
         var term_spatial = {
             "term":{}
@@ -334,7 +337,7 @@ function getUrl(options){
         query.query.function_score.filter.and[0].bool.should.push(term_spatial);
     }
     if (href_parts.length > 1){
-        topics = decodeURIComponent(href_parts[1]).split(",");
+        var topics = decodeURIComponent(href_parts[1]).split(",");
         for (var i = 0; i < topics.length; i++){
             var term_topic = {"term":{"http://www.eea.europa.eu/portal_types#topic":topics[i]}};
             query.query.function_score.filter.and[1].bool.should.push(term_topic);
@@ -342,12 +345,12 @@ function getUrl(options){
     }
     var query_str = encodeURIComponent(JSON.stringify(query));
     var url_base = window.location.href.split("?")[0];
-    var href = url_base + "?source=" + query_str;
+    href = url_base + "?source=" + query_str;
     return href;
 }
 
 function setUrl(stateObj, page, url){
-    var query = JSON.parse(decodeURIComponent(url).split("source=")[1])
+    var query = JSON.parse(decodeURIComponent(url).split("source=")[1]);
     var topics_str = "";
     try {
         var topics = query.query.function_score.filter.and[1].bool.should;
@@ -356,12 +359,12 @@ function setUrl(stateObj, page, url){
         }
         topics_str = "?topic=";
         for (var i = 0; i < topics.length; i++){
-            topics_str += topics[i].term["http://www.eea.europa.eu/portal_types#topic"] + ","
+            topics_str += topics[i].term["http://www.eea.europa.eu/portal_types#topic"] + ",";
         }
         topics_str = topics_str.substring(0, topics_str.length - 1);
     }
     catch(err){
-        var href_url = $(location).attr('href')
+        var href_url = $(location).attr('href');
         topics_str = href_url.split("/")[href_url.split("/").length - 1].split("?")[0];
     }
     window.history.pushState(stateObj, page, topics_str);
