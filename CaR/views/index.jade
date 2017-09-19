@@ -1,5 +1,5 @@
 block title
-    title!= head_title
+    title!= external_config.title + " — " + head_title
 
 block extrajavascripts
     each script in js_resources.index_page
