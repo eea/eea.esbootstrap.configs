@@ -1,10 +1,15 @@
 .site_bg {
     display: flex;
     justify-content: center;
+    height: 440px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+    top: 60px;
+    width: 100%;
 }
 .site_bg_img {
-    position: absolute;
-    margin-top: -17px;
+    width: 100%;
 }
 
 #content h1 {
@@ -228,6 +233,12 @@ div#facetview_rightcol {
     min-width: 116px;
 }
 
+
+@media screen and (min-width: 768px) {
+    .site_bg {
+        top: 165px;
+    }
+}
 
 @media screen and (min-width: 1280px) {
     div.container {
