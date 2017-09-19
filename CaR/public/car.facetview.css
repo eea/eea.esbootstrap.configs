@@ -222,6 +222,18 @@ div#facetview_rightcol {
 }
 
 
+@media screen and (max-width:480px) {
+    .section-languages {
+        width: 100%;
+    }
+    .eea_btn.eea-tileTypeHead {
+        display: inline-block;
+        margin-bottom: 1em;
+    }
+
+
+}
+
 @media screen and (min-width: 768px) {
     .site_bg {
         top: 165px;
@@ -232,6 +244,14 @@ div#facetview_rightcol {
     .site_bg {
         display: none;
     }
+   .content .page-header {
+        margin-top: 90px;
+    }
+
+    .section-description {
+        padding-right: 0;
+        flex-basis: 100%;
+    }
 }
 
 @media screen and (max-width: 805px) {
@@ -241,6 +261,14 @@ div#facetview_rightcol {
         flex-basis: 45%;
     }
     
+}
+
+
+@media screen and (min-width: 768px) and (max-width:900px) {
+    .section-languages {
+        flex-basis: 100%;
+        margin-bottom: 2em;
+    }
 }
 
 
