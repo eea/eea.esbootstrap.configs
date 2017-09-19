@@ -64,6 +64,9 @@ html
 
     body
         != templateRender(headerFile)
+        div(class="site_bg")
+            - var bg_url = external_config.bg_url ? external_config.bg_url : '/images/backgrounds/austria_bg_web.jpg';
+            img(class="site_bg_img" src=bg_url)
         div(id="portal-columns")
             div(class="container")
                 div(class="content" id="content")
