@@ -81,6 +81,7 @@ div#facetview_rightcol {
 
 .car_facet {
     display: flex;
+    margin-bottom: 1.2em;
 }
 
 
@@ -140,7 +141,7 @@ div#facetview_rightcol {
     font-weight: bold;
 }
 .page-header h5 {
-    margin: 0 0 1em .5em;
+    margin: 0 0 1.5em .5em;
     color: #006699;
     line-height: 1;
 }
@@ -153,6 +154,11 @@ div#facetview_rightcol {
     flex-basis: 80%;
     padding-right: 5em;
 }
+
+.section-description--more {
+    display: block;
+}
+
 .section-title {
     display: flex;
     flex: 1;
@@ -168,7 +174,7 @@ div#facetview_rightcol {
 }
 .section-languages {
     margin-top: 0.7em;
-    min-width: 185px;
+    min-width: 20%;
 }
 .section-topics {
     flex-basis: 100%;
@@ -204,6 +210,9 @@ div#facetview_rightcol {
     padding: 0.5em 1em;
 }
 
+.page-header .eea-tileTypeHead {
+    margin-left: 1em;
+}
 
 .car_facet_title--text {
     align-self: center;
@@ -216,7 +225,7 @@ div#facetview_rightcol {
 
 .car_facet_group {
     flex: 1;
-    margin-left: 4em;
+    margin-left: 3em;
     padding-top: 1em;
     min-width: 116px;
 }
@@ -226,11 +235,6 @@ div#facetview_rightcol {
     .section-languages {
         width: 100%;
     }
-    .eea_btn.eea-tileTypeHead {
-        display: inline-block;
-        margin-bottom: 1em;
-    }
-
 
 }
 
@@ -248,9 +252,39 @@ div#facetview_rightcol {
         margin-top: 90px;
     }
 
-    .section-description {
+    .section-languages {
+        text-align: right;
+    }
+
+    .section-description,
+    .section-pages {
         padding-right: 0;
         flex-basis: 100%;
+    }
+    
+    .eea-tile-languages {
+        text-align: left;
+        width: 100%;
+        display: block;
+    }
+    .eea-tile-languages > a {
+        max-width: 180px;
+        margin-bottom: 1em;
+        display: block;
+    }
+
+    #car_facet {
+        min-height: 100%;
+    }
+
+    .eea-right-section-slider {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 620px) and (max-width: 767px) {
+    .eea-tile-languages > a {
+        display: inline-block;
     }
 }
 
@@ -263,14 +297,14 @@ div#facetview_rightcol {
     
 }
 
-
+/*
 @media screen and (min-width: 768px) and (max-width:900px) {
     .section-languages {
         flex-basis: 100%;
         margin-bottom: 2em;
     }
 }
-
+*/
 
 @media screen and (max-width: 919px) {
 

@@ -89,4 +89,17 @@ $.fn.carFacet = function(settings){
         checkAllFacets(true);
     });
     loadValuesFromFacet();
+    var section_language = $(".section-languages");
+    var section_language_links = section_language.find('a');
+    if (section_language_links.length > 1) {
+        section_language.addClass('eea-tile-languages');
+    }
+
+    if (window.innerWidth < 768) {
+       var facet_groups = $(".car_facet_group").css('display', 'none');
+        $(".car_facet_title").click(function(ev){
+            facet_groups.toggle(); 
+        });
+    }
+
 };

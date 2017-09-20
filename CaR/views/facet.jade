@@ -8,7 +8,6 @@ mixin facet(option, group_id)
             =option
         div(class="car_facet_count" readonly="readonly")
             | 0
-    br(class="visualClear")
 
 
 mixin facet_group(options, group_id)
@@ -16,7 +15,6 @@ mixin facet_group(options, group_id)
         +checkbox(options.title, "group", group_id)
         h5(class="car_facet_group_value" readonly="readonly")
             = options.title
-        br(class="visualClear")
         each option in options.facets
             +facet(option, group_id)
 
