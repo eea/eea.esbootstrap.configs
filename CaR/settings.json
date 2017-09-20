@@ -39,9 +39,9 @@
     "suggestions_enabled": true,
     "relevance_enabled": true,
     "external_configs": {
-        "host" : "192.168.0.40",
-        "path" : "/www/SITE/viewCountryRegionsJSON",
-        "port" : 8081,
+        "protocol": "https",
+        "host" : "www.eea.europa.eu",
+        "path" : "/viewCountryRegionsJSON",
         "defaults" : "external_configs_defaults.json"
     }
 }
