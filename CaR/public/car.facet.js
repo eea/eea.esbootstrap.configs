@@ -1,5 +1,27 @@
 /* globals $, setTimeout */
+var debounce = function (func, threshold, execAsap) {
+    var timeout;
 
+    var obj = this;
+    return function debounced () {
+
+        function delayed () {
+            if (!execAsap) {
+                func.apply(obj, arguments);
+            }
+            timeout = null;
+        }
+
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+        else if (execAsap) {
+            func.apply(obj, arguments);
+        }
+        timeout = setTimeout(delayed, threshold || 100);
+    };
+
+};
 $.fn.carFacet = function(settings){
 
     var loadValuesFromFacet = function(){
@@ -94,12 +116,30 @@ $.fn.carFacet = function(settings){
     if (section_language_links.length > 1) {
         section_language.addClass('eea-tile-languages');
     }
-
-    if (window.innerWidth < 768) {
-       var facet_groups = $(".car_facet_group").css('display', 'none');
-        $(".car_facet_title").click(function(ev){
-            facet_groups.toggle(); 
-        });
+    var facet_groups = $(".car_facet_group");
+    var facet_title = $(".car_facet_title");
+    var toggle_groups = function(ev){
+        facet_groups.toggle(); 
+    };
+    if (window.innerWidth < 920) {
+        facet_groups.css('display', 'none');
+        //facet_title.click(toggle_groups);
     }
+    var calculateLayout = function() {
+        var events = facet_title.data('events');
+        if (window.innerWidth < 920) {
+            if (!events) {
+                facet_title.click(toggle_groups);
+            }
+        }
+        else { 
+            if (events) {
+                facet_title.off('click');
+                facet_groups.show();
+            }    
+        }
+    };
+    var lazy = debounce(calculateLayout, 300);
+    $(window).resize(lazy);
 
 };

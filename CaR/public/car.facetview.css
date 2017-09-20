@@ -83,7 +83,9 @@ div#facetview_rightcol {
     display: flex;
     margin-bottom: 1.2em;
 }
-
+.facetview_arrow_right.eea-icon:before {
+    content: "\f078";
+}
 
 .car_facet_checkbox[readonly] {
   pointer-events: none;
@@ -151,7 +153,7 @@ div#facetview_rightcol {
     margin-bottom: 2em;
 }
 .section-description {
-    flex-basis: 80%;
+    flex-basis: 79%;
     padding-right: 5em;
 }
 
@@ -162,7 +164,7 @@ div#facetview_rightcol {
 .section-title {
     display: flex;
     flex: 1;
-    max-width: 79%;
+    max-width: 78%;
 }
 .section-img {
     width: 50px;
@@ -175,6 +177,10 @@ div#facetview_rightcol {
 .section-languages {
     margin-top: 0.7em;
     min-width: 20%;
+}
+
+.eea-tile-languages > a {
+    margin-left: 1em;
 }
 .section-topics {
     flex-basis: 100%;
@@ -210,10 +216,6 @@ div#facetview_rightcol {
     padding: 0.5em 1em;
 }
 
-.page-header .eea-tileTypeHead {
-    margin-left: 1em;
-}
-
 .car_facet_title--text {
     align-self: center;
     margin-left: 2em;
@@ -225,23 +227,16 @@ div#facetview_rightcol {
 
 .car_facet_group {
     flex: 1;
-    margin-left: 3em;
+    margin-left: 2.5em;
     padding-top: 1em;
     min-width: 116px;
 }
-
 
 @media screen and (max-width:480px) {
     .section-languages {
         width: 100%;
     }
 
-}
-
-@media screen and (min-width: 768px) {
-    .site_bg {
-        top: 165px;
-    }
 }
 
 @media screen and (max-width: 767px) {
@@ -253,7 +248,8 @@ div#facetview_rightcol {
     }
 
     .section-languages {
-        text-align: right;
+        text-align: left;
+        margin-bottom: 1em;
     }
 
     .section-description,
@@ -273,9 +269,6 @@ div#facetview_rightcol {
         display: block;
     }
 
-    #car_facet {
-        min-height: 100%;
-    }
 
     .eea-right-section-slider {
         display: none !important;
@@ -285,6 +278,18 @@ div#facetview_rightcol {
 @media screen and (min-width: 620px) and (max-width: 767px) {
     .eea-tile-languages > a {
         display: inline-block;
+    }
+}
+
+@media screen and (width: 768px) {
+    .section-description {
+        flex-basis: 78%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .site_bg {
+        top: 165px;
     }
 }
 
@@ -308,11 +313,15 @@ div#facetview_rightcol {
 
 @media screen and (max-width: 919px) {
 
+    #car_facet {
+        min-height: 100%;
+    }
     .car_facet_title {
         position: relative;
         min-width: 115px;
         width: 100%;
         margin-top: 1em;
+        cursor: pointer;
     }
 
     .car_facet_title--text {
