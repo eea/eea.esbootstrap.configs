@@ -35,15 +35,125 @@
         "further_info": "The content of this catalogue has been created thanks to the EU's open data approach and the contribution of many organisations part of EEA's network (Eionet)."
     },
     "landingpage_enabled": true,
-    "es_debug_enabled": true,
+    "es_debug_enabled": false,
     "suggestions_enabled": true,
     "relevance_enabled": true,
     "river_configs": {
         "configs": [
             {
-                "id": "copernicus_data",
-                "cluster_name": "Copernicus Land Monitoring Service",
-                "config_file": "riverconfig_land.copernicus_data.json"
+                "id": "eea_documents",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeadocuments.json"
+            },
+            {
+                "id": "eea_terms",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeaterms.json"
+            },
+            {
+                "id": "eea_indicators",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeaindicators.json"
+            },
+            {
+                "id": "eea_articles",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeaarticles.json"
+            },
+            {
+                "id": "eea_highlights",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeahighlights.json"
+            },
+            {
+                "id": "eea_fiches",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeafiches.json"
+            },
+            {
+                "id": "eea_infographics",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeainfographics.json"
+            },
+            {
+                "id": "eea_folders",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeafolders.json"
+            },
+            {
+                "id": "eea_sparql",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeasparql.json"
+            },
+            {
+                "id": "eea_contracts",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeacontracts.json"
+            },
+            {
+                "id": "eea_reports",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeareports.json"
+            },
+            {
+                "id": "eea_daviz",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeadaviz.json"
+            },
+            {
+                "id": "eea_dataexternal",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeadata_external.json"
+            },
+            {
+                "id": "eea_data",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeadata.json"
+            },
+            {
+                "id": "eea_figures",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeafigures.json"
+            },
+            {
+                "id": "eea_content",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eea.europa.eu.json"
+            },
+            {
+                "id": "eea_vacancies",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeavacancies.json"
+            },
+            {
+                "id": "rod_instruments",
+                "cluster_name": "Eionet > reportnet",
+                "config_file": "riverconfig_instruments.json"
+            },
+            {
+                "id": "rod_obligations_expired",
+                "cluster_name": "Eionet > reportnet",
+                "config_file": "riverconfig_obligations_expired.json"
+            },
+            {
+                "id": "rod_obligations_active",
+                "cluster_name": "Eionet > reportnet",
+                "config_file": "riverconfig_obligations_active.json"
+            },
+            {
+                "id": "rod_clients",
+                "cluster_name": "Eionet > reportnet",
+                "config_file": "riverconfig_clients.json"
+            },
+            {
+                "id": "eea_organisations",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_organisations.json"
+            },
+            {
+                "id": "eea_messages",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_messages.json"
             }
         ]
     }
