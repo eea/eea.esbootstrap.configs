@@ -32,32 +32,32 @@ html
             != mapping
 
         link(rel="shortcut icon", type="image/x-icon", href="https://www.eea.europa.eu/favicon.ico")
-        script(type="text/javascript", src="facetview/vendor/dist/libs/jquery.js")
+        script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/dist/libs/jquery.js")
         script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.js")
-        script(type="text/javascript", src="facetview/vendor/dist/jstree.js")
-        script(type="text/javascript", src="facetview/vendor/linkify/1.0/jquery.linkify-1.0-min.js")
-        script(type="text/javascript", src="facetview/vendor/bootstrap/js/bootstrap.min.js")
-        script(type="text/javascript", src="facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.js")
+        script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/dist/jstree.js")
+        script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/linkify/1.0/jquery.linkify-1.0-min.js")
+        script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/bootstrap/js/bootstrap.min.js")
+        script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.js")
         if google_map_key != "false"
             script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?key=#{google_map_key}")
-        script(type="text/javascript" src="facetview/jquery.facetview.js")
-        script(type="text/javascript" src="facetview/facetviewhelpers.js")
-        script(type="text/javascript" src="facetview/landing.js")
-        script(type="text/javascript" src="facetview/jquery.autocompletewithhighlight.js")
-        script(type="text/javascript" src="facetview/jquery.autocompleteforfacet.js")
+        script(type="text/javascript" src="esbootstrap_resources/facetview/jquery.facetview.js")
+        script(type="text/javascript" src="esbootstrap_resources/facetview/facetviewhelpers.js")
+        script(type="text/javascript" src="esbootstrap_resources/facetview/landing.js")
+        script(type="text/javascript" src="esbootstrap_resources/facetview/jquery.autocompletewithhighlight.js")
+        script(type="text/javascript" src="esbootstrap_resources/facetview/jquery.autocompleteforfacet.js")
         block extrajavascripts
 
         script(type="text/javascript", src="https://www.eea.europa.eu/++resource++plone.app.jquerytools.tooltip.js")
         script(type="text/javascript", src="https://www.eea.europa.eu/eea-tooltips.js")
-        script(type="text/javascript" src="javascripts/main.js")
-        link(rel="stylesheet", href="facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.css")
-        link(rel="stylesheet", href="facetview/vendor/bootstrap/css/bootstrap.min.css")
-        link(rel="stylesheet", href="facetview/vendor/dist/themes/default/style.min.css")
-        link(rel="stylesheet", href="facetview/css/style.css")
+        script(type="text/javascript" src="esbootstrap_resources/javascripts/main.js")
+        link(rel="stylesheet", href="esbootstrap_resources/facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.css")
+        link(rel="stylesheet", href="esbootstrap_resources/facetview/vendor/bootstrap/css/bootstrap.min.css")
+        link(rel="stylesheet", href="esbootstrap_resources/facetview/vendor/dist/themes/default/style.min.css")
+        link(rel="stylesheet", href="esbootstrap_resources/facetview/css/style.css")
 
-        link(rel="stylesheet", href="facetview/css/facetview.css")
-        link(rel="stylesheet", href="css/style.css")
-        link(rel="stylesheet", href="css/tiles.css")
+        link(rel="stylesheet", href="esbootstrap_resources/facetview/css/facetview.css")
+        link(rel="stylesheet", href="esbootstrap_resources/css/style.css")
+        link(rel="stylesheet", href="esbootstrap_resources/css/tiles.css")
         block extrastyles
 
         != templateRender(headFile)
@@ -65,7 +65,7 @@ html
     body
         != templateRender(headerFile)
         div(class="site_bg")
-            - var bg_url = external_config.bg_url ? external_config.bg_url : 'images/backgrounds/austria_bg_web.jpg';
+            - var bg_url = external_config.bg_url;
             img(class="site_bg_img" src=bg_url)
         div(id="portal-columns")
             div(class="container")
