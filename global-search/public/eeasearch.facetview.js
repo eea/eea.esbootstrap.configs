@@ -286,7 +286,7 @@ jQuery(document).ready(function($) {
   }
   eea_facetview('.facet-view-simple', 
   {
-    search_url: './api',
+    search_url: './tools/api',
     datatype: 'json',
     search_index: 'elasticsearch',
     search_sortby: [

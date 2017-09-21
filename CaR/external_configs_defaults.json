@@ -1,82 +1,82 @@
 {
     "fallback": {
         "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "bg_url": "images/backgrounds/austria_bg_web.jpg",
+        "bg_url": "app_resources/images/backgrounds/austria_bg_web.jpg",
         "languages": [],
         "external_links": []
     },
     "austria": {
-        "flag_url": "images/flags/austria.png",
+        "flag_url": "app_resources/images/flags/austria.png",
 
         "title": "Austria",
         "type": "country",
         "value": "Austria"
     },
     "belgium": {
-        "flag_url": "images/flags/belgium.png",
+        "flag_url": "app_resources/images/flags/belgium.png",
 
         "title": "Belgium",
         "type": "country",
         "value": "Belgium"
     },
     "bulgaria": {
-        "flag_url": "images/flags/bulgaria.png",
+        "flag_url": "app_resources/images/flags/bulgaria.png",
 
         "title": "Bulgaria",
         "type": "country",
         "value": "Bulgaria"
     },
     "croatia": {
-        "flag_url": "images/flags/croatia.png",
+        "flag_url": "app_resources/images/flags/croatia.png",
 
         "title": "Croatia",
         "type": "country",
         "value": "Croatia"
     },
     "cyprus": {
-        "flag_url": "images/flags/cyprus.png",
+        "flag_url": "app_resources/images/flags/cyprus.png",
 
         "title": "Cyprus",
         "type": "country",
         "value": "Cyprus"
     },
     "czech-republic": {
-        "flag_url": "images/flags/czech-republic.png",
+        "flag_url": "app_resources/images/flags/czech-republic.png",
 
         "title": "Czech Republic",
         "type": "country",
         "value": "Czech Republic"
     },
     "denmark": {
-        "flag_url": "images/flags/denmark.png",
+        "flag_url": "app_resources/images/flags/denmark.png",
 
         "title": "Denmark",
         "type": "country",
         "value": "Denmark"
     },
     "estonia": {
-        "flag_url": "images/flags/estonia.png",
+        "flag_url": "app_resources/images/flags/estonia.png",
 
         "title": "Estonia",
         "type": "country",
         "value": "Estonia"
     },
     "finland": {
-        "flag_url": "images/flags/finland.png",
+        "flag_url": "app_resources/images/flags/finland.png",
 
         "title": "Finland",
         "type": "country",
         "value": "Finland"
     },
     "france": {
-        "flag_url": "images/flags/france.png",
+        "flag_url": "app_resources/images/flags/france.png",
 
         "title": "France",
         "type": "country",
         "value": "France"
     },
     "germany": {
-        "flag_url": "images/flags/germany.png",
+        "flag_url": "app_resources/images/flags/germany.png",
 
         "title": "Germany",
         "type": "country",
@@ -84,77 +84,77 @@
     },
 
     "greece": {
-        "flag_url": "images/flags/greece.png",
+        "flag_url": "app_resources/images/flags/greece.png",
 
         "title": "Greece",
         "type": "country",
         "value": "Greece"
     },
     "hungary": {
-        "flag_url": "images/flags/hungary.png",
+        "flag_url": "app_resources/images/flags/hungary.png",
 
         "title": "Hungary",
         "type": "country",
         "value": "Hungary"
     },
     "iceland": {
-        "flag_url": "images/flags/iceland.png",
+        "flag_url": "app_resources/images/flags/iceland.png",
 
         "title": "Iceland",
         "type": "country",
         "value": "Iceland"
     },
     "ireland": {
-        "flag_url": "images/flags/ireland.png",
+        "flag_url": "app_resources/images/flags/ireland.png",
 
         "title": "Ireland",
         "type": "country",
         "value": "Ireland"
     },
     "italy": {
-        "flag_url": "images/flags/italy.png",
+        "flag_url": "app_resources/images/flags/italy.png",
 
         "title": "Italy",
         "type": "country",
         "value": "Italy"
     },
     "latvia": {
-        "flag_url": "images/flags/latvia.png",
+        "flag_url": "app_resources/images/flags/latvia.png",
 
         "title": "Latvia",
         "type": "country",
         "value": "Latvia"
     },
     "liechtenstein": {
-        "flag_url": "images/flags/liechtenstein.png",
+        "flag_url": "app_resources/images/flags/liechtenstein.png",
 
         "title": "Liechtenstein",
         "type": "country",
         "value": "Liechtenstein"
     },
     "lithuania": {
-        "flag_url": "images/flags/lithuania.png",
+        "flag_url": "app_resources/images/flags/lithuania.png",
 
         "title": "Lithuania",
         "type": "country",
         "value": "Lithuania"
     },
     "luxembourg": {
-        "flag_url": "images/flags/luxembourg.png",
+        "flag_url": "app_resources/images/flags/luxembourg.png",
 
         "title": "Luxembourg",
         "type": "country",
         "value": "Luxembourg"
     },
     "malta": {
-        "flag_url": "images/flags/malta.png",
+        "flag_url": "app_resources/images/flags/malta.png",
 
         "title": "Malta",
         "type": "country",
         "value": "Malta"
     },
     "norway": {
-        "flag_url": "images/flags/norway.png",
+        "flag_url": "app_resources/images/flags/norway.png",
 
         "title": "Norway",
         "type": "country",
@@ -162,84 +162,84 @@
     },
 
     "poland": {
-        "flag_url": "images/flags/poland.png",
+        "flag_url": "app_resources/images/flags/poland.png",
 
         "title": "Poland",
         "type": "country",
         "value": "Poland"
     },
     "portugal": {
-        "flag_url": "images/flags/portugal.png",
+        "flag_url": "app_resources/images/flags/portugal.png",
 
         "title": "Portugal",
         "type": "country",
         "value": "Portugal"
     },
     "romania": {
-        "flag_url": "images/flags/romania.png",
+        "flag_url": "app_resources/images/flags/romania.png",
 
         "title": "Romania",
         "type": "country",
         "value": "Romania"
     },
     "serbia": {
-        "flag_url": "images/flags/serbia.png",
+        "flag_url": "app_resources/images/flags/serbia.png",
 
         "title": "Serbia",
         "type": "country",
         "value": "Serbia"
     },
     "slovakia": {
-        "flag_url": "images/flags/slovakia.png",
+        "flag_url": "app_resources/images/flags/slovakia.png",
 
         "title": "Slovakia",
         "type": "country",
         "value": "Slovakia"
     },
     "slovenia": {
-        "flag_url": "images/flags/slovenia.png",
+        "flag_url": "app_resources/images/flags/slovenia.png",
 
         "title": "Slovenia",
         "type": "country",
         "value": "Slovenia"
     },
     "spain": {
-        "flag_url": "images/flags/spain.png",
+        "flag_url": "app_resources/images/flags/spain.png",
 
         "title": "Spain",
         "type": "country",
         "value": "Spain"
     },
     "sweden": {
-        "flag_url": "images/flags/sweden.png",
+        "flag_url": "app_resources/images/flags/sweden.png",
 
         "title": "Sweden",
         "type": "country",
         "value": "Sweden"
     },
     "switzerland": {
-        "flag_url": "images/flags/switzerland.png",
+        "flag_url": "app_resources/images/flags/switzerland.png",
 
         "title": "Switzerland",
         "type": "country",
         "value": "Switzerland"
     },
     "netherlands": {
-        "flag_url": "images/flags/netherlands.png",
+        "flag_url": "app_resources/images/flags/netherlands.png",
 
         "title": "Netherlands",
         "type": "country",
         "value": "Netherlands"
     },
     "turkey": {
-        "flag_url": "images/flags/turkey.png",
+        "flag_url": "app_resources/images/flags/turkey.png",
 
         "title": "Turkey",
         "type": "country",
         "value": "Turkey"
     },
     "united-kingdom": {
-        "flag_url": "images/flags/united-kingdom.png",
+        "flag_url": "app_resources/images/flags/united-kingdom.png",
 
         "title": "United Kingdom",
         "type": "country",
@@ -247,35 +247,35 @@
     },
 
     "albania": {
-        "flag_url": "images/flags/albania.png",
+        "flag_url": "app_resources/images/flags/albania.png",
 
         "title": "Albania",
         "type": "country",
         "value": "Albania"
     },
     "bosnia-and-herzegovina": {
-        "flag_url": "images/flags/bosnia-and-herzegovina.png",
+        "flag_url": "app_resources/images/flags/bosnia-and-herzegovina.png",
 
         "title": "Bosnia and Herzegovina",
         "type": "country",
         "value": "Bosnia and Herzegovina"
     },
     "kosovo": {
-        "flag_url": "images/flags/kosovo.png",
+        "flag_url": "app_resources/images/flags/kosovo.png",
 
         "title": "Kosovo",
         "type": "country",
         "value": "Kosovo (UNSCR 1244/99)"
     },
     "fyr-macedonia": {
-        "flag_url": "images/flags/fyr-macedonia.png",
+        "flag_url": "app_resources/images/flags/fyr-macedonia.png",
 
         "title": "The Former Yugoslav Republic of Macedonia",
         "type": "country",
         "value": "Former Yugoslav Republic of Macedonia, the"
     },
     "montenegro": {
-        "flag_url": "images/flags/montenegro.png",
+        "flag_url": "app_resources/images/flags/montenegro.png",
 
         "title": "Montenegro",
         "type": "country",
