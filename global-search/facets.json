@@ -864,7 +864,7 @@
                 "visible": false
             },
            "facet": {
-                "visible": true,
+                "visible": false,
                 "title": "Reading Ease Score",
                 "pos": 11,
                 "type": "range"
@@ -878,7 +878,7 @@
             },
             "csv_tsv": {
                 "title": "Reading time (minutes)",
-                "visible": false,
+                "visible": true,
                 "pos": 11
             },
             "details": {
@@ -888,7 +888,7 @@
                 "visible": false
             },
            "facet": {
-                "visible": true,
+                "visible": false,
                 "title": "Reading time (minutes)",
                 "pos": 12,
                 "type": "range"
