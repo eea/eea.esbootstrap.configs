@@ -1,0 +1,388 @@
+.site_bg {
+    display: flex;
+    justify-content: center;
+    height: 440px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+    top: 60px;
+    width: 100%;
+}
+.site_bg_img {
+    width: 100%;
+}
+
+#content h1 {
+    padding-right: 0;
+}
+.facetview_include_expired {
+    float:right;
+    line-height:24px;
+}
+
+#facetview_results td.ribbon-parent,
+a.eea-tileInner.ribbon-parent,
+div.tileItem.ribbon-parent {
+  position: relative;
+  overflow: hidden;
+}
+
+#facetview_results td.ribbon-parent {
+  height: 60px;
+}
+
+/* For now disable the tree icons on facets, as hierarchy is not working */
+.jstree-default .jstree-leaf>.jstree-ocl {
+    display:none;
+}
+
+#content {
+    background: none;
+    padding-top: 0 !important;
+}
+
+
+
+.current-filters,
+.facetview_include_expired,
+.eea-section-trigger,
+.search-suggestions,
+.facetview_filters,
+.facetedview_search,
+.facetview_metadata,
+.default_pagination,
+.facetview_orderby_relevance {
+    display: none;
+}
+
+
+#portal-columns {
+    position: relative;
+    padding-top: 0 !important;
+}
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+div#facetview_rightcol {
+    width: 100%;
+}
+
+#car_facet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 1px solid lightgrey;
+    background-color: #F6FAFD;
+    min-height: 140px;
+    padding-right: 3em;
+}
+
+.car_facet {
+    display: flex;
+    margin-bottom: 1.2em;
+}
+.facetview_arrow_right.eea-icon:before {
+    content: "\f078";
+}
+
+.car_facet_checkbox[readonly] {
+  pointer-events: none;
+}
+
+.car_facet_value[readonly] {
+  color: gray;
+  cursor: auto;
+}
+
+.car_facet_count[readonly] {
+  color: gray;
+}
+
+.car_facet_value,
+.car_facet_group_value
+ {
+    cursor: pointer;
+}
+.car_facet_group_value[readonly] {
+  color: gray;
+}
+
+.car_facet_checkbox{
+    float:left;
+    margin-right: 0.5em !important;
+}
+
+.car_facet_value{
+    flex: 1;
+    line-height: 1;
+}
+
+.car_facet_count{
+    line-height: 1;
+}
+
+
+.eea-right-section {
+    display:none;
+}
+.content .page-header, .page-body {
+    background: #FFF;
+    padding: 1em;
+    box-shadow: 1px 1px 5px -1px #9f9f9f;
+
+}
+
+.facetview_top {
+    margin-top: 0;
+}
+.page-header {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 360px;
+}
+.page-header a {
+    font-weight: bold;
+}
+.page-header h5 {
+    margin: 0 0 1.5em .5em;
+    color: #006699;
+    line-height: 1;
+}
+
+.section-title,
+.section-description {
+    margin-bottom: 2em;
+}
+.section-description {
+    flex-basis: 79%;
+    padding-right: 5em;
+}
+
+.section-description--more {
+    display: block;
+}
+
+.section-title {
+    display: flex;
+    flex: 1;
+    max-width: 78%;
+}
+.section-img {
+    width: 50px;
+    height: 33px;
+    margin-right: 1em;
+}
+.section-pages {
+    flex-basis: 20%;
+}
+.section-languages {
+    margin-top: 0.7em;
+    min-width: 20%;
+}
+
+.eea-tile-languages > a {
+    margin-left: 1em;
+}
+.section-topics {
+    flex-basis: 100%;
+}
+
+
+#content .section-header {
+    margin: 0;
+    border: 0;
+}
+
+.page-body {
+    margin-top: 1em;
+}
+
+.section-pages-header {
+    margin-top: 0;
+}
+
+#content .eea-no-list-style {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+#content .eea-tileTypeHead,
+#content .eea-tileTypeHead:visited,
+#content .eea-tileTypeHead:hover
+{
+    color: #FFF !important;
+    
+}
+#content .eea-tileTypeHead {
+    padding: 0.5em 1em;
+}
+
+.car_facet_title--text {
+    align-self: center;
+    margin-left: 2em;
+    display: block;
+    color: #FFF;
+    font-weight: bold;
+}
+
+
+.car_facet_group {
+    flex: 1;
+    margin-left: 2.5em;
+    padding-top: 1em;
+    min-width: 116px;
+}
+
+@media screen and (max-width:480px) {
+    .section-languages {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .site_bg {
+        display: none;
+    }
+   .content .page-header {
+        margin-top: 90px;
+    }
+
+    .section-languages {
+        text-align: left;
+        margin-bottom: 1em;
+    }
+
+    .section-description,
+    .section-pages {
+        padding-right: 0;
+        flex-basis: 100%;
+    }
+    
+    .eea-tile-languages {
+        text-align: left;
+        width: 100%;
+        display: block;
+    }
+    .eea-tile-languages > a {
+        max-width: 180px;
+        margin-bottom: 1em;
+        display: block;
+    }
+
+
+    .eea-right-section-slider {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 620px) and (max-width: 767px) {
+    .eea-tile-languages > a {
+        display: inline-block;
+    }
+}
+
+@media screen and (width: 768px) {
+    .section-description {
+        flex-basis: 78%;
+    }
+
+    #secondary-portaltabs {
+        margin-left: 0;
+    }
+
+    #portaltab-europe a {
+        margin-top: 0 !important;
+        line-height: 1.5;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .site_bg {
+        top: 165px;
+    }
+}
+
+@media screen and (max-width: 805px) {
+    .car_facet_group {
+        flex: auto;
+        margin-left: 2em;
+        flex-basis: 45%;
+    }
+    
+}
+
+/*
+@media screen and (min-width: 768px) and (max-width:900px) {
+    .section-languages {
+        flex-basis: 100%;
+        margin-bottom: 2em;
+    }
+}
+*/
+
+@media screen and (max-width: 919px) {
+
+    #car_facet {
+        min-height: 100%;
+    }
+    .car_facet_title {
+        position: relative;
+        min-width: 115px;
+        width: 100%;
+        margin-top: 1em;
+        cursor: pointer;
+    }
+
+    .car_facet_title--text {
+        display: block;
+        color: #009590;
+        font-weight: bold;
+        position: relative;
+        float: left;
+        font-size: 140%;
+        margin: 0 1em 1.5em 1.5em;
+    }
+    .car_facet_title--text-border {
+        display: flex;
+        height: 2px;
+        background-color: #009590;
+        content: " ";
+        margin-top: 1em;
+    }
+}
+@media screen and (min-width: 920px) {
+
+    .car_facet_title {
+        background-color: #009590; 
+        flex: 0.5;
+        display: flex;
+        position: relative;
+        min-width: 115px;
+        
+    }
+    .car_facet_title:after {
+        top: 45%;
+        left: 100%;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border: 13px solid transparent;
+        border-left-color: #009590;
+    }
+
+    .car_facet_title--text-border {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    div.container {
+        width: 75%;
+    }
+}

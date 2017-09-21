@@ -1,0 +1,48 @@
+block title
+    title!= external_config.title + " — " + head_title
+
+block extrajavascripts
+    each script in js_resources.index_page
+        script(type='text/javascript', src=script)
+
+block extrastyles
+    if (css_resources.index_page)
+      each style in css_resources.index_page
+          link(rel='stylesheet', href=style)
+
+block content
+    div(class="page-header")
+        - var ctitle = external_config.title;
+        div(class='section-title')
+            if external_config.flag_url
+                img(class='section-img' src!=external_config.flag_url)
+            h1(class='section-header')!=ctitle
+
+        div(class='section-languages')
+            each language in external_config.languages
+                a(class='eea_btn eea-tileTypeHead' href='https://www.eea.europa.eu/' + language[1]) EEA content in #{language[0]}
+
+        div(class="section-description")!=external_config.body
+            a(class="section-description--more" href='https://www.eea.europa.eu/soer-2015/countries/' + external_config.obj_id) See the state of the environment in #{ctitle}
+
+        div(class='section-pages')
+            if external_config.external_links.length
+                h5(class="section-header section-pages-header") OFFICIAL COUNTRY PAGES
+                ul(class='eea-no-list-style')
+                    each val in external_config.external_links
+                        li
+                            - var values = val.split('|');
+                            - var title = values[0];
+                            - var link = values.length > 1 ? values[1] : values[0];
+                            - var link = link.indexOf('http://') === -1 ? 'http://' + link : link;
+                            a(href=link)=title
+
+        div(class='section-topics')
+            include /code/config/CaR/views/facet.jade
+
+
+    div(class="page-body")
+        +download_data
+        .facet-view-simple
+        div!= further_info
+
