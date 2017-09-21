@@ -73,7 +73,6 @@ div#facetview_rightcol {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border: 1px solid lightgrey;
     background-color: #F6FAFD;
     min-height: 140px;
     padding-right: 3em;

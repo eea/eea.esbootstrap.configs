@@ -15,7 +15,7 @@
         "footer_path": "/templates/v2/getFooter?render_full_html=False"
     },
     "layout_vars": {
-        "head_title": "Global catalogue of the European Environment Agency (EEA)",
+        "head_title": "Countries and regions — European Environment Agency (EEA)",
         "css_resources": {
             "index_page": [
                 "app_resources/css/esbootstrap.facetview.css",
@@ -28,7 +28,7 @@
                 "app_resources/car.facet.js"
             ]
         },
-        "site_title": "Global search and catalogue <sup style='color:#fbaf33'>beta</sup>",
+        "site_title": "Countries and regions — European Environment Agency (EEA)",
         "enableBreadcrumbs": false,
         "dataprovencance_info_text": "Semantic Data Service (SDS)",
         "dataprovencance_info_url": "http://semantic.eea.europa.eu",

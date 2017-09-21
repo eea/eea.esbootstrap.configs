@@ -13,6 +13,7 @@ block extrastyles
 block content
     div(class="page-header")
         - var ctitle = external_config.title;
+        - var cdescription = external_config.description;
         div(class='section-title')
             if external_config.flag_url
                 img(class='section-img' src!=external_config.flag_url)
