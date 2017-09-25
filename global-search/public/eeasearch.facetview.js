@@ -199,6 +199,9 @@ function updateContentTypes(element, result){
             if (!found_rule_for_resource){
                 var rule = eea_mapping.types.images.rules[rule_count];
                 var field_for_rule = simpleValue(element[rule.field]);
+                if (field_for_rule === undefined){
+                    field_for_rule = "";
+                }
                 var compare_result = false;
                 if (rule.rule === 'startsWith'){
                     compare_result = (field_for_rule.startsWith(rule.value));
