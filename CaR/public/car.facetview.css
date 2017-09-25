@@ -1,14 +1,14 @@
 .site_bg {
-    display: flex;
-    justify-content: center;
     height: 440px;
     overflow: hidden;
     position: absolute;
     z-index: 0;
     top: 60px;
     width: 100%;
+    text-align: center;
 }
 .site_bg_img {
+    margin-top: -25%;
     width: 100%;
 }
 
