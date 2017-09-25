@@ -15,6 +15,16 @@
 #content h1 {
     padding-right: 0;
 }
+
+#content .car-tagline {
+    color: #666;
+    font-weight: bold;
+    display: block;
+    margin: 0em 0em 0.5em 0em;
+    line-height: 1.5em;
+    font: bold 1.25em "Helvetica Neue", Arial, FreeSans, sans-serif;
+}
+
 .facetview_include_expired {
     float:right;
     line-height:24px;
@@ -155,7 +165,7 @@ div#facetview_rightcol {
     margin-bottom: 2em;
 }
 .section-description {
-    flex-basis: 79%;
+    flex-basis: 80%;
     padding-right: 5em;
 }
 
@@ -166,7 +176,7 @@ div#facetview_rightcol {
 .section-title {
     display: flex;
     flex: 1;
-    max-width: 78%;
+    max-width: 80%;
 }
 .section-img {
     width: 50px;
@@ -216,6 +226,7 @@ div#facetview_rightcol {
 }
 #content .eea-tileTypeHead {
     padding: 0.5em 1em;
+    margin-top: 3em;
 }
 
 .car_facet_title--text {

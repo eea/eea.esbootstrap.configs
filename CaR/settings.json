@@ -35,6 +35,8 @@
         "further_info": "The content of this catalogue has been created thanks to the EU's open data approach and the contribution of many organisations part of EEA's network (Eionet)."
     },
     "landingpage_enabled": false,
+    "enableBreadcrumbs": true,
+    "breadcrumbs": "Countries and regions",
     "es_debug_enabled": true,
     "suggestions_enabled": true,
     "relevance_enabled": true,
