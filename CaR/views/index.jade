@@ -21,6 +21,8 @@ block content
 
         div(class='section-languages')
             each language in external_config.languages
+                if typeof(language) !== 'object'
+                    - var language = ['English', '']
                 a(class='eea_btn eea-tileTypeHead' href='https://www.eea.europa.eu/' + language[1]) EEA content in #{language[0]}
 
         div(class="section-description")!=cbody
