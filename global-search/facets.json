@@ -70,7 +70,8 @@
             "legislation-instrument": "legislation-instrument",
             "legislation": "legislation-instrument",
             "legislation-data-reporting": "legislation-instrument",
-            "reporting-obligation": "reporting-obligation"
+            "reporting-obligation": "reporting-obligation",
+            "country-country": "country-profile"
         },
         "defaultContentType" : "generic",
         "images": {
@@ -96,6 +97,28 @@
                                 "name": "url",
                                 "type" : "field",
                                 "field" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#about"
+                        }]
+                    }
+                },
+                {
+                    "rule": "contains",
+                    "operator": "",
+                    "field": "http://www.eea.europa.eu/ontologies.rdf#objectProvides",
+                    "value": "Country profile",
+                    "thumb_template": {
+                        "template": "https://www.eea.europa.eu/portal_depiction/country-profile/image_preview",
+                        "variables": [{
+                                "name": "url",
+                                "type" : "field",
+                                "field" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#about"
+                        }]
+                    },
+                    "icon_template": {
+                        "template": "https://www.eea.europa.eu/portal_depiction/country-profile/image_thumb",
+                        "variables": [{
+                                "name": "contentType",
+                                "type" : "variable",
+                                "variable" : "contentType"
                         }]
                     }
                 },
@@ -589,7 +612,8 @@
                              "Environmental question",
                              "Reporting obligation",
                              "Contract opportunity",
-                             "Glossary term"
+                             "Glossary term",
+                             "Country profile"
                           ],
             "listing": {
                 "title": "Content types",
