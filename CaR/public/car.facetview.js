@@ -271,6 +271,7 @@ function getSpatialFromUrl(){
 }
 
 function getUrl(options){
+    var today = getToday();
     var query =
         {"query":
             {"function_score":
@@ -285,24 +286,40 @@ function getUrl(options){
                                         {"or":
                                             [
                                                 {"missing":{"field":"http://purl.org/dc/terms/issued"}},
-                                                {"range":{"http://purl.org/dc/terms/issued":{"lte":"2017-09-12"}}}
+                                                {"range":{"http://purl.org/dc/terms/issued":{"lte":today}}}
                                             ]
                                         }
                                     }
                                 },
-                                {"term":{"language":"en"}},
+                                {'constant_score':{
+                                    'filter':{
+                                        "not": {
+                                            "term": {
+                                                    "cluster_id": "eea_organisations"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
                                 {"constant_score":
                                     {"filter":
                                         {"or":
                                             [
                                                 {"missing":{"field":"http://purl.org/dc/terms/expires"}},
-                                                {"range":{"http://purl.org/dc/terms/expires":{"gte":"2017-09-12"}}}
+                                                {"range":{"http://purl.org/dc/terms/expires":{"gte":today}}}
                                             ]
                                         }
                                     }
                                 },
 /*                                {"range":{"items_count_http://purl.org/dc/terms/spatial":{"from":1,"to":1}}},*/ 
-                            ]
+                            ],
+                        "must_not":[
+                            {"term":
+                                {
+                                    "cluster_id": "eea_organisations"
+                                }
+                            }
+                        ]
                         }
                     },
                 "filter":
@@ -423,7 +440,18 @@ jQuery(document).ready(function($) {
             {'range': {'http://purl.org/dc/terms/issued': {'lte': today}}}
           ]
         }}
-      }];
+      },
+      {'constant_score':{
+        'filter':{
+            "not": {
+              "term": {
+                "cluster_id": "eea_organisations"
+              }
+            }
+          }
+        }
+      }
+      ];
 
   predefined_filters_expired = [
       {'term': {'language':
