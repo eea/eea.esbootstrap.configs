@@ -1,0 +1,31 @@
+mixin portal_breadcrumbs(parent_title, current_title)
+        div(id="portal-breadcrumbs")
+            span(id="breadcrumbs-you-are-here") You are here:
+            span(id="breadcrumbs-home")
+                a(href="https://www.eea.europa.eu/") Home
+                span(class="breadcrumbSeparator")  /
+            span(id="breadcrumbs-1")
+                if current_title
+                    a(href="./")= parent_title
+                    span(class="breadcrumbSeparator")  /
+                else
+                    span(class="breadcrumbs-current")= parent_title
+            if current_title
+                span(id="breadcrumbs-2")
+                    span(class="breadcrumbs-current")= current_title
+
+mixin visualization_info(href, title)
+    div(class="visualization-info")
+        h3 Data sources
+        a(href=href)= title
+        span  provided by
+        a(href="https://www.eea.europa.eu")  European Environment Agency (EEA)
+
+mixin app_error(title, app_id)
+    div(class = "portalMessage errorMessage")
+        span= title
+        b= app_id
+        span= " does not exist"
+        
+mixin download_data
+    div(class="documentExportActions download_data")

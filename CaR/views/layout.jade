@@ -1,0 +1,91 @@
+include ./mixins.jade
+doctype html
+html
+    head
+        block title
+        meta(charset='utf-8')
+        script(type='text/javascript').
+            var field_base="#{field_base}";
+        script
+            != settings_search_sortby
+        script
+            != settings_sort
+        script
+            != settings_display_options
+        script
+            != settings_default_display
+        script
+            != settings_landingpage_enabled
+        script
+            != settings_suggestions_enabled
+        script
+            != settings_es_debug_enabled
+        script
+            != settings_relevance_enabled
+        script
+            != settings_relevance
+        script
+            != settings_external_configs
+        script
+            != settings_default_external_configs
+        script
+            != mapping
+
+        link(rel="shortcut icon", type="image/x-icon", href="https://www.eea.europa.eu/favicon.ico")
+        script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/dist/libs/jquery.js")
+        script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.js")
+        script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/dist/jstree.js")
+        script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/linkify/1.0/jquery.linkify-1.0-min.js")
+        script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/bootstrap/js/bootstrap.min.js")
+        script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.js")
+        if google_map_key != "false"
+            script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?key=#{google_map_key}")
+        script(type="text/javascript" src="esbootstrap_resources/facetview/jquery.facetview.js")
+        script(type="text/javascript" src="esbootstrap_resources/facetview/facetviewhelpers.js")
+        script(type="text/javascript" src="esbootstrap_resources/facetview/landing.js")
+        script(type="text/javascript" src="esbootstrap_resources/facetview/jquery.autocompletewithhighlight.js")
+        script(type="text/javascript" src="esbootstrap_resources/facetview/jquery.autocompleteforfacet.js")
+        block extrajavascripts
+
+        script(type="text/javascript", src="https://www.eea.europa.eu/++resource++plone.app.jquerytools.tooltip.js")
+        script(type="text/javascript", src="https://www.eea.europa.eu/eea-tooltips.js")
+        script(type="text/javascript" src="esbootstrap_resources/javascripts/main.js")
+        link(rel="stylesheet", href="esbootstrap_resources/facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.css")
+        link(rel="stylesheet", href="esbootstrap_resources/facetview/vendor/bootstrap/css/bootstrap.min.css")
+        link(rel="stylesheet", href="esbootstrap_resources/facetview/vendor/dist/themes/default/style.min.css")
+        link(rel="stylesheet", href="esbootstrap_resources/facetview/css/style.css")
+
+        link(rel="stylesheet", href="esbootstrap_resources/facetview/css/facetview.css")
+        link(rel="stylesheet", href="esbootstrap_resources/css/style.css")
+        link(rel="stylesheet", href="esbootstrap_resources/css/tiles.css")
+        block extrastyles
+
+        != templateRender(headFile)
+
+    body
+        != templateRender(headerFile)
+        div(class="site_bg")
+            - var bg_url = external_config.bg_url;
+            img(class="site_bg_img" src=bg_url)
+        div(id="portal-columns")
+            div(class="container")
+                div(class="content" id="content")
+                    block content
+                    div(class="visualization-date")
+                        span(class="discreet")
+                            - var container_info = getContainerInfo()
+                            | Application data last refreshed <strong>#{getIndexCreationDate()}</strong>.
+                            | Version info <strong>#{container_info.version_info}</strong> and tag version <strong>#{container_info.tag_info}</strong> on <strong>#{container_info.hostname}</strong>.
+                    div(class="documentActions")
+                        h5(class="hiddenStructure") Document Actions
+                div(id="right-column", class="right-column-area")
+                    div(class="visualPadding")
+                div(class="visualClear")
+        div(id="landing")
+            block landing
+
+        input(id="card_view_template", type="hidden", value="#{cardViewTemplate}")
+
+        input(id="list_view_template", type="hidden", value="#{listViewTemplate}")
+
+    != templateRender(footerFile)
