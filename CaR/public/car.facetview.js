@@ -293,11 +293,22 @@ function getUrl(options){
                                 },
                                 {'constant_score':{
                                     'filter':{
-                                        "not": {
-                                            "term": {
-                                                    "cluster_id": "eea_organisations"
+                                        "and":
+                                            [
+                                                {"not":
+                                                    {"term": {
+                                                            "cluster_id": "eea_organisations"
+                                                        }
+                                                    }
                                                 }
-                                            }
+/*                                                ,
+                                                {"not":
+                                                    {"term":
+                                                        {"cluster_id": "rod_clients"}
+                                                    }
+                                                }*/
+                                                // example how to exclude other documents
+                                            ]
                                         }
                                     }
                                 },
@@ -313,13 +324,6 @@ function getUrl(options){
                                 },
 /*                                {"range":{"items_count_http://purl.org/dc/terms/spatial":{"from":1,"to":1}}},*/ 
                             ],
-                        "must_not":[
-                            {"term":
-                                {
-                                    "cluster_id": "eea_organisations"
-                                }
-                            }
-                        ]
                         }
                     },
                 "filter":
@@ -443,12 +447,22 @@ jQuery(document).ready(function($) {
       },
       {'constant_score':{
         'filter':{
-            "not": {
-              "term": {
-                "cluster_id": "eea_organisations"
-              }
+            "and":
+                [
+                    {"not":
+                        {"term":
+                            {"cluster_id": "eea_organisations"}
+                        }
+                    }
+/*                    ,
+                    {"not":
+                        {"term":
+                            {"cluster_id": "rod_clients"}
+                        }
+                    }*/
+                    // example how to exclude other documents
+                ]
             }
-          }
         }
       }
       ];
