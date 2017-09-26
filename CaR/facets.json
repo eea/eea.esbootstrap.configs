@@ -255,12 +255,12 @@
             "listing": {
                 "type": "date",
                 "format": "dd M yy",
-                "title": "Issued",
+                "title": "Published",
                 "visible" : true,
                 "pos" : 6
             },
             "csv_tsv": {
-                "title": "issued",
+                "title": "Published",
                 "visible": true,
                 "pos": 3
             },
@@ -285,12 +285,12 @@
         {
             "name": "http://purl.org/dc/terms/description",
             "listing": {
-                "title": "description",
+                "title": "Description",
                 "visible": true,
                 "pos": 2
             },
             "csv_tsv": {
-                "title": "description",
+                "title": "Description",
                 "visible": true,
                 "pos": 2
             },
@@ -426,12 +426,12 @@
                 "Congo","unknown","undefined","6","8","9","1"],
             "listing": {
                 "title": "Regions/Places/Cities/Seas...",
-                "visible" : true,
+                "visible" : false,
                 "pos" : 2
             },
             "csv_tsv": {
                 "title": "Regions/Places/Cities/Seas...",
-                "visible": true,
+                "visible": false,
                 "pos": 5
             },
             "details": {
