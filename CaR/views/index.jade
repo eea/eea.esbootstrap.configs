@@ -13,7 +13,7 @@ block extrastyles
 block content
     div(class="page-header")
         - var ctitle = external_config.title;
-        - var cbody = '<p class="car-tagline">On this page you find all EEA content that is exclusively about ' + external_config.title + '. Other products may contain information on ' + external_config.title + ' together with other countries. You may access them through our <a href=\'http://search.apps.eea.europa.eu/\'>global search</a>.</p>' + external_config.body;
+        - var cbody = '<p class="car-tagline">On this page you find all EEA content that is exclusively about ' + external_config.title + '. Other products which contain information on ' + external_config.title + ', among others, may be found through our <a href=\'http://search.apps.eea.europa.eu/\'>global search</a>.</p>' + external_config.body;
         div(class='section-title')
             if external_config.flag_url
                 img(class='section-img' src!=external_config.flag_url)
