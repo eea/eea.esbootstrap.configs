@@ -183,7 +183,6 @@
   "syncConditions": [
     "{?resource a <http://www.eea.europa.eu/portal_types/Topic#Topic> } UNION ",
     "{?resource a <http://www.eea.europa.eu/portal_types/Collection#Collection> } UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/File#File>} UNION ",
     "{?resource a <http://www.eea.europa.eu/portal_types/Topic#Topic> } UNION ",
     "{?resource a <http://www.eea.europa.eu/portal_types/Collection#Collection> } UNION ",
     "{?resource a <http://www.eea.europa.eu/portal_types/Dashboard#Dashboard> } UNION ",
