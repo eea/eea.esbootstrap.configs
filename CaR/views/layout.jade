@@ -50,6 +50,9 @@ html
         script(type="text/javascript", src="https://www.eea.europa.eu/++resource++plone.app.jquerytools.tooltip.js")
         script(type="text/javascript", src="https://www.eea.europa.eu/eea-tooltips.js")
         script(type="text/javascript" src="esbootstrap_resources/javascripts/main.js")
+        
+        != templateRender(headFile)
+        
         link(rel="stylesheet", href="esbootstrap_resources/facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.css")
         link(rel="stylesheet", href="esbootstrap_resources/facetview/vendor/bootstrap/css/bootstrap.min.css")
         link(rel="stylesheet", href="esbootstrap_resources/facetview/vendor/dist/themes/default/style.min.css")
@@ -59,8 +62,7 @@ html
         link(rel="stylesheet", href="esbootstrap_resources/css/style.css")
         link(rel="stylesheet", href="esbootstrap_resources/css/tiles.css")
         block extrastyles
-
-        != templateRender(headFile)
+        
 
     body
         != templateRender(headerFile)
