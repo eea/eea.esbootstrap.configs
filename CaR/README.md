@@ -10,7 +10,7 @@ The CaR application is depoloyed via
 Some metadata is coming from EEA Plone Website (e.g. the name of countries, the description, background image and links). 
 The above metadata content is exported as a Json file and retrieved on start-up by the CaR application.
 
-In we have updated a bakcground image for a country or we have changed the introduction, 
+If we have updated a bakcground image for a country or we have changed the introduction, 
 the Json metadata file can be synced on-demand by triggering the following url:
 
 ```<your-car-app-ip>/tools/update_external_configs```
