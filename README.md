@@ -41,3 +41,7 @@ While our current default app contains the minimum needed files:
 If the image is launched with **DEV_CONFIG** environment variable, repository will clone/pull in **/code/config**.
 
 For details about configuring the application, please read the [documentation](https://github.com/eea/eea.docker.esbootstrap/blob/master/docs/Details.md)
+
+Specific applications: 
+
+- [CaR app](https://github.com/eea/eea.esbootstrap.configs/blob/master/CaR/README.md)
