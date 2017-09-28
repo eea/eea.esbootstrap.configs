@@ -62,7 +62,8 @@
 .facetedview_search,
 .facetview_metadata,
 .default_pagination,
-.facetview_orderby_relevance {
+.facetview_orderby_relevance,
+.facetview_orderby {
     display: none;
 }
 

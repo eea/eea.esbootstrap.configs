@@ -24,7 +24,7 @@ var debounce = function (func, threshold, execAsap) {
 };
 $.fn.carFacet = function(settings){
 
-    var loadValuesFromFacet = function(){
+    $.fn.carFacet.loadValuesFromFacet = function(){
         var found = false;
         $.each($(".car_facet"), function(key, value){
             var facet_value = $(value).attr("rel");
@@ -36,6 +36,9 @@ $.fn.carFacet = function(settings){
                 var checked = $(real_facet_option).find(".jstree-anchor").hasClass("jstree-clicked");
                 if (checked){
                     $(value).find(".car_facet_checkbox").attr("checked", true);
+                }
+                else {
+                    $(value).find(".car_facet_checkbox").attr("checked", false);
                 }
                 $(value).find(".car_facet_checkbox").removeAttr("readonly");
                 $(value).find(".car_facet_value").removeAttr("readonly");
@@ -53,6 +56,7 @@ $.fn.carFacet = function(settings){
         }
     };
 
+    var loadValuesFromFacet = $.fn.carFacet.loadValuesFromFacet;
 
     $('.car_facet_checkbox[facet_type="group"]').change(function() {
         var group_id = $(this).attr("group_id");

@@ -401,7 +401,11 @@ function setUrl(stateObj, page, url){
         var href_url = $(location).attr('href');
         topics_str = href_url.split("/")[href_url.split("/").length - 1].split("?")[0];
     }
-    window.history.pushState(stateObj, page, topics_str);
+
+    if ($('.facet-view-simple').facetview.options.last_topics_str !== topics_str){
+        $('.facet-view-simple').facetview.options.last_topics_str = topics_str;
+        window.history.pushState(stateObj, page, topics_str);
+    }
 }
 
 function update_results_count(){
@@ -534,6 +538,7 @@ jQuery(document).ready(function($) {
       mark_expired();
       mark_recent();
       update_results_count();
+      $("#car_facet").carFacet.loadValuesFromFacet();
     },
     linkify: false,
     paging: {
