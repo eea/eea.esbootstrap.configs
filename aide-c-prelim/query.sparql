@@ -1,0 +1,89 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX cr: <http://cr.eionet.europa.eu/ontologies/contreg.rdf#>
+PREFIX aq: <http://rdfdata.eionet.europa.eu/airquality/ontology/>
+PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
+PREFIX obligations: <http://rod.eionet.europa.eu/obligations/>
+
+SELECT DISTINCT
+
+md5(concat(?Country, ?AssessmentId, ?Namespace, ?ZoneURI, xsd:string(?startOfPeriod), ?ObjectiveType, ?ReportingMetric, ?ExceedanceAttainment, xsd:string(?ClassificationDate), ?ClassificationReport, ?AssessmentType, ?Pollutant, ?ProtectionTarget, ?Description, ?samplingPointURI, ?ModelAssessmentMetadataURI, ?envelope))  as ?_id
+
+?Country as ?CountryOrTerritory
+?AssessmentId
+?Namespace
+?Pollutant
+
+replace(replace(replace(str(?ZoneURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace,""),"/","") as
+?ZoneId
+
+YEAR(?startOfPeriod) AS ?ReportingYear
+?ObjectiveType
+?ReportingMetric
+?ProtectionTarget
+?ExceedanceAttainment
+?ClassificationDate
+?ClassificationReport
+?AssessmentType
+?Description
+
+replace (replace(replace(str(?samplingPointURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace,""),"/","") as ?SamplingPointId
+
+replace (replace(replace(str(?ModelAssessmentMetadataURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace,""),"/","") as ?ModelId
+
+?envelope
+
+WHERE {{
+  GRAPH ?source {
+    ?XMLURI a aq:AQD_AssessmentRegime .
+    ?XMLURI aq:assessmentMethods ?assesmentMethodsURI .
+    ?XMLURI aq:assessmentThreshold ?assesmentThresoldURI .
+    ?XMLURI aq:inspireId ?inspireURI .
+    ?XMLURI aq:pollutant ?polltargetURI .
+    ?XMLURI aq:declarationFor ?declaration .
+    ?XMLURI aq:zone ?ZoneURI .
+  }
+  ?source dcterms:isPartOf ?envelope .
+  ?envelope rod:released ?released .
+  ?envelope rod:locality ?locality .
+  ?envelope rod:obligation ?obliURI .
+  ?envelope rod:startOfPeriod ?startOfPeriod .
+
+  ?inspireURI aq:localId ?AssessmentId .
+  ?inspireURI aq:namespace ?Namespace.
+
+  ?polltargetURI skos:notation ?Pollutant .
+
+  ?assesmentThresoldURI aq:environmentalObjective ?environmentalObjective .   
+  ?assesmentThresoldURI aq:exceedanceAttainment ?ExceedanceAttainmentURI .
+  ?assesmentThresoldURI aq:classificationDate ?classdateURI .
+
+  ?assesmentMethodsURI aq:assessmentType ?AssessmentTypeURI .
+  ?assesmentMethodsURI aq:samplingPointAssessmentMetadata ?samplingPointURI.
+
+  ?environmentalObjective aq:objectiveType ?ObjectiveTypeURI . 
+  ?environmentalObjective aq:reportingMetric ?ReportingMetricURI .
+  ?environmentalObjective aq:protectionTarget ?ProtectionTargetURI .
+
+  ?ObjectiveTypeURI rdfs:label ?ObjectiveType .
+  ?ReportingMetricURI rdfs:label ?ReportingMetric .
+  ?ProtectionTargetURI rdfs:label ?ProtectionTarget .
+
+  ?ExceedanceAttainmentURI skos:notation ?ExceedanceAttainment .
+  ?classdateURI rdfs:label ?ClassificationDate .       
+
+  ?AssessmentTypeURI rdfs:label ?AssessmentType .
+
+  OPTIONAL{?assesmentThresoldURI aq:classificationReport ?ClassificationReport} .
+  OPTIONAL{?assesmentMethodsURI aq:assessmentTypeDescription ?Description} .
+
+  OPTIONAL{?assesmentMethodsURI aq:modelAssessmentMetadata ?ModelAssessmentMetadataURI} .
+  OPTIONAL{?assesmentMethodsURI aq:samplingPointAssessmentMetadata ?samplingPointURI} .
+
+  OPTIONAL{?assesmentThresoldURI aq:classificationReport ?ClassificationReport} .
+  ?locality rod:localityName ?Country .
+  ?obliURI rdfs:label ?Obligation .
+
+  FILTER (?envelope = <<envelope>>)
+}}
