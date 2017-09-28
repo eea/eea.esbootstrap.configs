@@ -335,15 +335,16 @@ function getUrl(options){
 /*                                        {"term":{"http://purl.org/dc/terms/spatial":"Albania"}}*/
                                     ]
                                 }
-                            },
+                            }
+/*                            ,
                             {"bool":
                                 {"should":
                                     [
-/*                                        {"term":{"http://www.eea.europa.eu/portal_types#topic":"Policy instruments"}},
-                                        {"term":{"http://www.eea.europa.eu/portal_types#topic":"Resource efficiency and waste"}}*/
+                                        {"term":{"http://www.eea.europa.eu/portal_types#topic":"Policy instruments"}},
+                                        {"term":{"http://www.eea.europa.eu/portal_types#topic":"Resource efficiency and waste"}}
                                     ]
                                 }
-                            }
+                            }*/
                         ]
                     }
                 }
@@ -373,6 +374,9 @@ function getUrl(options){
     if (href_parts.length > 1){
         var topics = decodeURIComponent(href_parts[1]).split(",");
         for (var i = 0; i < topics.length; i++){
+            if (query.query.function_score.filter.and[1] === undefined){
+                query.query.function_score.filter.and.push({'bool':{"should":[]}});
+            }
             var term_topic = {"term":{"http://www.eea.europa.eu/portal_types#topic":topics[i]}};
             query.query.function_score.filter.and[1].bool.should.push(term_topic);
         }
