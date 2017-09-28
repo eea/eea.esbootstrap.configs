@@ -20,7 +20,7 @@ apache rewrite rules will take care on forwarding to the CaR application.
 
 The external configs are also updated each time the container is restarted.
 
-###Setting up the external configs
+### Setting up the external configs
 Add a section in your settings.json
 ```
 "external_configs": {
