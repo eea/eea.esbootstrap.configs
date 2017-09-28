@@ -9,7 +9,7 @@ PREFIX aqr: <http://reference.eionet.europa.eu/aq/ontology/>
 
 SELECT DISTINCT
 
-md5(concat(?Country, xsd:string(?ReportingYear),?Namespace ,?MeasureId  ,?VersionId , ?CodeOfMeasure, ?Name, ?Description ,?MeasureClassification ,?MeasureType ,?AdministrativeLevel ,xsd:string(?TimeScale) ,xsd:string(?SpatialScale),?SourceSectors ,xsd:string(?EstimatedImplementationCosts) ,?Currency  ,?CommentOnCosts,?Status,xsd:string(?ImplementationBegin) ,xsd:string(?ImplementationEnd) ,xsd:string(?PlannedFullEffectDate) ,?MonitoringProgressIndicators ,xsd:string(?QuantityOfReducedEmissions),?CommentOnEmissionReductions ,xsd:string(?LevelOfConcentration) ,xsd:string(?NumberOfExceedances) ,xsd:string(?SpecificationOfHours) ,?CommentOnExpectedImpact ,xsd:string(?exceedanceAffectedURI) ,xsd:string(?usedForScenarioURI),?envelope))  as ?_id
+md5(concat(?Country, xsd:string(?ReportingYear),?Namespace ,?MeasureId  ,?VersionId , ?CodeOfMeasure, ?Name, ?Description ,?MeasureClassification ,?AdministrativeLevel ,xsd:string(?TimeScale) ,xsd:string(?SpatialScale),?SourceSectors ,xsd:string(?EstimatedImplementationCosts) ,?Currency  ,?CommentOnCosts,?Status,xsd:string(?ImplementationBegin) ,xsd:string(?ImplementationEnd) ,xsd:string(?PlannedFullEffectDate) ,?MonitoringProgressIndicators ,xsd:string(?QuantityOfReducedEmissions),?CommentOnEmissionReductions ,xsd:string(?LevelOfConcentration) ,xsd:string(?NumberOfExceedances) ,xsd:string(?SpecificationOfHours) ,?CommentOnExpectedImpact ,xsd:string(?exceedanceAffectedURI) ,xsd:string(?usedForScenarioURI),?envelope))  as ?_id
 
 ?Country as ?CountryOrTerritory  
 YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear 
@@ -53,7 +53,7 @@ WHERE {{
     ?XMLURI aq:name ?Name .
     ?XMLURI aq:description ?Description .
     ?XMLURI aq:classification ?classificationURI .
-    ?XMLURI aq:measureType ?measureTypeURI .
+    OPTIONAL{?XMLURI aq:measureType ?measureTypeURI} .
     ?XMLURI aq:administrativeLevel ?administrativeLevelURI .
     ?XMLURI aq:timeScale ?timeScaleURI .
     ?XMLURI aq:spatialScale ?spatialScaleURI .
@@ -76,7 +76,7 @@ WHERE {{
   OPTIONAL {?scenariosXMLURI aq:sourceApportionment ?exceedanceAffectedURI} .
 
   ?classificationURI rdfs:label ?MeasureClassification .
-  ?measureTypeURI rdfs:label ?MeasureType .
+  OPTIONAL{?measureTypeURI rdfs:label ?MeasureType} .
   ?administrativeLevelURI rdfs:label ?AdministrativeLevel .
   ?timeScaleURI rdfs:label ?TimeScale .
   ?spatialScaleURI rdfs:label ?SpatialScale .
@@ -115,5 +115,5 @@ WHERE {{
   ?inspireURI aq:versionId ?VersionId .
 
   #FILTER (?envelope = <http://cdr.eionet.europa.eu/bg/eu/aqd/k/envvjk7zg>)
-  #FILTER (?envelope = <<envelope>>)
+  FILTER (?envelope = <<envelope>>)
 }}

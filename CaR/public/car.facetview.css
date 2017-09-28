@@ -38,6 +38,17 @@
   overflow: hidden;
 }
 
+.eea-tileHead {
+    position: relative;
+}
+
+.eea-tiles .eea-tileTypeHead {
+    display: block;
+    position: absolute;
+    top: 20%;
+    margin: 0;
+}
+
 #facetview_results td.ribbon-parent {
   height: 60px;
 }
@@ -256,7 +267,6 @@ div#facetview_rightcol {
 }
 #content .eea-tileTypeHead {
     padding: 0.5em 1em;
-    margin-top: 3em;
 }
 .eea-tileTopics {
     font-weight: bold;
@@ -292,6 +302,10 @@ div#facetview_rightcol {
     margin-left: 2.5em;
     padding-top: 1em;
     min-width: 116px;
+}
+
+.facetview_display_type .eea-icon {
+    padding: 0.1em 0.5em;
 }
 
 @media screen and (max-width:480px) {
@@ -363,6 +377,10 @@ div#facetview_rightcol {
         line-height: 1.5;
     }
 
+    .facetview_top .filter-by {
+       margin: 0 0 2em 2em; 
+    }
+    
 }
 
 @media screen and (min-width: 768px) {

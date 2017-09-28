@@ -20,7 +20,7 @@ apache rewrite rules will take care on forwarding to the CaR application.
 
 The external configs are also updated each time the container is restarted.
 
-###Setting up the external configs
+### Setting up the external configs
 Add a section in your settings.json
 ```
 "external_configs": {
@@ -70,6 +70,7 @@ Currently we have the following fields for each section:
  - value - the value what should be used for filtering the full database to get the required documents. It can be a single value for countries, or a list of valuse for regions
 
 These are the currently used fields, but anytime we can add a new value in a section, and after that it can be used in the templates.
+
 Example to add the capital of a country
 configuration:
 ```
