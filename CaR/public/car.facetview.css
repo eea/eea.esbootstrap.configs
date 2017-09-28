@@ -389,6 +389,18 @@ div#facetview_rightcol {
     }
 }
 
+@media screen and (min-width: 768px) and (max-width: 800px) {
+    /* temporary styles until we invalidate templates */
+    #secondary-portaltabs {
+        margin-left: 0;
+        overflow: hidden;
+        height: 50px;
+    }
+    #portaltab-europe a {
+        margin-top: 3px;
+    }
+}
+
 @media screen and (max-width: 805px) {
     .car_facet_group {
         margin-left: 2em;
