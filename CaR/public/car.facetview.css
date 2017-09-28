@@ -38,6 +38,17 @@
   overflow: hidden;
 }
 
+.eea-tileHead {
+    position: relative;
+}
+
+.eea-tiles .eea-tileTypeHead {
+    display: block;
+    position: absolute;
+    top: 20%;
+    margin: 0;
+}
+
 #facetview_results td.ribbon-parent {
   height: 60px;
 }
@@ -256,7 +267,6 @@ div#facetview_rightcol {
 }
 #content .eea-tileTypeHead {
     padding: 0.5em 1em;
-    margin-top: 3em;
 }
 .eea-tileTopics {
     font-weight: bold;
