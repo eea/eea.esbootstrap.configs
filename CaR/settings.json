@@ -45,5 +45,6 @@
         "host" : "www.eea.europa.eu",
         "path" : "/viewCountryRegionsJSON",
         "defaults" : "external_configs_defaults.json"
-    }
+    },
+    "selected_navigation_tab": "countries"
 }

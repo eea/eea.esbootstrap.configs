@@ -529,6 +529,7 @@ jQuery(document).ready(function($) {
     permanent_filters: true,
     post_init_callback: function() {
       add_EEA_settings();
+      markNavigationTab(settings_selected_navigation_tab);
       replaceNumbers();
     },
     post_search_callback: function() {
