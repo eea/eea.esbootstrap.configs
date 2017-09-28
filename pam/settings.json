@@ -1,0 +1,42 @@
+{
+    "http": {
+        "port": 3000
+    },
+    "elastic": {
+        "index": "esbootstrapdata-pam",
+        "type": "resources",
+        "field_base":""
+    },
+    "external_templates": {
+        "local_path": "/external_templates",
+        "host": "www.eea.europa.eu",
+        "head_path": "/templates/v2/getRequiredHead?jsdisable=all",
+        "header_path": "/templates/v2/getHeader?jsdisable=all",
+        "footer_path": "/templates/v2/getFooter"
+    },
+    "layout_vars": {
+        "head_title": "EEA database on climate change mitigation policies and measures in Europe &mdash; European Environment Agency",
+        "css_resources": {
+            "index_page": [
+                "/custom.css",
+                "css/esbootstrap.facetview.css"
+            ],
+            "details_page": []
+        },
+        "js_resources": {
+            "index_page": [
+                "/custom.js",
+                "javascripts/esbootstrap.facetview.js"
+            ],
+            "details_page": []
+        },
+        "site_title": "EEA database on climate change mitigation policies and measures in Europe",
+        "site_description": "This database contains a number of policies and measures (PAM) implemented or planned by European countries to reduce greenhouse gas emissions. Most of these PAMs have been reported to the European Commission, the United Framework Convention on Climate Change (UNFCCC) or the EEA. The search engine gives access to detailed information for each of these PAMs including, in some cases, the expected reductions in greenhouse gas emissions resulting from the implementation of these PAMs, as estimated by countries.",
+        "enableBreadcrumbs": true,
+        "breadcrumbs": "EEA database on climate change mitigation policies and measures in Europe",
+        "dataprovencance_info_text": "Climate change mitigation policies and measures",
+        "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/data/climate-change-mitigation-policies-and-measures-1",
+        "further_info": ""
+    },
+    "endpoint": "http://semantic.eea.europa.eu/sparql"
+}

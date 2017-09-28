@@ -1,0 +1,49 @@
+{
+    "http": {
+        "port": 3000
+    },
+    "elastic": {
+        "type": "resource",
+        "enableValuesCounting": true
+    },
+    "external_templates": {
+        "local_path": "/external_templates",
+        "protocol": "https",
+        "host": "www.eea.europa.eu",
+        "head_path": "/templates/v2/getRequiredHead?jsdisable=all&render_full_html=False",
+        "header_path": "/templates/v2/getHeader?jsdisable=all&render_full_html=False",
+        "footer_path": "/templates/v2/getFooter?render_full_html=False"
+    },
+    "layout_vars": {
+        "head_title": "Countries and regions — European Environment Agency (EEA)",
+        "css_resources": {
+            "index_page": [
+                "app_resources/css/esbootstrap.facetview.css",
+                "app_resources/car.facetview.css"
+            ]
+        },
+        "js_resources": {
+            "index_page": [
+                "app_resources/car.facetview.js",
+                "app_resources/car.facet.js"
+            ]
+        },
+        "site_title": "Countries and regions — European Environment Agency (EEA)",
+        "enableBreadcrumbs": false,
+        "dataprovencance_info_text": "Semantic Data Service (SDS)",
+        "dataprovencance_info_url": "http://semantic.eea.europa.eu",
+        "further_info": "The content of this catalogue has been created thanks to the EU's open data approach and the contribution of many organisations part of EEA's network (Eionet)."
+    },
+    "landingpage_enabled": false,
+    "enableBreadcrumbs": true,
+    "breadcrumbs": "Countries and regions",
+    "es_debug_enabled": true,
+    "suggestions_enabled": true,
+    "relevance_enabled": true,
+    "external_configs": {
+        "protocol": "https",
+        "host" : "www.eea.europa.eu",
+        "path" : "/viewCountryRegionsJSON",
+        "defaults" : "external_configs_defaults.json"
+    }
+}

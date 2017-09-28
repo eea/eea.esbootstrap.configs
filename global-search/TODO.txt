@@ -1,0 +1,468 @@
+Content types missing interface
+-------------------------------
+
+The content types below needs to have a distinct interface in order to appear in the content types 2.
+
+- DONE. Briefing
+- DONE. EEA Job Vacancy
+- DONE. Event. To be excluded or archived?
+- DONE. Figure (Table). to be excluded? already excluded in content types 2.
+- DONE. Folder. to show or not? what about INavigationRoot?
+- DONE. Legislation instrument. 
+- DONE. Link
+- DONE. Methodology reference
+- DONE. Organisation (reportnet client). NOT POSSIBLE to have multiplem types. 
+- DONE. Organisation (generic)
+- DONE. Policy document (link/reference)
+- DONE. Policy question (environmental questions or just questions/issues)
+- DONE. Rationale reference (link/reference)
+- DONE. Reporting obligation
+- DONE. File
+- DONE. Keymessages? add description AS title. also in SDS postharvest.
+- DONE. remove Image
+
+
+
+Other issues or ideas:
+----------------------
+
+FIXED. #81705 the content type image fallback is not working anymore. mapping.json L20
+
+FIXED. #81058 Date format in table and tile must be same as card view.
+
+FIXED. Fix table view, title and content types.
+
+FIXED. #81058 Remove duplicates in content types column in table view.
+
+FIXED. Search highlighting brakes image results html in list view and cardview. 
+see http://bit.ly/2kaugYl
+
+DONE. Add topics to key messages, questions (via postharvest in SDS).
+
+DONE. Adjust the settings on the facet and add Info bubble.
+
+DONE. Keymessages. use description as title.
+
+DONE. Add Format facet? http://purl.org/dc/terms/format
+
+Add "reading level" and "reading time" similar to https://wordcounter.net/.
+Readability index in RDF and Elastic.
+
+Add charts/histogram on cards on landing page. E.g. for Time coverage, we can add
+the histogram with count for each year. For geo we can do an intensity map. more
+charts can be added via a link at the bottom "Explore content analytics".
+
+make year facet clearer, maybe divide it in "year published" and "time coverage".
+how shall we add temporal coverage? two facets or one? range facet?
+
+display results on map (kibana?), needed for geo-positioned content
+
+add typeahead search (https://twitter.github.io/typeahead.js/) within 
+facets that have many values, e.g. organisations
+
+FIXED. Not possible to have in "normMissing":
+"http://www.eea.europa.eu/ontologies.rdf#objectProvides": ["Organization (Reportnet client)","Organization"]
+
+cleanup policy doc refs with no titles like 
+http://www.eea.europa.eu/policy-documents/policydocumentreference.2016-11-29.4416473604
+
+FIXED. Infographic, does not have text, dct:abstract should work.
+FIXED. SPARQL query has not text. Results and query are both candidate, added results.
+FIXED. Indicator has no text.
+
+FIXED. #81304 Enabling text indexing in Article has the side effect that images showed up in
+table view. we should disable this facetview feature.
+
+DONE. Add old style Collection.	plone.app.collection.interfaces.ICollection
+
+FIXED. search for "Air quality statistics at reporting stations" then hover on the title
+you will get alt text with highlighting <em> in it. it shall not.
+
+DONE. copy geotags to another field and show all with countries blacklist.
+
+Country groups via postharvest?
+
+DONE. Add Dashboard Tableau.Add it to SDS postharvest scripts.
+example
+http://www.eea.europa.eu/themes/climate/trends-and-projections-in-europe/country-profiles-greenhouse-gases-and-energy/trends-and-projections-in-eu
+Tell Content Managers to not ues iframe, rather the tableau embed code. 
+
+Show sparql data table on hover and on listing where the description would be.
+
+Sparql geocoverage with alchemy? or postharvest script?
+Sparql missing topic and organisation.
+
+Data should have formats from children files. postharvest script.
+
+DONE. Add file formats to Daviz as SVG, PNG, CSV,TSV, JSON.
+
+Make daviz as microdata type.
+
+DONE. Add formats to sparql.
+
+DONE. Add PDF format to FICHE, ARTICLE, NEWS, INDICATORS.
+
+DONE. Publications should have PDF format. postharvest script.
+
+DONE. Geotags normalisation e.g. Bosnia and Herzegovina vs Bosnia-Herzegovina
+
+FIXED. In mobile view, searching will not show facets.
+
+Add in SDS, linking for http://www.eea.europa.eu/portal_vocabularies/themes/climate and
+the object http://www.eea.europa.eu/themes/climate, e.g. foaf:homepage
+add "http://www.eea.europa.eu/portal_types#topic" in ontologies.rdf as reference to a 
+sub-class of eeatopic/concept.
+
+DONE. EEAFigure has not format. we could take it from the EEAFigureFile inside.
+IF above is done, EEAFigureFile can be removed.
+
+DONE. For CM. Many briefings do not have tags,geotags,topics (all) and temporal coverage.
+need to make fields required. Briefings reindexed in SDS.
+
+For CM. Some collections misses Topics.
+
+For DATA, in SDS, add all organisations, owner and processor. tell mauro, missing
+processor on CLC datasets like http://www.eea.europa.eu/data-and-maps/data/clc-2000-raster-4
+
+DONE. For Data external links. we miss organisation involved. postharvest script.
+
+DONE. Add dataProvider mapping for externaldataspec
+
+DONE. Add dataProvider and dataProcessor to Data and its relateditems bback/forward refs.
+postharvest script.
+
+Add dataProvider and dataProcessor mapping for Indicators.
+
+FIXED. For Daviz, add organisation involved.
+
+Data providers missing topic.
+
+Data visualisations missing organisations.
+
+Policy question missing the topics.
+FIXED by http://semantic.eea.europa.eu/admin/harvestScript?id=1156
+
+FIXED. #81305 facet values_whitelist is not documented. values_blacklist does not seems to exist.
+
+FIXED. geotag label is just 16, see
+http://www.eea.europa.eu/about-us/documents/eea-budgets/budget-of-the-european-environment-agency-for-the-financial-year-2011
+and in SDS.
+
+DONE. if you select Data (external links) only two rows are showen in table view, instead of 20.
+
+make user friendly name of languages, instead of ISO code.
+
+DONE. rename legislation instruments to legislation. improve types in general.
+
+maybe merge ROD legislation with Policy document references.
+
+#82254 new feature: implement search suggestions
+see https://www.elastic.co/guide/en/elasticsearch/reference/1.7/search-suggesters.html
+when a user type a term or phrases in the search box, the system will suggest
+terms, useful for autocompletion or for fixing mispelling. 
+This feature is somewhat related/reusable for the facet suggester (aka typeahead).
+
+#82255. new feature: geo facet search via map widget.
+
+Import AoA db as RDF in SDS. Together with SERIS migration project.
+http://www.eea.europa.eu/themes/regions/pan-european/virtual-library
+
+FIXED. Recently added has stopped working.
+
+remove "6","8" and other digits from places blacklist once geotags are fine in SDS.
+
+DONE. dataProvider and dataProcessor should both be added as organisations involved in
+SDS via postharvest.
+
+FIXED. On landing dashboard there Organisation shows the count 100 as limit. 
+there are much more than 100, so the count must be taken from ES index, not the facet.
+
+FIXED. bug. When using the filtering, and then removing it, the languages and organisations count
+is wrong.
+
+Increment max_shingle_size for autocomplete. Now it's set on 5, that's why autocomplete 
+doesn't work if we have more than 5 words in the search terms field
+
+Check how we could disable autocomplete suggests terms in more languages.
+Ex. after typing: "European hazardous waste management improving, but its 
+prevention needs attention" we get the hint:
+"European hazardous waste management improving, but its prevention needs attention à"
+I think the problem relates to the previous issue, with the max_shingle_size.
+Elastic doesn't find any suggestion for 
+"European hazardous waste management improving, but its prevention needs attention".
+In this case we take the last word: "attention" and it's suggestion is "attention à"
+
+As a speed improvement we should abort all ajax queries when user starts to type something.
+Now when the user stops typing we have an ajax call to get the results, and after that 
+an ajax call for each facet. After the facet ajax call returns the values, we populate the
+facets, what also takes time.
+When the user starts to type we should abort all ajax calls we don't need them anyway.
+
+share query with url shortner. Add social links.
+
+FIXED. add accordion animation when opening/closing facets.
+
+exact match only works the second time it is selected, not at first.
+
+FIXED (coinflicting rivers). Errors on production, not everything is synced, only one third got synced. 
+look at error logs in autosync containers for details.
+
+DONE (via postharvest). Propagate data provenance from Figures/Daviz/Indicators to Publications.
+
+Propagate time coverage from Figures/Daviz/Indicators to Publications.
+
+FIXED. Have distinct range facet for Publishing/Issued year.
+
+Propagate geotags from Figures/Daviz/Indicators to Publications.
+
+Make distribution chart for facet counts, possibility to select. combined with slider?
+e.g. https://docs.microsoft.com/en-us/azure/log-analytics/media/log-analytics-log-searches/oms-search-facet.png
+
+FIXED Time coverage on analytics page shows only 100y, because of max 100 values in facet.
+FIXED In recently added we have "Published on NaN undefined NaN"
+
+Encoding issues on geotags export to RDF, see
+http://www.eea.europa.eu/about-us/competitions/waste-smart-competition/specific-privacy-statement
+it says: 6 (Kongens Nytorv 6, 1050 Kopenhagen, Dänemark)
+BUT in SDS it is: 6 (Kongens Nytorv 6, 1050 Kopenhagen, Dnemark)
+caused by two distinct resources in SDS
+http://www.eea.europa.eu/about-us/competitions/waste-smart-competition/specific-privacy-statement
+and
+http://www.eea.europa.eu/about-us/what/public-events/competitions/waste-smart-competition/imaginair-competition-rules/specific-privacy-statement
+
+geotags duplicates when label and title differs
+https://github.com/eea/eea.geotags/blob/a39b28ac7d4b6055bca33060ec4cb90add888a78/eea/geotags/rdf/marshaller.py#L60
+AND change the RDF export of our geotags to use geonames NS where possible, for example http://www.geonames.org/ontology#shortName
+
+http://semantic.eea.europa.eu/harvest.action?harvestDTO.harvestId=6530833
+
+FIXED. keep or not to keep EEAFigureFile, 
+e.g. http://www.eea.europa.eu/data-and-maps/figures/potential-level-of-invasive-species/26710_map-7-5-potential-level.eps
+it is inside an DRAFT map.
+
+#83682 make sort by relevance default. improve relevance ranking by weighting of fields and popularity by google analytics.
+
+If you deselect all languages > select a country , then no results are shown.
+if you select content types, it shows results. then select a place and deselect 
+content type. now select another place again, results disappears.
+
+If a daviz contains in data provenance a URL to another externaldataspec or data
+which ends with space " " or with anchor like
+http://www.eea.europa.eu/data-and-maps/data/external/the-classification-of-the-maximum#tab-produced-figures
+than the back relation is not automatically done
+e.g. http://www.eea.europa.eu/data-and-maps/daviz/maximum-extent-of-ice-cover-1
+
+FIXED. Add a RESET ALL FILTERS when user has changed the match any/all and exact etc.
+
+Italian File comes up as English in SDS
+http://semantic.eea.europa.eu/factsheet.action?uri=http%3A%2F%2Fwww.eea.europa.eu%2Fit%2Fpublications%2F92-828-3351-8%2F9it.pdf
+
+#84124 put focus on input search.
+
+#84124 add info message when missing results.
+
+Add format to Data, via postharvest.
+
+move tagline "Instantly search..." into the box "Content available".
+Make it look like a quote? or similar that looks good.
+
+DONE. We miss Contracts (CallForTenders, CallForProposals ...).
+
+http://purl.org/dc/terms/description missing in dataMapping, must be copied to did_you_mean and text
+
+Add Term type (and SKOS concept).
+
+Add reading ease score as three levels (Scientific, Average, Easy to read).
+
+Add reading length, as minutes range or as three steps (Long, Medium, Quick read).
+
+BUG: range facet does not update value when other facets are selected.
+
+FEATURE: inverse suggest. E.g. when typing "Directive" in the search input
+we should also get suggestions for "Water Directive", "Bathing Water Directive" etc.
+
+Nice to have, languages in full name in facet (native name or english):
+    "ar":"عربى (ar)",
+    "bg":"Български (bg)",
+    "bs":"bosanski (bs)",
+    "cs":"čeština (cs)",
+    "hr":"Hrvatski (hr)",
+    "da":"dansk (da)",
+    "de":"Deutsch (de)",
+    "nl":"Nederlands (nl)",
+    "el":"ελληνιικά (el)",
+    "en":"English (en)",
+    "et":"eesti (et)",
+    "fi":"Suomi (fi)",
+    "fr":"Français (fr)",
+    "ga":"Gaeilge (ga)",
+    "hu":"magyar (hu)",
+    "is":"Íslenska (is)",
+    "it":"italiano (it)",
+    "lv":"Latviešu (lv)",
+    "lt":"lietuvių (lt)",
+    "mk":"македонски (mk)",
+    "mt":"Malti (mt)",
+    "no":"Norsk (no)",
+    "pl":"polski (pl)",
+    "pt":"Português (pt)",
+    "ro":"Română (ro)",
+    "ru":"русский (ru)",
+    "sk":"slovenčina (sk)",
+    "sl":"Slovenščina (sl)",
+    "sq":"shqiptar (sq)",
+    "sr":"Српски (sr)",
+    "es":"Español (es)",
+    "sv":"Svenska (sv)",
+    "tr":"Türkçe (tr)",
+    "zh":"中文 (zh)"
+
+NOTES:
+all content types interfaces
+
+    "{?resource a <http://www.eea.europa.eu/portal_types/Topic#Topic> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Collection#Collection> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/File#File>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Infographic#Infographic> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Sparql#Sparql> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Topic#Topic> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Collection#Collection> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Folder#Folder> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Fiche#Fiche> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Article#Article> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Dashboard#Dashboard> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Assessment#Assessment>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/CloudVideo#CloudVideo>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Data#Data>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/DavizVisualization#DavizVisualization>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Document#Document>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/EEAFigure#EEAFigure>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/EEAFigureFile#EEAFigureFile>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/EEAVacancy#EEAVacancy>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/EcoTip#EcoTip>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Event#Event>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/ExternalDataSpec#ExternalDataSpec>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/GIS%20Application#GISApplication>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Highlight#Highlight>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Image#Image>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/KeyMessage#KeyMessage>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Link#Link>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/MethodologyReference#MethodologyReference>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/PolicyDocumentReference#PolicyDocumentReference>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/PolicyQuestion#PolicyQuestion>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/PressRelease#PressRelease>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Promotion#Promotion>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/QuickEvent#QuickEvent>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/RationaleReference#RationaleReference>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Report#Report>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Organisation#Organisation>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/SOERKeyFact#SOERKeyFact>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/KeyMessage#KeyMessage>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/SOERMEssage#SOERMEssage>}"
+    
+    
+Used only for riverconfig_eea.europa.eu:
+
+    "{?resource a <http://www.eea.europa.eu/portal_types/Topic#Topic> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Collection#Collection> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/File#File>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Infographic#Infographic> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Sparql#Sparql> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Topic#Topic> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Collection#Collection> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Folder#Folder> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Fiche#Fiche> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Article#Article> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Dashboard#Dashboard> } UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Assessment#Assessment>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/CloudVideo#CloudVideo>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Data#Data>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/DavizVisualization#DavizVisualization>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Document#Document>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/EEAFigure#EEAFigure>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/EEAFigureFile#EEAFigureFile>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/EcoTip#EcoTip>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Event#Event>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/ExternalDataSpec#ExternalDataSpec>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/GIS%20Application#GISApplication>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Highlight#Highlight>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Image#Image>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/KeyMessage#KeyMessage>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Link#Link>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/MethodologyReference#MethodologyReference>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/PolicyDocumentReference#PolicyDocumentReference>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/PolicyQuestion#PolicyQuestion>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/PressRelease#PressRelease>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Promotion#Promotion>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/QuickEvent#QuickEvent>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/RationaleReference#RationaleReference>} UNION ",
+    "{?resource a <http://www.eea.europa.eu/portal_types/Report#Report>}"
+    
+    
+all clusters:
+
+            {
+                "id": "eea_reports",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeareports.json"
+            },
+            {
+                "id": "eea_daviz",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeadaviz.json"
+            },
+            {
+                "id": "eea_dataexternal",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeadata_external.json"
+            },
+            {
+                "id": "eea_data",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeadata.json"
+            },
+            {
+                "id": "eea_figures",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeafigures.json"
+            },
+            {
+                "id": "eea_content",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eea.europa.eu.json"
+            },
+            {
+                "id": "eea_vacancies",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeavacancies.json"
+            },
+            {
+                "id": "rod_instruments",
+                "cluster_name": "Eionet > reportnet",
+                "config_file": "riverconfig_instruments.json"
+            },
+            {
+                "id": "rod_obligations_expired",
+                "cluster_name": "Eionet > reportnet",
+                "config_file": "riverconfig_obligations_expired.json"
+            },
+            {
+                "id": "rod_obligations_active",
+                "cluster_name": "Eionet > reportnet",
+                "config_file": "riverconfig_obligations_active.json"
+            },
+            {
+                "id": "rod_clients",
+                "cluster_name": "Eionet > reportnet",
+                "config_file": "riverconfig_clients.json"
+            },
+            {
+                "id": "eea_organisations",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_organisations.json"
+            },
+            {
+                "id": "eea_messages",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_messages.json"
+            }

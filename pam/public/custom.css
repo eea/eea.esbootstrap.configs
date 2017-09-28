@@ -1,0 +1,18 @@
+a.details_link {
+    text-decoration:underline;
+}
+a.details_link:visited {
+    color: #346f83;
+}
+.eea-pam-element{
+  max-height:45px;
+  overflow:hidden;
+}
+
+.facetview_display_type, .facetview_orderby {
+    display: none;
+}
+
+#content {
+    background: #FFF none;
+}

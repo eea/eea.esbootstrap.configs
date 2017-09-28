@@ -1,0 +1,71 @@
+{
+    "Country" : {
+        "type" : "string",
+        "analyzer" : "coma"
+    },
+    "ID_of_policy_or_measure": {
+        "type" : "integer"
+    },
+    "Single_policy_or_measure__or_group_of_measures"  : {
+        "type" : "string",
+        "analyzer" : "none"
+    },
+    "Type_of_policy_instrument"  : {
+        "type" : "string",
+        "analyzer" : "coma"
+    },
+    "Status_of_implementation_clean"  : {
+        "type" : "string",
+        "analyzer" : "none"
+    },
+    "Impact_of_policy_or_measure___EU_ETS__outside_the_ETS___ESD___or_LULUCF_" : {
+        "type" : "string",
+        "analyzer" : "coma"
+    },
+    "Sector_s__affected"  : {
+        "type" : "string",
+        "analyzer" : "coma"
+    },
+    "Objective_s__lookup_only4facets"  : {
+        "type" : "string",
+        "analyzer" : "coma"
+    },
+    "Total_GHG_emissions_reductions_in_2020__kt_CO2_equivalent_per_year_"  : {
+        "type" : "double"
+    },
+    "Total_GHG_emissions_reductions_in_2030__kt_CO2_equivalent_per_year_"  : {
+        "type" : "double"
+    },
+    "Objective_s__lookup_only4facets" : {
+        "type" : "string",
+        "analyzer" : "coma"
+    },
+    "Entities_lookup_only4facets"  : {
+        "type" : "string",
+        "analyzer" : "coma"
+    },
+    "Implementation_period_start_clean"  : {
+        "type" : "string",
+        "analyzer" : "none"
+    },
+    "Is_the_policy_or_measure_related_to_a_Union_policy__clean"  : {
+        "type" : "string",
+        "analyzer" : "none"
+    },
+    "Union_policy_lookup_only4facets_clean" : {
+        "type" : "string",
+        "analyzer" : "semicolon"
+    },
+    "GHG_s__affected"  : {
+        "type" : "string",
+        "analyzer" : "coma"
+    },
+    "Projection_scenario_in_which_the_policy_or_measure_is_included_clean"  : {
+        "type" : "string",
+        "analyzer" : "none"
+    },
+    "Description__estimate__methodology" :{
+        "type" : "string",
+        "analyzer" : "none"
+    }
+}
