@@ -294,6 +294,10 @@ div#facetview_rightcol {
     min-width: 116px;
 }
 
+.facetview_display_type .eea-icon {
+    padding: 0.1em 0.5em;
+}
+
 @media screen and (max-width:480px) {
     .section-languages {
         width: 100%;
@@ -363,6 +367,10 @@ div#facetview_rightcol {
         line-height: 1.5;
     }
 
+    .facetview_top .filter-by {
+       margin: 0 0 2em 2em; 
+    }
+    
 }
 
 @media screen and (min-width: 768px) {
