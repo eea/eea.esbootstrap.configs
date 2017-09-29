@@ -216,7 +216,7 @@ div#facetview_rightcol {
     width: 50px;
     height: 33px;
     margin-right: 1em;
-    border: 1px solid gray;
+    border: 1px solid lightgray;
 }
 .section-pages {
     -webkit-flex-basis: 20%;
@@ -385,7 +385,7 @@ div#facetview_rightcol {
 
 @media screen and (min-width: 768px) {
     .site_bg {
-        top: 165px;
+        top: 160px;
     }
 }
 
