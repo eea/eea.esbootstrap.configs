@@ -37,7 +37,7 @@
     "landingpage_enabled": false,
     "enableBreadcrumbs": true,
     "breadcrumbs": "Countries and regions",
-    "es_debug_enabled": true,
+    "es_debug_enabled": false,
     "suggestions_enabled": true,
     "relevance_enabled": true,
     "external_configs": {
