@@ -88,3 +88,7 @@ div(class='section-capital')
     if external_config.capital
         span(class='capital')!=external_config.capital
 ```
+
+### Invalidate/refresh the EEA layout template
+
+In order to manually refresh the header and the footer of the EEA template you should call /invalidate_templates
