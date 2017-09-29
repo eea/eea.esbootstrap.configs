@@ -566,3 +566,9 @@ jQuery(document).ready(function($) {
 
 });
 
+jQuery(function($) {
+    $(".navbar-toggle").click(function(ev) { 
+        $(ev.target).toggleClass('collapsed');
+        $(".navbar-collapse").toggleClass('in');
+    })
+});

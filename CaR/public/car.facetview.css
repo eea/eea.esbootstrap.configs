@@ -352,6 +352,10 @@ div#facetview_rightcol {
     .eea-right-section-slider {
         display: none !important;
     }
+
+    #portal-top .eea-accordion-panels {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 620px) and (max-width: 767px) {
