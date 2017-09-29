@@ -81,6 +81,50 @@
                     "rule": "startsWith",
                     "operator": "",
                     "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#about",
+                    "value": "http://www.eea.europa.eu/help/glossary/",
+                    "thumb_template": {
+                        "template": "https://www.eea.europa.eu/portal_depiction/term/image_preview",
+                        "variables": [{
+                                "name": "url",
+                                "type" : "field",
+                                "field" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#about"
+                        }]
+                    },
+                    "icon_template": {
+                        "template": "https://www.eea.europa.eu/portal_depiction/term/image_thumb",
+                        "variables": [{
+                                "name": "url",
+                                "type" : "field",
+                                "field" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#about"
+                        }]
+                    }
+                },
+                {
+                    "rule": "contains",
+                    "operator": "",
+                    "field": "http://www.eea.europa.eu/ontologies.rdf#objectProvides",
+                    "value": "Country profile",
+                    "thumb_template": {
+                        "template": "https://www.eea.europa.eu/portal_depiction/country-profile/image_preview",
+                        "variables": [{
+                                "name": "url",
+                                "type" : "field",
+                                "field" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#about"
+                        }]
+                    },
+                    "icon_template": {
+                        "template": "https://www.eea.europa.eu/portal_depiction/country-profile/image_thumb",
+                        "variables": [{
+                                "name": "contentType",
+                                "type" : "variable",
+                                "variable" : "contentType"
+                        }]
+                    }
+                },
+                {
+                    "rule": "startsWith",
+                    "operator": "",
+                    "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#about",
                     "value": "http://www.eea.europa.eu",
                     "thumb_template": {
                         "template": "${url}/image_preview",
@@ -255,12 +299,12 @@
             "listing": {
                 "type": "date",
                 "format": "dd M yy",
-                "title": "Issued",
+                "title": "Published",
                 "visible" : true,
                 "pos" : 6
             },
             "csv_tsv": {
-                "title": "issued",
+                "title": "Published",
                 "visible": true,
                 "pos": 3
             },
@@ -285,12 +329,12 @@
         {
             "name": "http://purl.org/dc/terms/description",
             "listing": {
-                "title": "description",
+                "title": "Description",
                 "visible": true,
                 "pos": 2
             },
             "csv_tsv": {
-                "title": "description",
+                "title": "Description",
                 "visible": true,
                 "pos": 2
             },
@@ -426,12 +470,12 @@
                 "Congo","unknown","undefined","6","8","9","1"],
             "listing": {
                 "title": "Regions/Places/Cities/Seas...",
-                "visible" : true,
+                "visible" : false,
                 "pos" : 2
             },
             "csv_tsv": {
                 "title": "Regions/Places/Cities/Seas...",
-                "visible": true,
+                "visible": false,
                 "pos": 5
             },
             "details": {
@@ -566,7 +610,8 @@
                              "References and links",
                              "Environmental question",
                              "Reporting obligation",
-                             "Contract opportunity"
+                             "Contract opportunity",
+                             "Country profile"
                           ],
             "listing": {
                 "title": "Content types",
@@ -697,7 +742,9 @@
         {
             "name": "time_coverage",
             "listing": {
-                "visible": false
+                "title": "Time coverage",
+                "visible": true,
+                "pos": 11
             },
             "csv_tsv": {
                 "title": "Time coverage",

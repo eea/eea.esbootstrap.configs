@@ -271,6 +271,7 @@ function getSpatialFromUrl(){
 }
 
 function getUrl(options){
+    var today = getToday();
     var query =
         {"query":
             {"function_score":
@@ -285,24 +286,44 @@ function getUrl(options){
                                         {"or":
                                             [
                                                 {"missing":{"field":"http://purl.org/dc/terms/issued"}},
-                                                {"range":{"http://purl.org/dc/terms/issued":{"lte":"2017-09-12"}}}
+                                                {"range":{"http://purl.org/dc/terms/issued":{"lte":today}}}
                                             ]
                                         }
                                     }
                                 },
-                                {"term":{"language":"en"}},
+                                {'constant_score':{
+                                    'filter':{
+                                        "and":
+                                            [
+                                                {"not":
+                                                    {"term": {
+                                                            "cluster_id": "eea_organisations"
+                                                        }
+                                                    }
+                                                }
+/*                                                ,
+                                                {"not":
+                                                    {"term":
+                                                        {"cluster_id": "rod_clients"}
+                                                    }
+                                                }*/
+                                                // example how to exclude other documents
+                                            ]
+                                        }
+                                    }
+                                },
                                 {"constant_score":
                                     {"filter":
                                         {"or":
                                             [
                                                 {"missing":{"field":"http://purl.org/dc/terms/expires"}},
-                                                {"range":{"http://purl.org/dc/terms/expires":{"gte":"2017-09-12"}}}
+                                                {"range":{"http://purl.org/dc/terms/expires":{"gte":today}}}
                                             ]
                                         }
                                     }
                                 },
 /*                                {"range":{"items_count_http://purl.org/dc/terms/spatial":{"from":1,"to":1}}},*/ 
-                            ]
+                            ],
                         }
                     },
                 "filter":
@@ -314,15 +335,16 @@ function getUrl(options){
 /*                                        {"term":{"http://purl.org/dc/terms/spatial":"Albania"}}*/
                                     ]
                                 }
-                            },
+                            }
+/*                            ,
                             {"bool":
                                 {"should":
                                     [
-/*                                        {"term":{"http://www.eea.europa.eu/portal_types#topic":"Policy instruments"}},
-                                        {"term":{"http://www.eea.europa.eu/portal_types#topic":"Resource efficiency and waste"}}*/
+                                        {"term":{"http://www.eea.europa.eu/portal_types#topic":"Policy instruments"}},
+                                        {"term":{"http://www.eea.europa.eu/portal_types#topic":"Resource efficiency and waste"}}
                                     ]
                                 }
-                            }
+                            }*/
                         ]
                     }
                 }
@@ -352,6 +374,9 @@ function getUrl(options){
     if (href_parts.length > 1){
         var topics = decodeURIComponent(href_parts[1]).split(",");
         for (var i = 0; i < topics.length; i++){
+            if (query.query.function_score.filter.and[1] === undefined){
+                query.query.function_score.filter.and.push({'bool':{"should":[]}});
+            }
             var term_topic = {"term":{"http://www.eea.europa.eu/portal_types#topic":topics[i]}};
             query.query.function_score.filter.and[1].bool.should.push(term_topic);
         }
@@ -380,7 +405,11 @@ function setUrl(stateObj, page, url){
         var href_url = $(location).attr('href');
         topics_str = href_url.split("/")[href_url.split("/").length - 1].split("?")[0];
     }
-    window.history.pushState(stateObj, page, topics_str);
+
+    if ($('.facet-view-simple').facetview.options.last_topics_str !== topics_str){
+        $('.facet-view-simple').facetview.options.last_topics_str = topics_str;
+        window.history.pushState(stateObj, page, topics_str);
+    }
 }
 
 function update_results_count(){
@@ -423,7 +452,28 @@ jQuery(document).ready(function($) {
             {'range': {'http://purl.org/dc/terms/issued': {'lte': today}}}
           ]
         }}
-      }];
+      },
+      {'constant_score':{
+        'filter':{
+            "and":
+                [
+                    {"not":
+                        {"term":
+                            {"cluster_id": "eea_organisations"}
+                        }
+                    }
+/*                    ,
+                    {"not":
+                        {"term":
+                            {"cluster_id": "rod_clients"}
+                        }
+                    }*/
+                    // example how to exclude other documents
+                ]
+            }
+        }
+      }
+      ];
 
   predefined_filters_expired = [
       {'term': {'language':
@@ -479,6 +529,7 @@ jQuery(document).ready(function($) {
     permanent_filters: true,
     post_init_callback: function() {
       add_EEA_settings();
+      markNavigationTab(settings_selected_navigation_tab);
       replaceNumbers();
     },
     post_search_callback: function() {
@@ -492,6 +543,7 @@ jQuery(document).ready(function($) {
       mark_expired();
       mark_recent();
       update_results_count();
+      $("#car_facet").carFacet.loadValuesFromFacet();
     },
     linkify: false,
     paging: {

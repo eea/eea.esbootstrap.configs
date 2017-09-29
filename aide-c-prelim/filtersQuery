@@ -1,0 +1,24 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
+PREFIX obligation: <http://rod.eionet.europa.eu/obligations/>
+
+SELECT DISTINCT
+?envelope
+WHERE {{
+  SELECT DISTINCT
+    ?Country
+    YEAR(?startOfPeriod) as ?reportingYear
+    max(?released) as ?released
+  WHERE {
+    ?envelope rod:released ?released .
+    ?envelope rod:startOfPeriod ?startOfPeriod .
+    ?envelope rod:obligation ?obligation .
+    ?envelope rod:locality ?locality .
+    FILTER (?obligation = obligation:694) 
+    ?locality rod:localityName ?Country .
+  } GROUP BY ?Country YEAR(?startOfPeriod)
+}
+?envelope rod:released ?released .
+?envelope rdf:type rod:Delivery .
+}
+ORDER BY ?startOfPeriod ?Country
