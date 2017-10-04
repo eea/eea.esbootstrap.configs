@@ -38,6 +38,17 @@
   overflow: hidden;
 }
 
+.eea-tileHead {
+    position: relative;
+}
+
+.eea-tiles .eea-tileTypeHead {
+    display: block;
+    position: absolute;
+    top: 20%;
+    margin: 0;
+}
+
 #facetview_results td.ribbon-parent {
   height: 60px;
 }
@@ -205,7 +216,7 @@ div#facetview_rightcol {
     width: 50px;
     height: 33px;
     margin-right: 1em;
-    border: 1px solid gray;
+    border: 1px solid lightgray;
 }
 .section-pages {
     -webkit-flex-basis: 20%;
@@ -256,7 +267,6 @@ div#facetview_rightcol {
 }
 #content .eea-tileTypeHead {
     padding: 0.5em 1em;
-    margin-top: 3em;
 }
 .eea-tileTopics {
     font-weight: bold;
@@ -342,6 +352,10 @@ div#facetview_rightcol {
     .eea-right-section-slider {
         display: none !important;
     }
+
+    #portal-top .eea-accordion-panels {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 620px) and (max-width: 767px) {
@@ -375,7 +389,19 @@ div#facetview_rightcol {
 
 @media screen and (min-width: 768px) {
     .site_bg {
-        top: 165px;
+        top: 160px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 800px) {
+    /* temporary styles until we invalidate templates */
+    #secondary-portaltabs {
+        margin-left: 0;
+        overflow: hidden;
+        height: 50px;
+    }
+    #portaltab-europe a {
+        margin-top: 3px;
     }
 }
 
