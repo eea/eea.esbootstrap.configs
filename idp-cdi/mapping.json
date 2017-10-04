@@ -1,0 +1,14 @@
+{
+  "dataDescription": {
+    "type": "string",
+    "analyzer": "none"
+  },
+  "label": {
+    "type": "string",
+    "analyzer": "none"
+  },
+  "format": {
+    "type": "string",
+    "analyzer": "none"
+  }
+}

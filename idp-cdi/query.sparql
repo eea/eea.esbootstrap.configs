@@ -1,0 +1,138 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf-syntax: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX Specification: <http://www.eea.europa.eu/portal_types/Specification#>
+PREFIX Data: <http://www.eea.europa.eu/portal_types/Data#>
+PREFIX DataFileLink: <http://www.eea.europa.eu/portal_types/DataFileLink#>
+PREFIX portal_types: <http://www.eea.europa.eu/portal_types#>
+PREFIX Obligations: <http://www.eea.europa.eu/portal_types/Obligations#>
+PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
+PREFIX schema: <http://schema.org/>
+PREFIX sdi-internal: <http://rdfdata.eionet.europa.eu/sdi-internal/schema/>
+
+SELECT DISTINCT
+bif:concat( bif:substring( ?sdiTitle, 1, 18), '...') as ?label
+?sdiTitle as ?longName
+sql:GROUP_CONCAT_DISTINCT(?topicLabel,'|') as ?topics
+sql:GROUP_CONCAT_DISTINCT(?dpsirCategoryLabel,'|') as ?dpsir
+#'' as ?webmapViewer
+#'' as ?webmapService
+#'' as ?staticMapViewer
+#'' as ?interactiveDataViewer
+?sdiAbstracts as ?dataDescription
+?data as ?dataUrl
+bif:either(bound(?dataIsReplacedBy),'FALSE', 'TRUE') as ?dataLatestVersion
+sql:GROUP_CONCAT_DISTINCT(bif:either(bif:isnull(?isEEACore), 'FALSE', 'TRUE'),'|') as ?isCoreFlag
+sql:GROUP_CONCAT_DISTINCT(?specificationCodes,'|') as ?indicatorCodes
+sql:GROUP_CONCAT_DISTINCT(?specificationTitle ,'|') as ?indicatorTitle #group concat redundant
+sql:GROUP_CONCAT_DISTINCT(bif:either(bound(?specificationProductID), IRI(concat('https://www.eea.europa.eu/ds_resolveuid/', ?specificationProductID )),''),'|' ) as ?indicatorUrl
+sql:GROUP_CONCAT_DISTINCT(bif:either(bound(?specificationProductID),'TRUE', 'FALSE'),'|') as ?indicatorFlag
+sql:GROUP_CONCAT_DISTINCT(?instrumentLabel,'|') as ?legislativeInstrument
+sql:GROUP_CONCAT_DISTINCT(?instrumentUrl,'|') as ?legislativeInstrumentUrl
+sql:GROUP_CONCAT_DISTINCT(bif:either(bif:isnull(?instrumentLabel), 'FALSE', 'TRUE'),'|') as ?legislativeInstrumentFlag
+sql:GROUP_CONCAT_DISTINCT(?obligationsTitle,'|') as ?rod
+sql:GROUP_CONCAT_DISTINCT(?Obligations,'|') as ?rodUrl
+sql:GROUP_CONCAT_DISTINCT(bif:either(bif:isnull(?obligationsTitle), 'FALSE', 'TRUE'),'|') as ?rodFlag
+sql:GROUP_CONCAT_DISTINCT(bif:substring( ?eeaManagementPlan, 1, 8),'|') as ?managementPlan
+
+concat('http://sdi.eea.europa.eu/public/catalogue-graphic-overview/', ?sdiUuid, '.png') as ?thumbnailUrl
+
+?sdiCrs as ?crs
+substr(?sdiDatestamp, 1, 10) as ?publicationDate
+
+?sdiAbstract as ?abstract
+sql:GROUP_CONCAT_DISTINCT(?dataOwner,'|') as ?dataOwner
+?sdiCustodian as ?custodian
+?sdiInspireThemes as ?inspireThemes
+?sdiGemetConcepts as ?gemetConcepts
+?sdiStype as ?format
+?sdiDistributionFormat as ?distributionFormat
+?sdiLinks as ?dataLocation
+?sdiScaleres as ?spatialResolution
+sql:GROUP_CONCAT_DISTINCT(?temporalCoverage,'|') as ?temporalCoverage
+?sdiLineage as ?lineage
+concat('https://sdi.eea.europa.eu/internal-catalogue/srv/eng/catalog.search#/metadata/', ?sdiUuid) as ?sdiUrl
+xsd:integer(substr(?sdiTbegin, 1,4)) as ?tbegin
+xsd:integer(substr(?sdiTend, 1,4)) as ?tend
+#min(xsd:integer(?temporalCoverage)) as ?cmsTbegin
+#max(xsd:integer(?temporalCoverage)) as ?cmsTend
+bif:either((xsd:integer(substr(?sdiTend, 1,4)) - xsd:integer(substr(?sdiTbegin, 1,4)) +1 ) > 1, 'TRUE', 'FALSE') as ?timeSeriesAvailability
+?sdiPlace
+?sdiUseLimitation
+
+WHERE {
+  {
+  GRAPH <http://r.eionet.europa.eu/rdfdumps/cdi/sdi-internal.rdf.gz> 
+    {
+        ?sdiinternal sdi-internal:UUID ?sdiUuid .
+        OPTIONAL { ?sdiinternal sdi-internal:dataset_id ?sdiDatasetId } . 
+        OPTIONAL { ?sdiinternal sdi-internal:datestamp ?sdiDatestamp } .
+        OPTIONAL { ?sdiinternal sdi-internal:crs ?sdiCrs } .
+        OPTIONAL { ?sdiinternal sdi-internal:title ?sdiTitle } .
+        OPTIONAL { ?sdiinternal sdi-internal:abstracts ?sdiAbstracts } .
+        OPTIONAL { ?sdiinternal sdi-internal:places ?sdiPlaces } .
+        OPTIONAL { ?sdiinternal sdi-internal:WLON ?sdiWlon } .
+        OPTIONAL { ?sdiinternal sdi-internal:ELON ?sdiElon } .
+        OPTIONAL { ?sdiinternal sdi-internal:SLAT ?sdiSlat } .
+        OPTIONAL { ?sdiinternal sdi-internal:NLAT ?sdiNlat } .
+        OPTIONAL { ?sdiinternal sdi-internal:stype ?sdiStype } .  
+        OPTIONAL { ?sdiinternal sdi-internal:scaleres ?sdiScaleres } .
+        OPTIONAL { ?sdiinternal sdi-internal:tbegin ?sdiTbegin } .
+        OPTIONAL { ?sdiinternal sdi-internal:tend ?sdiTend } .
+        OPTIONAL { ?sdiinternal sdi-internal:edition ?sdiEdition } .
+        OPTIONAL { ?sdiinternal sdi-internal:custodian ?sdiCustodian } .
+        OPTIONAL { ?sdiinternal sdi-internal:inspire_themes ?sdiInspireThemes } . 
+        OPTIONAL { ?sdiinternal sdi-internal:gemet_concepts ?sdiGemetConcepts } .
+        OPTIONAL { ?sdiinternal sdi-internal:protocols ?sdiProtocols } .
+        OPTIONAL { ?sdiinternal sdi-internal:links ?sdiLinks } .
+        OPTIONAL { ?sdiinternal sdi-internal:lineage ?sdiLineage } .
+        OPTIONAL { ?sdiinternal sdi-internal:data_src ?sdiDataSrc } .      
+        OPTIONAL { ?sdiinternal sdi-internal:published ?sdiPublished } .
+        ?sdiinternal sdi-internal:SDIURL ?data .
+        OPTIONAL { ?sdiinternal sdi-internal:distributionFormat ?sdiDistributionFormat } .
+        OPTIONAL { ?sdiinternal sdi-internal:plcae ?sdiPlace } .
+        OPTIONAL { ?sdiinternal sdi-internal:useLimitation ?sdiUseLimitation } .
+      }
+    }
+
+   graph ?graph { ?data rdf-syntax:type Data:Data }  .
+      FILTER (str(?graph) = concat(str(?data), '/@@rdf') )
+   ?data dcterms:title ?dataTitle  .
+   OPTIONAL {   ?data dcterms:isReplacedBy ?dataIsReplacedBy } .
+   #?data dcterms:hasPart ?dataHasPart .
+   #?dataHasPart dcterms:hasPart ?hasPartHasPart .
+   #OPTIONAL {   ?hasPartHasPart DataFileLink:remoteUrl ?remoteUrl } .
+   ?data portal_types:topic ?topic .
+   ?topic rdfs:label ?topicLabel .
+   #OPTIONAL {   ?data dcterms:description ?dataDescription } .
+   ?data schema:productID ?productID .
+   ?data Data:eeaManagementPlan ?eeaManagementPlan .
+   OPTIONAL { ?data Data:temporalCoverage ?temporalCoverage } .
+
+  OPTIONAL { 
+             ?data Obligations:Obligations ?Obligations .
+             ?Obligations rdfs:label ?obligationsTitle .
+             FILTER (!contains(?obligationsTitle, '['))
+             ?Obligations rod:dpsirCategory ?dpsirCategory .
+             ?dpsirCategory rdfs:label ?dpsirCategoryLabel . 
+             ?Obligations rod:instrument ?instrument .
+             ?instrument rdfs:label ?instrumentLabel .
+             ?instrument rod:instrumentURL ?instrumentUrl .
+             ?Obligations rod:isEEACore ?isEEACore .
+           }
+
+  OPTIONAL {
+             ?specification Specification:relatedItems ?data .
+             ?specification rdf-syntax:type Specification:Specification .
+             ?specification schema:productID ?specificationProductID .
+             ?specification dcterms:isReplacedBy ?specificationIsReplacedBy .
+             #FILTER (!BOUND( ?specificationIsReplacedBy))
+             ?specification dcterms:title ?specificationTitle .
+             ?specification Specification:relatedItems ?specificationRelatedItems .
+             ?specification Specification:codes ?specificationCodes . 
+             ?specificationRelatedItems rdf-syntax:type Data:Data .
+             ?specificationRelatedItems schema:productID ?dataProductID .
+           }
+
+
+}

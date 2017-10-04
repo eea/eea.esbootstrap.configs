@@ -1,0 +1,99 @@
+{
+    "details_settings" : {
+        "sections": [
+            {"name":"info",
+             "title":"General info",
+             "pos":0}
+        ]
+    },
+    "fields_mapping": [
+        {
+            "name": "_id",
+            "listing": {
+                "title": "ID",
+                "visible" : true,
+                "pos" : 0,
+                "display": {
+                    "pre": "<a href=/details?id=",
+                    "field": "_id",
+                    "post": ">"
+                }
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
+            }
+        },
+        {
+            "name": "label",
+            "listing": {
+                "title": "Label",
+                "visible" : true,
+                "pos" : 1,
+                "display": {
+                    "pre": "",
+                    "field": "title",
+                    "post": "</td>"
+                }
+            },
+            "details": {
+                "title": "Label",
+                "pos" : 0,
+                "section": "info",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Label",
+                "visible": true,
+                "pos": 1
+            }
+        },
+        {
+            "name": "format",
+            "details": {
+                "title": "Format",
+                "pos" : 0,
+                "section": "info",
+                "visible": true
+            },
+            "facet": {
+                "visible": true
+            },
+            "csv_tsv": {
+                "title": "Format",
+                "visible": true,
+                "pos": 1
+            }
+        },
+        {
+            "name": "dataDescription",
+            "listing": {
+                "title": "Description",
+                "visible" : true,
+                "pos" : 2
+            },
+            "details": {
+                "title": "Description",
+                "pos" : 2,
+                "section": "info",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Description",
+                "visible": true,
+                "pos": 2
+            }
+        }
+    ]
+}
