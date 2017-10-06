@@ -1,1 +1,7 @@
 /* Add custom css here */
+
+.tileImage, #content a.tileImage {
+    float: left;
+    margin: 1em 1em 1em 0;
+    width: 25%;
+}

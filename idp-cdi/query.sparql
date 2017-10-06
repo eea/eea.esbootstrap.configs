@@ -11,10 +11,11 @@ PREFIX schema: <http://schema.org/>
 PREFIX sdi-internal: <http://rdfdata.eionet.europa.eu/sdi-internal/schema/>
 
 SELECT DISTINCT
+REPLACE(STR(?sdiTitle), "[^a-zA-Z0-9]", "-", "i") AS ?_id
 bif:concat( bif:substring( ?sdiTitle, 1, 18), '...') as ?label
 ?sdiTitle as ?longName
-sql:GROUP_CONCAT_DISTINCT(?topicLabel,'|') as ?topics
-sql:GROUP_CONCAT_DISTINCT(?dpsirCategoryLabel,'|') as ?dpsir
+sql:GROUP_CONCAT_DISTINCT(?topicLabel,', ') as ?topics
+sql:GROUP_CONCAT_DISTINCT(?dpsirCategoryLabel,', ') as ?dpsir
 #'' as ?webmapViewer
 #'' as ?webmapService
 #'' as ?staticMapViewer
@@ -22,18 +23,18 @@ sql:GROUP_CONCAT_DISTINCT(?dpsirCategoryLabel,'|') as ?dpsir
 ?sdiAbstracts as ?dataDescription
 ?data as ?dataUrl
 bif:either(bound(?dataIsReplacedBy),'FALSE', 'TRUE') as ?dataLatestVersion
-sql:GROUP_CONCAT_DISTINCT(bif:either(bif:isnull(?isEEACore), 'FALSE', 'TRUE'),'|') as ?isCoreFlag
-sql:GROUP_CONCAT_DISTINCT(?specificationCodes,'|') as ?indicatorCodes
-sql:GROUP_CONCAT_DISTINCT(?specificationTitle ,'|') as ?indicatorTitle #group concat redundant
-sql:GROUP_CONCAT_DISTINCT(bif:either(bound(?specificationProductID), IRI(concat('https://www.eea.europa.eu/ds_resolveuid/', ?specificationProductID )),''),'|' ) as ?indicatorUrl
-sql:GROUP_CONCAT_DISTINCT(bif:either(bound(?specificationProductID),'TRUE', 'FALSE'),'|') as ?indicatorFlag
-sql:GROUP_CONCAT_DISTINCT(?instrumentLabel,'|') as ?legislativeInstrument
-sql:GROUP_CONCAT_DISTINCT(?instrumentUrl,'|') as ?legislativeInstrumentUrl
-sql:GROUP_CONCAT_DISTINCT(bif:either(bif:isnull(?instrumentLabel), 'FALSE', 'TRUE'),'|') as ?legislativeInstrumentFlag
-sql:GROUP_CONCAT_DISTINCT(?obligationsTitle,'|') as ?rod
-sql:GROUP_CONCAT_DISTINCT(?Obligations,'|') as ?rodUrl
-sql:GROUP_CONCAT_DISTINCT(bif:either(bif:isnull(?obligationsTitle), 'FALSE', 'TRUE'),'|') as ?rodFlag
-sql:GROUP_CONCAT_DISTINCT(bif:substring( ?eeaManagementPlan, 1, 8),'|') as ?managementPlan
+sql:GROUP_CONCAT_DISTINCT(bif:either(bif:isnull(?isEEACore), 'FALSE', 'TRUE'),', ') as ?isCoreFlag
+sql:GROUP_CONCAT_DISTINCT(?specificationCodes,', ') as ?indicatorCodes
+sql:GROUP_CONCAT_DISTINCT(?specificationTitle ,', ') as ?indicatorTitle #group concat redundant
+sql:GROUP_CONCAT_DISTINCT(bif:either(bound(?specificationProductID), IRI(concat('https://www.eea.europa.eu/ds_resolveuid/', ?specificationProductID )),''),', ' ) as ?indicatorUrl
+sql:GROUP_CONCAT_DISTINCT(bif:either(bound(?specificationProductID),'TRUE', 'FALSE'),', ') as ?indicatorFlag
+sql:GROUP_CONCAT_DISTINCT(?instrumentLabel,', ') as ?legislativeInstrument
+sql:GROUP_CONCAT_DISTINCT(?instrumentUrl,', ') as ?legislativeInstrumentUrl
+sql:GROUP_CONCAT_DISTINCT(bif:either(bif:isnull(?instrumentLabel), 'FALSE', 'TRUE'),', ') as ?legislativeInstrumentFlag
+sql:GROUP_CONCAT_DISTINCT(?obligationsTitle,', ') as ?rod
+sql:GROUP_CONCAT_DISTINCT(?Obligations,', ') as ?rodUrl
+sql:GROUP_CONCAT_DISTINCT(bif:either(bif:isnull(?obligationsTitle), 'FALSE', 'TRUE'),', ') as ?rodFlag
+sql:GROUP_CONCAT_DISTINCT(bif:substring( ?eeaManagementPlan, 1, 8),', ') as ?managementPlan
 
 concat('http://sdi.eea.europa.eu/public/catalogue-graphic-overview/', ?sdiUuid, '.png') as ?thumbnailUrl
 
@@ -41,15 +42,15 @@ concat('http://sdi.eea.europa.eu/public/catalogue-graphic-overview/', ?sdiUuid, 
 substr(?sdiDatestamp, 1, 10) as ?publicationDate
 
 ?sdiAbstract as ?abstract
-sql:GROUP_CONCAT_DISTINCT(?dataOwner,'|') as ?dataOwner
+sql:GROUP_CONCAT_DISTINCT(?dataOwner,', ') as ?dataOwner
 ?sdiCustodian as ?custodian
-?sdiInspireThemes as ?inspireThemes
+REPLACE(STR(?sdiInspireThemes), "\\|", ", ", "i") as ?inspireThemes
 ?sdiGemetConcepts as ?gemetConcepts
 ?sdiStype as ?format
-?sdiDistributionFormat as ?distributionFormat
+REPLACE(STR(?sdiDistributionFormat), "\\|", ", ", "i") as ?distributionFormat
 ?sdiLinks as ?dataLocation
 ?sdiScaleres as ?spatialResolution
-sql:GROUP_CONCAT_DISTINCT(?temporalCoverage,'|') as ?temporalCoverage
+sql:GROUP_CONCAT_DISTINCT(?temporalCoverage,', ') as ?temporalCoverage
 ?sdiLineage as ?lineage
 concat('https://sdi.eea.europa.eu/internal-catalogue/srv/eng/catalog.search#/metadata/', ?sdiUuid) as ?sdiUrl
 xsd:integer(substr(?sdiTbegin, 1,4)) as ?tbegin
