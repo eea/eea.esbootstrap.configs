@@ -1,6 +1,7 @@
 /* global $, jQuery, window, location, eea_mapping, simple_value, simpleValue,
    document, get_image, settings_default_external_configs, settings_external_configs,
     getToday, eea_facetview */
+// car.facetview.js
 var blackList = {
   'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' : []};
 
