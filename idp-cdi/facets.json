@@ -1,20 +1,91 @@
-{
+{   
+    "display_images": false,
+    "search_sortby": [
+        {
+            "field": "longName",
+            "display_asc": "Title a-z",
+            "display_desc": "Title z-a"
+        },
+        {
+            "field": "publicationDate",
+            "display_asc": "Oldest",
+            "display_desc": "Newest"
+        }
+    ],
+    "sort": [
+        {"publicationDate": {"order": "desc"}}
+    ],
+    "display_options": ["tabular", "card", "list"],
     "details_settings" : {
         "sections": [
             {"name":"info",
              "title":"General info",
-             "pos":0}
+             "pos":0},
+            {"name":"created",
+             "title":"Created",
+             "pos":1}
         ]
+    },
+    "highlights": {
+        "enabled": true,
+        "whitelist": [
+            "longName",
+            "dataDescription"
+            ],
+        "blacklist": []
     },
     "fields_mapping": [
         {
-            "name": "_id",
+            "name": "thumbnailUrl",
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "thumbnailUrl",
+                "visible": true,
+                "pos": 4
+            },            
+            "card": {
+                "field": "thumbUrl",
+                "default": "",
+                "visible": true,
+                "type" : "simple"
+            },
+            "list": {
+                "field": "thumbUrl",
+                "default": "",
+                "visible": true,
+                "type" : "simple"
+            },
             "listing": {
-                "title": "ID",
+                "title": "Preview",
                 "visible" : true,
+                "width": "200px", 
                 "pos" : 0,
                 "display": {
-                    "pre": "<a href=/details?id=",
+                    "pre": "<img class='listingThumb' src='",
+                    "field": "thumbnailUrl",
+                    "post": "'/>"
+                }
+            },
+            "details": {
+                "title": "Thumbnail",
+                "pos" : 10,
+                "section": "info",
+                "visible": true,
+                "type": "img"
+            }
+
+        },
+        {
+            "name": "_id",
+            "listing": {
+                "title": "Title",
+                "width": "200px",  
+                "visible" : true,
+                "pos" : 1,
+                "display": {
+                    "pre": "<td><a class='listingTitle' href=/details?id=",
                     "field": "_id",
                     "post": ">"
                 }
@@ -27,31 +98,54 @@
             },
             "csv_tsv": {
                 "visible": false
+            },
+            "card": {
+                "field": "id",
+                "default": "",
+                "visible": true,
+                "type" : "simple"
+            },
+            "list": {
+                "field": "id",
+                "default": "",
+                "visible": true,
+                "simple" : true
             }
         },
         {
-            "name": "label",
+            "name": "longName",
             "listing": {
-                "title": "Label",
+                "title": "",
                 "visible" : true,
-                "pos" : 1,
+                "pos" : 2,
                 "display": {
-                    "pre": "",
-                    "field": "title",
-                    "post": "</td>"
+                    "field": "longName",
+                    "post": "</a></td>"
                 }
             },
+            "list": {
+                "field": "title",
+                "default": "",
+                "visible": true,
+                "simple" : true
+            },
             "details": {
-                "title": "Label",
+                "title": "Title",
                 "pos" : 0,
                 "section": "info",
                 "visible": true
+            },
+            "card": {
+                "field": "title",
+                "default": "",
+                "visible": true,
+                "type" : "simple"
             },
             "facet": {
                 "visible": false
             },
             "csv_tsv": {
-                "title": "Label",
+                "title": "Title",
                 "visible": true,
                 "pos": 1
             }
@@ -65,7 +159,8 @@
                 "visible": true
             },
             "facet": {
-                "visible": true
+                "visible": true,
+                "facet_display_options": ["sort", "checkbox"]
             },
             "csv_tsv": {
                 "title": "Format",
@@ -74,11 +169,59 @@
             }
         },
         {
+            "name": "distributionFormat",
+            "details": {
+                "title": "Distribution Format",
+                "pos" : 2,
+                "section": "info",
+                "visible": true
+            },
+            "facet": {
+                "visible": true,
+                "facet_display_options": ["sort", "checkbox"]
+            },
+            "csv_tsv": {
+                "title": "Distribution Format",
+                "visible": true,
+                "pos": 2
+            }
+        },
+        {
+            "name": "inspireThemes",
+            "details": {
+                "title": "Inspire Themes",
+                "pos" : 3,
+                "section": "info",
+                "visible": true
+            },
+            "card": {
+                "field": "topics",
+                "default": "",
+                "visible": true,
+                "type" : "simple"
+            },
+            "facet": {
+                "visible": true,
+                "facet_display_options": ["sort", "checkbox"]
+            },
+            "csv_tsv": {
+                "title": "Inspire Themes",
+                "visible": true,
+                "pos": 3
+            }
+        },
+        {
             "name": "dataDescription",
             "listing": {
                 "title": "Description",
                 "visible" : true,
-                "pos" : 2
+                "pos" : 3
+            },
+            "list": {
+                "field": "description",
+                "default": "",
+                "visible": true,
+                "type" : "simple"
             },
             "details": {
                 "title": "Description",
@@ -89,10 +232,77 @@
             "facet": {
                 "visible": false
             },
+            "card": {
+                "field": "description",
+                "default": "",
+                "visible": true,
+                "type" : "simple"
+            },
             "csv_tsv": {
                 "title": "Description",
                 "visible": true,
                 "pos": 2
+            }
+        },
+        {
+            "name": "publicationDate",
+            "listing": {
+                "title": "Publication Date",
+                "visible" : true,
+                "pos" : 4
+            },
+            "list": {
+                "type": "date",
+                "format": "dd M yy",
+                "field": "date",
+                "default": "",
+                "visible": true
+            },
+            "details": {
+                "title": "Publication Date",
+                "pos" : 2,
+                "section": "info",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "card": {
+                "field": "date",
+                "default": "",
+                "visible": true,
+                "type" : "simple"
+            },
+            "csv_tsv": {
+                "title": "Publication Date",
+                "visible": true,
+                "pos": 2
+            }
+        },
+        {
+            "name": "sdiUrl",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "url",
+                "visible": true,
+                "pos": 10
+            },
+            "details": {
+                "visible": false
+            },
+            "card": {
+                "field": "url",
+                "default": "",
+                "visible": true,
+                "type": "simple"
+            },
+            "list": {
+                "field": "url",
+                "default": "",
+                "visible": true,
+                "type": "simple"
             }
         }
     ]
