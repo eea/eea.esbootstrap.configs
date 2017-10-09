@@ -37,8 +37,7 @@ html
             != mapping
 
     if renderJs 
-        != renderJs('esbootstrap')
-        != renderJs()
+        != renderJs('layout_page')
     else 
         script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/dist/libs/jquery.js")
         script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/dist/jstree.js")
@@ -60,7 +59,7 @@ html
         link(rel="stylesheet", href="esbootstrap_resources/facetview/css/style.css")
 
     if renderStyles
-        != renderStyles()
+        != renderStyles('layout_page')
     else
         link(rel="stylesheet", href="esbootstrap_resources/facetview/css/facetview.css")
         link(rel="stylesheet", href="esbootstrap_resources/css/style.css")
