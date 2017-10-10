@@ -566,6 +566,10 @@ jQuery(document).ready(function($) {
 
 });
 
+var $site_bg_img = $(".site_bg_img");
+var url = $site_bg_img.attr('data-src');
+$site_bg_img.attr('src', url);
+
 jQuery(function($) {
     $(".navbar-toggle").click(function(ev) { 
         $(ev.target).toggleClass('collapsed');
