@@ -319,6 +319,9 @@ div#facetview_rightcol {
     .site_bg {
         display: none;
     }
+    .site_bg_img {
+        display: none;
+    }
    .content .page-header {
         margin-top: 90px;
     }

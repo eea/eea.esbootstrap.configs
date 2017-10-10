@@ -36,37 +36,27 @@ html
         script
             != mapping
 
-    script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/dist/libs/jquery.js")
-    script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.js")
-    script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/dist/jstree.js")
-    if settings_es_debug_enabled.indexOf('false') === -1
-        script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.js")
-    script(type="text/javascript" src="esbootstrap_resources/facetview/jquery.facetview.js")
-    script(type="text/javascript" src="esbootstrap_resources/facetview/facetviewhelpers.js")
-    script(type="text/javascript", src="https://www.eea.europa.eu/++resource++plone.app.jquerytools.tooltip.js")
-    script(type="text/javascript", src="https://www.eea.europa.eu/eea-tooltips.js")
-    script(type="text/javascript" src="esbootstrap_resources/javascripts/main.js")
-    block extrajavascripts
-
-
-
     != templateRender(headFile)
 
-    if settings_es_debug_enabled.indexOf('false') === -1
-        link(rel="stylesheet", href="esbootstrap_resources/facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.css")
-        link(rel="stylesheet", href="esbootstrap_resources/facetview/vendor/dist/themes/default/style.min.css")
-        link(rel="stylesheet", href="esbootstrap_resources/facetview/css/style.css")
-
-    link(rel="stylesheet", href="esbootstrap_resources/facetview/css/facetview.css")
-    link(rel="stylesheet", href="esbootstrap_resources/css/style.css")
-    link(rel="stylesheet", href="esbootstrap_resources/css/tiles.css")
+    if renderStyles
+        != renderStyles('layout_page')
+    else
+        each style in css_resources.layout_page
+            link(rel='stylesheet', href=style)
     block extrastyles
+
+
+
+
+    if settings_es_debug_enabled.indexOf('false') === -1
+        each style in css_resources.debug_styles
+            link(rel='stylesheet', href=style)
 
     body
         != templateRender(headerFile)
         div(class="site_bg")
             - var bg_url = external_config.bg_url;
-            img(class="site_bg_img" src=bg_url)
+            img(class="site_bg_img" data-src=bg_url)
         div(id="portal-columns")
             div(class="container")
                 div(class="content" id="content")
@@ -90,4 +80,17 @@ html
 
     != templateRender(footerFile)
 
+    if renderJs 
+        != renderJs('layout_page')
+    else 
+        each script in js_resources.layout_page
+            script(type='text/javascript', src=script)
+        if settings_es_debug_enabled.indexOf('false') === -1
+            each script in js_resources.debug_javascripts
+                script(type='text/javascript', src=script)
+
+    script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.js")
+
+    script(type="text/javascript", src="https://www.eea.europa.eu/external_templates_scripts.js")
+    block extrajavascripts
 

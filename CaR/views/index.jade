@@ -2,13 +2,20 @@ block title
     title!= external_config.title + " — " + head_title
 
 block extrajavascripts
-    each script in js_resources.index_page
-        script(type='text/javascript', src=script)
+    if (js_resources.index_page)
+        if renderJs
+            != renderJs('index_page')
+        else
+            each script in js_resources.index_page
+                script(type='text/javascript', src=script)
 
 block extrastyles
     if (css_resources.index_page)
-      each style in css_resources.index_page
-          link(rel='stylesheet', href=style)
+        if renderStyles
+            != renderStyles('index_page')
+        else
+            each style in css_resources.index_page
+                link(rel='stylesheet', href=style)
 
 block content
     div(class="page-header")
