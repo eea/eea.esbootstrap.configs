@@ -16,3 +16,5 @@
         customPostSearchFunction();
   });
 */
+
+window.esbootstrap_options = {paging : {from:0, size:12}}

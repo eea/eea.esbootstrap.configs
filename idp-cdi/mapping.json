@@ -34,5 +34,37 @@
   "inspireThemes": {
     "type": "string",
     "analyzer": "coma"
+  },
+  "topics": {
+    "type": "string",
+    "analyzer": "coma"
+  },
+  "dataLatestVersion": {
+    "type": "string",
+    "analyzer": "none"
+  },
+  "isCoreFlag": {
+    "type": "string",
+    "analyzer": "none"
+  },
+  "indicatorCodes": {
+    "type": "string",
+    "analyzer": "coma"
+  },
+  "indicatorFlag": {
+    "type": "string",
+    "analyzer": "none"
+  },
+  "legislativeInstrument": {
+    "type": "string",
+    "analyzer": "none"
+  },
+  "rod": {
+    "type": "string",
+    "analyzer": "none"
+  },
+  "managementPlan": {
+    "type": "string",
+    "analyzer": "none"
   }
 }

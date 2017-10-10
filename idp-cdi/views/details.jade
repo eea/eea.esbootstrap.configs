@@ -1,6 +1,6 @@
 block title
     if (data)
-        title= "Info for " + data.longName.value
+        title= data.longName.value + "IDP-CDI - European Environment Agency"
     else
         title= "Missing Info"
 
@@ -17,7 +17,8 @@ block content
         if (enableBreadcrumbs)
             +portal_breadcrumbs (breadcrumbs, data.longName.value)
 
-        +detail_tables (sections, data)
+        h1= data.longName.value
+        +detail_tables (sections, data, "")
     else
         +app_error("Data with ID: ", id)
 

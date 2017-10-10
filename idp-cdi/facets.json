@@ -19,11 +19,8 @@
     "details_settings" : {
         "sections": [
             {"name":"info",
-             "title":"General info",
-             "pos":0},
-            {"name":"created",
-             "title":"Created",
-             "pos":1}
+             "title":"",
+             "pos":0}
         ]
     },
     "highlights": {
@@ -69,13 +66,12 @@
                 }
             },
             "details": {
-                "title": "Thumbnail",
-                "pos" : 10,
+                "title": "Preview",
+                "pos" : 4,
                 "section": "info",
                 "visible": true,
                 "type": "img"
             }
-
         },
         {
             "name": "_id",
@@ -211,6 +207,24 @@
             }
         },
         {
+            "name": "topics",
+            "details": {
+                "title": "EEA topics",
+                "pos" : 3,
+                "section": "info",
+                "visible": true
+            },
+            "facet": {
+                "visible": true,
+                "facet_display_options": ["sort", "checkbox"]
+            },
+            "csv_tsv": {
+                "title": "EEA Topics",
+                "visible": true,
+                "pos": 3
+            }
+        },
+        {
             "name": "dataDescription",
             "listing": {
                 "title": "Description",
@@ -281,16 +295,22 @@
         },
         {
             "name": "sdiUrl",
+            "is_link": true,
+            "link_for": "sdiUrl",
             "listing": {
                 "visible": false
             },
             "csv_tsv": {
-                "title": "url",
+                "title": "SDI url",
                 "visible": true,
                 "pos": 10
             },
             "details": {
-                "visible": false
+                "title": "SDI url",
+                "pos" : 5,
+                "type": "link",
+                "section": "info",
+                "visible": true
             },
             "card": {
                 "field": "url",
@@ -303,6 +323,252 @@
                 "default": "",
                 "visible": true,
                 "type": "simple"
+            }
+        },
+        {
+            "name": "dataUrl",
+            "is_link": true,
+            "link_for": "dataUrl",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Data url",
+                "visible": true,
+                "pos": 10
+            },
+            "details": {
+                "title": "Data url",
+                "pos" : 5,
+                "type": "link",
+                "section": "info",
+                "visible": true
+            }
+        },        
+        {
+            "name": "dataLatestVersion",
+            "listing": {
+                "title": "Latest version",
+                "visible" : true,
+                "pos" : 6
+            },
+            "details": {
+                "title": "Latest version",
+                "pos" : 6,
+                "section": "info",
+                "visible": true
+            },
+            "facet": {
+                "visible": true,
+                "facet_display_options": ["checkbox"]
+            },
+            "csv_tsv": {
+                "title": "Latest version",
+                "visible": true,
+                "pos": 6
+            }
+        },        
+        {
+            "name": "isCoreFlag",
+            "listing": {
+                "title": "Core data flow",
+                "visible" : true,
+                "pos" : 7
+            },
+            "details": {
+                "title": "Core data flow",
+                "pos" : 7,
+                "section": "info",
+                "visible": true
+            },
+            "facet": {
+                "visible": true,
+                "facet_display_options": ["checkbox"]
+            },
+            "csv_tsv": {
+                "title": "Core data flow",
+                "visible": true,
+                "pos": 7
+            }
+        },
+        {
+            "name": "indicatorCodes",
+            "listing": {
+                "title": "Used in indcators",
+                "visible" : true,
+                "pos" : 8
+            },
+            "details": {
+                "title": "Used in ndicators (codes)",
+                "pos" : 8,
+                "section": "info",
+                "visible": true
+            },
+            "facet": {
+                "title": "Used in indicators",
+                "visible": true,
+                "facet_display_options": ["checkbox"]
+            },
+            "csv_tsv": {
+                "title": "Used in indcators",
+                "visible": true,
+                "pos": 8
+            }
+        },
+        {
+            "name": "indicatorTitle",
+            "details": {
+                "title": "Used in indicators (titles)",
+                "pos" : 9,
+                "section": "info",
+                "visible": true
+            },
+            "csv_tsv": {
+                "title": "Used in indicators (titles)",
+                "visible": true,
+                "pos": 9
+            }
+        },
+        {
+            "name": "indicatorUrl",
+            "is_link": true,
+            "link_for": "indicatorTitle",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Indicator url",
+                "visible": true,
+                "pos": 10
+            }
+        },        
+        {
+            "name": "indicatorFlag",
+            "facet": {
+                "visible": true,
+                "facet_display_options": ["checkbox"]
+            },
+            "csv_tsv": {
+                "title": "Used in indicators flag",
+                "visible": true,
+                "pos": 11
+            },
+            "details": {
+                "title": "Used in indicators flag",
+                "pos" : 11,
+                "section": "info",
+                "visible": true
+            }
+        },
+        {
+            "name": "legislativeInstrument",
+            "listing": {
+                "title": "Legislative instrument",
+                "visible" : true,
+                "pos" : 12
+            },
+            "details": {
+                "title": "Legislative instrument",
+                "pos" : 12,
+                "section": "info",
+                "visible": true
+            },
+            "facet": {
+                "visible": true,
+                "facet_display_options": ["checkbox"]
+            },
+            "csv_tsv": {
+                "title": "Legislative instrument",
+                "visible": true,
+                "pos": 12
+            }
+        },
+        {
+            "name": "legislativeInstrumentUrl",
+            "is_link": true,
+            "link_for": "legislativeInstrument",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Legislative instrument url",
+                "visible": true,
+                "pos": 13
+            },
+            "details": {
+                "title": "Legislative instrument url",
+                "pos" : 13,
+                "type": "link",
+                "section": "info",
+                "visible": true
+            }
+        },
+        {
+            "name": "rod",
+            "listing": {
+                "title": "Eionet Reporting obligation",
+                "visible" : true,
+                "pos" : 14
+            },
+            "details": {
+                "title": "Eionet Reporting obligation",
+                "pos" : 14,
+                "section": "info",
+                "visible": true
+            },
+            "facet": {
+                "title": "Eionet Reporting obligation",
+                "visible": true,
+                "facet_display_options": ["checkbox"]
+            },
+            "csv_tsv": {
+                "title": "Eionet Reporting obligation",
+                "visible": true,
+                "pos": 14
+            }
+        },
+        {
+            "name": "rodUrl",
+            "is_link": true,
+            "link_for": "rod",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Eionet Reporting obligation url",
+                "visible": true,
+                "pos": 15
+            },
+            "details": {
+                "title": "Eionet Reporting obligation url",
+                "pos" : 15,
+                "type": "link",
+                "section": "info",
+                "visible": true
+            }
+        },
+        {
+            "name": "managementPlan",
+            "listing": {
+                "title": "EEA Management Plan",
+                "visible" : true,
+                "pos" : 16
+            },
+            "details": {
+                "title": "EEA Management Plan",
+                "pos" : 16,
+                "section": "info",
+                "visible": true
+            },
+            "facet": {
+                "title": "EEA Management Plan",
+                "visible": true,
+                "facet_display_options": ["sort","checkbox"]
+            },
+            "csv_tsv": {
+                "title": "EEA Management Plan",
+                "visible": true,
+                "pos": 16
             }
         }
     ]

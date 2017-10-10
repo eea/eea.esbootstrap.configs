@@ -13,3 +13,17 @@
 .description {
     font-size: 1.1em;
 }
+
+/* START details page style */
+.simple-value {
+    float: left;
+    padding-left: 6px;
+    font-size: 1.4em;
+}
+
+#content .item_detail_table th {
+    text-align: left;
+    font-size: 1.4em;
+}
+
+/* END details page style */
