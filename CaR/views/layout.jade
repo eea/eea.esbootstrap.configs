@@ -41,21 +41,17 @@ html
     if renderStyles
         != renderStyles('layout_page')
     else
-        link(rel="stylesheet", href="esbootstrap_resources/facetview/css/facetview.css")
-        link(rel="stylesheet", href="esbootstrap_resources/css/style.css")
-        link(rel="stylesheet", href="esbootstrap_resources/css/tiles.css")
+        each style in css_resources.layout_page
+            link(rel='stylesheet', href=style)
     block extrastyles
 
     if renderJs 
         != renderJs('layout_page')
     else 
-        script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/dist/libs/jquery.js")
-        script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/dist/jstree.js")
+        each script in js_resources.layout_page
+            script(type='text/javascript', src=script)
         if settings_es_debug_enabled.indexOf('false') === -1
             script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.js")
-        script(type="text/javascript" src="esbootstrap_resources/facetview/jquery.facetview.js")
-        script(type="text/javascript" src="esbootstrap_resources/facetview/facetviewhelpers.js")
-        script(type="text/javascript" src="esbootstrap_resources/javascripts/main.js")
 
     script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.js")
 
