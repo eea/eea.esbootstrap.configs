@@ -17,13 +17,11 @@
     "layout_vars": {
         "head_title": "Countries and regions — European Environment Agency (EEA)",
         "css_resources": {
-            "index_page": [
-                "app_resources/car.facetview.css"
-            ],
             "layout_page": [
                "esbootstrap_resources/facetview/css/facetview.css",
                "esbootstrap_resources/css/style.css",
-               "esbootstrap_resources/css/tiles.css"
+               "esbootstrap_resources/css/tiles.css",
+               "app_resources/car.facetview.css"
             ],
             "debug_styles": [
                "esbootstrap_resources/facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.css",
@@ -32,16 +30,14 @@
             ]
         },
         "js_resources": {
-            "index_page": [
-                "app_resources/car.facetview.js",
-                "app_resources/car.facet.js"
-            ],
             "layout_page": [
                 "esbootstrap_resources/facetview/vendor/dist/libs/jquery.js",
                 "esbootstrap_resources/facetview/vendor/dist/jstree.js",
                 "esbootstrap_resources/facetview/jquery.facetview.js",
                 "esbootstrap_resources/facetview/facetviewhelpers.js",
-                "esbootstrap_resources/javascripts/main.js"
+                "esbootstrap_resources/javascripts/main.js",
+                "app_resources/car.facetview.js",
+                "app_resources/car.facet.js"
                 ],
             "debug_javascripts": [
                 "esbootstrap_resources/facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.js"
