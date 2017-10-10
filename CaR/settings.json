@@ -18,7 +18,6 @@
         "head_title": "Countries and regions — European Environment Agency (EEA)",
         "css_resources": {
             "index_page": [
-                "app_resources/css/esbootstrap.facetview.css",
                 "app_resources/car.facetview.css"
             ]
         },
