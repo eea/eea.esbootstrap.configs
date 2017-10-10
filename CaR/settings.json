@@ -24,6 +24,11 @@
                "esbootstrap_resources/facetview/css/facetview.css",
                "esbootstrap_resources/css/style.css",
                "esbootstrap_resources/css/tiles.css"
+            ],
+            "debug_styles": [
+               "esbootstrap_resources/facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.css",
+               "esbootstrap_resources/facetview/vendor/dist/themes/default/style.min.css",
+               "esbootstrap_resources/facetview/css/style.css"
             ]
         },
         "js_resources": {
@@ -37,7 +42,10 @@
                 "esbootstrap_resources/facetview/jquery.facetview.js",
                 "esbootstrap_resources/facetview/facetviewhelpers.js",
                 "esbootstrap_resources/javascripts/main.js"
-                ]
+                ],
+            "debug_javascripts": [
+                "esbootstrap_resources/facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.js"
+            ]
         },
         "site_title": "Countries and regions — European Environment Agency (EEA)",
         "enableBreadcrumbs": false,

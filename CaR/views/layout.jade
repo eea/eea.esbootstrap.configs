@@ -51,7 +51,8 @@ html
         each script in js_resources.layout_page
             script(type='text/javascript', src=script)
         if settings_es_debug_enabled.indexOf('false') === -1
-            script(type="text/javascript", src="esbootstrap_resources/facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.js")
+            each script in js_resources.debug_javascripts
+                script(type='text/javascript', src=script)
 
     script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.js")
 
@@ -61,9 +62,8 @@ html
 
 
     if settings_es_debug_enabled.indexOf('false') === -1
-        link(rel="stylesheet", href="esbootstrap_resources/facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.css")
-        link(rel="stylesheet", href="esbootstrap_resources/facetview/vendor/dist/themes/default/style.min.css")
-        link(rel="stylesheet", href="esbootstrap_resources/facetview/css/style.css")
+        each style in css_resources.debug_styles
+            link(rel='stylesheet', href=style)
 
     body
         != templateRender(headerFile)
