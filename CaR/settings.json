@@ -32,6 +32,7 @@
         "js_resources": {
             "layout_page": [
                 "esbootstrap_resources/facetview/vendor/dist/libs/jquery.js",
+                "esbootstrap_resources/facetview/vendor/jquery-lazy/jquery.lazy.min.js",
                 "esbootstrap_resources/facetview/vendor/dist/jstree.js",
                 "esbootstrap_resources/facetview/jquery.facetview.js",
                 "esbootstrap_resources/facetview/facetviewhelpers.js",
