@@ -3,7 +3,7 @@
         "port": 3000
     },
     "elastic": {
-        "index": "esbootstrapdata-aide-b",
+        "index": "esbootstrapdata-aide-b-prelim",
         "type": "resources",
         "field_base":""
     },
@@ -15,7 +15,7 @@
         "footer_path": "/templates/v2/getFooter"
     },
     "layout_vars": {
-        "head_title": "AQ zones (B)",
+        "head_title": "AQ zones (B preliminary)",
         "css_resources": {
             "index_page": [
                 "custom.css",
@@ -41,7 +41,7 @@
             ]
         },
         "site_title": "Air quality zones (data flow B preliminary)",
-        "site_description": "Preliminary information on air quality zones (AQ Zones), <a href='http://rod.eionet.europa.eu/obligations/693'>data flow B preliminary</a>.",
+        "site_description": "Information on air quality zones (AQ Zones), <a href='http://rod.eionet.europa.eu/obligations/693'>data flow B preliminary</a>.",
         "enableBreadcrumbs": true,
         "breadcrumbs": "aqzones",
         "dataprovencance_info_text": "Air Quality e-Reporting",
