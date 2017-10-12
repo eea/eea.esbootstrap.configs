@@ -36,14 +36,56 @@
     },
     "fields_mapping": [
         {
+            "name": "thumbnailUrl",
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "thumbnailUrl",
+                "visible": true,
+                "pos": 4
+            },            
+            "card": {
+                "field": "thumbUrl",
+                "default": "",
+                "visible": true,
+                "type" : "simple"
+            },
+            "list": {
+                "field": "thumbUrl",
+                "default": "",
+                "visible": true,
+                "type" : "simple"
+            },
+            "listing": {
+                "title": "Preview",
+                "visible" : true,
+                "width": "200px", 
+                "pos" : 0,
+                "display": {
+                    "pre": "<img class='listingThumb' src='",
+                    "field": "thumbnailUrl",
+                    "post": "'/>"
+                }
+            },
+            "details": {
+                "title": "Thumbnail",
+                "pos" : 10,
+                "section": "info",
+                "visible": true,
+                "type": "img"
+            }
+
+        },
+        {
             "name": "_id",
             "listing": {
                 "title": "Title",
                 "width": "200px",  
                 "visible" : true,
-                "pos" : 0,
+                "pos" : 1,
                 "display": {
-                    "pre": "<a href=/details?id=",
+                    "pre": "<td><a class='listingTitle' href=/details?id=",
                     "field": "_id",
                     "post": ">"
                 }
@@ -75,7 +117,7 @@
             "listing": {
                 "title": "",
                 "visible" : true,
-                "pos" : 1,
+                "pos" : 2,
                 "display": {
                     "field": "longName",
                     "post": "</a></td>"
@@ -173,7 +215,7 @@
             "listing": {
                 "title": "Description",
                 "visible" : true,
-                "pos" : 2
+                "pos" : 3
             },
             "list": {
                 "field": "description",
@@ -207,7 +249,7 @@
             "listing": {
                 "title": "Publication Date",
                 "visible" : true,
-                "pos" : 2
+                "pos" : 4
             },
             "list": {
                 "type": "date",
@@ -236,47 +278,6 @@
                 "visible": true,
                 "pos": 2
             }
-        },
-        {
-            "name": "thumbnailUrl",
-            "facet": {
-                "visible": false
-            },
-            "csv_tsv": {
-                "title": "thumbnailUrl",
-                "visible": true,
-                "pos": 4
-            },            
-            "card": {
-                "field": "thumbUrl",
-                "default": "",
-                "visible": true,
-                "type" : "simple"
-            },
-            "list": {
-                "field": "thumbUrl",
-                "default": "",
-                "visible": true,
-                "type" : "simple"
-            },
-            "listing": {
-                "title": "Preview",
-                "visible" : true,
-                "pos" : 3,
-                "display": {
-                    "pre": "<td><img class='listingThumb' src='",
-                    "field": "thumbnailUrl",
-                    "post": "'/></td>"
-                }
-            },
-            "details": {
-                "title": "Thumbnail",
-                "pos" : 10,
-                "section": "info",
-                "visible": true,
-                "type": "img"
-            }
-
         },
         {
             "name": "sdiUrl",

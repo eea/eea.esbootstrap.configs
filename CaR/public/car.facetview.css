@@ -19,8 +19,9 @@
 
 #content .car-tagline {
     color: #666;
+    font-weight: bold;
     display: block;
-    margin: 0 0 0.5em 0;
+    margin: 0em 0em 0.5em 0em;
     line-height: 1.5em;
     font: bold 1.25em "Helvetica Neue", Arial, FreeSans, sans-serif;
 }
@@ -316,6 +317,9 @@ div#facetview_rightcol {
 
 @media screen and (max-width: 767px) {
     .site_bg {
+        display: none;
+    }
+    .site_bg_img {
         display: none;
     }
    .content .page-header {
