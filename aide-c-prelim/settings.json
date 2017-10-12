@@ -3,7 +3,7 @@
         "port": 3000
     },
     "elastic": {
-        "index": "esbootstrapdata-aide-c",
+        "index": "esbootstrapdata-aide-c-prelim",
         "type": "resources",
         "field_base":""
     },
@@ -15,7 +15,7 @@
         "footer_path": "/templates/v2/getFooter"
     },
     "layout_vars": {
-        "head_title": "Assessment Regimes (C)",
+        "head_title": "Assessment Regimes (C preliminary)",
         "css_resources": {
             "index_page": [
                 "custom.css",
@@ -41,7 +41,7 @@
             ]
         },
         "site_title": "Air quality assessment regimes (data flow C preliminary)",
-        "site_description": "Preliminary information on air quality assessment regimes, <a href='http://rod.eionet.europa.eu/obligations/671'>data flow C preliminary</a>.",
+        "site_description": "Preliminary information on air quality assessment regimes, <a href='http://rod.eionet.europa.eu/obligations/694'>data flow C preliminary</a>.",
         "enableBreadcrumbs": true,
         "breadcrumbs": "aqregimes",
         "dataprovencance_info_text": "Air Quality e-Reporting",
