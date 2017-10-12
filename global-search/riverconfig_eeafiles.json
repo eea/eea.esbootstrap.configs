@@ -164,7 +164,8 @@
     "eea.soercontent.content.interfaces.IFiche": "Briefing (all)",
     "eea.soercontent.content.interfaces.ISoerContent":"Briefing (SOER)",
     "eea.sparql.interfaces.ISparql":"Data table (via SPARQL)",
-    "plone.app.layout.navigation.interfaces.INavigationRoot": "Website main section"
+    "plone.app.layout.navigation.interfaces.INavigationRoot": "Website main section",
+    "Products.EEAContentTypes.content.interfaces.ICountryProfile": "Country profile"
   },
   "//": "Normalise missing properties with the given values",
   "normMissing": {
@@ -181,25 +182,7 @@
   },
   "//": "Sync conditions",
   "syncConditions": [
-    "{?resource a <http://www.eea.europa.eu/portal_types/Topic#Topic> } UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/Collection#Collection> } UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/Topic#Topic> } UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/Collection#Collection> } UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/Dashboard#Dashboard> } UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/CloudVideo#CloudVideo>} UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/EcoTip#EcoTip>} UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/Event#Event>} UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/GIS%20Application#GISApplication>} UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/Image#Image>} UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/KeyMessage#KeyMessage>} UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/Link#Link>} UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/MethodologyReference#MethodologyReference>} UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/PolicyDocumentReference#PolicyDocumentReference>} UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/PolicyQuestion#PolicyQuestion>} UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/PressRelease#PressRelease>} UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/Promotion#Promotion>} UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/QuickEvent#QuickEvent>} UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/RationaleReference#RationaleReference>}"
+    "{?resource a <http://www.eea.europa.eu/portal_types/File#File>}"
   ],
   "graphSyncConditions": ["FILTER (str(?graph) = concat(str(?resource), '/@@rdf')). FILTER (?time > xsd:dateTime('1990-01-01T00:00:00')). FILTER (?time < xsd:dateTime('2100-01-01T00:00:00'))"],
   "syncTimeProp": "http://cr.eionet.europa.eu/ontologies/contreg.rdf#lastRefreshed"

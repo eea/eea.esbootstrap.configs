@@ -41,6 +41,11 @@
     "river_configs": {
         "configs": [
             {
+                "id": "eea_files",
+                "cluster_name": "EEA Website",
+                "config_file": "riverconfig_eeafiles.json"
+            },
+            {
                 "id": "eea_documents",
                 "cluster_name": "EEA Website",
                 "config_file": "riverconfig_eeadocuments.json"

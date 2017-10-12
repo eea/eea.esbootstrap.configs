@@ -1,0 +1,13 @@
+div(class="tileItem visualIEFloatFix")
+    a(title="${title}", href="details?id=${id}", class="tileImage")
+        img(alt="${title_text}",title="${title_text}",src="${thumbUrl}")
+    div(class="tileContent")
+        span(class="date") ${date}
+        span(class="eea-tileTopics") ${topics}
+        h3(class="listTileHeadline")
+            a(title="${title_text}", class="state-published", href="details?id=${id}") ${title}
+    p(class="tileBody")
+        span(class="description") ${description}
+    p(class="tileFooter")
+        a(class="moreLink", href="details?id=${id}") Read more
+    div(style="padding-bottom:1.0em;", class="visualClear") 

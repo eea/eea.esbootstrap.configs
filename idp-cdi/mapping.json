@@ -1,0 +1,38 @@
+{
+  "did_you_mean": {"type": "string", "analyzer": "didYouMean"},
+  "autocomplete": {"type": "string", "analyzer": "autocomplete"},
+
+  "dataDescription": {
+    "type": "string",
+    "fields" : {
+        "toindex" : {"type" : "string", "analyzer" : "default"},
+        "index" : {"type" : "string", "analyzer" : "none"},
+        "dataDescription": {"type": "string", "index": "not_analyzed"}
+      },
+    "copy_to" : ["did_you_mean", "autocomplete"]
+  },
+  "longName": {
+    "type": "string",
+    "fields" : {
+        "toindex" : {"type" : "string", "analyzer" : "default"},
+        "index" : {"type" : "string", "analyzer" : "none"},
+        "longName": {"type": "string", "index": "not_analyzed"}
+      },
+    "copy_to" : ["did_you_mean", "autocomplete"]
+  },
+  "format": {
+    "type": "string",
+    "analyzer": "none"
+  },
+  "distributionFormat": {
+    "type": "string",
+    "analyzer": "coma"
+  },
+  "publicationDate": {
+    "type": "date"
+  },
+  "inspireThemes": {
+    "type": "string",
+    "analyzer": "coma"
+  }
+}

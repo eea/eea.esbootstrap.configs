@@ -1,0 +1,22 @@
+{
+    "didYouMean": {
+      "filter": [
+        "lowercase"
+      ],
+      "char_filter": [
+        "html_strip"
+      ],
+      "type": "custom",
+      "tokenizer": "standard"
+    },
+    "autocomplete": {
+      "filter": [
+        "lowercase", "stop", "autocompleteFilter", "trim"
+      ],
+      "char_filter": [
+        "html_strip"
+      ],
+      "type": "custom",
+      "tokenizer": "standard"
+    }
+}

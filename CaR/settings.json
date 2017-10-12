@@ -1,0 +1,67 @@
+{
+    "http": {
+        "port": 3000
+    },
+    "elastic": {
+        "type": "resource",
+        "enableValuesCounting": true
+    },
+    "external_templates": {
+        "local_path": "/external_templates",
+        "protocol": "https",
+        "host": "www.eea.europa.eu",
+        "head_path": "/templates/v2/getRequiredHead?jsdisable=all&render_full_html=False&cssonly=True",
+        "header_path": "/templates/v2/getHeader?jsdisable=all&render_full_html=False",
+        "footer_path": "/templates/v2/getFooter?render_full_html=False"
+    },
+    "layout_vars": {
+        "head_title": "Countries and regions — European Environment Agency (EEA)",
+        "css_resources": {
+            "layout_page": [
+               "esbootstrap_resources/facetview/css/facetview.css",
+               "esbootstrap_resources/css/style.css",
+               "esbootstrap_resources/css/tiles.css",
+               "app_resources/car.facetview.css"
+            ],
+            "debug_styles": [
+               "esbootstrap_resources/facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.css",
+               "esbootstrap_resources/facetview/vendor/dist/themes/default/style.min.css",
+               "esbootstrap_resources/facetview/css/style.css"
+            ]
+        },
+        "js_resources": {
+            "layout_page": [
+                "esbootstrap_resources/facetview/vendor/dist/libs/jquery.js",
+                "esbootstrap_resources/facetview/vendor/jquery-lazy/jquery.lazy.min.js",
+                "esbootstrap_resources/facetview/vendor/dist/jstree.js",
+                "esbootstrap_resources/facetview/jquery.facetview.js",
+                "esbootstrap_resources/facetview/facetviewhelpers.js",
+                "esbootstrap_resources/javascripts/main.js",
+                "app_resources/car.facetview.js",
+                "app_resources/car.facet.js"
+                ],
+            "debug_javascripts": [
+                "esbootstrap_resources/facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.js"
+            ]
+        },
+        "site_title": "Countries and regions — European Environment Agency (EEA)",
+        "enableBreadcrumbs": false,
+        "dataprovencance_info_text": "Semantic Data Service (SDS)",
+        "dataprovencance_info_url": "http://semantic.eea.europa.eu",
+        "further_info": "The content of this catalogue has been created thanks to the EU's open data approach and the contribution of many organisations part of EEA's network (Eionet)."
+    },
+    "landingpage_enabled": false,
+    "enableBreadcrumbs": true,
+    "breadcrumbs": "Countries and regions",
+    "es_debug_enabled": false,
+    "suggestions_enabled": true,
+    "relevance_enabled": true,
+    "external_configs": {
+        "protocol": "https",
+        "host" : "www.eea.europa.eu",
+        "path" : "/viewCountryRegionsJSON",
+        "defaults" : "external_configs_defaults.json"
+    },
+    "selected_navigation_tab": "countries"
+}
+

@@ -1,0 +1,96 @@
+include ./mixins.jade
+doctype html
+html
+    head
+        block title
+        meta(charset='utf-8')
+
+        link(rel="shortcut icon", type="image/x-icon", href="https://www.eea.europa.eu/favicon.ico")
+
+        script(type='text/javascript').
+            var field_base="#{field_base}";
+        script
+            != settings_search_sortby
+        script
+            != settings_sort
+        script
+            != settings_display_options
+        script
+            != settings_default_display
+        script
+            != settings_landingpage_enabled
+        script
+            != settings_suggestions_enabled
+        script
+            != settings_es_debug_enabled
+        script
+            != settings_selected_navigation_tab
+        script
+            != settings_relevance_enabled
+        script
+            != settings_relevance
+        script
+            != settings_external_configs
+        script
+            != settings_default_external_configs
+        script
+            != mapping
+
+    != templateRender(headFile)
+
+    if renderStyles
+        != renderStyles('layout_page')
+    else
+        each style in css_resources.layout_page
+            link(rel='stylesheet', href=style)
+    block extrastyles
+
+
+
+
+    if settings_es_debug_enabled.indexOf('false') === -1
+        each style in css_resources.debug_styles
+            link(rel='stylesheet', href=style)
+
+    body
+        != templateRender(headerFile)
+        div(class="site_bg")
+            - var bg_url = external_config.bg_url;
+            img(class="site_bg_img lazyLoad" data-src=bg_url)
+        div(id="portal-columns")
+            div(class="container")
+                div(class="content" id="content")
+                    block content
+                    div(class="visualization-date")
+                        span(class="discreet")
+                            - var container_info = getContainerInfo()
+                            | Application data last refreshed <strong>#{getIndexCreationDate()}</strong>.
+                            | Version info <strong>#{container_info.version_info}</strong> and tag version <strong>#{container_info.tag_info}</strong> on <strong>#{container_info.hostname}</strong>.
+                    div(class="documentActions")
+                        h5(class="hiddenStructure") Document Actions
+                div(id="right-column", class="right-column-area")
+                    div(class="visualPadding")
+                div(class="visualClear")
+        div(id="landing")
+            block landing
+
+        input(id="card_view_template", type="hidden", value="#{cardViewTemplate}")
+
+        input(id="list_view_template", type="hidden", value="#{listViewTemplate}")
+
+    != templateRender(footerFile)
+
+    if renderJs 
+        != renderJs('layout_page')
+    else 
+        each script in js_resources.layout_page
+            script(type='text/javascript', src=script)
+        if settings_es_debug_enabled.indexOf('false') === -1
+            each script in js_resources.debug_javascripts
+                script(type='text/javascript', src=script)
+
+    script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.js")
+
+    script(type="text/javascript", src="https://www.eea.europa.eu/external_templates_scripts.js")
+    block extrajavascripts
+
