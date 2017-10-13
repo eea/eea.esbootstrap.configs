@@ -4,6 +4,8 @@ html
     head
         block title
         meta(charset='utf-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+
 
         link(rel="shortcut icon", type="image/x-icon", href="https://www.eea.europa.eu/favicon.ico")
 
@@ -35,20 +37,16 @@ html
             != settings_default_external_configs
         script
             != mapping
+    
+    - var debug_mode = settings_es_debug_enabled.indexOf('false') === -1
 
-    != templateRender(headFile)
-
-    if renderStyles
-        != renderStyles('layout_page')
+    if !debug_mode
+        style
+            include:uglify-css ../public/critical.css
     else
-        each style in css_resources.layout_page
-            link(rel='stylesheet', href=style)
-    block extrastyles
+        link(rel='stylesheet', href="app_resources/critical.css")
 
-
-
-
-    if settings_es_debug_enabled.indexOf('false') === -1
+    if debug_mode
         each style in css_resources.debug_styles
             link(rel='stylesheet', href=style)
 
@@ -80,12 +78,20 @@ html
 
     != templateRender(footerFile)
 
+    if renderStyles 
+       != renderStyles('layout_page')
+    else
+        each style in css_resources.layout_page
+            link(rel='stylesheet', href=style)
+
+    block extrastyles
+
     if renderJs 
         != renderJs('layout_page')
     else 
         each script in js_resources.layout_page
             script(type='text/javascript', src=script)
-        if settings_es_debug_enabled.indexOf('false') === -1
+        if debug_mode
             each script in js_resources.debug_javascripts
                 script(type='text/javascript', src=script)
 

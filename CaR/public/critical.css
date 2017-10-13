@@ -211,18 +211,6 @@
         display: list-item
     }
 
-    dl.error {
-        border-color: red
-    }
-
-    dl.error>dt {
-        background-color: #d00
-    }
-
-    .error>dd {
-        background-color: #fdc
-    }
-
     .label {
         font-weight: 700;
         display: inline
@@ -392,17 +380,11 @@
         width: 100%
     }
 
-    #content select {
-        vertical-align: top
-    }
 
     label {
         font-weight: 700
     }
 
-    #content option {
-        color: #000
-    }
 
     .field {
         clear: both;
@@ -417,17 +399,6 @@
         width: auto
     }
 
-    #login-form input {
-        font-size: 150%
-    }
-
-    #login-form label {
-        margin-right: .5em;
-        padding-top: .2em;
-        text-align: right;
-        width: 10em;
-        display: inline-block
-    }
     #footer-wrapper {
         background-color: #006699;
         margin: 2em 0 2em 0;
@@ -505,10 +476,6 @@ img {
     border: 0
 }
 
-hr {
-    box-sizing: content-box;
-    height: 0
-}
 
 button,input,select,textarea {
     color: inherit;
@@ -551,6 +518,26 @@ table {
     border-spacing: 0
 }
 
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+.table-bordered {
+    border: 1px solid #dddddd;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > td
+ {
+    border: 1px solid #dddddd;
+}
+
+table > tbody > tr > td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #dddddd;
+}
+
 td {
     padding: 0
 }
@@ -590,13 +577,6 @@ img {
     vertical-align: middle
 }
 
-hr {
-    margin-top: 17px;
-    margin-bottom: 17px;
-    border-width: 1px 0 0;
-    border-top-style: solid;
-    border-top-color: #eee
-}
 
 .sr-only {
     position: absolute;
@@ -643,6 +623,10 @@ input[type=checkbox] {
     display: none
 }
 
+.collapse.in {
+    display: block;
+}
+
 .navbar {
     position: relative;
     min-height: 50px;
@@ -659,6 +643,10 @@ input[type=checkbox] {
     border-top-color: transparent;
     -webkit-box-shadow: rgba(255,255,255,.0980392) 0 1px 0 inset;
     box-shadow: rgba(255,255,255,.0980392) 0 1px 0 inset
+}
+
+.navbar-collapse.in {
+    overflow-y: auto;
 }
 
 .navbar-fixed-top .navbar-collapse {
@@ -817,13 +805,6 @@ input[type=checkbox] {
         vertical-align: middle
     }
 
-    hr {
-        border-style: solid none none;
-        border-width: 1px 0 0;
-        border-top-color: #fff;
-        height: 0;
-        margin: .5em 0 1em
-    }
 
     ul {
         margin: 0 0 0 1.5em;
@@ -868,15 +849,6 @@ input[type=checkbox] {
         -webkit-appearance: none
     }
 
-    select {
-        border: 1px solid #ccc;
-        color: #333;
-        vertical-align: top;
-        background-color: #fff;
-        background-position: initial initial;
-        background-repeat: initial initial
-    }
-
     #content {
         font-size: inherit;
         margin: 0
@@ -897,14 +869,6 @@ input[type=checkbox] {
     #content a:visited,dl.portlet a:visited {
         color: #8e004d;
         border-bottom-width: 0
-    }
-
-    dl.error dt {
-        color: #fff
-    }
-
-    dl.error dd {
-        background-color: transparent
     }
 
     dl.portlet {
@@ -954,10 +918,6 @@ input[type=checkbox] {
         margin-bottom: 5px
     }
 
-    #chooselang {
-        margin: 0;
-        padding: 0
-    }
 
     .portlet-subscription dd,.portlet-subscription dd div {
         margin-bottom: .5em
@@ -1110,7 +1070,7 @@ input[type=checkbox] {
         display: block;
     }
 
-    #portaltab-eeahome a:hover:after, #portaltab-europe a:hover:after {
+    #portaltab-europe a:hover:after {
         border: none;
     }
 
@@ -1136,24 +1096,6 @@ input[type=checkbox] {
         background-image: url(//www.eea.europa.eu/eu-flag.png);
         background-position: 123px -3px;
         background-repeat: no-repeat no-repeat
-    }
-
-    #portaltab-eeahome {
-        width: 110px;
-        font-size: 70%;
-        line-height: 1.1;
-        padding-left: 35px;
-        background-image: url(//www.eea.europa.eu/globalnav-logo.png);
-        background-position: 10% 60%;
-        background-repeat: no-repeat no-repeat
-    }
-
-    #portal-globalnav #portaltab-eeahome {
-        text-align: left
-    }
-
-    #portal-globalnav #portaltab-eeahome a {
-        padding: .6em .8em
     }
 
     #secondary-portaltabs #portaltab-europe a {
@@ -1226,34 +1168,7 @@ input[type=checkbox] {
         background-repeat: initial initial
     }
 
-    dl.error {
-        background-color: #c7e0e9;
-        color: #333;
-        font-size: 120%;
-        margin: 1em 0;
-        padding: 1em 1.5em 1em 5.5em;
-        vertical-align: middle;
-        border: none
-    }
 
-    dl.error::before {
-        float: left;
-        display: block;
-        margin-right: .3em;
-        font-family: FontAwesome
-    }
-
-    dl.error {
-        background-color: #fffabe
-    }
-
-    dl.error,dl.error dt {
-        color: red
-    }
-
-    dl.error::before {
-        content: '\f071'
-    }
 }
 
 .eea-icon {
@@ -1521,44 +1436,6 @@ input.context {
 }
 
 @media screen {
-    #viewlet-cookiepolicy {
-        position: fixed;
-        bottom: 0;
-        width: 88%;
-        left: 4%;
-        margin-right: auto;
-        margin-left: auto;
-        padding: 5px 15px 0;
-        z-index: 100
-    }
-
-    #tlspu_cookiepolicy_title {
-        font-size: 18px;
-        font-weight: 700;
-        color: #404040;
-        text-align: center;
-        padding: 0;
-        margin: 0
-    }
-
-    #tlspu_cookiepolicy_form,#tlspu_cookiepolicy_message {
-        font-size: 11px;
-        font-weight: 400;
-        color: #606060;
-        text-align: justify;
-        padding: 0;
-        margin: 0
-    }
-
-    #tlspu_cookiepolicy_form {
-        padding: 8px 0;
-        text-align: right
-    }
-
-    #tlspu_cookiepolicy_button {
-        padding: 2px 8px;
-        margin-left: 16px
-    }
 
     #portal-columns {
         padding-top: 1em;
@@ -1637,6 +1514,10 @@ input.context {
     background-repeat: initial initial
 }
 
+#portal-searchbox input.gsc-input:focus {
+    background: #FFF none !important;
+}
+
 #portal-searchbox input {
     height: 30px;
     padding: 0;
@@ -1713,55 +1594,7 @@ input.context {
     font-weight: 700
 }
 
-#cms-browsers-links ul li {
-    display: list-item;
-    list-style-type: none
-}
 
-#popup_login_form {
-    position: absolute;
-    right: 0;
-    background-color: #fff;
-    z-index: 500;
-    padding: 1em;
-    -webkit-box-shadow: #333 0 2px 2px;
-    box-shadow: #333 0 2px 2px
-}
-
-#login-form label {
-    width: 6em
-}
-
-#login-forgotten-password,#login_form {
-    margin-left: 6.5em
-}
-
-#popup_login_form #login-form input {
-    font-size: 100%
-}
-
-#popup_login_form #login-forgotten-password {
-    margin-left: 6.5em
-}
-
-#viewlet-cookiepolicy {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 0;
-    z-index: 100;
-    padding: .9em;
-    box-sizing: border-box
-}
-
-#tlspu_cookiepolicy_form,#tlspu_cookiepolicy_message {
-    margin: 0 auto;
-    max-width: 970px;
-    padding: 0
-}
 
 html {
     font-size: 16px
@@ -1855,15 +1688,6 @@ label {
 
     .panel-content {
         min-width: 320px
-    }
-
-    #chooselang {
-        -webkit-column-count: 2
-    }
-
-    #chooselang li {
-        display: list-item;
-        list-style: square inside url(//www.eea.europa.eu/bullet.gif)
     }
 
     #portal-externalsites a,#portal-siteactions a {
@@ -1982,6 +1806,19 @@ label {
     .navbar-collapse {
         width: 100%
     }
+
+    .colophon-left, .colophon-right, .colophon-right span {
+        width: 100%;
+        float: none;
+    }
+
+    .colophon-right img {
+        float: none;
+    }
+
+    #portal-colophon .colophonWrapper, .colophon-middle {
+        text-align: center;
+    }
 }
 
 @media screen and (width:768px) {
@@ -2063,6 +1900,24 @@ label {
         margin: 25px .5em 0 0
     }
 }
+
+@media screen and (min-width: 768px) and (max-width: 910px) {
+  #portaltab-europe {
+    padding-right: 95px;
+    width: 200px; }
+
+  #globalnav-holder #portal-globalnav {
+    padding-right: 0 !important; }
+
+  #portal-globalnav {
+    font-size: 95%; }
+
+  #portal-globalnav li a {
+    padding: 1.4em 0.8em; }
+
+  #portaltab-europe a {
+    margin-top: 3px !important;
+    padding: 1.3em 0 !important; } }
 
 @media screen and (width:1024px) {
     #secondary-portaltabs #portaltab-europe a {
@@ -2439,6 +2294,29 @@ div.facetview_filter_typeahead input {
 
 .eea-tiles {
     clear: both
+}
+
+.tileImage {
+    float: left;
+    margin: 1em 1em 1em 0;
+}
+.tileItem {
+    border-bottom: 1px dotted #cccccc;
+    padding-top: 0.5em;
+}
+
+.tileContent {
+    display: table-cell;
+}
+
+.tileFooter {
+    clear: both;
+    display: block;
+}
+
+.visualClear {
+    clear: both;
+    display: block;
 }
 
 .pagination {

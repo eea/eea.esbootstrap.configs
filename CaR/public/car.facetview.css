@@ -315,12 +315,16 @@ div#facetview_rightcol {
 
 }
 
+.site_bg_img {
+display: none;
+}
 @media screen and (max-width: 767px) {
     .site_bg {
         display: none;
     }
+    
     .site_bg_img {
-        display: none;
+        display: none !important; 
     }
    .content .page-header {
         margin-top: 90px;
