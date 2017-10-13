@@ -278,6 +278,9 @@ Add reading length, as minutes range or as three steps (Long, Medium, Quick read
 
 BUG: range facet does not update value when other facets are selected.
 
+ExternalDataSpec does not have ropics in RDF, configure postharvest I guess.
+http://semantic.eea.europa.eu/factsheet.action?uri=http%3A%2F%2Fwww.eea.europa.eu%2Fdata-and-maps%2Fdata%2Fexternal%2Fmarine-protected-areas
+
 FEATURE: inverse suggest. E.g. when typing "Directive" in the search input
 we should also get suggestions for "Water Directive", "Bathing Water Directive" etc.
 
