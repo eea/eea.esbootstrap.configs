@@ -38,7 +38,18 @@
             "name": "MeasureId",
             "listing": { "title": "Measure Id", "visible" : true, "pos" : 5 },
             "details": { "title": "MeasureId", "pos" : 3, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Measure Id", "pos": 9, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { 
+                "visible": true, 
+                "title": "Measure Id", 
+                "pos": 9, 
+                "type": "facet", 
+                "size": 9999, 
+                "order": "term", 
+                "autocomplete": true, 
+                "autocomplete_placeholder": "Search Measure Id",
+                "empty_message": "No Measure Id to show", 
+                "facet_display_options": ["sort", "checkbox"] 
+            },
             "csv_tsv": { "title": "MeasureId", "visible": true, "pos": 3 }
         },
         {
@@ -64,7 +75,7 @@
         },
         {
             "name": "Description",
-            "listing": { "title": "Description", "visible" : true, "pos" : 9 },
+            "listing": { "title": "Description", "width": "500px", "visible" : true, "pos" : 9 },
             "details": { "title": "Description", "pos" : 4, "section": "info", "visible": false },
             "facet": { "visible": false },
             "csv_tsv": { "title": "Description", "visible": true, "pos": 4 }
@@ -213,14 +224,34 @@
             "name": "SourceApportionmentId",
             "listing": { "title": "Source Apportionment Id", "visible" : true, "pos" : 30 },
             "details": { "title": "SourceApportionmentId", "pos" : 3, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Source Apportionment Id", "pos": 10, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { 
+                "visible": true, 
+                "title": "Source Apportionment Id", 
+                "pos": 10, 
+                "type": "facet", 
+                "size": 9999, 
+                "order": "term", 
+                "autocomplete": true, 
+                "autocomplete_placeholder": "Search Source Apportionment Id",
+                "empty_message": "No Source Apportionment Id to show",
+                "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "SourceApportionmentId", "visible": true, "pos": 3 }
         },
         {
             "name": "ScenariosId",
             "listing": { "title": "Scenarios Id", "visible" : true, "pos" : 31 },
             "details": { "title": "ScenariosId", "pos" : 3, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Scenarios Id", "pos": 11, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { 
+                "visible": true, 
+                "title": "Scenarios Id", 
+                "pos": 11, 
+                "type": "facet", 
+                "size": 9999, 
+                "order": "term", 
+                "autocomplete": true, 
+                "autocomplete_placeholder": "Search Scenarios Id",
+                "empty_message": "No Scenarios Id to show",
+                "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "ScenariosId", "visible": true, "pos": 3 }
         },
         {
