@@ -50,6 +50,15 @@ html
         each style in css_resources.debug_styles
             link(rel='stylesheet', href=style)
 
+    if renderStyles 
+        - var css_render = renderStyles('layout_page')
+        - var only_css = css_render.match(/href\='([^\s]*)'\s/)[1]
+        <link rel="preload" href="#{only_css}" as="style" onload="this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="#{only_css}"></noscript>
+    else
+        each style in css_resources.layout_page
+            link(rel='stylesheet', href=style)
+
     body
         != templateRender(headerFile)
         div(class="site_bg")
@@ -78,11 +87,6 @@ html
 
     != templateRender(footerFile)
 
-    if renderStyles 
-       != renderStyles('layout_page')
-    else
-        each style in css_resources.layout_page
-            link(rel='stylesheet', href=style)
 
     block extrastyles
 
@@ -95,7 +99,6 @@ html
             each script in js_resources.debug_javascripts
                 script(type='text/javascript', src=script)
 
-    script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.js")
 
     script(type="text/javascript", src="https://www.eea.europa.eu/external_templates_scripts.js")
     block extrajavascripts

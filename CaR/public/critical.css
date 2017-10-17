@@ -459,6 +459,12 @@ body {
     margin: 0
 }
 
+.content .page-header, .page-body {
+    background: #FFF;
+    padding: 1em;
+    box-shadow: 1px 1px 5px -1px #9f9f9f;
+}
+
 a {
     background-color: transparent
 }
@@ -1487,6 +1493,10 @@ input.context {
 
 #portal-searchbox .gsc-clear-button {
     display: none
+}
+
+.gsc-search-box td {
+    border: 0;
 }
 
 #portal-searchbox .gsc-control-cse {
