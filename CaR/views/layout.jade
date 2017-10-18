@@ -62,8 +62,8 @@ html
     body
         != templateRender(headerFile)
         div(class="site_bg")
-            - var bg_url = external_config.bg_url;
-            img(class="site_bg_img lazyLoad" data-src=bg_url)
+            - var bg_url = external_config.obj_id;
+            img(class="site_bg_img" data-src="app_resources/images/backgrounds/#{bg_url}.jpg")
         div(id="portal-columns")
             div(class="container")
                 div(class="content" id="content")

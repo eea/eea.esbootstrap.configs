@@ -146,4 +146,17 @@ $.fn.carFacet = function(settings){
     var lazy = debounce(calculateLayout, 300);
     $(window).resize(lazy);
 
+    var $site_bg_img = $(".site_bg_img");       
+    var url = $site_bg_img.attr('data-src');      
+    var loadBg = function() {
+        if (window.innerWidth > 767) {
+            if (!$site_bg_img.attr('src')) {
+                $site_bg_img.attr('src', url);
+            }
+        }
+    };
+    
+    var lazyBg = debounce(loadBg, 300);
+    $(window).resize(lazyBg);
+
 };

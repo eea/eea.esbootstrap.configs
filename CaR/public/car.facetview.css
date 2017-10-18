@@ -8,8 +8,8 @@
     text-align: center;
 }
 .site_bg_img {
-    margin-top: -25%;
-    width: 100%;
+    height: 100%;
+    width: auto;
 }
 
 #content h1 {
@@ -315,9 +315,7 @@ div#facetview_rightcol {
 
 }
 
-.site_bg_img {
-display: none;
-}
+
 @media screen and (max-width: 767px) {
     .site_bg {
         display: none;
@@ -396,7 +394,7 @@ display: none;
 
 @media screen and (min-width: 768px) {
     .site_bg {
-        top: 160px;
+        top: 164px;
     }
 }
 

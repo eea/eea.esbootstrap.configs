@@ -459,11 +459,6 @@ body {
     margin: 0
 }
 
-.content .page-header, .page-body {
-    background: #FFF;
-    padding: 1em;
-    box-shadow: 1px 1px 5px -1px #9f9f9f;
-}
 
 a {
     background-color: transparent
@@ -1495,7 +1490,9 @@ input.context {
     display: none
 }
 
-.gsc-search-box td {
+.gsc-search-box td,
+.panel-content td
+ {
     border: 0;
 }
 
@@ -1519,7 +1516,7 @@ input.context {
     font-style: normal;
     position: relative;
     width: 80px;
-    margin-left: -5px;
+    margin-left: -8px;
     background-position: initial initial;
     background-repeat: initial initial
 }
@@ -2167,10 +2164,9 @@ div.facetview_filter_typeahead input {
 }
 
 .content .page-header {
-    background-color: transparent;
-    border-bottom-width: 0;
-    margin: 0;
-    padding: 0
+    background: #FFF;
+    padding: 1em;
+    box-shadow: 1px 1px 5px -1px #9f9f9f;
 }
 
 .page-header h1 {
