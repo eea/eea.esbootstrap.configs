@@ -50,7 +50,7 @@ html
         each style in css_resources.debug_styles
             link(rel='stylesheet', href=style)
 
-    if renderStyles 
+    if (renderStyles && !debug_mode)
         script
             include:uglify-js ../public/loadcss.js
         - var css_render = renderStyles('layout_page')
@@ -92,7 +92,7 @@ html
 
     block extrastyles
 
-    if renderJs 
+    if (renderJs && !debug_mode)
         != renderJs('layout_page')
     else 
         each script in js_resources.layout_page
