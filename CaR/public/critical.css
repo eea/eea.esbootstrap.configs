@@ -1516,7 +1516,7 @@ input.context {
     font-style: normal;
     position: relative;
     width: 80px;
-    margin-left: -8px;
+    margin-left: -5px;
     background-position: initial initial;
     background-repeat: initial initial
 }
@@ -1552,7 +1552,7 @@ input.context {
     background-repeat: no-repeat no-repeat!important
 }
 
-#portal-searchbox td.gsc-input {
+#portal-searchbox td {
     padding: 0
 }
 
