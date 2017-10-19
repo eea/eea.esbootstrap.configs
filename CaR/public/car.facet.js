@@ -130,7 +130,7 @@ $.fn.carFacet = function(settings){
         //facet_title.click(toggle_groups);
     }
     var calculateLayout = function() {
-        var events = facet_title.data('events');
+        var events = $._data(facet_title[0], 'events');
         if (window.innerWidth < 920) {
             if (!events) {
                 facet_title.click(toggle_groups);

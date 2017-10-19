@@ -494,6 +494,9 @@ div#facetview_rightcol {
     .car_facet_title--text-border {
         display: none;
     }
+    .car_facet_group {
+        display: block !important;
+    }
 }
 
 @media screen and (min-width: 1280px) {
