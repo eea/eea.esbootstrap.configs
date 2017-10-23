@@ -1,5 +1,5 @@
 @font-face {
-    font-family:FontAwesome;src:url(//www.eea.europa.eu/fontawesome-webfont.eot?#iefix&v=4.3.0) format('embedded-opentype'),url(//www.eea.europa.eu/fontawesome-webfont.woff?v=4.3.0) format('woff'),url(//www.eea.europa.eu/fontawesome-webfont.woff2?v=4.3.0) format('woff2'),url(//www.eea.europa.eu/fontawesome-webfont.ttf?v=4.3.0) format('truetype'),url(//www.eea.europa.eu/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular) format('svg');font-weight:400;font-style:normal
+    font-family:FontAwesome;src:url(https://www.eea.europa.eu/fontawesome-webfont.eot?#iefix&v=4.3.0) format('embedded-opentype'),url(https://www.eea.europa.eu/fontawesome-webfont.woff?v=4.3.0) format('woff'),url(https://www.eea.europa.eu/fontawesome-webfont.woff2?v=4.3.0) format('woff2'),url(https://www.eea.europa.eu/fontawesome-webfont.ttf?v=4.3.0) format('truetype'),url(https://www.eea.europa.eu/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular) format('svg');font-weight:400;font-style:normal
 }
 
 .facetview_top .facetview_include_expired,.facetview_top .facetview_orderby {
