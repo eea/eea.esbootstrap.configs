@@ -10,7 +10,7 @@
     "external_templates": {
         "local_path": "/external_templates",
         "host": "www.eea.europa.eu",
-        "head_path": "/templates/v2/getRequiredHead?jsdisable=all",
+        "head_path": "/templates/v2/getRequiredHead?jsdisable=all&render_full_html=False&cssonly=True",
         "header_path": "/templates/v2/getHeader?jsdisable=all",
         "footer_path": "/templates/v2/getFooter"
     },
@@ -42,7 +42,7 @@
         },
         "site_title": "Contextual Data Inventory",
         "site_description": "part of NSS Integrated Data Platform",
-        "enableBreadcrumbs": false,
+        "enableBreadcrumbs": true,
         "breadcrumbs": "IDP-CDI",
         "dataprovencance_info_text": "ES bootstrap",
         "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/daviz",

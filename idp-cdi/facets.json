@@ -130,6 +130,7 @@
                 "simple" : true
             },
             "details": {
+                "use_in_breadcrumb": true,
                 "title": "Title",
                 "pos" : 0,
                 "section": "info",
