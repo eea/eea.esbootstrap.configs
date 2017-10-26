@@ -37,9 +37,10 @@ html
             != settings_default_external_configs
         script
             != mapping
-    
+
     - var debug_mode = settings_es_debug_enabled.indexOf('false') === -1
 
+    != templateRender(headFile)
     if !debug_mode
         style
             include:uglify-css ../public/critical.css
@@ -61,8 +62,11 @@ html
         each style in css_resources.layout_page
             link(rel='stylesheet', href=style)
 
-    body
+    body(class="fullwidth")
         != templateRender(headerFile)
+        if (enableBreadcrumbs)
+            +portal_breadcrumbs (breadcrumbs)
+
         div(class="site_bg")
             - var bg_url = external_config.obj_id;
             img(class="site_bg_img" data-src="app_resources/images/backgrounds/#{bg_url}.jpg")

@@ -46,14 +46,13 @@
             ]
         },
         "site_title": "Countries and regions — European Environment Agency (EEA)",
-        "enableBreadcrumbs": false,
+        "enableBreadcrumbs": true,
+        "breadcrumbs": [{"Home":"https://www.eea.europa.eu"},{"Countries and regions":"https://www.eea.europa.eu/countries-and-regions"},{"${external_config.title}":""}],
         "dataprovencance_info_text": "Semantic Data Service (SDS)",
         "dataprovencance_info_url": "http://semantic.eea.europa.eu",
         "further_info": "The content of this catalogue has been created thanks to the EU's open data approach and the contribution of many organisations part of EEA's network (Eionet)."
     },
     "landingpage_enabled": false,
-    "enableBreadcrumbs": true,
-    "breadcrumbs": "Countries and regions",
     "es_debug_enabled": false,
     "suggestions_enabled": true,
     "relevance_enabled": true,

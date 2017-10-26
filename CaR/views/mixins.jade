@@ -1,18 +1,27 @@
 mixin portal_breadcrumbs(parent_title, current_title)
-        div(id="portal-breadcrumbs")
-            span(id="breadcrumbs-you-are-here") You are here:
-            span(id="breadcrumbs-home")
-                a(href="https://www.eea.europa.eu/") Home
-                span(class="breadcrumbSeparator")  /
-            span(id="breadcrumbs-1")
-                if current_title
-                    a(href="./")= parent_title
-                    span(class="breadcrumbSeparator")  /
-                else
-                    span(class="breadcrumbs-current")= parent_title
-            if current_title
-                span(id="breadcrumbs-2")
-                    span(class="breadcrumbs-current")= current_title
+    div(id="eea-above-columns")
+        nav(id="portal-breadcrumbs",class="plone-breadcrumb")
+            div(class="container")
+                span(id="breadcrumbs-you-are-here", class="hiddenStructure")
+                    | You are here:
+                ol(aria-labelledby="breadcrumbs-you-are-here")
+                    -var index = 0
+                    each breadcrumb in breadcrumbs
+                        each val, key in breadcrumb
+                            if index == 0
+                                li(id="breadcrumbs-home")
+                                    a(title=key href=val)
+                                        i(class="eea-icon eea-icon-home")
+                            else
+                                if index < breadcrumbs.length - 1
+                                    li(id="breadcrumbs-"+index)
+                                        a(title=key href=val)
+                                            =key
+                                else
+                                    li(id="breadcrumbs-"+index)
+                                        span(id="breadcrumbs-current")
+                                        =key
+                        -index++
 
 mixin visualization_info(href, title)
     div(class="visualization-info")
