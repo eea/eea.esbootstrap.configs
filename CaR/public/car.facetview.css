@@ -308,6 +308,18 @@ div#facetview_rightcol {
     padding: 0.1em 0.5em;
 }
 
+/* IE9 and IE10 rule sets go here */
+@media screen and (min-width:0\0) {
+    /* avoid section-page going over next line for ie10 */
+    .section-description {
+        padding-right: 3em;
+        flex-basis: 76%;
+    }
+    .section-pages {
+        flex-basis: 19%;
+    }
+}
+
 @media screen and (max-width:480px) {
     .section-languages {
         width: 100%;
