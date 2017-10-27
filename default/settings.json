@@ -16,6 +16,7 @@
     },
     "layout_vars": {
         "head_title": "Elasticsearch bootstrap application",
+        "override_searchserver_resources": false,
         "css_resources": {
             "index_page": [
                 "/custom.css",
@@ -34,10 +35,7 @@
             ],
             "details_page": [
                 "/custom.js",
-                "javascripts/jq.tools.js",
-                "http://www.eea.europa.eu/register_function.js",
-                "http://www.eea.europa.eu/nodeutilities.js",
-                "http://www.eea.europa.eu/mark_special_links.js"
+                "javascripts/jq.tools.js"
             ]
         },
         "site_title": "Elasticsearch bootstrap application",
