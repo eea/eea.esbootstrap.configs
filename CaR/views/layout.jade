@@ -61,7 +61,7 @@ html
         each style in css_resources.layout_page
             link(rel='stylesheet', href=style)
 
-    body(class="fullwidth")
+    body(class="fullwidth car")
         != templateRender(headerFile)
         if (enableBreadcrumbs)
             +portal_breadcrumbs (breadcrumbs)

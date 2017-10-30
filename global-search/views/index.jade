@@ -2,8 +2,9 @@ block title
     title!= head_title
 
 block extrajavascripts
-    each script in js_resources.index_page
-        script(type='text/javascript', src=script)
+    if (js_resources.index_page)
+        each script in js_resources.index_page
+            script(type='text/javascript', src=script)
 
 block extrastyles
     if (css_resources.index_page)
