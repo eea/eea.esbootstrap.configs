@@ -10,7 +10,7 @@
     "external_templates": {
         "local_path": "/external_templates",
         "host": "www.eea.europa.eu",
-        "head_path": "/templates/v2/getRequiredHead?jsdisable=all",
+        "head_path": "/templates/v2/getRequiredHead?jsdisable=all&cssonly=True",
         "header_path": "/templates/v2/getHeader?jsdisable=all",
         "footer_path": "/templates/v2/getFooter"
     },
