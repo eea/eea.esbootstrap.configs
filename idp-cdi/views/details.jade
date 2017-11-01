@@ -6,7 +6,7 @@ block title
 
 block extrajavascripts
     if (js_resources.details_page)
-        if renderJs
+        if renderJs && !debug_mode
             != renderJs('details_page')
         else
             each script in js_resources.details_page
@@ -14,7 +14,7 @@ block extrajavascripts
 
 block extrastyles
     if (css_resources.details_page)
-        if renderStyles
+        if renderStyles && !debug_mode
             != renderStyles('details_page')
         else
             each style in css_resources.details_page
