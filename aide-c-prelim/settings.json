@@ -18,31 +18,32 @@
         "head_title": "Assessment Regimes (C preliminary)",
         "css_resources": {
             "index_page": [
-                "custom.css",
                 "css/no-more-tables.css",
-                "css/esbootstrap.facetview.css"
+                "css/esbootstrap.facetview.css",
+                "custom.css"
             ],
             "details_page": [
-                "custom.css",
-                "css/esbootstrap.facetview.css"
+                "css/esbootstrap.facetview.css",
+                "custom.css"
             ]
         },
         "js_resources": {
             "index_page": [
-                "custom.js",
-                "javascripts/esbootstrap.facetview.js"
+                "javascripts/esbootstrap.facetview.js",
+                "custom.js"
             ],
             "details_page": [
-                "custom.js",
-                "javascripts/jq.tools.js",
                 "http://www.eea.europa.eu/register_function.js",
                 "http://www.eea.europa.eu/nodeutilities.js",
-                "http://www.eea.europa.eu/mark_special_links.js"
+                "http://www.eea.europa.eu/mark_special_links.js",
+                "javascripts/jq.tools.js",
+                "custom.js"
             ]
         },
         "site_title": "Air quality assessment regimes (data flow C preliminary)",
         "site_description": "Preliminary information on air quality assessment regimes, <a href='http://rod.eionet.europa.eu/obligations/694'>data flow C preliminary</a>.",
         "enableBreadcrumbs": true,
+        "es_debug_enabled": false,
         "breadcrumbs": "aqregimes",
         "dataprovencance_info_text": "Air Quality e-Reporting",
         "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/data/aqereporting-1",

@@ -19,28 +19,29 @@
         "override_searchserver_resources": false,
         "css_resources": {
             "index_page": [
-                "/custom.css",
                 "css/no-more-tables.css",
-                "css/esbootstrap.facetview.css"
+                "css/esbootstrap.facetview.css",
+                "/custom.css"
             ],
             "details_page": [
-                "/custom.css",
-                "css/esbootstrap.facetview.css"
+                "css/esbootstrap.facetview.css",
+                "/custom.css"
             ]
         },
         "js_resources": {
             "index_page": [
-                "/custom.js",
-                "javascripts/esbootstrap.facetview.js"
+                "javascripts/esbootstrap.facetview.js",
+                "/custom.js"
             ],
             "details_page": [
-                "/custom.js",
-                "javascripts/jq.tools.js"
+                "javascripts/jq.tools.js",
+                "/custom.js"
             ]
         },
         "site_title": "Elasticsearch bootstrap application",
         "site_description": "Simple customizable bootstrap application",
         "enableBreadcrumbs": true,
+        "es_debug_enabled": false,
         "breadcrumbs": "esbootstrap",
         "dataprovencance_info_text": "ES bootstrap",
         "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/daviz",
