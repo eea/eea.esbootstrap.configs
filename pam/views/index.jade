@@ -12,7 +12,7 @@ block extrajavascripts
 block extrastyles
     if (css_resources.index_page)
         if renderStyles
-            renderStyles('index_page')
+            != renderStyles('index_page')
         else
             each style in css_resources.index_page
                 link(rel='stylesheet', href=style)
