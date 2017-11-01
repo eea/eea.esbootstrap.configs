@@ -18,29 +18,25 @@
         "type" : "string",
         "analyzer" : "none"
     },
-    "Impact_of_policy_or_measure___EU_ETS__outside_the_ETS___ESD___or_LULUCF_" : {
+    "Policy_impacting_EU_ETS__ESD_or_LULUCF_emissions" : {
         "type" : "string",
         "analyzer" : "coma"
     },
     "Sector_s__affected"  : {
         "type" : "string",
-        "analyzer" : "coma"
+        "analyzer" : "semicolon"
     },
     "Objective_s__lookup_only4facets"  : {
         "type" : "string",
-        "analyzer" : "coma"
+        "analyzer" : "semicolon"
     },
-    "Total_GHG_emissions_reductions_in_2020__kt_CO2_equivalent_per_year_"  : {
+    "Total_GHG_emissions_reductions_in_2020__kt_CO2eq_y_"  : {
         "type" : "double"
     },
-    "Total_GHG_emissions_reductions_in_2030__kt_CO2_equivalent_per_year_"  : {
+    "Total_GHG_emissions_reductions_in_2030__kt_CO2eq_y_"  : {
         "type" : "double"
     },
-    "Objective_s__lookup_only4facets" : {
-        "type" : "string",
-        "analyzer" : "coma"
-    },
-    "Entities_lookup_only4facets"  : {
+    "Entities_responsible_for_implementing_the_policy__type_"  : {
         "type" : "string",
         "analyzer" : "coma"
     },
@@ -64,7 +60,7 @@
         "type" : "string",
         "analyzer" : "none"
     },
-    "Description__estimate__methodology" :{
+    "Description_of_projected_cost_estimates" :{
         "type" : "string",
         "analyzer" : "none"
     }

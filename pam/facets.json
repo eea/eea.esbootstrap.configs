@@ -195,21 +195,21 @@
         },
 
         {
-            "name": "Impact_of_policy_or_measure___EU_ETS__outside_the_ETS___ESD___or_LULUCF_",
+            "name": "Policy_impacting_EU_ETS__ESD_or_LULUCF_emissions",
             "listing": {
                 "visible": true,
-                "title": "Impact of policy or measure  (EU ETS, outside the ETS (“ESD”) or LULUCF)",
+                "title": "Policy impacting EU ETS, ESD or LULUCF emissions",
                 "pos": 8,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Impact of policy or measure  (EU ETS, outside the ETS (“ESD”) or LULUCF)",
+                "title": "Policy impacting EU ETS, ESD or LULUCF emissions",
                 "visible": true,
                 "pos": 8
             },
             "facet": {
                 "visible": true,
-                "title": "Impact of policy or measure  (EU ETS, outside the ETS (“ESD”) or LULUCF)",
+                "title": "Policy impacting EU ETS, ESD or LULUCF emissions",
                 "pos": 4,
                 "type": "facet",
                 "size": 50,
@@ -281,21 +281,21 @@
             }
         },
         {
-            "name": "Total_GHG_emissions_reductions_in_2020__kt_CO2_equivalent_per_year_",
+            "name": "Total_GHG_emissions_reductions_in_2020__kt_CO2eq_y_",
             "listing": {
                 "visible": true,
-                "title": "Total GHG emissions reductions in 2020 (kt CO2-equivalent per year)",
+                "title": "Total GHG emissions reductions in 2020 (kt CO2eq/y)",
                 "pos": 11,
                 "width": "110px"
             },
             "csv_tsv": {
-                "title": "Total GHG emissions reductions in 2020 (kt CO2-equivalent per year)",
+                "title": "Total GHG emissions reductions in 2020 (kt CO2eq/y)",
                 "visible": true,
                 "pos": 11
             },
             "facet": {
                 "visible": true,
-                "title": "Total GHG emissions reductions in 2020 (kt CO2-equivalent per year)",
+                "title": "Total GHG emissions reductions in 2020 (kt CO2eq/y)",
                 "pos": 7,
                 "type": "range",
                 "order": "term",
@@ -303,21 +303,21 @@
             }
         },
         {
-            "name": "Total_GHG_emissions_reductions_in_2030__kt_CO2_equivalent_per_year_",
+            "name": "Total_GHG_emissions_reductions_in_2030__kt_CO2eq_y_",
             "listing": {
                 "visible": true,
-                "title": "Total GHG emissions reductions in 2030 (kt CO2-equivalent per year)",
+                "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
                 "pos": 12,
                 "width": "110px"
             },
             "csv_tsv": {
-                "title": "Total GHG emissions reductions in 2030 (kt CO2-equivalent per year)",
+                "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
                 "visible": true,
                 "pos": 12
             },
             "facet": {
                 "visible": true,
-                "title": "Total GHG emissions reductions in 2030 (kt CO2-equivalent per year)",
+                "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
                 "pos": 8,
                 "type": "range",
                 "order": "term",
@@ -325,7 +325,7 @@
             }
         },
         {
-            "name": "Entities_lookup_only4facets",
+            "name": "Entities_responsible_for_implementing_the_policy__type_",
             "listing": {
                 "visible": false
             },
@@ -443,18 +443,18 @@
             "name": "Union_policy_which_resulted_in_the_implementation_of_the_policy_or_measure",
             "listing": {
                 "visible": true,
-                "title": "Union policy which resulted in the implementation of the policy or measure",
+                "title": "Related Union Policy",
                 "pos": 16,
                 "width": "200px"
             },
             "csv_tsv": {
-                "title": "Union policy which resulted in the implementation of the policy or measure",
+                "title": "Related Union Policy",
                 "visible": true,
                 "pos": 17
             },
             "facet": {
                 "visible": false,
-                "title": "Union policy which resulted in the implementation of the policy or measure",
+                "title": "Related Union Policy",
                 "pos": 12,
                 "type": "facet",
                 "size": 1500,
