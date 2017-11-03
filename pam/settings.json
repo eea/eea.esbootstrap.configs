@@ -15,6 +15,7 @@
         "footer_path": "/templates/v2/getFooter?render_full_html=False"
     },
     "layout_vars": {
+        "renderCritical": true,
         "head_title": "EEA database on climate change mitigation policies and measures in Europe &mdash; European Environment Agency",
         "css_resources": {
             "index_page": [

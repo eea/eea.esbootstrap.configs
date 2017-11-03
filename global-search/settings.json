@@ -163,5 +163,6 @@
                 "config_file": "riverconfig_messages.json"
             }
         ]
-    }
+    },
+    "endpoint": "http://semantic.eea.europa.eu/sparql"
 }

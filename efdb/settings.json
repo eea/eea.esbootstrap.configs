@@ -16,6 +16,7 @@
     },
     "layout_vars": {
         "head_title": "EMEP/EEA air pollutant emission inventory",
+        "renderCritical": true,
         "css_resources": {
             "index_page": [
                 "css/no-more-tables.css",
