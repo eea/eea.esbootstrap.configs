@@ -16,6 +16,8 @@
     },
     "layout_vars": {
         "head_title": "AQ zones (B preliminary)",
+        "renderCritical": true,
+        "override_searchserver_resources": false,
         "css_resources": {
             "index_page": [
                 "css/no-more-tables.css",
