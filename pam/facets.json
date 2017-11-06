@@ -8,7 +8,11 @@
     "listing_settings" : {
         "show_links": false
     },
-
+    "highlights": {
+        "enabled": true,
+        "whitelist": [],
+        "blacklist": []
+    },
     "fields_mapping": [
         {
             "name": "Country",
@@ -327,7 +331,10 @@
                 "type": "facet",
                 "size": 1500,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": ["sort", "checkbox"],
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for objective",
+                "empty_message": "No objective to show"
             }
         },
         {
@@ -532,7 +539,11 @@
                 "type": "facet",
                 "size": 1500,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": ["sort", "checkbox"],
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for union policy",
+                "empty_message": "No union policy to show"
+
             }
         },
         {

@@ -1,4 +1,7 @@
 {
+    "did_you_mean": {"type": "string", "analyzer": "didYouMean"},
+    "autocomplete": {"type": "string", "analyzer": "autocomplete"},
+
     "Country" : {
         "type" : "string",
         "analyzer" : "coma"
@@ -63,5 +66,61 @@
     "Description_of_projected_cost_estimates" :{
         "type" : "string",
         "analyzer" : "none"
+    },
+
+
+    "Name_of_policy_or_measure": {
+        "type": "string",
+        "fields" : {
+                "toindex" : {"type" : "string", "analyzer" : "default"},
+                "index" : {"type" : "string", "analyzer" : "none"},
+                "Name_of_policy_or_measure": {"type": "string", "index": "not_analyzed"}
+        },
+        "copy_to" : ["did_you_mean", "autocomplete"]
+    },
+    "Entities_responsible_for_implementing_the_policy": {
+        "type": "string",
+        "fields" : {
+                "toindex" : {"type" : "string", "analyzer" : "default"},
+                "index" : {"type" : "string", "analyzer" : "none"},
+                "Entities_responsible_for_implementing_the_policy": {"type": "string", "index": "not_analyzed"}
+        },
+        "copy_to" : ["did_you_mean", "autocomplete"]
+    },
+    "Related_Union_Policy": {
+        "type": "string",
+        "fields" : {
+                "toindex" : {"type" : "string", "analyzer" : "default"},
+                "index" : {"type" : "string", "analyzer" : "none"},
+                "Related_Union_Policy": {"type": "string", "index": "not_analyzed"}
+        },
+        "copy_to" : ["did_you_mean", "autocomplete"]
+    },
+    "Description": {
+        "type": "string",
+        "fields" : {
+                "toindex" : {"type" : "string", "analyzer" : "default"},
+                "index" : {"type" : "string", "analyzer" : "none"},
+                "Description": {"type": "string", "index": "not_analyzed"}
+        },
+        "copy_to" : ["did_you_mean", "autocomplete"]
+    },
+    "Objective_s_": {
+        "type": "string",
+        "fields" : {
+                "toindex" : {"type" : "string", "analyzer" : "default"},
+                "index" : {"type" : "string", "analyzer" : "none"},
+                "Objective_s_": {"type": "string", "index": "not_analyzed"}
+        },
+        "copy_to" : ["did_you_mean", "autocomplete"]
+    },
+    "Reference_for_ex_ante_assessment": {
+        "type": "string",
+        "fields" : {
+                "toindex" : {"type" : "string", "analyzer" : "default"},
+                "index" : {"type" : "string", "analyzer" : "none"},
+                "Reference_for_ex_ante_assessment": {"type": "string", "index": "not_analyzed"}
+        },
+        "copy_to" : ["did_you_mean", "autocomplete"]
     }
 }

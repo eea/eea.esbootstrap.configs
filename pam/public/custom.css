@@ -16,3 +16,18 @@ a.details_link:visited {
 #content {
     background: #FFF none;
 }
+
+ul.ui-autocomplete li.autocomplete_facet_value span.facet_label_text {
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+ul.ui-autocomplete li.autocomplete_facet_value {
+    width: 100%;
+}
+
+ul.ui-autocomplete .ui-menu-item {
+    background-color:white;
+    width:100%;
+}
