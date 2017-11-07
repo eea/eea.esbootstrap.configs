@@ -74,9 +74,11 @@ def main(csv_input, csv_output):
         uplc = "Union_policy_lookup_only4facets_clean"
         row[uplc] = "; ".join(row[uplc].split(";"))
         if row[uplc].strip()[-1:] == ";":
-#            import pdb; pdb.set_trace()
             row[uplc] = row[uplc].strip()[:-1]
-#            import pdb; pdb.set_trace()
+
+        rup = "Related_Union_Policy"
+        if row[rup].strip() == 'UNDEFINED':
+            row[rup] = "No information"
 
     fieldnames = reader.fieldnames
     fieldnames.append('Status_of_implementation_clean')
