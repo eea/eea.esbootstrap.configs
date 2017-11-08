@@ -90,19 +90,19 @@ html
 
         input(id="list_view_template", type="hidden", value="#{listViewTemplate}")
 
-    != templateRender(footerFile)
+        != templateRender(footerFile)
 
-    block extrastyles
+        block extrastyles
 
-    if (renderJs && !debug_mode)
-        != renderJs('layout_page')
-    else 
-        each script in js_resources.layout_page
-            script(type='text/javascript', src=script)
-        if debug_mode
-            each script in js_resources.debug_javascripts
+        if (renderJs && !debug_mode)
+            != renderJs('layout_page')
+        else
+            each script in js_resources.layout_page
                 script(type='text/javascript', src=script)
+            if debug_mode
+                each script in js_resources.debug_javascripts
+                    script(type='text/javascript', src=script)
 
-    script(type="text/javascript", src="https://www.eea.europa.eu/external_templates_scripts.js")
-    block extrajavascripts
+        script(type="text/javascript", src="https://www.eea.europa.eu/external_templates_scripts.js")
+        block extrajavascripts
 
