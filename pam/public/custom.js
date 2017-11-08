@@ -6,6 +6,9 @@ function fixHeights(){
         $(elem).append(newelem);
     });
     $.each($(".eea-pam-element"), function(idx, elem){
+        if ($(elem).text() !== $(elem).html()){
+            return;
+        }
         var full_text = $(elem).text();
         var min_length = 0;
         var max_length = $(elem).text().length;

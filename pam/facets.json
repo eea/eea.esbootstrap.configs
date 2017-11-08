@@ -157,39 +157,6 @@
                 "pos": 70
             }
         },
-
-        {
-            "name": "ID_of_policy_or_measure",
-            "listing": {
-                "visible": false,
-                "title": "ID of policy or measure",
-                "pos": 80
-            },
-            "csv_tsv": {
-                "title": "ID of policy or measure",
-                "visible": true,
-                "pos": 80
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-        {
-            "name": "Policies_or_measures_included_in_the_group",
-            "listing": {
-                "visible": false,
-                "title": "Policies or measures included in the group",
-                "pos": 90
-            },
-            "csv_tsv": {
-                "title": "Policies or measures included in the group",
-                "visible": true,
-                "pos": 90
-            },
-            "facet": {
-                "visible": false
-            }
-        },
         {
             "name": "Type_of_policy_instrument",
             "listing": {
@@ -608,7 +575,7 @@
         {
             "name": "Link_to_national_report",
             "listing": {
-                "visible": true,
+                "visible":false,
                 "title": "Link to national report",
                 "pos": 260,
                 "width": "300px"
@@ -725,6 +692,7 @@
                 "visible": true,
                 "title": "URL to main reference",
                 "pos": 330
+
             },
             "csv_tsv": {
                 "title": "URL to main reference",

@@ -35,3 +35,13 @@ ul.ui-autocomplete .ui-menu-item {
 #facetview_results th div {
     height:72px !important;
 }
+
+td[data-title="URL to main reference"] div,
+td[data-title="Web link for ex-ante assessment"] div,
+td[data-title="Web link for ex-post assessment"] div,
+td[data-title="Web link for projected costs and benefits"] div,
+td[data-title="Web link for realised costs and benefits"] div{
+    width:100px;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}
