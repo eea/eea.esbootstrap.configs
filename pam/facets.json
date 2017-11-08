@@ -134,13 +134,13 @@
             "listing": {
                 "visible": true,
                 "title": "ID of policy or measure",
-                "pos": 60,
-                "width": "100px"
+                "pos": 15,
+                "width": "50px"
             },
             "csv_tsv": {
                 "title": "ID of policy or measure",
                 "visible": true,
-                "pos": 60
+                "pos": 15
             }
         },
         {
