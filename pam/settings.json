@@ -40,7 +40,7 @@
         "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/data/climate-change-mitigation-policies-and-measures-1",
         "further_info": ""
     },
-    "es_debug_enabled": true,
+    "es_debug_enabled": false,
     "suggestions_enabled": true,
     "endpoint": "http://semantic.eea.europa.eu/sparql"
 }
