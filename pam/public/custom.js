@@ -65,6 +65,6 @@ window.esbootstrap_options = {
 jQuery(document).ready(function($) {
     $(window).bind('post_search_callback', function(){
         removeMissingDetails();
-        fixHeights();
+        //fixHeights();
     });
 });
