@@ -13,6 +13,40 @@ a.details_link:visited {
     display: none;
 }
 
+
+/* #89768 show ellipsis for pam table listing if we have more than 3 lines of text */
+/*#facetview_results th {*/
+    /*padding: 0.5em;*/
+/*}*/
+/*#facetview_results td {*/
+    /*min-width: 175px;*/
+/*}*/
+#facetview_results td {
+    text-align: right;
+}
+#facetview_results a {
+    padding-right: 1em;
+    display: block;
+}
+.results_text {
+    max-width: 200px;
+    display: block;
+    position: relative;
+    max-height: 50px;
+    overflow: hidden;
+    z-index: 1;
+    text-align: right;
+    padding-right: 1em;
+}
+.results_text:after {
+   content: "...";
+    position: absolute;
+    top: 32px;
+    left: 100%;
+    width: 1em;
+    margin-left: -1em;
+    display: inline-block;
+}
 #content {
     background: #FFF none;
 }

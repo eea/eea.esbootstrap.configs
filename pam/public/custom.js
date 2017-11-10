@@ -1,10 +1,16 @@
 /* global jQuery, $, window, document */
-function fixHeights(){
-    $.each($("#facetview_results tbody tr td"), function (idx, elem){
+function fixHeights() {
+    $.each($("#facetview_results").find('td'), function (idx, elem) {
+
+        // var text = elem.innerText;
+        // if (text.length > 103) {
+        //     elem.innerText = text.substr(0, 103) + "...";
+        // }
         var newelem = $("<div class='eea-pam-element' title='"+$(elem).text()+"'>").append($(elem).html());
         $(elem).html("");
         $(elem).append(newelem);
     });
+
     $.each($(".eea-pam-element"), function(idx, elem){
         if ($(elem).text() !== $(elem).html()){
             return;
@@ -65,6 +71,6 @@ window.esbootstrap_options = {
 jQuery(document).ready(function($) {
     $(window).bind('post_search_callback', function(){
         removeMissingDetails();
-        //fixHeights();
+        // fixHeights();
     });
 });
