@@ -22,7 +22,7 @@ a.details_link:visited {
     /*min-width: 175px;*/
 /*}*/
 #facetview_results td {
-    text-align: right;
+    text-align: left;
 }
 #facetview_results a {
     padding-right: 1em;
@@ -32,20 +32,26 @@ a.details_link:visited {
     max-width: 200px;
     display: block;
     position: relative;
-    max-height: 50px;
+    max-height: 60px;
     overflow: hidden;
     z-index: 1;
-    text-align: right;
     padding-right: 1em;
 }
 .results_text:after {
-   content: "...";
+   content: " ";
     position: absolute;
-    top: 32px;
-    left: 100%;
-    width: 1em;
+    top: 46px;
+    left: 0;
+    height: 15px;
+    width: 100%;
     margin-left: -1em;
     display: inline-block;
+}
+tr:nth-of-type(odd) .results_text:after {
+    background: -webkit-linear-gradient(right, rgba(249, 249, 249, 0.75), rgba(249, 249, 249, 0));
+}
+tr:nth-of-type(even) .results_text:after {
+    background: -webkit-linear-gradient(right, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
 }
 #content {
     background: #FFF none;
