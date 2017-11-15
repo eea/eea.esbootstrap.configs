@@ -404,8 +404,8 @@
                 "chart_config" : {
                     "height" : 40,
                     "chart_type" : "ColumnChart"
-                }
-
+                },
+                "interval" : 10
             }
         },
 
