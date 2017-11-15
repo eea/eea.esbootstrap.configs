@@ -14,7 +14,7 @@ block extrastyles
         if renderStyles && !debug_mode
             - var css_render = renderStyles('index_page')
             - var only_css = css_render.match(/href\='([^\s]*)'\s/)[1]
-            link(rel="preload" href="#{only_css}" as="style" onload="this.rel='stylesheet'")
+            link(rel="preload" href="#{only_css}" as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
             <noscript><link rel="stylesheet" href="#{only_css}" /></noscript>
         else
             each style in css_resources.index_page
