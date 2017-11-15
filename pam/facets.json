@@ -397,12 +397,18 @@
                 "visible": true,
                 "title": "Implementation period start",
                 "pos": 10,
-                "type": "facet",
+                "type": "rangehistogram",
                 "size": 1500,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": ["sort", "checkbox"],
+                "chart_config" : {
+                    "height" : 40,
+                    "chart_type" : "ColumnChart"
+                }
+
             }
         },
+
         {
             "name": "Implementation_period_start",
             "listing": {
