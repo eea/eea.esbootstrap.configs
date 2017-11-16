@@ -16,7 +16,7 @@
     },
     "layout_vars": {
         "head_title": "EEA database on climate change mitigation policies and measures in Europe &mdash; European Environment Agency",
-        "renderCritical": true,
+        "renderCritical": false,
         "override_searchserver_resources": false,
         "css_resources": {
             "index_page": [
