@@ -40,11 +40,14 @@ html
 
     - var debug_mode = settings_es_debug_enabled.indexOf('false') === -1
 
-    if !debug_mode
-        style
-            include:uglify-css /node_modules/eea-searchserver/lib/framework/public/css/critical.css
+    if !renderCritical
+        != templateRender(headFile)
     else
-        link(rel='stylesheet', href="esbootstrap_resources/css/critical.css")
+        if !debug_mode
+            style
+                include:uglify-css /node_modules/eea-searchserver/lib/framework/public/css/critical.css
+        else
+            link(rel='stylesheet', href="esbootstrap_resources/css/critical.css")
 
     if debug_mode
         each style in css_resources.debug_styles
