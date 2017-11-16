@@ -16,7 +16,7 @@
     },
     "layout_vars": {
         "head_title": "Assessment Regimes (C)",
-        "renderCritical": true,
+        "renderCritical": false,
         "override_searchserver_resources": false,
         "css_resources": {
             "index_page": [

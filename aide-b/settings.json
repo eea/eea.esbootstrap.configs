@@ -16,7 +16,7 @@
     },
     "layout_vars": {
         "head_title": "AQ zones (B)",
-        "renderCritical": true,
+        "renderCritical": false,
         "override_searchserver_resources": false,
         "css_resources": {
             "index_page": [
