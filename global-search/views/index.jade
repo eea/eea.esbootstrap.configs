@@ -22,8 +22,6 @@ block extrastyles
                 link(rel='stylesheet', href=style)
 
 block content
-    if (enableBreadcrumbs)
-        +portal_breadcrumbs(breadcrumbs)
     div(class="page-header")
         h1!= site_title
         +download_data

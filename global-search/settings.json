@@ -32,7 +32,8 @@
             ]
         },
         "site_title": "Global search and catalogue <sup style='color:#fbaf33'>beta</sup>",
-        "enableBreadcrumbs": false,
+        "enableBreadcrumbs": true,
+        "breadcrumbs": "Global Search",
         "dataprovencance_info_text": "Semantic Data Service (SDS)",
         "dataprovencance_info_url": "http://semantic.eea.europa.eu",
         "further_info": "The content of this catalogue has been created thanks to the EU's open data approach and the contribution of many organisations part of EEA's network (Eionet)."
