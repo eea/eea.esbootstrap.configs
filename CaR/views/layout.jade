@@ -38,9 +38,9 @@ html
         script
             != mapping
 
-    - var debug_mode = settings_es_debug_enabled.indexOf('false') === -1
+    - var debug_mode = skip_resources_bundling && skip_resources_bundling.indexOf('false') === -1
 
-    if !renderCritical
+    if !skip_external_template_styles
         != templateRender(headFile)
     else
         if !debug_mode
