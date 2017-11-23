@@ -77,11 +77,11 @@
     font-size: 175%;
 }
 .normal_tiles .picture {
-    background: #00918D url("images/search-album-slideshow-bg.png") no-repeat center center;
+    background: #00918D url("/images/search-album-slideshow-bg.png") no-repeat center center;
     background-size: contain; 
 }
 .normal_tiles .topics {
-    background: #fbaf33 url("images/topics-bg.png") no-repeat 85% 25%;
+    background: #fbaf33 url("/images/topics-bg.png") no-repeat 85% 25%;
     background-size: 85%;
 }
 
@@ -90,17 +90,17 @@
 }
 
 .normal_tiles .organisations {
-    background: #babbdb url("images/organisations-bg.png") no-repeat 85px 100px;
+    background: #babbdb url("/images/organisations-bg.png") no-repeat 85px 100px;
     background-size: 70%;
 }
 
 .normal_tiles .content_types {
-    background: #b3548d url("images/content-types-bg.png") no-repeat 85% 55%; 
+    background: #b3548d url("/images/content-types-bg.png") no-repeat 85% 55%;
     background-size: 90%;
 }
 
 .normal_tiles .countries {
-    background: #1c65a4 url("images/countries-bg.png") no-repeat -1px 1px;
+    background: #1c65a4 url("/images/countries-bg.png") no-repeat -1px 1px;
     padding-top: 138px;
     background-size: 101%;
     position: relative;
