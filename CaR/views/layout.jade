@@ -38,7 +38,7 @@ html
         script
             != mapping
 
-    - var debug_mode = skip_resources_bundling && skip_resources_bundling.indexOf('false') === -1
+    - var debug_mode = skip_resources_bundling || false
 
     if !skip_external_template_styles
         != templateRender(headFile)
