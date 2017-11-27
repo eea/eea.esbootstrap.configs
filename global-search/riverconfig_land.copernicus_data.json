@@ -32,8 +32,9 @@
     "http://purl.org/dc/terms/issued":  ["http://purl.org/dc/terms/issued", "year"],
     "http://purl.org/dc/terms/title": ["http://purl.org/dc/terms/title","label"],
     "http://purl.org/dc/terms/creator": ["creator_cms"],
-    "http://purl.org/dc/terms/abstract": "text",
-    "http://purl.org/dc/terms/spatial":["http://purl.org/dc/terms/spatial","places"]
+    "http://land.copernicus.eu/portal_types/LandItem#dataResourceAbstract": ["http://purl.org/dc/terms/description","text"],
+    "http://purl.org/dc/terms/spatial":["http://purl.org/dc/terms/spatial","places"],
+    "http://land.copernicus.eu/portal_types/LandItem#temporalCoverage": ["time_coverage"]
   },
   "//": "Normalise the properties to the given value",
   "normalisedProperties": {

@@ -126,6 +126,28 @@
                     "rule": "startsWith",
                     "operator": "",
                     "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#about",
+                    "value": "http://land.copernicus.eu",
+                    "thumb_template": {
+                        "template": "${url}/image_preview",
+                        "variables": [{
+                                "name": "url",
+                                "type" : "field",
+                                "field" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#about"
+                        }]
+                    },
+                    "icon_template": {
+                        "template": "https://www.eea.europa.eu/portal_depiction/${contentType}/image_thumb",
+                        "variables": [{
+                                "name": "contentType",
+                                "type" : "variable",
+                                "variable" : "contentType"
+                        }]
+                    }
+                },
+                {
+                    "rule": "startsWith",
+                    "operator": "",
+                    "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#about",
                     "value": "http://www.eea.europa.eu",
                     "thumb_template": {
                         "template": "${url}/image_preview",
@@ -747,7 +769,8 @@
         {
             "name": "time_coverage",
             "listing": {
-                "visible": false
+                "title": "Time coverage",
+                "visible" : true
             },
             "csv_tsv": {
                 "title": "Time coverage",
