@@ -45,7 +45,7 @@ block content
                             - var values = val.split('|');
                             - var title = values[0];
                             - var link = values.length > 1 ? values[1] : values[0];
-                            - var link = link.indexOf('http://') === -1 ? 'http://' + link : link;
+                            - var link = (!link.search(/^http[s]?:\/\//)) ? 'http://' + link : link;
                             a(href=link)=title
 
         div(class='section-topics')
