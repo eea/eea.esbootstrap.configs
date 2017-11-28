@@ -136,7 +136,7 @@
                         }]
                     },
                     "icon_template": {
-                        "template": "https://www.eea.europa.eu/portal_depiction/${contentType}/image_thumb",
+                        "template": "https://www.eea.europa.eu/portal_depiction/data/image_thumb",
                         "variables": [{
                                 "name": "contentType",
                                 "type" : "variable",
