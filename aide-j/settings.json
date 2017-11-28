@@ -16,6 +16,8 @@
     },
     "layout_vars": {
         "head_title": "AQ Scenarios (J)",
+        "app_id": "aide-j",
+        "skip_resources_bundling": false,
         "skip_external_template_styles": false,
         "override_searchserver_resources": false,
         "css_resources": {

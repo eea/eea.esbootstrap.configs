@@ -17,7 +17,9 @@
     "layout_vars": {
         "head_title": "Countries and regions — European Environment Agency (EEA)",
         "override_searchserver_resources": true,
-        "skip_external_template_styles": false,
+        "app_id": "car",
+        "skip_resources_bundling": false,
+        "skip_external_template_styles": true,
         "css_resources": {
             "layout_page": [
                "esbootstrap_resources/facetview/css/facetview.css",
@@ -63,6 +65,132 @@
         "path" : "/viewCountryRegionsJSON",
         "defaults" : "external_configs_defaults.json"
     },
-    "selected_navigation_tab": "countries"
+    "selected_navigation_tab": "countries",
+
+    "river_configs": {
+        "configs": [
+            {
+                "id": "eea_files",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_eeafiles.json"
+            },
+            {
+                "id": "eea_documents",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_eeadocuments.json"
+            },
+            {
+                "id": "eea_terms",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_eeaterms.json"
+            },
+            {
+                "id": "eea_indicators",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_eeaindicators.json"
+            },
+            {
+                "id": "eea_articles",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_eeaarticles.json"
+            },
+            {
+                "id": "eea_highlights",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_eeahighlights.json"
+            },
+            {
+                "id": "eea_fiches",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_eeafiches.json"
+            },
+            {
+                "id": "eea_infographics",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_eeainfographics.json"
+            },
+            {
+                "id": "eea_folders",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_eeafolders.json"
+            },
+            {
+                "id": "eea_sparql",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_eeasparql.json"
+            },
+            {
+                "id": "eea_contracts",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_eeacontracts.json"
+            },
+            {
+                "id": "eea_reports",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_eeareports.json"
+            },
+            {
+                "id": "eea_daviz",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_eeadaviz.json"
+            },
+            {
+                "id": "eea_dataexternal",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_eeadata_external.json"
+            },
+            {
+                "id": "eea_data",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_eeadata.json"
+            },
+            {
+                "id": "eea_figures",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_eeafigures.json"
+            },
+            {
+                "id": "eea_content",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_eea.europa.eu.json"
+            },
+            {
+                "id": "eea_vacancies",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_eeavacancies.json"
+            },
+            {
+                "id": "rod_instruments",
+                "cluster_name": "Eionet > reportnet",
+                "config_file": "../global-search/riverconfig_instruments.json"
+            },
+            {
+                "id": "rod_obligations_expired",
+                "cluster_name": "Eionet > reportnet",
+                "config_file": "../global-search/riverconfig_obligations_expired.json"
+            },
+            {
+                "id": "rod_obligations_active",
+                "cluster_name": "Eionet > reportnet",
+                "config_file": "../global-search/riverconfig_obligations_active.json"
+            },
+            {
+                "id": "rod_clients",
+                "cluster_name": "Eionet > reportnet",
+                "config_file": "../global-search/riverconfig_clients.json"
+            },
+            {
+                "id": "eea_organisations",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_organisations.json"
+            },
+            {
+                "id": "eea_messages",
+                "cluster_name": "EEA Website",
+                "config_file": "../global-search/riverconfig_messages.json"
+            }
+        ]
+    },
+    "endpoint": "http://semantic.eea.europa.eu/sparql"
 }
 
