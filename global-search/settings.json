@@ -123,7 +123,7 @@
             },
             {
                 "id": "eea_copernicus",
-                "cluster_name": "Land Copernicus at EEA (land.copernicus.eu)",
+                "cluster_name": "Copernicus Land at EEA (land.copernicus.eu)",
                 "config_file": "riverconfig_land.copernicus_data.json"
             },
             {
