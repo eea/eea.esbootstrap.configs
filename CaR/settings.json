@@ -19,7 +19,7 @@
         "override_searchserver_resources": true,
         "app_id": "car",
         "skip_resources_bundling": false,
-        "skip_external_template_styles": false,
+        "skip_external_template_styles": true,
         "css_resources": {
             "layout_page": [
                "esbootstrap_resources/facetview/css/facetview.css",

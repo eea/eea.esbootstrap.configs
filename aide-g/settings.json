@@ -18,7 +18,7 @@
         "head_title": "Attainments (G)",
         "app_id": "aide-g",
         "skip_resources_bundling": false,
-        "skip_external_template_styles": false,
+        "skip_external_template_styles": true,
         "override_searchserver_resources": false,
         "css_resources": {
             "index_page": [
