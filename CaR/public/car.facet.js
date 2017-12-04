@@ -35,10 +35,10 @@ $.fn.carFacet = function(settings){
                 $(value).find(".car_facet_count").text(count);
                 var checked = $(real_facet_option).find(".jstree-anchor").hasClass("jstree-clicked");
                 if (checked){
-                    $(value).find(".car_facet_checkbox").attr("checked", true);
+                    $(value).find(".car_facet_checkbox").prop("checked", true);
                 }
                 else {
-                    $(value).find(".car_facet_checkbox").attr("checked", false);
+                    $(value).find(".car_facet_checkbox").prop("checked", false);
                 }
                 $(value).find(".car_facet_checkbox").removeAttr("readonly");
                 $(value).find(".car_facet_value").removeAttr("readonly");
@@ -61,10 +61,10 @@ $.fn.carFacet = function(settings){
     $('.car_facet_checkbox[facet_type="group"]').change(function() {
         var group_id = $(this).attr("group_id");
         if($(this).is(":checked")) {
-            $('.car_facet_checkbox[facet_type="facet"][group_id="'+group_id+'"]:not([readonly])').attr("checked", true);
+            $('.car_facet_checkbox[facet_type="facet"][group_id="'+group_id+'"]:not([readonly])').prop("checked", true);
         }
         else {
-            $('.car_facet_checkbox[facet_type="facet"][group_id="'+group_id+'"]:not([readonly])').attr("checked", false);
+            $('.car_facet_checkbox[facet_type="facet"][group_id="'+group_id+'"]:not([readonly])').prop("checked", false);
         }
         dosearch();
     });
@@ -90,10 +90,10 @@ $.fn.carFacet = function(settings){
             var available_facets = $('.car_facet_checkbox[facet_type="facet"][group_id="'+group_id+'"]:not([readonly])');
             var checked_facets = $('.car_facet_checkbox[facet_type="facet"][group_id="'+group_id+'"]:checked:not([readonly])');
             if (checked_facets.length === available_facets.length){
-                $('.car_facet_checkbox[facet_type="group"][group_id="'+group_id+'"]:not([readonly])').attr("checked", true);
+                $('.car_facet_checkbox[facet_type="group"][group_id="'+group_id+'"]:not([readonly])').prop("checked", true);
             }
             else {
-                $('.car_facet_checkbox[facet_type="group"][group_id="'+group_id+'"]:not([readonly])').attr("checked", false);
+                $('.car_facet_checkbox[facet_type="group"][group_id="'+group_id+'"]:not([readonly])').prop("checked", false);
             }
         });
         if (exec_search){
