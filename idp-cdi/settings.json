@@ -16,7 +16,9 @@
     },
     "layout_vars": {
         "head_title": "IDP-CDI",
-        "skip_external_template_styles": false,
+        "app_id": "idp-cdi",
+        "skip_resources_bundling": false,
+        "skip_external_template_styles": true,
         "override_searchserver_resources": false,
         "css_resources": {
             "index_page": [

@@ -16,7 +16,9 @@
     },
     "layout_vars": {
         "head_title": "EEA database on climate change mitigation policies and measures in Europe &mdash; European Environment Agency",
-        "skip_external_template_styles": false,
+        "app_id": "pam",
+        "skip_external_template_styles": true,
+        "skip_resources_bundling": false,
         "override_searchserver_resources": false,
         "css_resources": {
             "index_page": [
@@ -40,7 +42,7 @@
         "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/data/climate-change-mitigation-policies-and-measures-1",
         "further_info": ""
     },
-    "es_debug_enabled": true,
+    "es_debug_enabled": false,
     "suggestions_enabled": true,
     "endpoint": "http://semantic.eea.europa.eu/sparql",
     "selected_navigation_tab": "data-and-maps"
