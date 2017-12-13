@@ -397,10 +397,16 @@
                 "visible": true,
                 "title": "Implementation period start",
                 "pos": 10,
-                "type": "facet",
+                "type": "rangehistogram",
                 "size": 1500,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "bar_color" : "#205c90",
+                    "container_height" : 150,
+                    "columns_bucketsize" : 10,
+                    "slider_bucketsize" : 1
+                }
             }
         },
         {
