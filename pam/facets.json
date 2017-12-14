@@ -321,9 +321,15 @@
                 "visible": true,
                 "title": "Total GHG emissions reductions in 2020 (kt CO2eq/y)",
                 "pos": 7,
-                "type": "range",
+                "type": "rangehistogram",
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "bar_color" : "#205c90",
+                    "container_height" : 150,
+                    "columns_bucketsize" : 1000,
+                    "slider_bucketsize" : 1
+                }
             }
         },
         {
