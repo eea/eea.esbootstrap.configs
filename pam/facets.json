@@ -326,7 +326,7 @@
                 "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
                     "bar_color" : "#5393B4",
-                    "container_height" : 75,
+                    "ratio" : 1.33,
                     "columns_bucketsize" : 1000,
                     "slider_bucketsize" : 100
                 }
