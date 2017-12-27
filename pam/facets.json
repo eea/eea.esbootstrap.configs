@@ -33,7 +33,7 @@
                 "pos": 10
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Country",
                 "pos": 0,
                 "type": "facet",

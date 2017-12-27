@@ -158,4 +158,3 @@ _:rec tableFile:Projection_scenario_in_which_the_policy_or_measure_is_included_c
 _:rec tableFile:Is_the_policy_or_measure_related_to_a_Union_policy__clean ?Is_the_policy_or_measure_related_to_a_Union_policy__clean .
 _:rec tableFile:Union_policy_lookup_only4facets_clean ?Union_policy_lookup_only4facets_clean .
 }
-limit 10
