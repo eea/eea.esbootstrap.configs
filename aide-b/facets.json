@@ -106,7 +106,7 @@
                     "slider_bucket_min" : 2000000,
                     "slider_bucket_max" : 3500000,
 
-                    "slider_bucketsize" : 500000
+                    "slider_bucketsize" : 250000
                 }
             },
 
@@ -123,14 +123,16 @@
             "name": "Area",
             "listing": { "title": "Area", "visible" : true, "pos" : 14 },
             "details": { "title": "Area", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Area", "pos": 8, "type": "range", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"],
+            "facet": { "visible": true, "title": "Area", "pos": 8, "type": "rangehistogram", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
                     "columns_bucketsize" : 10000,
 
-                    "columns_bucket_min" : 0,
+                    "columns_bucket_min" : 10000,
                     "columns_bucket_max" : 99999,
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
 
-                    "slider_bucket_min" : 0,
+                    "slider_bucket_min" : 10000,
                     "slider_bucket_max" : 99999,
 
                     "slider_bucketsize" : 10000,
