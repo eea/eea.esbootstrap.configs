@@ -101,7 +101,7 @@
                     "columns_bucket_min" : 0,
                     "columns_bucket_max" : 3000000,
                     "columns_min_color" : "#DDDDDD",
-                    "columns_max_color" : "#AAAAAA"
+                    "columns_max_color" : "#AAAAAA",
 
 
                     "slider_bucketsize" : 10000
