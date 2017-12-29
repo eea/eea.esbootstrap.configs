@@ -349,9 +349,15 @@
                 "visible": true,
                 "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
                 "pos": 8,
-                "type": "range",
+                "type": "rangehistogram",
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "bar_color" : "#5393B4",
+                    "ratio" : 1.33,
+                    "columns_bucketsize" : 1000,
+                    "slider_bucketsize" : 100
+                }
             }
         },
         {
@@ -403,16 +409,10 @@
                 "visible": true,
                 "title": "Implementation period start",
                 "pos": 10,
-                "type": "rangehistogram",
+                "type": "facet",
                 "size": 1500,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"],
-                "histogram_config": {
-                    "bar_color" : "#5393B4",
-                    "container_height" : 75,
-                    "columns_bucketsize" : 10,
-                    "slider_bucketsize" : 5
-                }
+                "facet_display_options": ["sort", "checkbox"]
             }
         },
         {
