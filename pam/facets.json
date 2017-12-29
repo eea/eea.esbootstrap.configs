@@ -326,9 +326,10 @@
                 "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
                     "bar_color" : "#5393B4",
-                    "ratio" : 1.33,
+                    "ratio" : 1.77,
                     "columns_bucketsize" : 1000,
-                    "slider_bucketsize" : 100
+                    "slider_bucketsize" : 1000,
+                    "histogram": true
                 }
             }
         },
@@ -411,7 +412,8 @@
                     "bar_color" : "#5393B4",
                     "container_height" : 75,
                     "columns_bucketsize" : 10,
-                    "slider_bucketsize" : 5
+                    "slider_bucketsize" : 5,
+                    "histogram": true
                 }
             }
         },
