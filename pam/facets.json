@@ -325,11 +325,15 @@
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
-                    "bar_color" : "#5393B4",
-                    "ratio" : 1.77,
-                    "columns_bucketsize" : 1000,
-                    "slider_bucketsize" : 1000,
-                    "histogram": true
+                    "columns_bucketsize" : 100,
+
+                    "columns_bucket_min" : 0,
+                    "columns_bucket_max" : 5000,
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+                    "slider_bucketsize" : 10,
+                    "histogram" : true
                 }
             }
         },
@@ -350,9 +354,20 @@
                 "visible": true,
                 "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
                 "pos": 8,
-                "type": "range",
+                "type": "rangehistogram",
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "columns_bucketsize" : 100,
+
+                    "columns_bucket_min" : 0,
+                    "columns_bucket_max" : 5000,
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+                    "slider_bucketsize" : 10,
+                    "histogram" : true
+                }
             }
         },
         {
@@ -404,7 +419,7 @@
                 "visible": true,
                 "title": "Implementation period start",
                 "pos": 10,
-                "type": "rangehistogram",
+                "type": "facet",
                 "size": 1500,
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"],

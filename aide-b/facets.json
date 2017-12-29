@@ -96,16 +96,15 @@
             "details": { "title": "ResidentPopulation", "pos" : 4, "section": "info", "visible": false },
             "facet": { "visible": true, "title": "Resident Population", "pos": 7, "type": "range", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
-                    "columns_bucketsize" : 1000000,
-                    "slider_bucketsize"  : 500000,
+                    "columns_bucketsize" : 100000,
 
-                    "columns_bucket_min" : 1000000,
-                    "columns_bucket_max" : 8999999,
+                    "columns_bucket_min" : 0,
+                    "columns_bucket_max" : 3000000,
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA"
 
 
-
+                    "slider_bucketsize" : 10000
                 }
             },
 
@@ -124,15 +123,15 @@
             "details": { "title": "Area", "pos" : 4, "section": "info", "visible": false },
             "facet": { "visible": true, "title": "Area", "pos": 8, "type": "rangehistogram", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
-                    "columns_bucketsize" : 2000000,
-                    "slider_bucketsize"  : 2000000,
+                    "columns_bucketsize" : 1000,
 
-                    "columns_bucket_min" : 2000000,
-                    "columns_bucket_max" : 20000000,
+                    "columns_bucket_min" : 0,
+                    "columns_bucket_max" : 30000,
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",
 
 
+                    "slider_bucketsize" : 10,
                     "histogram" : true
                 }
             },
