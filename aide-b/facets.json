@@ -103,7 +103,6 @@
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",
 
-
                     "slider_bucketsize" : 10000
                 }
             },
