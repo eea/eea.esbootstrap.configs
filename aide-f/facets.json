@@ -136,21 +136,58 @@
             "name": "DataCoverage",
             "listing": { "title": "Data Coverage", "visible" : true, "pos" : 17 },
             "details": { "title": "DataCoverage", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Data Coverage", "pos": 8, "type": "range", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Data Coverage", "pos": 8, "type": "rangehistogram", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "columns_bucketsize" : 2,
+
+                    "columns_bucket_min" : 0,
+                    "columns_bucket_max" : 100,
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+
+                    "slider_bucketsize" : 1
+                }
+             },
             "csv_tsv": { "title": "DataCoverage", "visible": true, "pos": 4 }
         },
         {
             "name": "DataCapture",
             "listing": { "title": "Data Capture", "visible" : true, "pos" : 18},
             "details": { "title": "DataCapture", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Data Capture", "pos": 9, "type": "range", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Data Capture", "pos": 9, "type": "rangehistogram", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "columns_bucketsize" : 2,
+
+                    "columns_bucket_min" : 0,
+                    "columns_bucket_max" : 100,
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+
+                    "slider_bucketsize" : 1
+                }
+            },
             "csv_tsv": { "title": "DataCapture", "visible": true, "pos": 4 }
         },
         {
             "name": "TimeCoverage",
             "listing": { "title": "Time Coverage", "visible" : true, "pos" : 19},
             "details": { "title": "TimeCoverage", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Time Coverage", "pos": 10, "type": "range", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Time Coverage", "pos": 10, "type": "rangehistogram", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "columns_bucketsize" : 2,
+
+                    "columns_bucket_min" : 0,
+                    "columns_bucket_max" : 100,
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+
+                    "slider_bucketsize" : 1
+                }
+
+            },
             "csv_tsv": { "title": "TimeCoverage", "visible": true, "pos": 4 }
         },
         {
