@@ -94,7 +94,7 @@
             "name": "ResidentPopulation",
             "listing": { "title": "Resident Population", "visible" : true, "pos" : 12 },
             "details": { "title": "ResidentPopulation", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Resident Population", "pos": 7, "type": "range", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"],
+            "facet": { "visible": true, "title": "Resident Population", "pos": 7, "type": "rangehistogram", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
                     "columns_bucketsize" : 100000,
 
