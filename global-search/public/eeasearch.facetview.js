@@ -312,6 +312,7 @@ jQuery(document).ready(function($) {
     no_results_message: 'Your search did not return any results',
     add_undefined: true,
     predefined_filters: tmp_predefined_filters,
+    predefined_permanent_filters: predefined_filters,
     pager_on_top: true,
     permanent_filters: true,
     post_init_callback: function() {

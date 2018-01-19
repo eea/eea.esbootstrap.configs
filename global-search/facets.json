@@ -785,7 +785,6 @@
                 "histogram_config": {
                     "columns_bucketsize" : 10,
 
-                    "columns_bucket_min" : 1640,
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",
 
