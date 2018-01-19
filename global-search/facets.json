@@ -787,10 +787,12 @@
 
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",
+                    "outside_slider_columns_color": "rgb(227, 228, 228)",
 
                     "slider_bucketsize" : 1,
                     "histogram" : true,
                     "show_results_in_tooltip": false
+
                 }
             }
         },
