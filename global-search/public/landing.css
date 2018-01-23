@@ -47,6 +47,8 @@
 }
 #landing .time_coverage > p {
     margin-bottom: 1.75em;
+    min-width: 90%;
+    text-align: right;
 }
 
 .latest_objects, .available_content {
