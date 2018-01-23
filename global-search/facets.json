@@ -784,7 +784,7 @@
                 "type": "rangehistogram",
                 "histogram_config": {
                     "columns_bucketsize" : 10,
-
+                    "columns_bucket_min": 1700,
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",
                     "outside_slider_columns_color": "rgb(227, 228, 228)",
