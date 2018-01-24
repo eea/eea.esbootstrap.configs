@@ -154,7 +154,8 @@
     "http://www.eea.europa.eu/ontologies.rdf#objectProvides": ["Data receiver (Reportnet client)", "Organisation"],
     "places" : "unknown",
     "http://www.eea.europa.eu/ontologies.rdf#fleschReadingEaseScore" : 0,
-    "http://www.eea.europa.eu/ontologies.rdf#readingTime" : -1
+    "http://www.eea.europa.eu/ontologies.rdf#readingTime" : -1,
+    "http://purl.org/dc/terms/references":[]
   },
   "//": "Sync conditions",
   "syncConditions": [

@@ -170,6 +170,11 @@
                 "id": "eea_messages",
                 "cluster_name": "EEA Website (www.eea.europa.eu)",
                 "config_file": "riverconfig_messages.json"
+            },
+            {
+                "id": "bise_factsheets",
+                "cluster_name": "BISE website (biodiversity.europa.eu)",
+                "config_file": "riverconfig_bise_factsheets.json"
             }
         ]
     },
