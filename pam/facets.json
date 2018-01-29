@@ -366,7 +366,9 @@
                     "columns_max_color" : "#AAAAAA",
 
                     "slider_bucketsize" : 10,
-                    "histogram" : true
+                    "histogram" : true,
+                    "measurement_unit": "kt CO2eq/y",
+                    "tooltip_results_name" : "Items"
                 }
             }
         },
