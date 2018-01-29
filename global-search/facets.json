@@ -773,8 +773,8 @@
 
                     "slider_bucketsize" : 1,
                     "histogram" : true,
-                    "show_results_in_tooltip": true,
-                    "measurement_unit": "year"
+                    "show_results_in_tooltip": true
+
 
                 }
             }
