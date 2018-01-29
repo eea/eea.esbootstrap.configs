@@ -791,7 +791,8 @@
 
                     "slider_bucketsize" : 1,
                     "histogram" : true,
-                    "show_results_in_tooltip": false
+                    "show_results_in_tooltip": false,
+                    "measurement_unit": "years"
 
                 }
             }

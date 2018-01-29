@@ -104,8 +104,8 @@
                     "columns_max_color" : "#AAAAAA",
 
                     "slider_bucketsize" : 10000,
-                    "measurement_unit": "people",
-                    "tooltip_results_name" : "Items"
+                    "measurement_unit": "people"
+
                 }
             },
 
