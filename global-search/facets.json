@@ -756,14 +756,27 @@
                 "visible": true,
                 "title": "Publishing year",
                 "pos": 7,
-                "type": "facet",
+                "type": "rangehistogram",
                 "size": 100,
                 "min_size": 10,
                 "order": "reverse_term",
                 "operator": "AND",
                 "facet_display_options": ["sort", "checkbox"],
                 "short_name": "Year",
-                "values_blacklist": ["undefined"]
+                "values_blacklist": ["undefined"],
+                "histogram_config": {
+                	"columns_bucket_min": 1980,
+                    "columns_bucketsize" : 1,
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+	                "outside_slider_columns_color": "rgb(227, 228, 228)",
+
+                    "slider_bucketsize" : 1,
+                    "histogram" : true,
+                    "show_results_in_tooltip": true,
+                    "measurement_unit": "year"
+
+                }
             }
         },
         {
@@ -791,7 +804,7 @@
 
                     "slider_bucketsize" : 1,
                     "histogram" : true,
-                    "show_results_in_tooltip": false,
+                    "show_results_in_tooltip": true,
                     "measurement_unit": "years"
 
                 }
