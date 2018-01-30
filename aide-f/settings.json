@@ -17,7 +17,7 @@
     "layout_vars": {
         "head_title": "AQ statistics calculated by the EEA (F)",
         "app_id": "aide-f",
-        "skip_resources_bundling": true,
+        "skip_resources_bundling": false,
         "skip_external_template_styles": true,
         "override_searchserver_resources": false,
         "css_resources": {
