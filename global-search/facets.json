@@ -765,6 +765,7 @@
                 "short_name": "Year",
                 "values_blacklist": ["undefined"],
                 "histogram_config": {
+                    "discrete_values": true,
                     "columns_bucket_min": 1980,
                     "columns_bucketsize" : 1,
                     "columns_min_color" : "#DDDDDD",
@@ -774,9 +775,6 @@
                     "slider_bucketsize" : 1,
                     "histogram" : true,
                     "show_results_in_tooltip": true
-                    "measurement_unit": "year"
-
-
                 }
             }
         },
