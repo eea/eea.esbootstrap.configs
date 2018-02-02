@@ -33,14 +33,14 @@
     "http://purl.org/dc/terms/title": ["http://purl.org/dc/terms/title","label"],
     "http://purl.org/dc/terms/creator": ["creator_cms"],
     "http://purl.org/dc/terms/description": ["description"],
-    "http://land.copernicus.eu/portal_types/LandItem#dataResourceAbstract": ["http://purl.org/dc/terms/description","text"],
+    "https://land.copernicus.eu/portal_types/LandItem#dataResourceAbstract": ["http://purl.org/dc/terms/description","text"],
     "http://purl.org/dc/terms/spatial":["http://purl.org/dc/terms/spatial","places"],
-    "http://land.copernicus.eu/portal_types/LandItem#geographicCoverage":["http://purl.org/dc/terms/spatial","places"],
-    "http://land.copernicus.eu/portal_types/LandItem#temporalCoverage": ["time_coverage"]
+    "https://land.copernicus.eu/portal_types/LandItem#geographicCoverage":["http://purl.org/dc/terms/spatial","places"],
+    "https://land.copernicus.eu/portal_types/LandItem#temporalCoverage": ["time_coverage"]
   },
   "//": "Normalise the properties to the given value",
   "normalisedProperties": {
-    "http://land.copernicus.eu/portal_workflow/folder_workflow/states/published": "published"
+    "https://land.copernicus.eu/portal_workflow/folder_workflow/states/published": "published"
   },
   "//": "Do not index these values for a given properties",
   "blackMap": {
@@ -123,7 +123,7 @@
     "http://www.eea.europa.eu/portal_vocabularies/themes/reporting" : "Policy instruments",
     "http://www.eea.europa.eu/portal_vocabularies/themes/population" : "Green economy",
     "http://www.eea.europa.eu/portal_vocabularies/themes/health" : "Environment and health",
-    "http://land.copernicus.eu/portal_workflow/folder_workflow/states/published": "published",
+    "https://land.copernicus.eu/portal_workflow/folder_workflow/states/published": "published",
     "Products.ATContentTypes.interfaces.image.IATImage": "Image",
     "Products.ATContentTypes.interfaces.image.IImageContent": "Image",
     "plone.app.blob.interfaces.IATBlobImage": "Image",
@@ -186,7 +186,7 @@
   },
   "//": "Sync conditions",
   "syncConditions": [
-    "{?resource a <http://land.copernicus.eu/portal_types/LandItem#LandItem>}"
+    "{?resource a <https://land.copernicus.eu/portal_types/LandItem#LandItem>}"
   ],
   "graphSyncConditions": ["FILTER (str(?graph) = concat(str(?resource), '/@@rdf')). FILTER (?time > xsd:dateTime('1990-01-01T00:00:00')). FILTER (?time < xsd:dateTime('2100-01-01T00:00:00'))"],
   "syncTimeProp": "http://cr.eionet.europa.eu/ontologies/contreg.rdf#lastRefreshed"
