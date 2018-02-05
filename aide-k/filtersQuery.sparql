@@ -11,7 +11,7 @@ WHERE
 {
   SELECT DISTINCT
     ?Country
-    YEAR(?endOfPeriod) as ?reportingYear
+    YEAR(xsd:date(?endOfPeriod)) as ?reportingYear
     max(?released) as ?released
     ?MeasureId
   WHERE {
@@ -36,7 +36,7 @@ WHERE {
 }
 
 
-  } GROUP BY ?Country YEAR(?endOfPeriod) ?MeasureId
+  } GROUP BY ?Country YEAR(xsd:date(?endOfPeriod)) ?MeasureId
 
 }
 OPTIONAL{?envelope rod:released ?released} .
