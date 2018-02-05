@@ -7,7 +7,7 @@ SELECT DISTINCT
 WHERE {{
   SELECT DISTINCT
     ?Country
-    YEAR(?startOfPeriod) as ?reportingYear
+    YEAR(xsd:date(?startOfPeriod)) as ?reportingYear
     max(?released) as ?released
   WHERE {
     ?envelope rod:released ?released .
@@ -16,7 +16,7 @@ WHERE {{
     ?envelope rod:locality ?locality .
     FILTER (?obligation = obligation:670) 
     ?locality rod:localityName ?Country .
-  } GROUP BY ?Country YEAR(?startOfPeriod)
+  } GROUP BY ?Country YEAR(xsd:date(?startOfPeriod))
 }
 ?envelope rod:released ?released .
 ?envelope rdf:type rod:Delivery .
