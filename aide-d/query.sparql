@@ -12,7 +12,7 @@ SELECT DISTINCT
 md5(concat(?CountryOrTerritory,xsd:string(?startOfPeriod),?Namespace,?Network,?TimeZone,?responsibleParty,?StationName,?EoICode,?StationType,?StationArea,?Pollutant,?SamplingPointId,xsd:string(?Longitude),xsd:string(?Latitude),?MeasurementRegime,xsd:string(?beginPosition),?Sample,?SamplingProcess,?MeasurementEquipment,?MeasurementMethod,?SamplingMethod,?AnalyticalTechnique)) as ?_id
 
 ?CountryOrTerritory
-YEAR(?startOfPeriod) AS ?ReportingYear
+YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear
 ?Namespace
 ?Network
 ?TimeZone
