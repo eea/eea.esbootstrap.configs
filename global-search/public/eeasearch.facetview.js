@@ -256,7 +256,7 @@ jQuery(document).ready(function($) {
   var from_val = vfrom !== -1 ? window.parseInt(url.substring(vfrom + 10, vfrom + 12)) : 0;
 
 
-  var today = getToday();
+  var today = getTodayWithTime();
 
   predefined_filters = [
       {'term': {'http://www.eea.europa.eu/ontologies.rdf#hasWorkflowState':

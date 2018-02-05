@@ -132,7 +132,8 @@
 
 
                     "slider_bucketsize" : 10,
-                    "histogram" : true
+                    "histogram" : true,
+                    "measurement_unit": "km2"
                 }
             },
            "csv_tsv": { "title": "Area", "visible": true, "pos": 4 }

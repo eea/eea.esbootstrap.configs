@@ -1,6 +1,6 @@
 /* global $, jQuery, window, location, eea_mapping, simple_value, simpleValue,
    document, get_image, settings_default_external_configs, settings_external_configs,
-    getToday, eea_facetview */
+    getToday, getTodayWithTime, eea_facetview */
 var blackList = {
   'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' : []};
 
@@ -271,7 +271,7 @@ function getSpatialFromUrl(){
 }
 
 function getUrl(options){
-    var today = getToday();
+    var today = getTodayWithTime();
     var query =
         {"query":
             {"function_score":
@@ -438,7 +438,7 @@ jQuery(document).ready(function($) {
   var from_val = vfrom !== -1 ? window.parseInt(url.substring(vfrom + 10, vfrom + 12)) : 0;
 
 
-  var today = getToday();
+  var today = getTodayWithTime();
 
   predefined_filters = [
       {'term': {'http://www.eea.europa.eu/ontologies.rdf#hasWorkflowState':
