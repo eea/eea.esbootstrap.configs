@@ -15,7 +15,7 @@ md5(concat(?Country, xsd:string(?endOfPeriod),?PlanCode ,?Namespace ,?PlanId ,?V
 
 #?XMLURI
 ?Country as ?CountryOrTerritory 
-year(?endOfPeriod) AS ?ReportingYear 
+year(xsd:date(?endOfPeriod)) AS ?ReportingYear 
 ?PlanCode 
 ?Namespace 
 ?PlanId 
