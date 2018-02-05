@@ -8,7 +8,7 @@ SELECT DISTINCT
 WHERE {{
   SELECT DISTINCT
     ?Country
-    YEAR(?endOfPeriod) as ?reportingYear
+    YEAR(xsd:date(?endOfPeriod)) as ?reportingYear
     max(?released) as ?released
     ?ScenariosId
   WHERE {
@@ -35,7 +35,7 @@ WHERE {
 
 
 
-  } GROUP BY ?Country YEAR(?endOfPeriod) ?ScenariosId
+  } GROUP BY ?Country YEAR(xsd:date(?endOfPeriod)) ?ScenariosId
 }
 ?envelope rod:released ?released .
 ?envelope rdf:type rod:Delivery .

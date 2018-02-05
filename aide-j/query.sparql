@@ -17,7 +17,7 @@ md5(concat(?Country, xsd:string(?ReportingYear),xsd:string(?AttainmentYear),?Nam
 ?XMLURI 
 #bif:concat(xsd:string(YEAR(?endOfPeriod)), '-', ?ScenariosId ) as ?_id
 ?Country as ?CountryOrTerritory 
-year(?endOfPeriod) AS ?ReportingYear 
+year(xsd:date(?endOfPeriod)) AS ?ReportingYear 
 ?AttainmentYear 
 ?Namespace 
 ?ScenariosId 
