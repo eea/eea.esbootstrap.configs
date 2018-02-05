@@ -18,7 +18,7 @@ md5(concat(?Country, ?AssessmentId, ?Namespace, ?ZoneURI, xsd:string(?startOfPer
 replace(replace(replace(str(?ZoneURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace,""),"/","") as
 ?ZoneId
 
-YEAR(?startOfPeriod) AS ?ReportingYear
+YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear
 ?ObjectiveType
 ?ReportingMetric
 ?ProtectionTarget
