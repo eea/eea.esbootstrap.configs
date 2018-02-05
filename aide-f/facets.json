@@ -137,10 +137,10 @@
             "details": { "title": "DataCoverage", "pos" : 4, "section": "info", "visible": false },
             "facet": { "visible": true, "title": "Data Coverage", "pos": 8, "type": "rangehistogram", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
-                    "columns_bucketsize" : 10,
+                    "columns_bucketsize" : 5,
 
                     "columns_bucket_min" : 0,
-                    "columns_bucket_max_" : 100,
+                    "columns_bucket_max" : 100,
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",
 
@@ -159,7 +159,7 @@
             "facet": { "visible": true, "title": "Data Capture", "pos": 9, "type": "rangehistogram", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
 
-                    "columns_bucketsize" : 10,
+                    "columns_bucketsize" : 5,
 
                     "columns_bucket_min" : 0,
                     "columns_bucket_max_" : 100,
@@ -179,7 +179,7 @@
             "details": { "title": "TimeCoverage", "pos" : 4, "section": "info", "visible": false },
             "facet": { "visible": true, "title": "Time Coverage", "pos": 10, "type": "rangehistogram", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
-                    "columns_bucketsize" : 10,
+                    "columns_bucketsize" : 5,
 
                     "columns_bucket_min" : 0,
                     "columns_bucket_max_" : 100,
