@@ -33,7 +33,7 @@
                 "eeasearch.facetview.js"
             ]
         },
-        "site_title": "Global search and catalogue <sup style='color:#fbaf33'>beta</sup>",
+        "site_title": "Global search and catalogue",
         "enableBreadcrumbs": true,
         "breadcrumbs": "Global Search",
         "dataprovencance_info_text": "Semantic Data Service (SDS)",
