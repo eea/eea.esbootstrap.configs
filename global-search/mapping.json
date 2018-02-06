@@ -86,7 +86,7 @@
       "analyzer" : "date2year"
     },
     "time_coverage" : {
-      "type" : "integer",
+      "type" : "string",
       "analyzer" : "date2year",
       "copy_to" : ["searchable_time_coverage"]
     },

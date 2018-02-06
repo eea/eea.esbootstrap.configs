@@ -164,7 +164,8 @@
     "eea.soercontent.content.interfaces.IFiche": "Briefing (all)",
     "eea.soercontent.content.interfaces.ISoerContent":"Briefing (SOER)",
     "eea.sparql.interfaces.ISparql":"Data table (via SPARQL)",
-    "plone.app.layout.navigation.interfaces.INavigationRoot": "Website main section"
+    "plone.app.layout.navigation.interfaces.INavigationRoot": "Website main section",
+    "Products.EEAContentTypes.content.interfaces.ICountryProfile": "Country profile"
   },
   "//": "Normalise missing properties with the given values",
   "normMissing": {

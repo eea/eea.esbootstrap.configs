@@ -94,7 +94,23 @@
             "name": "ResidentPopulation",
             "listing": { "title": "Resident Population", "visible" : true, "pos" : 12 },
             "details": { "title": "ResidentPopulation", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Resident Population", "pos": 7, "type": "range", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Resident Population", "pos": 7, "type": "rangehistogram", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "columns_bucketsize" : 100000,
+
+                    "columns_bucket_max" : 3000000,
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+                    "slider_bucket_min" : 10000,
+                    "slider_bucket_max" : 99999,
+
+                    "slider_bucketsize" : 1000,
+                    "histogram" : true,
+                    "measurement_unit": "people"
+
+                }
+            },
           "csv_tsv": { "title": "ResidentPopulation", "visible": true, "pos": 4 }
         },
         {
@@ -108,7 +124,21 @@
             "name": "Area",
             "listing": { "title": "Area", "visible" : true, "pos" : 14 },
             "details": { "title": "Area", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Area", "pos": 8, "type": "range", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Area", "pos": 8, "type": "rangehistogram", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "columns_bucketsize" : 500,
+
+                    "columns_bucket_max" : 15000,
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+                    "slider_bucket_min" : 10000,
+                    "slider_bucket_max" : 99999,
+
+                    "slider_bucketsize" : 100,
+                    "histogram" : true,
+                    "measurement_unit": "km2"
+                }},
            "csv_tsv": { "title": "Area", "visible": true, "pos": 4 }
         },
         {

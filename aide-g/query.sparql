@@ -14,7 +14,7 @@ md5(concat(?Country, ?Namespace, ?AttainmentId, xsd:string(?startOfPeriod), ?Obj
 
 #?attainmentURI
 ?Country as ?CountryOrTerritory
-YEAR(?startOfPeriod) AS ?ReportingYear
+YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear
 ?Namespace
 ?AttainmentId
 replace(str(?areURI),"http://reference.eionet.europa.eu/aq/","")  as ?AssessmentId

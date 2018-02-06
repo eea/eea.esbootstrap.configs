@@ -41,7 +41,7 @@
         "further_info": "The content of this catalogue has been created thanks to the EU's open data approach and the contribution of many organisations part of EEA's network (Eionet)."
     },
     "landingpage_enabled": true,
-    "es_debug_enabled": false,
+    "es_debug_enabled": true,
     "suggestions_enabled": true,
     "relevance_enabled": true,
     "river_configs": {
@@ -170,6 +170,11 @@
                 "id": "eea_messages",
                 "cluster_name": "EEA Website (www.eea.europa.eu)",
                 "config_file": "riverconfig_messages.json"
+            },
+            {
+                "id": "bise_factsheets",
+                "cluster_name": "BISE website (biodiversity.europa.eu)",
+                "config_file": "riverconfig_bise_factsheets.json"
             }
         ]
     },
