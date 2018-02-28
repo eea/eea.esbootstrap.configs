@@ -1,4 +1,4 @@
-PREFIX tableFile: <http://semantic.eea.europa.eu/project/EFDB/EFDB_2016.tsv#>
+PREFIX tableFile: <http://semantic.eea.europa.eu/project/EFDB/EFDB_latest.tsv#>
 
 SELECT 
 ?_id
@@ -18,7 +18,7 @@ concat(?NFR, ' ', ?Sector) as ?code
 ?CI_upper
 ?Reference
 ?Link
-FROM <http://semantic.eea.europa.eu/project/EFDB/EFDB_2016.tsv>
+FROM <http://semantic.eea.europa.eu/project/EFDB/EFDB_latest.tsv>
 WHERE {
  _:rec tableFile:_id ?_id .
  _:rec tableFile:NFR ?NFR  .
