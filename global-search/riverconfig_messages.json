@@ -5,9 +5,7 @@
     "http://purl.org/dc/terms/creator": ["creator", "creator_cms"],
     "http://purl.org/dc/terms/description": ["description","label","text"]
   },
-  "normMissing": {
-    "places" : "unknown"
-  },
+
   "syncConditions": [
     "{?resource a <http://www.eea.europa.eu/portal_types/KeyMessage#KeyMessage>} UNION ",
     "{?resource a <http://www.eea.europa.eu/portal_types/SOERKeyFact#SOERKeyFact>} UNION ",

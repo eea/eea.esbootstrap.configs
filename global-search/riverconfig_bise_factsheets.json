@@ -5,15 +5,17 @@
     "http://purl.org/dc/terms/issued": ["issued", "year","time_coverage"],
     "https://biodiversity.europa.eu/portal_types/BiodiversityFactsheet#fact_countryName": ["spatial","places"]
   },
+
   "normObj": {
     "https://biodiversity.europa.eu/portal_workflow/bise_checkout_workflow/states/published": "published",
     "bise.biodiversityfactsheet.biodiversityfactsheet.IBiodiversityFactsheet": "Country profile"
   },
+
   "normMissing": {
     "topic": "Biodiversity - Ecosystems",
-    "organisation": ["European Environment Agency (EEA)","DG Environment","European Commission"],
-    "places" : "unknown"
+    "organisation": ["European Environment Agency (EEA)","DG Environment","European Commission"]
   },
+
   "syncConditions": [
       "{?resource a <https://biodiversity.europa.eu/portal_types/BiodiversityFactsheet#BiodiversityFactsheet> }"
   ]

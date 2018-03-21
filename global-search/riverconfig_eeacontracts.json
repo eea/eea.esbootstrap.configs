@@ -6,6 +6,10 @@
     "Products.ATContentTypes.interfaces.interfaces.IATContentType": "Contract opportunity"
   },
 
+  "normMissing": {
+    "places" : "Copenhagen (Capital Region, Denmark)"
+  },
+
   "syncConditions": [
     "{?resource a <http://www.eea.europa.eu/portal_types/CallForInterest#CallForInterest>} UNION ",
     "{?resource a <http://www.eea.europa.eu/portal_types/CallForProposal#CallForProposal>} UNION ",
