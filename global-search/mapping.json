@@ -85,9 +85,9 @@
       "copy_to" : ["did_you_mean", "autocomplete"]
     },
     "year" : {
-      "type" : "keyword",
-      "null_value" : "Unknown",
-      "index" : true
+      "type" : "text",
+      "fielddata" : true,
+      "analyzer" : "date2year"
     },
     "time_coverage" : {
       "type" : "string",
