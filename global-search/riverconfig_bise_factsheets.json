@@ -5,8 +5,6 @@
     "http://purl.org/dc/terms/issued": ["issued", "year","time_coverage"],
     "https://biodiversity.europa.eu/portal_types/BiodiversityFactsheet#fact_countryName": ["spatial","places"]
   },
-  "normalisedProperties": {
-  },
   "normObj": {
     "https://biodiversity.europa.eu/portal_workflow/bise_checkout_workflow/states/published": "published",
     "bise.biodiversityfactsheet.biodiversityfactsheet.IBiodiversityFactsheet": "Country profile"
