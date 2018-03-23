@@ -3,6 +3,7 @@
 
   "normProp": {
     "http://purl.org/dc/terms/creator": ["creator", "creator_cms"],
+    "http://purl.org/dc/terms/title": ["title"],
     "http://purl.org/dc/terms/description": ["description","label","text"]
   },
 

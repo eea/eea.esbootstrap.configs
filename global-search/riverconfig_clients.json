@@ -5,6 +5,7 @@
     "http://rod.eionet.europa.eu/schema.rdf#lastUpdate" : "issued",
     "http://purl.org/dc/terms/abstract": ["description","text"],
     "http://rod.eionet.europa.eu/schema.rdf#clientCountry": ["spatial","places"],
+    "http://purl.org/dc/terms/title": null,
     "http://xmlns.com/foaf/0.1/name": ["title","organisation","label"]
   },
 
