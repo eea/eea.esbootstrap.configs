@@ -1,5 +1,5 @@
 var blackList = {
-  'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' : []};
+  'type' : []};
 
 var whiteList = false;
 
@@ -13,7 +13,7 @@ function add_titles(){
         return;
     }
     for (var i = 0; i < records.length; i++){
-        var id = records[i]['http://www.w3.org/1999/02/22-rdf-syntax-ns#about'];
+        var id = records[i]['about'];
         var element = $("a[href='"+id+"']");
         var title = element.text();
         element.attr("title", title);
@@ -46,12 +46,12 @@ function add_ribbon(id, message, ribbon_class){
 function mark_recent(){
     var records = $('.facet-view-simple').facetview.options.data.records;
     for (var i = 0; i < records.length; i++){
-        if ((records[i]['http://purl.org/dc/terms/issued'] !== undefined) && (records[i]['http://purl.org/dc/terms/issued'] !== '')){
-            var issued_date_stamp = Date.parse(records[i]['http://purl.org/dc/terms/issued']);
+        if ((records[i]['issued'] !== undefined) && (records[i]['issued'] !== '')){
+            var issued_date_stamp = Date.parse(records[i]['issued']);
             var now_stamp = Date.now();
             var days = (now_stamp - issued_date_stamp)/1000/60/60/24;
             if (days < 30){
-                var id = records[i]['http://www.w3.org/1999/02/22-rdf-syntax-ns#about'];
+                var id = records[i]['about'];
                 add_ribbon(id, "NEW", "recent");
             }
         }
@@ -61,11 +61,11 @@ function mark_recent(){
 function mark_expired(){
     var records = $('.facet-view-simple').facetview.options.data.records;
     for (var i = 0; i < records.length; i++){
-        if ((records[i]['http://purl.org/dc/terms/expires'] !== undefined) && (records[i]['http://purl.org/dc/terms/expires'] !== '')){
-            var expire_date_stamp = Date.parse(records[i]['http://purl.org/dc/terms/expires']);
+        if ((records[i]['expires'] !== undefined) && (records[i]['expires'] !== '')){
+            var expire_date_stamp = Date.parse(records[i]['expires']);
             var now_stamp = Date.now();
             if (now_stamp >= expire_date_stamp){
-                var id = records[i]['http://www.w3.org/1999/02/22-rdf-syntax-ns#about'];
+                var id = records[i]['about'];
                 add_ribbon(id, "ARCHIVED", "expired");
             }
         }
@@ -248,7 +248,7 @@ jQuery(document).ready(function($) {
     var source_str = url.split("?source=")[1];
     source_str = decodeURIComponent(source_str);
     var source_query = JSON.parse(source_str);
-    if ((source_str.indexOf('{"missing":{"field":"http://purl.org/dc/terms/expires"}}')) === -1){
+    if ((source_str.indexOf('{"missing":{"field":"expires"}}')) === -1){
         hide_expired = false;
     }
   }
@@ -259,27 +259,34 @@ jQuery(document).ready(function($) {
   var today = getTodayWithTime();
 
   predefined_filters = [
-      {'term': {'http://www.eea.europa.eu/ontologies.rdf#hasWorkflowState':
+        {'term': {'hasWorkflowState':
                   'published'}},
-      {'constant_score': {
-        'filter': {
-          'or': [
-            {'missing': {'field': 'http://purl.org/dc/terms/issued'}},
-            {'range': {'http://purl.org/dc/terms/issued': {'lte': today}}}
-          ]
-        }}
-      }];
+        {
+            'constant_score': {
+                'filter': {
+                    'bool': {
+                        'should': [
+                            {'bool':{'must_not':{'exists': {'field': 'issued'}}}},
+                            {'range': {'issued': {'lte': today}}}
+                        ]
+                    }
+                }
+            }
+        }];
 
   predefined_filters_expired = [
-      {'constant_score': {
-        'filter': {
-          'or': [
-            {'missing': {'field': 'http://purl.org/dc/terms/expires'}},
-            {'range': {'http://purl.org/dc/terms/expires': {'gte': today}}}
-          ]
-        }}
-      }
-    ];
+        {
+            'constant_score': {
+                'filter': {
+                    'bool': {
+                        'should': [
+                            {'bool': {'must_not': {'exists': {'field': 'expires'}}}},
+                            {'range': {'expires': {'gte': today}}}
+                        ]
+                    }
+                }
+            }
+        }];
 
 
   var tmp_predefined_filters = [];
@@ -294,17 +301,17 @@ jQuery(document).ready(function($) {
     search_index: 'elasticsearch',
     search_sortby: [
       {
-        'field': 'http://purl.org/dc/terms/title',
+        'field': 'title',
         'display_asc': 'Title a-z',
         'display_desc': 'Title z-a'
       },
       {
-        'field': 'http://purl.org/dc/terms/issued',
+        'field': 'issued',
         'display_asc': 'Oldest',
         'display_desc': 'Newest'
       }
     ],
-    sort: [{'http://purl.org/dc/terms/issued': {'order': 'desc'}}],
+    sort: [{'issued': {'order': 'desc'}}],
 //    selected_sort: "relevance",
     default_operator: 'AND',
     default_freetext_fuzzify: '',

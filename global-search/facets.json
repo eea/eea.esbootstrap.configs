@@ -9,10 +9,10 @@
     "highlights": {
         "enabled": true,
         "whitelist": [
-            "http://purl.org/dc/terms/title",
+            "title",
             "label",
-            "http://purl.org/dc/terms/description",
-            "http://www.eea.europa.eu/portal_types#topic"
+            "description",
+            "topic"
             ],
         "blacklist": []
     },
@@ -81,14 +81,14 @@
                 {
                     "rule": "startsWith",
                     "operator": "",
-                    "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#about",
+                    "field": "about",
                     "value": "http://www.eea.europa.eu/help/glossary/",
                     "thumb_template": {
                         "template": "https://www.eea.europa.eu/portal_depiction/term/image_preview",
                         "variables": [{
                                 "name": "url",
                                 "type" : "field",
-                                "field" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#about"
+                                "field" : "about"
                         }]
                     },
                     "icon_template": {
@@ -96,21 +96,21 @@
                         "variables": [{
                                 "name": "url",
                                 "type" : "field",
-                                "field" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#about"
+                                "field" : "about"
                         }]
                     }
                 },
                 {
                     "rule": "contains",
                     "operator": "",
-                    "field": "http://www.eea.europa.eu/ontologies.rdf#objectProvides",
+                    "field": "objectProvides",
                     "value": "Country profile",
                     "thumb_template": {
                         "template": "https://www.eea.europa.eu/portal_depiction/country-profile/image_preview",
                         "variables": [{
                                 "name": "url",
                                 "type" : "field",
-                                "field" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#about"
+                                "field" : "about"
                         }]
                     },
                     "icon_template": {
@@ -125,14 +125,14 @@
                 {
                     "rule": "startsWith",
                     "operator": "",
-                    "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#about",
+                    "field": "about",
                     "value": "http://land.copernicus.eu",
                     "thumb_template": {
                         "template": "${url}/image_preview",
                         "variables": [{
                                 "name": "url",
                                 "type" : "field",
-                                "field" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#about"
+                                "field" : "about"
                         }]
                     },
                     "icon_template": {
@@ -147,14 +147,14 @@
                 {
                     "rule": "startsWith",
                     "operator": "",
-                    "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#about",
+                    "field": "about",
                     "value": "http://www.eea.europa.eu",
                     "thumb_template": {
                         "template": "${url}/image_preview",
                         "variables": [{
                                 "name": "url",
                                 "type" : "field",
-                                "field" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#about"
+                                "field" : "about"
                         }]
                     },
                     "icon_template": {
@@ -169,7 +169,7 @@
                 {
                     "rule": "startsWith",
                     "operator": "not",
-                    "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#about",
+                    "field": "about",
                     "value": "http://www.eea.europa.eu",
                     "thumb_template": {
                         "template": "https://www.eea.europa.eu/portal_depiction/${contentType}/image_preview",
@@ -201,7 +201,7 @@
                 "width": "200px",
                 "display": {
                     "pre": "<a href=\"",
-                    "field": "http://www.w3.org/1999/02/22-rdf-syntax-ns#about",
+                    "field": "about",
                     "post": "\">"
                 }
             },
@@ -216,7 +216,7 @@
             }
         },
         {
-            "name": "http://www.eea.europa.eu/portal_types#topic",
+            "name": "topic",
             "listing": {
                 "title": "Topics",
                 "visible" : true,
@@ -260,7 +260,7 @@
             }
         },
         {
-            "name": "http://purl.org/dc/terms/creator",
+            "name": "creator",
             "listing": {
                 "title": "Creator",
                 "visible" : false,
@@ -276,7 +276,7 @@
             }
         },
         {
-            "name": "http://www.eea.europa.eu/ontologies.rdf#hasWorkflowState",
+            "name": "hasWorkflowState",
             "listing": {
                 "visible": false
             },
@@ -290,7 +290,7 @@
             }
         },
         {
-            "name": "http://purl.org/dc/terms/modified",
+            "name": "modified",
             "listing": {
                 "visible": false
             },
@@ -304,7 +304,7 @@
             }
         },
         {
-            "name": "http://purl.org/dc/terms/expires",
+            "name": "expires",
             "listing": {
                 "visible": false
             },
@@ -318,7 +318,7 @@
             }
         },
         {
-            "name": "http://purl.org/dc/terms/issued",
+            "name": "issued",
             "listing": {
                 "type": "date",
                 "format": "dd M yy",
@@ -350,7 +350,7 @@
             }
         },
         {
-            "name": "http://purl.org/dc/terms/description",
+            "name": "description",
             "listing": {
                 "title": "description",
                 "visible": true,
@@ -378,7 +378,7 @@
             }
         },
         {
-            "name": "http://purl.org/dc/terms/spatial",
+            "name": "spatial",
             "values_whitelist":[
                 "Andorra", "United Arab Emirates", "Afghanistan", "Antigua and Barbuda",
                 "Anguilla", "Albania", "Armenia", "Angola", "Antarctica", "Argentina",
@@ -522,7 +522,7 @@
             }
         },
         {
-            "name": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "name": "type",
             "values_whitelist": [
                               "Highlight",
                               "Press Release",
@@ -598,7 +598,7 @@
             }
         },
         {
-            "name": "http://www.eea.europa.eu/ontologies.rdf#objectProvides",
+            "name": "objectProvides",
             "values_whitelist": [
                              "Article",
                              "EEA Job Vacancy",
@@ -704,7 +704,7 @@
             }
         },
         {
-            "name": "http://www.w3.org/1999/02/22-rdf-syntax-ns#about",
+            "name": "about",
             "listing": {
                 "visible": false
             },
@@ -837,7 +837,7 @@
             }
         },
         {
-            "name": "http://purl.org/dc/terms/format",
+            "name": "format",
             "listing": {
                 "title": "Format",
                 "visible": true
@@ -901,7 +901,7 @@
             }
         },
         {
-            "name": "http://purl.org/dc/terms/references",
+            "name": "references",
             "listing": {
                 "title": "References",
                 "visible": false
@@ -919,7 +919,7 @@
             }
         },
         {
-            "name": "http://www.eea.europa.eu/ontologies.rdf#fleschReadingEaseScore",
+            "name": "fleschReadingEaseScore",
             "listing": {
                 "title": "Reading Ease Score",
                 "visible": false
@@ -943,7 +943,7 @@
                 }
         },
         {
-            "name": "http://www.eea.europa.eu/ontologies.rdf#readingTime",
+            "name": "readingTime",
             "listing": {
                 "title": "Reading time (minutes)",
                 "visible": false
