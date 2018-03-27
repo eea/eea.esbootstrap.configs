@@ -248,7 +248,7 @@ jQuery(document).ready(function($) {
     var source_str = url.split("?source=")[1];
     source_str = decodeURIComponent(source_str);
     var source_query = JSON.parse(source_str);
-    if ((source_str.indexOf('{"missing":{"field":"expires"}}')) === -1){
+    if ((source_str.indexOf('{"must_not":{"exists":{"field":"expires"}}}')) === -1){
         hide_expired = false;
     }
   }
@@ -259,8 +259,7 @@ jQuery(document).ready(function($) {
   var today = getTodayWithTime();
 
   predefined_filters = [
-        {'term': {'hasWorkflowState':
-                  'published'}},
+        {'term': {'hasWorkflowState': 'published'}},
         {
             'constant_score': {
                 'filter': {
@@ -289,6 +288,7 @@ jQuery(document).ready(function($) {
         }];
 
 
+debugger;
   var tmp_predefined_filters = [];
   tmp_predefined_filters = tmp_predefined_filters.concat(predefined_filters);
   if (hide_expired){
