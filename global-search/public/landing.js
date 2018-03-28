@@ -53,7 +53,7 @@ jQuery(document).ready(function($) {
             {
                 tile: ".landing_tile .eea_tile.latest_objects",
                 type: "custom",
-                values: [{"type":"results", "value":"rows", "name":"latest_objects_list", "template": itemTemplate, "sort": [{"issued":{"order":"desc"}}]}]
+                values: [{"type":"results", "value":"rows", "name":"latest_objects_list", "template": itemTemplate, "sort": [{"issued.index":{"order":"desc"}}]}]
             }
         ]
     };

@@ -9,8 +9,11 @@
     "searchable_time_coverage":  {"type": "string", "analyzer": "default"},
 
     "issued": {
-        "type": "text",
-        "fielddata": true
+        "type": "string",
+        "fields" : {
+            "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
+            "index" : {"type" : "keyword"}
+        }
     },
     "cluster_id": {
       "type" : "string",

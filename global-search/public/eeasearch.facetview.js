@@ -288,7 +288,6 @@ jQuery(document).ready(function($) {
         }];
 
 
-debugger;
   var tmp_predefined_filters = [];
   tmp_predefined_filters = tmp_predefined_filters.concat(predefined_filters);
   if (hide_expired){
@@ -301,17 +300,17 @@ debugger;
     search_index: 'elasticsearch',
     search_sortby: [
       {
-        'field': 'title',
+        'field': 'title.index',
         'display_asc': 'Title a-z',
         'display_desc': 'Title z-a'
       },
       {
-        'field': 'issued',
+        'field': 'issued.index',
         'display_asc': 'Oldest',
         'display_desc': 'Newest'
       }
     ],
-    sort: [{'issued': {'order': 'desc'}}],
+    sort: [{'issued.index': {'order': 'desc'}}],
 //    selected_sort: "relevance",
     default_operator: 'AND',
     default_freetext_fuzzify: '',
