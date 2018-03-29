@@ -43,7 +43,7 @@
     "landingpage_enabled": true,
     "es_debug_enabled": true,
     "suggestions_enabled": true,
-    "relevance_enabled": false,
+    "relevance_enabled": true,
     "river_configs": {
         "configs": [
             {

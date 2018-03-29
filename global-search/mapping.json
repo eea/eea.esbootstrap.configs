@@ -8,11 +8,21 @@
     "searchable_organisation": {"type": "string", "analyzer": "default"},
     "searchable_time_coverage":  {"type": "string", "analyzer": "default"},
 
+    "about": {
+        "type": "text",
+        "fields": {
+            "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+            }
+        }
+    },
     "issued": {
         "type": "string",
         "fields" : {
             "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
-            "index" : {"type" : "keyword"}
+            "index" : {"type" : "keyword"},
+            "date" : {"type": "date"}
         }
     },
     "cluster_id": {

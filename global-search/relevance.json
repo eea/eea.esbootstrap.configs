@@ -10,13 +10,13 @@
             "searchable_topics^1.2",
             "searchable_time_coverage^10",
             "searchable_organisation^2",
-            "_all"
+            "all_fields_for_freetext"
         ]
     },
     "functions":{
         "gauss": {
-            "issued": {
-                "scale": "2w"
+            "issued.date": {
+                "scale": "14d"
             }
         },
         "script_score": {
