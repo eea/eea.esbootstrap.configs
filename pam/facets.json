@@ -99,7 +99,7 @@
                 "pos": 40
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Single policy or measure, or group of measures",
                 "pos": 1,
                 "type": "facet",
@@ -170,7 +170,7 @@
                 "pos": 100
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Type of policy instrument",
                 "pos": 2,
                 "type": "facet",
@@ -188,7 +188,7 @@
                 "visible": false
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Status of implementation",
                 "pos": 3,
                 "type": "facet",
@@ -229,7 +229,7 @@
                 "pos": 120
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Policy impacting EU ETS, ESD or LULUCF emissions",
                 "pos": 4,
                 "type": "facet",
@@ -251,7 +251,7 @@
                 "pos": 130
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Sector(s) affected",
                 "pos": 5,
                 "type": "facet",
@@ -292,7 +292,7 @@
                 "visible": false
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Objective(s)",
                 "pos": 6,
                 "type": "facet",
@@ -318,7 +318,7 @@
                 "pos": 150
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Total GHG emissions reductions in 2020 (kt CO2eq/y)",
                 "pos": 7,
                 "type": "rangehistogram",
@@ -352,7 +352,7 @@
                 "pos": 160
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
                 "pos": 8,
                 "type": "rangehistogram",
@@ -384,7 +384,7 @@
                 "pos": 170
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Entities responsible for implementing the policy (type)",
                 "pos": 9,
                 "type": "facet",
@@ -419,7 +419,7 @@
                 "visible": false
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Implementation period start",
                 "pos": 10,
                 "type": "facet",
@@ -487,7 +487,7 @@
                 "pos": 210
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Is the policy or measure related to a Union policy?",
                 "pos": 11,
                 "type": "facet",
@@ -510,7 +510,7 @@
                 "pos": 220
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Related Union Policy",
                 "pos": 12,
                 "type": "facet",
@@ -533,7 +533,7 @@
                 "pos": 230
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Union policy which resulted in the implementation of the policy or measure",
                 "pos": 12,
                 "type": "facet",
@@ -560,7 +560,7 @@
                 "pos": 240
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "GHG(s) affected",
                 "pos": 13,
                 "type": "facet",
@@ -578,7 +578,7 @@
                 "visible": false
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Projection scenario in which the policy or measure is included",
                 "pos": 14,
                 "type": "facet",
