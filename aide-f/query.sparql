@@ -25,7 +25,13 @@ replace(replace(replace(str(?SamplingPointLocalId_URI),"http://reference.eionet.
 ?AggregationType
 ?AQValue
 #replace(str(?Unit_URI),"http://dd.eionet.europa.eu/vocabulary/uom/concentration/","") as ?Unit
-(bif:either(substr(str(?Unit_URI),1,56) = "http://dd.eionet.europa.eu/vocabulary/uom/concentration/",REPLACE(str(?Unit_URI),"http://dd.eionet.europa.eu/vocabulary/uom/concentration/",""),REPLACE(str(?Unit_URI),"http://dd.eionet.europa.eu/vocabulary/uom/statistics/","")) as ?Unit)
+(bif:either(
+    STRSTARTS(str(?Unit_URI), "http://dd.eionet.europa.eu/vocabulary/uom/concentration/"),
+    REPLACE(str(?Unit_URI),"http://dd.eionet.europa.eu/vocabulary/uom/concentration/",""),
+    bif:either(
+        STRSTARTS(str(?Unit_URI), "http://dd.eionet.europa.eu/vocabulary/uom/statistics/"),
+        REPLACE(str(?Unit_URI),"http://dd.eionet.europa.eu/vocabulary/uom/statistics/",""),
+        "Not specified" )) as ?Unit)
 xsd:date(?BeginPosition) as ?BeginPosition
 xsd:date(?EndPosition) as ?EndPosition
 ?Validity
@@ -70,4 +76,4 @@ WHERE {
   
   FILTER (?Pollutant_URI = <<Pollutant_URI>>)
 }
-LIMIT 80000 OFFSET <offset>
+LIMIT 10000 OFFSET <offset>
