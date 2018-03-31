@@ -333,7 +333,7 @@
                     "columns_max_color" : "#AAAAAA",
 
                     "slider_bucketsize" : 10,
-                    "histogram" : true,
+                    "histogram" : false,
                     "measurement_unit": "kt CO2eq/y"
                 }
             }
@@ -367,7 +367,7 @@
                     "columns_max_color" : "#AAAAAA",
 
                     "slider_bucketsize" : 10,
-                    "histogram" : true,
+                    "histogram" : false,
                     "measurement_unit": "kt CO2eq/y"
 
                 }

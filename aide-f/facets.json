@@ -89,7 +89,7 @@
                     "columns_bucket_max" : 100,
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",
-
+                    "histogram" : true,
                     "slider_bucketsize" : 1
                 }
              },
@@ -145,7 +145,7 @@
                     "columns_max_color" : "#AAAAAA",
 
                     "measurement_unit": "%",
-
+                    "histogram": true,
 
                     "slider_bucketsize" : 1
                 }
@@ -168,6 +168,7 @@
 
                     "measurement_unit": "%",
 
+                    "histogram": true,
                     "slider_bucketsize" : 1
                 }
             },
@@ -188,6 +189,7 @@
 
                     "measurement_unit": "%",
 
+                    "histogram": true,
                     "slider_bucketsize" : 1
                 }
 

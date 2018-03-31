@@ -73,7 +73,8 @@ WHERE {
   ?namespaces skos:inScheme <http://dd.eionet.europa.eu/vocabulary/aq/namespace/> .
   ?namespaces dd:inCountry ?cntry_URI .
   ?cntry_URI rdfs:label ?CountryOrTerritory .
-  
+
   FILTER (?Pollutant_URI = <<Pollutant_URI>>)
+  FILTER (?AggregationType_URI = <<AggregationType_URI>>)
+  FILTER (xsd:integer(year(xsd:date(?BeginPosition))) = <ReportingYear>)
 }
-LIMIT 10000 OFFSET <offset>
