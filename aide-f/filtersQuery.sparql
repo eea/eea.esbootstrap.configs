@@ -9,14 +9,12 @@ PREFIX dd: <http://dd.eionet.europa.eu/property/>
 
 SELECT DISTINCT 
 
-?Pollutant_URI
 ?AggregationType_URI
 xsd:integer(year(xsd:date(?BeginPosition))) as ?ReportingYear
 
 WHERE {
 
   ?statsURI a aqr:ValidatedExceedence .
-  ?statsURI aqr:pollutant ?Pollutant_URI .
   ?statsURI aqr:aggregationType ?AggregationType_URI .
   ?statsURI aqr:beginPosition ?BeginPosition
 }
