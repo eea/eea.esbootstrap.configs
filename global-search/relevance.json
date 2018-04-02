@@ -10,6 +10,7 @@
             "searchable_topics^1.2",
             "searchable_time_coverage^10",
             "searchable_organisation^2",
+            "label",
             "all_fields_for_freetext"
         ]
     },
