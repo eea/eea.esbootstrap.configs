@@ -2,7 +2,7 @@
    document, get_image, settings_default_external_configs, settings_external_configs,
     getToday, getTodayWithTime, eea_facetview */
 var blackList = {
-  'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' : []};
+  'type' : []};
 
 var whiteList = false;
 
@@ -16,7 +16,7 @@ function add_titles(){
         return;
     }
     for (var i = 0; i < records.length; i++){
-        var id = records[i]['http://www.w3.org/1999/02/22-rdf-syntax-ns#about'];
+        var id = records[i]['about'];
         var element = $("a[href='"+id+"']");
         var title = element.text();
         element.attr("title", title);
@@ -49,12 +49,12 @@ function add_ribbon(id, message, ribbon_class){
 function mark_recent(){
     var records = $('.facet-view-simple').facetview.options.data.records;
     for (var i = 0; i < records.length; i++){
-        if ((records[i]['http://purl.org/dc/terms/issued'] !== undefined) && (records[i]['http://purl.org/dc/terms/issued'] !== '')){
-            var issued_date_stamp = Date.parse(records[i]['http://purl.org/dc/terms/issued']);
+        if ((records[i]['issued'] !== undefined) && (records[i]['issued'] !== '')){
+            var issued_date_stamp = Date.parse(records[i]['issued']);
             var now_stamp = Date.now();
             var days = (now_stamp - issued_date_stamp)/1000/60/60/24;
             if (days < 30){
-                var id = records[i]['http://www.w3.org/1999/02/22-rdf-syntax-ns#about'];
+                var id = records[i]['about'];
                 add_ribbon(id, "NEW", "recent");
             }
         }
@@ -64,11 +64,11 @@ function mark_recent(){
 function mark_expired(){
     var records = $('.facet-view-simple').facetview.options.data.records;
     for (var i = 0; i < records.length; i++){
-        if ((records[i]['http://purl.org/dc/terms/expires'] !== undefined) && (records[i]['http://purl.org/dc/terms/expires'] !== '')){
-            var expire_date_stamp = Date.parse(records[i]['http://purl.org/dc/terms/expires']);
+        if ((records[i]['expires'] !== undefined) && (records[i]['expires'] !== '')){
+            var expire_date_stamp = Date.parse(records[i]['expires']);
             var now_stamp = Date.now();
             if (now_stamp >= expire_date_stamp){
-                var id = records[i]['http://www.w3.org/1999/02/22-rdf-syntax-ns#about'];
+                var id = records[i]['about'];
                 add_ribbon(id, "ARCHIVED", "expired");
             }
         }
@@ -254,7 +254,7 @@ function getSpatialFromUrl(){
     var url = $(location).attr('href');
     var short_spatial = url.split("/")[url.split("/").length - 1].split("?")[0];
     var spatial;
-    var spatial_field = "http://purl.org/dc/terms/spatial";
+    var spatial_field = "spatial";
     if (settings_default_external_configs[short_spatial] !== undefined){
         spatial = settings_default_external_configs[short_spatial].value;
         if (typeof spatial === "string"){
@@ -273,86 +273,104 @@ function getSpatialFromUrl(){
 function getUrl(options){
     var today = getTodayWithTime();
     var query =
-        {"query":
-            {"function_score":
-                {"query":
-                    {"bool":
-                        {"must":
-                            [
-                                {"term":{"http://www.eea.europa.eu/ontologies.rdf#hasWorkflowState":"published"}},
-                                {"term":{"language":"en"}},
-                                {"constant_score":
-                                    {"filter":
-                                        {"or":
-                                            [
-                                                {"missing":{"field":"http://purl.org/dc/terms/issued"}},
-                                                {"range":{"http://purl.org/dc/terms/issued":{"lte":today}}}
-                                            ]
-                                        }
-                                    }
-                                },
-                                {'constant_score':{
-                                    'filter':{
-                                        "and":
-                                            [
-                                                {"not":
-                                                    {"term": {
-                                                            "cluster_id": "eea_organisations"
-                                                        }
-                                                    }
-                                                }
-/*                                                ,
-                                                {"not":
-                                                    {"term":
-                                                        {"cluster_id": "rod_clients"}
-                                                    }
-                                                }*/
-                                                // example how to exclude other documents
-                                            ]
-                                        }
-                                    }
-                                },
-                                {"constant_score":
-                                    {"filter":
-                                        {"or":
-                                            [
-                                                {"missing":{"field":"http://purl.org/dc/terms/expires"}},
-                                                {"range":{"http://purl.org/dc/terms/expires":{"gte":today}}}
-                                            ]
-                                        }
-                                    }
-                                },
-/*                                {"range":{"items_count_http://purl.org/dc/terms/spatial":{"from":1,"to":1}}},*/ 
-                            ],
-                        }
-                    },
-                "filter":
-                    {"and":
-                        [
-                            {"bool":
-                                {"should":
-                                    [
-/*                                        {"term":{"http://purl.org/dc/terms/spatial":"Albania"}}*/
-                                    ]
+{
+  "query": {
+    "function_score": {
+      "query": {
+        "bool": {
+          "must": {
+            "bool": {
+              "must": [
+                {
+                  "term": {
+                    "hasWorkflowState": "published"
+                  }
+                },
+                {
+                  "constant_score": {
+                    "filter": {
+                      "bool": {
+                        "should": [
+                          {
+                            "bool": {
+                              "must_not": {
+                                "exists": {
+                                  "field": "issued"
                                 }
+                              }
                             }
-/*                            ,
-                            {"bool":
-                                {"should":
-                                    [
-                                        {"term":{"http://www.eea.europa.eu/portal_types#topic":"Policy instruments"}},
-                                        {"term":{"http://www.eea.europa.eu/portal_types#topic":"Resource efficiency and waste"}}
-                                    ]
-                                }
-                            }*/
+                          },
+                          {
+                            "range": {
+                              "issued": {
+                                "lte": today
+                              }
+                            }
+                          }
                         ]
+                      }
                     }
+                  }
+                },
+                {
+                  "constant_score": {
+                    "filter": {
+                      "bool": {
+                        "should": [
+                          {
+                            "bool": {
+                              "must_not": {
+                                "exists": {
+                                  "field": "expires"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "range": {
+                              "expires": {
+                                "gte": today
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
                 }
-            },
-            "display_type":"card",
-            "size":1000,
-            "sort":[{"http://purl.org/dc/terms/issued":{"order":"desc"}}],"highlight":{"fields":{"*":{}}}
-        };
+              ]
+            }
+          },
+          "filter": {
+            "bool": {
+              "should": [
+                {
+                  "term": {
+                    "language": "en"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "display_type":"card",
+  "size": 10,
+  "sort": [
+    {
+      "issued.index": {
+        "order": "desc"
+      }
+    }
+  ],
+  "highlight": {
+    "fields": {
+      "*": {}
+    }
+  }
+};
 
     var spatial_info = getSpatialFromUrl();
     var exact_spatial = {
@@ -360,7 +378,7 @@ function getUrl(options){
     };
     exact_spatial.range["items_count_" + spatial_info.spatial_field] = {"from":1, "to": 1};
 
-    query.query.function_score.query.bool.must.push(exact_spatial);
+    query.query.function_score.query.bool.must.bool.must.push(exact_spatial);
 
     var href = window.location.href;
     var href_parts = href.split("?topic=");
@@ -369,7 +387,7 @@ function getUrl(options){
             "term":{}
         };
         term_spatial.term[spatial_info.spatial_field] = spatial_info.spatial_values[i];
-        query.query.function_score.filter.and[0].bool.should.push(term_spatial);
+        query.query.function_score.query.bool.must.bool.must.push(term_spatial);
     }
     if (href_parts.length > 1){
         var topics = decodeURIComponent(href_parts[1]).split(",");
@@ -377,12 +395,13 @@ function getUrl(options){
             if (query.query.function_score.filter.and[1] === undefined){
                 query.query.function_score.filter.and.push({'bool':{"should":[]}});
             }
-            var term_topic = {"term":{"http://www.eea.europa.eu/portal_types#topic":topics[i]}};
+            var term_topic = {"term":{"topic":topics[i]}};
             query.query.function_score.filter.and[1].bool.should.push(term_topic);
         }
     }
     var query_str = encodeURIComponent(JSON.stringify(query));
     var url_base = window.location.href.split("?")[0];
+    console.log(decodeURIComponent(query_str));
     href = url_base + "?source=" + query_str;
     return href;
 }
@@ -391,13 +410,13 @@ function setUrl(stateObj, page, url){
     var query = JSON.parse(decodeURIComponent(url).split("source=")[1]);
     var topics_str = "";
     try {
-        var topics = query.query.function_score.filter.and[1].bool.should;
+        var topics = query.query.function_score.query.bool.filter.bool.should;
         if (topics.length === 0){
             throw "empty";
         }
         topics_str = "?topic=";
         for (var i = 0; i < topics.length; i++){
-            topics_str += topics[i].term["http://www.eea.europa.eu/portal_types#topic"] + ",";
+            topics_str += topics[i].term["topic"] + ",";
         }
         topics_str = topics_str.substring(0, topics_str.length - 1);
     }
@@ -430,7 +449,7 @@ jQuery(document).ready(function($) {
     var source_str = url.split("?source=")[1];
     source_str = decodeURIComponent(source_str);
     var source_query = JSON.parse(source_str);
-    if ((source_str.indexOf('{"missing":{"field":"http://purl.org/dc/terms/expires"}}')) === -1){
+    if ((source_str.indexOf('{"missing":{"field":"expires"}}')) === -1){
         hide_expired = false;
     }
   }
@@ -441,15 +460,71 @@ jQuery(document).ready(function($) {
   var today = getTodayWithTime();
 
   predefined_filters = [
-      {'term': {'http://www.eea.europa.eu/ontologies.rdf#hasWorkflowState':
+        {'term': {'hasWorkflowState': 'published'}},
+      {'term': {'language':
+                  'en'}},
+        {
+            'constant_score': {
+                'filter': {
+                    'bool': {
+                        'should': [
+                            {'bool':{'must_not':{'exists': {'field': 'issued'}}}},
+                            {'range': {'issued': {'lte': today}}}
+                        ]
+                    }
+                }
+            }
+         },
+      {'constant_score':{
+        'filter':{
+            "bool":
+//                [
+                    {"must_not":
+                        {"term":
+                            {"cluster_id": "eea_organisations"}
+                        }
+                    }
+/*                    ,
+                    {"must_not":
+                        {"term":
+                            {"cluster_id": "rod_clients"}
+                        }
+                    }*/
+                    // example how to exclude other documents
+//                ]
+            }
+        }
+      
+
+        }];
+
+  predefined_filters_expired = [
+      {'term': {'language':
+                  'en'}},
+        {
+            'constant_score': {
+                'filter': {
+                    'bool': {
+                        'should': [
+                            {'bool': {'must_not': {'exists': {'field': 'expires'}}}},
+                            {'range': {'expires': {'gte': today}}}
+                        ]
+                    }
+                }
+            }
+        }];
+
+
+  predefined_filters_ = [
+      {'term': {'hasWorkflowState':
                   'published'}},
       {'term': {'language':
                   'en'}},
       {'constant_score': {
         'filter': {
           'or': [
-            {'missing': {'field': 'http://purl.org/dc/terms/issued'}},
-            {'range': {'http://purl.org/dc/terms/issued': {'lte': today}}}
+            {'missing': {'field': 'issued'}},
+            {'range': {'issued': {'lte': today}}}
           ]
         }}
       },
@@ -475,14 +550,14 @@ jQuery(document).ready(function($) {
       }
       ];
 
-  predefined_filters_expired = [
+  predefined_filters_expired_ = [
       {'term': {'language':
                   'en'}},
       {'constant_score': {
         'filter': {
           'or': [
-            {'missing': {'field': 'http://purl.org/dc/terms/expires'}},
-            {'range': {'http://purl.org/dc/terms/expires': {'gte': today}}}
+            {'missing': {'field': 'expires'}},
+            {'range': {'expires': {'gte': today}}}
           ]
         }}
       }
@@ -507,17 +582,17 @@ jQuery(document).ready(function($) {
     search_index: 'elasticsearch',
     search_sortby: [
       {
-        'field': 'http://purl.org/dc/terms/title',
+        'field': 'title',
         'display_asc': 'Title a-z',
         'display_desc': 'Title z-a'
       },
       {
-        'field': 'http://purl.org/dc/terms/issued',
+        'field': 'issued',
         'display_asc': 'Oldest',
         'display_desc': 'Newest'
       }
     ],
-    sort: [{'http://purl.org/dc/terms/issued': {'order': 'desc'}}],
+    sort: [{'issued': {'order': 'desc'}}],
 //    selected_sort: "relevance",
     default_operator: 'AND',
     default_freetext_fuzzify: '',

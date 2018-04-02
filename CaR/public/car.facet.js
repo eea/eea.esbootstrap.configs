@@ -28,7 +28,7 @@ $.fn.carFacet = function(settings){
         var found = false;
         $.each($(".car_facet"), function(key, value){
             var facet_value = $(value).attr("rel");
-            var real_facet_option = $('li[rel="http://www.eea.europa.eu/portal_types#topic"][title="' + facet_value + '"]');
+            var real_facet_option = $('li[rel="topic"][title="' + facet_value + '"]');
             if (real_facet_option.length > 0){
                 found = true;
                 var count = $(real_facet_option).find(".facet_label_count").text();
@@ -74,12 +74,12 @@ $.fn.carFacet = function(settings){
         var unchecked_facets = $('.car_facet_checkbox[facet_type="facet"]:not(:checked)');
         $.each(unchecked_facets, function(key, facet){
             var value = $(facet).attr("value");
-            var clearbtn = $('.facetview_filterselected.facetview_clear[rel="http://www.eea.europa.eu/portal_types#topic"][href="' + value + '"]');
-            $('.facet-view-simple').facetview.clearfilter(false, "http://www.eea.europa.eu/portal_types#topic", clearbtn, false);
+            var clearbtn = $('.facetview_filterselected.facetview_clear[rel="topic"][href="' + value + '"]');
+            $('.facet-view-simple').facetview.clearfilter(false, "topic", clearbtn, false);
         });
         $.each(checked_facets, function(key, facet){
             var value = $(facet).attr("value");
-            $('.facet-view-simple').facetview.clickfilterchoice(false, "http://www.eea.europa.eu/portal_types#topic", value, false);
+            $('.facet-view-simple').facetview.clickfilterchoice(false, "topic", value, false);
         });
         $('.facet-view-simple').facetview.dosearch();
     };
