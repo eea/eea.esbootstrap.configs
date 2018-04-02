@@ -392,16 +392,15 @@ function getUrl(options){
     if (href_parts.length > 1){
         var topics = decodeURIComponent(href_parts[1]).split(",");
         for (var i = 0; i < topics.length; i++){
-            if (query.query.function_score.filter.and[1] === undefined){
-                query.query.function_score.filter.and.push({'bool':{"should":[]}});
+            if (query.query.function_score.query.bool.filter === undefined){
+                query.query.function_score.query.bool.filter = {'bool':{"should":[]}};
             }
             var term_topic = {"term":{"topic":topics[i]}};
-            query.query.function_score.filter.and[1].bool.should.push(term_topic);
+            query.query.function_score.query.bool.filter.bool.should.push(term_topic);
         }
     }
     var query_str = encodeURIComponent(JSON.stringify(query));
     var url_base = window.location.href.split("?")[0];
-    console.log(decodeURIComponent(query_str));
     href = url_base + "?source=" + query_str;
     return href;
 }
@@ -515,53 +514,6 @@ jQuery(document).ready(function($) {
         }];
 
 
-  predefined_filters_ = [
-      {'term': {'hasWorkflowState':
-                  'published'}},
-      {'term': {'language':
-                  'en'}},
-      {'constant_score': {
-        'filter': {
-          'or': [
-            {'missing': {'field': 'issued'}},
-            {'range': {'issued': {'lte': today}}}
-          ]
-        }}
-      },
-      {'constant_score':{
-        'filter':{
-            "and":
-                [
-                    {"not":
-                        {"term":
-                            {"cluster_id": "eea_organisations"}
-                        }
-                    }
-/*                    ,
-                    {"not":
-                        {"term":
-                            {"cluster_id": "rod_clients"}
-                        }
-                    }*/
-                    // example how to exclude other documents
-                ]
-            }
-        }
-      }
-      ];
-
-  predefined_filters_expired_ = [
-      {'term': {'language':
-                  'en'}},
-      {'constant_score': {
-        'filter': {
-          'or': [
-            {'missing': {'field': 'expires'}},
-            {'range': {'expires': {'gte': today}}}
-          ]
-        }}
-      }
-    ];
 
 
   var tmp_predefined_filters = [];

@@ -411,7 +411,7 @@
             },
             "facet": {
                 "allow_exact": false,
-                "visible": false,
+                "visible": true,
                 "title": "Countries",
                 "pos": 2,
                 "type": "facet",
