@@ -78,7 +78,7 @@
 
         },
         {
-            "name": "_id",
+            "name": "es_doc_id",
             "listing": {
                 "title": "Title",
                 "width": "200px",  
@@ -86,7 +86,7 @@
                 "pos" : 1,
                 "display": {
                     "pre": "<td><a class='listingTitle' href=/details?id=",
-                    "field": "_id",
+                    "field": "es_doc_id",
                     "post": ">"
                 }
             },
