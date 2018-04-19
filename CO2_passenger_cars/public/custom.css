@@ -1,0 +1,14 @@
+/* Add custom css here */
+
+.facetview_orderby {
+   display: none;
+}
+
+.facet_label_count {
+    width: 50px;
+}
+
+.facet_label_text {
+    margin-left: 10px;
+    margin-right: 10px;
+}
