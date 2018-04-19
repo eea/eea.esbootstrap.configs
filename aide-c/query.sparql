@@ -60,7 +60,6 @@ WHERE {{
   ?assesmentThresoldURI aq:classificationDate ?classdateURI .
 
   ?assesmentMethodsURI aq:assessmentType ?AssessmentTypeURI .
-  ?assesmentMethodsURI aq:samplingPointAssessmentMetadata ?samplingPointURI.
 
   ?environmentalObjective aq:objectiveType ?ObjectiveTypeURI . 
   ?environmentalObjective aq:reportingMetric ?ReportingMetricURI .
