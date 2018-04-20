@@ -9,21 +9,12 @@ PREFIX dd: <http://dd.eionet.europa.eu/property/>
 
 SELECT DISTINCT 
 
-?Pollutant_URI 
-?offset
+?AggregationType_URI
+xsd:integer(year(xsd:date(?BeginPosition))) as ?ReportingYear
+
 WHERE {
-  ?statsURI aqr:pollutant ?Pollutant_URI .
-  {{
-    SELECT DISTINCT ?offset WHERE
-    {{
-      ?bookmark a cr:SparqlBookmark
-      { SELECT 0 AS ?offset {} }
-        UNION
-      { SELECT 80000 AS ?offset {} }
-        UNION
-      {  SELECT 160000 AS ?offset {} }
-        UNION
-      {  SELECT 240000 AS ?offset {} }
-    }}
-  }}
+
+  ?statsURI a aqr:ValidatedExceedence .
+  ?statsURI aqr:aggregationType ?AggregationType_URI .
+  ?statsURI aqr:beginPosition ?BeginPosition
 }

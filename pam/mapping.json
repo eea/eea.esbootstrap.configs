@@ -1,36 +1,37 @@
 {
-    "did_you_mean": {"type": "string", "analyzer": "didYouMean"},
-    "autocomplete": {"type": "string", "analyzer": "autocomplete"},
+    "did_you_mean": {"type": "text", "analyzer": "didYouMean"},
+    "autocomplete": {"type": "text", "analyzer": "autocomplete"},
 
     "Country" : {
-        "type" : "string",
-        "analyzer" : "coma"
+        "type" : "text",
+        "analyzer" : "coma",
+        "fielddata": true
     },
     "ID_of_policy_or_measure": {
         "type" : "integer"
     },
     "Single_policy_or_measure__or_group_of_measures"  : {
-        "type" : "string",
+        "type" : "text",
         "analyzer" : "none"
     },
     "Type_of_policy_instrument"  : {
-        "type" : "string",
+        "type" : "text",
         "analyzer" : "coma"
     },
     "Status_of_implementation_clean"  : {
-        "type" : "string",
+        "type" : "text",
         "analyzer" : "none"
     },
     "Policy_impacting_EU_ETS__ESD_or_LULUCF_emissions" : {
-        "type" : "string",
+        "type" : "text",
         "analyzer" : "coma"
     },
     "Sector_s__affected"  : {
-        "type" : "string",
+        "type" : "text",
         "analyzer" : "semicolon"
     },
     "Objective_s__lookup_only4facets"  : {
-        "type" : "string",
+        "type" : "text",
         "analyzer" : "semicolon"
     },
     "Total_GHG_emissions_reductions_in_2020__kt_CO2eq_y_"  : {
@@ -40,86 +41,86 @@
         "type" : "double"
     },
     "Entities_responsible_for_implementing_the_policy__type_"  : {
-        "type" : "string",
+        "type" : "text",
         "analyzer" : "coma"
     },
     "Implementation_period_start_clean"  : {
-        "type" : "string",
+        "type" : "text",
         "analyzer" : "none"
     },
     "Is_the_policy_or_measure_related_to_a_Union_policy__clean"  : {
-        "type" : "string",
+        "type" : "text",
         "analyzer" : "none"
     },
     "Union_policy_lookup_only4facets_clean" : {
-        "type" : "string",
+        "type" : "text",
         "analyzer" : "semicolon"
     },
     "GHG_s__affected"  : {
-        "type" : "string",
+        "type" : "text",
         "analyzer" : "coma"
     },
     "Projection_scenario_in_which_the_policy_or_measure_is_included_clean"  : {
-        "type" : "string",
+        "type" : "text",
         "analyzer" : "none"
     },
     "Description_of_projected_cost_estimates" :{
-        "type" : "string",
+        "type" : "text",
         "analyzer" : "none"
     },
 
 
     "Name_of_policy_or_measure": {
-        "type": "string",
+        "type": "text",
         "fields" : {
-                "toindex" : {"type" : "string", "analyzer" : "default"},
-                "index" : {"type" : "string", "analyzer" : "none"},
-                "Name_of_policy_or_measure": {"type": "string", "index": "not_analyzed"}
+                "toindex" : {"type" : "text", "analyzer" : "default"},
+                "index" : {"type" : "text", "analyzer" : "none"},
+                "Name_of_policy_or_measure": {"type": "text"}
         },
         "copy_to" : ["did_you_mean", "autocomplete"]
     },
     "Entities_responsible_for_implementing_the_policy": {
-        "type": "string",
+        "type": "text",
         "fields" : {
-                "toindex" : {"type" : "string", "analyzer" : "default"},
-                "index" : {"type" : "string", "analyzer" : "none"},
-                "Entities_responsible_for_implementing_the_policy": {"type": "string", "index": "not_analyzed"}
+                "toindex" : {"type" : "text", "analyzer" : "default"},
+                "index" : {"type" : "text", "analyzer" : "none"},
+                "Entities_responsible_for_implementing_the_policy": {"type": "text"}
         },
         "copy_to" : ["did_you_mean", "autocomplete"]
     },
     "Related_Union_Policy": {
-        "type": "string",
+        "type": "text",
         "fields" : {
-                "toindex" : {"type" : "string", "analyzer" : "default"},
-                "index" : {"type" : "string", "analyzer" : "none"},
-                "Related_Union_Policy": {"type": "string", "index": "not_analyzed"}
+                "toindex" : {"type" : "text", "analyzer" : "default"},
+                "index" : {"type" : "text", "analyzer" : "none"},
+                "Related_Union_Policy": {"type": "text"}
         },
         "copy_to" : ["did_you_mean", "autocomplete"]
     },
     "Description": {
-        "type": "string",
+        "type": "text",
         "fields" : {
-                "toindex" : {"type" : "string", "analyzer" : "default"},
-                "index" : {"type" : "string", "analyzer" : "none"},
-                "Description": {"type": "string", "index": "not_analyzed"}
+                "toindex" : {"type" : "text", "analyzer" : "default"},
+                "index" : {"type" : "text", "analyzer" : "none"},
+                "Description": {"type": "text"}
         },
         "copy_to" : ["did_you_mean", "autocomplete"]
     },
     "Objective_s_": {
-        "type": "string",
+        "type": "text",
         "fields" : {
-                "toindex" : {"type" : "string", "analyzer" : "default"},
-                "index" : {"type" : "string", "analyzer" : "none"},
-                "Objective_s_": {"type": "string", "index": "not_analyzed"}
+                "toindex" : {"type" : "text", "analyzer" : "default"},
+                "index" : {"type" : "text", "analyzer" : "none"},
+                "Objective_s_": {"type": "text"}
         },
         "copy_to" : ["did_you_mean", "autocomplete"]
     },
     "Reference_for_ex_ante_assessment": {
-        "type": "string",
+        "type": "text",
         "fields" : {
-                "toindex" : {"type" : "string", "analyzer" : "default"},
-                "index" : {"type" : "string", "analyzer" : "none"},
-                "Reference_for_ex_ante_assessment": {"type": "string", "index": "not_analyzed"}
+                "toindex" : {"type" : "text", "analyzer" : "default"},
+                "index" : {"type" : "text", "analyzer" : "none"},
+                "Reference_for_ex_ante_assessment": {"type": "text"}
         },
         "copy_to" : ["did_you_mean", "autocomplete"]
     }

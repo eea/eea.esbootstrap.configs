@@ -3,7 +3,7 @@
         "port": 3000
     },
     "elastic": {
-        "index": "esbootstrapdata",
+        "index": "co2_passenger_cars_final",
         "type": "resources",
         "field_base":""
     },
@@ -15,9 +15,9 @@
         "footer_path": "/templates/v2/getFooter?render_full_html=False"
     },
     "layout_vars": {
-        "head_title": "Elasticsearch bootstrap application",
-        "app_id": "aide-x",
-        "skip_resources_bundling": false,
+        "head_title": "Monitoring of CO2 emissions from passenger cars",
+        "app_id": "co2_passenger_cars",
+        "skip_resources_bundling": true,
         "skip_external_template_styles": true,
         "override_searchserver_resources": false,
         "css_resources": {
@@ -37,21 +37,23 @@
                 "/custom.js"
             ],
             "details_page": [
-                "http://www.eea.europa.eu/register_function.js",
-                "http://www.eea.europa.eu/nodeutilities.js",
-                "http://www.eea.europa.eu/mark_special_links.js",
                 "javascripts/jq.tools.js",
                 "/custom.js"
             ]
         },
-        "site_title": "Elasticsearch bootstrap application",
-        "site_description": "Simple customizable bootstrap application",
+        "site_title": "CO2 emissions from passenger cars",
+        "site_description": "Monitoring of CO2 emissions from passenger cars – EU Regulation 443/2009",
         "enableBreadcrumbs": true,
-        "es_debug_enabled": false,
-        "breadcrumbs": "esbootstrap",
-        "dataprovencance_info_text": "ES bootstrap",
-        "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/daviz",
+        "es_debug_enabled": true,
+        "breadcrumbs": "Datasets",
+        "dataprovencance_info_text": "EEA Data: Monitoring of CO2 emissions from passenger cars – EU Regulation 443/2009",
+        "dataprovencance_info_url": "https://www.eea.europa.eu/data-and-maps/data/co2-cars-emission-14",
         "further_info": ""
     },
-    "endpoint": "http://semantic.eea.europa.eu/sparql"
+    "indexFile": {
+        "file": "CO2_passenger_cars.csv",
+        "delimiter": "\t",
+        "id_type": "auto",
+        "id_field": "ID"
+    }
 }

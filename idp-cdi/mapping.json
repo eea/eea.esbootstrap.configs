@@ -5,18 +5,18 @@
   "dataDescription": {
     "type": "string",
     "fields" : {
-        "toindex" : {"type" : "string", "analyzer" : "default"},
-        "index" : {"type" : "string", "analyzer" : "none"},
-        "dataDescription": {"type": "string", "index": "not_analyzed"}
+        "toindex" : {"type" : "text", "analyzer" : "default", "fielddata":true},
+        "index" : {"type" : "keyword"},
+        "dataDescription": {"type": "keyword", "index": true}
       },
     "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "longName": {
     "type": "string",
     "fields" : {
-        "toindex" : {"type" : "string", "analyzer" : "default"},
-        "index" : {"type" : "string", "analyzer" : "none"},
-        "longName": {"type": "string", "index": "not_analyzed"}
+        "toindex" : {"type" : "text", "analyzer" : "default", "fielddata":true},
+        "index" : {"type" : "keyword"},
+        "longName": {"type": "keyword", "index": true}
       },
     "copy_to" : ["did_you_mean", "autocomplete"]
   },

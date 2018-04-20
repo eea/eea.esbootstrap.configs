@@ -12,7 +12,7 @@ function getAllResults(name){
 }
 
 jQuery(document).ready(function($) {
-    var itemTemplate='<li><a href="${http://www.w3.org/1999/02/22-rdf-syntax-ns#about}">${label}</a><span>Published on </span><span>${http://purl.org/dc/terms/issued}</span></li>'
+    var itemTemplate='<li><a href="${about}">${label}</a><span>Published on </span><span>${issued}</span></li>'
     var options = {
         tiles: [
             {
@@ -24,19 +24,19 @@ jQuery(document).ready(function($) {
             {
                 tile: ".topics",
                 type: "simple",
-                facet: "http://www.eea.europa.eu/portal_types#topic",
+                facet: "topic",
                 values: [{"value":"count", "name":"topics_count"}]
             },
             {
                 tile: ".content_types",
                 type: "simple",
-                facet: "http://www.eea.europa.eu/ontologies.rdf#objectProvides",
+                facet: "objectProvides",
                 values: [{"value":"count", "name":"content_types_count"}]
             },
             {
                 tile: ".countries",
                 type: "simple",
-                facet: "http://purl.org/dc/terms/spatial",
+                facet: "spatial",
                 values: [{"value":"count", "name":"countries_count"}]
             },
             {
@@ -53,7 +53,7 @@ jQuery(document).ready(function($) {
             {
                 tile: ".landing_tile .eea_tile.latest_objects",
                 type: "custom",
-                values: [{"type":"results", "value":"rows", "name":"latest_objects_list", "template": itemTemplate, "sort": [{"http://purl.org/dc/terms/issued":{"order":"desc"}}]}]
+                values: [{"type":"results", "value":"rows", "name":"latest_objects_list", "template": itemTemplate, "sort": [{"issued.index":{"order":"desc"}}]}]
             }
         ]
     };

@@ -104,6 +104,7 @@
                     "columns_max_color" : "#AAAAAA",
 
                     "slider_bucketsize" : 10000,
+                    "histogram" : true,
                     "measurement_unit": "people"
 
                 }

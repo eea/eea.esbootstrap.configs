@@ -45,7 +45,19 @@
             "name": "PlanId",
             "listing": { "title": "Plan Id", "visible" : true, "pos" : 6 },
             "details": { "title": "PlanId", "pos" : 3, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Plan Id", "pos": 9, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { 
+                "visible": true, 
+                "title": "Plan Id", 
+                "pos": 9, 
+                "type": "facet", 
+                "size": 9999, 
+                "order": "term", 
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for Plan Id",
+                "empty_message": "No Plan Id to show",
+                "short_name": "Plan Id",
+                "facet_display_options": ["sort", "checkbox"] 
+            },
             "csv_tsv": { "title": "PlanId", "visible": true, "pos": 3 }
         },
         {
@@ -150,7 +162,18 @@
             "name": "Publisher",
             "listing": { "title": "Publisher", "visible" : true, "pos" : 20 },
             "details": { "title": "Publisher", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Publisher", "pos": 7, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { 
+                "visible": true, 
+                "title": "Publisher", 
+                "pos": 7, 
+                "type": "facet", 
+                "size": 9999, 
+                "order": "term",
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for Publisher",
+                "empty_message": "No Publisher to show",
+                "short_name": "Publisher",
+                "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "Publisher", "visible": true, "pos": 4 }
         },
         {
@@ -164,7 +187,18 @@
             "name": "Organisation",
             "listing": { "title": "Organisation", "visible" : true, "pos" : 22 },
             "details": { "title": "Organisation", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Organisation", "pos": 8, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { 
+                "visible": true,
+                "title": "Organisation",
+                "pos": 8,
+                "type": "facet",
+                "size": 9999,
+                "order": "term",
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for Organisation",
+                "empty_message": "No Organisation to show",
+                "short_name": "Organisation",
+                "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "Organisation", "visible": true, "pos": 4 }
         },
         {

@@ -25,7 +25,13 @@ replace(replace(replace(str(?SamplingPointLocalId_URI),"http://reference.eionet.
 ?AggregationType
 ?AQValue
 #replace(str(?Unit_URI),"http://dd.eionet.europa.eu/vocabulary/uom/concentration/","") as ?Unit
-(bif:either(substr(str(?Unit_URI),1,56) = "http://dd.eionet.europa.eu/vocabulary/uom/concentration/",REPLACE(str(?Unit_URI),"http://dd.eionet.europa.eu/vocabulary/uom/concentration/",""),REPLACE(str(?Unit_URI),"http://dd.eionet.europa.eu/vocabulary/uom/statistics/","")) as ?Unit)
+(bif:either(
+    STRSTARTS(str(?Unit_URI), "http://dd.eionet.europa.eu/vocabulary/uom/concentration/"),
+    REPLACE(str(?Unit_URI),"http://dd.eionet.europa.eu/vocabulary/uom/concentration/",""),
+    bif:either(
+        STRSTARTS(str(?Unit_URI), "http://dd.eionet.europa.eu/vocabulary/uom/statistics/"),
+        REPLACE(str(?Unit_URI),"http://dd.eionet.europa.eu/vocabulary/uom/statistics/",""),
+        "Not specified" )) as ?Unit)
 xsd:date(?BeginPosition) as ?BeginPosition
 xsd:date(?EndPosition) as ?EndPosition
 ?Validity
@@ -67,7 +73,7 @@ WHERE {
   ?namespaces skos:inScheme <http://dd.eionet.europa.eu/vocabulary/aq/namespace/> .
   ?namespaces dd:inCountry ?cntry_URI .
   ?cntry_URI rdfs:label ?CountryOrTerritory .
-  
-  FILTER (?Pollutant_URI = <<Pollutant_URI>>)
+
+  FILTER (?AggregationType_URI = <<AggregationType_URI>>)
+  FILTER (xsd:integer(year(xsd:date(?BeginPosition))) = <ReportingYear>)
 }
-LIMIT 80000 OFFSET <offset>
