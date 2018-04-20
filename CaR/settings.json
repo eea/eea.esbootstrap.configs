@@ -18,7 +18,7 @@
         "head_title": "Countries and regions — European Environment Agency (EEA)",
         "override_searchserver_resources": true,
         "app_id": "car",
-        "skip_resources_bundling": true,
+        "skip_resources_bundling": false,
         "skip_external_template_styles": true,
         "css_resources": {
             "layout_page": [
