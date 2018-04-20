@@ -1,4 +1,8 @@
 /* Add custom css here */
+#content {
+    background: #FFF none;
+}
+
 
 .facetview_orderby {
    display: none;
