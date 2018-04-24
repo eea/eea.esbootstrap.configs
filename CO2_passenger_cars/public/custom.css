@@ -1,9 +1,6 @@
 /* Add custom css here */
-#content {
-    background: #FFF none;
-}
 
-
+/* No need for orderby */
 .facetview_orderby {
    display: none;
 }
@@ -15,4 +12,9 @@
 .facet_label_text {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+/* Remove DRAFT watermark */
+#content {
+    background:white;
 }
