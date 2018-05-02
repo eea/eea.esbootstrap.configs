@@ -123,10 +123,10 @@
                     }
                 },
                 {
-                    "rule": "startsWith",
+                    "rule": "contains",
                     "operator": "",
                     "field": "about",
-                    "value": "http://land.copernicus.eu",
+                    "value": "://land.copernicus.eu/",
                     "thumb_template": {
                         "template": "${url}/image_preview",
                         "variables": [{

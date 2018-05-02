@@ -92,7 +92,7 @@
             "name": "Mp",
             "values_blacklist":[""],
             "listing": {
-                "title": "Manufacturer pooling",
+                "title": "Pool",
                 "visible" : true,
                 "pos" : 4
             },
@@ -104,7 +104,7 @@
             },
             "facet": {
                 "visible": true,
-                "title": "Manufacturer pooling",
+                "title": "Pool",
                 "pos": 0,
                 "type": "facet",
                 "size": 9999,

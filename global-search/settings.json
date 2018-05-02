@@ -17,7 +17,7 @@
     "layout_vars": {
         "head_title": "Global catalogue of the European Environment Agency (EEA)",
         "app_id": "global-search",
-        "skip_resources_bundling": true,
+        "skip_resources_bundling": false,
         "skip_external_template_styles": true,
         "override_searchserver_resources": false,
         "css_resources": {
@@ -33,7 +33,7 @@
                 "eeasearch.facetview.js"
             ]
         },
-        "site_title": "Global search and catalogue <sup style='color:#fbaf33'>beta</sup>",
+        "site_title": "Global search and catalogue",
         "enableBreadcrumbs": true,
         "breadcrumbs": "Global Search",
         "dataprovencance_info_text": "Semantic Data Service (SDS)",
@@ -41,7 +41,7 @@
         "further_info": "The content of this catalogue has been created thanks to the EU's open data approach and the contribution of many organisations part of EEA's network (Eionet)."
     },
     "landingpage_enabled": true,
-    "es_debug_enabled": true,
+    "es_debug_enabled": false,
     "suggestions_enabled": true,
     "relevance_enabled": true,
     "river_configs": {
