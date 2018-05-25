@@ -266,7 +266,7 @@ jQuery(document).ready(function($) {
                     'bool': {
                         'should': [
                             {'bool':{'must_not':{'exists': {'field': 'issued'}}}},
-                            {'range': {'issued': {'lte': today}}}
+                            {'range': {'issued.date': {'lte': today}}}
                         ]
                     }
                 }
