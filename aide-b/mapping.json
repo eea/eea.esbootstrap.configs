@@ -16,10 +16,8 @@
 "Pollutant" : {"type" :"string", "analyzer" : "coma" },
 "ProtectionTarget" : {"type" :"string", "analyzer" : "coma" },
 "CompetentAuthority" : {"type" :"string", "analyzer" : "coma" },
-"ContactName" : {"type" :"string", "analyzer" : "coma" },
 "Telephone" : {"type" :"string" },
 "Address" : {"type" :"string" },
-"Email" : {"type" :"string" },
 "Website" : {"type" :"string" },
 "envelope" : {"type" :"string" }
 }

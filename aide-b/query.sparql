@@ -30,10 +30,10 @@ YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear
 ?Pollutant
 ?ProtectionTarget
 ?CompetentAuthority
-?ContactName
+#?ContactName
 ?Telephone
 ?Address
-?Email
+#?Email
 ?Website
 ?envelope
 

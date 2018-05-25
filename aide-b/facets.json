@@ -154,13 +154,6 @@
            "csv_tsv": { "title": "CompetentAuthority", "visible": true, "pos": 4 }
         },
         {
-            "name": "ContactName",
-            "listing": { "title": "Contact Name", "visible" : true, "pos" : 17 },
-            "details": { "title": "ContactName", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": false },
-            "csv_tsv": { "title": "ContactName", "visible": true, "pos": 4 }
-        },
-        {
             "name": "Telephone",
             "listing": { "title": "Telephone", "visible" : true, "pos" : 18},
             "details": { "title": "Telephone", "pos" : 4, "section": "info", "visible": false },
@@ -173,13 +166,6 @@
             "details": { "title": "Address", "pos" : 4, "section": "info", "visible": false },
             "facet": { "visible": false },
             "csv_tsv": { "title": "Address", "visible": true, "pos": 4 }
-        },
-        {
-            "name": "Email",
-            "listing": { "title": "Email", "visible" : true, "pos" : 20},
-            "details": { "title": "Email", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": false },
-            "csv_tsv": { "title": "Email", "visible": true, "pos": 4 }
         },
         {
             "name": "Website",
