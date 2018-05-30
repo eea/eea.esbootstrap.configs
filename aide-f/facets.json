@@ -202,6 +202,20 @@
             "details": { "title": "UpdateTime", "pos" : 4, "section": "info", "visible": false },
             "facet": { "visible": false },
             "csv_tsv": { "title": "UpdateTime", "visible": true, "pos": 4 }
+        },
+        {
+            "name": "SamplingPoint_GEO",
+            "facet": {
+                "visible": true,
+                "title": "Geo location of sampling point",
+                "pos": 12,
+                "type": "geo",
+                "size": 2,
+                "default_distance": { "lat": 48.738525, "lng": 13.981955, "rad": 250000 },
+                "default_bounds": { "lat1": 50.738525, "lng1": 9.981955, "lat2": 46.738525, "lng2": 18.981955 }
+            },
+            "csv_tsv": {"visible": false},
+            "listing": {"visible": false}
         }
     ]
 }

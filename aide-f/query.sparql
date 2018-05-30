@@ -21,6 +21,7 @@ replace(replace(replace(str(?SamplingPointLocalId_URI),"http://reference.eionet.
 #?Station_Longitude
 ?SamplingPoint_Latitude
 ?SamplingPoint_Longitude
+concat(?SamplingPoint_Latitude,",",?SamplingPoint_Longitude) as ?SamplingPoint_GEO
 ?Pollutant
 ?AggregationType
 ?AQValue

@@ -8,6 +8,7 @@
 "SamplingPointLocalId" : {"type" :"string", "analyzer" : "coma" },
 "SamplingPoint_Latitude" : {"type" :"double" },
 "SamplingPoint_Longitude" : {"type" :"double" },
+"SamplingPoint_GEO" : {"type" : "geo_point"},
 "Pollutant" : {"type" :"string", "analyzer" : "coma" },
 "AggregationType" : {"type" :"string", "analyzer" : "coma" },
 "AQValue" : {"type" :"double" },
