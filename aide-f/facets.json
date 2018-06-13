@@ -80,7 +80,6 @@
             "name": "AQValue",
             "listing": { "title": "AQ Value", "visible" : true, "pos" : 13 },
             "details": { "title": "AQValue", "pos" : 4, "section": "info", "visible": false },
-
             "facet": { "visible": true, "title": "AQ Value", "pos": 5, "type": "rangehistogram", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
                     "columns_bucketsize" : 5,
@@ -207,7 +206,7 @@
             "name": "SamplingPoint_GEO",
             "facet": {
                 "visible": true,
-                "title": "Geo location of sampling point",
+                "title": "Map filter",
                 "pos": 12,
                 "type": "geo",
                 "size": 2,
