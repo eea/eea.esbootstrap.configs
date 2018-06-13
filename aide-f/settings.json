@@ -3,7 +3,7 @@
         "port": 3000
     },
     "elastic": {
-        "index": "esbootstrapdata-aide-f",
+        "index": "esbootstrapdata-aide-f-geo",
         "type": "resources",
         "field_base":""
     },
