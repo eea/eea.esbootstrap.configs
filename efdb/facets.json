@@ -17,7 +17,7 @@
             "name": "code",
             "listing": { "title": "code", "visible" : false, "pos" : 0 },
             "details": { "title": "code", "pos" : 0, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "NFR - Sector", "pos": 0, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "NFR - Sector", "pos": 0, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "code", "visible": false, "pos": 0 }
         },
         { 
@@ -49,7 +49,7 @@
             "name": "Type",
             "listing": { "title": "Type", "visible" : true, "pos" : 5 },
             "details": { "title": "Type", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Type", "pos": 10, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Type", "pos": 10, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "Type", "visible": true, "pos": 4 }
         },
         {
@@ -63,7 +63,7 @@
             "name": "Fuel",
             "listing": { "title": "Fuel", "visible" : true, "pos" : 6 },
             "details": { "title": "Fuel", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Fuel", "pos": 1, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Fuel", "pos": 1, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "Fuel", "visible": true, "pos": 4 }
         },
         {
@@ -84,7 +84,7 @@
             "name": "Pollutant",
             "listing": { "title": "Pollutant", "visible" : true, "pos" : 6 },
             "details": { "title": "Pollutant", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Pollutant", "pos": 1, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Pollutant", "pos": 1, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "Pollutant", "visible": true, "pos": 4 }
         },
         {

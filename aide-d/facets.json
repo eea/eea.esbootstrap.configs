@@ -38,7 +38,7 @@
             "name": "Network",
             "listing": { "title": "Network", "visible" : true, "pos" : 5 },
             "details": { "title": "Network", "pos" : 5, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Network", "pos": 6, "type": "facet", "size": 200, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Network" },
+            "facet": { "visible": true, "title": "Network", "pos": 6, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Network" },
             "csv_tsv": { "title": "Network", "visible": true, "pos": 5 }
         },
         {
@@ -52,14 +52,14 @@
             "name": "StationName",
             "listing": { "title": "Station Name", "visible" : true, "pos" : 7 },
             "details": { "title": "StationName", "pos" : 7, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Station Name", "pos": 8, "type": "facet", "size": 5000, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Station Name" },
+            "facet": { "visible": true, "title": "Station Name", "pos": 8, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Station Name" },
             "csv_tsv": { "title": "StationName", "visible": true, "pos": 7 }
         },
         {
             "name": "EoICode",
             "listing": { "title": "EoI Station Code", "visible" : true, "pos" : 7 },
             "details": { "title": "EoICode", "pos" : 7, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "EoI Station Code", "pos": 7, "type": "facet", "size": 5000, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for EoI Station Code" },
+            "facet": { "visible": true, "title": "EoI Station Code", "pos": 7, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for EoI Station Code" },
             "csv_tsv": { "title": "EoICode", "visible": true, "pos": 7 }
         },
         {
@@ -80,14 +80,14 @@
             "name": "Pollutant",
             "listing": { "title": "Pollutant", "visible" : true, "pos" : 10 },
             "details": { "title": "Pollutant", "pos" : 10, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Pollutant", "pos": 2, "type": "facet", "size": 1000, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Pollutant" },
+            "facet": { "visible": true, "title": "Pollutant", "pos": 2, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Pollutant" },
             "csv_tsv": { "title": "Pollutant", "visible": true, "pos": 10 }
         },
         {
             "name": "SamplingPointId",
             "listing": { "title": "Sampling Point Local Id", "visible" : true, "pos" : 11 },
             "details": { "title": "SamplingPointId", "pos" : 11, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Sampling Point Local Id", "pos": 9, "type": "facet", "size": 5000, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Sampling Point Local Id" },
+            "facet": { "visible": true, "title": "Sampling Point Local Id", "pos": 9, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Sampling Point Local Id" },
             "csv_tsv": { "title": "SamplingPointId", "visible": true, "pos": 11 }
         },
                 {

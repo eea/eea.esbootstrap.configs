@@ -17,21 +17,21 @@
             "name": "CountryOrTerritory",
             "listing": { "title": "Country or Territory", "visible" : true, "pos" : 0, "display": { "pre": "", "field": "CountryOrTerritory", "post": "</td>" } },
             "details": { "title": "CountryOrTerritory", "pos" : 0, "section": "info", "visible": true },
-            "facet": { "visible": true, "title": "Country or Territory", "pos": 0, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Country or Territory", "pos": 0, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "CountryOrTerritory", "visible": true, "pos": 0 }
         },
         {
             "name": "ReportingYear",
             "listing": { "title": "Reporting Year", "visible" : true, "pos" : 3 },
             "details": { "title": "ReportingYear", "pos" : 3, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Reporting Year", "pos": 1, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Reporting Year", "pos": 1, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "ReportingYear", "visible": true, "pos": 3 }
         },
         {
             "name": "PlanCode",
             "listing": { "title": "Plan Code", "visible" : true, "pos" : 4 },
             "details": { "title": "PlanCode", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Plan Code", "pos": 10, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Plan Code", "pos": 10, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "PlanCode", "visible": true, "pos": 4 }
         },
         {
@@ -50,7 +50,7 @@
                 "title": "Plan Id", 
                 "pos": 9, 
                 "type": "facet", 
-                "size": 9999, 
+                "size": 100, 
                 "order": "term", 
                 "autocomplete": true,
                 "autocomplete_placeholder": "Search for Plan Id",
@@ -78,7 +78,7 @@
             "name": "FirstExceedanceYear",
             "listing": { "title": "First Exceedance Year", "visible" : true, "pos" : 9 },
             "details": { "title": "FirstExceedanceYear", "pos" : 3, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "First Exceedance Year", "pos": 4, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "First Exceedance Year", "pos": 4, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "FirstExceedanceYear", "visible": true, "pos": 3 }
         },
         {
@@ -92,7 +92,7 @@
             "name": "Status",
             "listing": { "title": "Status", "visible" : true, "pos" : 10 },
             "details": { "title": "Status", "pos" : 3, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Status", "pos": 5, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Status", "pos": 5, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] },
             "csv_tsv": { "title": "Status", "visible": true, "pos": 3 }
         },
         {
@@ -120,14 +120,14 @@
             "name": "Pollutant",
             "listing": { "title": "Pollutant", "visible" : true, "pos" : 14 },
             "details": { "title": "Pollutant", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Pollutant", "pos": 2, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Pollutant", "pos": 2, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "Pollutant", "visible": true, "pos": 4 }
         },
         {
             "name": "ProtectionTarget",
             "listing": { "title": "Protection Target", "visible" : true, "pos" : 15 },
             "details": { "title": "ProtectionTarget", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Protection Target", "pos": 3, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Protection Target", "pos": 3, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "ProtectionTarget", "visible": true, "pos": 4 }
         },
         {
@@ -141,7 +141,7 @@
             "name": "PublicationDate",
             "listing": { "title": "Publication Date", "visible" : true, "pos" : 17 },
             "details": { "title": "PublicationDate", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Publication Date", "pos": 6, "type": "facet", "size": 9999, "order": "term", "facet_display_options": ["sort", "checkbox"] },
+            "facet": { "visible": true, "title": "Publication Date", "pos": 6, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] },
            "csv_tsv": { "title": "PublicationDate", "visible": true, "pos": 4 }
         },
         {
@@ -167,7 +167,7 @@
                 "title": "Publisher", 
                 "pos": 7, 
                 "type": "facet", 
-                "size": 9999, 
+                "size": 100, 
                 "order": "term",
                 "autocomplete": true,
                 "autocomplete_placeholder": "Search for Publisher",
@@ -192,7 +192,7 @@
                 "title": "Organisation",
                 "pos": 8,
                 "type": "facet",
-                "size": 9999,
+                "size": 100,
                 "order": "term",
                 "autocomplete": true,
                 "autocomplete_placeholder": "Search for Organisation",

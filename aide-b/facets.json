@@ -38,7 +38,7 @@
             "name": "ZoneCode",
             "listing": { "title": "Zone Code", "visible" : true, "pos" : 5 },
             "details": { "title": "ZoneCode", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Zone Code", "pos": 10, "type": "facet", "size": 1000, "order": "term", "facet_display_options": ["sort", "checkbox"] , "autocomplete": true, "autocomplete_placeholder": "Search for Zone Code"},
+            "facet": { "visible": true, "title": "Zone Code", "pos": 10, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] , "autocomplete": true, "autocomplete_placeholder": "Search for Zone Code"},
             "csv_tsv": { "title": "ZoneCode", "visible": true, "pos": 4 }
         },
         {
@@ -52,7 +52,7 @@
             "name": "GeographicalName",
             "listing": { "title": "Geographical Name", "visible" : true, "pos" : 7 },
             "details": { "title": "GeographicalName", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Geographical Name", "pos": 6, "type": "facet", "size": 1000, "order": "term", "facet_display_options": ["sort", "checkbox"] , "autocomplete": true, "autocomplete_placeholder": "Search for Geographical Name"},
+            "facet": { "visible": true, "title": "Geographical Name", "pos": 6, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] , "autocomplete": true, "autocomplete_placeholder": "Search for Geographical Name"},
            "csv_tsv": { "title": "GeographicalName", "visible": true, "pos": 4 }
         },
         {
@@ -150,7 +150,7 @@
             "name": "CompetentAuthority",
             "listing": { "title": "Competent Authority", "visible" : true, "pos" : 16 },
             "details": { "title": "CompetentAuthority", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Competent Authority", "pos": 9, "type": "facet", "size": 1000, "order": "term", "facet_display_options": ["sort", "checkbox"] , "autocomplete": true, "autocomplete_placeholder": "Search for Competent Authority"},
+            "facet": { "visible": true, "title": "Competent Authority", "pos": 9, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"] , "autocomplete": true, "autocomplete_placeholder": "Search for Competent Authority"},
            "csv_tsv": { "title": "CompetentAuthority", "visible": true, "pos": 4 }
         },
         {

@@ -192,7 +192,7 @@
                 "title": "Status of implementation",
                 "pos": 3,
                 "type": "facet",
-                "size": 1500,
+                "size": 100,
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"]
             }
@@ -278,7 +278,7 @@
                 "title": "Objective(s)",
                 "pos": 6,
                 "type": "facet",
-                "size": 1500,
+                "size": 100,
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"]
             }
@@ -296,7 +296,7 @@
                 "title": "Objective(s)",
                 "pos": 6,
                 "type": "facet",
-                "size": 1500,
+                "size": 100,
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"],
                 "autocomplete": true,
@@ -416,7 +416,7 @@
                 "title": "Implementation period start",
                 "pos": 10,
                 "type": "facet",
-                "size": 1500,
+                "size": 100,
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
@@ -507,7 +507,7 @@
                 "title": "Related Union Policy",
                 "pos": 12,
                 "type": "facet",
-                "size": 1500,
+                "size": 100,
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"]
             }
@@ -530,7 +530,7 @@
                 "title": "Union policy which resulted in the implementation of the policy or measure",
                 "pos": 12,
                 "type": "facet",
-                "size": 1500,
+                "size": 100,
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"],
                 "autocomplete": true,
@@ -575,7 +575,7 @@
                 "title": "Projection scenario in which the policy or measure is included",
                 "pos": 14,
                 "type": "facet",
-                "size": 1500,
+                "size": 100,
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"]
             }

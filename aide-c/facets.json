@@ -38,21 +38,21 @@
             "name": "AssessmentId",
             "listing": { "title": "Assessment Id", "visible" : true, "pos" : 5 },
             "details": { "title": "AssessmentId", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Assessment Id", "pos": 8, "type": "facet", "size": 5000, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Assessment Id"},
-           "csv_tsv": { "title": "AssessmentId", "visible": true, "pos": 4 }
+            "facet": { "visible": true, "title": "Assessment Id", "pos": 8, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Assessment Id"},
+            "csv_tsv": { "title": "AssessmentId", "visible": true, "pos": 4 }
         },
         {
             "name": "ZoneId",
             "listing": { "title": "Zone Id", "visible" : true, "pos" : 6 },
             "details": { "title": "ZoneId", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Zone Id", "pos": 9, "type": "facet", "size": 1000, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Zone Id" },
+            "facet": { "visible": true, "title": "Zone Id", "pos": 9, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Zone Id" },
            "csv_tsv": { "title": "ZoneId", "visible": true, "pos": 4 }
         },
         {
             "name": "Pollutant",
             "listing": { "title": "Pollutant", "visible" : true, "pos" : 7 },
             "details": { "title": "Pollutant", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Pollutant", "pos": 2, "type": "facet", "size": 1000, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Pollutant" },
+            "facet": { "visible": true, "title": "Pollutant", "pos": 2, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Pollutant" },
            "csv_tsv": { "title": "Pollutant", "visible": true, "pos": 4 }
         },
         {
@@ -132,6 +132,5 @@
             "facet": { "visible": false },
             "csv_tsv": { "title": "envelope", "visible": true, "pos": 4 }
         }
-        
     ]
 }
