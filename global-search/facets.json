@@ -774,7 +774,10 @@
 
                     "slider_bucketsize" : 1,
                     "histogram" : true,
-                    "show_results_in_tooltip": true
+                    "show_results_in_tooltip": true,
+
+                    "min_max_script": "String val = doc['year'].value.substring(0,4); val.toLowerCase() == val.toUpperCase() ? Integer.parseInt(val) : 2000;",
+                    "aggs_script":  "String val = doc['year'].value.substring(0,4); val.toLowerCase() == val.toUpperCase() ? Integer.parseInt(val) : -1;"
                 }
             }
         },
@@ -804,7 +807,10 @@
                     "slider_bucketsize" : 1,
                     "histogram" : true,
                     "show_results_in_tooltip": true,
-                    "measurement_unit": "years"
+                    "measurement_unit": "years",
+
+                    "min_max_script": "def vals = doc['time_coverage']; if (vals.length == 0){return 2000} else {def ret = [];for (val in vals){def tmp_val = val.substring(0,4);ret.add(tmp_val.toLowerCase() == tmp_val.toUpperCase() ? Integer.parseInt(tmp_val) : 2000);}return ret;}",
+                    "aggs_script":  "def vals = doc['time_coverage']; if (vals.length == 0){return -1} else {def ret = [];for (val in vals){def tmp_val = val.substring(0,4);ret.add(tmp_val.toLowerCase() == tmp_val.toUpperCase() ? Integer.parseInt(tmp_val) : -1);}return ret;}"
 
                 }
             }
