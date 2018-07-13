@@ -357,7 +357,7 @@ function getUrl(options){
     }
   },
   "display_type":"card",
-  "size": 10,
+  "size": 1000,
   "sort": [
     {
       "issued.index": {
