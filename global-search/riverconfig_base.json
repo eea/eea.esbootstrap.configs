@@ -79,7 +79,13 @@
       "Tracked file",
       "http://www.w3.org/ns/dcat#Dataset",
       "http://www.w3.org/ns/dcat#Distribution"
-    ]
+    ],
+    "year": ["None", "Unknown"],
+    "issued": ["None", "Unknown"],
+    "http://purl.org/dc/terms/issued": ["None", "Unknown"],
+    "http://purl.org/dc/terms/expires": ["None", "Unknown"],
+    "http://www.eea.europa.eu/portal_types/Event#endDate": ["None", "Unknown"],
+    "expires": ["None", "Unknown"]
   },
   "//": "Index _only_ these values for given properties",
   "whiteMap": {
@@ -201,7 +207,6 @@
     "places" : "unknown",
     "readingTime" : -1,
     "fleschReadingEaseScore" : 0,
-    "year": "Unknown",
     "references":[]
   },
   "//": "Sync conditions",

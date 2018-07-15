@@ -129,5 +129,6 @@
       "type" : "string",
       "analyzer" : "none",
       "copy_to" : ["did_you_mean"]
-    }
+    },
+    "expires": {"type": "date"}
 }
