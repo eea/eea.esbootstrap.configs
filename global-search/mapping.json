@@ -130,5 +130,7 @@
       "analyzer" : "none",
       "copy_to" : ["did_you_mean"]
     },
-    "expires": {"type": "date"}
+    "expires": {"type": "date"},
+    "fleschReadingEaseScore": {"type": "double"},
+    "readingTime": {"type": "double"}
 }
