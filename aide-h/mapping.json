@@ -22,8 +22,6 @@
 "Publisher" : {"type" : "keyword"},
 "PublicationWeblink" : {"type" : "keyword"},
 "Organisation" : {"type" : "keyword"},
-"IndividualName" : {"type" : "keyword"},
-"Email" : {"type" : "keyword"},
 "Phone" : {"type" : "keyword"},
 "Website" : {"type" : "keyword"},
 "Address" : {"type" : "keyword"},

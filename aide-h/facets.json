@@ -202,20 +202,6 @@
            "csv_tsv": { "title": "Organisation", "visible": true, "pos": 4 }
         },
         {
-            "name": "IndividualName",
-            "listing": { "title": "Individual Name", "visible" : true, "pos" : 23 },
-            "details": { "title": "IndividualName", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": false },
-            "csv_tsv": { "title": "IndividualName", "visible": true, "pos": 4 }
-        },
-        {
-            "name": "Email",
-            "listing": { "title": "Email", "visible" : true, "pos" : 24 },
-            "details": { "title": "Email", "pos" : 4, "section": "info", "visible": false },
-            "facet": { "visible": false },
-            "csv_tsv": { "title": "Email", "visible": true, "pos": 4 }
-        },
-        {
             "name": "Phone",
             "listing": { "title": "Phone", "visible" : true, "pos" : 25 },
             "details": { "title": "Phone", "pos" : 4, "section": "info", "visible": false },

@@ -10,7 +10,7 @@ PREFIX aqdd: <http://dd.eionet.europa.eu/property/>
 
 SELECT DISTINCT
 
-md5(concat(?Country, xsd:string(?endOfPeriod),?PlanCode ,?Namespace ,?PlanId ,?VersionId ,?Name, xsd:string(?FirstExceedanceYear) ,xsd:string(?AdoptionDate) ,?Status ,xsd:string(?TimeTable) ,?ReferenceAQPlan ,?ReferenceImplementation,?Pollutant ,?ProtectionTarget ,?PublicationTitle ,xsd:string(?PublicationDate) ,?PublicationAuthor,?PublicationDescription ,?Publisher ,?PublicationWeblink ,?Organisation ,?IndividualName,?Email ,xsd:string(?Phone) ,?Website ,?Address ,?Comment ,?AttainmentId ,?envelope))  as ?_id
+md5(concat(?Country, xsd:string(?endOfPeriod),?PlanCode ,?Namespace ,?PlanId ,?VersionId ,?Name, xsd:string(?FirstExceedanceYear) ,xsd:string(?AdoptionDate) ,?Status ,xsd:string(?TimeTable) ,?ReferenceAQPlan ,?ReferenceImplementation,?Pollutant ,?ProtectionTarget ,?PublicationTitle ,xsd:string(?PublicationDate) ,?PublicationAuthor,?PublicationDescription ,?Publisher ,?PublicationWeblink ,?Organisation ,xsd:string(?Phone) ,?Website ,?Address ,?Comment ,?AttainmentId ,?envelope))  as ?_id
 
 
 #?XMLURI
@@ -36,8 +36,6 @@ year(xsd:date(?endOfPeriod)) AS ?ReportingYear
 ?Publisher
 ?PublicationWeblink 
 ?Organisation 
-?IndividualName 
-?Email 
 ?Phone 
 ?Website 
 ?Address 
@@ -78,10 +76,8 @@ WHERE {{
   OPTIONAL{?inspireURI aq:versionId ?VersionId} .
 
   ?compAuthorityURI aq:organisationName ?Organisation .
-  ?compAuthorityURI aq:individualName ?IndividualName .
   ?compAuthorityURI aq:contact ?contactURI .
 
-  ?contactURI aq:electronicMailAddress ?Email .
   ?contactURI aq:telephoneVoice ?Phone .
   ?contactURI aq:website ?Website .
   ?contactURI aq:address ?addressURI .
