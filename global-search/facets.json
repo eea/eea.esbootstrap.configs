@@ -966,10 +966,30 @@
                 "visible": false
             },
            "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Reading time (minutes)",
                 "pos": 12,
-                "type": "range"
+                "type": "aggregation_options",
+                "groups": [
+                        {
+                            "label": "Short",
+                            "from": 0,
+                            "to": 4.9999
+                        },
+                        {
+                            "label": "Medium",
+                            "from": 5,
+                            "to": 24.9999
+                        },
+                        {
+                            "label": "Large",
+                            "from": 25
+                        },
+                        {
+                            "label": "Unknown",
+                            "to": -0.0001
+                        }
+                    ]
                 }
         }
     ]
