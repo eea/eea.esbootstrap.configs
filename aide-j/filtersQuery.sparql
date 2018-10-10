@@ -37,7 +37,8 @@ WHERE {
 
   } GROUP BY ?Country YEAR(xsd:date(?endOfPeriod)) ?ScenariosId
 }
+OPTIONAL{
 ?envelope rod:released ?released .
 ?envelope rdf:type rod:Delivery .
-}
+}}
 ORDER BY ?endOfPeriod ?Country
