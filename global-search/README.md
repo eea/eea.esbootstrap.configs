@@ -60,4 +60,5 @@ We boost the documents with the most references
             }
         }
 ```
+This boost is only used when a facet is used.
 Ex. if a country is selected, the documents with only 1 available country will have higher score than the ones with 2 available countries.
