@@ -3,7 +3,8 @@
 
 ## Ranking configuration
 
-The configuration of ranking is done using the [relevance.json](https://github.com/eea/eea.esbootstrap.configs/blob/master/global-search/relevance.json) ([documentation](https://github.com/eea/eea.docker.esbootstrap/blob/master/docs/Details.md#relevance) 
+The configuration of ranking is done using the [relevance.json](https://github.com/eea/eea.esbootstrap.configs/blob/master/global-search/relevance.json) ([documentation](https://github.com/eea/eea.docker.esbootstrap/blob/master/docs/Details.md#relevance) )
+
 We use:
 - simple field boosting
 - gauss and script_score functions
@@ -59,4 +60,5 @@ We boost the documents with the most references
             }
         }
 ```
+This boost is only used when a facet is used.
 Ex. if a country is selected, the documents with only 1 available country will have higher score than the ones with 2 available countries.
