@@ -125,6 +125,11 @@
       "analyzer": "default",
       "copy_to" : ["did_you_mean"]
     },
+    "SearchableText" : {
+      "type" : "string",
+      "analyzer": "default",
+      "copy_to" : ["did_you_mean"]
+    },
     "references" : {
       "type" : "string",
       "analyzer" : "none",
