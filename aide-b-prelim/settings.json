@@ -54,7 +54,7 @@
         "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/data/aqereporting-1",
         "further_info": ""
     },
-    "endpoint": "http://cr.eionet.europa.eu/sparql"
+    "endpoint": "https://cr.eionet.europa.eu/sparql"
 }
 
 
