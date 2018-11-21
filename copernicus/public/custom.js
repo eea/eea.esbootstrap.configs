@@ -28,8 +28,8 @@ settings_search_sortby = [
         'display_asc': 'Oldest',
         'display_desc': 'Newest'
     }]
-settings_sort= [{'issued': {'order': 'desc'}}];
-
+// settings_sort = [{'issued': {'order': 'desc'}}];
+settings_default_display = 'card';
 
 jQuery(document).ready(function($) {
     if (window.settings_display_images === undefined){
@@ -44,8 +44,9 @@ jQuery(document).ready(function($) {
         enable_geoselect: true,
         display_images: settings_display_images,
         default_sort: [],
+        selected_sort: "relevance",
         search_sortby: settings_search_sortby,
-        sort: settings_sort,
+        // sort: settings_sort,
         post_init_callback: function() {
             // 88482 avoid double add of eea settings and number replacing
             // since we call also post_search_callback
@@ -62,7 +63,7 @@ jQuery(document).ready(function($) {
         },
         paging: {
             from: 0,
-            size: 10
+            size: 30
         },
         display_type_options: settings_display_options,
         display_type: settings_default_display,
