@@ -3,16 +3,27 @@ import sys
 import csv
 import xml.etree.ElementTree as ET
 
+responsible_entities = {
+    'Government': 'National government',
+    'Local': 'Local government',
+    'Regional': 'Regional entities',
+    'Companies': 'Companies/business/industrial association',
+    'Research': 'Research institutions',
+    'Other': 'Other',
+    'No information': 'No information'
+}
 
 def main(csv_input, csv_output):
     reader = csv.DictReader(csv_input)
     rows = [row for row in reader]
+    erfi_clean = "Entities_responsible_for_implementing_the_policy__type__clean"
     for row in rows:
         soi = row.get('Status_of_implementation', '')
         ips = row.get('Implementation_period_start', '')
         psi = row.get('Projection_scenario_in_which_the_policy_or_measure_is_included', '')
         ipr = row.get('Is_the_policy_or_measure_related_to_a_Union policy_', '') or row.get('Is_the_policy_or_measure_related_to_a_Union_policy_', '')
         upl = row.get('Union_policy_lookup_only4facets', '') or row.get('Union_policies_lookup_only4facets', '')
+        erfi = row.get('Entities_responsible_for_implementing_the_policy__type_','')
 
         soi_clean = "No information"
         ips_clean = "No information"
@@ -80,13 +91,15 @@ def main(csv_input, csv_output):
         if row[rup].strip() == 'UNDEFINED':
             row[rup] = "No information"
 
+        row[erfi_clean] = ', '.join([responsible_entities[v.strip()] for v in row[erfi].split(',')])
+
     fieldnames = reader.fieldnames
     fieldnames.append('Status_of_implementation_clean')
     fieldnames.append('Implementation_period_start_clean')
     fieldnames.append('Projection_scenario_in_which_the_policy_or_measure_is_included_clean')
     fieldnames.append('Is_the_policy_or_measure_related_to_a_Union_policy__clean')
     fieldnames.append('Union_policy_lookup_only4facets_clean')
-
+    fieldnames.append(erfi_clean)
     if 1:
         writer = csv.DictWriter(csv_output, fieldnames=fieldnames)
         writer.writeheader()
