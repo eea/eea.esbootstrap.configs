@@ -28,6 +28,20 @@ block content
     p!= site_description
     .facet-view-simple.pam
 
-    +visualization_info (dataprovencance_info_url,dataprovencance_info_text)
+    div
+        span <a href="/pam_2018.xlsx">Download data</a> in excel format
+    div(class="visualization-info")
+        h3 Data sources
+        a(href=dataprovencance_info_url)= dataprovencance_info_text
+        br
+        a(href="https://www.eea.europa.eu/publications/national-policies-and-measures-on-climate-change-mitigation")= "https://www.eea.europa.eu/publications/national-policies-and-measures-on-climate-change-mitigation"
+        br
+        a(href="https://www.eea.europa.eu/themes/climate/national-policies-and-measures/tracking-climate-policies-in-european")= "https://www.eea.europa.eu/themes/climate/national-policies-and-measures/tracking-climate-policies-in-european"
+        br
+        a(href="https://www.eea.europa.eu/themes/climate/national-policies-and-measures/using-member-states-information-on")= "https://www.eea.europa.eu/themes/climate/national-policies-and-measures/using-member-states-information-on"
+        br
+        span  provided by
+        a(href="http://www.eea.europa.eu")  European Environment Agency (EEA)
+
 
     div!= further_info

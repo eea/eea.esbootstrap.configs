@@ -89,7 +89,7 @@
         "copy_to" : ["did_you_mean", "autocomplete"]
     },
     "Related_Union_Policy": {
-        "type": "text",
+        "type": "keyword",
         "fields" : {
                 "toindex" : {"type" : "text", "analyzer" : "default"},
                 "index" : {"type" : "text", "analyzer" : "none"},
