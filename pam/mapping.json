@@ -44,6 +44,10 @@
         "type" : "text",
         "analyzer" : "coma"
     },
+    "Entities_responsible_for_implementing_the_policy__type__clean"  : {
+        "type" : "text",
+        "analyzer" : "coma"
+    },
     "Implementation_period_start_clean"  : {
         "type" : "text",
         "analyzer" : "none"

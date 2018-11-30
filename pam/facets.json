@@ -377,6 +377,19 @@
                 "pos": 170
             },
             "facet": {
+                "visible": false,
+                "title": "Entities responsible for implementing the policy (type)"
+            }
+        },
+        {
+            "name": "Entities_responsible_for_implementing_the_policy__type__clean",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
+            },
+            "facet": {
                 "visible": true,
                 "title": "Entities responsible for implementing the policy (type)",
                 "pos": 80,
