@@ -103,8 +103,6 @@
     "plone.app.contenttypes.interfaces.IFile": "File",
     "plone.app.contenttypes.interfaces.IDocument": "Page",
     "plone.app.contenttypes.interfaces.ICollection": "Collections",
-
-
     "Products.ATContentTypes.interfaces.image.IATImage": "Image",
     "Products.ATContentTypes.interfaces.image.IImageContent": "Image",
     "plone.app.blob.interfaces.IATBlobImage": "Image",
@@ -114,8 +112,9 @@
     "Products.ATContentTypes.interfaces.link.IATLink": "References and links",
     "plone.app.collection.interfaces.ICollection":"Collections and lists",
     "Products.ATContentTypes.interfaces.topic.IATTopic": "Collections and lists",
+    "Products.ATContentTypes.interfaces.folder.IATFolder": "Collections and lists",
     "plone.app.layout.navigation.interfaces.INavigationRoot": "Website main section",
-    "Products.ATContentTypes.interfaces.file.IATFile":"File"
+    "Products.ATContentTypes.interfaces.file.IATFile": "File"
   },
 
   "normMissing": {
