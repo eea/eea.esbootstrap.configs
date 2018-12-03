@@ -1,4 +1,4 @@
-PREFIX tableFile: <http://semantic.eea.europa.eu/home/szabozo0/pam2018.csv#>
+PREFIX tableFile: <http://semantic.eea.europa.eu/project/pam/pam2018.csv#>
 
 SELECT 
 concat(?Country, "_", ?ID_of_policy_or_measure) as ?_id
@@ -80,7 +80,7 @@ concat(?Country, "_", ?ID_of_policy_or_measure) as ?_id
 ?Union_policy_lookup_only4facets_clean
 
 
-FROM <http://semantic.eea.europa.eu/home/szabozo0/pam2018.csv>
+FROM <http://semantic.eea.europa.eu/project/pam/pam2018.csv>
 WHERE {
 _:rec tableFile:Country ?Country .
 _:rec tableFile:Report_ID ?Report_ID .
