@@ -35,7 +35,7 @@
             "facet": {
                 "visible": true,
                 "title": "Country",
-                "pos": 0,
+                "pos": 10,
                 "type": "facet",
                 "size": 50,
                 "order": "term",
@@ -101,7 +101,7 @@
             "facet": {
                 "visible": true,
                 "title": "Single policy or measure, or group of measures",
-                "pos": 1,
+                "pos": 20,
                 "type": "facet",
                 "size": 50,
                 "order": "term",
@@ -172,7 +172,7 @@
             "facet": {
                 "visible": true,
                 "title": "Type of policy instrument",
-                "pos": 2,
+                "pos": 60,
                 "type": "facet",
                 "size": 50,
                 "order": "term",
@@ -190,7 +190,7 @@
             "facet": {
                 "visible": true,
                 "title": "Status of implementation",
-                "pos": 3,
+                "pos": 70,
                 "type": "facet",
                 "size": 100,
                 "order": "term",
@@ -231,7 +231,7 @@
             "facet": {
                 "visible": true,
                 "title": "Policy impacting EU ETS, ESD or LULUCF emissions",
-                "pos": 4,
+                "pos": 140,
                 "type": "facet",
                 "size": 50,
                 "order": "term",
@@ -253,7 +253,7 @@
             "facet": {
                 "visible": true,
                 "title": "Sector(s) affected",
-                "pos": 5,
+                "pos": 40,
                 "type": "facet",
                 "size": 50,
                 "order": "term",
@@ -276,7 +276,7 @@
             "facet": {
                 "visible": false,
                 "title": "Objective(s)",
-                "pos": 6,
+                "pos": 50,
                 "type": "facet",
                 "size": 100,
                 "order": "term",
@@ -294,7 +294,7 @@
             "facet": {
                 "visible": true,
                 "title": "Objective(s)",
-                "pos": 6,
+                "pos": 50,
                 "type": "facet",
                 "size": 100,
                 "order": "term",
@@ -320,7 +320,7 @@
             "facet": {
                 "visible": true,
                 "title": "Total GHG emissions reductions in 2020 (kt CO2eq/y)",
-                "pos": 7,
+                "pos": 150,
                 "type": "rangehistogram",
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"],
@@ -328,7 +328,7 @@
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",
 
-                    "slider_bucketsize" : 1,
+                    "slider_bucketsize" : 100,
                     "histogram" : false,
                     "measurement_unit": "kt CO2eq/y"
                 }
@@ -350,7 +350,7 @@
             "facet": {
                 "visible": true,
                 "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
-                "pos": 8,
+                "pos": 160,
                 "type": "rangehistogram",
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"],
@@ -359,7 +359,7 @@
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",
 
-                    "slider_bucketsize" : 1,
+                    "slider_bucketsize" : 100,
                     "histogram" : false,
                     "measurement_unit": "kt CO2eq/y"
 
@@ -377,9 +377,22 @@
                 "pos": 170
             },
             "facet": {
+                "visible": false,
+                "title": "Entities responsible for implementing the policy (type)"
+            }
+        },
+        {
+            "name": "Entities_responsible_for_implementing_the_policy__type__clean",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
+            },
+            "facet": {
                 "visible": true,
                 "title": "Entities responsible for implementing the policy (type)",
-                "pos": 9,
+                "pos": 80,
                 "type": "facet",
                 "size": 50,
                 "order": "term",
@@ -414,7 +427,7 @@
             "facet": {
                 "visible": true,
                 "title": "Implementation period start",
-                "pos": 10,
+                "pos": 90,
                 "type": "facet",
                 "size": 100,
                 "order": "term",
@@ -460,7 +473,7 @@
             "facet": {
                 "visible": false,
                 "title": "Is the policy or measure related to a Union policy?",
-                "pos": 11,
+                "pos": 100,
                 "type": "facet",
                 "size": 50,
                 "order": "term",
@@ -482,7 +495,7 @@
             "facet": {
                 "visible": true,
                 "title": "Is the policy or measure related to a Union policy?",
-                "pos": 11,
+                "pos": 100,
                 "type": "facet",
                 "size": 50,
                 "order": "term",
@@ -505,7 +518,7 @@
             "facet": {
                 "visible": true,
                 "title": "Related Union Policy",
-                "pos": 12,
+                "pos": 110,
                 "type": "facet",
                 "size": 100,
                 "order": "term",
@@ -528,7 +541,7 @@
             "facet": {
                 "visible": true,
                 "title": "Union policy which resulted in the implementation of the policy or measure",
-                "pos": 12,
+                "pos": 120,
                 "type": "facet",
                 "size": 100,
                 "order": "term",
@@ -555,7 +568,7 @@
             "facet": {
                 "visible": true,
                 "title": "GHG(s) affected",
-                "pos": 13,
+                "pos": 30,
                 "type": "facet",
                 "size": 50,
                 "order": "term",
@@ -573,7 +586,7 @@
             "facet": {
                 "visible": true,
                 "title": "Projection scenario in which the policy or measure is included",
-                "pos": 14,
+                "pos": 130,
                 "type": "facet",
                 "size": 100,
                 "order": "term",

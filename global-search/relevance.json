@@ -1,6 +1,6 @@
 {
-    "fields_boosting":{
-        "fields":[
+    "fields_boosting": {
+        "fields": [
             "title^2",
             "subject^1.5",
             "description^1.5",
@@ -14,11 +14,12 @@
             "all_fields_for_freetext"
         ]
     },
-    "functions":[
+    "functions": [
         {
-            "gauss": {
+            "exp": {
                 "issued.date": {
-                    "scale": "14d"
+                    "offset": "30d",
+                    "scale": "1800d"
                 }
             }
         },
@@ -28,7 +29,7 @@
             }
         }
     ],
-    "score_mode":"sum",
+    "score_mode": "sum",
     "facet_decay_functions": {
         "topic": {
             "linear": {

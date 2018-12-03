@@ -44,6 +44,10 @@
         "type" : "text",
         "analyzer" : "coma"
     },
+    "Entities_responsible_for_implementing_the_policy__type__clean"  : {
+        "type" : "text",
+        "analyzer" : "coma"
+    },
     "Implementation_period_start_clean"  : {
         "type" : "text",
         "analyzer" : "none"
@@ -89,7 +93,7 @@
         "copy_to" : ["did_you_mean", "autocomplete"]
     },
     "Related_Union_Policy": {
-        "type": "text",
+        "type": "keyword",
         "fields" : {
                 "toindex" : {"type" : "text", "analyzer" : "default"},
                 "index" : {"type" : "text", "analyzer" : "none"},
