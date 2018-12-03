@@ -516,7 +516,7 @@
                 "pos": 220
             },
             "facet": {
-                "visible": true,
+                "visible": false,
                 "title": "Related Union Policy",
                 "pos": 110,
                 "type": "facet",
