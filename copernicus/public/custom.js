@@ -52,6 +52,7 @@ jQuery(document).ready(function($) {
             // since we call also post_search_callback
             // add_EEA_settings();
             // replaceNumbers();
+            moveFooter();
             markNavigationTab(settings_selected_navigation_tab);
             $(window).trigger('post_init_callback');
         },
@@ -167,4 +168,10 @@ function updateResult(element, result){
     result = updateContentTypes(element, result);
     result = updateFileURLs(element, result);
     return(result);
+}
+
+
+function moveFooter() {
+    var footer = $('#content-section');
+    $(footer).appendTo(".simplified-template-footer");
 }

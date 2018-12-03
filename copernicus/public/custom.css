@@ -22,4 +22,30 @@ div.tileItem.ribbon-parent {
 /* remove draft watermark */
 #content {
   background: white;
-} 
+}
+
+.copernicus-search #header-section {
+  position: relative;
+}
+
+#content-section.simple-page .container-fluid {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#content-section.simple-page .container-fluid .main-content,
+#content-section.simple-page .container-fluid .breadcrumbs {
+    display: none;
+}
+
+.simplified-template-footer #content-section.simple-page {
+    top: 0;
+}
+
+@media (max-width: 1000px) and (min-width: 570px) {
+    .simplified-template-footer #content-section.simple-page {
+        top: 0 !important;
+    }
+}
