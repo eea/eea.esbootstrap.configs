@@ -24,6 +24,32 @@ div.tileItem.ribbon-parent {
   background: white;
 }
 
+@font-face {
+    font-family:FontAwesome;src:url(https://www.eea.europa.eu/fontawesome-webfont.eot?#iefix&v=4.3.0) format('embedded-opentype'),url(https://www.eea.europa.eu/fontawesome-webfont.woff?v=4.3.0) format('woff'),url(https://www.eea.europa.eu/fontawesome-webfont.woff2?v=4.3.0) format('woff2'),url(https://www.eea.europa.eu/fontawesome-webfont.ttf?v=4.3.0) format('truetype'),url(https://www.eea.europa.eu/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular) format('svg');font-weight:400;font-style:normal
+}
+
+.footer .land-list-separated li {
+    color: #1E1E1E;
+    text-decoration: none;
+}
+
+.facetview_metadata .pagination {
+    display: block;
+}
+
+.facet-view-simple .facetview_metadata .pagination li a {
+    border: none;
+    background: none;
+    color: #427597 !important;
+    margin-right: 0;
+}
+
+.facet-view-simple .facetview_metadata .pagination li a:hover {
+    color: #427597 !important;
+    background-color: unset;
+    border-color: unset;
+}
+
 .copernicus-search #header-section {
   position: relative;
 }
@@ -40,8 +66,79 @@ div.tileItem.ribbon-parent {
     display: none;
 }
 
+.copernicus-search #eea-above-columns {
+    display: none;
+}
+
 .simplified-template-footer #content-section.simple-page {
     top: 0;
+}
+
+.copernicus-search .header .main-nav-item {
+    margin-bottom: 0;
+}
+
+.copernicus-search .header .main-nav-item:hover>a {
+    height: 100%;
+}
+
+.copernicus-search div.container {
+    padding-right: 0;
+    padding-left: 18px;
+}
+
+.copernicus-search .site-container {
+    margin-top: 0;
+}
+
+.copernicus-search #portal-columns {
+    padding-top: 0;
+}
+
+.copernicus-search #portal-breadcrumbs {
+    margin-top: 0;
+}
+
+.fullwidth.copernicus-search div.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.fullwidth.copernicus-search .footer-nav-wrapper .footer-nav {
+    padding-left: 0.6rem;
+}
+
+.fullwidth.copernicus-search #content.content {
+    margin: 0 !important;
+    padding-bottom: 0;
+}
+
+.fullwidth.copernicus-search .header .main-nav {
+    margin-left: 0;
+}
+
+.copernicus-search footer {
+    margin-top: 0;
+
+}
+
+.copernicus-search  .footer-nav-wrapper a {
+    color: white;
+}
+
+.facetview_filterselected .eea-icon {
+    margin-top: -2px;
+}
+
+#header-section .content {
+    background: unset;
+}
+
+@media handheld, screen and (max-device-width: 480px){
+    input, textarea {
+        font-size: 140% !important;
+        font-family: inherit !important;
+    }
 }
 
 @media (max-width: 1000px) and (min-width: 570px) {

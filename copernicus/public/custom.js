@@ -70,6 +70,9 @@ jQuery(document).ready(function($) {
         display_type: settings_default_display,
         resultModifier: updateResult
     };
+    if($.getUrlVars({}).SearchableText !== undefined){
+        opts.q = $.getUrlVars({}).SearchableText;
+    }
     if (window.esbootstrap_options) {
        $.extend(opts, esbootstrap_options);
     }
@@ -174,4 +177,9 @@ function updateResult(element, result){
 function moveFooter() {
     var footer = $('#content-section');
     $(footer).appendTo(".simplified-template-footer");
+
+    // Add eea.pdf viewlet to avoid js error
+    var viewlet = "<div class='eea-pdf-viewlet'></div>";
+    $(viewlet).appendTo('#content');
+
 }
