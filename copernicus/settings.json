@@ -9,7 +9,7 @@
     },
     "external_templates": {
         "local_path": "/external_templates",
-        "protocol": "http",
+        "protocol": "https",
         "host": "demo.land.copernicus.eu",
         "head_path": "/external-template-head",
         "header_path": "/external-template-header",
