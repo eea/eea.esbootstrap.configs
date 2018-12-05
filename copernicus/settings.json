@@ -10,21 +10,24 @@
     "external_templates": {
         "local_path": "/external_templates",
         "protocol": "http",
-        "host_cop": "copernicus.europa.eu",
-        "head_path_cop": "/copernicus/external-template-head",
-        "header_path_cop": "/copernicus/external-template-header",
-        "footer_path_cop": "/copernicus/external-template-footer",
+        "host": "demo.land.copernicus.eu",
+        "head_path": "/external-template-head",
+        "header_path": "/external-template-header",
+        "footer_path": "/external-template-footer",
+        "strip_templates": true,
 
-        "host": "www.eea.europa.eu",
-        "head_path": "/templates/v2/getRequiredHead?jsdisable=all&render_full_html=False&cssonly=True",
-        "header_path": "/templates/v2/getHeader?render_full_html=False",
-        "footer_path": "/templates/v2/getFooter?render_full_html=False"
+        "host_eea": "www.eea.europa.eu",
+        "head_path_eea": "/templates/v2/getRequiredHead?jsdisable=all&render_full_html=False&cssonly=True",
+        "header_path_eea": "/templates/v2/getHeader?render_full_html=False",
+        "footer_path_eea": "/templates/v2/getFooter?render_full_html=False"
     },
     "layout_vars": {
-        "head_title": "Global catalogue of the European Environment Agency (EEA)",
+        "head_title": "Land Copernicus search",
         "app_id": "copernicus-search",
         "skip_resources_bundling": true,
         "skip_external_template_styles": true,
+        "skip_resources_bundling_eea": true,
+        "skip_external_template_styles_eea": false,
         "override_searchserver_resources": false,
         "css_resources": {
             "index_page": [
