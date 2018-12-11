@@ -674,14 +674,14 @@
             },
             "facet": {
                 "visible": true,
-                "title": "Content types",
+                "title": "Search in",
                 "pos": 4,
                 "type": "facet",
                 "size": 50,
                 "min_size": 10,
                 "order": "term",
                 "operator": "OR",
-                "short_name": "Content type",
+                "short_name": "Search in",
                 "facet_display_options": ["sort", "checkbox"]
             },
             "card": {
@@ -776,7 +776,7 @@
             },
             "facet": {
                 "visible": true,
-                "title": "Publishing year",
+                "title": "Published",
                 "pos": 7,
                 "type": "rangehistogram",
                 "size": 100,
@@ -788,7 +788,7 @@
                 "values_blacklist": ["undefined"],
                 "histogram_config": {
                     "discrete_values": true,
-                    "columns_bucket_min": 1980,
+                    "columns_bucket_min": 2013,
                     "columns_bucketsize" : 1,
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",

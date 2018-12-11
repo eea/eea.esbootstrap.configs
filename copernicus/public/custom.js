@@ -60,6 +60,7 @@ jQuery(document).ready(function($) {
             add_EEA_settings();
             viewReady();
             replaceNumbers();
+            searchModifications();
             $(window).trigger('post_search_callback');
         },
         paging: {
@@ -175,6 +176,7 @@ function updateResult(element, result){
 
 
 function moveFooter() {
+    // Move footer
     var footer = $('#content-section');
     $(footer).appendTo(".simplified-template-footer");
 
@@ -182,4 +184,21 @@ function moveFooter() {
     var viewlet = "<div class='eea-pdf-viewlet'></div>";
     $(viewlet).appendTo('#content');
 
+    // Modify searchbar text
+    $('.facetedview_search input').attr('placeholder', 'Enter your search text here');
+}
+
+function searchModifications() {
+    // Hide sorting and display options if no results
+    var card_results_length = $('.eea-tiles').children().length;
+    var tabular_results_length = $('#facetview_results_wrapper tbody tr').length;
+    var list_results_length = $('.eea-list-tiles .tileItem').length;
+    var results_length = Math.max(card_results_length, tabular_results_length, list_results_length);
+
+    if (results_length > 0) {
+        $('.facetview_top').show();
+    }
+    else {
+        $('.facetview_top').hide();
+    }
 }
