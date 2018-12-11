@@ -9,6 +9,8 @@
     },
     "external_templates": {
         "local_path": "/external_templates",
+        "protocol_1": "http",
+        "host_1": "copernicus.europa.eu",
         "protocol": "https",
         "host": "demo.land.copernicus.eu",
         "head_path": "/external-template-head",
@@ -40,9 +42,9 @@
                 "/custom.js"
             ]
         },
-        "site_title": "Copernicus search",
+        "site_title": "Search",
         "enableBreadcrumbs": true,
-        "breadcrumbs": "Copernicus Search",
+        "breadcrumbs": "Search",
         "dataprovencance_info_text": "Semantic Data Service (SDS)",
         "dataprovencance_info_url": "http://semantic.eea.europa.eu",
         "further_info": ""
@@ -53,9 +55,24 @@
     "river_configs": {
         "configs": [
             {
-                "id": "eea_copernicus",
-                "cluster_name": "Copernicus Land at EEA (land.copernicus.eu)",
-                "config_file": "riverconfig_land.copernicus_data.json"
+                "id": "eea_copernicus_faq",
+                "cluster_name": "Copernicus Land FAQ",
+                "config_file": "riverconfig_faq.json"
+            },
+            {
+                "id": "eea_copernicus_techlib",
+                "cluster_name": "Copernicus Land Technical Library",
+                "config_file": "riverconfig_tech_lib.json"
+            },
+            {
+                "id": "eea_copernicus_usecases",
+                "cluster_name": "Copernicus Land Use Cases",
+                "config_file": "riverconfig_usecases.json"
+            },
+            {
+                "id": "eea_copernicus_opportunities",
+                "cluster_name": "Copernicus Land Contract Opportunities",
+                "config_file": "riverconfig_opportunities.json"
             }
         ]
     },

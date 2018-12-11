@@ -657,7 +657,11 @@
                              "Folder",
                              "File",
                              "Page",
-                             "Collections"
+                             "Collections",
+                             "FAQ",
+                             "Technical Library",
+                             "Land use cases",
+                             "Contract opportunities"
                           ],
             "listing": {
                 "title": "Content types",

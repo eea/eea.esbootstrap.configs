@@ -95,7 +95,6 @@
     "land.copernicus.content.content.interfaces.ILandItem": "Land Item",
     "land.copernicus.content.content.interfaces.ILandFile": "Land File",
     "land.copernicus.content.content.interfaces.ILandSection": "Land Section",
-
     "plone.app.contenttypes.interfaces.IEvent": "Event",
     "plone.app.contenttypes.interfaces.ILink": "Link",
     "plone.app.contenttypes.interfaces.IImage": "Image",
@@ -119,8 +118,8 @@
 
   "normMissing": {
     "topic": "Land use",
-    "issued": "2000-01-01",
-    "format": ["text/html","application/octec-stream (Esri shapefile: .shp .shx .dbf)"],
+    "issued": "2013-01-01",
+    "format": ["text/html"],
     "objectProvides": "Land Item",
     "places" : "unknown",
     "dataProvider" : ["European Environment Agency (EEA)", "Joint Research Centre (JRC)"]
