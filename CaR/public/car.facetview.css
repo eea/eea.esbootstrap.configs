@@ -190,11 +190,11 @@ div#facetview_rightcol {
     margin-bottom: 2em;
 }
 .section-description {
-    -webkit-flex-basis: 81%;
-    -moz-flex-basis: 81%;
-    -ms-flex-basis: 81%;
-    flex-basis: 81%;
-    padding-right: 5em;
+    -webkit-flex-basis: 65%;
+    -moz-flex-basis: 65%;
+    -ms-flex-basis: 65%;
+    flex-basis: 65%;
+    padding-right: 1.5em;
 }
 
 .section-description--more {
@@ -219,10 +219,10 @@ div#facetview_rightcol {
     border: 1px solid lightgray;
 }
 .section-pages {
-    -webkit-flex-basis: 19%;
-    -moz-flex-basis: 19%;
-    -ms-flex-basis: 19%;
-    flex-basis: 19%;
+    -webkit-flex-basis: 35%;
+    -moz-flex-basis: 35%;
+    -ms-flex-basis: 35%;
+    flex-basis: 35%;
 }
 .section-languages {
     margin-top: 0.7em;
