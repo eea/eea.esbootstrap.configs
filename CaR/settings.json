@@ -35,6 +35,8 @@
         },
         "js_resources": {
             "layout_page": [
+                "facetview/vendor/raven/raven.min.js",
+                "javascripts/sentry.js",
                 "esbootstrap_resources/facetview/vendor/dist/libs/jquery.js",
                 "esbootstrap_resources/facetview/vendor/jquery-lazy/jquery.lazy.min.js",
                 "esbootstrap_resources/facetview/vendor/dist/jstree.js",
