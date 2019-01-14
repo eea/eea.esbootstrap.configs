@@ -1,0 +1,19 @@
+{
+	"extend": "riverconfig_land.copernicus_data.json",
+
+	"normObj": {
+		"https://land.copernicus.eu/portal_workflow/folder_workflow/states/published": "published",
+
+		"Products.ATContentTypes.interfaces.news.IATNewsItem": "News Item",
+		"plone.app.contenttypes.interfaces.INewsItem": "News Item"
+	},
+
+	"normMissing": {
+		"topic": "News",
+		"objectProvides": "News Item"
+	},
+
+	"syncConditions": [
+		"{?resource a <https://land.copernicus.eu/portal_types/News%20Item#NewsItem>}"
+	]
+}

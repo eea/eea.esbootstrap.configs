@@ -126,9 +126,6 @@
   },
 
   "syncConditions": [
-      "{?resource a <https://land.copernicus.eu/portal_types/LandSection#LandSection>} UNION",
-      "{?resource a <https://land.copernicus.eu/portal_types/LandItem#LandItem>} UNION ",
-      "{?resource a <https://land.copernicus.eu/portal_types/LandFile#LandFile>} UNION ",
       "{?resource a <https://land.copernicus.eu/portal_types/News%20Item#NewsItem>} UNION ",
       "{?resource a <https://land.copernicus.eu/portal_types/Link#Link>} UNION ",
       "{?resource a <https://land.copernicus.eu/portal_types/Image#Image>} UNION ",

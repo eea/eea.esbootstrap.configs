@@ -61,6 +61,7 @@
   },
 
   "normMissing": {
+    "objectProvides": "Contract opportunities",
     "topic": "Contract opportunities"
   },
 
