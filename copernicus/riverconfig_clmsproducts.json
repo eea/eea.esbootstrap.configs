@@ -5,7 +5,8 @@
     "https://land.copernicus.eu/portal_workflow/folder_workflow/states/published": "published",
     "land.copernicus.content.content.interfaces.ILandItem": "CLMS products",
     "land.copernicus.content.content.interfaces.ILandFile": "CLMS products",
-    "land.copernicus.content.content.interfaces.ILandSection": "CLMS products"
+    "land.copernicus.content.content.interfaces.ILandSection": "CLMS products",
+    "Products.ATContentTypes.interfaces.link.IATLink": "CLMS products"
   },
 
   "normMissing": {

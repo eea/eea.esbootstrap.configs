@@ -120,18 +120,25 @@
     "topic": "Land use",
     "issued": "2013-01-01",
     "format": ["text/html"],
-    "objectProvides": "Land Item",
+    "objectProvides": "",
     "places" : "unknown",
     "dataProvider" : ["European Environment Agency (EEA)", "Joint Research Centre (JRC)"]
   },
 
   "syncConditions": [
-      "{?resource a <https://land.copernicus.eu/portal_types/News%20Item#NewsItem>} UNION ",
       "{?resource a <https://land.copernicus.eu/portal_types/Link#Link>} UNION ",
       "{?resource a <https://land.copernicus.eu/portal_types/Image#Image>} UNION ",
       "{?resource a <https://land.copernicus.eu/portal_types/Folder#Folder>} UNION ",
       "{?resource a <https://land.copernicus.eu/portal_types/File#File>} UNION ",
-      "{?resource a <https://land.copernicus.eu/portal_types/Event#Event>} UNION ",
+      "{?resource a <https://land.copernicus.eu/portal_types/Collection#Collection>} UNION ",
+      "{?resource a <https://land.copernicus.eu/portal_types/FormFolder#FormFolder>} UNION ",
+      "{?resource a <https://land.copernicus.eu/portal_types/HelpCenter#HelpCenter>} UNION ",
+      "{?resource a <https://land.copernicus.eu/portal_types/HelpCenterFAQFolder#HelpCenterFAQFolder>} UNION ",
+      "{?resource a <https://land.copernicus.eu/portal_types/HelpCenterFAQ#HelpCenterFAQ>} UNION ",
+      "{?resource a <https://land.copernicus.eu/portal_types/HelpCenterLeafPage#HelpCenterLeafPage>} UNION ",
+      "{?resource a <https://land.copernicus.eu/portal_types/HelpCenterReferenceManual#HelpCenterReferenceManual>} UNION ",
+      "{?resource a <https://land.copernicus.eu/portal_types/HelpCenterReferenceManualFolder#HelpCenterReferenceManualFolder>} UNION ",
+      "{?resource a <https://land.copernicus.eu/portal_types/HelpCenterReferenceManualSection#HelpCenterReferenceManualSection>} UNION ",
       "{?resource a <https://land.copernicus.eu/portal_types/Document#Document>}"
   ],
 
