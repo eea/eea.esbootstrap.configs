@@ -180,10 +180,6 @@ function moveFooter() {
     var footer = $('#content-section');
     $(footer).appendTo(".simplified-template-footer");
 
-    // Add eea.pdf viewlet to avoid js error
-    var viewlet = "<div class='eea-pdf-viewlet'></div>";
-    $(viewlet).appendTo('#content');
-
     // Modify searchbar text
     $('.facetedview_search input').attr('placeholder', 'Enter your search text here');
 }

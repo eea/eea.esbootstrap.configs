@@ -690,6 +690,9 @@
                 "order": "term",
                 "operator": "OR",
                 "short_name": "Search in",
+                "fixed_order": ["CLMS products", "Technical Library", "Other publications",
+                                "News Item", "Events", "Land use cases",
+                                "Contract opportunities", "FAQ"],
                 "facet_display_options": ["sort", "checkbox"]
             },
             "card": {
