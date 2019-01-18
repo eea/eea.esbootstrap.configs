@@ -57,11 +57,12 @@
     "eea.sparql.interfaces.ISparql":"Contract opportunities",
     "eea.facetednavigation.subtypes.interfaces.IFacetedNavigable": "Contract opportunities",
     "eea.indicators.content.interfaces.IIndicatorsDatabase": "Contract opportunities",
-    "Products.EEAContentTypes.content.interfaces.ICountryProfile": "Contract opportunities"
+    "Products.EEAContentTypes.content.interfaces.ICountryProfile": "Contract opportunities",
+    "OFS.interfaces.IFolder": "Contract opportunities"
   },
 
   "normMissing": {
-    "objectProvides": "Contract opportunities",
+    "objectProvides": "OFS.interfaces.IFolder",
     "topic": "Contract opportunities"
   },
 
