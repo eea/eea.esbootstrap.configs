@@ -421,7 +421,7 @@
                 "Congo"],
             "listing": {
                 "title": "Countries",
-                "visible" : true,
+                "visible" : false,
                 "pos" : 2
             },
             "csv_tsv": {
@@ -493,7 +493,7 @@
                 "Congo","6","8","9","1"],
             "listing": {
                 "title": "Regions/Places/Cities/Seas...",
-                "visible" : true,
+                "visible" : false,
                 "pos" : 2
             },
             "csv_tsv": {
@@ -818,7 +818,7 @@
             "name": "time_coverage",
             "listing": {
                 "title": "Time coverage",
-                "visible" : true
+                "visible" : false
             },
             "csv_tsv": {
                 "title": "Time coverage",
