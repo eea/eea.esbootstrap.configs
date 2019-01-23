@@ -65,7 +65,7 @@
     "topic": "FAQ"
   },
 
-  "graphSyncConditions": [
+  "graphSyncConditions_add": [
       "FILTER (contains(str(?resource), '/faq')) "
   ]
 }

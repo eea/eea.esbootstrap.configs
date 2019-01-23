@@ -137,6 +137,14 @@ div.tileItem.ribbon-parent {
     margin-top: -2px;
 }
 
+.copernicus-search .date {
+    border: none;
+    font-size: 14px;
+    width: auto;
+    text-align: start;
+    box-shadow: none;
+}
+
 #header-section .content {
     background: unset;
     margin: 0 10% 0 10% !important;

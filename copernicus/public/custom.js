@@ -30,6 +30,7 @@ settings_search_sortby = [
     }]
 // settings_sort = [{'issued': {'order': 'desc'}}];
 settings_default_display = 'card';
+// settings_predefined_filters = [{'term': {'hasWorkflowState': 'published'}}];
 
 jQuery(document).ready(function($) {
     if (window.settings_display_images === undefined){
@@ -43,6 +44,7 @@ jQuery(document).ready(function($) {
         enable_rangeselect: true,
         enable_geoselect: true,
         display_images: settings_display_images,
+        // predefined_filters: settings_predefined_filters,
         default_sort: [],
         selected_sort: "relevance",
         search_sortby: settings_search_sortby,
@@ -196,5 +198,24 @@ function searchModifications() {
     }
     else {
         $('.facetview_top').hide();
+    }
+
+    // Show tabular view only when clms products(land items) are selected
+    $('.eea-icon.tabular').hide();
+    var nodes = $(".facetview_tree [rel='objectProvides']");
+    var singleselect = false;
+    nodes.each(function (index, item) {
+        if ($(item).children('a').hasClass('jstree-clicked')) {
+            if (item.title !== "CLMS products") {
+                singleselect = true;
+            }
+            else {
+                $('.eea-icon.tabular').show();
+            }
+        }
+    });
+    if (singleselect) {
+        $('.eea-icon.card').click();
+        $('.eea-icon.tabular').hide();
     }
 }

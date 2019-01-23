@@ -65,7 +65,7 @@
     "topic": "Documents in the Technical Library"
   },
 
-  "graphSyncConditions": [
+  "graphSyncConditions_add": [
       "FILTER (contains(str(?resource), '/technical-library')) "
   ]
 }

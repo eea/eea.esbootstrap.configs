@@ -142,6 +142,9 @@
       "{?resource a <https://land.copernicus.eu/portal_types/Document#Document>}"
   ],
 
+  "graphSyncConditions_add": [
+      "FILTER ( !contains(str(?resource), '/sandbox') && !contains(str(?resource), '/tests') ) "
+  ],
 
   "syncConditions_backup": [
     "{?resource a <https://land.copernicus.eu/portal_types/LandSection#LandSection>} UNION",

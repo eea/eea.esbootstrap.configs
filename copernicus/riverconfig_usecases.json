@@ -65,7 +65,7 @@
     "topic": "Use cases"
   },
 
-  "graphSyncConditions": [
+  "graphSyncConditions_add": [
       "FILTER (contains(str(?resource), '/land-use-cases')) "
   ]
 }
