@@ -879,11 +879,11 @@
             "name": "format",
             "listing": {
                 "title": "Format",
-                "visible": true
+                "visible": false
             },
             "csv_tsv": {
                 "title": "format",
-                "visible": true,
+                "visible": false,
                 "pos": 11
             },
             "details": {
@@ -893,7 +893,7 @@
                 "visible": false
             },
             "facet": {
-                "visible": true,
+                "visible": false,
                 "title": "Format",
                 "pos": 9,
                 "type": "facet",

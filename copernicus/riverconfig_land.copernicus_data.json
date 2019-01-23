@@ -139,6 +139,7 @@
       "{?resource a <https://land.copernicus.eu/portal_types/HelpCenterReferenceManual#HelpCenterReferenceManual>} UNION ",
       "{?resource a <https://land.copernicus.eu/portal_types/HelpCenterReferenceManualFolder#HelpCenterReferenceManualFolder>} UNION ",
       "{?resource a <https://land.copernicus.eu/portal_types/HelpCenterReferenceManualSection#HelpCenterReferenceManualSection>} UNION ",
+      "{?resource a <https://land.copernicus.eu/portal_types/LandSection#LandSection>} UNION",
       "{?resource a <https://land.copernicus.eu/portal_types/Document#Document>}"
   ],
 

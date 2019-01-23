@@ -5,7 +5,6 @@
     "https://land.copernicus.eu/portal_workflow/folder_workflow/states/published": "published",
     "land.copernicus.content.content.interfaces.ILandItem": "CLMS products",
     "land.copernicus.content.content.interfaces.ILandFile": "CLMS products",
-    "land.copernicus.content.content.interfaces.ILandSection": "CLMS products",
     "Products.ATContentTypes.interfaces.link.IATLink": "CLMS products"
   },
 
@@ -15,6 +14,11 @@
   },
 
   "syncConditions": [
+      "{?resource a <https://land.copernicus.eu/portal_types/LandItem#LandItem>} UNION ",
+      "{?resource a <https://land.copernicus.eu/portal_types/LandFile#LandFile>}"
+  ],
+
+  "syncConditions_backup": [
       "{?resource a <https://land.copernicus.eu/portal_types/LandSection#LandSection>} UNION",
       "{?resource a <https://land.copernicus.eu/portal_types/LandItem#LandItem>} UNION ",
       "{?resource a <https://land.copernicus.eu/portal_types/LandFile#LandFile>}"
