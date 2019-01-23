@@ -19,18 +19,32 @@
 settings_display_options = ['card', 'tabular', 'list'];
 settings_search_sortby = [
       {
-        'field': 'title',
+        'field': 'title.index',
         'display_asc': 'Title a-z',
         'display_desc': 'Title z-a'
       },
       {
-        'field': 'issued',
+        'field': 'issued.index',
         'display_asc': 'Oldest',
         'display_desc': 'Newest'
     }]
 // settings_sort = [{'issued': {'order': 'desc'}}];
 settings_default_display = 'card';
-// settings_predefined_filters = [{'term': {'hasWorkflowState': 'published'}}];
+
+var today = getTodayWithTime();
+settings_predefined_filters = [
+      {
+          'constant_score': {
+              'filter': {
+                  'bool': {
+                      'should': [
+                          {'bool':{'must_not':{'exists': {'field': 'issued'}}}},
+                          {'range': {'issued.date': {'lte': today}}}
+                      ]
+                  }
+              }
+          }
+      }];
 
 jQuery(document).ready(function($) {
     if (window.settings_display_images === undefined){
@@ -44,7 +58,7 @@ jQuery(document).ready(function($) {
         enable_rangeselect: true,
         enable_geoselect: true,
         display_images: settings_display_images,
-        // predefined_filters: settings_predefined_filters,
+        predefined_filters: settings_predefined_filters,
         default_sort: [],
         selected_sort: "relevance",
         search_sortby: settings_search_sortby,
