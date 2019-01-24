@@ -248,6 +248,7 @@ div#facetview_rightcol {
 
 .page-body {
     margin-top: 1em;
+    min-height: 1000px;
 }
 
 .section-pages-header {
