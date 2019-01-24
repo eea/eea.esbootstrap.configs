@@ -1,0 +1,85 @@
+{
+  "extend": "riverconfig_land.copernicus_data.json",
+
+  "normObj": {
+    "https://land.copernicus.eu/portal_workflow/folder_workflow/states/published": "published",
+    "land.copernicus.content.content.interfaces.ILandItem": "Other publications",
+    "land.copernicus.content.content.interfaces.ILandFile": "Other publications",
+    "land.copernicus.content.content.interfaces.ILandSection": "Other publications",
+    "plone.app.contenttypes.interfaces.IEvent": "Other publications",
+    "plone.app.contenttypes.interfaces.ILink": "Other publications",
+    "plone.app.contenttypes.interfaces.IImage": "Other publications",
+    "plone.app.contenttypes.interfaces.IFolder": "Other publications",
+    "plone.app.contenttypes.interfaces.IFile": "Other publications",
+    "plone.app.contenttypes.interfaces.IDocument": "Other publications",
+    "plone.app.contenttypes.interfaces.ICollection": "Other publications",
+    "Products.ATContentTypes.interfaces.image.IATImage": "Other publications",
+    "Products.ATContentTypes.interfaces.image.IImageContent": "Other publications",
+    "plone.app.blob.interfaces.IATBlobImage": "Other publications",
+    "Products.ATContentTypes.interfaces.document.IATDocument": "Other publications",
+    "Products.ATContentTypes.interfaces.news.IATNewsItem": "Other publications",
+    "Products.ATContentTypes.interfaces.event.IATEvent": "Other publications",
+    "Products.ATContentTypes.interfaces.link.IATLink": "Other publications",
+    "Products.ATContentTypes.interfaces.topic.IATTopic": "Other publications",
+    "Products.ATContentTypes.interfaces.folder.IATFolder": "Other publications",
+    "plone.app.layout.navigation.interfaces.INavigationRoot": "Other publications",
+    "Products.ATContentTypes.interfaces.file.IATFile": "Other publications",
+    "Products.EEAContentTypes.content.interfaces.IArticle": "Other publications",
+    "Products.EEAContentTypes.content.interfaces.ICloudVideo": "Other publications",
+    "eea.mediacentre.interfaces.IVideo": "Other publications",
+    "Products.EEAContentTypes.content.interfaces.IExternalHighlight": "Other publications",
+    "Products.EEAContentTypes.content.interfaces.IGISMapApplication": "Other publications",
+    "Products.EEAContentTypes.content.interfaces.IInfographic":"Other publications",
+    "Products.EEAContentTypes.content.interfaces.IInteractiveData": "Other publications",
+    "Products.EEAContentTypes.content.interfaces.IInteractiveMap": "Other publications",
+    "eea.aoamap.browser.interfaces.IMapViewParent": "Other publications",
+    "Products.eeawebapplication.interface.IEEAWebApplication": "Other publications",
+    "eea.themecentre.interfaces.IThemeCentre": "Other publications",
+    "eea.app.visualization.subtypes.interfaces.IVisualizationEnabled": "Other publications",
+    "eea.dataservice.interfaces.IDataset":"Other publications",
+    "eea.dataservice.interfaces.IEEAFigureGraph": "Other publications",
+    "eea.dataservice.interfaces.IEEAFigureMap": "Other publications",
+    "eea.dataservice.interfaces.IEEAFigureFile": "Other publications",
+    "eea.dataservice.interfaces.IOrganisation": "Other publications",
+    "eea.daviz.content.interfaces.IDavizVisualization": "Other publications",
+    "eea.indicators.content.interfaces.IIndicatorAssessment": "Other publications",
+    "eea.indicators.content.interfaces.IExternalDataSpec": "Other publications",
+    "eea.indicators.content.interfaces.IKeyMessage": "Other publications",
+    "eea.indicators.content.interfaces.IMethodologyReference": "Other publications",
+    "eea.indicators.content.interfaces.IPolicyDocumentReference": "Other publications",
+    "eea.indicators.content.interfaces.IPolicyQuestion": "Other publications",
+    "eea.indicators.content.interfaces.IRationaleReference": "Other publications",
+    "eea.progressbar.interfaces.ICollection": "Other publications",
+    "eea.reports.interfaces.IReportContainerEnhanced": "Other publications",
+    "eea.soercontent.content.interfaces.ICountryFiche": "Other publications",
+    "eea.soercontent.content.interfaces.IFiche": "Other publications",
+    "eea.soercontent.content.interfaces.ISoerContent":"Other publications",
+    "eea.sparql.interfaces.ISparql":"Other publications",
+    "eea.facetednavigation.subtypes.interfaces.IFacetedNavigable": "Other publications",
+    "eea.indicators.content.interfaces.IIndicatorsDatabase": "Other publications",
+    "Products.EEAContentTypes.content.interfaces.ICountryProfile": "Other publications"
+  },
+
+  "normMissing": {
+    "objectProvides": "Other publications",
+    "topic": "Other publications"
+  },
+
+  "graphSyncConditions_add": [
+      "FILTER ( !contains(str(?resource), '/land-use-cases') && !contains(str(?resource), '/technical-library') && !contains(str(?resource), '/contract-opportunities') && !contains(str(?resource), '/faq') )"
+  ],
+
+  "graphSyncConditions_1": [
+      "FILTER (contains(str(?resource), '/land-use-cases')) UNION ",
+      "FILTER (contains(str(?resource), '/technical-library')) UNION ",
+      "FILTER (contains(str(?resource), '/contract-opportunities')) UNION ",
+      "FILTER (contains(str(?resource), '/faq'))"
+  ],
+
+  "graphSyncConditions_2": [
+      "FILTER (contains(str(?resource), '/land-use-cases')) || ",
+      "FILTER (contains(str(?resource), '/technical-library')) || ",
+      "FILTER (contains(str(?resource), '/contract-opportunities')) || ",
+      "FILTER (contains(str(?resource), '/faq'))"
+  ]
+}

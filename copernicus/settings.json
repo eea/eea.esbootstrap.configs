@@ -73,7 +73,28 @@
                 "id": "eea_copernicus_opportunities",
                 "cluster_name": "Copernicus Land Contract Opportunities",
                 "config_file": "riverconfig_opportunities.json"
+            },
+            {
+                "id": "eea_copernicus_news",
+                "cluster_name": "Copernicus Land News",
+                "config_file": "riverconfig_news.json"
+            },
+            {
+                "id": "eea_copernicus_events",
+                "cluster_name": "Copernicus Land Events",
+                "config_file": "riverconfig_events.json"
+            },
+            {
+                "id": "eea_copernicus_publications",
+                "cluster_name": "Copernicus Land Publications",
+                "config_file": "riverconfig_publications.json"
+            },
+            {
+                "id": "eea_copernicus_clmsproducts",
+                "cluster_name": "Copernicus Land CLMS products",
+                "config_file": "riverconfig_clmsproducts.json"
             }
+
         ]
     },
     "endpoint": "http://semantic.eea.europa.eu/sparql"

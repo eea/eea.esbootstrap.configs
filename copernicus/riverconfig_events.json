@@ -1,0 +1,23 @@
+{
+  "extend": "riverconfig_land.copernicus_data.json",
+
+  "normObj": {
+    "https://land.copernicus.eu/portal_workflow/folder_workflow/states/published": "published",
+    "plone.app.contenttypes.interfaces.IEvent": "Events",
+    "Products.ATContentTypes.interfaces.event.IATEvent": "Events"
+  },
+
+  "normMissing": {
+    "objectProvides": "Events",
+    "topic": "Events"
+  },
+
+  "syncConditions": [
+      "{?resource a <https://land.copernicus.eu/portal_types/Event#Event>}"
+  ],
+
+
+  "graphSyncConditions_1": [
+      "FILTER (contains(str(?resource), '/Events/')) "
+  ]
+}

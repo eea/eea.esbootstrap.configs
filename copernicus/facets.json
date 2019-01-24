@@ -421,7 +421,7 @@
                 "Congo"],
             "listing": {
                 "title": "Countries",
-                "visible" : true,
+                "visible" : false,
                 "pos" : 2
             },
             "csv_tsv": {
@@ -493,7 +493,7 @@
                 "Congo","6","8","9","1"],
             "listing": {
                 "title": "Regions/Places/Cities/Seas...",
-                "visible" : true,
+                "visible" : false,
                 "pos" : 2
             },
             "csv_tsv": {
@@ -659,9 +659,13 @@
                              "Page",
                              "Collections",
                              "FAQ",
-                             "Technical Library",
-                             "Land use cases",
-                             "Contract opportunities"
+                             "Documents in the Technical Library",
+                             "Use cases",
+                             "Contract opportunities",
+                             "News",
+                             "Other publications",
+                             "CLMS products",
+                             "Events"
                           ],
             "listing": {
                 "title": "Content types",
@@ -686,6 +690,9 @@
                 "order": "term",
                 "operator": "OR",
                 "short_name": "Search in",
+                "fixed_order": ["CLMS products", "Documents in the Technical Library", "Other publications",
+                                "News", "Events", "Use cases",
+                                "Contract opportunities", "FAQ"],
                 "facet_display_options": ["sort", "checkbox"]
             },
             "card": {
@@ -811,7 +818,7 @@
             "name": "time_coverage",
             "listing": {
                 "title": "Time coverage",
-                "visible" : true
+                "visible" : false
             },
             "csv_tsv": {
                 "title": "Time coverage",
@@ -872,11 +879,11 @@
             "name": "format",
             "listing": {
                 "title": "Format",
-                "visible": true
+                "visible": false
             },
             "csv_tsv": {
                 "title": "format",
-                "visible": true,
+                "visible": false,
                 "pos": 11
             },
             "details": {
@@ -886,7 +893,7 @@
                 "visible": false
             },
             "facet": {
-                "visible": true,
+                "visible": false,
                 "title": "Format",
                 "pos": 9,
                 "type": "facet",
