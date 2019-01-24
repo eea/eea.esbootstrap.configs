@@ -226,7 +226,6 @@ div#facetview_rightcol {
 .section-languages {
     margin-top: 0.7em;
     display: flex;
-    justify-content: flex-end;
     align-items: baseline;
     flex-basis: 70%;
 }
@@ -406,6 +405,9 @@ div#facetview_rightcol {
 @media screen and (min-width: 768px) {
     .site_bg {
         top: 197px;
+    }
+    .section-languages {
+        justify-content: flex-end;
     }
 }
 
