@@ -195,7 +195,7 @@
         {
             "name": "_id",
             "listing": {
-                "title": "Title",
+                "title": "Land item title",
                 "visible" : true,
                 "pos" : 0,
                 "width": "200px",
@@ -219,7 +219,7 @@
             "name": "topic",
             "listing": {
                 "title": "Topics",
-                "visible" : true,
+                "visible" : false,
                 "pos" : 5
             },
             "csv_tsv": {
@@ -322,9 +322,9 @@
             "listing": {
                 "type": "date",
                 "format": "dd M yy",
-                "title": "Issued",
+                "title": "Publication Date",
                 "visible" : true,
-                "pos" : 6
+                "pos" : 5
             },
             "csv_tsv": {
                 "title": "issued",
@@ -352,8 +352,8 @@
         {
             "name": "description",
             "listing": {
-                "title": "description",
-                "visible": true,
+                "title": "Description",
+                "visible": false,
                 "pos": 2
             },
             "csv_tsv": {
@@ -375,6 +375,129 @@
                 "default": "",
                 "visible": true,
                 "type": "simple"
+            }
+        },
+        {
+            "name": "land_abstract",
+            "listing": {
+                "title": "Abstract",
+                "visible": true,
+                "pos": 1
+            },
+            "csv_tsv": {
+                "title": "resourceAbstract",
+                "visible": true,
+                "pos": 2
+            },
+            "details": {
+                "visible": false
+            },
+            "card": {
+                "field": "land_abstract",
+                "default": "",
+                "visible": false,
+                "type": "simple"
+            },
+            "list": {
+                "field": "land_abstract",
+                "default": "",
+                "visible": false,
+                "type": "simple"
+            }
+        },
+        {
+            "name": "land_temporalcoverage",
+            "listing": {
+                "title": "Temporal coverage",
+                "visible": true,
+                "pos": 2
+            },
+            "csv_tsv": {
+                "title": "temporalCoverage",
+                "visible": true
+            }
+        },
+        {
+            "name": "land_spatialres",
+            "listing": {
+                "title": "Spatial resolution",
+                "visible": true,
+                "pos": 4
+            },
+            "csv_tsv": {
+                "title": "spatialResolution",
+                "visible": true
+            },
+            "details": {
+                "visible": false
+            },
+            "card": {
+                "field": "land_spatialres",
+                "default": "",
+                "visible": false,
+                "type": "simple"
+            },
+            "list": {
+                "field": "land_spatialres",
+                "default": "",
+                "visible": false,
+                "type": "simple"
+            }
+        },
+        {
+            "name": "land_geocoverage",
+            "values_whitelist":[
+                "Andorra", "United Arab Emirates", "Afghanistan", "Antigua and Barbuda",
+                "Anguilla", "Albania", "Armenia", "Angola", "Antarctica", "Argentina",
+                "American Samoa", "Austria", "Australia", "Aruba", "Åland", "Azerbaijan",
+                "Bosnia and Herzegovina", "Barbados", "Bangladesh", "Belgium", "Burkina Faso",
+                "Bulgaria", "Bahrain", "Burundi", "Benin", "Saint Barthélemy", "Bermuda",
+                "Brunei", "Bolivia", "Bonaire", "Brazil", "Bahamas", "Bhutan", "Bouvet Island",
+                "Botswana", "Belarus", "Belize", "Canada", "Cocos [Keeling] Islands",
+                "Democratic Republic of the Congo", "Central African Republic", "Republic of the Congo",
+                "Switzerland", "Ivory Coast", "Cook Islands", "Chile", "Cameroon", "China", "Colombia",
+                "Costa Rica", "Cuba", "Cape Verde", "Curacao", "Christmas Island", "Cyprus", "Czech Republic",
+                "Germany", "Djibouti", "Denmark", "Dominica", "Dominican Republic", "Algeria", "Ecuador",
+                "Estonia", "Egypt", "Western Sahara", "Eritrea", "Spain", "Ethiopia", "Finland", "Fiji",
+                "Falkland Islands", "Micronesia", "Faroe Islands", "France", "Gabon", "United Kingdom",
+                "Grenada", "Georgia", "French Guiana", "Guernsey", "Ghana", "Gibraltar", "Greenland", "Gambia",
+                "Guinea", "Guadeloupe", "Equatorial Guinea", "Greece", "South Georgia and the South Sandwich Islands",
+                "Guatemala", "Guam", "Guinea-Bissau", "Guyana", "Hong Kong", "Heard Island and McDonald Islands",
+                "Honduras", "Croatia", "Haiti", "Hungary", "Indonesia", "Ireland", "Israel", "Isle of Man", "India",
+                "British Indian Ocean Territory", "Iraq", "Iran", "Iceland", "Italy", "Jersey", "Jamaica", "Jordan",
+                "Japan", "Kenya", "Kyrgyzstan", "Cambodia", "Kiribati", "Comoros", "Saint Kitts and Nevis",
+                "North Korea", "South Korea", "Kuwait", "Cayman Islands", "Kazakhstan", "Laos", "Lebanon",
+                "Saint Lucia", "Liechtenstein", "Sri Lanka", "Liberia", "Lesotho", "Lithuania", "Luxembourg",
+                "Latvia", "Libya", "Morocco", "Monaco", "Moldova", "Montenegro", "Saint Martin", "Madagascar",
+                "Marshall Islands", "Macedonia", "Mali", "Myanmar [Burma]", "Mongolia", "Macao", "Northern Mariana Islands",
+                "Martinique", "Mauritania", "Montserrat", "Malta", "Mauritius", "Maldives", "Malawi", "Mexico",
+                "Malaysia", "Mozambique", "Namibia", "New Caledonia", "Niger", "Norfolk Island", "Nigeria", "Nicaragua",
+                "Netherlands", "Norway", "Nepal", "Nauru", "Niue", "New Zealand", "Oman", "Panama", "Peru",
+                "French Polynesia", "Papua New Guinea", "Philippines", "Pakistan", "Poland", "Saint Pierre and Miquelon",
+                "Pitcairn Islands", "Puerto Rico", "Palestine", "Portugal", "Palau", "Paraguay", "Qatar", "Réunion",
+                "Romania", "Serbia", "Russia", "Rwanda", "Saudi Arabia", "Solomon Islands", "Seychelles", "Sudan",
+                "Sweden", "Singapore", "Saint Helena", "Slovenia", "Svalbard and Jan Mayen", "Slovakia", "Sierra Leone", "San Marino",
+                "Senegal", "Somalia", "Suriname", "South Sudan", "São Tomé and Príncipe", "El Salvador", "Sint Maarten", "Syria",
+                "Swaziland", "Turks and Caicos Islands", "Chad", "French Southern Territories", "Togo", "Thailand",
+                "Tajikistan", "Tokelau", "East Timor", "Turkmenistan", "Tunisia", "Tonga", "Turkey", "Trinidad and Tobago",
+                "Tuvalu", "Taiwan", "Tanzania", "Ukraine", "Uganda", "U.S. Minor Outlying Islands", "United States", "Uruguay",
+                "Uzbekistan", "Vatican City", "Saint Vincent and the Grenadines", "Venezuela", "British Virgin Islands",
+                "U.S. Virgin Islands", "Vietnam", "Vanuatu", "Wallis and Futuna", "Samoa", "Kosovo (UNSCR 1244/99)",
+                "Yemen", "Mayotte", "South Africa", "Zambia", "Zimbabwe", "Russia", "Czechia", "Kosovo", "Macedonia",
+                "Former Yugoslav Republic of Macedonia, the", "Macedonia (FYR)","England" ,"Scotland","Wales","Northern Ireland",
+                "Congo"],
+            "listing": {
+                "title": "Geographical coverage",
+                "visible" : true,
+                "pos": 3
+            },
+            "csv_tsv": {
+                "title": "geographicalCoverage",
+                "visible": true,
+                "pos": 5
+            },
+            "details": {
+                "visible": false
             }
         },
         {
@@ -669,7 +792,7 @@
                           ],
             "listing": {
                 "title": "Content types",
-                "visible" : true,
+                "visible" : false,
                 "pos" : 3
             },
             "csv_tsv": {
@@ -799,7 +922,7 @@
                 "values_blacklist": ["undefined"],
                 "histogram_config": {
                     "discrete_values": true,
-                    "columns_bucket_min": 2013,
+                    "columns_bucket_min": 1980,
                     "columns_bucketsize" : 1,
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",

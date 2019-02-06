@@ -14,8 +14,7 @@
   },
 
   "syncConditions": [
-      "{?resource a <https://land.copernicus.eu/portal_types/LandItem#LandItem>} UNION ",
-      "{?resource a <https://land.copernicus.eu/portal_types/LandFile#LandFile>}"
+      "{?resource a <https://land.copernicus.eu/portal_types/LandItem#LandItem>}"
   ],
 
   "syncConditions_backup": [

@@ -102,6 +102,11 @@
       "fielddata" : true,
       "analyzer" : "date2year"
     },
+    "land_temporalcoverage" : {
+      "type" : "text",
+      "fielddata" : true,
+      "analyzer" : "date2year"
+    },
     "time_coverage" : {
       "type" : "string",
       "analyzer" : "date2year",
