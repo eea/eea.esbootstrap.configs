@@ -215,11 +215,13 @@ function searchModifications() {
     }
 
     // Show tabular view only when clms products(land items) are selected
-    $('.eea-icon.tabular').hide();
+    var desired_display = $('.facetview_display_type span.selected');
     var nodes = $(".facetview_tree [rel='objectProvides']");
     var singleselect = false;
+    var noselection = true;
     nodes.each(function (index, item) {
         if ($(item).children('a').hasClass('jstree-clicked')) {
+            noselection = false;
             if (item.title !== "CLMS products") {
                 singleselect = true;
             }
@@ -228,8 +230,25 @@ function searchModifications() {
             }
         }
     });
-    if (singleselect) {
-        $('.eea-icon.card').click();
-        $('.eea-icon.tabular').hide();
+    if (singleselect || noselection) {
+        if (nodes.length === 0 && $(desired_display).hasClass('tabular')) {
+            $('.eea-icon.tabular').show();
+        }
+        else {
+            $('.eea-icon.tabular').hide();
+
+            if ($(desired_display).hasClass('tabular')) {
+                $('.eea-icon.card').click();
+            }
+        }
+    }
+
+    if ($('#facetview_selected_filters .facetview_selection').length === 1) {
+        if ($('#facetview_selected_filters .facetview_selection').text().indexOf("CLMS products") !== -1) {
+            $('.eea-icon.tabular').show();
+        }
+        else {
+            $('.eea-icon.tabular').hide();
+        }
     }
 }

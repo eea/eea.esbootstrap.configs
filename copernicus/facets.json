@@ -350,6 +350,38 @@
             }
         },
         {
+            "name": "created",
+            "listing": {
+                "type": "date",
+                "format": "dd M yy",
+                "title": "Creation Date",
+                "visible" : false,
+                "pos" : 5
+            },
+            "csv_tsv": {
+                "title": "created",
+                "visible": true,
+                "pos": 3
+            },
+            "details": {
+                "visible": false
+            },
+            "card": {
+                "type": "date",
+                "format": "dd M yy",
+                "field": "date_created",
+                "default": "",
+                "visible": true
+            },
+            "list": {
+                "type": "date",
+                "format": "dd M yy",
+                "field": "date_created",
+                "default": "",
+                "visible": true
+            }
+        },
+        {
             "name": "description",
             "listing": {
                 "title": "Description",
@@ -382,7 +414,7 @@
             "listing": {
                 "title": "Abstract",
                 "visible": true,
-                "pos": 1
+                "pos": 2
             },
             "csv_tsv": {
                 "title": "resourceAbstract",
@@ -922,7 +954,7 @@
                 "values_blacklist": ["undefined"],
                 "histogram_config": {
                     "discrete_values": true,
-                    "columns_bucket_min": 1980,
+                    "columns_bucket_min": 2013,
                     "columns_bucketsize" : 1,
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",

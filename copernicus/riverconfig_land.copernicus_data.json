@@ -48,11 +48,11 @@
       "http://www.eea.europa.eu/portal_types#dataProcessor": "dataProcessor",
       "http://www.eea.europa.eu/ontologies.rdf#fleschReadingEaseScore": "fleschReadingEaseScore",
       "http://www.eea.europa.eu/ontologies.rdf#readingTime": "readingTime",
-      "http://land.copernicus.eu/portal_types/File#created": ["issued", "year"],
       "https://land.copernicus.eu/portal_types/LandItem#dataResourceAbstract": "land_abstract",
       "https://land.copernicus.eu/portal_types/LandItem#temporalCoverage": "land_temporalcoverage",
       "https://land.copernicus.eu/portal_types/LandItem#qualitySpatialResolution": "land_spatialres",
-      "https://land.copernicus.eu/portal_types/LandItem#geographicCoverage": "land_geocoverage"
+      "https://land.copernicus.eu/portal_types/LandItem#geographicCoverage": "land_geocoverage",
+      "http://purl.org/dc/terms/created": ["created"]
   },
 
   "normObj": {
