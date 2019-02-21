@@ -267,10 +267,10 @@
         "type": "country",
         "value": "Kosovo (UNSCR 1244/99)"
     },
-    "fyr-macedonia": {
-        "flag_url": "app_resources/images/flags/fyr-macedonia.png",
+    "north-macedonia": {
+        "flag_url": "app_resources/images/flags/north-macedonia.png",
 
-        "title": "The Former Yugoslav Republic of Macedonia",
+        "title": "North Macedonia",
         "type": "country",
         "value": "Former Yugoslav Republic of Macedonia, the"
     },
