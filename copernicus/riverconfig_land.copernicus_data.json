@@ -98,6 +98,10 @@
 
     "http://rod.eionet.europa.eu/spatial/76" : "value not available",
     "https://land.copernicus.eu/portal_workflow/folder_workflow/states/published": "published",
+    "https://land.copernicus.eu/portal_workflow/simple_publication_workflow/states/published": "published",
+    "https://land.copernicus.eu/portal_workflow/helpcentersubitem_workflow/states/published": "published",
+    "https://land.copernicus.eu/portal_workflow/helpcenter_workflow/states/published": "published",
+    "https://land.copernicus.eu/portal_workflow/helpcenterfolder_workflow/states/published": "published",
     "land.copernicus.content.content.interfaces.ILandItem": "Land Item",
     "land.copernicus.content.content.interfaces.ILandFile": "Land File",
     "land.copernicus.content.content.interfaces.ILandSection": "Land Section",
@@ -123,9 +127,10 @@
   },
 
   "normMissing": {
-    "topic": "Land use",
+    "topic": "",
     "issued": "2013-01-01",
     "format": ["text/html"],
+    "hasWorkflowState": "published",
     "objectProvides": "",
     "places" : "unknown",
     "dataProvider" : ["European Environment Agency (EEA)", "Joint Research Centre (JRC)"]

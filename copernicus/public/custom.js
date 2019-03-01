@@ -33,6 +33,7 @@ settings_default_display = 'card';
 
 var today = getTodayWithTime();
 settings_predefined_filters = [
+      {'term': {'hasWorkflowState': 'published'}},
       {
           'constant_score': {
               'filter': {
@@ -60,6 +61,7 @@ jQuery(document).ready(function($) {
         display_images: settings_display_images,
         predefined_filters: settings_predefined_filters,
         default_sort: [],
+        customSetUrl: setUrl,
         selected_sort: "relevance",
         search_sortby: settings_search_sortby,
         // sort: settings_sort,
@@ -214,6 +216,18 @@ function searchModifications() {
         $('.facetview_top').hide();
     }
 
+    // Open search filters on page load
+    // debugger;
+    // $('.facetview_filter h2').each(function (index, item) {
+    //     if ($(item).hasClass('facetview_open')) {
+    //         // debugger;
+    //     }
+    //     else {
+    //         // debugger;
+    //         $(item).trigger('click');
+    //     }
+    // });
+
     // Show tabular view only when clms products(land items) are selected
     var desired_display = $('.facetview_display_type span.selected');
     var nodes = $(".facetview_tree [rel='objectProvides']");
@@ -251,4 +265,9 @@ function searchModifications() {
             $('.eea-icon.tabular').hide();
         }
     }
+}
+
+function setUrl(stateObj, page, url) {
+    url = '@@search' + url;
+    return window.history.pushState(stateObj, page, url);
 }

@@ -62,7 +62,7 @@
   },
 
   "normMissing": {
-    "objectProvides": "OFS.interfaces.IFolder",
+    "objectProvides": "Contract opportunities",
     "topic": "Contract opportunities"
   },
 
