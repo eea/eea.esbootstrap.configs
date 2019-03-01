@@ -217,16 +217,18 @@ function searchModifications() {
     }
 
     // Open search filters on page load
-    // debugger;
-    // $('.facetview_filter h2').each(function (index, item) {
-    //     if ($(item).hasClass('facetview_open')) {
-    //         // debugger;
-    //     }
-    //     else {
-    //         // debugger;
-    //         $(item).trigger('click');
-    //     }
-    // });
+    $('.facetview_filter h2').each(function (index, item) {
+        if (!$(item).hasClass('facetview_open')) {
+            if (item.title === "Published") {
+                setTimeout(function(){
+                    $(item).trigger('click');
+                }, 300);
+            }
+            else {
+                $(item).trigger('click');
+            }
+        }
+    });
 
     // Show tabular view only when clms products(land items) are selected
     var desired_display = $('.facetview_display_type span.selected');
