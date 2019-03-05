@@ -222,7 +222,7 @@ function searchModifications() {
             if (item.title === "Published") {
                 setTimeout(function(){
                     $(item).trigger('click');
-                }, 300);
+                }, 400);
             }
             else {
                 $(item).trigger('click');

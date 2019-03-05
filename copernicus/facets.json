@@ -845,7 +845,7 @@
                 "order": "term",
                 "operator": "OR",
                 "short_name": "Search in",
-                "fixed_order": ["CLMS products", "Documents in the Technical Library", "Other publications",
+                "fixed_order": ["CLMS products", "Technical library", "Other publications",
                                 "News", "Events", "Use cases",
                                 "Contract opportunities", "FAQ"],
                 "facet_display_options": ["sort", "checkbox"]
@@ -964,7 +964,7 @@
                     "histogram" : true,
                     "show_results_in_tooltip": true,
 
-                    "min_max_script": "def vals = doc['year']; if (vals.length == 0){return 2000} else {def ret = [];for (val in vals){def tmp_val = val.substring(0,4);ret.add(tmp_val.toLowerCase() == tmp_val.toUpperCase() ? Integer.parseInt(tmp_val) : 2000);}return ret;}",
+                    "min_max_script": "def vals = doc['year']; if (vals.length == 0){return 2013} else {def ret = [];for (val in vals){def tmp_val = val.substring(0,4);ret.add(tmp_val.toLowerCase() == tmp_val.toUpperCase() ? Integer.parseInt(tmp_val) : 2013);}return ret;}",
                     "aggs_script":  "def vals = doc['year']; if (vals.length == 0){return 2500} else {def ret = [];for (val in vals){def tmp_val = val.substring(0,4);ret.add(tmp_val.toLowerCase() == tmp_val.toUpperCase() ? Integer.parseInt(tmp_val) : 2500);}return ret;}"
                 }
             }

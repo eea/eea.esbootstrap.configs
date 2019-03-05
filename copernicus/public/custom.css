@@ -165,6 +165,13 @@ div.tileItem.ribbon-parent {
     display: none;
 }
 
+.facet-view-simple {
+    margin-top: 2em;
+}
+
+.facet-view-simple .facetview_top {
+    margin-top: 2em;
+}
 
 @media handheld, screen and (max-device-width: 480px){
     input, textarea {
