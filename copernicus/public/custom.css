@@ -14,6 +14,51 @@ div.tileItem.ribbon-parent {
   height: 60px;
 }
 
+#content .eea-accordion-panels .eea-accordion-panel > h2,
+.facetview_display_type .eea-icon,
+.facetview_top select,
+#content .facetview_top option,
+.eea-tile:hover a,
+.eea-tile a,
+#content h2 {
+  color: #A0B228;
+}
+
+.eea-tile a {
+  color: #A0B228 !important;
+}
+
+.eea-tileTitle {
+  color: #1E1E1E;
+}
+
+.facetedview_search input.facetview_freetext {
+  background: #eaead9 !important;
+  color: #1E1E1E;
+}
+
+.facetedview_search .eea-icon-search {
+  left: 1px;
+}
+
+.eea-tileInner:hover, .eea-tileInner:focus {
+  box-shadow: 0 0 3px 1px #A0B228;
+}
+
+.facetview_display_type .eea-icon {
+  border-color: #A0B228;
+}
+
+.facetview_display_type .eea-icon.selected {
+  color: white;
+}
+
+.eea-icon.selected, .facetview_display_type .eea-icon:hover,
+#content .eea-accordion-panels .eea-accordion-panel > h2.facetview_open,
+.facetview_download {
+  background-color: #A0B228;
+}
+
 /* For now disable the tree icons on facets, as hierarchy is not working */
 .jstree-default .jstree-leaf>.jstree-ocl {
   display:none;
@@ -51,6 +96,7 @@ div.tileItem.ribbon-parent {
     margin-right: 0;
 }
 
+.eea-tile:hover .eea-tileTitle,
 .facet-view-simple .facetview_metadata .pagination li a:hover {
     color: #819110 !important;
     background-color: unset;
