@@ -394,7 +394,7 @@
             }
         },
         {
-            "name": "m",
+            "name": "m (kg)",
             "listing": {
                 "title": "Mass in running order (kg)",
                 "visible" : true,
@@ -455,7 +455,7 @@
             }
         },
         {
-            "name": "Enedc",
+            "name": "Enedc (g/km)",
             "listing": {
                 "title": "Specific CO2 Emissions in g/km (NEDC)",
                 "visible" : true,
@@ -494,7 +494,7 @@
             }
         },
         {
-            "name": "Ewltp",
+            "name": "Ewltp (g/km)",
             "listing": {
                 "title": "Specific CO2 Emissions in g/km (WLTP)",
                 "visible" : true,
@@ -516,7 +516,7 @@
             }
         },
         {
-            "name": "W",
+            "name": "W (mm)",
             "listing": {
                 "title": "Wheel base in mm",
                 "visible" : true,
@@ -538,7 +538,7 @@
             }
         },
         {
-            "name": "At1",
+            "name": "At1 (mm)",
             "listing": {
                 "title": "Axle width steering axle in mm",
                 "visible" : true,
@@ -560,7 +560,7 @@
             }
         },
         {
-            "name": "At2",
+            "name": "At2 (mm)",
             "listing": {
                 "title": "Axle width other axle in mm",
                 "visible" : true,
@@ -626,7 +626,7 @@
             }
         },
         {
-            "name": "ec",
+            "name": "ec (cm3)",
             "listing": {
                 "title": "Engine capacity in cm3",
                 "visible" : true,
@@ -648,7 +648,7 @@
             }
         },
         {
-            "name": "ep",
+            "name": "ep (KW)",
             "listing": {
                 "title": "Engine power in KW",
                 "visible" : true,
@@ -670,7 +670,7 @@
             }
         },
         {
-            "name": "z",
+            "name": "z (Wh/km)",
             "listing": {
                 "title": "Electric energy consumption in Wh/km",
                 "visible" : true,
@@ -714,7 +714,7 @@
             }
         },
         {
-            "name": "Ernedc",
+            "name": "Ernedc (g/km)",
             "listing": {
                 "title": "Emissions reduction through innovative technologies in g/km",
                 "visible" : true,
@@ -736,7 +736,7 @@
             }
         },
         {
-            "name": "Erwltp",
+            "name": "Erwltp (g/km)",
             "listing": {
                 "title": "Emissions reduction through innovative technologies in g/km (WLTP)",
                 "visible" : true,
