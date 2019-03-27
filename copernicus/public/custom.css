@@ -157,6 +157,10 @@ div.tileItem.ribbon-parent {
     box-shadow: unset;
 }
 
+#header-section li {
+  margin-bottom: initial;
+}
+
 .facetview_filter .facetview_filter_options {
     display: none !important;
 }
