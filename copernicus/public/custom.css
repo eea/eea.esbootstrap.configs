@@ -47,12 +47,12 @@ div.tileItem.ribbon-parent {
 .facet-view-simple .facetview_metadata .pagination li a {
     border: none;
     background: none;
-    color: #427597 !important;
+    color: #A0B228 !important;
     margin-right: 0;
 }
 
 .facet-view-simple .facetview_metadata .pagination li a:hover {
-    color: #427597 !important;
+    color: #819110 !important;
     background-color: unset;
     border-color: unset;
 }
