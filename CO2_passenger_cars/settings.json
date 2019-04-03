@@ -52,7 +52,7 @@
         "further_info": ""
     },
     "indexFile": {
-        "file": "CO2_passenger_cars_new.csv",
+        "file": "CO2_passenger_cars.csv",
         "delimiter": "\t",
         "id_type": "auto",
         "id_field": "ID"
