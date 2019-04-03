@@ -3,7 +3,7 @@
         "port": 3000
     },
     "elastic": {
-        "index": "co2_passenger_cars",
+        "index": "co2_passenger_cars_2019",
         "type": "resources",
         "field_base":""
     },
