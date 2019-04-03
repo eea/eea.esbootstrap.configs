@@ -15,9 +15,9 @@
 }
 
 /* Remove DRAFT watermark */
-/*#content {
+#content {
     background:white;
-}*/
+}
 
 @font-face{font-family:'FontAwesome';src:url("/fonts-search/fontawesome-webfont.eot?v=4.7.0"),
         url("/fonts-search/fontawesome-webfont.eot?v=4.7.0") format("embedded-opentype"),
