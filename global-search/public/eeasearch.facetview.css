@@ -22,4 +22,26 @@ div.tileItem.ribbon-parent {
 /* remove draft watermark */
 #content {
   background: white;
-} 
+}
+
+.eea-tiles .eea-tileTypeHead {
+    display: block;
+    position: absolute;
+    top: 20%;
+    margin: 0;
+}
+
+#content .eea-tileTypeHead,
+#content .eea-tileTypeHead:visited,
+#content .eea-tileTypeHead:hover
+{
+    color: #FFF !important;
+}
+
+#content .eea-tileTypeHead {
+    padding: 0.5em 1em;
+}
+
+.eea-tileHead {
+    position: relative;
+}

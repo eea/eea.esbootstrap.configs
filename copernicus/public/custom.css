@@ -14,6 +14,65 @@ div.tileItem.ribbon-parent {
   height: 60px;
 }
 
+#content h1, div.content h1 {
+  font-size: 24px;
+  border-bottom: 3px solid #BDCE49;
+  color: #1E1E1E;
+  font-family: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+
+#portal-columns {
+  margin-top: 20px !important;
+}
+
+#content .eea-accordion-panels .eea-accordion-panel > h2,
+.facetview_display_type .eea-icon,
+.facetview_top select,
+#content .facetview_top option,
+.eea-tile:hover a,
+.eea-tile a,
+#content a:visited, dl.portlet a:visited,
+#content a:link, dl.portlet a:link,
+#content h2 {
+  color: #A0B228;
+}
+
+.eea-tile a {
+  color: #A0B228 !important;
+}
+
+.eea-tileTitle {
+  color: #1E1E1E;
+}
+
+.facetedview_search input.facetview_freetext {
+  background: #eaead9 !important;
+  color: #1E1E1E;
+}
+
+.facetedview_search .eea-icon-search {
+  left: 1px;
+}
+
+.eea-tileInner:hover, .eea-tileInner:focus {
+  box-shadow: 0 0 3px 1px #A0B228;
+}
+
+.facetview_display_type .eea-icon {
+  border-color: #A0B228;
+}
+
+.facetview_display_type .eea-icon.selected {
+  color: white;
+}
+
+.eea-icon.selected, .facetview_display_type .eea-icon:hover,
+#content .eea-accordion-panels .eea-accordion-panel > h2.facetview_open,
+.facetview_download {
+  background-color: #A0B228;
+}
+
 /* For now disable the tree icons on facets, as hierarchy is not working */
 .jstree-default .jstree-leaf>.jstree-ocl {
   display:none;
@@ -47,12 +106,13 @@ div.tileItem.ribbon-parent {
 .facet-view-simple .facetview_metadata .pagination li a {
     border: none;
     background: none;
-    color: #427597 !important;
+    color: #A0B228 !important;
     margin-right: 0;
 }
 
+.eea-tile:hover .eea-tileTitle,
 .facet-view-simple .facetview_metadata .pagination li a:hover {
-    color: #427597 !important;
+    color: #819110 !important;
     background-color: unset;
     border-color: unset;
 }
@@ -117,7 +177,17 @@ div.tileItem.ribbon-parent {
 
 .fullwidth.copernicus-search #content.content {
     margin: 0 !important;
-    padding-bottom: 0;
+    padding-bottom: 20px;
+    border-radius: 6px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@media (min-width: 1500px) {
+  .fullwidth.copernicus-search #content.content {
+      margin-left: 10% !important;
+      margin-right: 10% !important;
+  }
 }
 
 .fullwidth.copernicus-search .header .main-nav {
@@ -155,6 +225,10 @@ div.tileItem.ribbon-parent {
     -webkit-box-shadow: unset;
     -moz-box-shadow: unset;
     box-shadow: unset;
+}
+
+#header-section li {
+  margin-bottom: initial;
 }
 
 .facetview_filter .facetview_filter_options {
