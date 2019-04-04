@@ -259,3 +259,8 @@ div.tileItem.ribbon-parent {
         top: 0 !important;
     }
 }
+
+div.portalMessage.attentionMessage.no-results-message {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
