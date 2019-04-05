@@ -67,6 +67,6 @@
   },
 
   "graphSyncConditions_add": [
-      "FILTER (contains(str(?resource), '/technical-library') && !contains(str(?resource), '.jpg') && !contains(str(?resource), '.png') && !contains(str(?resource), '.js') && !contains(str(?resource), '.woff2') && !contains(str(?resource), '.JPG') && !contains(str(?resource), '.PNG') && !contains(str(?resource), '.css') && !contains(str(?resource), '.gif')&& !contains(str(?resource), '.GIF') && !contains(str(?resource), '.map') && !contains(str(?resource), '.MAP')) "
+      "FILTER (contains(str(?resource), '/technical-library') && !contains(str(?resource), '.jpg') && !contains(str(?resource), '.png') && !contains(str(?resource), '.js') && !contains(str(?resource), '.woff2') && !contains(str(?resource), '.JPG') && !contains(str(?resource), '.PNG') && !contains(str(?resource), '.css') && !contains(str(?resource), '.gif')&& !contains(str(?resource), '.GIF') && !contains(str(?resource), '.map') && !contains(str(?resource), '.MAP') && !contains(str(?resource), '.woff')) "
   ]
 }
