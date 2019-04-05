@@ -97,5 +97,5 @@
 
         ]
     },
-    "endpoint": "http://semantic.eea.europa.eu/sparql"
+    "endpoint": "https://semantic.eea.europa.eu/sparql"
 }
