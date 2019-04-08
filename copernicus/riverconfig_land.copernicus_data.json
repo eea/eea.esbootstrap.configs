@@ -109,6 +109,7 @@
     "plone.app.contenttypes.interfaces.ILink": "Link",
     "plone.app.contenttypes.interfaces.IImage": "Image",
     "plone.app.contenttypes.interfaces.IFolder": "Folder",
+    "plone.dexterity.interfaces.IDexterityContainer": "Folder",
     "plone.app.contenttypes.interfaces.IFile": "File",
     "plone.app.contenttypes.interfaces.IDocument": "Page",
     "plone.app.contenttypes.interfaces.ICollection": "Collections",
@@ -140,6 +141,7 @@
       "{?resource a <https://land.copernicus.eu/portal_types/Link#Link>} UNION ",
       "{?resource a <https://land.copernicus.eu/portal_types/Image#Image>} UNION ",
       "{?resource a <https://land.copernicus.eu/portal_types/Folder#Folder>} UNION ",
+      "{?resource a <https://land.copernicus.eu/portal_types/FilesLibraryItem#FilesLibraryItem>} UNION ",
       "{?resource a <https://land.copernicus.eu/portal_types/File#File>} UNION ",
       "{?resource a <https://land.copernicus.eu/portal_types/Collection#Collection>} UNION ",
       "{?resource a <https://land.copernicus.eu/portal_types/FormFolder#FormFolder>} UNION ",
@@ -165,6 +167,7 @@
     "{?resource a <https://land.copernicus.eu/portal_types/Link#Link>} UNION ",
     "{?resource a <https://land.copernicus.eu/portal_types/Image#Image>} UNION ",
     "{?resource a <https://land.copernicus.eu/portal_types/Folder#Folder>} UNION ",
+    "{?resource a <https://land.copernicus.eu/portal_types/FilesLibraryItem#FilesLibraryItem>} UNION ",
     "{?resource a <https://land.copernicus.eu/portal_types/File#File>} UNION ",
     "{?resource a <https://land.copernicus.eu/portal_types/Event#Event>} UNION ",
     "{?resource a <https://land.copernicus.eu/portal_types/Document#Document>}"
