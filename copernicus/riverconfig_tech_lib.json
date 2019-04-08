@@ -57,7 +57,8 @@
     "eea.sparql.interfaces.ISparql":"Technical library",
     "eea.facetednavigation.subtypes.interfaces.IFacetedNavigable": "Technical library",
     "eea.indicators.content.interfaces.IIndicatorsDatabase": "Technical library",
-    "Products.EEAContentTypes.content.interfaces.ICountryProfile": "Technical library"
+    "Products.EEAContentTypes.content.interfaces.ICountryProfile": "Technical library",
+    "plone.dexterity.interfaces.IDexterityContainer": "Technical library"
   },
 
   "normMissing": {
