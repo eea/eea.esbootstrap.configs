@@ -70,6 +70,7 @@ jQuery(document).ready(function($) {
             // since we call also post_search_callback
             // add_EEA_settings();
             // replaceNumbers();
+            setSimplifiedViewMode();
             moveFooter();
             markNavigationTab(settings_selected_navigation_tab);
             $(window).trigger('post_init_callback');
@@ -79,6 +80,7 @@ jQuery(document).ready(function($) {
             viewReady();
             replaceNumbers();
             searchModifications();
+            checkSimplifiedViewMode();
             $(window).trigger('post_search_callback');
         },
         paging: {
@@ -272,4 +274,23 @@ function searchModifications() {
 function setUrl(stateObj, page, url) {
     url = '@@search' + url;
     return window.history.pushState(stateObj, page, url);
+}
+
+function setSimplifiedViewMode() {
+  $(".facetview_top").hide();
+  $("#facetview_results_wrapper").hide();
+  $(".facetview_metadata").hide();
+}
+
+function checkSimplifiedViewMode() {
+  if (
+    ($(".facetview_selection").length == 0) &&
+    ($(".facetview_freetext").attr("value").trim().length == 0)
+  ) {
+    setSimplifiedViewMode();
+  } else {
+    $(".facetview_top").show();
+    $("#facetview_results_wrapper").show();
+    $(".facetview_metadata").show();
+  }
 }
