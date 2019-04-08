@@ -81,6 +81,8 @@ jQuery(document).ready(function($) {
             replaceNumbers();
             searchModifications();
             checkSimplifiedViewMode();
+            overrideNoResultsMessage();
+
             $(window).trigger('post_search_callback');
         },
         paging: {
@@ -293,4 +295,10 @@ function checkSimplifiedViewMode() {
     $("#facetview_results_wrapper").show();
     $(".facetview_metadata").show();
   }
+}
+
+function overrideNoResultsMessage() {
+  $(".portalMessage.attentionMessage.no-results-message").html(
+    "Your search gave no results.&nbsp;<strong>Hint:</strong> try to clear search field, enter other search values, adjust or reset your filters."
+  );
 }
