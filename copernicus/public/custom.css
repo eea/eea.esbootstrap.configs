@@ -231,6 +231,7 @@ div.tileItem.ribbon-parent {
   margin-bottom: initial;
 }
 
+div.visualization-date,
 .facetview_filter .facetview_filter_options {
     display: none !important;
 }
