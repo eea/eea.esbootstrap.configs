@@ -285,6 +285,14 @@ function setSimplifiedViewMode() {
 }
 
 function checkSimplifiedViewMode() {
+  // Hide display modes if no results
+  var no_results = $(".portalMessage.attentionMessage.no-results-message").css("display") == "block";
+  if(no_results) {
+    $(".facetview_top").hide();
+  } else {
+    $(".facetview_top").show();
+  }
+
   // Search "Homepage" - show only text input, instead of showing all content
   if (
     ($(".facetview_selection").length == 0) &&
@@ -292,17 +300,11 @@ function checkSimplifiedViewMode() {
   ) {
     setSimplifiedViewMode();
   } else {
-    $(".facetview_top").show();
+    if(!no_results) {
+      $(".facetview_top").show();
+    }
     $("#facetview_results_wrapper").show();
     $(".facetview_metadata").show();
-  }
-
-  // Hide display modes if no results
-  var no_results = $(".portalMessage.attentionMessage.no-results-message").css("display") == "block";
-  if(no_results) {
-    $(".facetview_top").hide();
-  } else {
-    $(".facetview_top").show();
   }
 }
 
