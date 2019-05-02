@@ -66,7 +66,7 @@
   },
 
   "graphSyncConditions_add": [
-      "FILTER ( NOT EXISTS {?expires} && !contains(str(?resource), '/land-use-cases') && !contains(str(?resource), '/technical-library') && !contains(str(?resource), '/contract-opportunities') && !contains(str(?resource), '/faq') )"
+      "FILTER ( !contains(str(?expires), 'Z') && !contains(str(?resource), '/land-use-cases') && !contains(str(?resource), '/technical-library') && !contains(str(?resource), '/contract-opportunities') && !contains(str(?resource), '/faq') )"
   ],
 
   "graphSyncConditions_1": [
