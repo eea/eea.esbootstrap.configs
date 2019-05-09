@@ -48,8 +48,8 @@ html
                 include:uglify-css /node_modules/eea-searchserver/lib/framework/public/css/critical.css
         else
             link(rel='stylesheet', href="esbootstrap_resources/css/critical.css")
-        link(rel="preload" href="https://www.eea.europa.eu/external_templates_custom.css" as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
-        <noscript><link rel="stylesheet" href="https://www.eea.europa.eu/external_templates_custom.css" /></noscript>
+        link(rel="preload" href="https://www.eea.europa.eu/templates/v2/css/external_templates_custom.css" as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
+        <noscript><link rel="stylesheet" href="https://www.eea.europa.eu/templates/v2/css/external_templates_custom.css" /></noscript>
 
     if debug_mode
         each style in css_resources.debug_styles
@@ -109,6 +109,6 @@ html
                 each script in js_resources.debug_javascripts
                     script(type='text/javascript', src=script)
 
-        script(type="text/javascript", src="https://www.eea.europa.eu/external_templates_scripts.js")
+        script(type="text/javascript", src="https://www.eea.europa.eu/templates/v2/js/external_templates_scripts.js")
         block extrajavascripts
 
