@@ -592,10 +592,3 @@ jQuery(document).ready(function($) {
   $("#car_facet").carFacet();
 
 });
-
-jQuery(function($) {
-    $(".navbar-toggle").click(function(ev) { 
-        $(ev.target).toggleClass('collapsed');
-        $(".navbar-collapse").toggleClass('in');
-    });
-});

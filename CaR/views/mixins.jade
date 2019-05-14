@@ -1,10 +1,10 @@
 mixin portal_breadcrumbs(parent_title, current_title)
     div(id="eea-above-columns")
         nav(id="portal-breadcrumbs",class="plone-breadcrumb")
-            div(class="container")
+            div(class="container eea-container")
                 span(id="breadcrumbs-you-are-here", class="hiddenStructure")
                     | You are here:
-                ol(aria-labelledby="breadcrumbs-you-are-here")
+                ol(aria-labelledby="breadcrumbs-you-are-here" class="plone-breadcrumb-list")
                     -var index = 0
                     each breadcrumb in breadcrumbs
                         each val, key in breadcrumb

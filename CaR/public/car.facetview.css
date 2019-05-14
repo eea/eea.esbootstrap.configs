@@ -1,3 +1,6 @@
+body {
+    background-color: white;
+}
 .site_bg {
     overflow: hidden;
     position: absolute;
@@ -9,6 +12,13 @@
 .site_bg_img {
     height: auto;
     width: 100%;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #content h1 {
@@ -59,7 +69,7 @@
 
 #content {
     background: none;
-    padding-top: 0 !important;
+    padding-top: 1em;
 }
 
 
@@ -405,7 +415,7 @@ div#facetview_rightcol {
 
 @media screen and (min-width: 768px) {
     .site_bg {
-        top: 197px;
+        top: 92px;
     }
     .section-languages {
         justify-content: flex-end;
