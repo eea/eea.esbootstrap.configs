@@ -6,9 +6,6 @@ html
         meta(charset='utf-8')
         meta(name="viewport" content="width=device-width, initial-scale=1")
 
-
-        link(rel="shortcut icon", type="image/x-icon", href="https://www.eea.europa.eu/favicon.ico")
-
         script(type='text/javascript').
             var field_base="#{field_base}";
         script
@@ -38,22 +35,27 @@ html
         script
             != mapping
 
-    - var debug_mode = skip_resources_bundling || false
+        - var external_url = external_templates_url || 'https://www.eea.europa.eu'
 
-    if !skip_external_template_styles
-        != templateRender(headFile)
-    else
+        link(rel="shortcut icon", type="image/x-icon", href="#{external_url}/favicon.ico")
+
+        - var debug_mode = skip_resources_bundling || false
+
         if !debug_mode
             style
                 include:uglify-css /node_modules/eea-searchserver/lib/framework/public/css/critical.css
         else
             link(rel='stylesheet', href="esbootstrap_resources/css/critical.css")
-        link(rel="preload" href="https://www.eea.europa.eu/templates/v2/css/external_templates_custom.css" as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
-        <noscript><link rel="stylesheet" href="https://www.eea.europa.eu/templates/v2/css/external_templates_custom.css" /></noscript>
 
-    if debug_mode
-        each style in css_resources.debug_styles
-            link(rel='stylesheet', href=style)
+        if !skip_external_template_styles
+            != templateRender(headFile)
+        else
+            link(rel="preload" href="#{external_url}/critical.css" as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
+            <noscript><link rel="stylesheet" href="#{external_url}/critical.css" /></noscript>
+            link(rel="preload" href="#{external_url}/external_templates_styles.css" as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
+            <noscript><link rel="stylesheet" href="#{external_url}/external_templates_styles.css" /></noscript>
+            link(rel="preload" href="#{external_url}/external_templates_custom.css" as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
+            <noscript><link rel="stylesheet" href="#{external_url}/external_templates_custom.css" /></noscript>
 
     if (renderStyles && !debug_mode)
         script
@@ -109,6 +111,6 @@ html
                 each script in js_resources.debug_javascripts
                     script(type='text/javascript', src=script)
 
-        script(type="text/javascript", src="https://www.eea.europa.eu/templates/v2/js/external_templates_scripts.js")
+        script(type="text/javascript", src="#{external_url}/external_templates_scripts.js")
         block extrajavascripts
 
