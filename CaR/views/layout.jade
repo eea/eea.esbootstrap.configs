@@ -57,16 +57,16 @@ html
             link(rel="preload" href="#{external_url}/external_templates_custom.css" as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
             <noscript><link rel="stylesheet" href="#{external_url}/external_templates_custom.css" /></noscript>
 
-    if (renderStyles && !debug_mode)
-        script
-            include:uglify-js ../public/loadcss.js
-        - var css_render = renderStyles('layout_page')
-        - var only_css = css_render.match(/href\='([^\s]*)'\s/)[1]
-        link(rel="preload" href="#{only_css}" as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
-        <noscript><link rel="stylesheet" href="#{only_css}" /></noscript>
-    else
-        each style in css_resources.layout_page
-            link(rel='stylesheet', href=style)
+        if (renderStyles && !debug_mode)
+            script
+                include:uglify-js ../public/loadcss.js
+            - var css_render = renderStyles('layout_page')
+            - var only_css = css_render.match(/href\='([^\s]*)'\s/)[1]
+            link(rel="preload" href="#{only_css}" as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
+            <noscript><link rel="stylesheet" href="#{only_css}" /></noscript>
+        else
+            each style in css_resources.layout_page
+                link(rel='stylesheet', href=style)
 
 
     body(class="fullwidth car" data-sentry-dsn="#{sentry_dsn}" data-sentry-ver="#{sentry_ver}" data-sentry-env="#{sentry_rancher_env}" data-sentry-instance="#{sentry_instance}" data-sentry-app-name="#{sentry_app_name}")
