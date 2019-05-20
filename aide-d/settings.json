@@ -11,15 +11,15 @@
         "local_path": "/external_templates",
         "protocol": "https",
         "host": "www.eea.europa.eu",
-        "head_path": "/templates/v2/getRequiredHead?jsdisable=all&render_full_html=False&cssonly=True",
-        "header_path": "/templates/v2/getHeader?render_full_html=False",
-        "footer_path": "/templates/v2/getFooter?render_full_html=False"
+        "head_path": "/templates/v3/getRequiredHead?render_full_html=False&cssonly=True&css_stack=external_templates",
+        "header_path": "/templates/v3/getHeader?render_full_html=False",
+        "footer_path": "/templates/v3/getFooter?render_full_html=False"
     },
     "layout_vars": {
         "head_title": "Assessment Methods (D)",
         "app_id": "aide-d",
         "skip_resources_bundling": false,
-        "skip_external_template_styles": true,
+        "skip_external_template_styles": false,
         "override_searchserver_resources": false,
         "css_resources": {
             "index_page": [
