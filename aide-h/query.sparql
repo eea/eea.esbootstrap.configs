@@ -82,7 +82,7 @@ WHERE {{
   ?contactURI aq:website ?Website .
   ?contactURI aq:address ?addressURI .
 
-  ?addressURI aq:locatorDesignator ?Address .
+  OPTIONAL{?addressURI aq:locatorDesignator ?Address} .
   ?firstexcURI aq:timePosition ?FirstExceedanceYear .
   ?adoptionURI aq:timePosition ?AdoptionDate .
 
