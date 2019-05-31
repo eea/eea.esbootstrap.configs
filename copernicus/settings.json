@@ -19,15 +19,15 @@
         "strip_templates": true,
 
         "host_eea": "www.eea.europa.eu",
-        "head_path_eea": "/templates/v2/getRequiredHead?jsdisable=all&render_full_html=False&cssonly=True",
-        "header_path_eea": "/templates/v2/getHeader?render_full_html=False",
-        "footer_path_eea": "/templates/v2/getFooter?render_full_html=False"
+        "head_path_eea": "/templates/v3/getRequiredHead?render_full_html=False&cssonly=True&css_stack=external_templates",
+        "header_path_eea": "/templates/v3/getHeader?render_full_html=False",
+        "footer_path_eea": "/templates/v3/getFooter?render_full_html=False"
     },
     "layout_vars": {
         "head_title": "Land Copernicus search",
         "app_id": "copernicus-search",
         "skip_resources_bundling": true,
-        "skip_external_template_styles": true,
+        "skip_external_template_styles": false,
         "skip_resources_bundling_eea": true,
         "skip_external_template_styles_eea": false,
         "override_searchserver_resources": false,
