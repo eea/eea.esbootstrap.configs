@@ -2622,3 +2622,12 @@ font-size: 3em;
 div.eea-section.eea-right-section-slider.eea-scrolling-toggle-visibility {
   display: none;  /* it's ugly and unuseful */
 }
+
+div.facetview_showtree_eealabel {
+  padding-left: 6px;
+}
+
+div.facetedview_search span.eea-icon.eea-icon-search.eea-icon-2x {
+  position: absolute;
+  top: 2px;
+}
