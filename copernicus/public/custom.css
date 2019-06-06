@@ -2618,3 +2618,7 @@ color: #FFF;
 font-size: 3em;
 }
 }
+
+div.eea-section.eea-right-section-slider.eea-scrolling-toggle-visibility {
+  display: none;  /* it's ugly and unuseful */
+}
