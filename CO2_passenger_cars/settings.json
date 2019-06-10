@@ -52,9 +52,10 @@
         "further_info": ""
     },
     "indexFile": {
-        "file": "CO2_passenger_cars.csv",
+        "file": "CO2_tmp.csv",
         "delimiter": "\t",
         "id_type": "auto",
         "id_field": "ID"
-    }
+    },
+    "suggestions_enabled": true
 }

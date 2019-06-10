@@ -1,18 +1,39 @@
 {
+  "did_you_mean": {"type": "text", "analyzer": "didYouMean"},
+  "autocomplete": {"type": "text", "analyzer": "autocomplete"},
+
   "ID" : {"type" :"text", "fielddata": true },
   "Y": {"type" :"integer" },
   "MS" : { "type" : "string", "analyzer" : "none" },
   "VFN" : { "type" : "string", "analyzer" : "none" },
-  "Mp" : { "type" : "string", "analyzer" : "none" },
-  "Mh" : { "type" : "string", "analyzer" : "none" },
-  "Man" : { "type" : "string", "analyzer" : "none" },
-  "MMS" : { "type" : "string", "analyzer" : "none" },
+  "Mp" : { "type" : "string",
+            "analyzer" : "none",
+            "copy_to" : ["did_you_mean", "autocomplete"]
+        },
+  "Mh" : { "type" : "string",
+            "analyzer" : "none",
+            "copy_to" : ["did_you_mean", "autocomplete"]
+        },
+  "Man" : { "type" : "string",
+            "analyzer" : "none",
+            "copy_to" : ["did_you_mean", "autocomplete"]
+        },
+  "MMS" : { "type" : "string",
+            "analyzer" : "none",
+            "copy_to" : ["did_you_mean", "autocomplete"]
+        },
   "TAN" : { "type" : "string", "analyzer" : "none" },
   "T" : { "type" : "string", "analyzer" : "none" },
   "Va" : { "type" : "string", "analyzer" : "none" },
   "Ve" : { "type" : "string", "analyzer" : "none" },
-  "Mk" : { "type" : "string", "analyzer" : "none" },
-  "Cn" : { "type" : "string", "analyzer" : "none" },
+  "Mk" : { "type" : "string",
+            "analyzer" : "none",
+            "copy_to" : ["did_you_mean", "autocomplete"]
+        },
+  "Cn" : { "type" : "string",
+            "analyzer" : "none",
+            "copy_to" : ["did_you_mean", "autocomplete"]
+        },
   "Ct" : { "type" : "string", "analyzer" : "none" },
   "Cr" : { "type" : "string", "analyzer" : "none" },
   "r": {"type" :"integer" },
