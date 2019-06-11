@@ -98,7 +98,6 @@
 
     "http://rod.eionet.europa.eu/spatial/76" : "value not available",
     "https://land.copernicus.eu/portal_workflow/folder_workflow/states/published": "published",
-    "https://land.copernicus.eu/portal_workflow/copernicus_publication_workflow/states/published": "published",
     "https://land.copernicus.eu/portal_workflow/simple_publication_workflow/states/published": "published",
     "https://land.copernicus.eu/portal_workflow/helpcentersubitem_workflow/states/published": "published",
     "https://land.copernicus.eu/portal_workflow/helpcenter_workflow/states/published": "published",
