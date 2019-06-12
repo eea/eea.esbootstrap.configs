@@ -55,6 +55,11 @@
     "river_configs": {
         "configs": [
             {
+                "id": "eea_copernicus_publications",
+                "cluster_name": "Copernicus Land Publications",
+                "config_file": "riverconfig_publications.json"
+            },
+            {
                 "id": "eea_copernicus_faq",
                 "cluster_name": "Copernicus Land FAQ",
                 "config_file": "riverconfig_faq.json"
@@ -85,16 +90,10 @@
                 "config_file": "riverconfig_events.json"
             },
             {
-                "id": "eea_copernicus_publications",
-                "cluster_name": "Copernicus Land Publications",
-                "config_file": "riverconfig_publications.json"
-            },
-            {
                 "id": "eea_copernicus_clmsproducts",
                 "cluster_name": "Copernicus Land CLMS products",
                 "config_file": "riverconfig_clmsproducts.json"
             }
-
         ]
     },
     "endpoint": "https://semantic.eea.europa.eu/sparql"

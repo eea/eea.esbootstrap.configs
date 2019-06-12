@@ -145,6 +145,7 @@
     "http://www.eea.europa.eu/portal_workflow/eea_data_workflow/states/published": "published",
     "http://www.eea.europa.eu/portal_workflow/eea_soer_workflow/states/published": "published",
     "https://land.copernicus.eu/portal_workflow/folder_workflow/states/published": "published",
+    "https://land.copernicus.eu/portal_workflow/copernicus_publication_workflow/states/published": "published",
     "Products.ATContentTypes.interfaces.image.IATImage": "Image",
     "Products.ATContentTypes.interfaces.image.IImageContent": "Image",
     "plone.app.blob.interfaces.IATBlobImage": "Image",
