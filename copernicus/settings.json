@@ -30,16 +30,43 @@
         "skip_external_template_styles": false,
         "skip_resources_bundling_eea": true,
         "skip_external_template_styles_eea": false,
-        "override_searchserver_resources": false,
+        "override_searchserver_resources": true,
         "css_resources": {
             "index_page": [
-                "/custom.css",
-                "css/esbootstrap.facetview.css"
+		"css/esbootstrap.facetview.css",
+		"css/no-more-tables.css",
+		"css/style.css",
+		"facetview/css/facetview.css",
+		"facetview/css/style.css",
+		"facetview/vendor/dist/themes/default/style.min.css",
+		"facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.css",
+                "css/esbootstrap.facetview.css",
+		"esbootstrap_resources/css/critical.css",
+		"css/tiles.css",
+                "/custom.css"
             ]
         },
         "js_resources": {
             "index_page": [
-                "/custom.js"
+                "facetview/vendor/raven/raven.min.js",
+                "javascripts/sentry.js",
+                "facetview/vendor/dist/libs/jquery.migrate.js",
+                "facetview/vendor/jquery-lazy/jquery.lazy.min.js",
+                "facetview/vendor/dist/jstree.js",
+                "facetview/vendor/linkify/1.0/jquery.linkify-1.0-min.js",
+                "facetview/vendor/bootstrap/js/bootstrap.min.js",
+                "facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.min.js",
+                "facetview/vendor/touchpunch/jquery.ui.touch-punch.min.js",
+                "facetview/vendor/d3/d3.v4.js",
+                "facetview/jquery.facetview.js",
+                "facetview/facetviewhelpers.js",
+                "facetview/landing.js",
+                "facetview/jquery.autocompletewithhighlight.js",
+                "facetview/jquery.autocompleteforfacet.js",
+                "javascripts/main.js",
+                "facetview/landing.js",
+                "/custom.js",
+                "/external_templates_scripts.js"
             ]
         },
         "site_title": "Search",
