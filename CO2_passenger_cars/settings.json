@@ -3,7 +3,7 @@
         "port": 3000
     },
     "elastic": {
-        "index": "co2_passenger_cars_2019",
+        "index": "co2_passenger_cars_v17_19june2019",
         "type": "resources",
         "field_base":""
     },
@@ -43,15 +43,15 @@
             ]
         },
         "site_title": "CO<sub>2</sub> emissions from new passenger cars",
-        "site_description": "Monitoring of CO<sub>2</sub> emissions from passenger cars &ndash; <a href='http://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX:32009R0443'>Regulation (EC) No 443/2009</a>. <br><span class='discreet'><strong>Note</strong>: The column 'Count' in the filters reports the sum of the rows and not the sum of the new car's registrations.</span>",
+        "site_description": "<h3>Monitoring of CO<sub>2</sub> emissions from new passenger cars registered in 2018 across EU-28 &ndash; <a href='http://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX:32009R0443'>Regulation (EC) No 443/2009</a>. <br><span class='discreet'><strong>Note</strong>: The column 'Count' in the filters reports the sum of the rows and not the sum of the new car's registrations.</span></h3>",
         "enableBreadcrumbs": true,
         "breadcrumbs": "Datasets",
         "dataprovencance_info_text": "EEA Data: Monitoring of CO2 emissions from new passenger cars - Regulation (EC) No 443/2009",
-        "dataprovencance_info_url": "https://www.eea.europa.eu/data-and-maps/data/co2-cars-emission-15",
+        "dataprovencance_info_url": "https://www.eea.europa.eu/data-and-maps/data/co2-cars-emission-16",
         "further_info": ""
     },
     "indexFile": {
-        "encoding":"UTF-16LE",
+        "encoding":"UTF-8",
         "file": "CO2_passenger_cars.csv",
         "delimiter": "\t",
         "id_type": "auto",

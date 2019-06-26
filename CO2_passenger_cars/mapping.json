@@ -7,20 +7,16 @@
   "MS" : { "type" : "string", "analyzer" : "none" },
   "VFN" : { "type" : "string", "analyzer" : "none" },
   "Mp" : { "type" : "string",
-            "analyzer" : "none",
-            "copy_to" : ["did_you_mean", "autocomplete"]
+            "analyzer" : "none"
         },
   "Mh" : { "type" : "string",
-            "analyzer" : "none",
-            "copy_to" : ["did_you_mean", "autocomplete"]
+            "analyzer" : "none"
         },
   "Man" : { "type" : "string",
-            "analyzer" : "none",
-            "copy_to" : ["did_you_mean", "autocomplete"]
+            "analyzer" : "none"
         },
   "MMS" : { "type" : "string",
-            "analyzer" : "none",
-            "copy_to" : ["did_you_mean", "autocomplete"]
+            "analyzer" : "none"
         },
   "TAN" : { "type" : "string", "analyzer" : "none" },
   "T" : { "type" : "string", "analyzer" : "none" },

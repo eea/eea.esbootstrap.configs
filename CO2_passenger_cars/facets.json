@@ -319,7 +319,19 @@
                 "visible": true
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Commercial name",
+                "pos": 6,
+                "type": "facet",
+                "size": 9999,
+                "order": "reverse_count",
+                "operator": "OR",
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for name",
+                "empty_message": "No name",
+                "short_name": "Commercial name",
+                "facet_display_options": ["sort", "checkbox"]
+
             },
             "csv_tsv": {
                 "title": "Cn",
@@ -481,8 +493,8 @@
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",
 
-                    "slider_bucketsize" : 10,
-                    "histogram" : false,
+                    "slider_bucketsize" : 1,
+                    "histogram" : true,
                     "measurement_unit": "g/km"
                 }
 
