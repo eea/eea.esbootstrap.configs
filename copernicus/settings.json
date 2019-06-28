@@ -12,7 +12,7 @@
         "protocol_1": "http",
         "host_1": "copernicus.europa.eu",
         "protocol": "https",
-        "host": "land.copernicus.eu",
+        "host": "demo.land.copernicus.eu",
         "head_path": "/external-template-head",
         "header_path": "/external-template-header",
         "footer_path": "/external-template-footer",
