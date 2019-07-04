@@ -65,8 +65,7 @@
                 "facetview/jquery.autocompleteforfacet.js",
                 "javascripts/main.js",
                 "facetview/landing.js",
-                "/custom.js",
-                "/external_templates_scripts.js"
+                "/custom.js"
             ]
         },
         "site_title": "Search",

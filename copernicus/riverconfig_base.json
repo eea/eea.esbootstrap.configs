@@ -211,6 +211,6 @@
     "references":[]
   },
   "//": "Sync conditions",
-  "graphSyncConditions": ["FILTER (?time > xsd:dateTime('1990-01-01T00:00:00')). FILTER (?time < xsd:dateTime('2100-01-01T00:00:00'))"],
+  "graphSyncConditions": ["FILTER (?time > xsd:dateTime('1990-01-01T00:00:00')). FILTER (?time < xsd:dateTime('2100-01-01T00:00:00')). FILTER (!contains(str(?resource), '.jpg') && !contains(str(?resource), '.png') && !contains(str(?resource), '.js') && !contains(str(?resource), '.woff2') && !contains(str(?resource), '.JPG') && !contains(str(?resource), '.PNG') && !contains(str(?resource), '.css') && !contains(str(?resource), '.gif') && !contains(str(?resource), '.GIF') && !contains(str(?resource), '.map') && !contains(str(?resource), '.MAP') && !contains(str(?resource), '.woff') && !contains(str(?resource), '.ttf') && !contains(str(?resource), '.TTF'))"],
   "syncTimeProp": "http://cr.eionet.europa.eu/ontologies/contreg.rdf#lastRefreshed"
 }
