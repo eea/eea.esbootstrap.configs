@@ -45,6 +45,6 @@
     },
     "es_debug_enabled": false,
     "suggestions_enabled": true,
-    "endpoint": "http://semantic.eea.europa.eu/sparql",
+    "endpoint": "https://semantic.eea.europa.eu/sparql",
     "selected_navigation_tab": "data-and-maps"
 }

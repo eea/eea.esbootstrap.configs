@@ -1,11 +1,11 @@
-PREFIX tableFile: <http://semantic.eea.europa.eu/home/szabozo0/pam2018.csv#>
+PREFIX tableFile: <http://semantic.eea.europa.eu/project/pam/pam2018.csv#>
 
 SELECT 
 DISTINCT(?Country)
 
 
 
-FROM <http://semantic.eea.europa.eu/home/szabozo0/pam2018.csv>
+FROM <http://semantic.eea.europa.eu/project/pam/pam2018.csv>
 WHERE {
 _:rec tableFile:Country ?Country .
 
