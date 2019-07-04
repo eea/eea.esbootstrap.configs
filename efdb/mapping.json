@@ -13,7 +13,7 @@
 "Value" : {"type" :"string" },
 "Unit" : {"type" :"string" },
 "CI_lower" : {"type" :"double" },
-"CI_upper " : {"type" :"double" },
+"CI_upper" : {"type" :"double" },
 "Reference" : {"type" :"string" },
 "Link" : {"type" :"string" }
 }

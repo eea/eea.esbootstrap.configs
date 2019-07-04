@@ -54,5 +54,10 @@
         "dataprovencance_info_url": "http://www.eea.europa.eu/publications/emep-eea-guidebook-2016",
         "further_info": ""
     },
-    "endpoint": "http://semantic.eea.europa.eu/sparql"
+    "indexFile": {
+        "file": "2018_Flatfile_EFDB_for_dataviewer_March_29.csv",
+        "delimiter": ",",
+        "id_type": "field",
+        "id_field": "ID"
+    }
 }
