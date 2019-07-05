@@ -1,8 +1,8 @@
 block title
     title!= head_title
 
-- var debug_mode = settings_es_debug_enabled.indexOf('false') === -1
 block extrajavascripts
+    - var debug_mode = settings_es_debug_enabled.indexOf('false') === -1
     if (js_resources.index_page)
         if renderJs && !debug_mode
             != renderJs('index_page')
@@ -11,12 +11,13 @@ block extrajavascripts
                 script(type='text/javascript', src=script)
 
 block extrastyles
+    - var debug_mode = settings_es_debug_enabled.indexOf('false') === -1
     if (css_resources.index_page)
         if renderStyles && !debug_mode
             - var css_render = renderStyles('index_page')
             - var only_css = css_render.match(/href\='([^\s]*)'\s/)[1]
-            link(rel="preload" href="#{only_css}" as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
-            <noscript><link rel="stylesheet" href="#{only_css}" /></noscript>
+            link(rel="preload" href=only_css as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
+            <noscript><link rel="stylesheet" href=only_css /></noscript>
         else
             each style in css_resources.index_page
                 link(rel='stylesheet', href=style)
