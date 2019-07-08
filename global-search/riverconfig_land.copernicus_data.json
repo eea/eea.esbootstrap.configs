@@ -64,6 +64,8 @@
     "dataProvider" : ["European Environment Agency (EEA)", "Joint Research Centre (JRC)"]
   },
 
+  "graphSyncConditions": ["FILTER (?time > xsd:dateTime('1990-01-01T00:00:00')). FILTER (?time < xsd:dateTime('2100-01-01T00:00:00'))"],
+
   "syncConditions": [
     "{?resource a <https://land.copernicus.eu/portal_types/LandItem#LandItem>}"
   ]

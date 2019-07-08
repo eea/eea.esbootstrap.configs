@@ -16,6 +16,8 @@
     "organisation": ["European Environment Agency (EEA)","DG Environment","European Commission"]
   },
 
+  "graphSyncConditions": ["FILTER (?time > xsd:dateTime('1990-01-01T00:00:00')). FILTER (?time < xsd:dateTime('2100-01-01T00:00:00'))"],
+
   "syncConditions": [
       "{?resource a <https://biodiversity.europa.eu/portal_types/BiodiversityFactsheet#BiodiversityFactsheet> }"
   ]
