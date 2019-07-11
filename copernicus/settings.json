@@ -60,7 +60,6 @@
                 "facetview/vendor/d3/d3.v4.js",
                 "facetview/jquery.facetview.js",
                 "facetview/facetviewhelpers.js",
-                "facetview/landing.js",
                 "facetview/jquery.autocompletewithhighlight.js",
                 "facetview/jquery.autocompleteforfacet.js",
                 "javascripts/main.js",
