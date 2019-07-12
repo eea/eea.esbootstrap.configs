@@ -54,7 +54,6 @@
                 "facetview/vendor/jquery-lazy/jquery.lazy.min.js",
                 "facetview/vendor/dist/jstree.js",
                 "facetview/vendor/linkify/1.0/jquery.linkify-1.0-min.js",
-                "facetview/vendor/bootstrap/js/bootstrap.min.js",
                 "facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.min.js",
                 "facetview/vendor/touchpunch/jquery.ui.touch-punch.min.js",
                 "facetview/vendor/d3/d3.v4.js",
