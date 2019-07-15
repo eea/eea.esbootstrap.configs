@@ -49,7 +49,6 @@
         "js_resources": {
             "index_page": [
                 "facetview/vendor/raven/raven.min.js",
-                "javascripts/sentry.js",
                 "facetview/vendor/dist/libs/jquery.migrate.js",
                 "facetview/vendor/jquery-lazy/jquery.lazy.min.js",
                 "facetview/vendor/dist/jstree.js",
