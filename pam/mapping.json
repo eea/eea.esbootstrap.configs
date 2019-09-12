@@ -24,7 +24,7 @@
     },
     "Policy_impacting_EU_ETS__ESD_or_LULUCF_emissions" : {
         "type" : "text",
-        "analyzer" : "coma"
+        "analyzer" : "semicolon"
     },
     "Sector_s__affected"  : {
         "type" : "text",
@@ -62,7 +62,7 @@
     },
     "GHG_s__affected"  : {
         "type" : "text",
-        "analyzer" : "coma"
+        "analyzer" : "semicolon"
     },
     "Projection_scenario_in_which_the_policy_or_measure_is_included"  : {
         "type" : "text",
