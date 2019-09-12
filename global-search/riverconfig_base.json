@@ -37,7 +37,7 @@
     "http://www.eea.europa.eu/portal_types/Fiche#summary": "description",
     "http://www.eea.europa.eu/portal_types/Article#text": "text",
     "http://www.eea.europa.eu/portal_types/Article#temporalCoverage": ["time_coverage"],
-    "http://www.eea.europa.eu/portal_types/Sparql#sparql_results": "text",
+    "http://www.eea.europa.eu/portal_types/Sparql#sparql_query": "text",
     "http://www.eea.europa.eu/portal_types/Sparql#temporalCoverage": ["time_coverage"],
     "http://www.eea.europa.eu/portal_types/Collection#text": "text",
     "http://www.eea.europa.eu/portal_types/Collection#temporalCoverage": ["time_coverage"],
