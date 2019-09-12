@@ -13,6 +13,6 @@
   "syncConditions": [
     "{?resource a <http://www.eea.europa.eu/portal_types/Organisation#Organisation>}"
   ],
-  "graphSyncConditions": ["FILTER (str(?graph) = concat(str(?resource), '/@@rdf'))."],
+  "graphSyncConditions": [],
   "syncTimeProp": "http://cr.eionet.europa.eu/ontologies/contreg.rdf#lastRefreshed"
 }
