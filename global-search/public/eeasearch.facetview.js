@@ -74,7 +74,7 @@ function mark_expired(){
 
 function add_control_for_expired(){
   $(".facetview_include_expired").remove();
-  var checkbox = $('<div class="facetview_include_expired filter-by"><span>Include archived content </span><input type="checkbox" id="include_expired" value=""></div>');
+  var checkbox = $('<div class="facetview_include_expired filter-by"><span class="i18n" i18n-variable="Include archived content" i18n-change="html">Include archived content </span><input type="checkbox" id="include_expired" value=""></div>');
   checkbox.insertAfter(".facetview_display_type");
   var original_predefined_filters = $('.facet-view-simple').facetview.options.predefined_filters;
   if (original_predefined_filters.length === 2){

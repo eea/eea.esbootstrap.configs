@@ -1,0 +1,22 @@
+{
+  "@metadata": {
+    "authors": [
+      "Miu Razvan"
+    ],
+    "last-updated": "2019-09-13",
+    "locale": "en",
+    "message-documentation": "qqq"
+  },
+
+  "Topics": "Topics",
+  "Countries": "Countries",
+  "Regions/Places/Cities/Seas...": "Regions/Places/Cities/Seas...",
+  "Content types": "Content types",
+  "Organisations involved": "Organisations involved",
+  "Websites": "Websites",
+  "Publishing year": "Publishing year",
+  "Time coverage": "Time coverage",
+  "Languages": "Languages",
+  "Format": "Format",
+  "Reading time (minutes)": "Reading time (minutes)"
+}

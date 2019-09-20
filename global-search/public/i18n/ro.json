@@ -1,0 +1,22 @@
+{
+  "@metadata": {
+    "authors": [
+      "Miu Razvan"
+    ],
+    "last-updated": "2019-09-13",
+    "locale": "en",
+    "message-documentation": "qqq"
+  },
+  
+  "Topics": "Subiecte",
+  "Countries": "Tari",
+  "Regions/Places/Cities/Seas...": "Regiuni/Locuri/Orase/Mari...",
+  "Content types": "Tipul continutului",
+  "Organisations involved": "Organizatii implicate",
+  "Websites": "Websites",
+  "Publishing year": "Anul publicarii",
+  "Time coverage": "Time coverage",
+  "Languages": "Limbi",
+  "Format": "Format",
+  "Reading time (minutes)": "Timp de citit (minute)"
+}
