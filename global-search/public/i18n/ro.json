@@ -9,14 +9,50 @@
   },
   
   "Topics": "Subiecte",
-  "Countries": "Tari",
-  "Regions/Places/Cities/Seas...": "Regiuni/Locuri/Orase/Mari...",
-  "Content types": "Tipul continutului",
-  "Organisations involved": "Organizatii implicate",
+  "Countries": "Țări",
+  "Regions/Places/Cities/Seas...": "Regiuni/Locuri/Orașe/Mari...",
+  "Content types": "Tipuri de conținut",
+  "Organisations involved": "Organizații implicate",
   "Websites": "Websites",
-  "Publishing year": "Anul publicarii",
-  "Time coverage": "Time coverage",
+  "Publishing year": "Anul publicării",
+  "Time coverage": "Perioada de acoperire",
   "Languages": "Limbi",
   "Format": "Format",
-  "Reading time (minutes)": "Timp de citit (minute)"
+  "Reading time (minutes)": "Timp de citit (minute)",
+
+  "Search for topic": "Caută subiect",
+  "Search for country": "Caută țara",
+  "Search for regions/places/cities/seas...": "Caută regiuni/locuri/orașe/mări ...",
+  "Search for organisations...": "Caută organizații...",
+
+  "Count": "Total",
+  "Topic": "Subiect",
+  "Country": "Țară",
+  "Region": "Regiuni",
+  "Content type": "Tipul conținutului",
+  "Organisation": "Organizație",
+  "Website": "Website",
+  "Language": "Limbă",
+
+  "Match all": "Potriviți toate",
+  "Match any": "Potriviți oricare",
+
+  "years": "ani",
+
+  "Exact:": "Exact:",
+
+  "tooltip_exact": "Opțiunea *Exact* vă va oferi rezultate care conțin exclusiv valorile selectate și nimic altceva. Această opțiune vă poate oferi rezultate mai precise. Încercați să aflați.",
+  "tooltip_tabular": "tabular",
+  "tooltip_card": "card",
+  "tooltip_list": "list",
+
+  "Table(Title)": "Titlu",
+  "Table(description)": "Descriere",
+  "Table(Countries)": "Țări",
+  "Table(Regions/Places/Cities/Seas...)": "Regiuni/Locuri/Orașe/Mari...",
+  "Table(Content types)": "Tipuri de conținut",
+  "Table(Topics)": "Subiecte",
+  "Table(Issued)": "Emis",
+  "Table(Time coverage)": "Perioada de acoperire",
+  "Table(Format)": "Format"
 }

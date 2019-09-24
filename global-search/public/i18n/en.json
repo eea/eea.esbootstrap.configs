@@ -18,5 +18,41 @@
   "Time coverage": "Time coverage",
   "Languages": "Languages",
   "Format": "Format",
-  "Reading time (minutes)": "Reading time (minutes)"
+  "Reading time (minutes)": "Reading time (minutes)",
+
+  "Search for topic": "Search for topic",
+  "Search for country": "Search for country",
+  "Search for regions/places/cities/seas...": "Search for regions/places/cities/seas...",
+  "Search for organisations...": "Search for organisations...",
+
+  "Count": "Count",
+  "Topic": "Topic",
+  "Country": "Country",
+  "Region": "Region",
+  "Content type": "Content type",
+  "Organisation": "Organisation",
+  "Website": "Website",
+  "Language": "Language",
+
+  "Match all": "Match all",
+  "Match any": "Match any",
+
+  "years": "years",
+
+  "Exact:": "Exact:",
+
+  "tooltip_exact": "The *Exact* option will give you results that contain exclusivly the selected values and nothing else. This option may give you more precise results. Try it to find out.",
+  "tooltip_tabular": "tabular",
+  "tooltip_card": "card",
+  "tooltip_list": "list",
+
+  "Table(Title)": "Title",
+  "Table(description)": "Description",
+  "Table(Countries)": "Countries",
+  "Table(Regions/Places/Cities/Seas...)": "Regions/Places/Cities/Seas...",
+  "Table(Content types)": "Content types",
+  "Table(Topics)": "Topics",
+  "Table(Issued)": "Issued",
+  "Table(Time coverage)": "Time coverage",
+  "Table(Format)": "Format"
 }
