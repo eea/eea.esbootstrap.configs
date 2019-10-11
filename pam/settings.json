@@ -5,7 +5,12 @@
     "elastic": {
         "index": "esbootstrapdata-pam",
         "type": "resources",
-        "field_base":""
+        "field_base":"",
+        "increment_index_name":true,
+        "increment_threshold": 5,
+        "default_appalias": "esbootstrapdata-pam_prod",
+        "prodalias": "esbootstrapdata-pam_prod",
+        "demoalias": "esbootstrapdata-pam_demo"
     },
     "external_templates": {
         "local_path": "/external_templates",
@@ -19,7 +24,7 @@
         "head_title": "EEA database on climate change mitigation policies and measures in Europe &mdash; European Environment Agency",
         "app_id": "pam",
         "skip_external_template_styles": false,
-        "skip_resources_bundling": false,
+        "skip_resources_bundling": true,
         "override_searchserver_resources": false,
         "css_resources": {
             "index_page": [
@@ -44,11 +49,14 @@
         "further_info": ""
     },
     "indexFile": {
-        "file": "pam2018.json",
+        "url": "https://discomap.eea.europa.eu/App/SqlEndpoint/query?sql=--%20Write%20your%20SQL-query%20here%0A--%20For%20more%20information%20in%20SQL%20go%20here%20https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fsql%2Ft-sql%2Fqueries%2Fselect-examples-transact-sql%3Fview%3Dsql-server-2017%0ASelect%20%20*%20from%20%5BGHGPAMS%5D.%5Bv2r1%5D.%5BPAMs_Viewer_Flat_file_elasticsearch%5D",
         "format": "json",
         "data_path": "results.*"
     },
     "es_debug_enabled": false,
     "suggestions_enabled": true,
-    "selected_navigation_tab": "data-and-maps"
+    "selected_navigation_tab": "data-and-maps",
+    "API": {
+        "enable": true
+    }
 }
