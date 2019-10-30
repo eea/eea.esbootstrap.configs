@@ -33,12 +33,12 @@ block landing
       div(class="normal_tiles")
         div(class="eea_tile available_content grid-item grid-item--height2")
             div(class="eea_tile_content")
-              h2 Instantly search over 20 years of environmental knowledge by EEA
-              h3 Documents
+              h2(class="i18n" i18n-variable="Landing_H2(Title)" i18n-change="html") Instantly search over 20 years of environmental knowledge by EEA
+              h3(class="i18n" i18n-variable="Landing_H3(Documents)" i18n-change="html") Documents
               span(class="documents_count eea_tile_count")
                 if (landingCache.documents_count)
                     = landingCache.documents_count
-              h3 Languages
+              h3(class="i18n" i18n-variable="Landing_H3(Languages)" i18n-change="html") Languages
               span(class="language_count eea_tile_count")
                 if (landingCache.language_count)
                     = landingCache.language_count
@@ -47,45 +47,47 @@ block landing
           span
 
         div(class="eea_tile topics grid-item")
-          h2 Topics
+          h2(class="i18n" i18n-variable="Landing_Facet(Topics)" i18n-change="html") Topics
           span(class="topics_count eea_tile_count")
             if (landingCache.topics_count)
                 = landingCache.topics_count
 
         div(class="eea_tile time_coverage grid-item grid-last-column-item")
-          h2 Time coverage
-          p from
+          h2(class="i18n" i18n-variable="Landing_Facet(Time coverage)" i18n-change="html") Time coverage
+          p
+            span(class="i18n" i18n-variable="App_Word(From)" i18n-change="html") from
             span(class="time_coverage_min eea_tile_count")
                 if (landingCache.time_coverage_min)
                     = landingCache.time_coverage_min
-          p until
+          p
+            span(class="i18n" i18n-variable="App_Word(Until)" i18n-change="html") until
             span(class="time_coverage_max eea_tile_count")
                 if (landingCache.time_coverage_max)
                     = landingCache.time_coverage_max
 
         div(class="eea_tile organisations grid-item")
-          h2 Organisations
+          h2(class="i18n" i18n-variable="Landing_Facet(Organisations)" i18n-change="html") Organisations
           span(class="organisations_count eea_tile_count")
             if (landingCache.organisations_count)
                 = landingCache.organisations_count
 
         div(class="eea_tile content_types grid-item")
-          h2 Content types
+          h2(class="i18n" i18n-variable="Landing_Facet(Content types)" i18n-change="html") Content types
           span(class="content_types_count eea_tile_count")
             if (landingCache.content_types_count)
                 = landingCache.content_types_count
 
         div(class="eea_tile countries grid-item grid-item--height2")
-          h2 Countries
+          h2(class="i18n" i18n-variable="Landing_Facet(Countries)" i18n-change="html") Countries
           span(class="countries_count eea_tile_count")
             if (landingCache.countries_count)
                 = landingCache.countries_count
 
         div(class="eea_tile latest_objects grid-item grid-item--height2 grid-last-column-item")
-          h2 Recently added
+          h2(class="i18n" i18n-variable="Landing_Facet(Recently added)" i18n-change="html") Recently added
           ul(class="latest_objects_list")
             if (landingCache.latest_objects_list)
                 != landingCache.latest_objects_list
           a(href="#" class="show_all_results pull-right")
-            strong See all results
+            strong(class="i18n" i18n-variable="Landing_All_Results" i18n-change="html") See all results
 
