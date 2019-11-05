@@ -4,10 +4,44 @@
       "Miu Răzvan"
     ],
     "last-updated": "2019-09-13",
-    "locale": "en",
-    "message-documentation": "Romanian translations"
+    "locale": "ro",
+    "message-documentation": "RO translations"
   },
-  
+
+  "App_Title": "Căutare și catalog global",
+  "App_Further_Info": "Conținutul acestui catalog a fost creat datorită abordării de date deschise a UE și contribuției multor organizații care fac parte din rețeaua SEE (Eionet).",
+  "App_Search_Placeholder": "Caută termen",
+
+  "App_Word(Results)": "Rezultate",
+  "App_Word(Of)": "din",
+  "App_Word(From)": "din",
+  "App_Word(Until)": "pană",
+  "App_Word(years)": "ani",
+  "App_Word(Exact)": "Exact:",
+  "App_Word(Count)": "Total",
+
+  "App_Sentence(Match all)": "Potriviți toate",
+  "App_Sentence(Match any)": "Potriviți oricare",
+
+  "Search_Current_Filters_Header_Text": "Filtre curente",
+  "Search_Reset_Filters_Link_Text": "Reseteaza filtre",
+  "Search_Archived_Content_Toggler_Text": "Include arhive ",
+  "Search_Display_As_Span_Text": "Afișează ca ",
+  "Search_Order_Span_Text": "Ordonează ",
+
+  "Option(Relevance)": "Relevanță",
+  "Option(Title a-z)": "Titlu a-z",
+  "Option(Oldest)": "Cel mai vechi",
+  "Option(Newest)": "Cel mai nou",
+
+  "Search_Download_TSV_Link_Text": "Descarcă TSV",
+  "Search_Download_CSV_Link_Text": "Descarcă CSV",
+
+  "Landing_H2(Title)": "Căutați imediat peste 20 de ani de cunoștințe de mediu de către SEE",
+  "Landing_H3(Documents)": "Documente",
+  "Landing_H3(Languages)": "Limbi",
+  "Landing_All_Results": "Vezi toate rezultatele",
+
   "Facet_Title(Topics)": "Subiecte",
   "Facet_Title(Countries)": "Țări",
   "Facet_Title(Regions/Places/Cities/Seas...)": "Regiuni/Locuri/Orașe/Mari...",
