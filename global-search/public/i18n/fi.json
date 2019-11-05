@@ -68,7 +68,7 @@
  "Facet_Sortby(Language)": "Kieli", 
  "Facet_Sortby(Format)": "Muoto", 
 
- "Tooltip(exact)": ""* Tarkka * -vaihtoehto antaa sinulle tulokset": " jotka sisältävät vain valitut arvot eikä mitään muuta. Tämä vaihtoehto voi antaa sinulle tarkempia tuloksia. Kokeile sitä selvittääksesi."", 
+ "Tooltip(exact)": "* Tarkka * -vaihtoehto antaa sinulle tulokset jotka sisältävät vain valitut arvot eikä mitään muuta. Tämä vaihtoehto voi antaa sinulle tarkempia tuloksia. Kokeile sitä selvittääksesi.", 
  "Tooltip(tabular)": "taulukkomuodossa", 
  "Tooltip(card)": "kortti-", 
  "Tooltip(list)": "lista", 

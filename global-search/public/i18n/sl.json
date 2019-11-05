@@ -9,7 +9,7 @@
   },
 
  "App_Title": "Globalno iskanje in katalog", 
- "App_Further_Info": ""Vsebina tega kataloga je nastala zaradi pristopa EU do odprtih podatkov in prispevka mnogih organizacij": " ki so del mreže EGP (Eionet)."", 
+ "App_Further_Info": "Vsebina tega kataloga je nastala zaradi pristopa EU do odprtih podatkov in prispevka mnogih organizacij ki so del mreže EGP (Eionet).", 
  "App_Search_Placeholder": "Iskalni izraz", 
 
  "App_Word(Results)": "Rezultati", 
@@ -68,7 +68,7 @@
  "Facet_Sortby(Language)": "Jezik", 
  "Facet_Sortby(Format)": "Oblika", 
 
- "Tooltip(exact)": ""Z možnostjo * Točno * boste dobili rezultate": " ki vsebujejo izključno izbrane vrednosti in nič drugega. Ta možnost vam bo dala natančnejše rezultate. Poskusite to ugotoviti."", 
+ "Tooltip(exact)": "Z možnostjo * Točno * boste dobili rezultate ki vsebujejo izključno izbrane vrednosti in nič drugega. Ta možnost vam bo dala natančnejše rezultate. Poskusite to ugotoviti.", 
  "Tooltip(tabular)": "tabelarno", 
  "Tooltip(card)": "kartica", 
  "Tooltip(list)": "seznam", 

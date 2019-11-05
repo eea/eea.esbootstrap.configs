@@ -51,7 +51,7 @@
  "Facet_Title(Publishing year)": "Publicatiejaar", 
  "Facet_Title(Time coverage)": "Tijd dekking", 
  "Facet_Title(Languages)": "talen", 
- "Facet_Title(Format)": ""Ontwerp": " stijl"", 
+ "Facet_Title(Format)": "Ontwerp stijl", 
  "Facet_Title(Reading time (minutes))": "Leestijd (minuten)", 
 
  "Facet_Search_for_topic": "Zoeken naar onderwerp", 
@@ -66,7 +66,7 @@
  "Facet_Sortby(Organisation)": "Organisatie", 
  "Facet_Sortby(Website)": "Website", 
  "Facet_Sortby(Language)": "Taal", 
- "Facet_Sortby(Format)": ""Ontwerp": " stijl"", 
+ "Facet_Sortby(Format)": "Ontwerp stijl", 
 
  "Tooltip(exact)": "De optie * Exact * geeft u resultaten die exclusief de geselecteerde waarden en niets anders bevatten. Deze optie geeft u mogelijk preciezere resultaten. Probeer het uit te vinden.", 
  "Tooltip(tabular)": "tabellarisch", 
@@ -88,7 +88,7 @@
  "Table_Header(Topics)": "Onderwerpen", 
  "Table_Header(Issued)": "Uitgegeven", 
  "Table_Header(Time coverage)": "Tijd dekking", 
- "Table_Header(Format)": ""Ontwerp": " stijl"", 
+ "Table_Header(Format)": "Ontwerp stijl", 
 
  "Facet_Topic_Item(Agriculture)": "landbouw", 
  "Facet_Topic_Item(Air pollution)": "Luchtvervuiling", 

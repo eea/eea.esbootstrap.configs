@@ -68,7 +68,7 @@
  "Facet_Sortby(Language)": "Keel", 
  "Facet_Sortby(Format)": "Vorming", 
 
- "Tooltip(exact)": ""Valik * Täpne * annab teile tulemused": " mis sisaldavad ainult valitud väärtusi ja mitte midagi muud. See valik võib anda täpsemaid tulemusi. Proovige seda teada saada."", 
+ "Tooltip(exact)": "Valik * Täpne * annab teile tulemused mis sisaldavad ainult valitud väärtusi ja mitte midagi muud. See valik võib anda täpsemaid tulemusi. Proovige seda teada saada.", 
  "Tooltip(tabular)": "tabelina", 
  "Tooltip(card)": "kaart", 
  "Tooltip(list)": "nimekiri", 

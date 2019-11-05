@@ -68,7 +68,7 @@
  "Facet_Sortby(Language)": "език", 
  "Facet_Sortby(Format)": "формат", 
 
- "Tooltip(exact)": "Опцията * Точно * ще ви даде резултати, които съдържат изключително избраните стойности и нищо друго. Тази опция може да ви даде по-точни резултати. Опитайте да разберете."", 
+ "Tooltip(exact)": "Опцията * Точно * ще ви даде резултати, които съдържат изключително избраните стойности и нищо друго. Тази опция може да ви даде по-точни резултати. Опитайте да разберете.", 
  "Tooltip(tabular)": "плосък", 
  "Tooltip(card)": "карта", 
  "Tooltip(list)": "списък", 
@@ -176,7 +176,7 @@
  "Facet_ReadingTime_Item(All)": "всичко", 
  "Facet_ReadingTime_Item(Short)": "Къс", 
  "Facet_ReadingTime_Item(Medium)": "среда", 
- "Facet_ReadingTime_Item(Large)": "Голям"'
+ "Facet_ReadingTime_Item(Large)": "Голям",
  "Facet_ReadingTime_Item(Unknown)": "неизвестен",
 
   "Facet_Language_Item(ar)": "العربية (ar)",

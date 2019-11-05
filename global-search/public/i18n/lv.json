@@ -68,7 +68,7 @@
  "Facet_Sortby(Language)": "Valoda", 
  "Facet_Sortby(Format)": "Formāts", 
  "": "", 
- "Tooltip(exact)": ""Opcija * Tieši * sniegs rezultātus": " kas satur tikai atlasītās vērtības un neko citu. Šī opcija var sniegt precīzākus rezultātus. Izmēģiniet to": " lai uzzinātu."", 
+ "Tooltip(exact)": "Opcija * Tieši * sniegs rezultātus kas satur tikai atlasītās vērtības un neko citu. Šī opcija var sniegt precīzākus rezultātus. Izmēģiniet to lai uzzinātu.", 
  "Tooltip(tabular)": "tabulas", 
  "Tooltip(card)": "karti", 
  "Tooltip(list)": "saraksts", 

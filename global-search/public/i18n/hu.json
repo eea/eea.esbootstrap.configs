@@ -13,7 +13,7 @@
  "App_Search_Placeholder": "Keresési kifejezés", 
 
  "App_Word(Results)": "Eredmények", 
- "App_Word(Of)": ""nak": "-nek"", 
+ "App_Word(Of)": "nak nek", 
  "App_Word(From)": "tól től", 
  "App_Word(Until)": "amíg", 
  "App_Word(years)": "évek", 
@@ -68,7 +68,7 @@
  "Facet_Sortby(Language)": "Nyelv", 
  "Facet_Sortby(Format)": "Formátum", 
 
- "Tooltip(exact)": ""A * Pontos * opció olyan eredményeket ad": " amelyek kizárólag a kiválasztott értékeket tartalmazzák": " és semmi mást. Ez az opció pontosabb eredményeket eredményezhet. Próbáld ki": " hogy megtudd."", 
+ "Tooltip(exact)": "A * Pontos * opció olyan eredményeket ad amelyek kizárólag a kiválasztott értékeket tartalmazzák és semmi mást. Ez az opció pontosabb eredményeket eredményezhet. Próbáld ki hogy megtudd.", 
  "Tooltip(tabular)": "táblázatos", 
  "Tooltip(card)": "kártya", 
  "Tooltip(list)": "lista", 

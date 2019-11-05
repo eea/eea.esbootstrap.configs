@@ -9,7 +9,7 @@
   },
 
  "App_Title": "Global søgning og katalog", 
- "App_Further_Info": ""Indholdet af dette katalog er oprettet takket være EU's åbne datatilnærmelse og bidrag fra mange organisationer": " der er en del af EEA's netværk (Eionet)."", 
+ "App_Further_Info": "Indholdet af dette katalog er oprettet takket være EU's åbne datatilnærmelse og bidrag fra mange organisationer der er en del af EEA's netværk (Eionet).", 
  "App_Search_Placeholder": "Søgeterm", 
 
  "App_Word(Results)": "Resultater", 
@@ -68,7 +68,7 @@
  "Facet_Sortby(Language)": "Sprog", 
  "Facet_Sortby(Format)": "Format", 
 
- "Tooltip(exact)": ""Indstillingen * Eksakt * giver dig resultater": " der eksklusivt indeholder de valgte værdier og intet andet. Denne mulighed giver dig muligvis mere præcise resultater. Prøv det for at finde ud af det."", 
+ "Tooltip(exact)": "Indstillingen * Eksakt * giver dig resultater der eksklusivt indeholder de valgte værdier og intet andet. Denne mulighed giver dig muligvis mere præcise resultater. Prøv det for at finde ud af det.", 
  "Tooltip(tabular)": "tabelform", 
  "Tooltip(card)": "kort", 
  "Tooltip(list)": "liste", 

@@ -9,7 +9,7 @@
   },
 
  "App_Title": "Visuotinė paieška ir katalogas", 
- "App_Further_Info": ""Šio katalogo turinys buvo sukurtas dėl atvirų ES duomenų požiūrio ir daugelio organizacijų": " priklausančių EEE tinklui (Eionet)": " indėlio."", 
+ "App_Further_Info": "Šio katalogo turinys buvo sukurtas dėl atvirų ES duomenų požiūrio ir daugelio organizacijų priklausančių EEE tinklui (Eionet) indėlio.", 
  "App_Search_Placeholder": "Paieškos terminas", 
 
  "App_Word(Results)": "Rezultatai", 
@@ -68,7 +68,7 @@
  "Facet_Sortby(Language)": "Kalba", 
  "Facet_Sortby(Format)": "Formatas", 
 
- "Tooltip(exact)": ""Pasirinkę * Tiksli *": " gausite rezultatus": " kuriuose aiškiai nurodytos pasirinktos vertės ir nieko daugiau. Ši parinktis gali suteikti tikslesnių rezultatų. Pabandykite tai sužinoti."", 
+ "Tooltip(exact)": "Pasirinkę * Tiksli * gausite rezultatus kuriuose aiškiai nurodytos pasirinktos vertės ir nieko daugiau. Ši parinktis gali suteikti tikslesnių rezultatų. Pabandykite tai sužinoti.", 
  "Tooltip(tabular)": "lentelės", 
  "Tooltip(card)": "kortelė", 
  "Tooltip(list)": "sąrašą", 

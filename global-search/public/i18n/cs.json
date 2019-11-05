@@ -9,7 +9,7 @@
   },
 
  "App_Title": "Globální vyhledávání a katalog", 
- "App_Further_Info": ""Obsah tohoto katalogu byl vytvořen díky přístupu otevřených údajů EU a příspěvku mnoha organizací": " které jsou součástí sítě EHP (Eionet)."", 
+ "App_Further_Info": "Obsah tohoto katalogu byl vytvořen díky přístupu otevřených údajů EU a příspěvku mnoha organizací které jsou součástí sítě EHP (Eionet).", 
  "App_Search_Placeholder": "Hledaný výraz", 
 
  "App_Word(Results)": "Výsledek", 
@@ -68,7 +68,7 @@
  "Facet_Sortby(Language)": "Jazyk", 
  "Facet_Sortby(Format)": "Formát", 
 
- "Tooltip(exact)": ""Možnost * Přesná * vám poskytne výsledky": " které obsahují výhradně vybrané hodnoty a nic jiného. Tato možnost vám může poskytnout přesnější výsledky. Zkuste to zjistit."", 
+ "Tooltip(exact)": "Možnost * Přesná * vám poskytne výsledky které obsahují výhradně vybrané hodnoty a nic jiného. Tato možnost vám může poskytnout přesnější výsledky. Zkuste to zjistit.", 
  "Tooltip(tabular)": "tabelární", 
  "Tooltip(card)": "karta", 
  "Tooltip(list)": "seznam", 

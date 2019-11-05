@@ -17,7 +17,7 @@
  "App_Word(From)": "itibaren", 
  "App_Word(Until)": "a kadar", 
  "App_Word(years)": "yıl", 
- "App_Word(Exact)": ""Tam": " kesin:"", 
+ "App_Word(Exact)": "Tam kesin:", 
  "App_Word(Count)": "Miktar", 
 
  "App_Sentence(Match all)": "Tümünü eşleştir", 
@@ -177,7 +177,6 @@
  "Facet_ReadingTime_Item(Short)": "Kısa", 
  "Facet_ReadingTime_Item(Medium)": "Orta", 
  "Facet_ReadingTime_Item(Large)": "Büyük", 
- "Facet_ReadingTime_Item(Unknown)": "Bilinmeyen" 
  "Facet_ReadingTime_Item(Unknown)": "Bilinmeyen",
 
   "Facet_Language_Item(ar)": "العربية (ar)",
