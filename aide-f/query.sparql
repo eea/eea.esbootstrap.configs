@@ -75,6 +75,7 @@ WHERE {
   ?namespaces dd:inCountry ?cntry_URI .
   ?cntry_URI rdfs:label ?CountryOrTerritory .
 
+  FILTER (?CountryOrTerritory != "Czech Republic")
   FILTER (?AggregationType_URI = <<AggregationType_URI>>)
   FILTER (xsd:integer(year(xsd:date(?BeginPosition))) = <ReportingYear>)
 }
