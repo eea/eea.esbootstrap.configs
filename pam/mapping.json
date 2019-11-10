@@ -18,13 +18,13 @@
         "type" : "text",
         "analyzer" : "coma"
     },
-    "Status_of_implementation_clean"  : {
+    "Status_of_implementation"  : {
         "type" : "text",
         "analyzer" : "none"
     },
     "Policy_impacting_EU_ETS__ESD_or_LULUCF_emissions" : {
         "type" : "text",
-        "analyzer" : "coma"
+        "analyzer" : "semicolon"
     },
     "Sector_s__affected"  : {
         "type" : "text",
@@ -44,27 +44,27 @@
         "type" : "text",
         "analyzer" : "coma"
     },
-    "Entities_responsible_for_implementing_the_policy__type__clean"  : {
+    "Entities_responsible_for_implementing_the_policy__type_"  : {
         "type" : "text",
         "analyzer" : "coma"
     },
-    "Implementation_period_start_clean"  : {
+    "Implementation_period_start"  : {
         "type" : "text",
         "analyzer" : "none"
     },
-    "Is_the_policy_or_measure_related_to_a_Union_policy__clean"  : {
+    "Is_the_policy_or_measure_related_to_a_Union_policy_"  : {
         "type" : "text",
         "analyzer" : "none"
     },
-    "Union_policy_lookup_only4facets_clean" : {
+    "Union_policies_lookup_only4facets" : {
         "type" : "text",
         "analyzer" : "semicolon"
     },
     "GHG_s__affected"  : {
         "type" : "text",
-        "analyzer" : "coma"
+        "analyzer" : "semicolon"
     },
-    "Projection_scenario_in_which_the_policy_or_measure_is_included_clean"  : {
+    "Projection_scenario_in_which_the_policy_or_measure_is_included"  : {
         "type" : "text",
         "analyzer" : "none"
     },
