@@ -5,7 +5,8 @@
     "elastic": {
         "index": "esbootstrapdata-efdb_2019_09",
         "type": "resources",
-        "field_base":""
+        "field_base":"",
+        "default_appalias": "latest"
     },
     "external_templates": {
         "local_path": "/external_templates",
@@ -18,7 +19,7 @@
     "layout_vars": {
         "head_title": "EMEP/EEA air pollutant emission inventory",
         "app_id": "efdb",
-        "skip_resources_bundling": false,
+        "skip_resources_bundling": true,
         "skip_external_template_styles": false,
         "override_searchserver_resources": false,
         "css_resources": {
@@ -54,10 +55,19 @@
         "dataprovencance_info_url": "https://www.eea.europa.eu/publications/emep-eea-guidebook-2019",
         "further_info": ""
     },
-    "indexFile": {
-        "file": "2019_Flatfile_EFDB_for_dataviewer_September_2019.csv",
-        "delimiter": ",",
-        "id_type": "field",
-        "id_field": "ID"
+    "source": {
+        "_type": "file",
+        "type": "url",
+        "autoswitch": "true",
+        "configuration": {
+            "type": "csv",
+            "bulk_size": 2000,
+            "_file": "2019_Flatfile_EFDB_for_dataviewer_September_2019.csv",
+            "url": "http://192.168.1.21:3001/efdb.csv",
+            "encoding": "utf-8",
+            "delimiter": ",",
+            "id_type": "field",
+            "id_field": "ID"
+        }
     }
 }

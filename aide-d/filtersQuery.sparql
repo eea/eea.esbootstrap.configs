@@ -19,5 +19,8 @@ WHERE {{
 }
 ?envelope rod:released ?released .
 ?envelope rdf:type rod:Delivery .
+FILTER (?envelope = <http://cdr.eionet.europa.eu/de/eu/aqd/d/colxtanlw/envxabezw>)
+#envelope : http://cdr.eionet.europa.eu/de/eu/aqd/d/colxtanlw/envxabezw
+
 }
 ORDER BY ?Country
