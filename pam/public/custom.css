@@ -32,14 +32,14 @@ a.details_link:visited {
     max-width: 200px;
     display: block;
     position: relative;
-    max-height: 60px;
+    max-height: 36px;
     overflow: hidden;
     z-index: 1;
 }
 .results_text:after {
    content: " ";
     position: absolute;
-    top: 46px;
+    top: 22px;
     left: 0;
     height: 15px;
     width: 100%;

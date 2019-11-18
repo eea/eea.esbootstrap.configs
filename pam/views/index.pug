@@ -28,8 +28,6 @@ block content
     p!= site_description
     .facet-view-simple.pam
 
-    div
-        span <a href="/pam_2018.xlsx">Download data</a> in excel format
     div(class="visualization-info")
         h3 Data sources
         a(href=dataprovencance_info_url)= dataprovencance_info_text
@@ -38,10 +36,16 @@ block content
         h3 Related content
         ul
          li
-          a(href="https://www.eea.europa.eu/publications/national-policies-and-measures-on-climate-change-mitigation")= "Publication - National policies and measures on climate change mitigation in Europe in 2017"
+          a(href="#")= "Briefing - More national climate actions to take place, but how effective are existing measures?"
+         li
+          a(href="https://www.eionet.europa.eu/etcs/etc-cme/products/etc-cme-reports/etc-cme-report-5-2019-overview-of-reported-national-policies-and-measures-on-climate-change-mitigation-in-europe-in-2019")= "Publication - Overview of reported national policies and measures on climate change mitigation in Europe in 2019"
+         li
+          a(href="https://www.eea.europa.eu/data-and-maps/data/greenhouse-gas-emission-projections-for-6")= "Data -Member States' greenhouse gas (GHG) emission projections"
          li
           a(href="https://www.eea.europa.eu/themes/climate/national-policies-and-measures/tracking-climate-policies-in-european")= "Briefing - Tracking climate policies in European Union countries"
          li
           a(href="https://www.eea.europa.eu/themes/climate/national-policies-and-measures/using-member-states-information-on")= "Briefing - Using Member States' information on policies and measures to support policymaking: energy efficiency in buildings"
+         li
+          a(href="https://www.eea.europa.eu/publications/national-policies-and-measures-on-climate-change-mitigation")= "Publication - National policies and measures on climate change mitigation in Europe in 2017"
 
-    div(class="i18n" i18n-variable="Further info" i18n-change="html")!= further_info
+    div!= further_info
