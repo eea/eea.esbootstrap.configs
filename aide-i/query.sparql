@@ -82,5 +82,5 @@ WHERE {{
   ?obliURI rdfs:label ?Obligation .
 
   #FILTER (?envelope = <http://cdr.eionet.europa.eu/bg/eu/aqd/i/envvnkgpw>)
-  #FILTER (?envelope = <<envelope>>)
+  FILTER (?envelope = <<envelope>>)
 }}

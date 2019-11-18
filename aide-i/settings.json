@@ -5,7 +5,8 @@
     "elastic": {
         "index": "esbootstrapdata-aide-i",
         "type": "resources",
-        "field_base":""
+        "field_base":"",
+        "default_appalias": "latest"
     }, 
     "external_templates": {
         "local_path": "/external_templates",
@@ -18,7 +19,7 @@
     "layout_vars": {
         "head_title": "AQ Source Apportionments (I)",
         "app_id": "aide-i",
-        "skip_resources_bundling": false,
+        "skip_resources_bundling": true,
         "skip_external_template_styles": false,
         "override_searchserver_resources": false,
         "css_resources": {

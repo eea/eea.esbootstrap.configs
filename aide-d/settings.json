@@ -5,7 +5,8 @@
     "elastic": {
         "index": "esbootstrapdata-aide-d",
         "type": "resources",
-        "field_base":""
+        "field_base":"",
+        "default_appalias": "latest"
     },
     "external_templates": {
         "local_path": "/external_templates",
@@ -18,7 +19,7 @@
     "layout_vars": {
         "head_title": "Assessment Methods (D)",
         "app_id": "aide-d",
-        "skip_resources_bundling": false,
+        "skip_resources_bundling": true,
         "skip_external_template_styles": false,
         "override_searchserver_resources": false,
         "css_resources": {
@@ -54,5 +55,13 @@
         "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/data/aqereporting-1",
         "further_info": ""
     },
-    "endpoint": "https://cr.eionet.europa.eu/sparql"
+    "source": {
+        "type": "sparql",
+        "autoswitch": "true",
+        "configuration": {
+            "endpoint": "https://cr.eionet.europa.eu/sparql",
+            "bulk_size": 1000
+        }
+    }
+
 }
