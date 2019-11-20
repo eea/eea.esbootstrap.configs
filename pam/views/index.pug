@@ -30,22 +30,27 @@ block content
 
     div(class="visualization-info")
         h3 Data sources
-        a(href=dataprovencance_info_url)= dataprovencance_info_text
-        span  provided by
-        a(href="https://www.eea.europa.eu")  European Environment Agency (EEA)
+        span <a href='http://www.eea.europa.eu/data-and-maps/data/climate-change-mitigation-policies-and-measures-1'> Climate change mitigation policies and measures</a> reported by the EU Member States under the EU Greenhouse Gas Monitoring Mechanism Regulation (MMR) 
+        <br/>
+        span (<a href='https://rod.eionet.europa.eu/obligations/696/deliveries'>https://rod.eionet.europa.eu/obligations/696/deliveries</a>) have been quality checked and adjusted if appropriate by the European Topic Centre Climate Change Mitigation and Energy (ETC/CME).
+
+        <br/>
+        <br/>
+        div!= further_info
         h3 Related content
         ul
          li
-          a(href="#")= "Briefing - More national climate actions to take place, but how effective are existing measures?"
+          a(href="https://www.eea.europa.eu/themes/climate/national-policies-and-measures/policies-and-measures")= "EEA thematic page for climate policies and measures"
          li
-          a(href="https://www.eionet.europa.eu/etcs/etc-cme/products/etc-cme-reports/etc-cme-report-5-2019-overview-of-reported-national-policies-and-measures-on-climate-change-mitigation-in-europe-in-2019")= "Publication - Overview of reported national policies and measures on climate change mitigation in Europe in 2019"
+          a(href="https://www.eea.europa.eu/themes/climate/national-policies-and-measures/more-national-climate-policies-expected")= "Briefing 2019 - More national climate policies expected, but how effective are the existing ones?"
          li
-          a(href="https://www.eea.europa.eu/data-and-maps/data/greenhouse-gas-emission-projections-for-6")= "Data -Member States' greenhouse gas (GHG) emission projections"
+          a(href="url:https://www.eionet.europa.eu/etcs/etc-cme/products/etc-cme-reports/etc-cme-report-5-2019-overview-of-reported-national-policies-and-measures-on-climate-change-mitigation-in-europe-in-2019")= "Report 2019 - Overview of reported national policies and measures on climate change mitigation in Europe in 2019"
          li
-          a(href="https://www.eea.europa.eu/themes/climate/national-policies-and-measures/tracking-climate-policies-in-european")= "Briefing - Tracking climate policies in European Union countries"
+          a(href="https://www.eea.europa.eu/data-and-maps/data/greenhouse-gas-emission-projections-for-6")= "Data 2019 -Member States' greenhouse gas (GHG) emission projections"
          li
-          a(href="https://www.eea.europa.eu/themes/climate/national-policies-and-measures/using-member-states-information-on")= "Briefing - Using Member States' information on policies and measures to support policymaking: energy efficiency in buildings"
+          a(href="https://www.eea.europa.eu/themes/climate/national-policies-and-measures/tracking-climate-policies-in-european")= "Briefing 2018 - Tracking climate policies in European Union countries"
          li
-          a(href="https://www.eea.europa.eu/publications/national-policies-and-measures-on-climate-change-mitigation")= "Publication - National policies and measures on climate change mitigation in Europe in 2017"
+          a(href="https://www.eea.europa.eu/themes/climate/national-policies-and-measures/using-member-states-information-on")= "Briefing 2018 - Using Member States' information on policies and measures to support policymaking: energy efficiency in buildings"
+         li
+          a(href="url:https://www.eea.europa.eu/publications/national-policies-and-measures-on-climate-change-mitigation")= "Report 2018 - National policies and measures on climate change mitigation in Europe in 2017"
 
-    div!= further_info
