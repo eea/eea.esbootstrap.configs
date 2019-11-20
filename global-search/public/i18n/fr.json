@@ -22,6 +22,10 @@
 
  "App_Sentence(Match all)": "Match tous", 
  "App_Sentence(Match any)": "Match n'importe", 
+ "App_Sentence(Match: all)": "(Match tous)",
+ "App_Sentence(Match: any)": "(Match n'importe)",
+ "App_Sentence(Match: all, exact)": "(Match tous, exact)",
+ "App_Sentence(Match: any, exact)": "(Match n'importe, exact)",
 
  "Search_Current_Filters_Header_Text": "Filtres actuels", 
  "Search_Reset_Filters_Link_Text": "Réinitialiser les filtres", 

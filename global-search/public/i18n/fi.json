@@ -22,6 +22,10 @@
 
  "App_Sentence(Match all)": "Vastaa kaikkia", 
  "App_Sentence(Match any)": "Vastaa mitä tahansa", 
+ "App_Sentence(Match: all)": "(Vastaa kaikkia)",
+ "App_Sentence(Match: any)": "(Vastaa mitä tahansa)",
+ "App_Sentence(Match: all, exact)": "(Vastaa kaikkia, tarkka)",
+ "App_Sentence(Match: any, exact)": "(Vastaa mitä tahansa, tarkka)",
 
  "Search_Current_Filters_Header_Text": "Nykyiset suodattimet", 
  "Search_Reset_Filters_Link_Text": "Nollaa suodattimet", 

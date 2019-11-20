@@ -22,6 +22,10 @@
 
  "App_Sentence(Match all)": "Match alles", 
  "App_Sentence(Match any)": "Match elke", 
+ "App_Sentence(Match: all)": "(Match alles)",
+ "App_Sentence(Match: any)": "(Match elke)",
+ "App_Sentence(Match: all, exact)": "(Match alles, exact)",
+ "App_Sentence(Match: any, exact)": "(Match elke, exact)",
 
  "Search_Current_Filters_Header_Text": "Huidige filters", 
  "Search_Reset_Filters_Link_Text": "Reset filters", 

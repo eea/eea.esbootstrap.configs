@@ -22,6 +22,10 @@
 
  "App_Sentence(Match all)": "Match alle", 
  "App_Sentence(Match any)": "Match hvilken som helst", 
+ "App_Sentence(Match: all)": "(Match alle)",
+ "App_Sentence(Match: any)": "(Match hvilken som helst)",
+ "App_Sentence(Match: all, exact)": "(Match alle, nøyaktig)",
+ "App_Sentence(Match: any, exact)": "(Match hvilken som helst, nøyaktig)",
 
  "Search_Current_Filters_Header_Text": "Gjeldende filtre", 
  "Search_Reset_Filters_Link_Text": "Tilbakestill filtre", 

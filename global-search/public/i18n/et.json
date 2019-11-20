@@ -22,6 +22,10 @@
 
  "App_Sentence(Match all)": "Sobita kõik", 
  "App_Sentence(Match any)": "Sobitage mis tahes", 
+ "App_Sentence(Match: all)": "(Sobita kõik)",
+ "App_Sentence(Match: any)": "(Sobitage mis tahes)",
+ "App_Sentence(Match: all, exact)": "(Sobita kõik, täpselt)",
+ "App_Sentence(Match: any, exact)": "(Sobitage mis tahes, täpselt)",
 
  "Search_Current_Filters_Header_Text": "Praegused filtrid", 
  "Search_Reset_Filters_Link_Text": "Lähtestage filtrid", 

@@ -22,6 +22,10 @@
 
  "App_Sentence(Match all)": "Matcha alla", 
  "App_Sentence(Match any)": "Matcha vilken som helst", 
+ "App_Sentence(Match: all)": "(Matcha alla)",
+ "App_Sentence(Match: any)": "(Matcha vilken som helst)",
+ "App_Sentence(Match: all, exact)": "(Matcha alla, exakt)",
+ "App_Sentence(Match: any, exact)": "(Matcha vilken som helst, exakt)",
 
  "Search_Current_Filters_Header_Text": "Aktuella filter", 
  "Search_Reset_Filters_Link_Text": "Återställ filter", 

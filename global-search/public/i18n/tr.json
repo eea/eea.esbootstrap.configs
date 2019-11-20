@@ -22,6 +22,10 @@
 
  "App_Sentence(Match all)": "Tümünü eşleştir", 
  "App_Sentence(Match any)": "Herhangi birini eşleştir", 
+ "App_Sentence(Match: all)": "(Tümünü eşleştir)",
+ "App_Sentence(Match: any)": "(Herhangi birini eşleştir)",
+ "App_Sentence(Match: all, exact)": "(Tümünü eşleştir, tam kesin)",
+ "App_Sentence(Match: any, exact)": "(Herhangi birini eşleştir, tam kesin)",
 
  "Search_Current_Filters_Header_Text": "Geçerli filtreler", 
  "Search_Reset_Filters_Link_Text": "Filtreleri sıfırla", 

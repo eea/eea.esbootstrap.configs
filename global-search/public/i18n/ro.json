@@ -22,6 +22,10 @@
 
   "App_Sentence(Match all)": "Potriviți toate",
   "App_Sentence(Match any)": "Potriviți oricare",
+  "App_Sentence(Match: all)": "(Potriviți toate)",
+  "App_Sentence(Match: any)": "(Potriviți oricare)",
+  "App_Sentence(Match: all, exact)": "(Potriviți toate, exact)",
+  "App_Sentence(Match: any, exact)": "(Potriviți oricare, exact)",
 
   "Search_Current_Filters_Header_Text": "Filtre curente",
   "Search_Reset_Filters_Link_Text": "Reseteaza filtre",

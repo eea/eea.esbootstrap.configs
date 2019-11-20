@@ -22,6 +22,10 @@
 
  "App_Sentence(Match all)": "Corresponder a todos", 
  "App_Sentence(Match any)": "Corresponder a qualquer", 
+ "App_Sentence(Match: all)": "(Corresponder a todos)",
+ "App_Sentence(Match: any)": "(Corresponder a qualquer)",
+ "App_Sentence(Match: all, exact)": "(Corresponder a todos, exato)",
+ "App_Sentence(Match: any, exact)": "(Corresponder a qualquer, exato)",
 
  "Search_Current_Filters_Header_Text": "Filtros atuais", 
  "Search_Reset_Filters_Link_Text": "Redefinir Filtros", 

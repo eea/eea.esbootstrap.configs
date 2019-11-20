@@ -22,6 +22,10 @@
 
  "App_Sentence(Match all)": "Passa alla", 
  "App_Sentence(Match any)": "Passa hvaða", 
+ "App_Sentence(Match: all)": "(Passa alla)",
+ "App_Sentence(Match: any)": "(Passa hvaða)",
+ "App_Sentence(Match: all, exact)": "(Passa alla, nákvæmlega)",
+ "App_Sentence(Match: any, exact)": "(Passa hvaða, nákvæmlega)",
 
  "Search_Current_Filters_Header_Text": "Núverandi síur", 
  "Search_Reset_Filters_Link_Text": "Núllstilla síur", 

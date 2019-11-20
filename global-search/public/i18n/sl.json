@@ -22,6 +22,10 @@
 
  "App_Sentence(Match all)": "Ujemite vse", 
  "App_Sentence(Match any)": "Ujemite katero koli", 
+ "App_Sentence(Match: all)": "(Ujemite vse)",
+ "App_Sentence(Match: any)": "(Ujemite katero koli)",
+ "App_Sentence(Match: all, exact)": "(Ujemite vse, točno)",
+ "App_Sentence(Match: any, exact)": "(Ujemite katero koli, točno)",
 
  "Search_Current_Filters_Header_Text": "Trenutni filtri", 
  "Search_Reset_Filters_Link_Text": "Ponastavite filtre", 

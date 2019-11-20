@@ -22,6 +22,10 @@
 
  "App_Sentence(Match all)": "Unir todos", 
  "App_Sentence(Match any)": "Coincidir con cualquiera", 
+ "App_Sentence(Match: all)": "(Unir todos)",
+ "App_Sentence(Match: any)": "(Coincidir con cualquiera)",
+ "App_Sentence(Match: all, exact)": "(Unir todos, exacto)",
+ "App_Sentence(Match: any, exact)": "(Coincidir con cualquiera, exacto)",
 
  "Search_Current_Filters_Header_Text": "Filtros actuales", 
  "Search_Reset_Filters_Link_Text": "Restablecer filtros", 

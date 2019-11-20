@@ -22,6 +22,10 @@
 
  "App_Sentence(Match all)": "Suderinti visus", 
  "App_Sentence(Match any)": "Suderinkite bet kurį", 
+ "App_Sentence(Match: all)": "(Suderinti visus)",
+ "App_Sentence(Match: any)": "(Suderinkite bet kurį)",
+ "App_Sentence(Match: all, exact)": "(Suderinti visus, tikslus)",
+ "App_Sentence(Match: any, exact)": "(Suderinkite bet kurį, tikslus)",
 
  "Search_Current_Filters_Header_Text": "Dabartiniai filtrai", 
  "Search_Reset_Filters_Link_Text": "Iš naujo nustatyti filtrus", 

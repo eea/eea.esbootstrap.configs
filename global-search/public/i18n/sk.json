@@ -22,6 +22,10 @@
 
  "App_Sentence(Match all)": "Zodpovedajú všetkým", 
  "App_Sentence(Match any)": "Zápas ľubovoľný", 
+ "App_Sentence(Match: all)": "(Zodpovedajú všetkým)",
+ "App_Sentence(Match: any)": "(Zápas ľubovoľný)",
+ "App_Sentence(Match: all, exact)": "(Zodpovedajú všetkým, presné)",
+ "App_Sentence(Match: any, exact)": "(Zápas ľubovoľný, presné)",
 
  "Search_Current_Filters_Header_Text": "Aktuálne filtre", 
  "Search_Reset_Filters_Link_Text": "Resetujte filtre", 

@@ -22,6 +22,10 @@
 
  "App_Sentence(Match all)": "Minden egyezés", 
  "App_Sentence(Match any)": "Bármelyik", 
+ "App_Sentence(Match: all)": "(Minden egyezés)",
+ "App_Sentence(Match: any)": "(Bármelyik)",
+ "App_Sentence(Match: all, exact)": "(Minden egyezés, pontos)",
+ "App_Sentence(Match: any, exact)": "(Bármelyik, pontos)",
 
  "Search_Current_Filters_Header_Text": "Aktuális szűrők", 
  "Search_Reset_Filters_Link_Text": "Állítsa vissza a szűrőket", 

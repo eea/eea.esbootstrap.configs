@@ -22,6 +22,10 @@
 
  "App_Sentence(Match all)": "Abbina tutto", 
  "App_Sentence(Match any)": "Abbina qualsiasi", 
+ "App_Sentence(Match: all)": "(Abbina tutto)",
+ "App_Sentence(Match: any)": "(Abbina qualsiasi)",
+ "App_Sentence(Match: all, exact)": "(Abbina tutto, esatto)",
+ "App_Sentence(Match: any, exact)": "(Abbina qualsiasi, esatto)",
 
  "Search_Current_Filters_Header_Text": "Filtri correnti", 
  "Search_Reset_Filters_Link_Text": "Ripristina filtri", 

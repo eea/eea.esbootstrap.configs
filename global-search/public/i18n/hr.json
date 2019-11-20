@@ -22,6 +22,10 @@
 
  "App_Sentence(Match all)": "Odgovaraju svima", 
  "App_Sentence(Match any)": "Odgovarajte bilo kojem", 
+ "App_Sentence(Match: all)": "(Odgovaraju svima)",
+ "App_Sentence(Match: any)": "(Odgovarajte bilo kojem)",
+ "App_Sentence(Match: all, exact)": "(Odgovaraju svima, točno)",
+ "App_Sentence(Match: any, exact)": "(Odgovarajte bilo kojem, točno)",
 
  "Search_Current_Filters_Header_Text": "Trenutni filtri", 
  "Search_Reset_Filters_Link_Text": "Poništi filtre", 
