@@ -3,7 +3,7 @@
         "port": 3000
     },
     "elastic": {
-        "index": "esbootstrapdata-pam",
+        "index": "esbootstrapdata-pam-withrest",
         "type": "resources",
         "field_base":"",
         "default_appalias": "latest",
@@ -57,7 +57,7 @@
         "autoswitch": "true",
         "configuration": {
             "type": "json",
-            "bulksize": 500,
+            "bulksize": 3000,
             "url": "https://discomap.eea.europa.eu/App/SqlEndpoint/query?sql=--%20Write%20your%20SQL-query%20here%0A--%20For%20more%20information%20in%20SQL%20go%20here%20https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fsql%2Ft-sql%2Fqueries%2Fselect-examples-transact-sql%3Fview%3Dsql-server-2017%0ASelect%20%20*%20from%20%5BGHGPAMS%5D.%5Bv2r1%5D.%5BPAMs_Viewer_Flat_file_elasticsearch%5D",
             "counturl": "http://discomap.eea.europa.eu/App/SqlEndpoint/query?sql=Select%20count(*)%20total%20from%20%5BGHGPAMS%5D.%5Bv2r1%5D.%5BPAMs_Viewer_Flat_file_elasticsearch%5D",
             "format": "json",
