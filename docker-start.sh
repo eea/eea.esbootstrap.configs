@@ -19,5 +19,6 @@ if [[ "${DEV_ENV:-false}" == "true" ]] ; then
     chmod -R 775 /code/config/*
 else
     #if production mode, use the configs that are inside the image
+    rm -rf /code/config/*
     cp /config -R /code/
 fi
