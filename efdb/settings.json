@@ -3,10 +3,11 @@
         "port": 3000
     },
     "elastic": {
-        "index": "esbootstrapdata-efdb_2019_09",
+        "index": "esbootstrapdata-efdb",
         "type": "resources",
         "field_base":"",
-        "default_appalias": "latest"
+        "default_appalias": "prod",
+        "increment_threshold": 1
     },
     "external_templates": {
         "local_path": "/external_templates",
@@ -56,14 +57,12 @@
         "further_info": ""
     },
     "source": {
-        "_type": "file",
-        "type": "url",
+        "type": "file",
         "autoswitch": "true",
         "configuration": {
             "type": "csv",
-            "bulk_size": 2000,
-            "_file": "2019_Flatfile_EFDB_for_dataviewer_September_2019.csv",
-            "url": "http://192.168.1.21:3001/efdb.csv",
+            "bulksize": 2000,
+            "file": "2019_Flatfile_EFDB_for_dataviewer_November_2019.csv",
             "encoding": "utf-8",
             "delimiter": ",",
             "id_type": "field",
