@@ -244,8 +244,7 @@
                 "autocomplete_placeholder": "Search for topic",
                 "empty_message": "No topics to show",
                 "short_name": "Topic",
-                "facet_display_options": ["sort", "checkbox"],
-                "default_values": {"operator": "or", "values":["Agriculture"]}
+                "facet_display_options": ["sort", "checkbox"]
             },
             "card": {
                 "field": "topics",
@@ -840,7 +839,7 @@
                 "operator": "OR",
                 "short_name": "Language",
                 "facet_display_options": ["sort", "checkbox"],
-                "default_values": {"operator": "or", "values":["en", "bg"]}
+                "default_values": {"operator": "or", "values":["en"]}
             }
         },
         {
