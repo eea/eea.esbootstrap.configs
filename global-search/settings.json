@@ -4,7 +4,10 @@
     },
     "elastic": {
         "type": "resource",
-        "enableValuesCounting": true
+        "enableValuesCounting": true,
+        "default_appalias": "latest",
+        "increment_threshold": 2
+
     },
     "translation": {
         "default_language": "en",
@@ -210,5 +213,28 @@
             }
         ]
     },
-    "endpoint": "https://semantic.eea.europa.eu/sparql"
+    "endpoint": "https://semantic.eea.europa.eu/sparql",
+    "API":{
+        "token": "default"
+    },
+    "source": {
+        "type": "rdfriver",
+        "autoswitch": "true",
+        "configuration": {
+            "endpoint": "https://semantic.eea.europa.eu/sparql",
+            "river_configs": [
+                {
+                    "id": "eea_organisations",
+                    "cluster_name": "EEA Website (www.eea.europa.eu)",
+                    "config_file": "riverconfig_organisations.json"
+                },
+                {
+                    "id": "eea_messages",
+                    "cluster_name": "EEA Website (www.eea.europa.eu)",
+                    "config_file": "riverconfig_messages.json"
+                }
+            ]
+        }
+    }
+
 }
