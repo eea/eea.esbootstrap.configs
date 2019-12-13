@@ -1,0 +1,23 @@
+{
+  "extend": "riverconfig_base.json",
+
+  "normObj": {
+    "https://climate-adapt.eea.europa.eu/portal_workflow/cca_webpages_workflow/states/published": "published",
+    "eea.climateadapt.interfaces.ICCACountry": "Country profile"
+  },
+  "normProp": {
+    "http://purl.org/dc/terms/issued": ["issued", "year","time_coverage"]
+  },
+
+  "normMissing": {
+    "topic": "Climate change adaptation",
+    "readingTime" : -1,
+    "organisation": "unknown"
+  },
+
+  "syncConditions": [
+    "{ ?resource a <https://climate-adapt.eea.europa.eu/portal_types/collective.cover.content#collectivecovercontent> }"
+  ],
+  "graphSyncConditions": ["?resource <http://www.eea.europa.eu/ontologies.rdf#objectProvides> ?op .FILTER (?op = 'eea.climateadapt.interfaces.ICCACountry')"]
+
+}

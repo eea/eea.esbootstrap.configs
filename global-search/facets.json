@@ -972,17 +972,17 @@
                 "type": "aggregation_options",
                 "groups": [
                         {
-                            "label": "Short",
+                            "label": "Short (<5 minutes)",
                             "from": 0,
                             "to": 4.9999
                         },
                         {
-                            "label": "Medium",
+                            "label": "Medium (5-25 minutes)",
                             "from": 5,
                             "to": 24.9999
                         },
                         {
-                            "label": "Large",
+                            "label": "Large (25+ minutes)",
                             "from": 25
                         },
                         {

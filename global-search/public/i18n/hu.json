@@ -178,9 +178,9 @@
  "Facet_Spatial_Item(Uzbekistan)": "Üzbegisztán", 
 
  "Facet_ReadingTime_Item(All)": "Minden", 
- "Facet_ReadingTime_Item(Short)": "Rövid", 
- "Facet_ReadingTime_Item(Medium)": "Közepes", 
- "Facet_ReadingTime_Item(Large)": "Nagy", 
+ "Facet_ReadingTime_Item(Short (<5 minutes))": "Rövid (<5 perc)",
+ "Facet_ReadingTime_Item(Medium (5-25 minutes))": "Közepes (5-25 perc)",
+ "Facet_ReadingTime_Item(Large (25+ minutes))": "Nagy (25+ perc)",
  "Facet_ReadingTime_Item(Unknown)": "Ismeretlen",
 
   "Facet_Language_Item(ar)": "العربية (ar)",

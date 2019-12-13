@@ -178,9 +178,9 @@
  "Facet_Spatial_Item(Uzbekistan)": "Úsbekistan", 
 
  "Facet_ReadingTime_Item(All)": "Allt", 
- "Facet_ReadingTime_Item(Short)": "Stutt", 
- "Facet_ReadingTime_Item(Medium)": "Miðlungs", 
- "Facet_ReadingTime_Item(Large)": "Stór", 
+ "Facet_ReadingTime_Item(Short (<5 minutes))": "Stutt (<5 mínútur)",
+ "Facet_ReadingTime_Item(Medium (5-25 minutes))": "Miðlungs (5-25 mínútur)",
+ "Facet_ReadingTime_Item(Large (25+ minutes))": "Stór (25+ mínútur)",
  "Facet_ReadingTime_Item(Unknown)": "Óþekktur",
 
   "Facet_Language_Item(ar)": "العربية (ar)",
