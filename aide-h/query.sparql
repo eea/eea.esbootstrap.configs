@@ -105,7 +105,8 @@ WHERE {{
 
   ?locality rod:localityName ?Country .
   ?obliURI rdfs:label ?Obligation .
- 
-  #FILTER (?envelope = <http://cdr.eionet.europa.eu/cz/eu/aqd/h/envwfeulw>)
-#  FILTER (?envelope = <<envelope>>)
+
+# to be checked envelope http://cdr.eionet.europa.eu/it/eu/aqd/h/envxx9uaa
+  FILTER (?envelope != <http://cdr.eionet.europa.eu/it/eu/aqd/h/envxx9uaa>)
+
 }}

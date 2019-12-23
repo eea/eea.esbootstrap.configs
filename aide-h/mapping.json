@@ -25,7 +25,7 @@
 "Phone" : {"type" : "keyword"},
 "Website" : {"type" : "keyword"},
 "Address" : {"type" : "keyword"},
-"Comment" : {"type" :"string", "analyzer" : "coma" },
+"Comment" : {"type" :"string"},
 "AttainmentId" : {"type" :"string", "analyzer" : "coma" },
 "?envelope" : {"type" : "keyword"}
 }
