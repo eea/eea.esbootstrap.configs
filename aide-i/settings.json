@@ -7,7 +7,7 @@
         "type": "resources",
         "field_base":"",
         "default_appalias": "latest"
-    }, 
+    },
     "external_templates": {
         "local_path": "/external_templates",
         "protocol": "https",
@@ -54,6 +54,9 @@
         "dataprovencance_info_text": "Air Quality e-Reporting",
         "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/data/aqereporting-1",
         "further_info": ""
+    },
+    "API": {
+        "token": "default"
     },
     "source": {
         "type": "sparql",
