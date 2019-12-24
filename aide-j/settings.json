@@ -62,8 +62,7 @@
         "autoswitch": "true",
         "configuration": {
             "endpoint": "https://cr.eionet.europa.eu/sparql",
-            "bulk_size": 500,
-            "enableValuesCounting": true
+            "bulk_size": 500
         }
     }
 }
