@@ -14,13 +14,13 @@ WHERE {{
     ?envelope rod:startOfPeriod ?startOfPeriod .
     ?envelope rod:obligation ?obligation .
     ?envelope rod:locality ?locality .
-    FILTER (?obligation = obligation:670) 
+    FILTER (?obligation = obligation:670)
     ?locality rod:localityName ?Country .
   } GROUP BY ?Country YEAR(xsd:date(?startOfPeriod))
 
 }
 ?envelope rod:released ?released .
 ?envelope rdf:type rod:Delivery .
-FILTER (?envelope = <http://cdr.eionet.europa.eu/at/eu/aqd/b/envu7j_rw>)
+#FILTER (?envelope = <http://cdr.eionet.europa.eu/at/eu/aqd/b/envu7j_rw>)
 }
 ORDER BY ?startOfPeriod ?Country
