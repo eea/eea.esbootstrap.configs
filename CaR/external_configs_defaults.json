@@ -40,12 +40,12 @@
         "type": "country",
         "value": "Cyprus"
     },
-    "czech-republic": {
+    "czechia": {
         "flag_url": "app_resources/images/flags/czech-republic.png",
 
-        "title": "Czech Republic",
+        "title": "Czechia",
         "type": "country",
-        "value": "Czech Republic"
+        "value": "Czechia"
     },
     "denmark": {
         "flag_url": "app_resources/images/flags/denmark.png",
