@@ -419,12 +419,12 @@
                 "section": "m",
                 "visible": true
             },
-            "facet": { 
-                "visible": true, 
-                "title": "Mass in running order (kg)", 
-                "pos": 8, 
-                "type": "rangehistogram", 
-                "order": "term", 
+            "facet": {
+                "visible": true,
+                "title": "Mass in running order (kg)",
+                "pos": 8,
+                "type": "rangehistogram",
+                "order": "term",
                 "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
                     "columns_bucketsize" : 10,
@@ -479,13 +479,13 @@
                 "section": "Enedc",
                 "visible": true
             },
-            "facet": { 
-                "visible": true, 
-                "title": "Specific CO2 Emissions in g/km (NEDC)", 
-                "pos": 8, 
-                "type": "rangehistogram", 
-                "size": 600, 
-                "order": "term", 
+            "facet": {
+                "visible": true,
+                "title": "Specific CO2 Emissions in g/km (NEDC)",
+                "pos": 8,
+                "type": "rangehistogram",
+                "size": 600,
+                "order": "term",
                 "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
                     "columns_bucketsize" : 10,
@@ -811,6 +811,68 @@
                 "title": "Vf",
                 "visible": true,
                 "pos": 33
+            }
+        },
+        {
+            "name": "Status",
+            "listing": {
+                "title": "Type of data",
+                "visible" : true,
+                "pos" : 34
+            },
+            "details": {
+                "title": "Status",
+                "pos" : 5,
+                "section": "Status",
+                "visible": true
+            },
+            "facet": {
+                "visible": true,
+                "title": "Type of data",
+                "pos": 9,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "operator": "OR",
+                "facet_display_options": ["sort", "checkbox"],
+                "empty_message": "No type of data",
+                "short_name": "Type of data"
+            },
+            "csv_tsv": {
+                "title": "Status",
+                "visible": true,
+                "pos": 34
+            }
+        },
+        {
+            "name": "year",
+            "listing": {
+                "title": "Registration year",
+                "visible" : true,
+                "pos" : 35
+            },
+            "details": {
+                "title": "year",
+                "pos" : 6,
+                "section": "year",
+                "visible": true
+            },
+            "facet": {
+                "visible": true,
+                "title": "Registration year",
+                "pos": 10,
+                "type": "facet",
+                "size": 100,
+                "order": "reverse_term",
+                "operator": "OR",
+                "facet_display_options": ["sort", "checkbox"],
+                "empty_message": "No registration year",
+                "short_name": "Registration year"
+            },
+            "csv_tsv": {
+                "title": "year",
+                "visible": true,
+                "pos": 35
             }
         }
     ]

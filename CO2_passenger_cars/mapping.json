@@ -49,5 +49,6 @@
   "Ernedc (g/km)" : {"type" :"double" },
   "Erwltp (g/km)" : {"type" :"double" },
   "De" : {"type" :"double" },
-  "Vf": {"type" :"integer" }
+  "Vf": {"type" :"integer" },
+  "Status": { "type" :"text", "fielddata": true }
 }
