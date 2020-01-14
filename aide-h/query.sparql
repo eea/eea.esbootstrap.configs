@@ -14,33 +14,33 @@ md5(concat(?Country, xsd:string(?endOfPeriod),?PlanCode ,?Namespace ,?PlanId ,?V
 
 
 #?XMLURI
-?Country as ?CountryOrTerritory 
-year(xsd:date(?endOfPeriod)) AS ?ReportingYear 
-?PlanCode 
-?Namespace 
-?PlanId 
-?VersionId 
-?Name 
-?FirstExceedanceYear 
-?AdoptionDate 
-?Status 
-?TimeTable 
-?ReferenceAQPlan 
-?ReferenceImplementation 
-?Pollutant 
-?ProtectionTarget 
-?PublicationTitle 
-?PublicationDate 
-?PublicationAuthor 
-?PublicationDescription 
+?Country as ?CountryOrTerritory
+year(xsd:date(?endOfPeriod)) AS ?ReportingYear
+?PlanCode
+?Namespace
+?PlanId
+?VersionId
+?Name
+?FirstExceedanceYear
+?AdoptionDate
+?Status
+?TimeTable
+?ReferenceAQPlan
+?ReferenceImplementation
+?Pollutant
+?ProtectionTarget
+?PublicationTitle
+?PublicationDate
+?PublicationAuthor
+?PublicationDescription
 ?Publisher
-?PublicationWeblink 
-?Organisation 
-?Phone 
-?Website 
-?Address 
-sql:GROUP_CONCAT(?Comment,' ') AS ?Comment
-#replace(replace(replace(str(?excURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace ,""),"/","") as ?AttainmentId 
+?PublicationWeblink
+?Organisation
+?Phone
+?Website
+?Address
+sql:GROUP_CONCAT_DISTINCT(?Comment,' ') AS ?Comment
+#replace(replace(replace(str(?excURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace ,""),"/","") as ?AttainmentId
 ?envelope
 
 WHERE {{
@@ -100,13 +100,13 @@ WHERE {{
 
   OPTIONAL{?publURI aq:author ?PublicationAuthor}.
 
-  ?DateURI aq:timePosition ?PublicationDate . 
+  ?DateURI aq:timePosition ?PublicationDate .
   ?StatusURI rdfs:label ?Status .
 
   ?locality rod:localityName ?Country .
   ?obliURI rdfs:label ?Obligation .
 
 # to be checked envelope http://cdr.eionet.europa.eu/it/eu/aqd/h/envxx9uaa
-  FILTER (?envelope != <http://cdr.eionet.europa.eu/it/eu/aqd/h/envxx9uaa>)
+  FILTER (?envelope = <<envelope>>)
 
 }}
