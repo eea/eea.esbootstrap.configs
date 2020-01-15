@@ -406,7 +406,7 @@
             }
         },
         {
-            "name": "m (kg)",
+            "name": "m__kg_",
             "listing": {
                 "title": "Mass in running order (kg)",
                 "visible" : true,
@@ -467,7 +467,7 @@
             }
         },
         {
-            "name": "Enedc (g/km)",
+            "name": "Enedc__g_km_",
             "listing": {
                 "title": "Specific CO2 Emissions in g/km (NEDC)",
                 "visible" : true,
@@ -506,7 +506,7 @@
             }
         },
         {
-            "name": "Ewltp (g/km)",
+            "name": "Ewltp__g_km_",
             "listing": {
                 "title": "Specific CO2 Emissions in g/km (WLTP)",
                 "visible" : true,
@@ -528,7 +528,7 @@
             }
         },
         {
-            "name": "W (mm)",
+            "name": "W__mm_",
             "listing": {
                 "title": "Wheel base in mm",
                 "visible" : true,
@@ -550,7 +550,7 @@
             }
         },
         {
-            "name": "At1 (mm)",
+            "name": "At1__mm_",
             "listing": {
                 "title": "Axle width steering axle in mm",
                 "visible" : true,
@@ -572,7 +572,7 @@
             }
         },
         {
-            "name": "At2 (mm)",
+            "name": "At2__mm_",
             "listing": {
                 "title": "Axle width other axle in mm",
                 "visible" : true,
@@ -638,7 +638,7 @@
             }
         },
         {
-            "name": "ec (cm3)",
+            "name": "ec__cm3_",
             "listing": {
                 "title": "Engine capacity in cm3",
                 "visible" : true,
@@ -660,7 +660,7 @@
             }
         },
         {
-            "name": "ep (KW)",
+            "name": "ep__KW_",
             "listing": {
                 "title": "Engine power in KW",
                 "visible" : true,
@@ -682,7 +682,7 @@
             }
         },
         {
-            "name": "z (Wh/km)",
+            "name": "z__Wh_km_",
             "listing": {
                 "title": "Electric energy consumption in Wh/km",
                 "visible" : true,
@@ -726,7 +726,7 @@
             }
         },
         {
-            "name": "Ernedc (g/km)",
+            "name": "Ernedc__g_km_",
             "listing": {
                 "title": "Emissions reduction through innovative technologies in g/km",
                 "visible" : true,
@@ -748,7 +748,7 @@
             }
         },
         {
-            "name": "Erwltp (g/km)",
+            "name": "Erwltp__g_km_",
             "listing": {
                 "title": "Emissions reduction through innovative technologies in g/km (WLTP)",
                 "visible" : true,
@@ -867,7 +867,8 @@
                 "operator": "OR",
                 "facet_display_options": ["sort", "checkbox"],
                 "empty_message": "No registration year",
-                "short_name": "Registration year"
+                "short_name": "Registration year",
+                "default_values": {"operator": "or", "values": ["2018"]}
             },
             "csv_tsv": {
                 "title": "year",
