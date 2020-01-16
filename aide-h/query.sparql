@@ -8,10 +8,9 @@ PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
 PREFIX obligations: <http://rod.eionet.europa.eu/obligations/>
 PREFIX aqdd: <http://dd.eionet.europa.eu/property/>
 
-SELECT DISTINCT
+SELECT distinct
 
-md5(concat(?Country, xsd:string(?endOfPeriod),?PlanCode ,?Namespace ,?PlanId ,?VersionId ,?Name, xsd:string(?FirstExceedanceYear) ,xsd:string(?AdoptionDate) ,?Status ,xsd:string(?TimeTable) ,?ReferenceAQPlan ,?ReferenceImplementation,?Pollutant ,?ProtectionTarget ,?PublicationTitle ,xsd:string(?PublicationDate) ,?PublicationAuthor,?PublicationDescription ,?Publisher ,?PublicationWeblink ,?Organisation ,xsd:string(?Phone) ,?Website ,?Address ,?Comment ,?AttainmentId ,?envelope))  as ?_id
-
+md5(concat(?Country, xsd:string(?endOfPeriod),?PlanCode ,?Namespace ,?PlanId ,?VersionId ,?Name, xsd:string(?FirstExceedanceYear) ,xsd:string(?AdoptionDate) ,?Status ,xsd:string(?TimeTable) ,?ReferenceAQPlan ,?ReferenceImplementation,?Pollutant ,?ProtectionTarget ,?PublicationTitle ,xsd:string(?PublicationDate) ,?PublicationAuthor,?PublicationDescription ,?Publisher ,?PublicationWeblink ,?Organisation ,?IndividualName,?Email ,xsd:string(?Phone) ,?Website ,?Address ,?envelope))  as ?_id
 
 #?XMLURI
 ?Country as ?CountryOrTerritory
@@ -36,14 +35,26 @@ year(xsd:date(?endOfPeriod)) AS ?ReportingYear
 ?Publisher
 ?PublicationWeblink
 ?Organisation
+?IndividualName
+?Email
 ?Phone
 ?Website
 ?Address
-sql:GROUP_CONCAT_DISTINCT(?Comment,' ') AS ?Comment
-#replace(replace(replace(str(?excURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace ,""),"/","") as ?AttainmentId
+?Comment
 ?envelope
 
 WHERE {{
+  GRAPH <<envelope>/rdf> {
+     ?envelope rod:released ?released .
+     ?envelope rod:locality ?locality .
+     ?envelope rod:obligation ?obliURI .
+     ?envelope rod:endOfPeriod ?endOfPeriod .
+     ?envelope rod:released ?released .
+     ?envelope rod:locality ?locality .
+     ?envelope rod:obligation ?obliURI .
+     ?envelope rod:endOfPeriod ?endOfPeriod .
+  }
+  ?source dcterms:isPartOf ?envelope .
   GRAPH ?source {
     ?XMLURI a aq:AQD_Plan .
     ?XMLURI aq:inspireId ?inspireURI .
@@ -58,31 +69,26 @@ WHERE {{
     ?XMLURI aq:pollutants ?pollURI .
     ?XMLURI aq:publication ?publURI .
     ?XMLURI aq:status ?StatusURI .
+    OPTIONAL{?XMLURI aq:comment ?Comment} .
+    OPTIONAL{?XMLURI aq:exceedanceSituation ?excURI} .
   }
-  ?source dcterms:isPartOf ?envelope .
-  ?envelope rod:released ?released .
-  ?envelope rod:locality ?locality .
-  ?envelope rod:obligation ?obliURI .
-  ?envelope rod:endOfPeriod ?endOfPeriod .
-
-  OPTIONAL{?XMLURI aq:comment ?Comment} .
-  OPTIONAL{?XMLURI aq:exceedanceSituation ?excURI} .
-  OPTIONAL{?excURI aqr:inspireId ?AttainmentId} .
+  #OPTIONAL{?excURI aqr:inspireId ?AttainmentId} .
+  OPTIONAL{?envelope rod:hasFile ?source} .
   OPTIONAL{?excURI dcterms:source ?source} .
-  OPTIONAL{?excenvelope rod:hasFile ?source} .
-
   ?inspireURI aq:namespace ?Namespace .
   ?inspireURI aq:localId ?PlanId .
   OPTIONAL{?inspireURI aq:versionId ?VersionId} .
 
   ?compAuthorityURI aq:organisationName ?Organisation .
+  ?compAuthorityURI aq:individualName ?IndividualName .
   ?compAuthorityURI aq:contact ?contactURI .
 
+  ?contactURI aq:electronicMailAddress ?Email .
   ?contactURI aq:telephoneVoice ?Phone .
   ?contactURI aq:website ?Website .
   ?contactURI aq:address ?addressURI .
 
-  OPTIONAL{?addressURI aq:locatorDesignator ?Address} .
+  ?addressURI aq:locatorDesignator ?Address .
   ?firstexcURI aq:timePosition ?FirstExceedanceYear .
   ?adoptionURI aq:timePosition ?AdoptionDate .
 
@@ -105,8 +111,4 @@ WHERE {{
 
   ?locality rod:localityName ?Country .
   ?obliURI rdfs:label ?Obligation .
-
-# to be checked envelope http://cdr.eionet.europa.eu/it/eu/aqd/h/envxx9uaa
-  FILTER (?envelope = <<envelope>>)
-
 }}
