@@ -3,12 +3,12 @@
 
   "normProp": {
     "http://purl.org/dc/terms/issued": ["issued", "year","time_coverage"],
-    "https://biodiversity.europa.eu/portal_types/BiodiversityFactsheet#fact_countryName": ["spatial","places"]
+    "https://biodiversity.europa.eu/portal_types/countryfactsheet#fact_countryName": ["spatial","places"]
   },
 
   "normObj": {
     "https://biodiversity.europa.eu/portal_workflow/bise_checkout_workflow/states/published": "published",
-    "bise.biodiversityfactsheet.biodiversityfactsheet.IBiodiversityFactsheet": "Country profile"
+    "bise.country.interfaces.ICountryPage": "Country profile"
   },
 
   "normMissing": {
@@ -19,6 +19,6 @@
   "graphSyncConditions": ["FILTER (?time > xsd:dateTime('1990-01-01T00:00:00')). FILTER (?time < xsd:dateTime('2100-01-01T00:00:00'))"],
 
   "syncConditions": [
-      "{?resource a <https://biodiversity.europa.eu/portal_types/BiodiversityFactsheet#BiodiversityFactsheet> }"
+      "{?resource a <https://biodiversity.europa.eu/portal_types/countryfactsheet#countryfactsheet> }"
   ]
 }
