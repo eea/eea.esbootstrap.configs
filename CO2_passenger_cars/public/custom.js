@@ -26,12 +26,6 @@ $.fn.coFacet = function(settings){
                 else {
                     $(value).find(".year_facet_checkbox").prop("checked", false);
                 }
-                $(value).find(".year_facet_checkbox").removeAttr("readonly");
-                $(value).find(".year_facet_value").removeAttr("readonly");
-                $(value).find(".year_facet_count").removeAttr("readonly");
-                // var group_id = $(value).find(".year_facet_checkbox").attr("group_id");
-                // $("[facet_type='group'][group_id='" + group_id + "']").removeAttr("readonly");
-                // $(".year_facet_group[group_id='" + group_id + "']").find(".year_facet_group_value").removeAttr("readonly");
             }
         });
         $.each($(".status_facet"), function(key, value){
@@ -48,12 +42,6 @@ $.fn.coFacet = function(settings){
                 else {
                     $(value).find(".status_facet_checkbox").prop("checked", false);
                 }
-                $(value).find(".status_facet_checkbox").removeAttr("readonly");
-                $(value).find(".status_facet_value").removeAttr("readonly");
-                $(value).find(".status_facet_count").removeAttr("readonly");
-                // var group_id = $(value).find(".status_facet_checkbox").attr("group_id");
-                // $("[facet_type='group'][group_id='" + group_id + "']").removeAttr("readonly");
-                // $(".status_facet_group[group_id='" + group_id + "']").find(".status_facet_group_value").removeAttr("readonly");
             }
         });
         if (!found_year || !found_status){
@@ -90,7 +78,6 @@ $.fn.coFacet = function(settings){
             var value = $(facet).attr("value");
             $('.facet-view-simple').facetview.clickfilterchoice(false, "Status", value, false);
         });
-        debugger;
         $('.facet-view-simple').facetview.dosearch();
     };
 
@@ -101,12 +88,10 @@ $.fn.coFacet = function(settings){
     };
 
     $('.year_facet_checkbox[facet_type="facet"]').change(function() {
-        debugger;
         checkAllFacets(true);
     });
 
     $('.status_facet_checkbox[facet_type="facet"]').change(function() {
-        debugger;
         checkAllFacets(true);
     });
 
@@ -125,25 +110,29 @@ $.fn.coFacet = function(settings){
 
 var year_entry_template = '<div class="year_facet" rel="placeholder">' +
 '   <input class="year_facet_checkbox" type="checkbox" value="Year" facet_type="facet" group_id="0">' +
-'   <div class="year_facet_value">Air pollution</div>' +
+'   <div class="year_facet_value"></div>' +
 '   <div class="year_facet_count">1</div>' +
 '</div>';
 
 var year_facet_template = '<div class="year-facet-section">' +
-'    <div class="year-facet-title"> </div>' +
-'    <div class="year-facet-group">' +
+'    <div class="year_facet_title">' +
+'        <span class="year_facet_title--text">Registration year</span>' +
+'        <span class="year_facet_title--text-border"></span></div>' +
+'    <div class="year_facet_group">' +
 '    </div>' +
 '</div>';
 
 var status_entry_template = '<div class="status_facet" rel="placeholder">' +
 '   <input class="status_facet_checkbox" type="checkbox" value="Status" facet_type="facet" group_id="0">' +
-'   <div class="status_facet_value">Air pollution</div>' +
+'   <div class="status_facet_value"></div>' +
 '   <div class="status_facet_count">1</div>' +
 '</div>';
 
 var status_facet_template = '<div class="status-facet-section">' +
-'    <div class="status-facet-title"> </div>' +
-'    <div class="status-facet-group">' +
+'    <div class="status_facet_title">' +
+'        <span class="status_facet_title--text">Type of data</span>' +
+'        <span class="status_facet_title--text-border"></span></div>' +
+'    <div class="status_facet_group">' +
 '    </div>' +
 '</div> ';
 
@@ -174,7 +163,7 @@ $(window).bind('post_init_callback', function(){
             $(year_value).text(item.key);
             $(year_count).text(item.doc_count);
 
-            $('.year-facet-section').children('.year-facet-group').append(clone[0]);
+            $('.year-facet-section').children('.year_facet_group').append(clone[0]);
         });
         $.each(status_arr, function(idx, item) {
             var clone = $(status_entry_template).clone();
@@ -185,20 +174,27 @@ $(window).bind('post_init_callback', function(){
             $(clone).attr('rel', item.key)
             $(checkbox).attr('value', item.key);
             $(checkbox).attr('group_id', idx);
+
+            if (item.key === "f") {
+                item.key = "Final data";
+            }
+            else {
+                item.key = "Provisional data";
+            }
             $(status_value).text(item.key);
             $(status_count).text(item.doc_count);
 
-            $('.status-facet-section').children('.status-facet-group').append(clone[0]);
+            $('.status-facet-section').children('.status_facet_group').append(clone[0]);
         });
         $(".year-facet-section").coFacet();
-        $(".status-facet-section").coFacet();
     },
     error: function(error) {
-        debugger;
+        console.log(error);
     }
     });
 });
 
 $(window).bind('post_search_callback', function(){
     $(".year-facet-section").coFacet.loadValuesFromFacet();
+    $(".status-facet-section").coFacet.loadValuesFromFacet();
 });
