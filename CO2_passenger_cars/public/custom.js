@@ -95,8 +95,7 @@ $.fn.coFacet = function(settings){
         checkAllFacets(true);
     });
 
-
-    $('.year_facet_value, .status_facet_value').click(function(ev) {
+    $('.year_facet_value').click(function(ev) {
         var el = $(ev.target);
         if (el.attr('readonly')) {
             return;
@@ -105,6 +104,17 @@ $.fn.coFacet = function(settings){
         checkbox.click();
         checkAllFacets(true);
     });
+
+    $('.status_facet_value').click(function(ev) {
+        var el = $(ev.target);
+        if (el.attr('readonly')) {
+            return;
+        }
+        var checkbox = el.prev();
+        checkbox.click();
+        checkAllFacets(true);
+    });
+    // loadValuesFromFacet();
 };
 
 
@@ -143,6 +153,7 @@ $(window).bind('post_init_callback', function(){
     $('h2#year').parent().hide()
 
     var query = '{"query":{"bool":{}},"aggs":{"Status":{"terms":{"field":"Status","size":1000000,"order":{"_key":"asc"}}},"year":{"terms":{"field":"year","size":1000000,"order":{"_key":"desc"}}}},"sort":[],"size":0}';
+    var base_url = window.location.origin + "/tools/api?source=";
     var url = window.location.origin + "/tools/api?source=" + query;
 
     $.ajax({url: url, success: function(result){
@@ -150,6 +161,21 @@ $(window).bind('post_init_callback', function(){
         status_arr = result.aggregations.Status.buckets;
         $(year_facet_template).insertAfter($('.content h3')[0]);
         $(status_facet_template).insertAfter($('.content h3')[0]);
+
+        if ($('.facet-view-simple').facetview.options.isInitialSearch) {
+            query = '{"query": {"bool": {"must": [{"term": {"year": "LAST_YEAR"}},{"match": {"Status": "f"}}],"must_not": [],"should": []}},"sort": [],"size": 0}';
+            url = base_url + query.replace("LAST_YEAR", years[0].key);
+            $.ajax({url: url, success: function(result){
+                if (result.hits.total > 0) {
+                    // check final checkbox
+                    $('.status_facet_checkbox[value="f"]').trigger("click");
+                }
+                else {
+                    // check provisional checkbox
+                    $('.status_facet_checkbox[value="p"]').trigger("click");
+                }
+            }});
+        }
 
         $.each(years, function(idx, item) {
             var clone = $(year_entry_template).clone();
@@ -163,8 +189,14 @@ $(window).bind('post_init_callback', function(){
             $(year_value).text(item.key);
             $(year_count).text(item.doc_count);
 
+            // check the latest year
+            if (idx === 0) {
+                $(checkbox).prop("checked", true)
+            }
+
             $('.year-facet-section').children('.year_facet_group').append(clone[0]);
         });
+
         $.each(status_arr, function(idx, item) {
             var clone = $(status_entry_template).clone();
             var checkbox = $(clone).children('.status_facet_checkbox');
@@ -181,12 +213,14 @@ $(window).bind('post_init_callback', function(){
             else {
                 item.key = "Provisional data";
             }
+
             $(status_value).text(item.key);
             $(status_count).text(item.doc_count);
 
             $('.status-facet-section').children('.status_facet_group').append(clone[0]);
         });
         $(".year-facet-section").coFacet();
+        // $(".status-facet-section").coFacet();
     },
     error: function(error) {
         console.log(error);
