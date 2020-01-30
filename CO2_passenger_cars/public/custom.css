@@ -37,24 +37,30 @@
 }
 
 .year_facet, .status_facet {
-    display: -webkit-flex;
+    /* display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
-    display: flex;
-    margin-bottom: 1.2em;
+    display: flex; */
     display: inline-block;
     margin-right: 2em;
-    min-width: 110px;
+    /* margin-bottom: 1.2em; */
+    /* min-width: 110px; */
+    margin-bottom: 4px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 0.5em 1.5em;
+    clear: both;
+    border: 1px solid #ccc;
 }
 
 .year_facet_value, .status_facet_value {
     cursor: pointer;
 }
 
-
 .year_facet_checkbox, .status_facet_checkbox {
     float:left;
     margin-right: 0.5em !important;
+    display: none;
 }
 
 .year_facet_value, .status_facet_value {

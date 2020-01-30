@@ -103,6 +103,14 @@ $.fn.coFacet = function(settings){
         var checkbox = el.prev();
         checkbox.click();
         checkAllFacets(true);
+        var parent = el.parent();
+        if (checkbox.prop('checked')) {
+            parent.css('background-color', '#cd7');
+        }
+        else {
+            parent.css('background-color', '#F0F0F0');
+        }
+
     });
 
     $('.status_facet_value').click(function(ev) {
@@ -113,6 +121,13 @@ $.fn.coFacet = function(settings){
         var checkbox = el.prev();
         checkbox.click();
         checkAllFacets(true);
+        var parent = el.parent();
+        if (checkbox.prop('checked')) {
+            parent.css('background-color', '#cd7');
+        }
+        else {
+            parent.css('background-color', '#F0F0F0');
+        }
     });
     // loadValuesFromFacet();
 };
@@ -159,8 +174,8 @@ $(window).bind('post_init_callback', function(){
     $.ajax({url: url, success: function(result){
         years = result.aggregations.year.buckets;
         status_arr = result.aggregations.Status.buckets;
-        $(year_facet_template).insertAfter($('.content h3')[0]);
-        $(status_facet_template).insertAfter($('.content h3')[0]);
+        $(year_facet_template).insertAfter($('.current-filters')[0]);
+        $(status_facet_template).insertAfter($('.current-filters')[0]);
 
         if ($('.facet-view-simple').facetview.options.isInitialSearch) {
             query = '{"query": {"bool": {"must": [{"term": {"year": "LAST_YEAR"}},{"match": {"Status": "f"}}],"must_not": [],"should": []}},"sort": [],"size": 0}';
@@ -226,9 +241,13 @@ $(window).bind('post_init_callback', function(){
         console.log(error);
     }
     });
+
+
 });
 
 $(window).bind('post_search_callback', function(){
+    $('.year_facet_checkbox:checked, .status_facet_checkbox:checked').parent().css('background-color', '#cd7');
+    $('.year_facet_checkbox:not(:checked), .status_facet_checkbox:not(:checked)').parent().css('background-color', '#F0F0F0');
     $(".year-facet-section").coFacet.loadValuesFromFacet();
     $(".status-facet-section").coFacet.loadValuesFromFacet();
 });
