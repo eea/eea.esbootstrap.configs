@@ -231,9 +231,12 @@ function createCustomFacets(){
         $('.status-facet-section').children('.status_facet_group').append(clone[0]);
 
         clone.click(function(el){
-            $('.status_facet').removeClass('selected');
-            $(el.delegateTarget).toggleClass('selected');
-            updatePredefinedFilters();
+            if ($(el.delegateTarget).hasClass('selected') !== true) {
+                // always have a type of data selected
+                $('.status_facet').removeClass('selected');
+                $(el.delegateTarget).toggleClass('selected');
+                updatePredefinedFilters();
+            }
         })
     });
 
