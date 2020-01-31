@@ -231,6 +231,7 @@ function createCustomFacets(){
         $('.status-facet-section').children('.status_facet_group').append(clone[0]);
 
         clone.click(function(el){
+            $('.status_facet').removeClass('selected');
             $(el.delegateTarget).toggleClass('selected');
             updatePredefinedFilters();
         })
