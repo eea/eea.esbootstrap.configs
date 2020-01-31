@@ -59,7 +59,7 @@
             "type": "json",
             "subtype": "discomap",
             "bulksize": 5000,
-            "url": "http://discomap.eea.europa.eu/App/SqlEndpoint/query?sql=Select%20CONCAT(ID%2C%20Status%2C%20year)%20as%20uid%2C%20*%20from%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D%20WHERE%20MS!%3D'M1'%20and%20ID%20%3E%3D%20<MIN_ID>%20and%20ID%20%3C%20<MAX_ID>%20",
+            "url": "http://discomap.eea.europa.eu/App/SqlEndpoint/query?sql=Select%20CONCAT(ID%2C%20Status%2C%20year)%20as%20uid%2C%20concat(year%2Ciif(status%3D'F'%2C'-03'%2C'-09')%2C'-1')%20as%20date%2C%20*%20from%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D%20WHERE%20MS!%3D'M1'%20and%20ID%20%3E%3D%20<MIN_ID>%20and%20ID%20%3C%20<MAX_ID>%20",
             "counturl": "http://discomap.eea.europa.eu/App/SqlEndpoint/query?sql=Select%20COUNT(*)%20as%20total%20from%20%5BCO2Emission%5D.%5Blatest%5D.%5Bco2cars%5D%20where%20ID%3E%3D0%20and%20ID%3C16000000",
             "discomap_bulksize": 10000,
             "format": "json",

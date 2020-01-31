@@ -50,5 +50,6 @@
   "Erwltp__g_km_" : {"type" :"double" },
   "De" : {"type" :"double" },
   "Vf": {"type" :"integer" },
-  "Status": { "type" :"text", "fielddata": true }
+  "Status": { "type" :"text", "fielddata": true },
+  "date": {"type": "date"}
 }
