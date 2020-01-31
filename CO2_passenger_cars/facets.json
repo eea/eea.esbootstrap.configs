@@ -52,6 +52,7 @@
             "facet": {
                 "visible": true,
                 "title": "Member State",
+                "short_name": "Member State",
                 "pos": 0,
                 "type": "facet",
                 "size": 100,
@@ -105,6 +106,7 @@
             "facet": {
                 "visible": true,
                 "title": "Pool",
+                "short_name": "Pool",
                 "pos": 0,
                 "type": "facet",
                 "size": 9999,
@@ -427,7 +429,7 @@
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
-                    "columns_bucketsize" : 10,
+                    "columns_bucketsize" : 10000,
 
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",
@@ -488,7 +490,7 @@
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
-                    "columns_bucketsize" : 10,
+                    "columns_bucketsize" : 20,
 
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",
@@ -827,7 +829,7 @@
                 "visible": true
             },
             "facet": {
-                "visible": true,
+                "visible": false,
                 "title": "Type of data",
                 "pos": 9,
                 "type": "facet",
@@ -858,7 +860,7 @@
                 "visible": true
             },
             "facet": {
-                "visible": true,
+                "visible": false,
                 "title": "Registration year",
                 "pos": 10,
                 "type": "facet",

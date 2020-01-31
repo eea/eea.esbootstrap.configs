@@ -3,7 +3,7 @@
         "port": 3000
     },
     "elastic": {
-        "index": "co2_passenger_cars_v17_19june2019",
+        "index": "co2_passenger_cars_test",
         "type": "resources",
         "field_base":""
     },
@@ -18,7 +18,7 @@
     "layout_vars": {
         "head_title": "Monitoring of CO2 emissions from passenger cars",
         "app_id": "co2_passenger_cars",
-        "skip_resources_bundling": false,
+        "skip_resources_bundling": true,
         "skip_external_template_styles": false,
         "override_searchserver_resources": false,
         "css_resources": {
@@ -34,8 +34,7 @@
         },
         "js_resources": {
             "index_page": [
-                "javascripts/esbootstrap.facetview.js",
-                "/custom.js"
+                "/co2cars.facetview.js"
             ],
             "details_page": [
                 "javascripts/jq.tools.js",

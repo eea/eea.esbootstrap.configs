@@ -9,6 +9,10 @@
     width: 50px;
 }
 
+.facet_count_order, .facet_label_count {
+    display:none !important;
+}
+
 .facet_label_text {
     margin-left: 10px;
     margin-right: 10px;
@@ -33,7 +37,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: #F6FAFD;
-    padding-right: 3em;
+    padding: 0em 3em 0em 1em;
 }
 
 .year_facet, .status_facet {
@@ -46,11 +50,15 @@
     /* margin-bottom: 1.2em; */
     /* min-width: 110px; */
     margin-bottom: 4px;
-    background-color: white;
+    background-color: rgb(200,200,200);
     border-radius: 15px;
     padding: 0.5em 1.5em;
     clear: both;
     border: 1px solid #ccc;
+}
+
+.year_facet.selected,.status_facet.selected{
+    background-color: white;
 }
 
 .year_facet_value, .status_facet_value {
@@ -68,7 +76,7 @@
     -moz-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    line-height: 1;
+/*    line-height: 1;*/
 }
 
 .year_facet_count, .status_facet_count {
@@ -90,8 +98,8 @@
     -moz-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    margin-left: 2.5em;
-    padding-top: 1em;
+    /*margin-left: 2.5em;*/
+    padding-top: 0em;
     min-width: 116px;
 }
 
@@ -183,3 +191,4 @@
         url("/fonts-search/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
         url("/fonts-search/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");font-weight:normal;font-style:normal
 }
+
