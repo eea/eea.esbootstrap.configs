@@ -309,7 +309,8 @@ jQuery(document).ready(function($) {
             size: 10
         },
         display_type_options: settings_display_options,
-        display_type: settings_default_display
+        display_type: settings_default_display,
+        enable_async_load: true
     };
     if (window.esbootstrap_options) {
        $.extend(opts, esbootstrap_options);
