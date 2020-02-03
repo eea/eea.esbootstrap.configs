@@ -103,6 +103,41 @@
     min-width: 116px;
 }
 
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        -ms-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+.eea-icon-spinner {
+    vertical-align: -webkit-baseline-middle;
+    position: absolute;
+    top: 40%;
+    left: 43%;
+}
+
+.eea-icon-anim-spin.animated, .eea-icon-anim-spin.animated-hover:hover, .eea-icon-anim-parent.animated-hover:hover > .eea-icon-anim-spin {
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+
 @media screen and (max-width: 805px) {
     .year_facet_group, .status_facet_group {
         margin-left: 2em;
@@ -191,4 +226,3 @@
         url("/fonts-search/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
         url("/fonts-search/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");font-weight:normal;font-style:normal
 }
-

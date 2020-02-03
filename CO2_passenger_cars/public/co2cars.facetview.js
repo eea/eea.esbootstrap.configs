@@ -275,6 +275,10 @@ function createCustomFacets(){
     });
 }
 
+function addSpinner() {
+    $('.facetview_tree').append('<span class="eea-icon eea-icon-spinner eea-icon-2x eea-icon-anim-spin animated"></span>');
+}
+
 jQuery(document).ready(function($) {
     if (window.settings_display_images === undefined){
         settings_display_images = true;
@@ -299,8 +303,8 @@ jQuery(document).ready(function($) {
             $(window).trigger('post_init_callback');
         },
         post_search_callback: function() {
-
             createCustomFacets();
+            addSpinner();
 
             add_EEA_settings();
             viewReady();
