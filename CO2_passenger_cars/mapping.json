@@ -51,5 +51,5 @@
   "De" : {"type" :"double" },
   "Vf": {"type" :"integer" },
   "Status": { "type" :"text", "fielddata": true },
-  "date": {"type": "date"}
+  "date": {"type": "date","format": "yyyy-MM-dd"}
 }
