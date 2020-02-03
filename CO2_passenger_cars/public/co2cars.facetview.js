@@ -276,7 +276,7 @@ function createCustomFacets(){
 }
 
 function addSpinner() {
-    $('.facetview_tree').append('<span class="eea-icon eea-icon-spinner eea-icon-2x eea-icon-anim-spin animated"></span>');
+    $('.facetview_tree').append('<span class="eea-icon eea-icon-spinner eea-icon-3x eea-icon-anim-spin animated"></span>');
 }
 
 jQuery(document).ready(function($) {
