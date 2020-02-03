@@ -9,10 +9,6 @@
     width: 50px;
 }
 
-.facet_count_order, .facet_label_count {
-    display:none !important;
-}
-
 .facet_label_text {
     margin-left: 10px;
     margin-right: 10px;
