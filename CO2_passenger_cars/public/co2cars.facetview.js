@@ -195,6 +195,7 @@ function createCustomFacets(){
     if ($(".status-facet-section").length > 0) {
         return;
     }
+    $('.current-filters').show();
 //    $(".status-facet-section").remove();
 //    $(".year-facet-section").remove();
 //    $(status_facet_template).insertAfter($('.content h3')[0]);
