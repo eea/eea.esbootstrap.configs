@@ -321,9 +321,11 @@ jQuery(document).ready(function($) {
             $('.current-filters').show();
             if ($('.facetview-filter-values').children().length < 1) {
                 $('.status-facet-section').css("padding-top", "0.5em");
+                $('.facetview-filter-values').css("margin-bottom", "5px");
             }
             else {
                 $('.status-facet-section').css("padding-top", 0);
+                $('.facetview-filter-values').css("margin-bottom", 0);
             }
         },
         paging: {
