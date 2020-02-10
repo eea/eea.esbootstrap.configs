@@ -18,6 +18,10 @@
     min-height: 0px;
 }
 
+.facetview-filter-values {
+    margin-bottom: 0;
+}
+
 /* Remove DRAFT watermark */
 #content {
     background:white;

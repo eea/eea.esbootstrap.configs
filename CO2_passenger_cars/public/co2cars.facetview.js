@@ -195,7 +195,6 @@ function createCustomFacets(){
     if ($(".status-facet-section").length > 0) {
         return;
     }
-    $('.current-filters').show();
 //    $(".status-facet-section").remove();
 //    $(".year-facet-section").remove();
 //    $(status_facet_template).insertAfter($('.content h3')[0]);
@@ -277,7 +276,9 @@ function createCustomFacets(){
 }
 
 function addSpinner() {
-    $('.facetview_tree').append('<span class="eea-icon eea-icon-spinner eea-icon-3x eea-icon-anim-spin animated"></span>');
+    if ($('.facetview_tree .eea-icon-spinner').length <= 0) {
+        $('.facetview_tree').append('<span class="eea-icon eea-icon-spinner eea-icon-3x eea-icon-anim-spin animated"></span>');
+    }
 }
 
 jQuery(document).ready(function($) {
@@ -310,7 +311,20 @@ jQuery(document).ready(function($) {
             add_EEA_settings();
             viewReady();
             replaceNumbers();
+
+            if ($('.no-results-message').is(':visible')) {
+                $('.eea-icon-spinner').hide();
+            }
+
             $(window).trigger('post_search_callback');
+
+            $('.current-filters').show();
+            if ($('.facetview-filter-values').children().length < 1) {
+                $('.status-facet-section').css("padding-top", "0.5em");
+            }
+            else {
+                $('.status-facet-section').css("padding-top", 0);
+            }
         },
         paging: {
             from: 0,
