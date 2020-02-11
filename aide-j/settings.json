@@ -18,7 +18,7 @@
     "layout_vars": {
         "head_title": "AQ Scenarios (J)",
         "app_id": "aide-j",
-        "skip_resources_bundling": false,
+        "skip_resources_bundling": true,
         "skip_external_template_styles": false,
         "override_searchserver_resources": false,
         "css_resources": {
@@ -54,5 +54,15 @@
         "dataprovencance_info_url": "http://www.eea.europa.eu/data-and-maps/data/aqereporting-1",
         "further_info": ""
     },
-    "endpoint": "https://cr.eionet.europa.eu/sparql"
+    "API": {
+        "token": "default"
+    },
+    "source": {
+        "type": "sparql",
+        "autoswitch": "true",
+        "configuration": {
+            "endpoint": "https://cr.eionet.europa.eu/sparql",
+            "bulk_size": 500
+        }
+    }
 }

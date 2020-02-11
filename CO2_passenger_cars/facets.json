@@ -52,6 +52,7 @@
             "facet": {
                 "visible": true,
                 "title": "Member State",
+                "short_name": "Member State",
                 "pos": 0,
                 "type": "facet",
                 "size": 100,
@@ -105,6 +106,7 @@
             "facet": {
                 "visible": true,
                 "title": "Pool",
+                "short_name": "Pool",
                 "pos": 0,
                 "type": "facet",
                 "size": 9999,
@@ -406,7 +408,7 @@
             }
         },
         {
-            "name": "m (kg)",
+            "name": "m__kg_",
             "listing": {
                 "title": "Mass in running order (kg)",
                 "visible" : true,
@@ -419,15 +421,15 @@
                 "section": "m",
                 "visible": true
             },
-            "facet": { 
-                "visible": true, 
-                "title": "Mass in running order (kg)", 
-                "pos": 8, 
-                "type": "rangehistogram", 
-                "order": "term", 
+            "facet": {
+                "visible": true,
+                "title": "Mass in running order (kg)",
+                "pos": 8,
+                "type": "rangehistogram",
+                "order": "term",
                 "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
-                    "columns_bucketsize" : 10,
+                    "columns_bucketsize" : 10000,
 
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",
@@ -467,7 +469,7 @@
             }
         },
         {
-            "name": "Enedc (g/km)",
+            "name": "Enedc__g_km_",
             "listing": {
                 "title": "Specific CO2 Emissions in g/km (NEDC)",
                 "visible" : true,
@@ -479,16 +481,16 @@
                 "section": "Enedc",
                 "visible": true
             },
-            "facet": { 
-                "visible": true, 
-                "title": "Specific CO2 Emissions in g/km (NEDC)", 
-                "pos": 8, 
-                "type": "rangehistogram", 
-                "size": 600, 
-                "order": "term", 
+            "facet": {
+                "visible": true,
+                "title": "Specific CO2 Emissions in g/km (NEDC)",
+                "pos": 8,
+                "type": "rangehistogram",
+                "size": 600,
+                "order": "term",
                 "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
-                    "columns_bucketsize" : 10,
+                    "columns_bucketsize" : 20,
 
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",
@@ -506,7 +508,7 @@
             }
         },
         {
-            "name": "Ewltp (g/km)",
+            "name": "Ewltp__g_km_",
             "listing": {
                 "title": "Specific CO2 Emissions in g/km (WLTP)",
                 "visible" : true,
@@ -528,7 +530,7 @@
             }
         },
         {
-            "name": "W (mm)",
+            "name": "W__mm_",
             "listing": {
                 "title": "Wheel base in mm",
                 "visible" : true,
@@ -550,7 +552,7 @@
             }
         },
         {
-            "name": "At1 (mm)",
+            "name": "At1__mm_",
             "listing": {
                 "title": "Axle width steering axle in mm",
                 "visible" : true,
@@ -572,7 +574,7 @@
             }
         },
         {
-            "name": "At2 (mm)",
+            "name": "At2__mm_",
             "listing": {
                 "title": "Axle width other axle in mm",
                 "visible" : true,
@@ -638,7 +640,7 @@
             }
         },
         {
-            "name": "ec (cm3)",
+            "name": "ec__cm3_",
             "listing": {
                 "title": "Engine capacity in cm3",
                 "visible" : true,
@@ -660,7 +662,7 @@
             }
         },
         {
-            "name": "ep (KW)",
+            "name": "ep__KW_",
             "listing": {
                 "title": "Engine power in KW",
                 "visible" : true,
@@ -682,7 +684,7 @@
             }
         },
         {
-            "name": "z (Wh/km)",
+            "name": "z__Wh_km_",
             "listing": {
                 "title": "Electric energy consumption in Wh/km",
                 "visible" : true,
@@ -726,7 +728,7 @@
             }
         },
         {
-            "name": "Ernedc (g/km)",
+            "name": "Ernedc__g_km_",
             "listing": {
                 "title": "Emissions reduction through innovative technologies in g/km",
                 "visible" : true,
@@ -748,7 +750,7 @@
             }
         },
         {
-            "name": "Erwltp (g/km)",
+            "name": "Erwltp__g_km_",
             "listing": {
                 "title": "Emissions reduction through innovative technologies in g/km (WLTP)",
                 "visible" : true,
@@ -811,6 +813,69 @@
                 "title": "Vf",
                 "visible": true,
                 "pos": 33
+            }
+        },
+        {
+            "name": "Status",
+            "listing": {
+                "title": "Type of data",
+                "visible" : true,
+                "pos" : 34
+            },
+            "details": {
+                "title": "Status",
+                "pos" : 5,
+                "section": "Status",
+                "visible": true
+            },
+            "facet": {
+                "visible": false,
+                "title": "Type of data",
+                "pos": 9,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "operator": "OR",
+                "facet_display_options": ["sort", "checkbox"],
+                "empty_message": "No type of data",
+                "short_name": "Type of data"
+            },
+            "csv_tsv": {
+                "title": "Status",
+                "visible": true,
+                "pos": 34
+            }
+        },
+        {
+            "name": "year",
+            "listing": {
+                "title": "Registration year",
+                "visible" : true,
+                "pos" : 35
+            },
+            "details": {
+                "title": "year",
+                "pos" : 6,
+                "section": "year",
+                "visible": true
+            },
+            "facet": {
+                "visible": false,
+                "title": "Registration year",
+                "pos": 10,
+                "type": "facet",
+                "size": 100,
+                "order": "reverse_term",
+                "operator": "OR",
+                "facet_display_options": ["sort", "checkbox"],
+                "empty_message": "No registration year",
+                "short_name": "Registration year",
+                "default_values": {"operator": "or", "values": ["2018"]}
+            },
+            "csv_tsv": {
+                "title": "year",
+                "visible": true,
+                "pos": 35
             }
         }
     ]

@@ -180,24 +180,6 @@
             }
         },
         {
-            "name": "Status_of_implementation_clean",
-            "listing": {
-                "visible": false
-            },
-            "csv_tsv": {
-                "visible": false
-            },
-            "facet": {
-                "visible": true,
-                "title": "Status of implementation",
-                "pos": 70,
-                "type": "facet",
-                "size": 100,
-                "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
-            }
-        },
-        {
             "name": "Status_of_implementation",
             "listing": {
                 "visible": true,
@@ -211,10 +193,15 @@
                 "pos": 110
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Status of implementation",
+                "pos": 70,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"]
             }
         },
-
         {
             "name": "Policy_impacting_EU_ETS__ESD_or_LULUCF_emissions",
             "listing": {
@@ -377,19 +364,6 @@
                 "pos": 170
             },
             "facet": {
-                "visible": false,
-                "title": "Entities responsible for implementing the policy (type)"
-            }
-        },
-        {
-            "name": "Entities_responsible_for_implementing_the_policy__type__clean",
-            "listing": {
-                "visible": false
-            },
-            "csv_tsv": {
-                "visible": false
-            },
-            "facet": {
                 "visible": true,
                 "title": "Entities responsible for implementing the policy (type)",
                 "pos": 80,
@@ -417,12 +391,16 @@
             }
         },
         {
-            "name": "Implementation_period_start_clean",
+            "name": "Implementation_period_start",
             "listing": {
-                "visible": false
+                "visible": true,
+                "title": "Implementation period start",
+                "pos": 190
             },
             "csv_tsv": {
-                "visible": false
+                "title": "Implementation period start",
+                "visible": true,
+                "pos": 190
             },
             "facet": {
                 "visible": true,
@@ -442,22 +420,6 @@
             }
         },
         {
-            "name": "Implementation_period_start",
-            "listing": {
-                "visible": true,
-                "title": "Implementation period start",
-                "pos": 190
-            },
-            "csv_tsv": {
-                "title": "Implementation period start",
-                "visible": true,
-                "pos": 190
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-        {
             "name": "Is_the_policy_or_measure_related_to_a_Union_policy_",
             "listing": {
                 "visible": true,
@@ -469,28 +431,6 @@
                 "title": "Is the policy or measure related to a Union policy?",
                 "visible": true,
                 "pos": 200
-            },
-            "facet": {
-                "visible": false,
-                "title": "Is the policy or measure related to a Union policy?",
-                "pos": 100,
-                "type": "facet",
-                "size": 50,
-                "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
-            }
-        },
-        {
-            "name": "Is_the_policy_or_measure_related_to_a_Union_policy__clean",
-            "listing": {
-                "visible": false,
-                "title": "Is the policy or measure related to a Union policy?",
-                "pos": 210
-            },
-            "csv_tsv": {
-                "title": "Is the policy or measure related to a Union policy?",
-                "visible": false,
-                "pos": 210
             },
             "facet": {
                 "visible": true,
@@ -526,7 +466,7 @@
             }
         },
         {
-            "name": "Union_policy_lookup_only4facets_clean",
+            "name": "Union_policies_lookup_only4facets",
             "listing": {
                 "visible": false,
                 "title": "Union policy which resulted in the implementation of the policy or measure",
@@ -576,24 +516,6 @@
             }
         },
         {
-            "name": "Projection_scenario_in_which_the_policy_or_measure_is_included_clean",
-            "listing": {
-                "visible": false
-            },
-            "csv_tsv": {
-                "visible": false
-            },
-            "facet": {
-                "visible": true,
-                "title": "Projection scenario in which the policy or measure is included",
-                "pos": 130,
-                "type": "facet",
-                "size": 100,
-                "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
-            }
-        },
-        {
             "name": "Projection_scenario_in_which_the_policy_or_measure_is_included",
             "listing": {
                 "title": "Projection scenario in which the policy or measure is included",
@@ -607,7 +529,13 @@
                 "pos": 250
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Projection scenario in which the policy or measure is included",
+                "pos": 130,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"]
             }
         },
         {

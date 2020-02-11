@@ -13,7 +13,7 @@ WHERE {{
     ?envelope rod:startOfPeriod ?startOfPeriod .
     ?envelope rod:obligation ?obligation .
     ?envelope rod:locality ?locality .
-    FILTER (?obligation = obligation:672) 
+    FILTER (?obligation = obligation:672)
     ?locality rod:localityName ?Country .
   } GROUP BY ?Country
 }

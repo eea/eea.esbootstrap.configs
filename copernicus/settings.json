@@ -5,7 +5,10 @@
     "elastic": {
         "index": "copernicus",
         "type": "resource",
-        "enableValuesCounting": true
+        "enableValuesCounting": true,
+        "default_appalias": "latest",
+        "increment_threshold": 1,
+        "requests_per_second": 100
     },
     "external_templates": {
         "local_path": "/external_templates",
@@ -75,49 +78,57 @@
     "es_debug_enabled": false,
     "suggestions_enabled": true,
     "relevance_enabled": true,
-    "river_configs": {
-        "configs": [
-            {
-                "id": "eea_copernicus_publications",
-                "cluster_name": "Copernicus Land Publications",
-                "config_file": "riverconfig_publications.json"
-            },
-            {
-                "id": "eea_copernicus_faq",
-                "cluster_name": "Copernicus Land FAQ",
-                "config_file": "riverconfig_faq.json"
-            },
-            {
-                "id": "eea_copernicus_techlib",
-                "cluster_name": "Copernicus Land Technical Library",
-                "config_file": "riverconfig_tech_lib.json"
-            },
-            {
-                "id": "eea_copernicus_usecases",
-                "cluster_name": "Copernicus Land Use Cases",
-                "config_file": "riverconfig_usecases.json"
-            },
-            {
-                "id": "eea_copernicus_opportunities",
-                "cluster_name": "Copernicus Land Contract Opportunities",
-                "config_file": "riverconfig_opportunities.json"
-            },
-            {
-                "id": "eea_copernicus_news",
-                "cluster_name": "Copernicus Land News",
-                "config_file": "riverconfig_news.json"
-            },
-            {
-                "id": "eea_copernicus_events",
-                "cluster_name": "Copernicus Land Events",
-                "config_file": "riverconfig_events.json"
-            },
-            {
-                "id": "eea_copernicus_clmsproducts",
-                "cluster_name": "Copernicus Land CLMS products",
-                "config_file": "riverconfig_clmsproducts.json"
-            }
-        ]
+    "API":{
+        "token": "default"
     },
-    "endpoint": "https://semantic.eea.europa.eu/sparql"
+    "source": {
+        "type": "rdfriver",
+        "autoswitch": "true",
+        "configuration": {
+            "fullreindex": true,
+            "endpoint": "https://semantic.eea.europa.eu/sparql",
+            "river_configs": [
+                {
+                    "id": "eea_copernicus_publications",
+                    "cluster_name": "Copernicus Land Publications",
+                    "config_file": "riverconfig_publications.json"
+                },
+                {
+                    "id": "eea_copernicus_faq",
+                    "cluster_name": "Copernicus Land FAQ",
+                    "config_file": "riverconfig_faq.json"
+                },
+                {
+                    "id": "eea_copernicus_techlib",
+                    "cluster_name": "Copernicus Land Technical Library",
+                    "config_file": "riverconfig_tech_lib.json"
+                },
+                {
+                    "id": "eea_copernicus_usecases",
+                    "cluster_name": "Copernicus Land Use Cases",
+                    "config_file": "riverconfig_usecases.json"
+                },
+                {
+                    "id": "eea_copernicus_opportunities",
+                    "cluster_name": "Copernicus Land Contract Opportunities",
+                    "config_file": "riverconfig_opportunities.json"
+                },
+                {
+                    "id": "eea_copernicus_news",
+                    "cluster_name": "Copernicus Land News",
+                    "config_file": "riverconfig_news.json"
+                },
+                {
+                    "id": "eea_copernicus_events",
+                    "cluster_name": "Copernicus Land Events",
+                    "config_file": "riverconfig_events.json"
+                },
+                {
+                    "id": "eea_copernicus_clmsproducts",
+                    "cluster_name": "Copernicus Land CLMS products",
+                    "config_file": "riverconfig_clmsproducts.json"
+                }
+            ]
+        }
+    }
 }

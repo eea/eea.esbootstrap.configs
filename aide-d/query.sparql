@@ -9,7 +9,7 @@ PREFIX ddaq: <http://dd.eionet.europa.eu/vocabulary/aq/#>
 
 SELECT DISTINCT
 
-md5(concat(?CountryOrTerritory,xsd:string(?startOfPeriod),?Namespace,?Network,?TimeZone,?responsibleParty,?StationName,?EoICode,?StationType,?StationArea,?Pollutant,?SamplingPointId,xsd:string(?Longitude),xsd:string(?Latitude),?MeasurementRegime,xsd:string(?beginPosition),?Sample,?SamplingProcess,?MeasurementEquipment,?MeasurementMethod,?SamplingMethod,?AnalyticalTechnique)) as ?_id
+md5(concat(?CountryOrTerritory,xsd:string(?startOfPeriod),?Namespace,?Network,?TimeZone,?responsibleParty,?StationName,?EoICode,?StationType,?StationArea,?Pollutant,?SamplingPointId,xsd:string(?Longitude),xsd:string(?Latitude),?MeasurementRegime,xsd:string(?beginPosition),xsd:string(?endPosition),?Sample,?SamplingProcess,?MeasurementEquipment,?MeasurementMethod,?SamplingMethod,?AnalyticalTechnique)) as ?_id
 
 ?CountryOrTerritory
 YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear

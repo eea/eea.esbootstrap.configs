@@ -4,7 +4,10 @@
     },
     "elastic": {
         "type": "resource",
-        "enableValuesCounting": true
+        "enableValuesCounting": true,
+        "default_appalias": "latest",
+        "increment_threshold": 2,
+        "requests_per_second": 100
     },
     "translation": {
         "default_language": "en",
@@ -76,8 +79,15 @@
     "es_debug_enabled": false,
     "suggestions_enabled": true,
     "relevance_enabled": true,
-    "river_configs": {
-        "configs": [
+    "API":{
+        "token": "default"
+    },
+    "source": {
+        "type": "rdfriver",
+        "autoswitch": "true",
+        "configuration": {
+            "endpoint": "https://semantic.eea.europa.eu/sparql",
+            "river_configs": [
             {
                 "id": "eea_files",
                 "cluster_name": "EEA Website (www.eea.europa.eu)",
@@ -213,7 +223,8 @@
                 "cluster_name": "Climate-ADAPT (climate-adapt.eea.europa.eu)",
                 "config_file": "riverconfig_climateadapt.json"
             }
-        ]
-    },
-    "endpoint": "https://semantic.eea.europa.eu/sparql"
+            ]
+        }
+    }
+
 }
