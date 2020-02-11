@@ -22,6 +22,29 @@
     margin-bottom: 0;
 }
 
+/* tabs css */
+ul.tabs li {
+    display: inline;
+    margin-right: 0.25em;
+}
+
+ul.tabs li a.tab-link {
+    display: inline-block;
+    line-height: 26px;
+    padding: 0 0.75em;
+    text-decoration: none;
+    border: none;
+    margin: 0;
+}
+
+.tabs-content div.tab-content {
+    display: none;
+}
+
+.tabs-content div.tab-content.selected {
+    display: block;
+}
+
 /* Remove DRAFT watermark */
 #content {
     background:white;

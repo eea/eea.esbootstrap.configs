@@ -345,6 +345,34 @@ jQuery(document).ready(function($) {
         opts.highlight_blacklist = eea_mapping.highlights.blacklist;
     }
 
+    $('ul.tabs .tab-link').click(function(el){
+        el.preventDefault();
+        if ($(el.delegateTarget).hasClass('selected') !== true) {
+            // always have a tab selected
+            $('ul.tabs .selected').removeClass('selected');
+            $(el.delegateTarget).toggleClass('selected');
+
+            var parent = $(el.delegateTarget).parent();
+            var element_id = '#' + parent.attr('class');
+            $('.tabs-content .selected').removeClass('selected');
+            $('.tabs-content ' + element_id).toggleClass('selected');
+        }
+        else {
+            console.log("Tab is already selected");
+            return;
+        }
+    })
+
+    // set iframe
+    var iframe_str = $('.tabs-content #second-tab span').attr('class');
+    if (iframe_str === undefined || iframe_str === "") {
+        console.log("No iframe detected.");
+    }
+    else {
+        var iframe = $.parseHTML(iframe_str);
+        $(iframe).appendTo('.tabs-content #second-tab');
+    }
+
     getMinMaxYear(function(min, max){
         getStatus(min, max, function(min, max, status){
             var tmp_facets = getCustomFacets();

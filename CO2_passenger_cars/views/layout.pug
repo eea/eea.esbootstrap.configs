@@ -1,0 +1,148 @@
+include ./mixins.pug
+doctype html
+html
+    head
+        block title
+        meta(charset='utf-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        script(type='text/javascript').
+            var field_base="#{field_base}";
+        script
+            != settings_search_sortby
+        script
+            != settings_sort
+        script
+            != settings_display_options
+        script
+            != settings_default_display
+        script
+            != settings_display_images
+        script
+            != settings_landingpage_enabled
+        script
+            != settings_suggestions_enabled
+        script
+            != settings_es_debug_enabled
+        script
+            != settings_selected_navigation_tab
+        script
+            != settings_relevance_enabled
+        script
+            != settings_relevance
+        script
+            != settings_external_configs
+        script
+            != settings_default_external_configs
+        script
+            != mapping
+        script
+            != settings_draft
+        script
+            != settings_translation
+
+        - var external_url = external_templates_url || 'https://www.eea.europa.eu'
+
+        link(rel="shortcut icon", type="image/x-icon", href=external_url+"/favicon.ico")
+
+        - var debug_mode = skip_resources_bundling || false
+
+        if !debug_mode
+            style
+                include:clean-css /node_modules/eea-searchserver/lib/framework/public/css/critical.css
+        else
+            link(rel='stylesheet', href="esbootstrap_resources/css/critical.css")
+
+        if !skip_external_template_styles
+            != templateRender(headFile)
+        else
+            link(rel="preload" href=external_url + "/critical.css" as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
+            <noscript><link rel="stylesheet" href=external_url + "/critical.css" /></noscript>
+            link(rel="preload" href=external_url + "/external_templates_styles.css" as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
+            <noscript><link rel="stylesheet" href=external_url + "/external_templates_styles.css" /></noscript>
+            link(rel="preload" href=external_url + "/external_templates_custom.css" as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
+            <noscript><link rel="stylesheet" href=external_url + "/external_templates_custom.css" /></noscript>
+
+        if (renderStyles && !debug_mode)
+            script
+                include:uglify-js ../public/loadcss.js
+            - var css_render = renderStyles('layout_page')
+            - var only_css = css_render.match(/href\='([^\s]*)'\s/)[1]
+            link(rel="preload" href=only_css as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
+            <noscript><link rel="stylesheet" href="#{only_css}" /></noscript>
+        else
+            if css_resources.layout_page
+                each style in css_resources.layout_page
+                    link(rel='stylesheet', href=style)
+
+
+        block extrastyles
+
+    body(class="fullwidth " + app_id data-sentry-dsn=sentry_dsn data-sentry-ver=sentry_ver data-sentry-env=sentry_rancher_env data-sentry-instance=sentry_instance data-sentry-app-name=sentry_app_name id="app")
+        != templateRender(headerFile)
+        if (enableBreadcrumbs)
+            +portal_breadcrumbs (breadcrumbs)
+
+        div(id="portal-columns")
+            div(class="container")
+                div(class="content" id="content")
+                    if index_in_progress
+                        div(class="portalMessage warningMessage")
+                            span
+                                | Indexing in progress, please check
+                                a(href="/API/v1/status") /API/v1/status
+                    if diffs_in_indices
+                        div(class="portalMessage warningMessage")
+                            span
+                                | There are differences in the columns compared to the production index, please check
+                                a(href="/API/v1/status") /API/v1/status
+
+                    ul(class="tabs")
+                        li(class="first-tab")
+                            a(href="" class="tab-link selected")
+                                span
+                                    | First tab
+                        li(class="second-tab")
+                            a(href="" class="tab-link")
+                                span
+                                    | Second tab
+                    div(class="tabs-content")
+                        div(id="first-tab" class="tab-content selected")
+                            block content
+                        div(id="second-tab" class="tab-content")
+                            span(class=dashboard_src)
+
+                    div(class="visualization-date")
+                        span(class="discreet")
+                            - var container_info = getContainerInfo()
+                            | Application data last refreshed <strong>#{creation_date}</strong>.
+                            | Version info <strong>#{container_info.version_info}</strong> and tag version <strong>#{container_info.tag_info}</strong> on <strong>#{container_info.hostname}</strong>.
+                    div(class="documentActions")
+                        h5(class="hiddenStructure") Document Actions
+                div(id="right-column", class="right-column-area")
+                    div(class="visualPadding")
+                div(class="visualClear")
+        div(id="landing")
+            block landing
+
+        <div id="loading-overlay">
+            <div class="loading-animation">
+            </div>
+        </div>
+
+        input(id="card_view_template", type="hidden", value=cardViewTemplate)
+
+        input(id="list_view_template", type="hidden", value=listViewTemplate)
+
+        != templateRender(footerFile)
+
+
+        if (renderJs && !debug_mode)
+            != renderJs('layout_page')
+        else
+            if js_resources.layout_page
+                each script in js_resources.layout_page
+                    script(type='text/javascript', src=script)
+        block extrajavascripts
+        if google_map_key != "false"
+            script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?key="+google_map_key)
+        script(type="text/javascript", src=external_url + "/external_templates_scripts.js")
