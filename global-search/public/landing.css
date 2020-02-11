@@ -21,6 +21,7 @@
     font-weight: bold;
     color: #e9f2f5;
     vertical-align: bottom;
+    line-height: 0;
 }
 
 .documents_count {
@@ -70,7 +71,6 @@
 
 #landing .available_content h2 {
     border-bottom: 1px solid #115c57;
-    font-size: 375%;
     line-height: 1;
     margin-bottom: 0; 
 }
