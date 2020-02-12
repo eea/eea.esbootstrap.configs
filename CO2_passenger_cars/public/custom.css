@@ -23,9 +23,12 @@
 }
 
 /* tabs css */
+ul.tabs {
+    margin-left: 0;
+}
+
 ul.tabs li {
     display: inline;
-    margin-right: 0.25em;
 }
 
 ul.tabs li a.tab-link {
@@ -35,6 +38,11 @@ ul.tabs li a.tab-link {
     text-decoration: none;
     border: none;
     margin: 0;
+    padding: 1rem 2em;
+    margin-right: 0.25em;
+    cursor: pointer;
+    background: #EBF3F6;
+    font-weight: bold;
 }
 
 .tabs-content div.tab-content {
