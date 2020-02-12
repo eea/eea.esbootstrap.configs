@@ -98,19 +98,17 @@ html
 
                     ul(class="tabs")
                         li(class="first-tab")
-                            a(href="" class="tab-link selected")
+                            a(href="#first-tab" class="tab-link selected")
                                 span
-                                    | First tab
+                                    | Data table explorer
                         li(class="second-tab")
-                            a(href="" class="tab-link")
+                            a(href="#second-tab" class="tab-link")
                                 span
-                                    | Second tab
+                                    | Dashboard
                     div(class="tabs-content")
                         div(id="first-tab" class="tab-content selected")
                             block content
-                        div(id="second-tab" class="tab-content")
-                            span(class=dashboard_src)
-
+                        div(id="second-tab" class="tab-content") !{dashboard_src}
                     div(class="visualization-date")
                         span(class="discreet")
                             - var container_info = getContainerInfo()

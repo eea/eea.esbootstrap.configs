@@ -363,16 +363,6 @@ jQuery(document).ready(function($) {
         }
     })
 
-    // set iframe
-    var iframe_str = $('.tabs-content #second-tab span').attr('class');
-    if (iframe_str === undefined || iframe_str === "") {
-        console.log("No iframe detected.");
-    }
-    else {
-        var iframe = $.parseHTML(iframe_str);
-        $(iframe).appendTo('.tabs-content #second-tab');
-    }
-
     getMinMaxYear(function(min, max){
         getStatus(min, max, function(min, max, status){
             var tmp_facets = getCustomFacets();
