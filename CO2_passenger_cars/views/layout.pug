@@ -95,20 +95,7 @@ html
                             span
                                 | There are differences in the columns compared to the production index, please check
                                 a(href="/API/v1/status") /API/v1/status
-
-                    ul(class="tabs")
-                        li(class="first-tab")
-                            a(href="#first-tab" class="tab-link selected")
-                                span
-                                    | Data table explorer
-                        li(class="second-tab")
-                            a(href="#second-tab" class="tab-link")
-                                span
-                                    | Dashboard
-                    div(class="tabs-content")
-                        div(id="first-tab" class="tab-content selected")
-                            block content
-                        div(id="second-tab" class="tab-content") !{dashboard_src}
+                    block content
                     div(class="visualization-date")
                         span(class="discreet")
                             - var container_info = getContainerInfo()
