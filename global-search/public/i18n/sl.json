@@ -178,9 +178,9 @@
     "Facet_Spatial_Item(Uzbekistan)": "Uzbekistan",
 
     "Facet_ReadingTime_Item(All)": "Vsi",
-    "Facet_ReadingTime_Item(Short)": "Kratek",
-    "Facet_ReadingTime_Item(Medium)": "Srednji",
-    "Facet_ReadingTime_Item(Large)": "Dolg",
+    "Facet_ReadingTime_Item(Short (<5 minutes))": "Kratek",
+    "Facet_ReadingTime_Item(Medium (5-25 minutes))": "Srednji",
+    "Facet_ReadingTime_Item(Large (25+ minutes))": "Dolg",
     "Facet_ReadingTime_Item(Unknown)": "Neznano",
 
     "Facet_Language_Item(ar)": "العربية (ar)",

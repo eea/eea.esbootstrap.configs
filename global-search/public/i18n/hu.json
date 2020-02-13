@@ -178,9 +178,9 @@
     "Facet_Spatial_Item(Uzbekistan)": "Üzbegisztán",
 
     "Facet_ReadingTime_Item(All)": "Mind",
-    "Facet_ReadingTime_Item(Short)": "Rövid",
-    "Facet_ReadingTime_Item(Medium)": "Közepes",
-    "Facet_ReadingTime_Item(Large)": "Hosszú",
+    "Facet_ReadingTime_Item(Short (<5 minutes))": "Rövid",
+    "Facet_ReadingTime_Item(Medium (5-25 minutes))": "Közepes",
+    "Facet_ReadingTime_Item(Large (25+ minutes))": "Hosszú",
     "Facet_ReadingTime_Item(Unknown)": "Ismeretlen",
 
     "Facet_Language_Item(ar)": "العربية (ar)",
