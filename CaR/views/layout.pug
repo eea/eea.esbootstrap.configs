@@ -84,7 +84,7 @@ html
                     div(class="visualization-date")
                         span(class="discreet")
                             - var container_info = getContainerInfo()
-                            | Application data last refreshed <strong>#{getIndexCreationDate()}</strong>.
+                            | Application data last refreshed <strong>#{creation_date}</strong>.
                             | Version info <strong>#{container_info.version_info}</strong> and tag version <strong>#{container_info.tag_info}</strong> on <strong>#{container_info.hostname}</strong>.
                     div(class="documentActions")
                         h5(class="hiddenStructure") Document Actions
