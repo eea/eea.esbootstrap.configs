@@ -178,9 +178,9 @@
     "Facet_Spatial_Item(Uzbekistan)": "Usbekistan",
 
     "Facet_ReadingTime_Item(All)": "Kõik",
-    "Facet_ReadingTime_Item(Short)": "Lühike",
-    "Facet_ReadingTime_Item(Medium)": "Keskmine",
-    "Facet_ReadingTime_Item(Large)": "Suur",
+    "Facet_ReadingTime_Item(Short (<5 minutes))": "Lühike",
+    "Facet_ReadingTime_Item(Medium (5-25 minutes))": "Keskmine",
+    "Facet_ReadingTime_Item(Large (25+ minutes))": "Suur",
     "Facet_ReadingTime_Item(Unknown)": "Tundmatu",
 
     "Facet_Language_Item(ar)": "العربية (ar)",
