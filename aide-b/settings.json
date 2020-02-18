@@ -19,7 +19,7 @@
     "layout_vars": {
         "head_title": "AQ zones (B)",
         "app_id": "aide-b",
-        "skip_resources_bundling": true,
+        "skip_resources_bundling": false,
         "skip_external_template_styles": false,
         "override_searchserver_resources": false,
         "css_resources": {
