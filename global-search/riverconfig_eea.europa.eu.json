@@ -12,7 +12,6 @@
     "{?resource a <http://www.eea.europa.eu/portal_types/Event#Event>} UNION ",
     "{?resource a <http://www.eea.europa.eu/portal_types/GIS%20Application#GISApplication>} UNION ",
     "{?resource a <http://www.eea.europa.eu/portal_types/Image#Image>} UNION ",
-    "{?resource a <http://www.eea.europa.eu/portal_types/KeyMessage#KeyMessage>} UNION ",
     "{?resource a <http://www.eea.europa.eu/portal_types/Link#Link>} UNION ",
     "{?resource a <http://www.eea.europa.eu/portal_types/MethodologyReference#MethodologyReference>} UNION ",
     "{?resource a <http://www.eea.europa.eu/portal_types/PolicyDocumentReference#PolicyDocumentReference>} UNION ",
