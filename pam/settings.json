@@ -54,7 +54,7 @@
     },
     "source": {
         "type": "url",
-        "autoswitch": "true",
+        "autoswitch": "false",
         "configuration": {
             "type": "json",
             "bulksize": 3000,
