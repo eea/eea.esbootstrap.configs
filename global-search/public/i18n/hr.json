@@ -181,7 +181,7 @@
  "Facet_ReadingTime_Item(Short (<5 minutes))": "Kratko",
  "Facet_ReadingTime_Item(Medium (5-25 minutes))": "Srednje",
  "Facet_ReadingTime_Item(Large (25+ minutes))": "Dugačko",
- "Facet_ReadingTime_Item(Unknown)": "Nepoznato"
+ "Facet_ReadingTime_Item(Unknown)": "Nepoznato",
 
   "Facet_Language_Item(ar)": "العربية (ar)",
   "Facet_Language_Item(bg)": "Български (bg)",

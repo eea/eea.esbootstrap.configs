@@ -181,7 +181,7 @@
  "Facet_ReadingTime_Item(Short (<5 minutes))": "Kısa",
  "Facet_ReadingTime_Item(Medium (5-25 minutes))": "Orta",
  "Facet_ReadingTime_Item(Large (25+ minutes))": "Uzun",
- "Facet_ReadingTime_Item(Unknown)": "Bilinmiyor"
+ "Facet_ReadingTime_Item(Unknown)": "Bilinmiyor",
 
   "Facet_Language_Item(ar)": "العربية (ar)",
   "Facet_Language_Item(bg)": "Български (bg)",

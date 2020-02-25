@@ -181,7 +181,7 @@
  "Facet_ReadingTime_Item(Short (<5 minutes))": "Stutt",
  "Facet_ReadingTime_Item(Medium (5-25 minutes))": "Miðlungs",
  "Facet_ReadingTime_Item(Large (25+ minutes))": "Mikill",
- "Facet_ReadingTime_Item(Unknown)": "Óþekkt"
+ "Facet_ReadingTime_Item(Unknown)": "Óþekkt",
 
   "Facet_Language_Item(ar)": "العربية (ar)",
   "Facet_Language_Item(bg)": "Български (bg)",
