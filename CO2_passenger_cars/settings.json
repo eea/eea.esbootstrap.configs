@@ -3,9 +3,10 @@
         "port": 3000
     },
     "elastic": {
-        "index": "co2_passenger_cars_test",
+        "index": "co2_passenger_cars",
         "type": "resources",
-        "field_base":""
+        "field_base":"",
+        "preload_cache": true
     },
     "external_templates": {
         "local_path": "/external_templates",
