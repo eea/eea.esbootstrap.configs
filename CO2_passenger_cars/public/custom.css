@@ -22,6 +22,49 @@
     margin-bottom: 0;
 }
 
+/* tabs css */
+ul.tabs {
+    margin-left: 0;
+}
+
+ul.tabs li {
+    display: inline;
+}
+
+ul.tabs li a.tab-link {
+    display: inline-block;
+    line-height: 26px;
+    text-decoration: none;
+    border: none;
+    margin: 0;
+    padding: 1rem 2em;
+    margin-right: 0.25em;
+    cursor: pointer;
+    background: #EBF3F6;
+}
+
+ul.tabs li a.tab-link span {
+    font-size: 17px;
+}
+
+.tabs-content div.tab-content {
+    display: none;
+}
+
+.tabs-content div.tab-content.selected {
+    display: block;
+}
+
+#content .tabs-content .facetview_filter h2,
+.tabs-content .row-fluid {
+    background-color: #f5f9fc;
+}
+
+ul.tabs .selected {
+    color: black;
+    /* font-weight: bold; */
+}
+
 /* Remove DRAFT watermark */
 #content {
     background:white;

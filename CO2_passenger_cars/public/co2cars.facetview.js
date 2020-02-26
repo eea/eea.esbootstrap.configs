@@ -345,6 +345,24 @@ jQuery(document).ready(function($) {
         opts.highlight_blacklist = eea_mapping.highlights.blacklist;
     }
 
+    $('ul.tabs .tab-link').click(function(el){
+        el.preventDefault();
+        if ($(el.delegateTarget).hasClass('selected') !== true) {
+            // always have a tab selected
+            $('ul.tabs .selected').removeClass('selected');
+            $(el.delegateTarget).toggleClass('selected');
+
+            var parent = $(el.delegateTarget).parent();
+            var element_id = '#' + parent.attr('class');
+            $('.tabs-content .selected').removeClass('selected');
+            $('.tabs-content ' + element_id).toggleClass('selected');
+        }
+        else {
+            console.log("Tab is already selected");
+            return;
+        }
+    })
+
     getMinMaxYear(function(min, max){
         getStatus(min, max, function(min, max, status){
             var tmp_facets = getCustomFacets();
