@@ -6,6 +6,7 @@
   "Y": {"type" :"integer" },
   "MS" : {
             "type": "string",
+            "analyzer": "none",
             "fields" : {
                 "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
                 "index" : {"type" : "keyword"},
@@ -15,6 +16,7 @@
   "VFN" : { "type" : "string", "analyzer" : "none" },
   "Mp" : {
             "type": "string",
+            "analyzer": "none",
             "fields" : {
                 "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
                 "index" : {"type" : "keyword"},
@@ -23,6 +25,7 @@
         },
   "Mh" : {
             "type": "string",
+            "analyzer": "none",
             "fields" : {
                 "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
                 "index" : {"type" : "keyword"},
@@ -45,6 +48,7 @@
         },
   "Cn" : {
             "type": "string",
+            "analyzer": "none",
             "fields" : {
                 "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
                 "index" : {"type" : "keyword"},
@@ -74,6 +78,7 @@
   "Vf": {"type" :"integer" },
   "Status": {
             "type": "string",
+            "analyzer": "none",
             "fields" : {
                 "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
                 "index" : {"type" : "keyword"},
@@ -83,6 +88,7 @@
   "date": {"type": "date","format": "yyyy-MM-dd"},
   "FtTrim": {
             "type": "string",
+            "analyzer": "none",
             "fields" : {
                 "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
                 "index" : {"type" : "keyword"},
@@ -91,6 +97,7 @@
         },
   "scStatus": {
             "type": "string",
+            "analyzer": "none",
             "fields" : {
                 "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
                 "index" : {"type" : "keyword"},
