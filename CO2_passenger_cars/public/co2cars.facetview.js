@@ -9,13 +9,13 @@ function getMinMaxYear(callback){
 }
 
 function getStatus(min, max, callback){
-    query = '{"query": {"bool": {"must": [{"term": {"year": "' + max + '"}},{"match": {"Status": "f"}}],"must_not": [],"should": []}},"sort": [],"size": 0}';
+    query = '{"query": {"bool": {"must": [{"term": {"year": "' + max + '"}},{"match": {"Status": "F"}}],"must_not": [],"should": []}},"sort": [],"size": 0}';
     var url = window.location.origin + "/tools/api?source=" + query;
 
     $.ajax({url: url, success: function(result){
-        status = 'p';
+        status = 'P';
         if (result.hits.total > 0) {
-            status = 'f'
+            status = 'F'
         }
         callback(min, max, status);
     }
@@ -201,7 +201,7 @@ function createCustomFacets(){
     $(year_facet_template).insertAfter($('.current-filters')[0]);
     $(status_facet_template).insertAfter($('.current-filters')[0]);
 
-    status_arr = [ {key:'f'}, {key:'p'}]
+    status_arr = [ {key:'F'}, {key:'P'}]
     var tmp_facets = getCustomFacets();
 
 

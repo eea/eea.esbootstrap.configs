@@ -4,34 +4,10 @@
 
   "ID" : {"type" :"text", "fielddata": true },
   "Y": {"type" :"integer" },
-  "MS" : {
-            "type": "string",
-            "analyzer": "none",
-            "fields" : {
-                "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
-                "index" : {"type" : "keyword"},
-                "MS": {"type": "keyword", "index": true}
-            }
-        },
+  "MS" : {"type": "keyword", "index":true},
   "VFN" : { "type" : "string", "analyzer" : "none" },
-  "Mp" : {
-            "type": "string",
-            "analyzer": "none",
-            "fields" : {
-                "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
-                "index" : {"type" : "keyword"},
-                "Mp": {"type": "keyword", "index": true}
-            }
-        },
-  "Mh" : {
-            "type": "string",
-            "analyzer": "none",
-            "fields" : {
-                "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
-                "index" : {"type" : "keyword"},
-                "Mh": {"type": "keyword", "index": true}
-            }
-        },
+  "Mp" : {"type": "keyword", "index":true},
+  "Mh" : {"type": "keyword", "index":true},
   "Man" : { "type" : "string",
             "analyzer" : "none"
         },
@@ -46,14 +22,8 @@
             "analyzer" : "none",
             "copy_to" : ["did_you_mean", "autocomplete"]
         },
-  "Cn" : {
-            "type": "string",
-            "analyzer": "none",
-            "fields" : {
-                "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
-                "index" : {"type" : "keyword"},
-                "Cn": {"type": "keyword", "index": true}
-            },
+  "Mh" : {"type": "keyword", "index":true},
+  "Cn" : { "type": "keyword", "index":true,
             "copy_to" : ["did_you_mean", "autocomplete"]
         },
   "Ct" : { "type" : "string", "analyzer" : "none" },
@@ -76,32 +46,8 @@
   "Erwltp__g_km_" : {"type" :"double" },
   "De" : {"type" :"double" },
   "Vf": {"type" :"integer" },
-  "Status": {
-            "type": "string",
-            "analyzer": "none",
-            "fields" : {
-                "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
-                "index" : {"type" : "keyword"},
-                "Status": {"type": "keyword", "index": true}
-            }
-        },
+  "Status" : {"type": "keyword", "index":true},
   "date": {"type": "date","format": "yyyy-MM-dd"},
-  "FtTrim": {
-            "type": "string",
-            "analyzer": "none",
-            "fields" : {
-                "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
-                "index" : {"type" : "keyword"},
-                "FtTrim": {"type": "keyword", "index": true}
-            }
-        },
-  "scStatus": {
-            "type": "string",
-            "analyzer": "none",
-            "fields" : {
-                "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
-                "index" : {"type" : "keyword"},
-                "scStatus": {"type": "keyword", "index": true}
-            }
-        }
+  "FtTrim": {"type": "keyword", "index":true},
+  "scStatus": {"type": "keyword", "index":true}
 }
