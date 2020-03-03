@@ -4,10 +4,10 @@
 
   "ID" : {"type" :"text", "fielddata": true },
   "Y": {"type" :"integer" },
-  "MS" : {"type": "keyword", "index":true},
+  "MS" : {"type": "keyword", "index":true, "eager_global_ordinals": true},
   "VFN" : { "type" : "string", "analyzer" : "none" },
-  "Mp" : {"type": "keyword", "index":true},
-  "Mh" : {"type": "keyword", "index":true},
+  "Mp" : {"type": "keyword", "index":true, "eager_global_ordinals": true},
+  "Mh" : {"type": "keyword", "index":true, "eager_global_ordinals": true},
   "Man" : { "type" : "string",
             "analyzer" : "none"
         },
@@ -22,8 +22,7 @@
             "analyzer" : "none",
             "copy_to" : ["did_you_mean", "autocomplete"]
         },
-  "Mh" : {"type": "keyword", "index":true},
-  "Cn" : { "type": "keyword", "index":true,
+  "Cn" : { "type": "keyword", "index":true, "eager_global_ordinals": true,
             "copy_to" : ["did_you_mean", "autocomplete"]
         },
   "Ct" : { "type" : "string", "analyzer" : "none" },
@@ -46,8 +45,9 @@
   "Erwltp__g_km_" : {"type" :"double" },
   "De" : {"type" :"double" },
   "Vf": {"type" :"integer" },
-  "Status" : {"type": "keyword", "index":true},
+  "Status" : {"type": "keyword", "index":true, "eager_global_ordinals": true},
   "date": {"type": "date","format": "yyyy-MM-dd"},
-  "FtTrim": {"type": "keyword", "index":true},
-  "scStatus": {"type": "keyword", "index":true}
+  "FtTrim": {"type": "keyword", "index":true, "eager_global_ordinals": true},
+  "scStatus": {"type": "keyword", "index":true, "eager_global_ordinals": true},
+  "year": {"type": "integer"}
 }
