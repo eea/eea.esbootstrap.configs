@@ -141,12 +141,12 @@ function buildPredefinedFilters(year, status){
                                     "should": [
 /*                                      {
                                             "term": {
-                                                "Status": "p"
+                                                "Status": "P"
                                             }
                                         },
                                         {
                                             "term": {
-                                                "Status": "f"
+                                                "Status": "F"
                                             }
                                         }*/
                                     ]
@@ -218,7 +218,7 @@ function createCustomFacets(){
         $(checkbox).attr('value', item.key);
         $(checkbox).attr('group_id', idx);
 
-        if (item.key === "f") {
+        if (item.key === "F") {
             item.key = "Final data";
         }
         else {
