@@ -1,0 +1,28 @@
+{
+  "did_you_mean": {"type": "text", "analyzer": "didYouMean"},
+  "autocomplete": {"type": "text", "analyzer": "autocomplete"},
+
+  "ID" : {"type" :"integer"},
+  "ID_OF_HIGHER_INFORMATION_LEVEL" : {"type" :"string", "analyzer" : "coma" },
+  "ID_OF_OTHER_INFO_AT_SAME_LEVEL" : {"type" :"string", "analyzer" : "coma" },
+  "ID_OF_LOWER_INFORMATION_LEVEL" : {"type" :"string", "analyzer" : "coma" },
+  "LANGUAGE" : {"type" :"string", "analyzer" : "coma" },
+  "NUTS_LEVEL" : {"type" :"string", "analyzer" : "coma" },
+  "FOREST_OWNERSHIP, _HA" : {"type" :"string", "analyzer" : "coma" },
+  "FOREST_TYPES_HA" : {"type" :"string", "analyzer" : "coma" },
+  "TREE_SPECIES_HA" : {"type" :"string", "analyzer" : "coma" },
+  "AGE_CLASSES_HA" : {"type" :"string", "analyzer" : "coma" },
+  "DIAMETER_(DBH)" : {"type" :"string", "analyzer" : "coma" },
+  "QUALITY_INDICATORS_HA" : {"type" :"string", "analyzer" : "coma" },
+  "FOREST_MANAGEMENT_HA" : {"type" :"string", "analyzer" : "coma" },
+  "AFFORESTATION_HA" : {"type" :"string", "analyzer" : "coma" },
+  "FELLING_HA" : {"type" :"string", "analyzer" : "coma" },
+  "ADDITIONAL_INFO" : {"type" :"string", "analyzer" : "coma" },
+  "KEYWORDS" : {"type" :"string", "analyzer" : "coma" },
+  "COUNTRY" : {"type": "string", "analyzer" : "coma", "copy_to" : ["did_you_mean", "autocomplete"]},
+  "TOPIC_CATEGORY" : {"type": "string", "analyzer" : "coma"},
+  "RESOURCE_TYPE" :  {"type": "string", "analyzer" : "coma", "copy_to" : ["did_you_mean", "autocomplete"]},
+  "COLLECTIONS_RANGE" :  {"type": "text","fielddata":true, "analyzer" : "coma"},
+  "RESOURCE_TITLE" : {"type": "text", "fields": {"keyword": {"ignore_above": 256,"type": "keyword"}}, "copy_to" : ["did_you_mean", "autocomplete"]},
+  "RESOURCE_DESCRIPTION" : {"type": "text", "fields": {"keyword": {"ignore_above": 256,"type": "keyword"}}, "copy_to" : ["did_you_mean", "autocomplete"]}
+}
