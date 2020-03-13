@@ -31,7 +31,8 @@
             ],
             "details_page": [
                 "css/esbootstrap.facetview.css",
-                "custom.css"
+                "custom.css",
+                "https://demo-forests-p5.eea.europa.eu/static/css/bundle.d23565a9.css"
             ]
         },
         "js_resources": {
@@ -45,7 +46,7 @@
                 "http://www.eea.europa.eu/nodeutilities.js",
                 "http://www.eea.europa.eu/mark_special_links.js",
                 "javascripts/jq.tools.js",
-                "custom.js"
+                "details_custom.js"
             ]
         },
         "site_title": "Forest Information",

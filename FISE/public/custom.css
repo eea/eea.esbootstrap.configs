@@ -39,7 +39,7 @@ tr:nth-of-type(even) .results_text:after {
     display:none;
 }
 
-#portal-header, #footer-wrapper, #portal-colophon, .visualization-info {
+#portal-header, #footer-wrapper, #portal-colophon, .visualization-info, #header-holder, .visualization-date {
     display:none;
 }
 .facet-view-simple{
@@ -49,4 +49,29 @@ tr:nth-of-type(even) .results_text:after {
     padding-left: 2em;
     padding-right: 2em;
     max-width: 1687px;
+}
+
+.ui-dialog-titlebar {
+    border:none;
+    background-color:white !important;
+}
+
+.ui-dialog {
+    border:none;
+    background-color:white !important;
+    padding:0;
+    background:none;
+}
+
+.ui-button {
+    border:none !important;
+    background-color:white !important;
+}
+
+#detailsmodal {
+    padding:0;
+}
+
+body, html {
+    background-color:white !important;
 }

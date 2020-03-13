@@ -1,31 +1,34 @@
 {
     "details_settings" : {
+        "show_links": true,
         "sections": [
             {"name":"info",
-             "title":"General info",
-             "pos":0},
-            {"name":"created",
-             "title":"Created",
-             "pos":1}
+             "title":"",
+             "pos":0}
         ]
     },
+    "highlights": {
+        "enabled": true
+    },
+
     "fields_mapping": [
         {
             "name": "ID",
             "listing": {
-                "title": "ID",
+                "title": "",
                 "visible" : true,
-                "pos" : 1,
+                "pos" : 0,
                 "display": {
+                    "pre": "<a class='details_link' href=/details?id=",
                     "field": "ID",
-                    "post": "</td>"
+                    "post": ">"
                 }
             },
             "details": {
                 "title": "ID",
                 "pos" : 1,
                 "section": "info",
-                "visible": true
+                "visible": false
             },
             "facet": {
                 "visible": false
@@ -34,40 +37,66 @@
                 "title": "ID",
                 "visible": true,
                 "pos": 1
+            },
+            "list": {
+                "field": "ID",
+                "default": "",
+                "visible": true,
+                "type": "list"
             }
         },
+
+        {
+            "name": "RESOURCE_TITLE",
+            "listing": { "title": "RESOURCE_TITLE", "visible" : true, "pos" : 1,
+                "display": {
+                    "field": "RESOURCE_TITLE",
+                    "post": "</a></td>"
+                }
+            },
+            "details": { "title": "Title", "pos" : 1, "section": "info", "visible": true },
+            "facet": { "visible": false},
+            "csv_tsv": { "title": "RESOURCE_TITLE", "visible": true, "pos": 18 },
+            "list": {
+                "field": "title",
+                "default": "",
+                "visible": true,
+                "type": "list"
+            }
+        },
+
         {
             "name": "COUNTRY",
             "listing": { "title": "COUNTRY", "visible" : true, "pos" : 2 },
-            "details": { "title": "COUNTRY", "pos" : 2, "section": "info", "visible": true },
+            "details": { "title": "Country", "pos" : 20, "section": "info", "visible": true },
             "facet": { "visible": true, "title": "Countries/Regions", "pos": 2, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Country/Region"},
             "csv_tsv": { "title": "COUNTRY", "visible": true, "pos": 2 }
         },
         {
             "name": "COUNTRY_ID",
             "listing": { "title": "COUNTRY_ID", "visible" : true, "pos" : 3 },
-            "details": { "title": "COUNTRY_ID", "pos" : 3, "section": "info", "visible": true },
+            "details": { "title": "COUNTRY_ID", "pos" : 3, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "COUNTRY_ID", "visible": true, "pos": 3 }
         },
         {
             "name": "DATA_TYPE",
             "listing": { "title": "DATA_TYPE", "visible" : true, "pos" : 4 },
-            "details": { "title": "DATA_TYPE", "pos" : 4, "section": "info", "visible": true },
+            "details": { "title": "Data type", "pos" : 40, "section": "info", "visible": true },
             "facet": { "visible": false},
             "csv_tsv": { "title": "DATA_TYPE", "visible": true, "pos": 4 }
         },
         {
             "name": "DATA_SETS",
             "listing": { "title": "DATA_SETS", "visible" : true, "pos" : 5 },
-            "details": { "title": "DATA_SETS", "pos" : 5, "section": "info", "visible": true },
+            "details": { "title": "Data set", "pos" : 30, "section": "info", "visible": true },
             "facet": { "visible": false},
             "csv_tsv": { "title": "DATA_SETS", "visible": true, "pos": 5 }
         },
         {
             "name": "RESOURCE_TYPE",
             "listing": { "title": "RESOURCE_TYPE", "visible" : true, "pos" : 6 },
-            "details": { "title": "RESOURCE_TYPE", "pos" : 6, "section": "info", "visible": true },
+            "details": { "title": "Resource format", "pos" : 60, "section": "info", "visible": true },
             "facet": { "visible": true, "title": "Results Format", "operator": "OR", "pos": 30, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Result Format"},
             "csv_tsv": { "title": "RESOURCE_TYPE", "visible": true, "pos": 6 },
             "list": {
@@ -81,14 +110,14 @@
         {
             "name": "INFO_LEVEL",
             "listing": { "title": "INFO_LEVEL", "visible" : true, "pos" : 6 },
-            "details": { "title": "INFO_LEVEL", "pos" : 6, "section": "info", "visible": true },
+            "details": { "title": "Info level", "pos" : 140, "section": "info", "visible": true },
             "facet": { "visible": false},
             "csv_tsv": { "title": "INFO_LEVEL", "visible": true, "pos": 6 }
         },
         {
             "name": "TOPIC_CATEGORY",
             "listing": { "title": "TOPIC_CATEGORY", "visible" : true, "pos" : 7},
-            "details": { "title": "TOPIC_CATEGORY", "pos" : 7, "section": "info", "visible": true },
+            "details": { "title": "Topic", "pos" : 70, "section": "info", "visible": true },
             "facet": { "visible": true, "title": "Topics", "operator": "OR", "pos": 7, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Topic"},
             "csv_tsv": { "title": "TOPIC_CATEGORY", "visible": true, "pos": 7 },
             "list": {
@@ -101,91 +130,77 @@
         {
             "name": "NFI or Forest Stand Info",
             "listing": { "title": "NFI or Forest Stand Info", "visible" : true, "pos" : 8 },
-            "details": { "title": "NFI or Forest Stand Info", "pos" : 8, "section": "info", "visible": true },
+            "details": { "title": "NFI or Forest Stand Info", "pos" : 8, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "NFI or Forest Stand Info", "visible": true, "pos": 8 }
         },
         {
             "name": "LINK_TO_HIGHER_INFORMATION_LEVEL",
             "listing": { "title": "LINK_TO_HIGHER_INFORMATION_LEVEL", "visible" : true, "pos" : 9 },
-            "details": { "title": "LINK_TO_HIGHER_INFORMATION_LEVEL", "pos" : 9, "section": "info", "visible": true },
+            "details": { "title": "LINK_TO_HIGHER_INFORMATION_LEVEL", "pos" : 9, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "LINK_TO_HIGHER_INFORMATION_LEVEL", "visible": true, "pos": 9 }
         },
         {
             "name": "ID_OF_HIGHER_INFORMATION_LEVEL",
             "listing": { "title": "ID_OF_HIGHER_INFORMATION_LEVEL", "visible" : true, "pos" : 10 },
-            "details": { "title": "ID_OF_HIGHER_INFORMATION_LEVEL", "pos" : 10, "section": "info", "visible": true },
+            "details": { "title": "ID_OF_HIGHER_INFORMATION_LEVEL", "pos" : 10, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "ID_OF_HIGHER_INFORMATION_LEVEL", "visible": true, "pos": 10 }
         },
         {
             "name": "ID_OF_OTHER_INFO_AT_SAME_LEVEL",
             "listing": { "title": "ID_OF_OTHER_INFO_AT_SAME_LEVEL", "visible" : true, "pos" : 11 },
-            "details": { "title": "ID_OF_OTHER_INFO_AT_SAME_LEVEL", "pos" : 11, "section": "info", "visible": true },
+            "details": { "title": "ID_OF_OTHER_INFO_AT_SAME_LEVEL", "pos" : 11, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "ID_OF_OTHER_INFO_AT_SAME_LEVEL", "visible": true, "pos": 11 }
         },
         {
             "name": "ID_OF_LOWER_INFORMATION_LEVEL",
             "listing": { "title": "ID_OF_LOWER_INFORMATION_LEVEL", "visible" : true, "pos" : 12 },
-            "details": { "title": "ID_OF_LOWER_INFORMATION_LEVEL", "pos" : 12, "section": "info", "visible": true },
+            "details": { "title": "ID_OF_LOWER_INFORMATION_LEVEL", "pos" : 12, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "ID_OF_LOWER_INFORMATION_LEVEL", "visible": true, "pos": 12 }
         },
         {
             "name": "RESOURCE_LOCATOR_INTERNAL",
             "listing": { "title": "RESOURCE_LOCATOR_INTERNAL", "visible" : true, "pos" : 13 },
-            "details": { "title": "RESOURCE_LOCATOR_INTERNAL", "pos" : 13, "section": "info", "visible": true },
+            "details": { "title": "RESOURCE_LOCATOR_INTERNAL", "pos" : 13, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "RESOURCE_LOCATOR_INTERNAL", "visible": true, "pos": 13 }
         },
         {
             "name": "RESOURCE_LOCATOR_INTERNAL_II",
             "listing": { "title": "RESOURCE_LOCATOR_INTERNAL_II", "visible" : true, "pos" : 14 },
-            "details": { "title": "RESOURCE_LOCATOR_INTERNAL_II", "pos" : 14, "section": "info", "visible": true },
+            "details": { "title": "RESOURCE_LOCATOR_INTERNAL_II", "pos" : 14, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "RESOURCE_LOCATOR_INTERNAL_II", "visible": true, "pos": 14 }
         },
         {
             "name": "RESOURCE_LOCATOR_EXTERNAL",
             "listing": { "title": "RESOURCE_LOCATOR_EXTERNAL", "visible" : true, "pos" : 15 },
-            "details": { "title": "RESOURCE_LOCATOR_EXTERNAL", "pos" : 15, "section": "info", "visible": true },
+            "details": { "title": "Source", "pos" : 80, "section": "info", "visible": true },
             "facet": { "visible": false},
             "csv_tsv": { "title": "RESOURCE_LOCATOR_EXTERNAL", "visible": true, "pos": 15 }
         },
         {
             "name": "RESPONSIBLE_ORGANISATION",
             "listing": { "title": "RESPONSIBLE_ORGANISATION", "visible" : true, "pos" : 16 },
-            "details": { "title": "RESPONSIBLE_ORGANISATION", "pos" : 16, "section": "info", "visible": true },
+            "details": { "title": "Organization name", "pos" : 90, "section": "info", "visible": true },
             "facet": { "visible": false},
             "csv_tsv": { "title": "RESPONSIBLE_ORGANISATION", "visible": true, "pos": 16 }
         },
         {
             "name": "ORGANISATION_EMAIL",
             "listing": { "title": "ORGANISATION_EMAIL", "visible" : true, "pos" : 17 },
-            "details": { "title": "ORGANISATION_EMAIL", "pos" : 17, "section": "info", "visible": true },
+            "details": { "title": "Organization email", "pos" : 100, "section": "info", "visible": true },
             "facet": { "visible": false},
             "csv_tsv": { "title": "ORGANISATION_EMAIL", "visible": true, "pos": 17 }
         },
         {
-            "name": "RESOURCE_TITLE",
-            "listing": { "title": "RESOURCE_TITLE", "visible" : true, "pos" : 18 },
-            "details": { "title": "RESOURCE_TITLE", "pos" : 18, "section": "info", "visible": true },
-            "facet": { "visible": false},
-            "csv_tsv": { "title": "RESOURCE_TITLE", "visible": true, "pos": 18 },
-            "list": {
-                "field": "title",
-                "default": "",
-                "visible": true,
-                "type": "list"
-            }
-
-        },
-        {
             "name": "RESOURCE_DESCRIPTION",
             "listing": { "title": "RESOURCE_DESCRIPTION", "visible" : true, "pos" : 19 },
-            "details": { "title": "RESOURCE_DESCRIPTION", "pos" : 19, "section": "info", "visible": true },
+            "details": { "title": "Description", "pos" : 50, "section": "info", "visible": true },
             "facet": { "visible": false},
             "csv_tsv": { "title": "RESOURCE_DESCRIPTION", "visible": true, "pos": 19 },
             "list": {
@@ -198,14 +213,14 @@
         {
             "name": "LANGUAGE",
             "listing": { "title": "LANGUAGE", "visible" : true, "pos" : 20 },
-            "details": { "title": "LANGUAGE", "pos" : 20, "section": "info", "visible": true },
+            "details": { "title": "LANGUAGE", "pos" : 20, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "LANGUAGE", "visible": true, "pos": 20 }
         },
         {
             "name": "YEAR_PUBLISHED",
             "listing": { "title": "YEAR_PUBLISHED", "visible" : true, "pos" : 21 },
-            "details": { "title": "YEAR_PUBLISHED", "pos" : 21, "section": "info", "visible": true },
+            "details": { "title": "YEAR_PUBLISHED", "pos" : 21, "section": "info", "visible": false },
             "facet": { "visible": true, "title": "Published year", "pos": 26, "type": "rangehistogram", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
                     "columns_min_color" : "#DDDDDD",
@@ -227,21 +242,21 @@
         {
             "name": "YEAR_DATA_COLLECTION_START",
             "listing": { "title": "YEAR_DATA_COLLECTION_START", "visible" : true, "pos" : 22 },
-            "details": { "title": "YEAR_DATA_COLLECTION_START", "pos" : 22, "section": "info", "visible": true },
+            "details": { "title": "YEAR_DATA_COLLECTION_START", "pos" : 22, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "YEAR_DATA_COLLECTION_START", "visible": true, "pos": 22 }
         },
         {
             "name": "YEAR_DATA_COLLECTION_END",
             "listing": { "title": "YEAR_DATA_COLLECTION_END", "visible" : true, "pos" : 23 },
-            "details": { "title": "YEAR_DATA_COLLECTION_END", "pos" : 23, "section": "info", "visible": true },
+            "details": { "title": "YEAR_DATA_COLLECTION_END", "pos" : 23, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "YEAR_DATA_COLLECTION_END", "visible": true, "pos": 23 }
         },
         {
             "name": "YEAR_NEXT_UPDATE",
             "listing": { "title": "YEAR_NEXT_UPDATE", "visible" : true, "pos" : 24 },
-            "details": { "title": "YEAR_NEXT_UPDATE", "pos" : 24, "section": "info", "visible": true },
+            "details": { "title": "YEAR_NEXT_UPDATE", "pos" : 24, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "YEAR_NEXT_UPDATE", "visible": true, "pos": 24 }
         },
@@ -249,140 +264,140 @@
             "name": "NUTS_LEVEL",
             "values_blacklist":["N.A."],
             "listing": { "title": "NUTS_LEVEL", "visible" : true, "pos" : 25 },
-            "details": { "title": "NUTS_LEVEL", "pos" : 25, "section": "info", "visible": true },
+            "details": { "title": "Nuts levels", "pos" : 110, "section": "info", "visible": true },
             "facet": { "visible": true, "title": "NUTS Level", "operator": "OR", "pos": 25, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for NUTS Level"},
             "csv_tsv": { "title": "NUTS_LEVEL", "visible": true, "pos": 25 }
         },
         {
             "name": "FOREST_OWNERSHIP, _HA",
             "listing": { "title": "FOREST_OWNERSHIP, _HA", "visible" : true, "pos" : 26 },
-            "details": { "title": "FOREST_OWNERSHIP, _HA", "pos" : 26, "section": "info", "visible": true },
+            "details": { "title": "FOREST_OWNERSHIP, _HA", "pos" : 26, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "FOREST_OWNERSHIP, _HA", "visible": true, "pos": 26 }
         },
         {
             "name": "FOREST_TYPES_HA",
             "listing": { "title": "FOREST_TYPES_HA", "visible" : true, "pos" : 27 },
-            "details": { "title": "FOREST_TYPES_HA", "pos" : 27, "section": "info", "visible": true },
+            "details": { "title": "FOREST_TYPES_HA", "pos" : 27, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "FOREST_TYPES_HA", "visible": true, "pos": 27 }
         },
         {
             "name": "TREE_SPECIES_HA",
             "listing": { "title": "TREE_SPECIES_HA", "visible" : true, "pos" : 28 },
-            "details": { "title": "TREE_SPECIES_HA", "pos" : 28, "section": "info", "visible": true },
+            "details": { "title": "TREE_SPECIES_HA", "pos" : 28, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "TREE_SPECIES_HA", "visible": true, "pos": 28 }
         },
         {
             "name": "AGE_CLASSES_HA",
             "listing": { "title": "AGE_CLASSES_HA", "visible" : true, "pos" : 29 },
-            "details": { "title": "AGE_CLASSES_HA", "pos" : 29, "section": "info", "visible": true },
+            "details": { "title": "AGE_CLASSES_HA", "pos" : 29, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "AGE_CLASSES_HA", "visible": true, "pos": 29 }
         },
         {
             "name": "DIAMETER_(DBH)",
             "listing": { "title": "DIAMETER_(DBH)", "visible" : true, "pos" : 30 },
-            "details": { "title": "DIAMETER_(DBH)", "pos" : 30, "section": "info", "visible": true },
+            "details": { "title": "DIAMETER_(DBH)", "pos" : 30, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "DIAMETER_(DBH)", "visible": true, "pos": 30 }
         },
         {
             "name": "QUALITY_INDICATORS_HA",
             "listing": { "title": "QUALITY_INDICATORS_HA", "visible" : true, "pos" : 31 },
-            "details": { "title": "QUALITY_INDICATORS_HA", "pos" : 31, "section": "info", "visible": true },
+            "details": { "title": "QUALITY_INDICATORS_HA", "pos" : 31, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "QUALITY_INDICATORS_HA", "visible": true, "pos": 31 }
         },
         {
             "name": "FOREST_MANAGEMENT_HA",
             "listing": { "title": "FOREST_MANAGEMENT_HA", "visible" : true, "pos" : 32 },
-            "details": { "title": "FOREST_MANAGEMENT_HA", "pos" : 32, "section": "info", "visible": true },
+            "details": { "title": "FOREST_MANAGEMENT_HA", "pos" : 32, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "FOREST_MANAGEMENT_HA", "visible": true, "pos": 32 }
         },
         {
             "name": "AFFORESTATION_HA",
             "listing": { "title": "AFFORESTATION_HA", "visible" : true, "pos" : 33 },
-            "details": { "title": "AFFORESTATION_HA", "pos" : 33, "section": "info", "visible": true },
+            "details": { "title": "AFFORESTATION_HA", "pos" : 33, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "AFFORESTATION_HA", "visible": true, "pos": 33 }
         },
         {
             "name": "FELLING_HA",
             "listing": { "title": "FELLING_HA", "visible" : true, "pos" : 34 },
-            "details": { "title": "FELLING_HA", "pos" : 34, "section": "info", "visible": true },
+            "details": { "title": "FELLING_HA", "pos" : 34, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "FELLING_HA", "visible": true, "pos": 34 }
         },
         {
             "name": "ADDITIONAL_INFO",
             "listing": { "title": "ADDITIONAL_INFO", "visible" : true, "pos" : 35 },
-            "details": { "title": "ADDITIONAL_INFO", "pos" : 35, "section": "info", "visible": true },
+            "details": { "title": "Keywords2", "pos" : 130, "section": "info", "visible": true },
             "facet": { "visible": false},
             "csv_tsv": { "title": "ADDITIONAL_INFO", "visible": true, "pos": 35 }
         },
         {
             "name": "KEYWORDS",
             "listing": { "title": "KEYWORDS", "visible" : true, "pos" : 36 },
-            "details": { "title": "KEYWORDS", "pos" : 36, "section": "info", "visible": true },
+            "details": { "title": "Keywords", "pos" : 120, "section": "info", "visible": true },
             "facet": { "visible": false},
             "csv_tsv": { "title": "KEYWORDS", "visible": true, "pos": 36 }
         },
         {
             "name": "METADATA",
             "listing": { "title": "METADATA", "visible" : true, "pos" : 37 },
-            "details": { "title": "METADATA", "pos" : 37, "section": "info", "visible": true },
+            "details": { "title": "METADATA", "pos" : 37, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "METADATA", "visible": true, "pos": 37 }
         },
         {
             "name": "METADATA_LOCATION",
             "listing": { "title": "METADATA_LOCATION", "visible" : true, "pos" : 38 },
-            "details": { "title": "METADATA_LOCATION", "pos" : 38, "section": "info", "visible": true },
+            "details": { "title": "METADATA_LOCATION", "pos" : 38, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "METADATA_LOCATION", "visible": true, "pos": 38 }
         },
         {
             "name": "GEOGRAPHIC_BOUNDING_BOX_NORTH",
             "listing": { "title": "GEOGRAPHIC_BOUNDING_BOX_NORTH", "visible" : true, "pos" : 39 },
-            "details": { "title": "GEOGRAPHIC_BOUNDING_BOX_NORTH", "pos" : 39, "section": "info", "visible": true },
+            "details": { "title": "GEOGRAPHIC_BOUNDING_BOX_NORTH", "pos" : 39, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "GEOGRAPHIC_BOUNDING_BOX_NORTH", "visible": true, "pos": 39 }
         },
         {
             "name": "GEOGRAPHIC_BOUNDING_BOX_EAST",
             "listing": { "title": "GEOGRAPHIC_BOUNDING_BOX_EAST", "visible" : true, "pos" : 40 },
-            "details": { "title": "GEOGRAPHIC_BOUNDING_BOX_EAST", "pos" : 40, "section": "info", "visible": true },
+            "details": { "title": "GEOGRAPHIC_BOUNDING_BOX_EAST", "pos" : 40, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "GEOGRAPHIC_BOUNDING_BOX_EAST", "visible": true, "pos": 40 }
         },
         {
             "name": "GEOGRAPHIC_BOUNDING_BOX_SOUTH",
             "listing": { "title": "GEOGRAPHIC_BOUNDING_BOX_SOUTH", "visible" : true, "pos" : 41 },
-            "details": { "title": "GEOGRAPHIC_BOUNDING_BOX_SOUTH", "pos" : 41, "section": "info", "visible": true },
+            "details": { "title": "GEOGRAPHIC_BOUNDING_BOX_SOUTH", "pos" : 41, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "GEOGRAPHIC_BOUNDING_BOX_SOUTH", "visible": true, "pos": 41 }
         },
         {
             "name": "GEOGRAPHIC_BOUNDING_BOX_WEST",
             "listing": { "title": "GEOGRAPHIC_BOUNDING_BOX_WEST", "visible" : true, "pos" : 42 },
-            "details": { "title": "GEOGRAPHIC_BOUNDING_BOX_WEST", "pos" : 42, "section": "info", "visible": true },
+            "details": { "title": "GEOGRAPHIC_BOUNDING_BOX_WEST", "pos" : 42, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "GEOGRAPHIC_BOUNDING_BOX_WEST", "visible": true, "pos": 42 }
         },
         {
             "name": "PROJECTION",
             "listing": { "title": "PROJECTION", "visible" : true, "pos" : 43 },
-            "details": { "title": "PROJECTION", "pos" : 43, "section": "info", "visible": true },
+            "details": { "title": "PROJECTION", "pos" : 43, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "PROJECTION", "visible": true, "pos": 43 }
         },
         {
             "name": "SPATIAL_RESOLUTION",
             "listing": { "title": "SPATIAL_RESOLUTION", "visible" : true, "pos" : 44 },
-            "details": { "title": "SPATIAL_RESOLUTION", "pos" : 44, "section": "info", "visible": true },
+            "details": { "title": "SPATIAL_RESOLUTION", "pos" : 44, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "SPATIAL_RESOLUTION", "visible": true, "pos": 44 }
         },
@@ -403,21 +418,21 @@
         {
             "name": "To transfer: Set No.",
             "listing": { "title": "To transfer: Set No.", "visible" : true, "pos" : 46 },
-            "details": { "title": "To transfer: Set No.", "pos" : 46, "section": "info", "visible": true },
+            "details": { "title": "To transfer: Set No.", "pos" : 46, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "To transfer: Set No.", "visible": true, "pos": 46 }
         },
         {
             "name": "Added until date",
             "listing": { "title": "Added until date", "visible" : true, "pos" : 47 },
-            "details": { "title": "Added until date", "pos" : 47, "section": "info", "visible": true },
+            "details": { "title": "Added until date", "pos" : 47, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "Added until date", "visible": true, "pos": 47 }
         },
         {
             "name": "Changed",
             "listing": { "title": "Changed", "visible" : true, "pos" : 48 },
-            "details": { "title": "Changed", "pos" : 48, "section": "info", "visible": true },
+            "details": { "title": "Changed", "pos" : 48, "section": "info", "visible": false },
             "facet": { "visible": false},
             "csv_tsv": { "title": "Changed", "visible": true, "pos": 48 }
         },

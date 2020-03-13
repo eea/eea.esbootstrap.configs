@@ -1,0 +1,51 @@
+block title
+    if (data)
+        title= data.RESOURCE_TITLE.value
+    else
+        title= "Missing Info"
+
+block extrajavascripts
+    if renderJs && !debug_mode
+        != renderJs('details_page')
+    else
+        each script in js_resources.details_page
+            script(type='text/javascript', src=script)
+
+block extrastyles
+    if renderStyles && !debug_mode
+        != renderStyles('details_page')
+    else
+        each style in css_resources.details_page
+            link(rel='stylesheet', href=style)
+
+block content
+    if (data)
+        h2
+            != data.RESOURCE_TITLE.value
+        div(class="search-page")
+            div(class="meta-data")
+                div(class="text-tab")
+                    span(class="format-text") Format: 
+                    span(class="format-type format")
+                        != data.RESOURCE_TYPE.value
+                div(class="text-tab")
+                    span(class="format-text") Topics: 
+                    span(class="format-type")
+                        != data.TOPIC_CATEGORY.value
+                div(class="text-tab")
+                    span(class="format-text") File Size: 
+                    span(class="format-type")
+                        != data.FILE_SIZE.value
+
+        - var clean_data = data
+        - var keyword_values = clean_data.KEYWORDS.value.split(",")
+        - var keyword_values2 = clean_data.ADDITIONAL_INFO.value.split(",")
+        - var clean_keywords = [];
+        - for (let i = 0; i < keyword_values.length; i++){if (keyword_values[i] !== ""){ clean_keywords.push(keyword_values[i].trim())}}
+        - for (let i = 0; i < keyword_values2.length; i++){if (keyword_values2[i] !== ""){ clean_keywords.push(keyword_values2[i].trim())}}
+        - clean_data.KEYWORDS.value = clean_keywords.join(", ")
+        - clean_data.ADDITIONAL_INFO.value = ""
+        - clean_data.FILE_SIZE.value = ""
+        +detail_tables (sections, clean_data)
+    else
+        +app_error("Data with ID: ", id)
