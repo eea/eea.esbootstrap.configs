@@ -64,24 +64,25 @@ WHERE {{
   ?aqdzonetype rdfs:label ?AQDZoneType .
   ?timeURI aq:beginPosition ?BeginTime .
 
-  OPTIONAL{?timeURI aq:endPosition ?EndTime} .
-  OPTIONAL{?XMLURI aq:residentPopulationYear ?popYearURI} .
-  OPTIONAL{?popYearURI rdfs:label ?ResidentPopulationYear} .
+#  OPTIONAL{?timeURI aq:endPosition ?EndTime} .
+   OPTIONAL{?XMLURI aq:residentPopulationYear ?popYearURI .
+            ?popYearURI rdfs:label ?ResidentPopulationYear .
+   } .
 
-  OPTIONAL{?XMLURI aq:timeExtensionExemption ?timeextensionexemptionURI} .
-  OPTIONAL{?timeextensionexemptionURI rdfs:label ?TimeExtensionExemption} .
-  OPTIONAL{?XMLURI aq:competentAuthority ?CompetentAuthorityURI} .
-  OPTIONAL{?CompetentAuthorityURI rdfs:label ?CompetentAuthority} .
-  OPTIONAL{?CompetentAuthorityURI aq:individualName ?ContactName} .
-  OPTIONAL{?CompetentAuthorityURI aq:contact ?ContactURI} .
-  OPTIONAL{?ContactURI aq:address ?AddressURI} .
-  OPTIONAL{?AddressURI aq:adminUnit ?Address} .
-  OPTIONAL{?ContactURI aq:electronicMailAddress ?Email} .
-  OPTIONAL{?ContactURI aq:telephoneVoice ?Telephone} .
-  OPTIONAL{?ContactURI aq:website ?Website} .
+  OPTIONAL{?XMLURI aq:timeExtensionExemption ?timeextensionexemptionURI .
+           ?timeextensionexemptionURI rdfs:label ?TimeExtensionExemption .
+           ?XMLURI aq:competentAuthority ?CompetentAuthorityURI .
+           ?CompetentAuthorityURI rdfs:label ?CompetentAuthority .
+           ?CompetentAuthorityURI aq:individualName ?ContactName .
+           ?CompetentAuthorityURI aq:contact ?ContactURI .
+           ?ContactURI aq:address ?AddressURI  .
+           ?AddressURI aq:adminUnit ?Address .
+#  OPTIONAL{?ContactURI aq:electronicMailAddress ?Email} .
+           ?ContactURI aq:telephoneVoice ?Telephone .
+           ?ContactURI aq:website ?Website} .
 
   ?locality rod:localityName ?Country .
   ?obliURI rdfs:label ?Obligation .
 
-  FILTER (?envelope = <<envelope>>)
+  FILTER (?envelope = <http://cdr.eionet.europa.eu/at/eu/aqd/b/envvrskqq>)
 }}
