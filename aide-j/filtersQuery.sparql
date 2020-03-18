@@ -20,25 +20,24 @@ WHERE {{
     FILTER (?obligation = obligation:682) 
     ?locality rod:localityName ?Country .
 
-
-{SELECT 
-?XMLURI
-?ScenariosId 
-(IRI(substr(str(?XMLURI),1,bif:strchr(str(?XMLURI),"#"))) AS ?source) 
-
-WHERE {
-?XMLURI a aq:AQD_EvaluationScenario ;
-          aq:inspireId ?inspireURI .
-?inspireURI aq:localId ?ScenariosId .
+    {
+      SELECT 
+        ?source
+        ?XMLURI
+        ?ScenariosId 
+      WHERE {
+        GRAPH ?source { ?XMLURI a aq:AQD_EvaluationScenario .
+                        ?XMLURI aq:inspireId ?inspireURI .
+                        ?inspireURI aq:localId ?ScenariosId . 
+                      }
+      }
+    }
+  } 
+  GROUP BY ?Country YEAR(xsd:date(?endOfPeriod)) ?ScenariosId
+  }
+  OPTIONAL{
+    ?envelope rod:released ?released .
+    ?envelope rdf:type rod:Delivery .
+  }
 }
-}
-
-
-
-  } GROUP BY ?Country YEAR(xsd:date(?endOfPeriod)) ?ScenariosId
-}
-OPTIONAL{
-?envelope rod:released ?released .
-?envelope rdf:type rod:Delivery .
-}}
 ORDER BY ?endOfPeriod ?Country
