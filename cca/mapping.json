@@ -1,0 +1,171 @@
+{
+    "did_you_mean": {"type": "string", "analyzer": "didYouMean"},
+    "autocomplete": {"type": "string", "analyzer": "autocomplete"},
+    "searchable_topics": {"type": "string", "analyzer": "default"},
+    "searchable_spatial": {"type": "string", "analyzer": "default"},
+    "searchable_places": {"type": "string", "analyzer": "default"},
+    "searchable_objectProvides": {"type": "string", "analyzer": "default"},
+    "searchable_organisation": {"type": "string", "analyzer": "default"},
+    "searchable_time_coverage":  {"type": "string", "analyzer": "default"},
+
+    "depiction": {
+      "type": "text"
+    },
+    "about": {
+        "type": "text",
+        "fields": {
+            "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+            }
+        }
+    },
+    "issued": {
+      "type": "date"
+    },
+    "publication": {
+      "type" : "string",
+      "analyzer" : "date2year",
+      "copy_to" : ["searchable_time_coverage"]
+    },
+    "climate_impacts": {
+      "type" : "string",
+      "analyzer" : "none",
+      "fielddata": true
+    },
+    "sectors": {
+      "type" : "string",
+      "analyzer" : "none",
+      "fielddata": true
+    },
+    "elements":{
+      "type" : "string",
+      "analyzer" : "none",
+      "fielddata": true
+    },
+    "origin_website":{
+      "type" : "string",
+      "analyzer" : "none",
+      "fielddata": true
+    },
+    "macro-transnational-region": {
+      "type" : "string",
+      "analyzer" : "none",
+      "fielddata": true
+    },
+
+    "cluster_id": {
+      "type" : "string",
+      "analyzer" : "none"
+    },
+    "cluster_name": {
+      "type" : "string",
+      "analyzer" : "none",
+      "copy_to" : ["did_you_mean"]
+    },
+    "language" : {
+      "type" : "keyword",
+      "null_value" : "en",
+      "index": true
+    },
+    "dataProvider":{
+       "type" : "string",
+       "copy_to" : ["organisation", "searchable_organisation"]
+     },
+     "dataProcessor":{
+       "type" : "string",
+       "copy_to" : ["organisation", "searchable_organisation"]
+     },
+    "organisation" : {
+      "type" : "string",
+      "analyzer" : "none",
+      "copy_to" : ["did_you_mean", "searchable_organisation"]
+    },
+    "topic" : {
+      "type" : "keyword",
+      "index": true,
+      "null_value" : "Various other issues",
+      "copy_to" : ["did_you_mean", "searchable_topics"]
+    },
+    "typeOfData" : {
+      "type" : "string",
+      "analyzer" : "none",
+      "fielddata": true,
+      "copy_to" : ["did_you_mean"]
+    },
+    "objectProvides" : {
+      "type" : "keyword",
+      "index" : true,
+      "null_value" : "Other",
+      "copy_to" : ["did_you_mean", "searchable_objectProvides"]
+    },
+    "spatial" : {
+      "type" : "string",
+      "analyzer" : "none",
+      "copy_to" : ["did_you_mean", "searchable_spatial"]
+    },
+    "places" : {
+      "type" : "string",
+      "analyzer" : "none",
+      "copy_to" : ["did_you_mean", "searchable_places"]
+    },
+    "creator_cms" : {
+      "type" : "string",
+      "analyzer" : "none",
+      "copy_to" : ["did_you_mean"]
+    },
+    "hasWorkflowState" : {
+      "type" : "string",
+      "analyzer" : "none"
+    },
+    "title" : {
+      "type" : "string",
+      "fields" : {
+        "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
+        "index" : {"type" : "keyword"},
+        "eea_title": {"type": "keyword", "index": true}
+      },
+      "copy_to" : ["did_you_mean", "autocomplete"]
+    },
+    "year" : {
+      "type" : "text",
+      "analyzer" : "date2year"
+    },
+    "time_coverage" : {
+      "type" : "string",
+      "analyzer" : "date2year",
+      "copy_to" : ["searchable_time_coverage"]
+    },
+    "format": {
+      "type" : "string",
+      "analyzer" : "none"
+    },
+    "label": {
+      "type" : "string",
+      "fields" : {
+        "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
+        "index" : {"type" : "keyword"},
+        "label": {"type": "keyword", "index": true}
+      },
+      "copy_to" : ["did_you_mean"]
+    },
+    "text" : {
+      "type" : "string",
+      "analyzer": "default",
+      "copy_to" : ["did_you_mean"]
+    },
+    "references" : {
+      "type" : "string",
+      "analyzer" : "none",
+      "copy_to" : ["did_you_mean"]
+    },
+    "expires": {
+      "type": "date"
+    },
+    "replaces": {
+      "type" : "string"
+    },
+    "is_replaced": {
+      "type" : "string"
+    }
+}

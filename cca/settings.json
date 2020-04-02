@@ -1,0 +1,101 @@
+{
+    "http": {
+        "port": 3000
+    },
+    "elastic": {
+        "index": "esbootstrapdata-climate",
+        "type": "resource",
+        "field_base":"",
+        "enableValuesCounting": true
+    },
+    "external_templates": {
+        "local_path": "/external_templates",
+        "protocol": "https",
+        "host": "climate-adapt.eea.europa.eu",
+        "head_path": "/cca/external-template-head",
+        "header_path": "/cca/external-template-header",
+        "footer_path": "/cca/external-template-footer"
+    },
+    "layout_vars": {
+        "head_title": "Climate adapt search",
+        "app_id": "pam",
+        "skip_external_template_styles": true,
+        "skip_resources_bundling": false,
+        "override_searchserver_resources": true,
+        "css_resources": {
+            "index_page": [
+                "css/esbootstrap.facetview.css",
+                "css/climateadapt.facetview.css",
+                "css/custom.css",
+                "css/cca-search.css"
+            ],
+            "details_page": [
+                "css/esbootstrap.facetview.css"
+            ],
+            "layout_page": [
+                "facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.css",
+
+                "facetview/vendor/dist/themes/default/style.min.css",
+                "facetview/css/style.css",
+                "facetview/css/facetview.css",
+                "css/style.css",
+                "css/tiles.css",
+                "css/custom.css",
+                "css/cca-search.css"
+
+            ]
+        },
+        "js_resources": {
+            "index_page": [
+            ],
+            "details_page": [],
+            "layout_page" : [
+                "facetview/vendor/dist/libs/jquery.min.js",
+
+                "facetview/vendor/dist/libs/jquery.migrate.3.0.0.min.js",
+                "facetview/vendor/jquery-ui.1.12.1/jquery-ui.min.js",
+
+                "facetview/vendor/bootstrap4/js/bootstrap.4.1.1.min.js",
+                "facetview/vendor/jquery-lazy/jquery.lazy.min.js",
+                "facetview/vendor/dist/jstree.js",
+                "facetview/vendor/linkify/1.0/jquery.linkify-1.0-min.js",
+
+                "facetview/vendor/touchpunch/jquery.ui.touch-punch.min.js",
+                "facetview/vendor/d3/d3.v4.min.js",
+                "facetview/jquery.facetview.js",
+                "facetview/facetviewhelpers.js",
+                "facetview/landing.js",
+                "facetview/jquery.autocompletewithhighlight.js",
+                "facetview/jquery.autocompleteforfacet.js",
+
+                "javascripts/climateadapt.facetview.js",
+                "javascripts/esbootstrap.facetview.js",
+
+                "javascripts/main.js"
+
+            ]
+        },
+        "site_title": "Climate-ADAPT search",
+        "site_description": "",
+        "enableBreadcrumbs": false,
+        "breadcrumbs": [{"Home":"https://climate-adapt.eea.europa.eu/"}, {"Climate adapt search": ""}],
+        "dataprovencance_info_text": "Climate adapt search",
+        "dataprovencance_info_url": "climate adapt dev",
+        "further_info": ""
+    },
+    "es_debug_enabled": false,
+    "suggestions_enabled": true,
+    "relevance_enabled": true,
+       "river_configs": {
+        "configs": [
+            {
+                "id": "climateadapt",
+                "cluster_name": "climateadapt",
+                "config_file": "riverconfig_climateadapt.json"
+            }
+        ]
+    },
+
+    "endpoint": "https://semantic.eea.europa.eu/sparql",
+    "selected_navigation_tab": "data-and-maps"
+}
