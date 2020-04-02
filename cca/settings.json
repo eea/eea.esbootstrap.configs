@@ -19,9 +19,9 @@
     "layout_vars": {
         "head_title": "Climate adapt search",
         "app_id": "pam",
-        "skip_external_template_styles": true,
-        "skip_resources_bundling": false,
-        "override_searchserver_resources": true,
+        "skip_external_template_styles": false,
+        "skip_resources_bundling": true,
+        "override_searchserver_resources": false,
         "css_resources": {
             "index_page": [
                 "css/esbootstrap.facetview.css",
@@ -50,12 +50,12 @@
             ],
             "details_page": [],
             "layout_page" : [
-                "facetview/vendor/dist/libs/jquery.min.js",
+                "facetview/vendor/dist/libs/jquery.js",
+                "facetview/vendor/dist/libs/jquery.migrate.js",
 
-                "facetview/vendor/dist/libs/jquery.migrate.3.0.0.min.js",
-                "facetview/vendor/jquery-ui.1.12.1/jquery-ui.min.js",
+                "facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.min.js",
 
-                "facetview/vendor/bootstrap4/js/bootstrap.4.1.1.min.js",
+                "facetview/vendor/bootstrap/js/bootstrap.min.js",
                 "facetview/vendor/jquery-lazy/jquery.lazy.min.js",
                 "facetview/vendor/dist/jstree.js",
                 "facetview/vendor/linkify/1.0/jquery.linkify-1.0-min.js",
@@ -82,6 +82,22 @@
         "dataprovencance_info_text": "Climate adapt search",
         "dataprovencance_info_url": "climate adapt dev",
         "further_info": ""
+    },
+    "API":{
+        "token": "default"
+    },
+    "source": {
+        "type": "file",
+        "autoswitch": "true",
+        "configuration": {
+            "type": "csv",
+            "file": "fise.csv",
+            "bulksize": 5000,
+            "format": "csv",
+            "encoding": "utf-8",
+            "id_type": "field",
+            "id_field": "ID"
+        }
     },
     "es_debug_enabled": false,
     "suggestions_enabled": true,
