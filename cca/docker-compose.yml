@@ -4,8 +4,8 @@ services:
 
   climate-search:
     image: eeacms/esbootstrap:v3.0.10
+#    build: ../
 #    image: eeacms/esbootstrap:v2.0.18
-#    build: ./eea.docker.esbootstrap
     ports:
       - '30021:3000'
       - '9229:9229'
@@ -34,8 +34,8 @@ services:
     command:
         - runserver
     volumes:
+        - ./:/code/config/cca
 #        - ./eea.docker.esbootstrap/app/:/code/:z
-        - ./eea.esbootstrap.configs:/code/config
 #        - ./eea.searchserver.js/lib/:/node_modules/eea-searchserver/lib/:z
 #        - ./eea.searchserver.js/index.js:/node_modules/eea-searchserver/index.js:z
 
