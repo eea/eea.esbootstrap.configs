@@ -1,0 +1,89 @@
+version: "2"
+
+services:
+
+  climate-search:
+    image: eeacms/esbootstrap:v3.0.10
+#    image: eeacms/esbootstrap:v2.0.18
+#    build: ./eea.docker.esbootstrap
+    ports:
+      - '30021:3000'
+      - '9229:9229'
+    environment:
+#      VERSION_INFO: eeacms/esbootstrap:v1.1.0
+      elastic_host: esmaster
+      elastic_port: '9200'
+      elastic_index: 'climate'
+      AUTO_INDEXING: 'false'
+      APP_CONFIG_DIRNAME: cca
+      elastic_rwuser: 'rw'
+      elastic_rwpass: 'rwtest'
+      elastic_rouser: 'ro'
+      elastic_ropass: 'rotest'
+      elastic_appalias: 'latest'
+      _API_token: 'default'
+      _sourceconf_bulksize: 10
+    entrypoint:
+      - /node_modules/.bin/nodemon
+      - --watch
+      - code/
+      - --watch
+      - /node_modules/eea-searchserver
+      - /code/app.js
+    # - --inspect-brk=0.0.0.0
+    command:
+        - runserver
+    volumes:
+#        - ./eea.docker.esbootstrap/app/:/code/:z
+        - ./eea.esbootstrap.configs:/code/config
+#        - ./eea.searchserver.js/lib/:/node_modules/eea-searchserver/lib/:z
+#        - ./eea.searchserver.js/index.js:/node_modules/eea-searchserver/index.js:z
+
+  esmaster:
+    # image: eeacms/elastic:1.7.5-1.6
+    image: eeacms/elastic:6.8-1.0
+    ports:
+      - "9200:9200"
+    environment:
+        - "cluster.name=es6_test"
+        - "cluster.routing.allocation.disk.threshold_enabled=false"
+        - "node.name=es6"
+        - "bootstrap.memory_lock=true"
+        - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
+        - "node.master=true"
+        - "node.data=true"
+        - "http.enabled=true"
+        - "RW_USER=rw"
+        - "RO_USER=ro"
+        - "RW_PASSWORD=rwtest"
+        - "RO_PASSWORD=rotest"
+        - "KIBANA_USER=user_kibana"
+        - "KIBANA_PASSWORD=kibana_pass"
+        - "KEY_PASSWORD=Abc123;"
+        - "KEYSTORE_PASSWORD=Def123;"
+        - "ENABLE_READONLY_REST=false"
+    ulimits:
+        memlock:
+            soft: -1
+            hard: -1
+        nofile:
+            soft: 65536
+            hard: 65536
+    mem_limit: 10737418240
+    mem_swappiness: 0
+    cap_add:
+        - IPC_LOCK
+
+    depends_on:
+        - es-sysctl
+    volumes:
+      - ./es-data:/usr/share/elasticsearch/data
+
+  # this service is used to make esmaster happy. We care about its happiness
+  es-sysctl:
+      network_mode: none
+      image: rawmind/alpine-sysctl:0.1
+      privileged: true
+      environment:
+          - "SYSCTL_KEY=vm.max_map_count"
+          - "SYSCTL_VALUE=262144"
