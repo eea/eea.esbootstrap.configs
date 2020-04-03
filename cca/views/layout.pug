@@ -1,4 +1,4 @@
-include ./mixins.jade
+include ./mixins.pug
 doctype html
 html
     head
@@ -13,7 +13,7 @@ html
         //script(type='text/javascript', src="/frontpage/cca/++theme++climateadapt/static/bs3/js/bootstrap.min.js")
         //script(type='text/javascript', src="/portal_javascripts/Sunburst%20Theme/++resource++collective.js.bootstrap/js/bootstrap.min.js")
 
-        include ../../../../external_templates/head.html
+        include ../../../../external_templates/head_en.html
 
         script(type='text/javascript').
             var field_base="#{field_base}";
@@ -55,7 +55,7 @@ html
         else
             if !debug_mode
                 style
-                    include:uglify-css ../public/css/critical.css
+                    include:clean-css ../public/css/critical.css
             else
                 link(rel='stylesheet', href="esbootstrap_resources/css/critical.css")
             link(rel="preload" href="https://www.eea.europa.eu/external_templates_custom.css" as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
@@ -79,7 +79,7 @@ html
         link(rel='stylesheet', href="/++theme++climateadaptv2/static/css/compiled-css.css")
 
     div(class="#{app_id} search-app fullwidth")
-        include ../../../../external_templates/header.html
+        include ../../../../external_templates/header_en.html
 
         if (enableBreadcrumbs)
             +portal_breadcrumbs (breadcrumbs)
@@ -91,7 +91,7 @@ html
                     div(class="visualization-date")
                         span(class="discreet")
                             - var container_info = getContainerInfo()
-                            | Application data last refreshed <strong>#{getIndexCreationDate()}</strong>.
+                            | Application data last refreshed <strong>#{creation_date}</strong>.
                             | Version info <strong>#{container_info.version_info}</strong> and tag version <strong>#{container_info.tag_info}</strong> on <strong>#{container_info.hostname}</strong>.
                     div(class="documentActions")
                         h5(class="hiddenStructure") Document Actions
@@ -101,10 +101,9 @@ html
         div(id="landing")
             block landing
 
-        input(id="card_view_template", type="hidden", value="#{cardViewTemplate}")
+        input(id="card_view_template", type="hidden", value=cardViewTemplate)
 
-        input(id="list_view_template", type="hidden", value="#{listViewTemplate}")
-
+        input(id="list_view_template", type="hidden", value=listViewTemplate)
 
         if (renderJs && !debug_mode)
             != renderJs('layout_page')
@@ -120,6 +119,6 @@ html
 
 
 
-        //include ../../../../external_templates/footer.html
+        //include ../../../../external_templates/footer_en.html
 
 
