@@ -1,8 +1,39 @@
 version: "2"
 
 services:
+  apache:
+    image: eeacms/apache:latest
+    ports:
+    - "80:80"
+    depends_on:
+    - plone
+    environment:
+      APACHE_CONFIG: |-
+        <VirtualHost *:80>
+            ServerAdmin contact@localhost
+            ServerName climate-local.com
+            ErrorLog /var/log/apache.log
+            RewriteEngine On
+            #RewriteRule ^/(.*esbootstrap\_resources.*) http://search-app:3000/VirtualHostBase/http/climate-local.com:80/VirtualHostRoot/$$1 [P,L]
+            #RewriteRule ^/(.*data\-and\-downloads.*) http://search-app:3000/VirtualHostBase/http/climate-local.com:80/VirtualHostRoot/$$1 [P,L]
+            RewriteRule ^/(.*esbootstrap\_resources.*) http://search-app:3000/$$1 [P,L]
+            RewriteRule ^/(.*data\-and\-downloads.*) http://search-app:3000/$$1 [P,L]
+            RewriteRule ^/(knowledge\/tools.*) http://plone:8080/VirtualHostBase/http/climate-local.com:80/cca/VirtualHostRoot/$$1 [P,L]
+            RewriteRule ^/.*(tools.*) http://search-app:3000/$$1 [P,L]
+            RewriteRule ^/(.*) http://plone:8080/VirtualHostBase/http/climate-local.com:80/cca/VirtualHostRoot/$$1 [P,L]
+        </VirtualHost>
 
-  climate-search:
+  plone:
+    image: eeacms/eea.docker.plone-climateadapt:v6.87
+    environment:
+      TZ: Europe/Copenhagen
+      ZOPE_MODE: standalone
+    volumes:
+    - ./plone-data:/data
+    ports:
+    - 54678:8080/tcp
+
+  app:
     image: eeacms/esbootstrap:v3.0.10
 #    build: ../
 #    image: eeacms/esbootstrap:v2.0.18
@@ -23,20 +54,22 @@ services:
       elastic_appalias: 'latest'
       _API_token: 'default'
       _sourceconf_bulksize: 10
-    entrypoint:
-      - /node_modules/.bin/nodemon
-      - --watch
-      - code/
-      - --watch
-      - /node_modules/eea-searchserver
-      - /code/app.js
+    # entrypoint:
+    #   - /node_modules/.bin/nodemon
+    #   - --watch
+    #   - code/
+    #   - --watch
+    #   - /node_modules/eea-searchserver
+    #   - /code/app.js
     # - --inspect-brk=0.0.0.0
-    command:
-        - runserver
+    # command:
+    #     - runserver
+    entrypoint: /bin/sh -c 'tail -f /dev/null'
     volumes:
         - ./:/code/config/cca
+        - ./eea.searchserver.js/lib/:/node_modules/eea-searchserver/lib/:z
+        - ./start_dev.sh:/start_dev.sh
 #        - ./eea.docker.esbootstrap/app/:/code/:z
-#        - ./eea.searchserver.js/lib/:/node_modules/eea-searchserver/lib/:z
 #        - ./eea.searchserver.js/index.js:/node_modules/eea-searchserver/index.js:z
 
   esmaster:
