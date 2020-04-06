@@ -10,17 +10,27 @@ services:
     environment:
       APACHE_CONFIG: |-
         <VirtualHost *:80>
+
             ServerAdmin contact@localhost
             ServerName climate-local.com
             ErrorLog /var/log/apache.log
+
             RewriteEngine On
-            #RewriteRule ^/(.*esbootstrap\_resources.*) http://search-app:3000/VirtualHostBase/http/climate-local.com:80/VirtualHostRoot/$$1 [P,L]
-            #RewriteRule ^/(.*data\-and\-downloads.*) http://search-app:3000/VirtualHostBase/http/climate-local.com:80/VirtualHostRoot/$$1 [P,L]
-            RewriteRule ^/(.*esbootstrap\_resources.*) http://search-app:3000/$$1 [P,L]
-            RewriteRule ^/(.*data\-and\-downloads.*) http://search-app:3000/$$1 [P,L]
+
+            RewriteRule ^/(.*facetview.*) http://app:3000/$$1 [P]
+            RewriteRule ^(/javascripts.*) http://app:3000/$$1 [P]
+            RewriteRule ^(/css/.*) http://app:3000/$$1 [P]
+
+            RewriteRule ^/(.*esbootstrap\_resources.*) http://app:3000/$$1 [P,L]
+
+            RewriteRule ^/.*(tools\/api.*) http://app:3000/$$1 [P,L]
+            RewriteRule ^/.*(tools\/download.*) http://app:3000/$$1 [P,L]
+
+            RewriteRule ^/(.*data\-and\-downloads.*) http://app:3000/$$1 [P,L]
             RewriteRule ^/(knowledge\/tools.*) http://plone:8080/VirtualHostBase/http/climate-local.com:80/cca/VirtualHostRoot/$$1 [P,L]
-            RewriteRule ^/.*(tools.*) http://search-app:3000/$$1 [P,L]
+
             RewriteRule ^/(.*) http://plone:8080/VirtualHostBase/http/climate-local.com:80/cca/VirtualHostRoot/$$1 [P,L]
+
         </VirtualHost>
 
   plone:
@@ -29,16 +39,27 @@ services:
       TZ: Europe/Copenhagen
       ZOPE_MODE: standalone
     volumes:
-    - ./plone-data:/data
+    - ./plone-data/:/data
     ports:
-    - 54678:8080/tcp
+    - 8080:8080/tcp
+    entrypoint: sh -c "tail -f /dev/null"
+
+  memcached:
+    image: memcached:1.4.35
+    labels:
+      io.rancher.scheduler.affinity:host_label: cca=yes
+    environment:
+      TZ: "Europe/Copenhagen"
+    command:
+    - "-m"
+    - "2048"
 
   app:
     image: eeacms/esbootstrap:v3.0.10
 #    build: ../
 #    image: eeacms/esbootstrap:v2.0.18
     ports:
-      - '30021:3000'
+      - '3000:3000'
       - '9229:9229'
     environment:
 #      VERSION_INFO: eeacms/esbootstrap:v1.1.0
@@ -54,21 +75,21 @@ services:
       elastic_appalias: 'latest'
       _API_token: 'default'
       _sourceconf_bulksize: 10
-    # entrypoint:
-    #   - /node_modules/.bin/nodemon
-    #   - --watch
-    #   - code/
-    #   - --watch
-    #   - /node_modules/eea-searchserver
-    #   - /code/app.js
-    # - --inspect-brk=0.0.0.0
-    # command:
-    #     - runserver
-    entrypoint: /bin/sh -c 'tail -f /dev/null'
+    entrypoint:
+      - /node_modules/.bin/nodemon
+      - --watch
+      - code/
+      - --watch
+      - /node_modules/eea-searchserver
+      - /code/app.js
+#      - --inspect-brk=0.0.0.0
+    command:
+      - runserver
+#    entrypoint: /bin/sh -c 'tail -f /dev/null'
     volumes:
         - ./:/code/config/cca
-        - ./eea.searchserver.js/lib/:/node_modules/eea-searchserver/lib/:z
-        - ./start_dev.sh:/start_dev.sh
+#        - ./eea.searchserver.js/lib/:/node_modules/eea-searchserver/lib/:z
+#        - ./start_dev.sh:/start_dev.sh
 #        - ./eea.docker.esbootstrap/app/:/code/:z
 #        - ./eea.searchserver.js/index.js:/node_modules/eea-searchserver/index.js:z
 

@@ -7,12 +7,6 @@ html
         meta(charset='utf-8')
         meta(name="viewport" content="width=device-width, initial-scale=1")
 
-        //script(type='text/javascript', src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js")
-        //script(type='text/javascript', src="/portal_javascripts/Sunburst%20Theme/++resource++plone.app.jquery.js")
-        //script(type='text/javascript', src="/frontpage/cca/++theme++climateadapt/static/bootstrap.min.js")
-        //script(type='text/javascript', src="/frontpage/cca/++theme++climateadapt/static/bs3/js/bootstrap.min.js")
-        //script(type='text/javascript', src="/portal_javascripts/Sunburst%20Theme/++resource++collective.js.bootstrap/js/bootstrap.min.js")
-
         include ../../../../external_templates/head_en.html
 
         script(type='text/javascript').
@@ -55,9 +49,9 @@ html
         else
             if !debug_mode
                 style
-                    include:clean-css ../public/css/critical.css
+                    include:clean-css ../public/css/cca-critical.css
             else
-                link(rel='stylesheet', href="esbootstrap_resources/css/critical.css")
+                link(rel='stylesheet', href="esbootstrap_resources/css/cca-critical.css")
             link(rel="preload" href="https://www.eea.europa.eu/external_templates_custom.css" as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
             <noscript><link rel="stylesheet" href="https://www.eea.europa.eu/external_templates_custom.css" /></noscript>
 
@@ -75,11 +69,10 @@ html
 
         block extrastyles
 
-        //link(rel='stylesheet', href="/frontpage/cca/++theme++climateadaptv2/static/style-search.css")
         link(rel='stylesheet', href="/++theme++climateadaptv2/static/css/compiled-css.css")
 
     div(class="#{app_id} search-app fullwidth")
-        include ../../../../external_templates/header_en.html
+        //include ../../../../external_templates/header_en.html
 
         if (enableBreadcrumbs)
             +portal_breadcrumbs (breadcrumbs)
@@ -116,7 +109,6 @@ html
 
         if google_map_key != "false"
             script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?key=#{google_map_key}")
-
 
 
         //include ../../../../external_templates/footer_en.html
