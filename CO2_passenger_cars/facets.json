@@ -39,19 +39,19 @@
         {
             "name": "MS",
             "listing": {
-                "title": "Member State",
+                "title": "Country",
                 "visible" : true,
                 "pos" : 2
             },
             "details": {
-                "title": "Member State",
+                "title": "Country",
                 "pos" : 2,
                 "section": "info",
                 "visible": true
             },
             "facet": {
                 "visible": true,
-                "title": "Member State",
+                "title": "Country",
                 "short_name": "Member State",
                 "pos": 0,
                 "type": "facet",
@@ -61,7 +61,7 @@
                 "facet_display_options": ["sort", "checkbox"]
             },
             "csv_tsv": {
-                "title": "MS",
+                "title": "Country",
                 "visible": true,
                 "pos": 2
             }
