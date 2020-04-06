@@ -18,7 +18,7 @@
   },
   "layout_vars": {
     "head_title": "Climate adapt search",
-    "app_id": "pam",
+    "app_id": "cca",
     "skip_external_template_styles": false,
     "skip_resources_bundling": true,
     "override_searchserver_resources": false,
@@ -28,6 +28,7 @@
         "css/climateadapt.facetview.css",
         "css/custom.css",
         "css/cca-search.css"
+
       ],
       "details_page": [
         "css/esbootstrap.facetview.css"
@@ -41,7 +42,8 @@
         "css/style.css",
         "css/tiles.css",
         "css/custom.css",
-        "css/cca-search.css"
+        "css/cca-search.css",
+        "css/cca-critical.css"
 
       ]
     },
