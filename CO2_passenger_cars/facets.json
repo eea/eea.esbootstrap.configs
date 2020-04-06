@@ -52,7 +52,7 @@
             "facet": {
                 "visible": true,
                 "title": "Country",
-                "short_name": "Member State",
+                "short_name": "Country",
                 "pos": 0,
                 "type": "facet",
                 "size": 100,
