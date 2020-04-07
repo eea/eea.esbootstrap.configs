@@ -37,7 +37,7 @@ shell:		## Start a shell on search-app.
 	docker-compose up -d
 	docker-compose exec app bash
 
-.PHONY: start-plone
+.PHONY: start-plone		## Start plone and the dependencies needed.
 start-plone: stop-plone
 	docker-compose up -d memcached
 	docker-compose up -d plone
@@ -45,12 +45,15 @@ start-plone: stop-plone
 	docker-compose exec plone gosu plone /docker-initialize.py || true
 	docker-compose exec plone gosu plone bin/standalone fg
 
-.PHONY: stop-plone
+.PHONY: stop-plone		## Stop plone.
 stop-plone:
 	docker-compose stop apache
 	docker-compose stop memcached
 	docker-compose stop plone
 
+.PHONY: start-all		## Start the search app and plone.
+start-all: start start-plone
+	@echo "Starting all services"
 
 help:		## Show this help.
 	@echo -e "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
