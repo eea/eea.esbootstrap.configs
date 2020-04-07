@@ -51,7 +51,7 @@ ul.tabs li a.tab-link span {
     display: none;
 }
 
-.tabs-content div.tab-content.selected {
+.tabs-content div.tab-content.selected_tab {
     display: block;
 }
 
@@ -60,7 +60,7 @@ ul.tabs li a.tab-link span {
     background-color: #f5f9fc;
 }
 
-ul.tabs .selected {
+ul.tabs .selected_tab {
     color: black;
     /* font-weight: bold; */
 }

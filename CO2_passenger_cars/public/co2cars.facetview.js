@@ -347,18 +347,17 @@ jQuery(document).ready(function($) {
 
     $('ul.tabs .tab-link').click(function(el){
         el.preventDefault();
-        if ($(el.delegateTarget).hasClass('selected') !== true) {
+        if ($(el.delegateTarget).hasClass('selected_tab') !== true) {
             // always have a tab selected
-            $('ul.tabs .selected').removeClass('selected');
-            $(el.delegateTarget).toggleClass('selected');
+            $('ul.tabs .selected_tab').removeClass('selected_tab');
+            $(el.delegateTarget).toggleClass('selected_tab');
 
             var parent = $(el.delegateTarget).parent();
             var element_id = '#' + parent.attr('class');
-            $('.tabs-content .selected').removeClass('selected');
-            $('.tabs-content ' + element_id).toggleClass('selected');
+            $('.tabs-content .selected_tab').removeClass('selected_tab');
+            $('.tabs-content ' + element_id).toggleClass('selected_tab');
         }
         else {
-            console.log("Tab is already selected");
             return;
         }
     })
