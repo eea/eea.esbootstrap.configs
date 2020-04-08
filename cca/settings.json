@@ -73,7 +73,8 @@
         "javascripts/climateadapt.facetview.js",
         "javascripts/esbootstrap.facetview.js",
 
-        "javascripts/main.js"
+        "javascripts/main.js",
+        "javascripts/layoutFix.js"
 
       ]
     },
