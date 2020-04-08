@@ -7,8 +7,6 @@ html
         meta(charset='utf-8')
         meta(name="viewport" content="width=device-width, initial-scale=1")
 
-        include ../../../../external_templates/head_en.html
-
         script(type='text/javascript').
             var field_base="#{field_base}";
         script
@@ -71,8 +69,8 @@ html
 
         link(rel='stylesheet', href="/++theme++climateadaptv2/static/css/compiled-css.css")
 
-    div(class="#{app_id} search-app fullwidth")
-        include ../../../../external_templates/header_en.html
+    body(class="fullwidth search-app " + app_id data-sentry-dsn=sentry_dsn data-sentry-ver=sentry_ver data-sentry-env=sentry_rancher_env data-sentry-instance=sentry_instance data-sentry-app-name=sentry_app_name id="app")
+        != templateRender(headerFile)
 
         if (enableBreadcrumbs)
             +portal_breadcrumbs (breadcrumbs)
@@ -109,8 +107,3 @@ html
 
         if google_map_key != "false"
             script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?key=#{google_map_key}")
-
-
-        //include ../../../../external_templates/footer_en.html
-
-
