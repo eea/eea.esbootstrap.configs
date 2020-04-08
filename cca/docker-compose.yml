@@ -27,9 +27,9 @@ services:
             RewriteRule ^/.*(tools\/download.*) http://app:3000/$$1 [P,L]
 
             RewriteRule ^/(.*data\-and\-downloads.*) http://app:3000/$$1 [P,L]
-            RewriteRule ^/(knowledge\/tools.*) http://plone:8080/VirtualHostBase/http/climate-local.com:80/cca/VirtualHostRoot/$$1 [P,L]
+            RewriteRule ^/(knowledge\/tools.*) http://plone:8080/VirtualHostBase/http/localhost:80/cca/VirtualHostRoot/$$1 [P,L]
 
-            RewriteRule ^/(.*) http://plone:8080/VirtualHostBase/http/climate-local.com:80/cca/VirtualHostRoot/$$1 [P,L]
+            RewriteRule ^/(.*) http://plone:8080/VirtualHostBase/http/localhost:80/cca/VirtualHostRoot/$$1 [P,L]
 
         </VirtualHost>
 
@@ -62,7 +62,7 @@ services:
       - '3000:3000'
       - '9229:9229'
     environment:
-#      VERSION_INFO: eeacms/esbootstrap:v1.1.0
+      VERSION_INFO: eeacms/esbootstrap
       elastic_host: esmaster
       elastic_port: '9200'
       elastic_index: 'climate'
