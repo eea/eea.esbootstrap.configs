@@ -57,5 +57,5 @@ Select
         )
     ) as FtTrim,
     iif(LOWER(TRIM(status))='f', 'Final', 'Provisional') as scStatus
-
-    from [CO2Emission].[v1r2].[co2cars] WHERE MS!='M1' and ID >= 0 and ID < 10
+from <TABLE> WHERE MS!='M1' and ID>=0 and ID<10
+order by uid
