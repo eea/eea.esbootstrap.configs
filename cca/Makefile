@@ -37,22 +37,22 @@ shell:		## Start a shell on search-app.
 	docker-compose up -d
 	docker-compose exec app bash
 
-.PHONY: start-plone		## Start plone and the dependencies needed.
-start-plone: stop-plone
+.PHONY: start-plone
+start-plone: stop-plone		## Start plone and the dependencies needed.
 	docker-compose up -d memcached
 	docker-compose up -d plone
 	docker-compose up -d apache
 	docker-compose exec plone gosu plone /docker-initialize.py || true
 	docker-compose exec plone gosu plone bin/standalone fg
 
-.PHONY: stop-plone		## Stop plone.
-stop-plone:
+.PHONY: stop-plone
+stop-plone:		## Stop plone.
 	docker-compose stop apache
 	docker-compose stop memcached
 	docker-compose stop plone
 
-.PHONY: start-all		## Start the search app and plone.
-start-all: start start-plone
+.PHONY: start-all
+start-all: start start-plone		## Start the search app and plone.
 	@echo "Starting all services"
 
 help:		## Show this help.
