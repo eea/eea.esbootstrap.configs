@@ -1,16 +1,68 @@
 version: "2"
 
 services:
-
-  climate-search:
-    image: eeacms/esbootstrap:v3.0.10
-#    image: eeacms/esbootstrap:v2.0.18
-#    build: ./eea.docker.esbootstrap
+  apache:
+    image: eeacms/apache:latest
     ports:
-      - '30021:3000'
+    - "80:80"
+    depends_on:
+    - plone
+    environment:
+      APACHE_CONFIG: |-
+        <VirtualHost *:80>
+
+            ServerAdmin contact@localhost
+            ServerName climate-local.com
+            ErrorLog /var/log/apache.log
+
+            RewriteEngine On
+
+            RewriteRule ^/(.*facetview.*) http://app:3000/$$1 [P]
+            RewriteRule ^(/javascripts.*) http://app:3000/$$1 [P]
+            RewriteRule ^(/css/.*) http://app:3000/$$1 [P]
+
+            RewriteRule ^/(.*esbootstrap\_resources.*) http://app:3000/$$1 [P,L]
+
+            RewriteRule ^/.*(tools\/api.*) http://app:3000/$$1 [P,L]
+            RewriteRule ^/.*(tools\/download.*) http://app:3000/$$1 [P,L]
+
+            RewriteRule ^/(.*data\-and\-downloads.*) http://app:3000/$$1 [P,L]
+            RewriteRule ^/(knowledge\/tools.*) http://plone:8080/VirtualHostBase/http/localhost:80/cca/VirtualHostRoot/$$1 [P,L]
+
+            RewriteRule ^/(.*) http://plone:8080/VirtualHostBase/http/localhost:80/cca/VirtualHostRoot/$$1 [P,L]
+
+        </VirtualHost>
+
+  plone:
+    image: eeacms/eea.docker.plone-climateadapt:v6.87
+    environment:
+      TZ: Europe/Copenhagen
+      ZOPE_MODE: standalone
+    volumes:
+    - ./plone-data/:/data
+    ports:
+    - 8080:8080/tcp
+    entrypoint: sh -c "tail -f /dev/null"
+
+  memcached:
+    image: memcached:1.4.35
+    labels:
+      io.rancher.scheduler.affinity:host_label: cca=yes
+    environment:
+      TZ: "Europe/Copenhagen"
+    command:
+    - "-m"
+    - "2048"
+
+  app:
+    image: eeacms/esbootstrap:v3.0.10
+#    build: ../
+#    image: eeacms/esbootstrap:v2.0.18
+    ports:
+      - '3000:3000'
       - '9229:9229'
     environment:
-#      VERSION_INFO: eeacms/esbootstrap:v1.1.0
+      VERSION_INFO: eeacms/esbootstrap
       elastic_host: esmaster
       elastic_port: '9200'
       elastic_index: 'climate'
@@ -30,13 +82,15 @@ services:
       - --watch
       - /node_modules/eea-searchserver
       - /code/app.js
-    # - --inspect-brk=0.0.0.0
+#      - --inspect-brk=0.0.0.0
     command:
-        - runserver
+      - runserver
+#    entrypoint: /bin/sh -c 'tail -f /dev/null'
     volumes:
-#        - ./eea.docker.esbootstrap/app/:/code/:z
-        - ./eea.esbootstrap.configs:/code/config
+        - ./:/code/config/cca
 #        - ./eea.searchserver.js/lib/:/node_modules/eea-searchserver/lib/:z
+#        - ./start_dev.sh:/start_dev.sh
+#        - ./eea.docker.esbootstrap/app/:/code/:z
 #        - ./eea.searchserver.js/index.js:/node_modules/eea-searchserver/index.js:z
 
   esmaster:
