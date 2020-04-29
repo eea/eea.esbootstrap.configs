@@ -1,3 +1,5 @@
+
+
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -9,7 +11,7 @@ PREFIX obligations: <http://rod.eionet.europa.eu/obligations/>
 PREFIX aqdd: <http://dd.eionet.europa.eu/property/>
 
 SELECT distinct
-
+#?source
 md5(concat(?Country, xsd:string(?endOfPeriod),?PlanCode ,?Namespace ,?PlanId ,?VersionId ,?Name, xsd:string(?FirstExceedanceYear) ,xsd:string(?AdoptionDate) ,?Status ,xsd:string(?TimeTable) ,?ReferenceAQPlan ,?ReferenceImplementation,?Pollutant ,?ProtectionTarget ,?PublicationTitle ,xsd:string(?PublicationDate) ,?PublicationAuthor,?PublicationDescription ,?Publisher ,?PublicationWeblink ,?Organisation ,?IndividualName,?Email ,xsd:string(?Phone) ,?Website ,?Address ,?envelope))  as ?_id
 
 #?XMLURI
@@ -44,6 +46,7 @@ year(xsd:date(?endOfPeriod)) AS ?ReportingYear
 ?envelope
 
 WHERE {{
+  #GRAPH <http://cdr.eionet.europa.eu/at/eu/aqd/h/envwkwuvg/rdf> {
   GRAPH <<envelope>/rdf> {
      ?envelope rod:released ?released .
      ?envelope rod:locality ?locality .
