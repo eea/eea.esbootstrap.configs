@@ -1,3 +1,4 @@
+
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -40,39 +41,49 @@ WHERE {{
     ?XMLURI aq:usedInPlan ?PlanId .
     ?XMLURI aq:inspireId ?inspireURI .
   }
-  ?source dcterms:isPartOf ?envelope .
+  #?source dcterms:isPartOf ?envelope, <http://cdr.eionet.europa.eu/at/eu/aqd/i/envwkwwfq> . 
+  ?source dcterms:isPartOf ?envelope, <<envelope>> . 
   ?envelope rod:released ?released .
   ?envelope rod:locality ?locality .
   ?envelope rod:obligation ?obliURI .
   ?envelope rod:startOfPeriod ?startOfPeriod .
   ?envelope rod:endOfPeriod ?endOfPeriod .
 
-  OPTIONAL {?XMLURI aq:localIncrement ?incrementURI} .
+  OPTIONAL {?XMLURI aq:localIncrement ?incrementURI .
+            ?incrementURI aq:total ?totalincrementURI .
+            ?totalincrementURI aq:comment ?TotalIncrementComment .
+           }
+
+  OPTIONAL {?XMLURI aq:localIncrement ?incrementURI .
+            ?incrementURI aq:total ?totalincrementURI .
+            ?totalincrementURI aq:quantity ?TotalIncrementQuantity .
+           }
+
   OPTIONAL {?XMLURI aq:urbanBackground ?urbanURI} .
-  OPTIONAL {?XMLURI aq:regionalBackground ?regURI} .
-  OPTIONAL {?XMLURI aq:parentExceedanceSituation ?AttainmentId} .
-
-  OPTIONAL {?XMLURI aq:comment ?Comment} .
-  OPTIONAL {?XMLURI aq:referenceYear ?referenceYearURI} .
-  OPTIONAL {?referenceYearURI rdfs:label ?referenceYear} .
-
-  OPTIONAL {?incrementURI aq:total ?totalincrementURI} .
-  OPTIONAL {?regURI aq:total ?totalregURI} .
   OPTIONAL {?urbanURI aq:total ?totalurbanURI} .
-
-  OPTIONAL {?totalincrementURI aq:comment ?TotalIncrementComment} .
-  OPTIONAL {?totalincrementURI aq:quantity ?TotalIncrementQuantity} . 
-
-  OPTIONAL {?totalregURI aq:comment ?TotalRegionalComment} .
-  OPTIONAL {?totalregURI aq:quantity ?TotalRegionalQuantity} . 
-
   OPTIONAL {?totalurbanURI aq:comment ?TotalUrbanComment} .
   OPTIONAL {?totalurbanURI aq:quantity ?TotalUrbanQuantity} . 
 
-  OPTIONAL {?macroURI aq:reason ?reasonURI} . 
-  OPTIONAL {?reasonURI rdfs:label ?ReasonOfExceedance} .
-  OPTIONAL {?macroURI aq:numericalExceedance ?NumericalExceedance} . 
-  OPTIONAL {?macroURI aq:numberExceedances ?NumberOfExceedances} . 
+  OPTIONAL {?XMLURI aq:parentExceedanceSituation ?AttainmentId} .
+
+  OPTIONAL { ?XMLURI aq:comment ?Comment} .
+  OPTIONAL { ?XMLURI aq:referenceYear ?referenceYearURI .
+             ?referenceYearURI rdfs:label ?referenceYear 
+           }
+
+  OPTIONAL { ?XMLURI aq:regionalBackground ?regURI }
+  OPTIONAL { ?regURI aq:total ?totalregURI }
+  OPTIONAL { ?totalregURI aq:comment ?TotalRegionalComment }
+  OPTIONAL { ?totalregURI aq:quantity ?TotalRegionalQuantity }
+
+
+  OPTIONAL { ?macroURI aq:reason ?reasonURI . 
+             ?reasonURI rdfs:label ?ReasonOfExceedance
+           }
+
+  OPTIONAL { ?macroURI aq:reason ?reasonURI }
+  OPTIONAL { ?macroURI aq:numericalExceedance ?NumericalExceedance }
+  OPTIONAL { ?macroURI aq:numberExceedances ?NumberOfExceedances } 
 
   ?inspireURI aq:namespace ?Namespace .
   ?inspireURI aq:localId ?SourceApportionmentId .
@@ -81,6 +92,4 @@ WHERE {{
   ?locality rod:localityName ?Country .
   ?obliURI rdfs:label ?Obligation .
 
-  #FILTER (?envelope = <http://cdr.eionet.europa.eu/bg/eu/aqd/i/envvnkgpw>)
-  FILTER (?envelope = <<envelope>>)
 }}
