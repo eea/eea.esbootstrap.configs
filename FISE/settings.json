@@ -27,19 +27,19 @@
                 "css/no-more-tables.css",
                 "css/esbootstrap.facetview.css",
                 "custom.css",
-                "https://demo-forests-p5.eea.europa.eu/static/css/bundle.d23565a9.css"
+                "https://demo-forest.devel4cph.eea.europa.eu/static/css/10.90caa1b1.chunk.css"
             ],
             "details_page": [
                 "css/esbootstrap.facetview.css",
                 "custom.css",
-                "https://demo-forests-p5.eea.europa.eu/static/css/bundle.d23565a9.css"
+                "https://demo-forest.devel4cph.eea.europa.eu/static/css/10.90caa1b1.chunk.css"
             ]
         },
         "js_resources": {
             "index_page": [
                 "javascripts/esbootstrap.facetview.js",
                 "custom.js",
-                "https://demo-forests-p5.eea.europa.eu/static/js/bundle.012b4fcb.js"
+                "https://demo-forest.devel4cph.eea.europa.eu/static/js/10.4f8bba71.chunk.js"
             ],
             "details_page": [
                 "http://www.eea.europa.eu/register_function.js",
@@ -63,7 +63,7 @@
         "autoswitch": "true",
         "configuration": {
             "type": "csv",
-            "file": "fise.csv",
+            "file": "fise2.csv",
             "bulksize": 5000,
             "format": "csv",
             "encoding": "utf-8",
