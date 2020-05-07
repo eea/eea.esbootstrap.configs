@@ -69,7 +69,7 @@
             "name": "COUNTRY",
             "listing": { "title": "COUNTRY", "visible" : true, "pos" : 2 },
             "details": { "title": "Country", "pos" : 20, "section": "info", "visible": true },
-            "facet": { "visible": true, "title": "Countries/Regions", "pos": 2, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Country/Region"},
+            "facet": { "visible": true, "title": "Countries", "pos": 2, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Country/Region"},
             "csv_tsv": { "title": "COUNTRY", "visible": true, "pos": 2 }
         },
         {
@@ -97,7 +97,7 @@
             "name": "RESOURCE_TYPE",
             "listing": { "title": "RESOURCE_TYPE", "visible" : true, "pos" : 6 },
             "details": { "title": "Resource format", "pos" : 60, "section": "info", "visible": true },
-            "facet": { "visible": true, "title": "Results Format", "operator": "OR", "pos": 30, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Result Format"},
+            "facet": { "visible": true, "title": "Content type", "operator": "OR", "pos": 30, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Result Format"},
             "csv_tsv": { "title": "RESOURCE_TYPE", "visible": true, "pos": 6 },
             "list": {
                 "field": "format",
@@ -221,7 +221,7 @@
             "name": "YEAR_PUBLISHED",
             "listing": { "title": "YEAR_PUBLISHED", "visible" : true, "pos" : 21 },
             "details": { "title": "YEAR_PUBLISHED", "pos" : 21, "section": "info", "visible": false },
-            "facet": { "visible": true, "title": "Published year", "pos": 26, "type": "rangehistogram", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"],
+            "facet": { "visible": true, "title": "Publishing year", "pos": 26, "type": "rangehistogram", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",
@@ -440,8 +440,8 @@
             "name": "COLLECTIONS_RANGE",
             "listing": { "visible" : false },
             "details": { "visible": false },
-            "facet_": { "visible": true, "title": "Collections range", "pos": 27, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Collection range"},
-            "facet": { "visible": true, "title": "Collections range", "pos": 27, "type": "rangehistogram", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"],
+            "facet_": { "visible": true, "title": "Time coverage", "pos": 27, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Collection range"},
+            "facet": { "visible": true, "title": "Time coverage", "pos": 27, "type": "rangehistogram", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
                     "min_max_script" : "def vals = doc['COLLECTIONS_RANGE']; if (vals.length == 0){return null;}else{ def ret = [];for (val in vals){ret.add(Integer.parseInt(val))}return ret}",
                     "aggs_script" : "def vals = doc['COLLECTIONS_RANGE']; if (vals.length == 0){return null;}else{ def ret = [];for (val in vals){ret.add(Integer.parseInt(val))}return ret}",

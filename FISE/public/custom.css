@@ -75,3 +75,11 @@ tr:nth-of-type(even) .results_text:after {
 body, html {
     background-color:white !important;
 }
+
+.facetedview_search {
+    display: none;
+}
+
+.facetview_download.filter-by a:first-child{
+    display: none;
+}
