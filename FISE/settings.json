@@ -63,7 +63,7 @@
         "autoswitch": "true",
         "configuration": {
             "type": "csv",
-            "file": "fise2.csv",
+            "file": "fise.csv",
             "bulksize": 5000,
             "format": "csv",
             "encoding": "utf-8",
