@@ -2486,6 +2486,15 @@ div.content {
     background: #005454;
     color: white; }
 
+@media (max-width: 767px) {
+  .span3.right-column-area.eea-section.eea-right-section {
+    margin-top: 0;
+    width: 90% !important; }
+  .eea-right-section-slider-active {
+    top: 0; }
+  .row-fluid .span9, div#facetview_rightcol {
+    width: 100% !important; } }
+
 #facetview_results_wrapper .tileItem {
   border-bottom: none; }
 
