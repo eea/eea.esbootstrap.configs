@@ -37,7 +37,7 @@
         },
         "js_resources": {
             "index_page": [
-                "javascripts/esbootstrap.facetview.js",
+                "fise.facetview.js",
                 "custom.js",
                 "https://demo-forest.devel4cph.eea.europa.eu/static/js/10.4f8bba71.chunk.js"
             ],

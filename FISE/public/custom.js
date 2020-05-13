@@ -8,6 +8,7 @@ settings_default_display = 'list';
 settings_suggestions_enabled = true;
 settings_sort = [{ 'ID': { 'order': 'asc' } }];
 
+
 var snippets = {
   'Documentation': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" class="icon format-icon" style="height: 18px; width: auto; fill: white;"><g fill-rule="evenodd"><path d="M7,29 L29,29 L29,7 L7,7 L7,29 Z M5,31 L31,31 L31,5 L5,5 L5,31 Z"></path><path d="M21 17L25 17 25 11 21 11 21 17zM19 19L27 19 27 9 19 9 19 19zM9 11L17 11 17 9 9 9zM9 15L17 15 17 13 9 13zM9 19L17 19 17 17 9 17zM9 23L27 23 27 21 9 21zM9 27L23 27 23 25 9 25z"></path></g></svg>',
   'Database': '<div class="format-icon"></div>',
@@ -16,12 +17,17 @@ var snippets = {
   'Tabular data': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" class="icon format-icon" style="height: 18px; width: auto; fill: white;"><path fill-rule="evenodd" d="M23,17 L29,17 L29,13 L23,13 L23,17 Z M23,29 L29,29 L29,25 L23,25 L23,29 Z M15,29 L21,29 L21,25 L15,25 L15,29 Z M7,29 L13,29 L13,25 L7,25 L7,29 Z M7,17 L13,17 L13,13 L7,13 L7,17 Z M7,11 L13,11 L13,7 L7,7 L7,11 Z M15,17 L21,17 L21,13 L15,13 L15,17 Z M7,23 L13,23 L13,19 L7,19 L7,23 Z M23,23 L29,23 L29,19 L23,19 L23,23 Z M15,23 L21,23 L21,19 L15,19 L15,23 Z M15,11 L21,11 L21,7 L15,7 L15,11 Z M23,11 L29,11 L29,7 L23,7 L23,11 Z M23,5 L13,5 L5,5 L5,13 L5,17 L5,25 L5,31 L13,31 L23,31 L31,31 L31,25 L31,17 L31,13 L31,5 L23,5 Z"></path></svg>'
 }
 
+
 $(window).bind('post_search_callback', function () {
+
+
+
+
   if ($(".facetview_display_type .selected").hasClass("list")) {
     $(".block-item").each(function (idx, elem) {
       var formatelem = $(elem).find(".format");
       var format = $(formatelem).text();
-      $(snippets[format]).insertBefore($(formatelem).parent());
+      // $(snippets[format]).insertBefore($(formatelem).parent());
     });
   }
 
@@ -31,7 +37,7 @@ $(window).bind('post_search_callback', function () {
       autoOpen: false,
       modal: true,
       width: 800,
-      height: 600,
+      height: 400,
       title: ''
     };
     var href = this.closest("a").href;
@@ -57,19 +63,21 @@ $(window).bind('post_search_callback', function () {
   // Open search filters on page load
   $('.facetview_filter h2').each(function (index, item) {
     if (!$(item).hasClass('facetview_open')) {
-        if (item.title === "Countries") {
-            setTimeout(function(){
-                $(item).trigger('click');
-            }, 400);
-        }
+      if (item.title === "Countries") {
+        setTimeout(function () {
+          $(item).trigger('click');
+        }, 400);
+      }
     }
-});
+  });
 
 
 
-  if(!$('#filters-title').length) {
+  if (!$('#filters-title').length) {
     $('.right-column-area').prepend($('<h3 id="filters-title" style="border-bottom:none">Filters</h3>'))
   }
 
-});
 
+
+
+});
