@@ -2525,8 +2525,37 @@ div.content {
 #facetview_trees .facetview_filter {
   margin-top: 1rem; }
 
+#facetview_trees .eea-icon.eea-icon-right, #facetview_trees .right-column-area .eea-icon.eea-icon-right {
+  font-size: 11px !important; }
+
 .eea-accordion-panels {
   border: none !important; }
+
+.facetview_filter_options select.facet_value_operator {
+  background: white;
+  border-color: #eee;
+  border-radius: 3px; }
+
+.current-filters {
+  background: white;
+  padding-left: 0; }
+
+.facetview_selection, .clear-all {
+  border-radius: 4px;
+  padding: 3px;
+  padding-left: 12px;
+  padding-right: 12px; }
+
+.facetview_group_title {
+  color: #303030;
+  font-size: 12px; }
+  .facetview_group_title span {
+    font-style: unset; }
+
+.filters-header {
+  margin-bottom: 1rem; }
+  .filters-header h2 {
+    color: #005454 !important; }
 
 .ui-widget-overlay {
   background: rgba(0, 0, 0, 0.6);

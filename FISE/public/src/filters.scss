@@ -21,9 +21,53 @@
     .facetview_filter {
         margin-top: 1rem;
     }
+
+.eea-icon.eea-icon-right, .right-column-area .eea-icon.eea-icon-right {
+    font-size: 11px!important;
+}
 }
 
 
 .eea-accordion-panels {
     border: none!important;
+}
+
+
+
+.facetview_filter_options select.facet_value_operator {
+    background: white;
+    border-color: #eee;
+    border-radius: 3px;
+}
+
+// .eea-icon.selected {
+//     background: $green;
+// }
+
+
+.current-filters {
+    background: white;
+    padding-left: 0;
+}
+
+.facetview_selection, .clear-all {
+    border-radius: 4px;
+    padding: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.facetview_group_title {
+    color: $black;
+    font-size: $small;
+    span {
+        font-style: unset;
+    }
+}
+
+.filters-header {
+    margin-bottom: 1rem;
+    h2 {
+        color: $green!important;
+    }
 }
