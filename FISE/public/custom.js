@@ -37,7 +37,7 @@ $(window).bind('post_search_callback', function () {
       autoOpen: false,
       modal: true,
       width: 800,
-      height: 400,
+      height: 600,
       title: ''
     };
     var href = this.closest("a").href;

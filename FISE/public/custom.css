@@ -2482,6 +2482,9 @@ div.content {
     border-bottom-left-radius: 0;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px; }
+  .facetview_display_type.filter-by .eea-icon.selected {
+    background: #005454;
+    color: white; }
 
 #facetview_results_wrapper .tileItem {
   border-bottom: none; }
