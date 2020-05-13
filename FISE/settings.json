@@ -26,13 +26,13 @@
             "index_page": [
                 "css/no-more-tables.css",
                 "css/esbootstrap.facetview.css",
-                "custom.css",
-                "https://demo-forest.devel4cph.eea.europa.eu/static/css/10.90caa1b1.chunk.css"
+                "https://demo-forest.devel4cph.eea.europa.eu/static/css/10.90caa1b1.chunk.css",
+                "custom.css"
             ],
             "details_page": [
                 "css/esbootstrap.facetview.css",
-                "custom.css",
-                "https://demo-forest.devel4cph.eea.europa.eu/static/css/10.90caa1b1.chunk.css"
+                "https://demo-forest.devel4cph.eea.europa.eu/static/css/10.90caa1b1.chunk.css",
+                "details.css"
             ]
         },
         "js_resources": {

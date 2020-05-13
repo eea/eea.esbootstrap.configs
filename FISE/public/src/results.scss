@@ -1,0 +1,67 @@
+#facetview_results_wrapper {
+    .tileItem {
+        border-bottom: none;
+    }
+
+    article.block-item {
+        margin-bottom: 1rem;
+
+        >a {
+            font-size  : $heading;
+            font-weight: 500;
+            color      : $green !important;
+        }
+
+
+        .block-content {
+            font-size: $small;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+.meta-data {
+    font-size    : $small;
+    margin-top   : .5rem;
+    margin-bottom: .3rem;
+
+    svg {
+        fill           : $green !important;
+        // margin-right: .3rem;
+    }
+
+    display: flex;
+
+    .text-tab {
+        .format-text {
+            color       : $muted;
+            margin-right: 1px;
+            margin-left : 7px;
+        }
+    }
+}
+
+
+.nfi-download-button {
+    display: flex;
+    margin-left: 1rem;
+    white-space: nowrap;
+    max-width    : 300px;
+    border       : 1px solid #eee;
+    border-radius: 6px;
+    padding: 5px;
+    color: $black!important;
+    font-size: $text;
+
+    i {
+        color  : $green!important;
+        margin-right: 5px;
+    }
+
+    .file-size {
+        color: $muted;
+        margin-left: 3px;
+        font-size: $small;
+    }
+}

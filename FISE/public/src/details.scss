@@ -1,0 +1,148 @@
+@import 'variables';
+@import 'fa/font-awesome';
+
+body, html {
+    background: white;
+}
+#content {
+    background:white;
+    font-size: $text;
+}
+
+.results_text {
+    display: block;
+    position: relative;
+    height: 60px;
+    overflow: hidden;
+    z-index: 1;
+}
+.results_text:after {
+   content: " ";
+    position: absolute;
+    top: 46px;
+    left: 0;
+    height: 15px;
+    width: 100%;
+    display: inline-block;
+}
+
+tr:nth-of-type(odd) .results_text:after {
+    background: linear-gradient(0deg, rgba(249, 249, 249, 0.75), rgba(249, 249, 249, 0));
+}
+tr:nth-of-type(even) .results_text:after {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+}
+
+
+.facetview_orderby {
+    display:none;
+}
+
+#portal-header, #footer-wrapper, #portal-colophon, .visualization-info, #header-holder, .visualization-date {
+    display:none;
+}
+.facet-view-simple{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 2em;
+    padding-right: 2em;
+    max-width: 1687px;
+}
+
+.ui-dialog-titlebar {
+    border:none;
+    background-color:white !important;
+}
+
+.ui-dialog {
+    border:none;
+    background-color:white !important;
+    padding:0;
+    background:none;
+}
+
+.ui-button {
+    border:none !important;
+    background-color:white !important;
+}
+
+#detailsmodal {
+    padding:0;
+}
+
+.facetedview_search {
+    display: none;
+}
+
+.facetview_download.filter-by a:first-child{
+    display: none;
+}
+
+
+// .header-bg.contentpage {
+//     display: none;
+// }
+
+div.content {
+    padding: 0!important;
+    margin: 0!important;
+}
+
+h2 {
+    color: $green!important;
+    border-bottom: none;
+}
+
+.meta-data {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;;
+}
+
+.item_detail_table.datatable {
+    border-collapse: collapse;
+    th,td {
+        border-bottom: 1px solid #eee;
+        border-top:none;
+    }
+}
+
+
+.RESOURCE_TITLE,
+.DATA_SETS,
+.DATA_TYPE,
+.RESOURCE_TYPE,
+.TOPIC_CATEGORY,
+.INFO_LEVEL {
+    display: none;
+}
+
+@import 'results';
+
+
+.nfi-download-button {
+    margin-top: 1rem;
+    white-space: nowrap;
+    max-width    : 200px;
+    border       : 1px solid #eee;
+    border-radius: 6px;
+    padding: 5px;
+    color: $black!important;
+    font-size: $filterHeading;
+
+    i {
+        color  : $green!important;
+        margin-right: 5px;
+    }
+
+    .file-size {
+        color: $muted;
+        margin-left: 3px;
+        font-size: $small;
+    }
+}
+
+
+.ui-button-icon-primary.ui-icon.ui-icon-closethick {
+    background: none;
+}

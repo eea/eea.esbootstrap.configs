@@ -36,6 +36,8 @@ block content
                     span(class="format-text") File Size: 
                     span(class="format-type")
                         != data.FILE_SIZE.value
+                div(class="nfi-download-area")
+                
 
         - var clean_data = data
         - var keyword_values = clean_data.KEYWORDS.value.split(",")
@@ -49,3 +51,8 @@ block content
         +detail_tables (sections, clean_data)
     else
         +app_error("Data with ID: ", id)
+        
+    a(class="nfi-download-button" href="/download")
+                        i(class="fa fa-download")
+                        span(class="nfi-download-text") Download
+                        span(class="file-size") ( ${filesize} )

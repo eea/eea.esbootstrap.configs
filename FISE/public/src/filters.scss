@@ -1,0 +1,29 @@
+#facetview_trees {
+    h2.facetview_showtree {
+        background-color: transparent!important;
+        color: $green!important;
+        font-size: $filterHeading!important;
+        font-weight: 500;
+    }
+    .facetview_tree {
+        border-color: transparent!important;
+        ul {
+            background: white;
+            li {
+                background: white;
+            }
+        }
+        
+    }
+    .ui-resizable-s {
+        background-color: white!important;
+    }
+    .facetview_filter {
+        margin-top: 1rem;
+    }
+}
+
+
+.eea-accordion-panels {
+    border: none!important;
+}

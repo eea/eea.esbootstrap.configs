@@ -186,14 +186,14 @@
         {
             "name": "RESPONSIBLE_ORGANISATION",
             "listing": { "title": "RESPONSIBLE_ORGANISATION", "visible" : true, "pos" : 16 },
-            "details": { "title": "Organization name", "pos" : 90, "section": "info", "visible": true },
+            "details": { "title": "Organisation name", "pos" : 90, "section": "info", "visible": true },
             "facet": { "visible": false},
             "csv_tsv": { "title": "RESPONSIBLE_ORGANISATION", "visible": true, "pos": 16 }
         },
         {
             "name": "ORGANISATION_EMAIL",
             "listing": { "title": "ORGANISATION_EMAIL", "visible" : true, "pos" : 17 },
-            "details": { "title": "Organization email", "pos" : 100, "section": "info", "visible": true },
+            "details": { "title": "Organisation email", "pos" : 100, "section": "info", "visible": true },
             "facet": { "visible": false},
             "csv_tsv": { "title": "ORGANISATION_EMAIL", "visible": true, "pos": 17 }
         },
@@ -264,7 +264,7 @@
             "name": "NUTS_LEVEL",
             "values_blacklist":["N.A."],
             "listing": { "title": "NUTS_LEVEL", "visible" : true, "pos" : 25 },
-            "details": { "title": "Nuts levels", "pos" : 110, "section": "info", "visible": true },
+            "details": { "title": "NUTS levels", "pos" : 110, "section": "info", "visible": true },
             "facet": { "visible": true, "title": "NUTS Level", "operator": "OR", "pos": 25, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for NUTS Level"},
             "csv_tsv": { "title": "NUTS_LEVEL", "visible": true, "pos": 25 }
         },
@@ -404,7 +404,7 @@
         {
             "name": "FILE_SIZE",
             "listing": { "title": "FILE_SIZE", "visible" : true, "pos" : 45 },
-            "details": { "title": "FILE_SIZE", "pos" : 45, "section": "info", "visible": true },
+            "details": { "title": "FILE_SIZE", "field": "filesize", "default": "",  "type": "list","pos" : 45, "section": "info", "visible": true },
             "facet": { "visible": false},
             "csv_tsv": { "title": "FILE_SIZE", "visible": true, "pos": 45 },
             "list": {

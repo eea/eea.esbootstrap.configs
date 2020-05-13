@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* Add custom css here */
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2329,6 +2328,13 @@
   overflow: visible;
   clip: auto; }
 
+body, html {
+  background: white; }
+
+#content {
+  background: white;
+  font-size: 14px; }
+
 .results_text {
   display: block;
   position: relative;
@@ -2351,24 +2357,10 @@ tr:nth-of-type(odd) .results_text:after {
 tr:nth-of-type(even) .results_text:after {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)); }
 
-@font-face {
-  font-family: 'FontAwesome';
-  src: url("/fonts-search/fontawesome-webfont.eot?v=4.7.0"), url("/fonts-search/fontawesome-webfont.eot?v=4.7.0") format("embedded-opentype"), url("/fonts-search/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("/fonts-search/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("/fonts-search/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("/fonts-search/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-i.fa {
-  font-family: FontAwesome; }
-
 .facetview_orderby {
   display: none; }
 
-#portal-header,
-#footer-wrapper,
-#portal-colophon,
-.visualization-info,
-#header-holder,
-.visualization-date {
+#portal-header, #footer-wrapper, #portal-colophon, .visualization-info, #header-holder, .visualization-date {
   display: none; }
 
 .facet-view-simple {
@@ -2396,10 +2388,6 @@ i.fa {
 #detailsmodal {
   padding: 0; }
 
-body,
-html {
-  background-color: #f6f6f6 !important; }
-
 .facetedview_search {
   display: none; }
 
@@ -2410,57 +2398,27 @@ div.content {
   padding: 0 !important;
   margin: 0 !important; }
 
-#portal-columns > .container {
-  padding-left: 0 !important;
-  padding-right: 0 !important; }
+h2 {
+  color: #005454 !important;
+  border-bottom: none; }
 
-#facetview {
-  max-width: calc(1300px - 4rem);
-  margin: 0 auto;
-  padding: 0 2rem;
-  background: white !important;
-  padding-top: 2rem;
-  position: relative;
-  padding-bottom: 2rem;
-  margin-top: -11px; }
+.meta-data {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee; }
 
-.pagination {
-  background: white;
-  border: 1px solid #eee;
-  border-radius: 5px;
-  padding: .3rem !important;
-  max-width: 300px;
-  margin: 1rem 0; }
-  .pagination ul {
-    font-size: 14px; }
-    .pagination ul a {
-      color: #303030; }
+.item_detail_table.datatable {
+  border-collapse: collapse; }
+  .item_detail_table.datatable th, .item_detail_table.datatable td {
+    border-bottom: 1px solid #eee;
+    border-top: none; }
 
-.right-column-area {
-  width: 30% !important; }
-
-#facetview_rightcol {
-  width: calc(70% - 1rem) !important;
-  margin-right: 1rem !important; }
-
-.logo-nav-wrapper {
-  margin-top: 0 !important;
-  padding-top: 1rem !important; }
-
-#content,
-.facet-view-simple {
-  background: #f6f6f7 !important; }
-
-.ui.container {
-  max-width: 1300px !important; }
-
-.header-image-content h1 {
-  color: white !important;
-  text-align: center !important;
-  border-bottom: none !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  margin-top: 6rem !important; }
+.RESOURCE_TITLE,
+.DATA_SETS,
+.DATA_TYPE,
+.RESOURCE_TYPE,
+.TOPIC_CATEGORY,
+.INFO_LEVEL {
+  display: none; }
 
 #facetview_results_wrapper .tileItem {
   border-bottom: none; }
@@ -2506,28 +2464,22 @@ div.content {
     margin-left: 3px;
     font-size: 12px; }
 
-#facetview_trees h2.facetview_showtree {
-  background-color: transparent !important;
-  color: #005454 !important;
-  font-size: 16px !important;
-  font-weight: 500; }
+.nfi-download-button {
+  margin-top: 1rem;
+  white-space: nowrap;
+  max-width: 200px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 5px;
+  color: #303030 !important;
+  font-size: 16px; }
+  .nfi-download-button i {
+    color: #005454 !important;
+    margin-right: 5px; }
+  .nfi-download-button .file-size {
+    color: #929292;
+    margin-left: 3px;
+    font-size: 12px; }
 
-#facetview_trees .facetview_tree {
-  border-color: transparent !important; }
-  #facetview_trees .facetview_tree ul {
-    background: white; }
-    #facetview_trees .facetview_tree ul li {
-      background: white; }
-
-#facetview_trees .ui-resizable-s {
-  background-color: white !important; }
-
-#facetview_trees .facetview_filter {
-  margin-top: 1rem; }
-
-.eea-accordion-panels {
-  border: none !important; }
-
-.ui-widget-overlay {
-  background: rgba(0, 0, 0, 0.6);
-  opacity: 1; }
+.ui-button-icon-primary.ui-icon.ui-icon-closethick {
+  background: none; }

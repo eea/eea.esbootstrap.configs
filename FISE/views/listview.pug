@@ -15,12 +15,12 @@ div(class="tileItem visualIEFloatFix")
         div(class="block-content")
             div(class="blockBody")
                 span(class="description") ${description}
-            //div(class="nif-download-area")
-                //a(class="nif-download-button" href="/download")
-                    //<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" class="icon" style="height: 16px; width: auto; fill: rgb(0, 85, 85);"><g fill-rule="evenodd"><path d="M18.0713 25L18.0003 25.071 17.9283 25 18.0713 25zM27.1923 18.707L25.7783 17.293 19.0003 24.071 19.0003 5 17.0003 5 17.0003 24.071 10.2213 17.293 8.8073 18.707 18.0003 27.899 27.1923 18.707zM7 31L29 31 29 29 7 29z"></path></g></svg>
-                    //p(class="nif-download-text") Download
-                    //p(class="file-size") ( ${filesize} )
+            div(class="nfi-download-area")
+                a(class="nfi-download-button" href="/download")
+                    i(class="fa fa-download")
+                    span(class="nfi-download-text") Download
+                    span(class="file-size") ( ${filesize} )
         div(class="tag-tab")
-            span(class="result-tag") Tag: 
+            span(class="result-tag") Publishing year: 
             span(class="result-date") ${published}
     div(style="padding-bottom:1.0em;", class="visualClear") 
