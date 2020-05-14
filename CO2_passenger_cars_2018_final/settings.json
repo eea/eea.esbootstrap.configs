@@ -8,6 +8,22 @@
         "field_base":"",
         "preload_cache": true
     },
+    "layout_vars":{
+        "skip_resources_bundling": true,
+        "css_resources": {
+            "index_page": [
+            ],
+            "details_page": [
+            ]
+        },
+        "js_resources": {
+            "index_page": [
+            ],
+            "details_page": [
+            ]
+        }
+
+    },
     "API":{
         "token": "default"
     },
