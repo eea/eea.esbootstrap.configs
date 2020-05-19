@@ -25,20 +25,20 @@ block content
     p!= site_description
     p(class='facets_footer_slot_init')!= facets_footer_slot
     ul(class="tabs")
-        li(class="first-tab")
-            a(href="#first-tab" class="tab-link selected_tab")
-                <i class="eea-icon eea-icon-2x eea-icon-table" aria-hidden="true"></i>
-                span
-                    | Data table explorer
         li(class="second-tab")
-            a(href="#second-tab" class="tab-link")
+            a(href="#second-tab" class="tab-link selected_tab")
                 <i class="eea-icon eea-icon-2x eea-icon-bar-chart" aria-hidden="true"></i>
                 span
                     | Dashboard
+        li(class="first-tab")
+            a(href="#first-tab" class="tab-link")
+                <i class="eea-icon eea-icon-2x eea-icon-table" aria-hidden="true"></i>
+                span
+                    | Data table explorer
     div(class="tabs-content")
-        div(id="first-tab" class="tab-content selected_tab")
+        div(id="second-tab" class="tab-content selected_tab") !{dashboard_src}
+        div(id="first-tab" class="tab-content")
             .facet-view-simple
-        div(id="second-tab" class="tab-content") !{dashboard_src}
 
 
     +visualization_info (dataprovencance_info_url,dataprovencance_info_text)
