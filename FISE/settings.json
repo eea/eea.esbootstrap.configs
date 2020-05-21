@@ -26,20 +26,17 @@
             "index_page": [
                 "css/no-more-tables.css",
                 "css/esbootstrap.facetview.css",
-                "https://demo-forest.devel4cph.eea.europa.eu/static/css/10.90caa1b1.chunk.css",
                 "custom.css"
             ],
             "details_page": [
                 "css/esbootstrap.facetview.css",
-                "https://demo-forest.devel4cph.eea.europa.eu/static/css/10.90caa1b1.chunk.css",
                 "details.css"
             ]
         },
         "js_resources": {
             "index_page": [
                 "fise.facetview.js",
-                "custom.js",
-                "https://demo-forest.devel4cph.eea.europa.eu/static/js/10.4f8bba71.chunk.js"
+                "custom.js"
             ],
             "details_page": [
                 "http://www.eea.europa.eu/register_function.js",
