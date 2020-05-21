@@ -53,7 +53,7 @@
                 "visible": true,
                 "title": "Country",
                 "short_name": "Country",
-                "pos": 0,
+                "pos": 10,
                 "type": "facet",
                 "size": 100,
                 "order": "term",
@@ -107,7 +107,7 @@
                 "visible": true,
                 "title": "Pool",
                 "short_name": "Pool",
-                "pos": 0,
+                "pos": 20,
                 "type": "facet",
                 "size": 9999,
                 "order": "term",
@@ -136,7 +136,7 @@
             "facet": {
                 "visible": true,
                 "title": "Manufacturer name",
-                "pos": 0,
+                "pos": 30,
                 "type": "facet",
                 "size": 9999,
                 "order": "term",
@@ -323,7 +323,7 @@
             "facet": {
                 "visible": true,
                 "title": "Commercial name",
-                "pos": 6,
+                "pos": 40,
                 "type": "facet",
                 "size": 9999,
                 "order": "reverse_count",
@@ -424,7 +424,7 @@
             "facet": {
                 "visible": true,
                 "title": "Mass in running order (kg)",
-                "pos": 8,
+                "pos": 50,
                 "type": "rangehistogram",
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"],
@@ -484,7 +484,7 @@
             "facet": {
                 "visible": true,
                 "title": "Specific CO2 Emissions in g/km (NEDC)",
-                "pos": 8,
+                "pos": 60,
                 "type": "rangehistogram",
                 "size": 600,
                 "order": "term",
@@ -829,9 +829,9 @@
                 "visible": true
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Type of data",
-                "pos": 9,
+                "pos": 3,
                 "type": "facet",
                 "size": 100,
                 "order": "term",
@@ -860,17 +860,16 @@
                 "visible": true
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Registration year",
-                "pos": 10,
+                "pos": 6,
                 "type": "facet",
                 "size": 100,
                 "order": "reverse_term",
                 "operator": "OR",
                 "facet_display_options": ["sort", "checkbox"],
                 "empty_message": "No registration year",
-                "short_name": "Registration year",
-                "default_values": {"operator": "or", "values": ["2018"]}
+                "short_name": "Registration year"
             },
             "csv_tsv": {
                 "title": "year",
