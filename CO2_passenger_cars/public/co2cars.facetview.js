@@ -286,6 +286,11 @@ jQuery(document).ready(function($) {
         settings_display_images = true;
     }
     var opts = {
+        fixed_facets: {
+            Status:['Final', 'Provisional'],
+            year:[]
+        },
+
         search_url: './tools/api',
         search_index: 'elasticsearch',
         datatype: 'json',
@@ -372,6 +377,9 @@ jQuery(document).ready(function($) {
                 tmp_facets.status = [status];
             }
             opts.predefined_filters = buildPredefinedFilters(tmp_facets.year, tmp_facets.status);
+            for (var i = min; i <= max; i++){
+                opts.fixed_facets.year.push(i);
+            }
             eea_facetview('.facet-view-simple', opts);
         })
     })

@@ -55,10 +55,10 @@ ul.tabs li a.tab-link span {
     display: block;
 }
 
-#content .tabs-content .facetview_filter h2,
+/*#content .tabs-content .facetview_filter h2,
 .tabs-content .row-fluid {
     background-color: #f5f9fc;
-}
+}*/
 
 ul.tabs .selected_tab {
     color: black;
@@ -71,10 +71,10 @@ ul.tabs .selected_tab {
 }
 
 /* Hide year/status filters */
-#facetview_group_year,
+/*#facetview_group_year,
 #facetview_group_Status {
     display: none;
-}
+}*/
 
 .year-facet-section, .status-facet-section {
     display: -webkit-flex;
@@ -272,4 +272,14 @@ ul.tabs .selected_tab {
         url("/fonts-search/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
         url("/fonts-search/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
         url("/fonts-search/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");font-weight:normal;font-style:normal
+}
+
+
+div[rel='Status'] .facet_label_count,
+div[rel='year'] .facet_label_count,
+.facetview_filter_options[rel='Status'] .facet_value_operator,
+.facetview_filter_options[rel='year'] .facet_value_operator,
+.facetview_filter_options[rel='Status'] .facet_count_order,
+.facetview_filter_options[rel='year'] .facet_count_order{
+    display:none;
 }
