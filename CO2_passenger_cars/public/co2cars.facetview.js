@@ -9,13 +9,13 @@ function getMinMaxYear(callback){
 }
 
 function getStatus(min, max, callback){
-    query = '{"query": {"bool": {"must": [{"term": {"year": "' + max + '"}},{"match": {"Status": "F"}}],"must_not": [],"should": []}},"sort": [],"size": 0}';
+    query = '{"query": {"bool": {"must": [{"term": {"year": "' + max + '"}},{"match": {"scStatus": "Final"}}],"must_not": [],"should": []}},"sort": [],"size": 0}';
     var url = window.location.origin + "/tools/api?source=" + query;
 
     $.ajax({url: url, success: function(result){
-        status = 'P';
+        status = 'Provisional';
         if (result.hits.total > 0) {
-            status = 'F'
+            status = 'Final'
         }
         callback(min, max, status);
     }
@@ -36,18 +36,36 @@ var year_facet_template = '<div class="year-facet-section">' +
 '    </div>' +
 '</div>';
 
-var status_entry_template = '<div class="status_facet" rel="placeholder">' +
-'   <input class="status_facet_checkbox" type="checkbox" value="Status" facet_type="facet" group_id="0">' +
-'   <div class="status_facet_value"></div>' +
-'   <div class="status_facet_count">1</div>' +
-'</div>';
+var status_entry_template = ''+
+//'<li><div class="status_facet" rel="placeholder">' +
+//'   <input class="status_facet_checkbox" type="checkbox" value="Status" facet_type="facet" group_id="0">' +
+//'   <div class="status_facet_value"></div>' +
+//'   <div class="status_facet_count">1</div></li>' +
+//'</div>';
 
-var status_facet_template = '<div class="status-facet-section">' +
+'<li role="treeitem" rel="co2_status" title="" id="j1_1" class="jstree-node facetview_filterchoice leaf jstree-leaf" aria-selected="true">'+
+'<i class="jstree-icon jstree-ocl"></i>'+
+'<a class="jstree-anchor jstree-hovered" href="#">'+
+'<i class="jstree-icon jstree-checkbox"></i>'+
+'<i class="jstree-icon jstree-themeicon"></i>'+
+'<span class="facet_label_text"></span>'+
+'</a>'+
+'</li>';
+
+
+var status_facet_template = '' +
+'<div class="facetview_filter eea-accordion-panel"> '+
+'<h2 class="facetview_showtree  i18n notoc eea-icon-right-container" title="co2_status" id="co2_status" eea_rel="co2_status">' +
+'<div class="facetview_showtree_eealabel">Status</div>'+
+'<span class="facetview_arrow_right eea-icon eea-icon-right"></span> <div style="clear:both"> </div>'+
+'</h2>' +
+'<div class="status-facet-section">' +
 '    <div class="status_facet_title">' +
 '        <span class="status_facet_title--text">Type of data</span>' +
 '        <span class="status_facet_title--text-border"></span></div>' +
-'    <div class="status_facet_group">' +
-'    </div>' +
+'    <ul class="status_facet_group">' +
+'    </ul>' +
+'</div> ';
 '</div> ';
 
 function getCustomFacets(){
@@ -108,7 +126,7 @@ function getCustomFacets(){
         for (var i = 0; i < or_terms.year.length; i++){
             tmp_year.push(parseInt(or_terms.year[i]));
         }
-        return {year: tmp_year, status: or_terms.Status};
+        return {year: tmp_year, status: or_terms.scStatus};
     }
     return {}
 }
@@ -165,7 +183,7 @@ function buildPredefinedFilters(year, status){
     }
 
     for (i = 0; i < status.length; i++){
-        var tmp_term = {"term":{"Status":status[i]}}
+        var tmp_term = {"term":{"scStatus":status[i]}}
         predefined_filters[0].constant_score.filter.bool.must[1].bool.should.push(tmp_term);
     }
     return predefined_filters
@@ -198,10 +216,11 @@ function createCustomFacets(){
 //    $(".status-facet-section").remove();
 //    $(".year-facet-section").remove();
 //    $(status_facet_template).insertAfter($('.content h3')[0]);
-    $(year_facet_template).insertAfter($('.current-filters')[0]);
-    $(status_facet_template).insertAfter($('.current-filters')[0]);
-
-    status_arr = [ {key:'F'}, {key:'P'}]
+//    $(year_facet_template).insertAfter($('.current-filters')[0]);
+//    $(status_facet_template).insertAfter($('.current-filters')[0]);
+    $("#facetview_trees").prepend(year_facet_template);
+    $("#facetview_trees").prepend(status_facet_template);
+    status_arr = [ {key:'Final'}, {key:'Provisional'}]
     var tmp_facets = getCustomFacets();
 
 
@@ -211,22 +230,24 @@ function createCustomFacets(){
             clone.addClass("selected");
         }
         var checkbox = $(clone).children('.status_facet_checkbox');
-        var status_value = $(clone).children('.status_facet_value');
-        var status_count = $(clone).children('.status_facet_count');
+        var status_value = $(clone).find('.status_facet_value');
+//        var status_count = $(clone).children('.status_facet_count');
 
         $(clone).attr('rel', item.key)
         $(checkbox).attr('value', item.key);
         $(checkbox).attr('group_id', idx);
 
-        if (item.key === "F") {
-            item.key = "Final data";
+        if (item.key === "Final") {
+            item.key = "Final";
         }
         else {
-            item.key = "Provisional data";
+            item.key = "Provisional";
         }
 
-        $(status_value).text(item.key);
-        $(status_count).text(item.doc_count);
+        clone.attr("title", item.key);
+        clone.find(".facet_label_text").text(item.key);
+//        $(status_value).text(item.key);
+//        $(status_count).text(item.doc_count);
 
         $('.status-facet-section').children('.status_facet_group').append(clone[0]);
 
@@ -281,16 +302,44 @@ function addSpinner() {
     }
 }
 
+jQuery(document).bind("fixed_facet_checked",function(evt, params){
+    add_EEA_settings();
+    $(".facetview_filterselected[rel='scStatus']").prop("title", "Type of data can't be removed, just changed");
+    $(".facetview_filterselected[rel='scStatus']").prop("alt", "Type of data can't be removed, just changed");
+
+    if (params.rel === 'year'){
+        if (!$(".year_facet[rel='"+params.title+"']").hasClass("selected")){
+            $(".year_facet[rel='"+params.title+"']").click();
+        }
+    }
+
+    if (params.rel === 'scStatus'){
+        if (!$(".status_facet[rel='"+params.title+"']").hasClass("selected")){
+            $(".status_facet[rel='"+params.title+"']").click();
+        }
+    }
+})
+
+jQuery(document).bind("fixed_facet_unchecked",function(evt, params){
+    add_EEA_settings();
+    $(".facetview_filterselected[rel='scStatus']").prop("title", "Type of data can't be removed, just changed");
+    $(".facetview_filterselected[rel='scStatus']").prop("alt", "Type of data can't be removed, just changed");
+
+    if (params.rel === 'year'){
+        $(".year_facet[rel='"+params.title+"']").click();
+    }
+
+    if (params.rel === 'scStatus'){
+        $("li[role='treeitem'][rel='scStatus'][title='Final'] a.jstree-anchor").click()
+//        $(".status_facet[rel='"+params.title+"']").click();
+    }
+})
+
 jQuery(document).ready(function($) {
     if (window.settings_display_images === undefined){
         settings_display_images = true;
     }
     var opts = {
-        fixed_facets: {
-            Status:['Final', 'Provisional'],
-            year:[]
-        },
-
         search_url: './tools/api',
         search_index: 'elasticsearch',
         datatype: 'json',
@@ -377,9 +426,6 @@ jQuery(document).ready(function($) {
                 tmp_facets.status = [status];
             }
             opts.predefined_filters = buildPredefinedFilters(tmp_facets.year, tmp_facets.status);
-            for (var i = min; i <= max; i++){
-                opts.fixed_facets.year.push(i);
-            }
             eea_facetview('.facet-view-simple', opts);
         })
     })
