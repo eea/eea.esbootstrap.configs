@@ -76,80 +76,26 @@ ul.tabs .selected_tab {
     display: none;
 }*/
 
-.year-facet-section, .status-facet-section {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: #F6FAFD;
-    padding: 0em 3em 0em 1em;
+.year-facet-section, .status-facet-section{
+    display:none;
 }
 
-.year_facet, .status_facet {
-    /* display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: flex; */
-    display: inline-block;
-    margin-right: 2em;
-    /* margin-bottom: 1.2em; */
-    /* min-width: 110px; */
-    margin-bottom: 4px;
-    background-color: rgb(200,200,200);
-    border-radius: 15px;
-    padding: 0.5em 1.5em;
-    clear: both;
-    border: 1px solid #ccc;
-}
-
-.year_facet.selected,.status_facet.selected{
-    background-color: white;
-}
 
 .year_facet_value, .status_facet_value {
     cursor: pointer;
 }
 
-.year_facet_checkbox, .status_facet_checkbox {
-    float:left;
-    margin-right: 0.5em !important;
-    display: none;
+.year_facet, .status_facet{
+    height:24px;
 }
-
-.year_facet_value, .status_facet_value {
-    -webkit-flex: 1;
-    -moz-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-/*    line-height: 1;*/
-}
-
-.year_facet_count, .status_facet_count {
-    line-height: 1;
-    display: none;
-}
-
-.year_facet_title--text, .status_facet_title--text {
-    align-self: center;
-    margin-left: 2em;
-    display: block;
-    color: #FFF;
-    font-weight: bold;
-}
-
 
 .year_facet_group, .status_facet_group {
-    -webkit-flex: 1;
-    -moz-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    /*margin-left: 2.5em;*/
-    padding-top: 0em;
-    min-width: 116px;
+    margin-left:0;
 }
 
+.year_facet a, .status_facet a{
+    padding-top:3px;
+}
 @-webkit-keyframes spin {
     0% {
         -webkit-transform: rotate(0deg);
@@ -283,6 +229,74 @@ div[rel='year'] .facet_label_count,
     display:none;
 }
 
-.facetview_filterselected[rel='scStatus'] .eea-icon {
-    color:gray;
+.status_facetview_selected h3,
+.year_facetview_selected h3{
+    border: 0;
+}
+
+.status_facetview_selected,
+.year_facetview_selected {
+    float: left;
+    margin-right: 2em;
+    min-width: 10.7%;
+}
+
+.status_facetview_selected:last-child,
+.year_facetview_selected:last-child {
+    margin-right: 0;
+}
+
+.status_facetview_selected .rel-between,
+.year_facetview_selected .rel-between {
+    padding: 0 0 2px;
+    display: none;
+}
+
+.status_facetview_selected .facetview_clear,
+.year_facetview_selected .facetview_clear {
+    padding: 1px;
+    background: #f0f0f0 none;
+    border-color: #ccc;
+}
+
+.status_facetview_selection,
+.year_facetview_selection,
+.clear-all {
+    margin-bottom: 4px;
+    background-color: white;
+    border-radius: 15px;
+    clear: both;
+    border: 1px solid #ccc !important;
+}
+
+.status_facetview_selection,
+.year_facetview_selection {
+    float: left;
+    padding: 0.5em 1.5em;
+/*    padding: 5px 1.5em;*/
+}
+
+.status_facetview_selection .status_facetview_filterselected,
+.year_facetview_selection .year_facetview_filterselected {
+    float: none;
+    margin-right: 3px;
+    padding: 0;
+    vertical-align: baseline;
+}
+.status_facetview_selection i,
+.year_facetview_selection i {
+    width: 17px;
+    background-image: none !important;
+}
+
+.status_facetview_filterselected .eea-icon,
+.year_facetview_filterselected .eea-icon {
+    color: red;
+    text-shadow: none;
+    margin-left: -1.2em;
+    position: absolute;
+    left: 0;
+}
+.status_facetview_filterselected .eea-icon{
+    color: gray;
 }
