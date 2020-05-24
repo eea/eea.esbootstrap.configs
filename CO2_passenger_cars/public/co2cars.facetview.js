@@ -36,7 +36,7 @@ var year_entry_template = ''+
 
 var year_facet_template = ''+
 '<div class="facetview_filter eea-accordion-panel"> '+
-'<h2 class="facetview_showtree  i18n notoc eea-icon-right-container" title="co2_year" id="co2_year" eea_rel="co2_year">' +
+'<h2 class="facetview_showtree  i18n notoc eea-icon-right-container" title="Registration year" id="co2_year" eea_rel="co2_year">' +
 '<div class="facetview_showtree_eealabel">Registration year</div>'+
 '<span class="facetview_arrow_right eea-icon eea-icon-right"></span> <div style="clear:both"> </div>'+
 '</h2>' +
@@ -59,7 +59,7 @@ var status_entry_template = ''+
 
 var status_facet_template = '' +
 '<div class="facetview_filter eea-accordion-panel"> '+
-'<h2 class="facetview_showtree  i18n notoc eea-icon-right-container" title="co2_status" id="co2_status" eea_rel="co2_status">' +
+'<h2 class="facetview_showtree  i18n notoc eea-icon-right-container" title="Status" id="co2_status" eea_rel="co2_status">' +
 '<div class="facetview_showtree_eealabel">Status</div>'+
 '<span class="facetview_arrow_right eea-icon eea-icon-right"></span> <div style="clear:both"> </div>'+
 '</h2>' +
@@ -428,7 +428,7 @@ function updateCurrentFacets(){
         }
     });
 
-
+    updateCurrentFacetsCounter();
 }
 
 jQuery(document).ready(function($) {

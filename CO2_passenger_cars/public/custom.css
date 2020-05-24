@@ -37,7 +37,7 @@ ul.tabs li a.tab-link {
     text-decoration: none;
     border: none;
     margin: 0;
-    padding: 1rem 2em;
+    padding: 1rem 2em 1rem 6px;
     margin-right: 0.25em;
     cursor: pointer;
     background: #EBF3F6;
