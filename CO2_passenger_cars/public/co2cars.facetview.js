@@ -392,6 +392,12 @@ var current_facet_section_year_template= ''+
 '</div>';
 
 
+function updateResetFilters(){
+    var refr_link = $(".eea-reset-filters").attr("href")
+    refr_link = refr_link + "#refresh_filters";
+    $(".eea-reset-filters").attr("href", refr_link);
+}
+
 function updateCurrentFacets(){
     $('.current-filters').show();
     $("#facetview_group_status").remove();
@@ -451,6 +457,7 @@ jQuery(document).ready(function($) {
             // since we call also post_search_callback
             // add_EEA_settings();
             // replaceNumbers();
+            updateResetFilters();
             markNavigationTab(settings_selected_navigation_tab);
             updateCurrentFacets();
             $(window).trigger('post_init_callback');
@@ -531,4 +538,7 @@ jQuery(document).ready(function($) {
         $(this).find('i').toggleClass('hidden');
     });
 
+    if ($(location).attr("hash") === '#refresh_filters'){
+        $("ul.tabs .first-tab .tab-link").click()
+    }
 });
