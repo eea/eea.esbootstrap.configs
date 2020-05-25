@@ -77,6 +77,11 @@ $(window).bind('post_search_callback', function () {
     $('.right-column-area').prepend($('<h3 id="filters-title" style="border-bottom:none">Filters</h3>'))
   }
 
+  // var display_type = $('.facet-view-simple').facetview.options.display_type;
+  // console.log('display type',display_type)
+  // if(display_type === 'tabular') {
+  //   $('#facetview_results_wrapper table ')
+  // }
 
 
 

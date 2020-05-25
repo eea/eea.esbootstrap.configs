@@ -220,7 +220,7 @@
         {
             "name": "YEAR_PUBLISHED",
             "listing": { "title": "YEAR_PUBLISHED", "visible" : true, "pos" : 21 },
-            "details": { "title": "YEAR_PUBLISHED", "pos" : 21, "section": "info", "visible": false },
+            "details": { "title": "YEAR_PUBLISHED", "pos" : 21, "section": "info", "visible": true },
             "facet": { "visible": true, "title": "Publishing year", "pos": 26, "type": "rangehistogram", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
                     "columns_min_color" : "#DDDDDD",

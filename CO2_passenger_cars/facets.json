@@ -829,7 +829,7 @@
                 "visible": true
             },
             "facet": {
-                "visible": true,
+                "visible": false,
                 "title": "Type of data",
                 "pos": 3,
                 "type": "facet",
@@ -860,7 +860,7 @@
                 "visible": true
             },
             "facet": {
-                "visible": true,
+                "visible": false,
                 "title": "Registration year",
                 "pos": 6,
                 "type": "facet",
