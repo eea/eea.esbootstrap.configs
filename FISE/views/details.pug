@@ -25,17 +25,17 @@ block content
         div(class="search-page")
             div(class="meta-data")
                 div(class="text-tab")
-                    span(class="format-text") Format: 
+                    span(class="format-text" style="margin-left: 0") Publishing year: 
+                    span(class="format-type format")
+                        != data.YEAR_PUBLISHED.value
+                div(class="text-tab")
+                    span(class="format-text") Content type: 
                     span(class="format-type format")
                         != data.RESOURCE_TYPE.value
                 div(class="text-tab")
                     span(class="format-text") Topics: 
                     span(class="format-type")
                         != data.TOPIC_CATEGORY.value
-                div(class="text-tab")
-                    span(class="format-text") File Size: 
-                    span(class="format-type")
-                        != data.FILE_SIZE.value
                 div(class="nfi-download-area")
                 
 
@@ -47,7 +47,7 @@ block content
         - for (let i = 0; i < keyword_values2.length; i++){if (keyword_values2[i] !== ""){ clean_keywords.push(keyword_values2[i].trim())}}
         - clean_data.KEYWORDS.value = clean_keywords.join(", ")
         - clean_data.ADDITIONAL_INFO.value = ""
-        - clean_data.FILE_SIZE.value = ""
+        //- - clean_data.FILE_SIZE.value = ""
         +detail_tables (sections, clean_data)
     else
         +app_error("Data with ID: ", id)
@@ -55,4 +55,5 @@ block content
     a(class="nfi-download-button" href="/download")
                         i(class="fa fa-download")
                         span(class="nfi-download-text") Download
-                        span(class="file-size") ( ${filesize} )
+                        span(class="file-size") 
+                            != data.FILE_SIZE.value
