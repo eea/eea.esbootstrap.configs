@@ -26,7 +26,7 @@ services:
             RewriteRule ^/.*(tools\/api.*) http://app:3000/$$1 [P,L]
             RewriteRule ^/.*(tools\/download.*) http://app:3000/$$1 [P,L]
 
-            RewriteRule ^/(.*data\-and\-downloads.*) http://app:3000/$$1 [P,L]
+            RewriteRule ^/(.*data\-health.*) http://app:3000/$$1 [P,L]
             RewriteRule ^/(knowledge\/tools.*) http://plone:8080/VirtualHostBase/http/localhost:80/cca/VirtualHostRoot/$$1 [P,L]
 
             RewriteRule ^/(.*) http://plone:8080/VirtualHostBase/http/localhost:80/cca/VirtualHostRoot/$$1 [P,L]

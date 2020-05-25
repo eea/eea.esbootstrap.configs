@@ -198,6 +198,11 @@
                 "visible": false
             },
             "facet": {
+                "values_whitelist":[
+                    "Case studies", "Guidance", "Indicators",
+                    "Information portals", "Organisations",
+                    "Publications and reports",
+                    "Research and knowledge projects"],
                 "autocomplete": false,
                 "visible": true,
                 "title": "Type of Data",
