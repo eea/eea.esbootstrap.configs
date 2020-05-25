@@ -26,16 +26,8 @@ services:
             RewriteRule ^/.*(tools\/api.*) http://app:3000/$$1 [P,L]
             RewriteRule ^/.*(tools\/download.*) http://app:3000/$$1 [P,L]
 
-            RewriteRule ^/(.*data\-and\-downloads.*) http://app:3000/$$1 [P,L]
+            RewriteRule ^/(.*data\-health.*) http://app:3000/$$1 [P,L]
             RewriteRule ^/(knowledge\/tools.*) http://plone:8080/VirtualHostBase/http/localhost:80/cca/VirtualHostRoot/$$1 [P,L]
-
-            # TODO: this needs to be done correctly
-            RewriteRule ^/health/(.*facetview.*) http://app:3000/$$1 [P]
-            RewriteRule ^/health(/javascripts.*) http://app:3000/$$1 [P]
-            RewriteRule ^/health(/css/.*) http://app:3000/$$1 [P]
-
-            RewriteRule ^/health\/contributors(.*) http://health_contributors_app:3000/$$1 [P,L]
-            RewriteRule ^/health\/catalogue(.*) http://health_catalog_app:3000/$$1 [P,L]
 
             RewriteRule ^/(.*) http://plone:8080/VirtualHostBase/http/localhost:80/cca/VirtualHostRoot/$$1 [P,L]
 
@@ -51,7 +43,6 @@ services:
     ports:
     - 8080:8080/tcp
     entrypoint: sh -c "tail -f /dev/null"
-    # Run with docker-compose exec plone bash, then: bin/standalone fg
 
   memcached:
     image: memcached:1.4.35
@@ -97,84 +88,6 @@ services:
 #    entrypoint: /bin/sh -c 'tail -f /dev/null'
     volumes:
         - ./:/code/config/cca
-#        - ./eea.searchserver.js/lib/:/node_modules/eea-searchserver/lib/:z
-#        - ./start_dev.sh:/start_dev.sh
-#        - ./eea.docker.esbootstrap/app/:/code/:z
-#        - ./eea.searchserver.js/index.js:/node_modules/eea-searchserver/index.js:z
-
-  health_catalog_app:
-    image: eeacms/esbootstrap:v3.0.10
-#    build: ../
-#    image: eeacms/esbootstrap:v2.0.18
-    ports:
-      - '3001:3000'
-      - '9232:9229'
-    environment:
-      VERSION_INFO: eeacms/esbootstrap
-      elastic_host: esmaster
-      elastic_port: '9200'
-      elastic_index: 'climate'
-      AUTO_INDEXING: 'false'
-      APP_CONFIG_DIRNAME: health_catalog
-      elastic_rwuser: 'rw'
-      elastic_rwpass: 'rwtest'
-      elastic_rouser: 'ro'
-      elastic_ropass: 'rotest'
-      elastic_appalias: 'latest'
-      _API_token: 'default'
-      _sourceconf_bulksize: 10
-    entrypoint:
-      - /node_modules/.bin/nodemon
-      - --watch
-      - code/
-      - --watch
-      - /node_modules/eea-searchserver
-      - /code/app.js
-#      - --inspect-brk=0.0.0.0
-    command:
-      - runserver
-#    entrypoint: /bin/sh -c 'tail -f /dev/null'
-    volumes:
-        - ./health_catalog:/code/config/health_catalog
-#        - ./eea.searchserver.js/lib/:/node_modules/eea-searchserver/lib/:z
-#        - ./start_dev.sh:/start_dev.sh
-#        - ./eea.docker.esbootstrap/app/:/code/:z
-#        - ./eea.searchserver.js/index.js:/node_modules/eea-searchserver/index.js:z
-
-  health_contributors_app:
-    image: eeacms/esbootstrap:v3.0.10
-#    build: ../
-#    image: eeacms/esbootstrap:v2.0.18
-    ports:
-      - '3002:3000'
-      - '9231:9229'
-    environment:
-      VERSION_INFO: eeacms/esbootstrap
-      elastic_host: esmaster
-      elastic_port: '9200'
-      elastic_index: 'climate'
-      AUTO_INDEXING: 'false'
-      APP_CONFIG_DIRNAME: health_contributors
-      elastic_rwuser: 'rw'
-      elastic_rwpass: 'rwtest'
-      elastic_rouser: 'ro'
-      elastic_ropass: 'rotest'
-      elastic_appalias: 'latest'
-      _API_token: 'default'
-      _sourceconf_bulksize: 10
-    entrypoint:
-      - /node_modules/.bin/nodemon
-      - --watch
-      - code/
-      - --watch
-      - /node_modules/eea-searchserver
-      - /code/app.js
-#      - --inspect-brk=0.0.0.0
-    command:
-      - runserver
-#    entrypoint: /bin/sh -c 'tail -f /dev/null'
-    volumes:
-        - ./health_contributors:/code/config/health_contributors
 #        - ./eea.searchserver.js/lib/:/node_modules/eea-searchserver/lib/:z
 #        - ./start_dev.sh:/start_dev.sh
 #        - ./eea.docker.esbootstrap/app/:/code/:z
