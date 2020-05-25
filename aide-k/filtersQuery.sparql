@@ -23,18 +23,17 @@ WHERE
     FILTER (?obligation = obligation:683) .
     ?locality rod:localityName ?Country .
 
-{SELECT 
-?XMLURI
-?MeasureId 
-(IRI(substr(str(?XMLURI),1,bif:strchr(str(?XMLURI),"#"))) AS ?source) 
-
-WHERE {
-?XMLURI a aq:AQD_Measures ;
-          aq:inspireId ?inspireURI .
-?inspireURI aq:localId ?MeasureId .
-}
-}
-
+    { 
+      SELECT
+        ?XMLURI
+        ?MeasureId
+        ?g as ?source
+      WHERE {
+         GRAPH ?g { ?XMLURI a aq:AQD_Measures . }
+         ?XMLURI aq:inspireId ?inspireURI .
+         ?inspireURI aq:localId ?MeasureId .
+      }
+    }
 
   } GROUP BY ?Country YEAR(xsd:date(?endOfPeriod)) ?MeasureId
 
