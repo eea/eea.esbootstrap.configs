@@ -8,11 +8,11 @@ PREFIX obligations: <http://rod.eionet.europa.eu/obligations/>
 PREFIX aqdd: <http://dd.eionet.europa.eu/property/>
 
 SELECT DISTINCT
-
+#?source
 md5(concat(?Country, ?Namespace, ?AttainmentId, xsd:string(?startOfPeriod), ?ObjectiveType, ?ReportingMetric, xsd:string(?ExceedanceThreshold), xsd:string(?Exceedance), ?AggregationType,?Pollutant, ?ProtectionTarget, xsd:string(?FinalNumericalExceedance), xsd:string(?FinalNumberExceedances), xsd:string(?ClassificationArea), xsd:string(?SurfaceAreaFinal), xsd:string(?RoadLengthFinal), xsd:string(?PopulationExposedFinal),xsd:string(?ReferenceYearFinal),xsd:string(?BaseNumericalExceedance), xsd:string(?BaseNumberExceedances), xsd:string(?Adjustment),?AdjustmentSource, ?AdjustmentType, ?AssessmentType, ?ModelAssessmentMetadataURI, ?AssessmentTypeDescription, xsd:string(?ModellingAdjustment),xsd:string(?SamplingAdjustment), ?envelope))  as ?_id
 
-
 #?attainmentURI
+
 ?Country as ?CountryOrTerritory
 YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear
 ?Namespace
@@ -50,6 +50,8 @@ replace(replace(replace(str(?SamplingAdjustment),"http://reference.eionet.europa
 ?envelope
 
 WHERE {{
+  #values ?source { <http://cdr.eionet.europa.eu/at/eu/aqd/g/envvjfwsa/REP_D-AT_000820_20141211_G-001_corr.xml> } .
+  values ?source { <<source>> } .
   GRAPH ?source {
     ?attainmentURI a aq:AQD_Attainment .
     ?attainmentURI aq:environmentalObjective ?envURI .
@@ -58,83 +60,93 @@ WHERE {{
     ?attainmentURI aq:pollutant ?PollutantURI .
     ?attainmentURI aq:inspireId ?inspireURI .
     ?inspireURI aq:localId ?AttainmentId .
+    FILTER (?AttainmentId = 'ATT-AT_01_00001_LV_hrsAbove_2013')
+    OPTIONAL{ ?attainmentURI aq:comment ?Comment }
+
+    OPTIONAL{ ?attainmentURI aq:exceedanceDescriptionFinal ?exceedanceDescriptionFinal . 
+              ?exceedanceDescriptionFinal aq:exceedance ?Exceedance }
+
+    OPTIONAL{ ?attainmentURI aq:exceedanceDescriptionFinal ?exceedanceDescriptionFinal . 
+              ?exceedanceDescriptionFinal aq:numberExceedances ?FinalNumberExceedances }
+
+    OPTIONAL{ ?attainmentURI aq:exceedanceDescriptionFinal ?exceedanceDescriptionFinal . 
+              ?exceedanceDescriptionFinal aq:numericalExceedance ?FinalNumericalExceedance }
+
+    OPTIONAL{ ?attainmentURI aq:exceedanceDescriptionBase ?exceedanceDescriptionBase .
+         ?exceedanceDescriptionBase  aq:numberExceedances ?BaseNumberExceedances }
+
+    OPTIONAL{ ?attainmentURI aq:exceedanceDescriptionBase ?exceedanceDescriptionBase .
+              ?exceedanceDescriptionBase aq:numericalExceedance ?BaseNumericalExceedance } 
+
+    OPTIONAL{ ?attainmentURI aq:exceedanceDescriptionFinal ?exceedanceDescriptionFinal .
+              ?exceedanceDescriptionFinal aq:exceedanceArea  ?areaFinalURI .
+              ?areaFinalURI aq:surfaceArea ?SurfaceAreaFinal } 
+
+    OPTIONAL{ ?attainmentURI aq:exceedanceDescriptionFinal ?exceedanceDescriptionFinal .
+              ?exceedanceDescriptionFinal aq:exceedanceArea  ?areaFinalURI .
+              ?areaFinalURI aq:roadLength ?RoadLengthFinal } 
+
+    OPTIONAL{ ?attainmentURI aq:exceedanceDescriptionFinal ?exceedanceDescriptionFinal .
+              ?exceedanceDescriptionFinal aq:exceedanceExposure ?exposureFinalURI .
+              ?exposureFinalURI aq:populationExposed ?PopulationExposedFinal } 
+
+    OPTIONAL{ ?attainmentURI aq:exceedanceDescriptionFinal ?exceedanceDescriptionFinal .
+              ?exceedanceDescriptionFinal aq:exceedanceExposure ?exposureFinalURI .
+              ?exposureFinalURI aq:referenceYear ?ReferenceYearURI . 
+              ?ReferenceYearURI aq:timePosition ?ReferenceYearFinal}
+
+    OPTIONAL{ ?attainmentURI aq:exceedanceDescriptionAdjustment ?ExceedanceDescriptionAdjustment .
+              ?ExceedanceDescriptionAdjustment aq:deductionAssessmentMethod ?DeductionAssessmentMethod .
+              ?DeductionAssessmentMethod aq:assessmentMethod ?AssessmentMethod .
+              ?AssessmentMethod aq:assessmentTypeDescription ?AssessmentTypeDescription
+    }
+
+    OPTIONAL{ ?attainmentURI aq:exceedanceDescriptionAdjustment ?ExceedanceDescriptionAdjustment .
+              ?ExceedanceDescriptionAdjustment aq:deductionAssessmentMethod ?DeductionAssessmentMethod .
+              ?DeductionAssessmentMethod aq:adjustmentSource ?sourceAdjURI .
+              ?sourceAdjURI rdfs:label ?AdjustmentSource
+    }
+
+    OPTIONAL{ ?attainmentURI aq:exceedanceDescriptionAdjustment ?ExceedanceDescriptionAdjustment .
+              ?ExceedanceDescriptionAdjustment aq:deductionAssessmentMethod ?DeductionAssessmentMethod .
+              ?DeductionAssessmentMethod aq:adjustmentType ?excAdjURI .
+              ?excAdjURI rdfs:label ?AdjustmentType
+    }    
+
+    ?inspireURI aq:namespace ?Namespace .
   }
-  ?source dcterms:isPartOf ?envelope .
-  ?envelope rod:released ?released .
-  ?envelope rod:locality ?locality .
-  ?envelope rod:obligation ?obliURI .
-  ?envelope rod:startOfPeriod ?startOfPeriod .
 
-  ###namespace property does exist
-  ?inspireURI aq:namespace ?Namespace .
+  #GRAPH  <http://cdr.eionet.europa.eu/at/eu/aqd/g/envvjfwsa/rdf> { 
+  GRAPH  <<envelope>> { 
+    ?source dcterms:isPartOf ?envelope .
+    ?envelope rod:released ?released .
+    ?envelope rod:locality ?locality .
+    ?envelope rod:obligation ?obliURI .
+    ?envelope rod:startOfPeriod ?startOfPeriod .
+  }
+  GRAPH <http://rod.eionet.europa.eu/spatial/rdf> { ?locality rod:localityName ?Country . }
+  GRAPH <http://rod.eionet.europa.eu/obligations/rdf> { ?obliURI rdfs:label ?Obligation . }
 
-  ?PollutantURI skos:notation ?Pollutant .
-  OPTIONAL{?attainmentURI aq:comment ?Comment} .
-                   
-  OPTIONAL{?attainmentURI aq:exceedanceDescriptionFinal ?exceedanceDescriptionFinal} .
-  OPTIONAL{?exceedanceDescriptionFinal aq:exceedance ?Exceedance} .
-  OPTIONAL{?exceedanceDescriptionFinal aq:numberExceedances ?FinalNumberExceedances} .
-  OPTIONAL{?exceedanceDescriptionFinal aq:numericalExceedance ?FinalNumericalExceedance} .
+  OPTIONAL{ ?envURI aq:protectionTarget ?ProtectionTargetURI .
+            ?ProtectionTargetURI rdfs:label ?ProtectionTarget } 
 
-  OPTIONAL{?attainmentURI aq:exceedanceDescriptionBase ?exceedanceDescriptionBase} .
-  OPTIONAL{?exceedanceDescriptionBase  aq:numberExceedances ?BaseNumberExceedances} .
-  OPTIONAL{?exceedanceDescriptionBase aq:numericalExceedance ?BaseNumericalExceedance} .
+  OPTIONAL{?envURI aq:reportingMetric ?ReportingMetricURI .
+            ?ReportingMetricURI  rdfs:label ?ReportingMetric } 
 
-  OPTIONAL{?exceedanceDescriptionFinal aq:exceedanceArea  ?areaFinalURI} .
-  OPTIONAL{?exceedanceDescriptionFinal aq:exceedanceExposure ?exposureFinalURI} .
+  GRAPH <http://dd.eionet.europa.eu/vocabularyfolder/aq/rdf> {
 
-  ### ClassificationArea is an array of results, thus gives duplicate rows with this field only differenciating.
+    ?thresURI aqdd:relatedPollutant ?PollutantURI .
+    ?thresURI aqdd:aggregationProcess ?AggregationTypeURI .
+    ?AggregationTypeURI rdfs:label ?AggregationType .
+    ?thresURI aqdd:hasReportingMetric ?ReportingMetricURI .
+    ?ReportingMetricURI rdfs:label ?ReportingMetric .
+    ?thresURI aqdd:hasObjectiveType ?ObjectiveTypeURI .
+    ?ObjectiveTypeURI rdfs:label ?ObjectiveType .
+    ?thresURI aqdd:hasProtectionTarget ?ProtectionTargetURI . 
+    ?thresURI aqdd:exceedanceThreshold ?ExceedanceThreshold .
+    ?thresURI skos:notation ?NrId .
+    ?PollutantURI skos:notation ?Pollutant .
+  }
 
-  #OPTIONAL{?areaFinalURI aq:areaClassification ?ClassificationArea} .
-  OPTIONAL{?areaFinalURI aq:surfaceArea ?SurfaceAreaFinal} .
-  OPTIONAL{?areaFinalURI aq:roadLength ?RoadLengthFinal} .
-
-  OPTIONAL{?exposureFinalURI aq:populationExposed ?PopulationExposedFinal} .
-  OPTIONAL{?exposureFinalURI aq:referenceYear ?ReferenceYearURI} .
-  OPTIONAL{?ReferenceYearURI aq:timePosition ?ReferenceYearFinal} .
-
-  OPTIONAL{?attainmentURI aq:exceedanceDescriptionAdjustment ?ExceedanceDescriptionAdjustment} .
-  OPTIONAL{?ExceedanceDescriptionAdjustment aq:deductionAssessmentMethod ?DeductionAssessmentMethod} .
-
-  OPTIONAL{?DeductionAssessmentMethod aq:assessmentMethod ?AssessmentMethod} .
-  OPTIONAL{?DeductionAssessmentMethod aq:adjustmentSource ?sourceAdjURI} .
-  OPTIONAL{?DeductionAssessmentMethod aq:adjustmentType ?excAdjURI} 
-
-  OPTIONAL{?sourceAdjURI rdfs:label ?AdjustmentSource} .
-  OPTIONAL{?excAdjURI rdfs:label ?AdjustmentType} .
-
-  OPTIONAL{?AssessmentMethod aq:assessmentTypeDescription ?AssessmentTypeDescription} .
-  OPTIONAL{?AssessmentMethod  aq:assessmentType ?asstypeURI} .
-  OPTIONAL{?AssessmentMethod aq:modelAssessmentMetadata ?ModellingAdjustment} .
-  OPTIONAL{?AssessmentMethod aq:samplingpointAssessmentMetadata ?SamplingAdjustment} .
-  OPTIONAL{?asstypeURI rdfs:label ?AssessmentType} .
-
-  OPTIONAL {?exceedanceDescriptionFinal aq:deductionAssessmentMethod ?DeductionAssessmentFinal} .
-  OPTIONAL {?DeductionAssessmentFinal aq:adjustmentType ?AdjustmentTypeURI} .
-
-  OPTIONAL{?AdjustmentTypeURI rdfs:label ?Adjustment} .
-
-  OPTIONAL{?envURI aq:reportingMetric ?ReportingMetricURI} .
-  OPTIONAL{?envURI aq:objectiveType ?ObjectiveTypeURI} .
-  OPTIONAL{?envURI aq:protectionTarget ?ProtectionTargetURI} .
-
-  OPTIONAL{?ReportingMetricURI rdfs:label ?ReportingMetric} .
-  OPTIONAL{?ObjectiveTypeURI rdfs:label ?ObjectiveType} .
-  OPTIONAL{?ProtectionTargetURI rdfs:label ?ProtectionTarget} .
-
-  ?AggregationTypeURI rdfs:label ?AggregationType .
-
-  ?thresURI aqdd:relatedPollutant ?PollutantURI .
-  ?thresURI aqdd:aggregationProcess ?AggregationTypeURI .
-  ?thresURI aqdd:hasReportingMetric ?ReportingMetricURI .
-  ?thresURI aqdd:hasObjectiveType ?ObjectiveTypeURI .
-  ?thresURI aqdd:hasProtectionTarget ?ProtectionTargetURI .
-  ?thresURI aqdd:exceedanceThreshold ?ExceedanceThreshold .
-  ?thresURI skos:notation ?NrId .
-  
-  ?locality rod:localityName ?Country .
-  ?obliURI rdfs:label ?Obligation .
- 
-  FILTER (?envelope = <<envelope>>)
-  
  }}
+ORDER BY ?_id
