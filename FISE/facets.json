@@ -172,7 +172,7 @@
         {
             "name": "RESOURCE_LOCATOR_INTERNAL_II",
             "listing": { "title": "RESOURCE_LOCATOR_INTERNAL_II", "visible" : false, "pos" : 14 },
-            "details": { "title": "RESOURCE_LOCATOR_INTERNAL_II", "pos" : 14, "section": "info", "visible": false },
+            "details": { "title": "RESOURCE_LOCATOR_INTERNAL_II", "pos" : 14, "section": "info", "visible": true },
             "facet": { "visible": false},
             "csv_tsv": { "title": "RESOURCE_LOCATOR_INTERNAL_II", "visible": true, "pos": 14 },
             "list": {

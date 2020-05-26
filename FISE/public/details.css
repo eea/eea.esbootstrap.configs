@@ -2429,7 +2429,8 @@ h2 {
 .INFO_LEVEL,
 tr.YEAR_PUBLISHED,
 tr.FILE_SIZE,
-tr.RESOURCE_LOCATOR_INTERNAL {
+tr.RESOURCE_LOCATOR_INTERNAL,
+tr.RESOURCE_LOCATOR_INTERNAL_II {
   display: none; }
 
 #facetview_results_wrapper .tileItem {
