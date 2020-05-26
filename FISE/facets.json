@@ -198,14 +198,14 @@
         },
         {
             "name": "Organisation_name",
-            "listing": { "title": "Organisation_name", "visible" : true, "pos" : 16 },
+            "listing": { "title": "Organisation name", "visible" : true, "pos" : 16 },
             "details": { "title": "Organisation name", "pos" : 90, "section": "info", "visible": true },
             "facet": { "visible": false},
             "csv_tsv": { "title": "Organisation_name", "visible": true, "pos": 16 }
         },
         {
             "name": "Organisation_email",
-            "listing": { "title": "Organisation_email", "visible" : true, "pos" : 17 },
+            "listing": { "title": "Organisation email", "visible" : true, "pos" : 17 },
             "details": { "title": "Organisation email", "pos" : 100, "section": "info", "visible": true },
             "facet": { "visible": false},
             "csv_tsv": { "title": "Organisation_email", "visible": true, "pos": 17 }
