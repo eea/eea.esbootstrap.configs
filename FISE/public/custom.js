@@ -31,6 +31,16 @@ $(window).bind('post_search_callback', function () {
     });
   }
 
+
+  if ($(".facetview_display_type .selected").hasClass("tabular")) {
+   $('body').addClass('tabular-view')
+  }
+
+
+  if (!$(".facetview_display_type .selected").hasClass("tabular")) {
+    $('body').removeClass('tabular-view')
+   }
+
   $('.details_link').click(function (e) {
     e.preventDefault();
     var opt = {
@@ -44,12 +54,8 @@ $(window).bind('post_search_callback', function () {
     $("#detailsmodal").empty().append($("<iframe style='width:100%;height:95%'/>").attr("src", href)).dialog(opt).dialog('open');
   });
 
-
-  function prepareLabels(parent) {
-    parent.prepend('filters')
-  }
-
   $('.pagination a.facetview_increment').html('<i class="fa fa-caret-right"></i>')
+
 
   // Open search filters on page load
   // $('.facetview_filter h2').each(function (index, item) {
@@ -73,16 +79,29 @@ $(window).bind('post_search_callback', function () {
 
 
 
+
   if (!$('#filters-title').length) {
     $('.right-column-area').prepend($('<h3 id="filters-title" style="border-bottom:none">Filters</h3>'))
   }
 
-  // var display_type = $('.facet-view-simple').facetview.options.display_type;
-  // console.log('display type',display_type)
-  // if(display_type === 'tabular') {
-  //   $('#facetview_results_wrapper table ')
-  // }
+  var downloadIconsClasses = {
+    xlsx: 'fa-file-excel-o',
+    pdf: 'fa-file-pdf-o',
+    PDF: 'fa-file-pdf-o',
+    doc: 'fa-file-text',
+    xls: 'fa-file-excel-o'
+  }
 
-
+    var downloadButton = $('.nfi-download-button')
+    downloadButton.each(function(index, item){
+      var downloadArr = $(item).attr('type').split('.')
+      var download = $(item).attr('href')
+      var almostFinalDownload = download.replace(/\\/g, "/")
+      var finalDownload = almostFinalDownload.replace("Z:/FISEAPPS/FISEPRO/New_Content", "https://cmshare.eea.europa.eu/index.php/apps/files?dir=/fise/datafiles/")
+      $(item).attr('href', finalDownload)
+      var type = downloadArr[downloadArr.length - 1]
+      var icon = $(item).find('i.fa')
+      icon.addClass(downloadIconsClasses[type])
+    })
 
 });

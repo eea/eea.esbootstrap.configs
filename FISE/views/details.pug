@@ -31,11 +31,11 @@ block content
                 div(class="text-tab")
                     span(class="format-text") Content type: 
                     span(class="format-type format")
-                        != data.RESOURCE_TYPE.value
+                        != data.Content_type.value
                 div(class="text-tab")
                     span(class="format-text") Topics: 
                     span(class="format-type")
-                        != data.TOPIC_CATEGORY.value
+                        != data.Topics.value
                 div(class="nfi-download-area")
                 
 
@@ -52,7 +52,7 @@ block content
     else
         +app_error("Data with ID: ", id)
         
-    a(class="nfi-download-button" href="/download")
+    a(class="nfi-download-button" target="_blank" href!=data.RESOURCE_LOCATOR_INTERNAL_II.value type!=data.RESOURCE_LOCATOR_INTERNAL_II.value)
                         i(class="fa fa-download")
                         span(class="nfi-download-text") Download
                         span(class="file-size") 

@@ -11,4 +11,32 @@ window.jQuery(document).ready(function($){
     var formatelem = $(".meta-data").find(".format");
     var format = $(formatelem).text();
     $(details_snippets[format]).insertBefore($(formatelem).parent());
+
+    var downloadIconsClasses = {
+      xlsx: 'fa-file-excel-o',
+      pdf: 'fa-file-pdf-o',
+      PDF: 'fa-file-pdf-o',
+      doc: 'fa-file-text',
+      xls: 'fa-file-excel-o'
+    }
+  
+      var downloadButton = $('.nfi-download-button')
+      downloadButton.each(function(index, item){
+        var downloadArr = $(item).attr('type').split('.')
+        var download = $(item).attr('href')
+        var almostFinalDownload = download.replace(/\\/g, "/")
+        var finalDownload = almostFinalDownload.replace("Z:/FISEAPPS/FISEPRO/New_Content", "https://cmshare.eea.europa.eu/index.php/apps/files?dir=/fise/datafiles/")
+        $(item).attr('href', finalDownload)
+        var type = downloadArr[downloadArr.length - 1]
+        var icon = $(item).find('i.fa')
+        icon.addClass(downloadIconsClasses[type])
+      })
+
+    var source = $('tr.Source td span')
+    var sourceText = source.text()
+    source.html('<a target="_blank" href="'+sourceText+'">'+sourceText+'</a>')
+
+    var orgMail = $('tr.Organisation_email td span')
+    var orgMailText = orgMail.text()
+    orgMail.html('<a target="_blank" href=mailto:"'+orgMailText+'">'+orgMailText+'</a>')
 });
