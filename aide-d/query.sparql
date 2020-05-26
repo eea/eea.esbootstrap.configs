@@ -8,7 +8,6 @@ PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
 PREFIX ddaq: <http://dd.eionet.europa.eu/vocabulary/aq/#>
 
 SELECT DISTINCT
-
 md5(concat(?CountryOrTerritory,xsd:string(?startOfPeriod),?Namespace,?Network,?TimeZone,?responsibleParty,?StationName,?EoICode,?StationType,?StationArea,?Pollutant,?SamplingPointId,xsd:string(?Longitude),xsd:string(?Latitude),?MeasurementRegime,xsd:string(?beginPosition),xsd:string(?endPosition),?Sample,?SamplingProcess,?MeasurementEquipment,?MeasurementMethod,?SamplingMethod,?AnalyticalTechnique)) as ?_id
 
 ?CountryOrTerritory
@@ -43,6 +42,15 @@ YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear
 #?processURI
 
 WHERE {{
+  #values ?source { <http://cdr.eionet.europa.eu/cz/eu/aqd/d/envxx_y1q/CZ_D_2018.xml> }
+  values ?source { <<source>> }
+  ?source dcterms:isPartOf ?envelope .
+  ?envelope rod:released ?released .
+  ?envelope rod:locality ?locality .
+  ?envelope rod:obligation ?obliURI .
+  ?envelope rod:startOfPeriod ?startOfPeriod .
+  ?locality rod:localityName ?CountryOrTerritory .
+
   GRAPH ?source {
     ?netURI a aq:AQD_Network .
     ?netURI aq:aggregationTimeZone ?TimeZoneURI .
@@ -72,8 +80,10 @@ WHERE {{
 
     ?relevantEmissions aq:stationClassification ?stationClassification .
 
-    OPTIONAL{?samplPointURI geo:lat ?Latitude} .
-    OPTIONAL{?samplPointURI geo:long ?Longitude} . 
+    OPTIONAL{
+        ?samplPointURI geo:lat ?Latitude .
+        ?samplPointURI geo:long ?Longitude .
+    } 
 
     ?observingCapability aq:featureOfInterest ?sample .
     ?observingCapability aq:procedure ?process .
@@ -94,36 +104,32 @@ WHERE {{
 
     ?inspireSPP aq:localId ?SamplingProcess .
 
-    OPTIONAL{?processURI aq:measurementEquipment ?measurementEquipment} .
-    OPTIONAL{?measurementEquipment aq:equipment ?equipment} .
-    OPTIONAL{?processURI aq:measurementMethod ?measurementMethod1} .
-    OPTIONAL{?measurementMethod1 aq:measurementMethod ?measurementMethod2} .
-    OPTIONAL{?processURI aq:samplingMethod ?samplingMethod1} .
-    OPTIONAL{?samplingMethod1 aq:samplingMethod ?samplingMethod2} .
-    OPTIONAL{?processURI aq:analyticalTechnique ?analyticalTechnique1} .
-    OPTIONAL{?analyticalTechnique1 aq:analyticalTechnique ?analyticalTechnique2} .
-}    
+ }
 
-  ?source dcterms:isPartOf ?envelope .
-  ?envelope rod:released ?released .
-  ?envelope rod:locality ?locality .
-  ?envelope rod:obligation ?obliURI .
-  ?envelope rod:startOfPeriod ?startOfPeriod .
-  ?locality rod:localityName ?CountryOrTerritory .
+ OPTIONAL{?processURI aq:measurementEquipment ?measurementEquipment .
+             ?measurementEquipment aq:equipment ?equipment .
+             ?equipment rdfs:label ?MeasurementEquipment .
+    }
+    OPTIONAL{?processURI aq:measurementMethod ?measurementMethod1 .
+             ?measurementMethod1 aq:measurementMethod ?measurementMethod2 .
+             ?measurementMethod2 rdfs:label ?MeasurementMethod .
+    }
+    OPTIONAL{?processURI aq:samplingMethod ?samplingMethod1 .
+             ?samplingMethod1 aq:samplingMethod ?samplingMethod2 .
+             ?samplingMethod2 rdfs:label ?SamplingMethod .
+    }
+    OPTIONAL{?processURI aq:analyticalTechnique ?analyticalTechnique1 .
+             ?analyticalTechnique1 aq:analyticalTechnique ?analyticalTechnique2 .
+             ?analyticalTechnique2 rdfs:label ?AnalyticalTechnique .
+    }
+    OPTIONAL{?TimeZoneURI skos:notation ?TimeZone} .
+    OPTIONAL{
+              ?relevantEmissions aq:stationClassification ?stationClassification .         
+              ?stationClassification skos:prefLabel ?StationType .
+             }
+    OPTIONAL{?areaClassification skos:prefLabel ?StationArea} .
+    OPTIONAL{?observedProperty rdfs:label ?Pollutant} .
+    OPTIONAL{?measurementRegimeURI rdfs:label ?MeasurementRegime} .
+    OPTIONAL{?ResponsibleURI aq:organisationName ?responsibleParty} .
+}}
 
-  #FILTER (?envelope = <http://cdr.eionet.europa.eu/gr/eu/aqd/d/envwjb39q>) .
-  FILTER (?envelope = <<envelope>>)
-
-}
-
-OPTIONAL{?TimeZoneURI skos:notation ?TimeZone} .
-OPTIONAL{?stationClassification skos:prefLabel ?StationType} .
-OPTIONAL{?areaClassification skos:prefLabel ?StationArea} .
-OPTIONAL{?observedProperty rdfs:label ?Pollutant} .
-OPTIONAL{?measurementRegimeURI rdfs:label ?MeasurementRegime} .
-OPTIONAL{?equipment rdfs:label ?MeasurementEquipment} .
-OPTIONAL{?measurementMethod2 rdfs:label ?MeasurementMethod} .
-OPTIONAL{?samplingMethod2 rdfs:label ?SamplingMethod} .
-OPTIONAL{?analyticalTechnique2 rdfs:label ?AnalyticalTechnique} .
-
-}  ORDER BY ?CountryOrTerritory

@@ -52,29 +52,31 @@ replace(replace(replace(str(?PlanId),"http://reference.eionet.europa.eu/aq/","")
   ?inspireURI aq:localId ?ScenariosId .
 
    OPTIONAL {?XMLURI aq:versionId ?VersionId} .
-   OPTIONAL {?XMLURI aq:attainmentYear ?attyearURI} . 
-   OPTIONAL {?XMLURI aq:codeOfScenario ?CodeOfScenario} . 
-   OPTIONAL {?XMLURI aq:sourceApportionment ?SourceApportionmentId} . 
-   OPTIONAL {?XMLURI aq:usedInPlan ?PlanId} .   
-   OPTIONAL {?XMLURI aq:baselineScenario ?baselineURI} . 
-   OPTIONAL {?XMLURI aq:projectionScenario ?projectionURI} . 
-   OPTIONAL {?XMLURI aq:publication ?publicationURI} .  
+   OPTIONAL {?XMLURI aq:attainmentYear ?attyearURI . 
+             ?XMLURI aq:codeOfScenario ?CodeOfScenario . 
+             ?XMLURI aq:sourceApportionment ?SourceApportionmentId . 
+             ?XMLURI aq:usedInPlan ?PlanId .   
+             ?XMLURI aq:baselineScenario ?baselineURI . 
+             ?XMLURI aq:projectionScenario ?projectionURI . 
+             ?XMLURI aq:publication ?publicationURI .
+             ?attyearURI rdfs:label ?AttainmentYear .
+   }  
 
-   OPTIONAL {?baselineURI aq:description ?BaselineDescription} .
-   OPTIONAL {?baselineURI aq:comment ?BaselineComment} .
-   OPTIONAL {?baselineURI aq:totalEmissions ?BaselineEmissions} .
-   OPTIONAL {?baselineURI aq:expectedConcentration ?BaselineExpectedConcentration} .
-   OPTIONAL {?baselineURI aq:expectedExceedances ?BaselineExpectedNrExceedances} .
+   OPTIONAL {?baselineURI aq:description ?BaselineDescription .
+             ?baselineURI aq:comment ?BaselineComment .
+             ?baselineURI aq:totalEmissions ?BaselineEmissions .
+             ?baselineURI aq:expectedConcentration ?BaselineExpectedConcentration .
+             ?baselineURI aq:expectedExceedances ?BaselineExpectedNrExceedances
+   }
    ##OPTIONAL {?baselineURI aq:measuresApplied ?BaselineMeasuresApplied} .
 
-   OPTIONAL {?projectionURI aq:description ?ProjectionDescription} .
-   OPTIONAL {?projectionURI aq:comment ?ProjectionComment} .
-   OPTIONAL {?projectionURI aq:totalEmissions ?ProjectionEmissions} .
-   OPTIONAL {?projectionURI aq:expectedConcentration ?ProjectionExpectedConcentration} .
-   OPTIONAL {?projectionURI aq:expectedExceedances ?ProjectionExpectedNrExceedances} .
+   OPTIONAL {?projectionURI aq:description ?ProjectionDescription .
+             ?projectionURI aq:comment ?ProjectionComment .
+             ?projectionURI aq:totalEmissions ?ProjectionEmissions .
+             ?projectionURI aq:expectedConcentration ?ProjectionExpectedConcentration .
+             ?projectionURI aq:expectedExceedances ?ProjectionExpectedNrExceedances
+   }
    ##OPTIONAL {?projectionURI aq:measuresApplied ?ProjectionMeasuresApplied} .
-
-   OPTIONAL {?attyearURI rdfs:label ?AttainmentYear} .
 
    ?locality rod:localityName ?Country .
    ?obliURI rdfs:label ?Obligation .
