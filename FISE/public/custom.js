@@ -97,7 +97,12 @@ $(window).bind('post_search_callback', function () {
       var downloadArr = $(item).attr('type').split('.')
       var download = $(item).attr('href')
       var almostFinalDownload = download.replace(/\\/g, "/")
-      var finalDownload = almostFinalDownload.replace("Z:/FISEAPPS/FISEPRO/New_Content", "https://cmshare.eea.europa.eu/index.php/apps/files?dir=/fise/datafiles/")
+      var finalDownload = ''
+      if(almostFinalDownload.includes('/sample_NFI/')){
+        finalDownload = almostFinalDownload.replace("Z:/FISEAPPS/FISEPRO/New_Content/", "https://cmshare.eea.europa.eu/s/YZocgSHqKNbT4gn/download?path=/datafiles/NFI_status/")
+      } else {
+        finalDownload = almostFinalDownload.replace("Z:/FISEAPPS/FISEPRO/New_Content/", "https://cmshare.eea.europa.eu/s/YZocgSHqKNbT4gn/download?path=/datafiles/")
+      }
       $(item).attr('href', finalDownload)
       var type = downloadArr[downloadArr.length - 1]
       var icon = $(item).find('i.fa')
@@ -105,3 +110,4 @@ $(window).bind('post_search_callback', function () {
     })
 
 });
+
