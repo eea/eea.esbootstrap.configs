@@ -225,6 +225,21 @@ div.content {
     }
 }
 
+td[data-title="Source"] span {
+    word-break: break-all;
+}
+
+.tabular-view .facet-view-simple {
+    max-width: 1900px;
+}
+
+.tabular-view #facetview {
+    max-width: 100%;
+}
+ 
+#facetview_rightcol .facetview_top .eea_download_btn, #facetview_rightcol .facetview_top .eea_download_btn:hover, #facetview_rightcol .facetview_top .eea_download_btn:visited {
+    color: black!important;
+}
 @import 'results';
 @import 'filters';
 @import 'modal';
