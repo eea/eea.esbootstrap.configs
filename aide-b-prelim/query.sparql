@@ -84,6 +84,6 @@ WHERE {{
   ?locality rod:localityName ?Country .
   ?obliURI rdfs:label ?Obligation .
 
-  #FILTER (?envelope = <http://cdr.eionet.europa.eu/at/eu/aqd/b/envvrskqq>)
+  FILTER (?envelope = <<envelope>>)
 }}
 
