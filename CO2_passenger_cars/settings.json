@@ -43,12 +43,12 @@
             ]
         },
         "site_title": "CO<sub>2</sub> emissions from new passenger cars",
-        "site_description": "<h3>Monitoring of CO<sub>2</sub> emissions from new passenger cars registered in 2018 across EU-28 &ndash; <a href='http://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX:32009R0443'>Regulation (EC) No 443/2009</a>.</h3>",
+        "site_description": "<h3>Monitoring of CO<sub>2</sub> emissions from new passenger cars registered in 2018 across EU-27, UK and Iceland &ndash; <a href='http://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX:32019R0631'>Regulation (EU) No 631/2019</a>.</h3>",
         "facets_footer_slot": "<span class='discreet'><strong>Note</strong>: The column 'Count' in the filters reports the sum of the rows and not the sum of the new car's registrations.</span>",
         "enableBreadcrumbs": true,
         "breadcrumbs": "Datasets",
-        "dataprovencance_info_text": "EEA Data: Monitoring of CO2 emissions from new passenger cars - Regulation (EC) No 443/2009",
-        "dataprovencance_info_url": "https://www.eea.europa.eu/data-and-maps/data/co2-cars-emission-16",
+        "dataprovencance_info_text": "EEA Data: Monitoring of CO2 emissions from new passenger cars - Regulation (EC) No 631/2019",
+        "dataprovencance_info_url": "https://www.eea.europa.eu/data-and-maps/data/co2-cars-emission-17",
         "further_info": ""
     },
     "API":{
