@@ -56,9 +56,6 @@ block content
         - var clean_sources = []
         - for (let i = 0; i < sources_values.length; i++){if (sources_values[i] !== ""){ clean_sources.push(sources_values[i].trim())}}
         - clean_data.Source.value = clean_sources
-        - clean_data.RESOURCE_LOCATOR_INTERNAL.test = JSON.stringify(clean_data.RESOURCE_LOCATOR_INTERNAL)
-        //- - var orgMail = clean_data.Organisation_email.value
-        //- - clean_data.Organisation_email.value = '<a target="_blank" href=mailto:"' + orgMailText + '">' + orgMailText + '</a>'
         div(class="info_container") 
             table(class="item_detail_table datatable")
                 tbody
@@ -100,9 +97,6 @@ block content
                             !=clean_data.KEYWORDS.label
                         td
                             !=clean_data.KEYWORDS.value
-                    tr
-                        td
-                            !=clean_data.RESOURCE_LOCATOR_INTERNAL.test
     else
         +app_error("Data with ID: ", id)
         

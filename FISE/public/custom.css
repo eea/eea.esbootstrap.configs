@@ -20876,6 +20876,15 @@ td[data-title="Organisation email"] span {
 #facetview_rightcol .facetview_top .eea_download_btn, #facetview_rightcol .facetview_top .eea_download_btn:hover, #facetview_rightcol .facetview_top .eea_download_btn:visited {
   color: black !important; }
 
+.eea-icon.list:before,
+.eea-icon.tabular:before,
+.eea-icon-right:before,
+.eea-icon.eea-icon-times:before {
+  font-family: FontAwesome; }
+
+.eea-icon.eea-icon-times:before {
+  content: "\f00d"; }
+
 #facetview_results_wrapper .tileItem {
   border-bottom: none; }
 
