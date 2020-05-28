@@ -141,7 +141,14 @@ tr.RESOURCE_LOCATOR_INTERNAL_II {
 
 
 .nfi-download-button {
-    margin-top: 1rem;
+    // margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    float: right;
+    margin-bottom: 0;
+    margin-top: 0;
     white-space: nowrap;
     max-width    : 200px;
     border       : 1px solid #eee;
@@ -153,6 +160,7 @@ tr.RESOURCE_LOCATOR_INTERNAL_II {
     i {
         color  : $green!important;
         margin-right: 5px;
+        margin-top:-2px;
     }
 
     .file-size {

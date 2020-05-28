@@ -55,16 +55,7 @@ $(window).bind('post_search_callback', function () {
   });
 
   $('.pagination a.facetview_increment').html('<i class="fa fa-caret-right"></i>')
-
-
-  // Open search filters on page load
-  // $('.facetview_filter h2').each(function (index, item) {
-  //   if (!$(item).hasClass('facetview_open')) {
-  //     setTimeout(function () {
-  //       $(item).trigger('click');
-  //     }, 400);
-  //   }
-  // });
+  $('.pagination a.facetview_decrement').html('<i class="fa fa-caret-left"></i>')
 
   // Open search filters on page load
   $('.facetview_filter h2').each(function (index, item) {
@@ -96,13 +87,7 @@ $(window).bind('post_search_callback', function () {
     downloadButton.each(function(index, item){
       var downloadArr = $(item).attr('type').split('.')
       var download = $(item).attr('href')
-      var almostFinalDownload = download.replace(/\\/g, "/")
-      var finalDownload = ''
-      if(almostFinalDownload.includes('/sample_NFI/')){
-        finalDownload = almostFinalDownload.replace("Z:/FISEAPPS/FISEPRO/New_Content/", "https://cmshare.eea.europa.eu/s/YZocgSHqKNbT4gn/download?path=/datafiles/NFI_status/")
-      } else {
-        finalDownload = almostFinalDownload.replace("Z:/FISEAPPS/FISEPRO/New_Content/", "https://cmshare.eea.europa.eu/s/YZocgSHqKNbT4gn/download?path=/datafiles/")
-      }
+      var finalDownload = download.replace("/media/search/", "https://cmshare.eea.europa.eu/s/YZocgSHqKNbT4gn/download?path=/datafiles/")
       $(item).attr('href', finalDownload)
       var type = downloadArr[downloadArr.length - 1]
       var icon = $(item).find('i.fa')

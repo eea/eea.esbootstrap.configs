@@ -2461,6 +2461,8 @@ tr.RESOURCE_LOCATOR_INTERNAL_II {
 
 .nfi-download-button {
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 1rem;
   white-space: nowrap;
   max-width: 300px;
@@ -2471,14 +2473,34 @@ tr.RESOURCE_LOCATOR_INTERNAL_II {
   font-size: 14px; }
   .nfi-download-button i {
     color: #005454 !important;
-    margin-right: 5px; }
+    margin-right: 5px;
+    margin-top: -2px; }
   .nfi-download-button .file-size {
     color: #929292;
     margin-left: 3px;
     font-size: 12px; }
 
+.facetview_metadata .pagination {
+  margin: 0 auto;
+  max-width: 250px; }
+  .facetview_metadata .pagination ul {
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 0; }
+  .facetview_metadata .pagination .active a {
+    color: black; }
+  .facetview_metadata .pagination i {
+    font-size: 1.4rem; }
+
 .nfi-download-button {
-  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  margin-bottom: 0;
+  margin-top: 0;
   white-space: nowrap;
   max-width: 200px;
   border: 1px solid #eee;
@@ -2488,7 +2510,8 @@ tr.RESOURCE_LOCATOR_INTERNAL_II {
   font-size: 16px; }
   .nfi-download-button i {
     color: #005454 !important;
-    margin-right: 5px; }
+    margin-right: 5px;
+    margin-top: -2px; }
   .nfi-download-button .file-size {
     color: #929292;
     margin-left: 3px;

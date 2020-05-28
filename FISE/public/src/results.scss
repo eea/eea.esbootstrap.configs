@@ -14,8 +14,8 @@
 
 
         .block-content {
-            font-size: $small;
-            display: flex;
+            font-size      : $small;
+            display        : flex;
             justify-content: space-between;
         }
     }
@@ -44,24 +44,47 @@
 
 
 .nfi-download-button {
-    display: flex;
-    margin-left: 1rem;
-    white-space: nowrap;
-    max-width    : 300px;
-    border       : 1px solid #eee;
-    border-radius: 6px;
-    padding: 5px;
-    color: $black!important;
-    font-size: $text;
+    display        : flex;
+    // margin-top: 1rem;
+    justify-content: center;
+    align-items    : center;
+    margin-left    : 1rem;
+    white-space    : nowrap;
+    max-width      : 300px;
+    border         : 1px solid #eee;
+    border-radius  : 6px;
+    padding        : 5px;
+    color          : $black !important;
+    font-size      : $text;
 
     i {
-        color  : $green!important;
+        color       : $green !important;
         margin-right: 5px;
+        margin-top  : -2px;
     }
 
     .file-size {
-        color: $muted;
+        color      : $muted;
         margin-left: 3px;
-        font-size: $small;
+        font-size  : $small;
+    }
+}
+
+.facetview_metadata .pagination {
+    margin: 0 auto;
+    max-width: 250px;
+    ul {
+        font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 0;
+    }
+
+    .active a {
+        color: black;
+    }
+    i {
+        font-size: 1.4rem;
     }
 }

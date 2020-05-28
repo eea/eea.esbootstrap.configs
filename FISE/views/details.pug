@@ -22,6 +22,11 @@ block content
     if (data)
         h2
             != data.RESOURCE_TITLE.value
+        a(class="nfi-download-button" target="_blank" href!=data.RESOURCE_LOCATOR_INTERNAL.value type!=data.RESOURCE_LOCATOR_INTERNAL.value)
+                    i(class="fa fa-download")
+                    span(class="nfi-download-text") Download
+                    span(class="file-size") 
+                        != data.FILE_SIZE.value
         div(class="search-page")
             div(class="meta-data")
                 div(class="text-tab")
@@ -36,7 +41,6 @@ block content
                     span(class="format-text") Topics: 
                     span(class="format-type")
                         != data.Topics.value
-                div(class="nfi-download-area")
                 
 
         - var clean_data = data
@@ -47,13 +51,58 @@ block content
         - for (let i = 0; i < keyword_values2.length; i++){if (keyword_values2[i] !== ""){ clean_keywords.push(keyword_values2[i].trim())}}
         - clean_data.KEYWORDS.value = clean_keywords.join(", ")
         - clean_data.ADDITIONAL_INFO.value = ""
-        //- - clean_data.FILE_SIZE.value = ""
-        +detail_tables (sections, clean_data)
+        - clean_data.FILE_SIZE.value = ""
+        - var sources_values = clean_data.Source.value.split(",")
+        - var clean_sources = []
+        - for (let i = 0; i < sources_values.length; i++){if (sources_values[i] !== ""){ clean_sources.push(sources_values[i].trim())}}
+        - clean_data.Source.value = clean_sources
+        - clean_data.RESOURCE_LOCATOR_INTERNAL.test = JSON.stringify(clean_data.RESOURCE_LOCATOR_INTERNAL)
+        //- - var orgMail = clean_data.Organisation_email.value
+        //- - clean_data.Organisation_email.value = '<a target="_blank" href=mailto:"' + orgMailText + '">' + orgMailText + '</a>'
+        div(class="info_container") 
+            table(class="item_detail_table datatable")
+                tbody
+                    tr(class="COUNTRY")
+                        th
+                            !=clean_data.COUNTRY.label
+                        td
+                            !=clean_data.COUNTRY.value
+                    tr(class="Description")
+                        th
+                            !=clean_data.Description.label
+                        td
+                            !=clean_data.Description.value
+                    tr(class="Source")
+                        th
+                            !=clean_data.Source.label
+                        td
+                            each item in clean_data.Source.value
+                                a(target="_blank" href=item)=item
+                                br
+                    tr(class="Organisation_name")
+                        th
+                            !=clean_data.Organisation_name.label
+                        td
+                            !=clean_data.Organisation_name.value
+                    tr(class="Organisation_email")
+                        th
+                            !=clean_data.Organisation_email.label
+                        td
+                            a(target="_blank" href="mailto:"+clean_data.Organisation_email.value+"")
+                                !=clean_data.Organisation_email.value
+                    tr(class="NUTS_levels")
+                        th
+                            !=clean_data.NUTS_levels.label
+                        td
+                            !=clean_data.NUTS_levels.value
+                    tr(class="KEYWORDS")
+                        th
+                            !=clean_data.KEYWORDS.label
+                        td
+                            !=clean_data.KEYWORDS.value
+                    tr
+                        td
+                            !=clean_data.RESOURCE_LOCATOR_INTERNAL.test
     else
         +app_error("Data with ID: ", id)
         
-    a(class="nfi-download-button" target="_blank" href!=data.RESOURCE_LOCATOR_INTERNAL_II.value type!=data.RESOURCE_LOCATOR_INTERNAL_II.value)
-                        i(class="fa fa-download")
-                        span(class="nfi-download-text") Download
-                        span(class="file-size") 
-                            != data.FILE_SIZE.value

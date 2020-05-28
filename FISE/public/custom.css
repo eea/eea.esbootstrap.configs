@@ -20863,7 +20863,8 @@ div.content {
   .row-fluid .span9, div#facetview_rightcol {
     width: 100% !important; } }
 
-td[data-title="Source"] span {
+td[data-title="Source"] span,
+td[data-title="Organisation email"] span {
   word-break: break-all; }
 
 .tabular-view .facet-view-simple {
@@ -20903,6 +20904,8 @@ td[data-title="Source"] span {
 
 .nfi-download-button {
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 1rem;
   white-space: nowrap;
   max-width: 300px;
@@ -20913,11 +20916,26 @@ td[data-title="Source"] span {
   font-size: 14px; }
   .nfi-download-button i {
     color: #005454 !important;
-    margin-right: 5px; }
+    margin-right: 5px;
+    margin-top: -2px; }
   .nfi-download-button .file-size {
     color: #929292;
     margin-left: 3px;
     font-size: 12px; }
+
+.facetview_metadata .pagination {
+  margin: 0 auto;
+  max-width: 250px; }
+  .facetview_metadata .pagination ul {
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 0; }
+  .facetview_metadata .pagination .active a {
+    color: black; }
+  .facetview_metadata .pagination i {
+    font-size: 1.4rem; }
 
 #facetview_trees h2.facetview_showtree {
   background-color: transparent !important;
@@ -20956,8 +20974,8 @@ td[data-title="Source"] span {
 .facetview_selection, .clear-all {
   border-radius: 4px;
   padding: 3px;
-  padding-left: 12px;
-  padding-right: 12px; }
+  padding-left: 16px;
+  padding-right: 16px; }
 
 .facetview_group_title {
   color: #303030;

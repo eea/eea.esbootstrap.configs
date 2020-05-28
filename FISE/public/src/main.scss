@@ -225,7 +225,8 @@ div.content {
     }
 }
 
-td[data-title="Source"] span {
+td[data-title="Source"] span,
+td[data-title="Organisation email"] span{
     word-break: break-all;
 }
 
