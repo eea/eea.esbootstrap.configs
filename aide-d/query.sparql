@@ -1,4 +1,5 @@
 
+
 PREFIX aq: <http://rdfdata.eionet.europa.eu/airquality/ontology/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -44,7 +45,7 @@ YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear
 #?processURI
 
 WHERE {{
-  #test data
+  #test
   #values ?envelope { <http://cdr.eionet.europa.eu/de/eu/aqd/d/colxqbmxw/envxqbmcg> }
   #values ?released { '2020-04-30T09:40:37Z' }
   #values ?startOfPeriod { '2019-01-01' }
@@ -139,5 +140,3 @@ WHERE {{
  OPTIONAL{ ?measurementRegimeURI rdfs:label ?MeasurementRegime } .
  OPTIONAL{ ?ResponsibleURI aq:organisationName ?responsibleParty } .
 }}
-
-
