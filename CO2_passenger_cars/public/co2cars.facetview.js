@@ -25,7 +25,7 @@ function getStatus(min, max, callback){
 var year_entry_template = ''+
 '<li role="treeitem" rel="co2_year" title="" id="j1_1" class="year_facet jstree-node facetview_filterchoice leaf jstree-leaf" aria-selected="true">'+
 //'<i class="jstree-icon jstree-ocl"></i>'+
-'<a class="jstree-anchor jstree-hovered" href="#">'+
+'<a class="jstree-anchor" href="#">'+
 '<i class="jstree-icon jstree-checkbox"></i>'+
 '<i class="jstree-icon jstree-themeicon"></i>'+
 '<span class="facet_label_text"></span>'+
@@ -49,7 +49,7 @@ var year_facet_template = ''+
 var status_entry_template = ''+
 '<li role="treeitem" rel="co2_status" title="" id="j1_1" class="status_facet jstree-node facetview_filterchoice leaf jstree-leaf" aria-selected="true">'+
 //'<i class="jstree-icon jstree-ocl"></i>'+
-'<a class="jstree-anchor jstree-hovered" href="#">'+
+'<a class="jstree-anchor" href="#">'+
 '<i class="jstree-icon jstree-checkbox"></i>'+
 '<i class="jstree-icon jstree-themeicon"></i>'+
 '<span class="facet_label_text"></span>'+
@@ -363,31 +363,31 @@ jQuery(document).bind("fixed_facet_unchecked",function(evt, params){
 
 var current_facet_value_status_template = ''+
 '    <div class="status_facetview_selection">'+
-'        <a class="status_facetview_filterselected facetview_clear btn facetview_logic_or" rel="status" alt="Can\'t remove status" title="Can\'t remove status" href="">'+
-'            <i class="icon-white hidden eea-icon eea-icon-times"></i>'+
-'        </a>'+
 '        <span></span>'+
+'        <a class="status_facetview_filterselected facetview_clear btn facetview_logic_or" rel="status" alt="Can\'t remove status" title="Can\'t remove status" href="">'+
+'            <i class="icon-white eea-icon eea-icon-times"></i>'+
+'        </a>'+
 '    </div>';
 
 var current_facet_section_status_template= ''+
 '<div id="facetview_group_status" class="btn-group status_facetview_selected">'+
 '    <h3 class="facetview_group_title">'+
-'        <span class="title" style="font-size: inherit">Status</span>'+
+'        <span class="title" style="font-size: inherit">Status:</span>'+
 '    </h3>'+
 '</div>';
 
 var current_facet_value_year_template = ''+
 '    <div class="year_facetview_selection">'+
-'        <a class="year_facetview_filterselected facetview_clear btn facetview_logic_or" rel="year" alt="remove" title="remove" href="">'+
-'            <i class="icon-white hidden eea-icon eea-icon-times"></i>'+
-'        </a>'+
 '        <span></span>'+
+'        <a class="year_facetview_filterselected facetview_clear btn facetview_logic_or" rel="year" alt="remove" title="remove" href="">'+
+'            <i class="icon-white eea-icon eea-icon-times"></i>'+
+'        </a>'+
 '    </div>';
 
 var current_facet_section_year_template= ''+
 '<div id="facetview_group_year" class="btn-group year_facetview_selected">'+
 '    <h3 class="facetview_group_title">'+
-'        <span class="title" style="font-size: inherit">Registration year</span>'+
+'        <span class="title" style="font-size: inherit">Registration year:</span>'+
 '    </h3>'+
 '</div>';
 
@@ -525,18 +525,6 @@ jQuery(document).ready(function($) {
             eea_facetview('.facet-view-simple', opts);
         })
     })
-
-    $(document).on("hover", ".status_facetview_selection", function(){
-        $(this).find('i').toggleClass('hidden');
-    }, function(){
-        $(this).find('i').toggleClass('hidden');
-    });
-
-    $(document).on("hover", ".year_facetview_selection", function(){
-        $(this).find('i').toggleClass('hidden');
-    }, function(){
-        $(this).find('i').toggleClass('hidden');
-    });
 
     if ($(location).attr("hash") === '#refresh_filters'){
         $("ul.tabs .explorer-tab .tab-link").click()
