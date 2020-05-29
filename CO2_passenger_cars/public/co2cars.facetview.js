@@ -539,6 +539,6 @@ jQuery(document).ready(function($) {
     });
 
     if ($(location).attr("hash") === '#refresh_filters'){
-        $("ul.tabs .first-tab .tab-link").click()
+        $("ul.tabs .explorer-tab .tab-link").click()
     }
 });
