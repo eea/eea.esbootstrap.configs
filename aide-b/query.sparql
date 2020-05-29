@@ -38,7 +38,26 @@ YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear
 ?envelope
 
 WHERE {{
-  GRAPH ?source {
+
+  #test DE
+  #values ?envelope { <http://cdr.eionet.europa.eu/de/eu/aqd/b/colxotqa/envxthsxg> }
+  #values ?released { '2019-07-24T13:06:05Z' }
+  #values ?startOfPeriod { '2018-01-01' }
+  #values ?Country { 'Germany' }
+  #GRAPH <http://cdr.eionet.europa.eu/de/eu/aqd/b/colxotqa/envxthsxg/DE_B_Zones_2018.xml> {
+
+  #test LV
+  #values ?envelope { <http://cdr.eionet.europa.eu/lv/eu/aqd/b/envxrmrsg> }
+  #values ?released { '2019-06-26T07:02:07Z' }
+  #values ?startOfPeriod { '2018-01-01' }
+  #values ?Country { 'Latvia' }
+  #GRAPH <http://cdr.eionet.europa.eu/lv/eu/aqd/b/envxrmrsg/REP_LV_LEGMC_20190626_B_v0.xml> {
+
+  values ?envelope { <<envelope>> }
+  values ?released { '<released>' }
+  values ?startOfPeriod { '<startOfPeriod>' }
+  values ?Country { '<Country>' }
+  GRAPH <<source>> {
     ?XMLURI a aq:AQD_Zone .
     ?XMLURI aq:inspireId ?inspireURI .
     ?XMLURI aq:name ?GeographicalName .
@@ -48,15 +67,10 @@ WHERE {{
     ?XMLURI aq:area ?Area .
     ?XMLURI aq:designationPeriod ?timeURI .
     ?XMLURI aq:pollutants ?polltargetURI .
-  }
-  ?source dcterms:isPartOf ?envelope .
-  ?envelope rod:released ?released .
-  ?envelope rod:locality ?locality .
-  ?envelope rod:obligation ?obliURI .
-  ?envelope rod:startOfPeriod ?startOfPeriod .
+    ?inspireURI aq:localId ?LocalId .
+    ?inspireURI aq:namespace ?Namespace .
 
-  ?inspireURI aq:localId ?LocalId .
-  ?inspireURI aq:namespace ?Namespace .
+  }
   ?polltargetURI aq:protectionTarget ?Protection .
   ?polltargetURI aq:pollutantCode ?pollURI .
   ?pollURI skos:notation ?Pollutant .
@@ -64,10 +78,11 @@ WHERE {{
   ?aqdzonetype rdfs:label ?AQDZoneType .
   ?timeURI aq:beginPosition ?BeginTime .
 
+
 #  OPTIONAL{?timeURI aq:endPosition ?EndTime} .
    OPTIONAL{?XMLURI aq:residentPopulationYear ?popYearURI .
             ?popYearURI rdfs:label ?ResidentPopulationYear .
-   } .
+   }
 
   OPTIONAL{?XMLURI aq:timeExtensionExemption ?timeextensionexemptionURI .
            ?timeextensionexemptionURI rdfs:label ?TimeExtensionExemption .
@@ -79,10 +94,7 @@ WHERE {{
            ?AddressURI aq:adminUnit ?Address .
 #  OPTIONAL{?ContactURI aq:electronicMailAddress ?Email} .
            ?ContactURI aq:telephoneVoice ?Telephone .
-           ?ContactURI aq:website ?Website} .
-
-  ?locality rod:localityName ?Country .
-  ?obliURI rdfs:label ?Obligation .
-
-  FILTER (?envelope = <<envelope>>)
-}}
+           ?ContactURI aq:website ?Website
+   } 
+   }
+}

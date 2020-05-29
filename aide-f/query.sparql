@@ -1,3 +1,4 @@
+
 PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -44,6 +45,15 @@ xsd:date(?EndPosition) as ?EndPosition
 
 WHERE {
 
+  FILTER (?CountryOrTerritory != "Czech Republic")
+
+  #test data
+  #VALUES ?cntry_URI { <http://dd.eionet.europa.eu/vocabulary/common/countries/DE> }
+  #VALUES ?AggregationType_URI { <http://dd.eionet.europa.eu/vocabulary/aq/aggregationprocess/P1Y-dx-max> }
+
+  VALUES ?cntry_URI { <<cntry_URI>> }
+  VALUES ?AggregationType_URI { <<AggregationType_URI>> }
+  
   ?statsURI a aqr:ValidatedExceedence .
   ?statsURI aqr:inspireNamespace ?Namespace .
   ?statsURI aqr:station ?StationLocalId_URI .
@@ -75,7 +85,7 @@ WHERE {
   ?namespaces dd:inCountry ?cntry_URI .
   ?cntry_URI rdfs:label ?CountryOrTerritory .
 
-  FILTER (?CountryOrTerritory != "Czech Republic")
-  FILTER (?AggregationType_URI = <<AggregationType_URI>>)
-  FILTER (xsd:integer(year(xsd:date(?BeginPosition))) = <ReportingYear>)
 }
+
+
+

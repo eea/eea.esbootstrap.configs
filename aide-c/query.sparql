@@ -1,3 +1,4 @@
+
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -31,11 +32,16 @@ YEAR(xsd:date(?startOfPeriod)) AS ?ReportingYear
 replace (replace(replace(str(?samplingPointURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace,""),"/","") as ?SamplingPointId
 
 replace (replace(replace(str(?ModelAssessmentMetadataURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace,""),"/","") as ?ModelId
-
 ?envelope
 
 WHERE {{
-  GRAPH ?source {
+  values ?envelope { <<envelope>> }
+  values ?Country { '<Country>' }
+  values ?Obligation { '<Obligation>' }
+  values ?released { '<released>' }
+  values ?startOfPeriod { '<startOfPeriod>' }
+
+  GRAPH <<source>> {
     ?XMLURI a aq:AQD_AssessmentRegime .
     ?XMLURI aq:assessmentMethods ?assesmentMethodsURI .
     ?XMLURI aq:assessmentThreshold ?assesmentThresoldURI .
@@ -43,46 +49,32 @@ WHERE {{
     ?XMLURI aq:pollutant ?polltargetURI .
     ?XMLURI aq:declarationFor ?declaration .
     ?XMLURI aq:zone ?ZoneURI .
+    ?assesmentThresoldURI aq:environmentalObjective ?environmentalObjective .  
+    ?assesmentThresoldURI aq:exceedanceAttainment ?ExceedanceAttainmentURI .
+    ?assesmentThresoldURI aq:classificationDate ?classdateURI .
+    ?assesmentMethodsURI aq:assessmentType ?AssessmentTypeURI .
+    ?environmentalObjective aq:objectiveType ?ObjectiveTypeURI . 
+    ?environmentalObjective aq:reportingMetric ?ReportingMetricURI .
+    ?environmentalObjective aq:protectionTarget ?ProtectionTargetURI .
+    ?inspireURI aq:localId ?AssessmentId .
+    ?inspireURI aq:namespace ?Namespace.
+    ?classdateURI rdfs:label ?ClassificationDate .
+    OPTIONAL{?assesmentThresoldURI aq:classificationReport ?ClassificationReport} .
+    OPTIONAL{?assesmentMethodsURI aq:assessmentTypeDescription ?Description} .
+    OPTIONAL{?assesmentMethodsURI aq:samplingPointAssessmentMetadata ?samplingPointURI} .
+    OPTIONAL{?assesmentThresoldURI aq:classificationReport ?ClassificationReport} .
+    OPTIONAL{?assesmentMethodsURI aq:modelAssessmentMetadata ?ModelAssessmentMetadataURI} .
   }
-  ?source dcterms:isPartOf ?envelope .
-  ?envelope rod:released ?released .
-  ?envelope rod:locality ?locality .
-  ?envelope rod:obligation ?obliURI .
-  ?envelope rod:startOfPeriod ?startOfPeriod .
 
-  ?inspireURI aq:localId ?AssessmentId .
-  ?inspireURI aq:namespace ?Namespace.
+  GRAPH <http://dd.eionet.europa.eu/vocabularyfolder/aq/rdf> { 
+    ?ObjectiveTypeURI rdfs:label ?ObjectiveType .
+    ?polltargetURI skos:notation ?Pollutant .
+    ?ReportingMetricURI rdfs:label ?ReportingMetric .
+    ?ProtectionTargetURI rdfs:label ?ProtectionTarget .
+    ?ExceedanceAttainmentURI skos:notation ?ExceedanceAttainment .
+    ?AssessmentTypeURI rdfs:label ?AssessmentType .
+  }
 
-  ?polltargetURI skos:notation ?Pollutant .
-
-  ?assesmentThresoldURI aq:environmentalObjective ?environmentalObjective .   
-  ?assesmentThresoldURI aq:exceedanceAttainment ?ExceedanceAttainmentURI .
-  ?assesmentThresoldURI aq:classificationDate ?classdateURI .
-
-  ?assesmentMethodsURI aq:assessmentType ?AssessmentTypeURI .
-
-  ?environmentalObjective aq:objectiveType ?ObjectiveTypeURI . 
-  ?environmentalObjective aq:reportingMetric ?ReportingMetricURI .
-  ?environmentalObjective aq:protectionTarget ?ProtectionTargetURI .
-
-  ?ObjectiveTypeURI rdfs:label ?ObjectiveType .
-  ?ReportingMetricURI rdfs:label ?ReportingMetric .
-  ?ProtectionTargetURI rdfs:label ?ProtectionTarget .
-
-  ?ExceedanceAttainmentURI skos:notation ?ExceedanceAttainment .
-  ?classdateURI rdfs:label ?ClassificationDate .       
-
-  ?AssessmentTypeURI rdfs:label ?AssessmentType .
-
-  OPTIONAL{?assesmentThresoldURI aq:classificationReport ?ClassificationReport} .
-  OPTIONAL{?assesmentMethodsURI aq:assessmentTypeDescription ?Description} .
-
-  OPTIONAL{?assesmentMethodsURI aq:modelAssessmentMetadata ?ModelAssessmentMetadataURI} .
-  OPTIONAL{?assesmentMethodsURI aq:samplingPointAssessmentMetadata ?samplingPointURI} .
-
-  OPTIONAL{?assesmentThresoldURI aq:classificationReport ?ClassificationReport} .
-  ?locality rod:localityName ?Country .
-  ?obliURI rdfs:label ?Obligation .
-
-  FILTER (?envelope = <<envelope>>)
 }}
+
+

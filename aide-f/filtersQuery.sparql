@@ -1,3 +1,4 @@
+
 PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -10,11 +11,15 @@ PREFIX dd: <http://dd.eionet.europa.eu/property/>
 SELECT DISTINCT 
 
 ?AggregationType_URI
-xsd:integer(year(xsd:date(?BeginPosition))) as ?ReportingYear
+?cntry_URI
 
 WHERE {
 
   ?statsURI a aqr:ValidatedExceedence .
   ?statsURI aqr:aggregationType ?AggregationType_URI .
-  ?statsURI aqr:beginPosition ?BeginPosition
+  ?statsURI aqr:inspireNamespace ?Namespace .
+  ?namespaces rdfs:label ?Namespace .
+  ?namespaces skos:inScheme <http://dd.eionet.europa.eu/vocabulary/aq/namespace/> .
+  ?namespaces dd:inCountry ?cntry_URI .
+  
 }
