@@ -75,11 +75,13 @@ $.fn.carFacet = function(settings){
         var unchecked_facets = $('.car_facet_checkbox[facet_type="facet"]:not(:checked)');
         $.each(unchecked_facets, function(key, facet){
             var value = $(facet).attr("value");
+            value = topics_mapping[value]
             var clearbtn = $('.facetview_filterselected.facetview_clear[rel="topic"][href="' + value + '"]');
             $('.facet-view-simple').facetview.clearfilter(false, "topic", clearbtn, false);
         });
         $.each(checked_facets, function(key, facet){
             var value = $(facet).attr("value");
+            value = topics_mapping[value]
             $('.facet-view-simple').facetview.clickfilterchoice(false, "topic", value, false);
         });
         $('.facet-view-simple').facetview.dosearch();
