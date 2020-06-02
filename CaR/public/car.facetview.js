@@ -4,6 +4,25 @@
 var blackList = {
   'type' : []};
 
+var topics_mapping = {
+    "Air pollution":"Air pollution",
+    "Climate change adaptation":"Climate change adaptation",
+    "Climate change mitigation":"Climate change mitigation",
+    "Biodiversity - Ecosystems":"Biodiversity - Ecosystems",
+    "Land use":"Land use",
+    "Marine":"Marine",
+    "Soil":"Soil",
+    "Water":"Water and marine environment",
+    "Environment and health":"Environment and health",
+    "Policy instruments":"Policy instruments",
+    "Resource efficiency and waste":"Resource efficiency and waste",
+    "Sustainability transitions":"Sustainability transitions",
+    "Agriculture":"Agriculture",
+    "Energy":"Energy",
+    "Industry":"Industry",
+    "Transport":"Transport"
+};
+
 var whiteList = false;
 
 var predefined_filters = [];

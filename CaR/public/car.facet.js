@@ -28,6 +28,7 @@ $.fn.carFacet = function(settings){
         var found = false;
         $.each($(".car_facet"), function(key, value){
             var facet_value = $(value).attr("rel");
+            facet_value = topics_mapping[facet_value];
             var real_facet_option = $('li[rel="topic"][title="' + facet_value + '"]');
             if (real_facet_option.length > 0){
                 found = true;
