@@ -39,6 +39,7 @@ WHERE
 
 }
 OPTIONAL{?envelope rod:released ?released} .
+?envelope a rod:Delivery .
 }
 
 ORDER BY ?endOfPeriod ?Country
