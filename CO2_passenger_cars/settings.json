@@ -43,7 +43,7 @@
             ]
         },
         "site_title": "CO<sub>2</sub> emissions from new passenger cars",
-        "site_description": "<h3>Monitoring of CO<sub>2</sub> emissions from new passenger cars registered in 2018 across EU-27, UK and Iceland &ndash; <a href='http://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX:32019R0631'>Regulation (EU) No 631/2019</a>.</h3>",
+        "site_description": "<h3>Monitoring of CO<sub>2</sub> emissions from new passenger cars registered across EU-27, UK and Iceland &ndash; <a href='http://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX:32019R0631'>Regulation (EU) No 631/2019</a>.</h3>",
         "facets_footer_slot": "<span class='discreet'><strong>Note</strong>: The column 'Count' in the filters reports the sum of the rows and not the sum of the new car's registrations.</span>",
         "enableBreadcrumbs": true,
         "breadcrumbs": "Datasets",

@@ -452,6 +452,7 @@ jQuery(document).ready(function($) {
         default_sort: [],
         search_sortby: settings_search_sortby,
         sort: settings_sort,
+        current_filters_show: true,
         post_init_callback: function() {
             // 88482 avoid double add of eea settings and number replacing
             // since we call also post_search_callback
