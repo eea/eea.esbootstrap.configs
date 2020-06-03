@@ -7,7 +7,7 @@
         "show_links": false
     },
     "highlights": {
-        "enabled": true,
+        "enabled": false,
         "whitelist": [
             "title",
             "label",
