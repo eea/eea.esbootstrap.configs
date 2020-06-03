@@ -61,7 +61,6 @@ $(window).bind('post_search_callback', function () {
   var paginationText = paginator.find('li.active').text().split(' of ')
   var totalPages = paginationText[0].split(' – ')[1]
   var currentPage = paginationText[1]
-  console.log(currentPage, totalPages)
   if(parseInt(currentPage) === parseInt(totalPages)) {
     $('a.facetview_increment').hide()
   } else {
@@ -77,9 +76,6 @@ $(window).bind('post_search_callback', function () {
       }
     }
   });
-
-
-
 
   if (!$('#filters-title').length) {
     $('.right-column-area').prepend($('<h3 id="filters-title" style="border-bottom:none">Filters</h3>'))

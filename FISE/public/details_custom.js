@@ -23,7 +23,6 @@ window.jQuery(document).ready(function ($) {
 
   var item = $('.nfi-download-button')
   var downloadArr = $(item).attr('type').split('.')
-  $(item).attr('href', finalDownload)
   var type = downloadArr[downloadArr.length - 1]
   var icon = $(item).find('i.fa')
   icon.addClass(downloadIconsClasses[type])
