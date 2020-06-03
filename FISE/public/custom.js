@@ -57,6 +57,16 @@ $(window).bind('post_search_callback', function () {
   $('.pagination a.facetview_increment').html('<i class="fa fa-caret-right"></i>')
   $('.pagination a.facetview_decrement').html('<i class="fa fa-caret-left"></i>')
 
+  var paginator = $('.pagination.paginator')
+  var paginationText = paginator.find('li.active').text().split(' of ')
+  var totalPages = paginationText[0].split(' – ')[1]
+  var currentPage = paginationText[1]
+  console.log(currentPage, totalPages)
+  if(parseInt(currentPage) === parseInt(totalPages)) {
+    $('a.facetview_increment').hide()
+  } else {
+    $('a.facetview_increment').show()
+  }
   // Open search filters on page load
   $('.facetview_filter h2').each(function (index, item) {
     if (!$(item).hasClass('facetview_open')) {
@@ -86,9 +96,6 @@ $(window).bind('post_search_callback', function () {
     var downloadButton = $('.nfi-download-button')
     downloadButton.each(function(index, item){
       var downloadArr = $(item).attr('type').split('.')
-      var download = $(item).attr('href')
-      var finalDownload = download.replace("/media/search/", "https://cmshare.eea.europa.eu/s/YZocgSHqKNbT4gn/download?path=/datafiles/")
-      $(item).attr('href', finalDownload)
       var type = downloadArr[downloadArr.length - 1]
       var icon = $(item).find('i.fa')
       icon.addClass(downloadIconsClasses[type])

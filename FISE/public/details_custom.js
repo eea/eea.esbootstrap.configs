@@ -23,8 +23,6 @@ window.jQuery(document).ready(function ($) {
 
   var item = $('.nfi-download-button')
   var downloadArr = $(item).attr('type').split('.')
-  var download = $(item).attr('href')
-  var finalDownload = download.replace("/media/search/", "https://cmshare.eea.europa.eu/s/YZocgSHqKNbT4gn/download?path=/datafiles/")
   $(item).attr('href', finalDownload)
   var type = downloadArr[downloadArr.length - 1]
   var icon = $(item).find('i.fa')

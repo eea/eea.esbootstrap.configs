@@ -1,7 +1,6 @@
 {
   "did_you_mean": {"type": "text", "analyzer": "didYouMean"},
   "autocomplete": {"type": "text", "analyzer": "autocomplete"},
-
   "ID" : {"type" :"integer"},
   "ID_OF_HIGHER_INFORMATION_LEVEL" : {"type" :"string", "analyzer" : "coma" },
   "ID_OF_OTHER_INFO_AT_SAME_LEVEL" : {"type" :"string", "analyzer" : "coma" },
@@ -19,6 +18,8 @@
   "FELLING_HA" : {"type" :"string", "analyzer" : "coma" },
   "ADDITIONAL_INFO" : {"type" :"string", "analyzer" : "coma" },
   "KEYWORDS" : {"type" :"string", "analyzer" : "coma" },
+  "YEAR_DATA_COLLECTION_START" : {"type" :"text", "analyzer" : "coma", "copy_to":["range"] },
+  "YEAR_DATA_COLLECTION_END" : {"type" :"text", "analyzer" : "coma", "copy_to":["range"] },
   "COUNTRY" : {"type": "string", "analyzer" : "coma", "copy_to" : ["did_you_mean", "autocomplete"]},
   "Topics" : {"type": "string", "analyzer" : "coma"},
   "Content_type" :  {"type": "string", "analyzer" : "coma", "copy_to" : ["did_you_mean", "autocomplete"]},
@@ -26,3 +27,5 @@
   "RESOURCE_TITLE" : {"type": "text", "fields": {"keyword": {"ignore_above": 256,"type": "keyword"}}, "copy_to" : ["did_you_mean", "autocomplete"]},
   "Description" : {"type": "text", "fields": {"keyword": {"ignore_above": 256,"type": "keyword"}}, "copy_to" : ["did_you_mean", "autocomplete"]}
 }
+
+

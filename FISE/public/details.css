@@ -2333,7 +2333,7 @@ body, html {
 
 #content {
   background: white;
-  font-size: 14px; }
+  font-size: 15px; }
 
 @font-face {
   font-family: 'FontAwesome';
@@ -2408,7 +2408,7 @@ div.content {
   margin: 0 !important; }
 
 h2 {
-  color: #005454 !important;
+  color: #251 !important;
   border-bottom: none; }
 
 .meta-data {
@@ -2437,15 +2437,20 @@ tr.RESOURCE_LOCATOR_INTERNAL_II {
   border-bottom: none; }
 
 #facetview_results_wrapper article.block-item {
-  margin-bottom: 1rem; }
+  margin-bottom: 1.5rem; }
   #facetview_results_wrapper article.block-item > a {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
-    color: #005454 !important; }
+    color: #251 !important; }
   #facetview_results_wrapper article.block-item .block-content {
-    font-size: 12px;
+    font-size: 15px;
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    line-height: 1.4;
+    color: #303030; }
+    @media (max-width: 768px) {
+      #facetview_results_wrapper article.block-item .block-content {
+        flex-direction: column; } }
 
 .meta-data {
   font-size: 12px;
@@ -2453,7 +2458,7 @@ tr.RESOURCE_LOCATOR_INTERNAL_II {
   margin-bottom: .3rem;
   display: flex; }
   .meta-data svg {
-    fill: #005454 !important; }
+    fill: #251 !important; }
   .meta-data .text-tab .format-text {
     color: #929292;
     margin-right: 1px;
@@ -2466,13 +2471,14 @@ tr.RESOURCE_LOCATOR_INTERNAL_II {
   margin-left: 1rem;
   white-space: nowrap;
   max-width: 300px;
+  min-width: 174px;
   border: 1px solid #eee;
   border-radius: 6px;
   padding: 5px;
   color: #303030 !important;
-  font-size: 14px; }
+  font-size: 15px; }
   .nfi-download-button i {
-    color: #005454 !important;
+    color: #c40 !important;
     margin-right: 5px;
     margin-top: -2px; }
   .nfi-download-button .file-size {
@@ -2490,9 +2496,15 @@ tr.RESOURCE_LOCATOR_INTERNAL_II {
     align-items: center;
     margin-left: 0; }
   .facetview_metadata .pagination .active a {
-    color: black; }
+    color: #c40; }
   .facetview_metadata .pagination i {
     font-size: 1.4rem; }
+
+.facetview_decrement[href="1"] {
+  display: none; }
+
+.top-pagination {
+  color: #929292; }
 
 .nfi-download-button {
   display: flex;
@@ -2507,9 +2519,9 @@ tr.RESOURCE_LOCATOR_INTERNAL_II {
   border-radius: 6px;
   padding: 5px;
   color: #303030 !important;
-  font-size: 16px; }
+  font-size: 18px; }
   .nfi-download-button i {
-    color: #005454 !important;
+    color: #251 !important;
     margin-right: 5px;
     margin-top: -2px; }
   .nfi-download-button .file-size {

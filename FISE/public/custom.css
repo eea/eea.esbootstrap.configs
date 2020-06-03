@@ -20743,8 +20743,6 @@ i.fa {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-left: 2em;
-  padding-right: 2em;
   max-width: 1687px; }
 
 .ui-dialog-titlebar {
@@ -20783,7 +20781,7 @@ div.content {
   padding-right: 0 !important; }
 
 #facetview {
-  max-width: calc(1300px - 4rem);
+  max-width: 1420px;
   margin: 0 auto;
   padding: 0 2rem;
   background: white !important;
@@ -20800,16 +20798,25 @@ div.content {
   max-width: 300px;
   margin: 1rem 0; }
   .pagination ul {
-    font-size: 14px; }
+    font-size: 15px; }
     .pagination ul a {
       color: #303030; }
 
 .right-column-area {
-  width: 30% !important; }
+  width: calc(30% - 0.5rem) !important;
+  background: #fff;
+  padding: 1rem;
+  -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.2);
+  list-style-type: none;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-right: 0.5rem;
+  margin-top: .5rem; }
 
 #facetview_rightcol {
-  width: calc(70% - 1rem) !important;
-  margin-right: 1rem !important; }
+  width: calc(70% - 3rem) !important;
+  margin-right: 3rem !important; }
 
 .logo-nav-wrapper {
   margin-top: 0 !important;
@@ -20820,7 +20827,9 @@ div.content {
   background: #f6f6f7 !important; }
 
 .ui.container {
-  max-width: 1300px !important; }
+  max-width: 1420px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
 
 .header-image-content h1 {
   color: white !important;
@@ -20830,6 +20839,10 @@ div.content {
   padding: 0 !important;
   margin-top: 6rem !important; }
 
+.facetview_top {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1rem; }
+
 #facetview_rightcol .facetview_top .eea_download_btn {
   background: white;
   color: #303030 !important;
@@ -20837,12 +20850,14 @@ div.content {
   border-radius: 4px; }
 
 .facetview_download {
-  background-color: white; }
+  background-color: white;
+  font-size: 12px; }
 
 .facetview_display_type.filter-by .eea-icon {
+  font-size: 12px;
   background: white;
   color: black;
-  border: 1px solid #eee;
+  border: 1px solid #c40;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px; }
   .facetview_display_type.filter-by .eea-icon.tabular {
@@ -20851,7 +20866,7 @@ div.content {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px; }
   .facetview_display_type.filter-by .eea-icon.selected {
-    background: #005454;
+    background: #c40;
     color: white; }
 
 @media (max-width: 767px) {
@@ -20889,15 +20904,20 @@ td[data-title="Organisation email"] span {
   border-bottom: none; }
 
 #facetview_results_wrapper article.block-item {
-  margin-bottom: 1rem; }
+  margin-bottom: 1.5rem; }
   #facetview_results_wrapper article.block-item > a {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
-    color: #005454 !important; }
+    color: #251 !important; }
   #facetview_results_wrapper article.block-item .block-content {
-    font-size: 12px;
+    font-size: 15px;
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    line-height: 1.4;
+    color: #303030; }
+    @media (max-width: 768px) {
+      #facetview_results_wrapper article.block-item .block-content {
+        flex-direction: column; } }
 
 .meta-data {
   font-size: 12px;
@@ -20905,7 +20925,7 @@ td[data-title="Organisation email"] span {
   margin-bottom: .3rem;
   display: flex; }
   .meta-data svg {
-    fill: #005454 !important; }
+    fill: #251 !important; }
   .meta-data .text-tab .format-text {
     color: #929292;
     margin-right: 1px;
@@ -20918,13 +20938,14 @@ td[data-title="Organisation email"] span {
   margin-left: 1rem;
   white-space: nowrap;
   max-width: 300px;
+  min-width: 174px;
   border: 1px solid #eee;
   border-radius: 6px;
   padding: 5px;
   color: #303030 !important;
-  font-size: 14px; }
+  font-size: 15px; }
   .nfi-download-button i {
-    color: #005454 !important;
+    color: #c40 !important;
     margin-right: 5px;
     margin-top: -2px; }
   .nfi-download-button .file-size {
@@ -20942,14 +20963,20 @@ td[data-title="Organisation email"] span {
     align-items: center;
     margin-left: 0; }
   .facetview_metadata .pagination .active a {
-    color: black; }
+    color: #c40; }
   .facetview_metadata .pagination i {
     font-size: 1.4rem; }
 
+.facetview_decrement[href="1"] {
+  display: none; }
+
+.top-pagination {
+  color: #929292; }
+
 #facetview_trees h2.facetview_showtree {
   background-color: transparent !important;
-  color: #005454 !important;
-  font-size: 16px !important;
+  color: #251 !important;
+  font-size: 18px !important;
   font-weight: 500; }
 
 #facetview_trees .facetview_tree {
@@ -20962,14 +20989,15 @@ td[data-title="Organisation email"] span {
 #facetview_trees .ui-resizable-s {
   background-color: white !important; }
 
-#facetview_trees .facetview_filter {
-  margin-top: 1rem; }
-
 #facetview_trees .eea-icon.eea-icon-right, #facetview_trees .right-column-area .eea-icon.eea-icon-right {
   font-size: 11px !important; }
 
+h3#filters-title {
+  color: #c40 !important; }
+
 .eea-accordion-panels {
-  border: none !important; }
+  border: none !important;
+  border-top: 3px solid #c40 !important; }
 
 .facetview_filter_options select.facet_value_operator {
   background: white;
@@ -20995,7 +21023,7 @@ td[data-title="Organisation email"] span {
 .filters-header {
   margin-bottom: 1rem; }
   .filters-header h2 {
-    color: #005454 !important; }
+    color: #251 !important; }
 
 .ui-widget-overlay {
   background: rgba(0, 0, 0, 0.6);

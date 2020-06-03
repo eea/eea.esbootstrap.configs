@@ -62,8 +62,8 @@ i.fa {
     width        : 100%;
     margin-right : auto;
     margin-left  : auto;
-    padding-left : 2em;
-    padding-right: 2em;
+    // padding-left : 2em;
+    // padding-right: 2em;
     max-width    : 1687px;
 }
 
@@ -117,7 +117,7 @@ div.content {
 }
 
 #facetview {
-    max-width     : calc(1300px - 4rem);
+    max-width     : 1420px;
     margin        : 0 auto;
     padding       : 0 2rem;
     background    : white !important;
@@ -145,12 +145,21 @@ div.content {
 }
 
 .right-column-area {
-    width: 30% !important;
+    width: calc(30% - 0.5rem)!important;
+    background: #fff;
+    padding: 1rem;
+    -webkit-box-shadow: 0 0 12px rgba(0,0,0,.2);
+    box-shadow: 0 0 11px rgba(0,0,0,.2);
+    list-style-type: none;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-right: 0.5rem;
+    margin-top: .5rem;
 }
 
 #facetview_rightcol {
-    width       : calc(70% - 1rem) !important;
-    margin-right: 1rem !important;
+    width       : calc(70% - 3rem) !important;
+    margin-right: 3rem !important;
 }
 
 .logo-nav-wrapper {
@@ -164,7 +173,9 @@ div.content {
 }
 
 .ui.container {
-    max-width: 1300px !important;
+    max-width: 1420px !important;
+    padding-left: 0!important;
+    padding-right: 0!important;
 }
 
 .header-image-content {
@@ -178,6 +189,11 @@ div.content {
     }
 }
 
+.facetview_top {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1rem;
+}
+
 #facetview_rightcol .facetview_top .eea_download_btn {
     background   : white;
     color        : $black !important;
@@ -187,13 +203,15 @@ div.content {
 
 .facetview_download {
     background-color: white;
+    font-size: $small;
 }
 
 .facetview_display_type.filter-by {
     .eea-icon {
+        font-size: $small;
         background               : white;
         color                    : black;
-        border                   : 1px solid #eee;
+        border                   : 1px solid $orange;
         border-top-left-radius   : 4px;
         border-bottom-left-radius: 4px;
 
@@ -205,7 +223,7 @@ div.content {
         }
 
         &.selected {
-            background: $green;
+            background: $orange;
             color     : white;
         }
     }

@@ -4,7 +4,7 @@
     }
 
     article.block-item {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
 
         >a {
             font-size  : $heading;
@@ -14,9 +14,14 @@
 
 
         .block-content {
-            font-size      : $small;
+            font-size      : $text;
             display        : flex;
             justify-content: space-between;
+            line-height: 1.4;
+            color: $black;
+            @media (max-width: 768px) {
+                flex-direction: column;
+            }
         }
     }
 }
@@ -51,14 +56,15 @@
     margin-left    : 1rem;
     white-space    : nowrap;
     max-width      : 300px;
+    min-width:      174px;
     border         : 1px solid #eee;
     border-radius  : 6px;
     padding        : 5px;
     color          : $black !important;
-    font-size      : $text;
+    font-size      : 15px;
 
     i {
-        color       : $green !important;
+        color       : $orange !important;
         margin-right: 5px;
         margin-top  : -2px;
     }
@@ -82,9 +88,18 @@
     }
 
     .active a {
-        color: black;
+        color: $orange;
     }
     i {
         font-size: 1.4rem;
     }
+}
+
+.facetview_decrement[href="1"] {
+    display: none;
+}
+
+
+.top-pagination {
+    color: $muted;
 }

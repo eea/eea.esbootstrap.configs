@@ -19,7 +19,7 @@
         background-color: white!important;
     }
     .facetview_filter {
-        margin-top: 1rem;
+        // margin-top: 1rem;
     }
 
 .eea-icon.eea-icon-right, .right-column-area .eea-icon.eea-icon-right {
@@ -27,9 +27,14 @@
 }
 }
 
+h3#filters-title {
+    color: $orange!important;
+}
+
 
 .eea-accordion-panels {
     border: none!important;
+    border-top: 3px solid $orange!important;
 }
 
 
@@ -41,7 +46,7 @@
 }
 
 // .eea-icon.selected {
-//     background: $green;
+//     background: $orange;
 // }
 
 
