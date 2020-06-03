@@ -96,8 +96,8 @@ services:
       - runserver
 #    entrypoint: /bin/sh -c 'tail -f /dev/null'
     volumes:
-        - ./:/code/config/cca
-#        - ./eea.searchserver.js/lib/:/node_modules/eea-searchserver/lib/:z
+        - ./cca/:/code/config/cca
+#        - ./cca/eea.searchserver.js/lib/:/node_modules/eea-searchserver/lib/:z
 #        - ./start_dev.sh:/start_dev.sh
 #        - ./eea.docker.esbootstrap/app/:/code/:z
 #        - ./eea.searchserver.js/index.js:/node_modules/eea-searchserver/index.js:z
@@ -228,3 +228,8 @@ services:
       environment:
           - "SYSCTL_KEY=vm.max_map_count"
           - "SYSCTL_VALUE=262144"
+
+# volumes:
+#   cca-async-data:
+#   cca-downloads:
+#   plone-data:
