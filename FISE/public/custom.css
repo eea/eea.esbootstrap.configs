@@ -21025,6 +21025,20 @@ h3#filters-title {
   .filters-header h2 {
     color: #251 !important; }
 
+#content .eea-accordion-panels .eea-accordion-panel > h2 {
+  line-height: 2;
+  padding: 1rem 0; }
+
+.eea-icon-right {
+  float: right; }
+
+.eea-accordion-panel > h2 .eea-icon-right:before, .eea-accordion-title > .eea-icon-right:before {
+  content: "\f053"; }
+
+.eea-icon-search:before {
+  content: "\f002";
+  font-family: 'FontAwesome'; }
+
 .ui-widget-overlay {
   background: rgba(0, 0, 0, 0.6);
   opacity: 1; }
