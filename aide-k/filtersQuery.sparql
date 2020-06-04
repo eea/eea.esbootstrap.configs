@@ -2,16 +2,21 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rod: <http://rod.eionet.europa.eu/schema.rdf#>
 PREFIX obligation: <http://rod.eionet.europa.eu/obligations/>
 PREFIX aq: <http://rdfdata.eionet.europa.eu/airquality/ontology/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX contreg: <http://cr.eionet.europa.eu/ontologies/contreg.rdf#>
 
 SELECT DISTINCT
 ?envelope
-
+?Country
+?source
+?endOfPeriod
 WHERE 
 {
 {
   SELECT DISTINCT
     ?Country
     YEAR(xsd:date(?endOfPeriod)) as ?reportingYear
+    ?endOfPeriod
     max(?released) as ?released
     ?MeasureId
   WHERE {
@@ -40,6 +45,8 @@ WHERE
 }
 OPTIONAL{?envelope rod:released ?released} .
 ?envelope a rod:Delivery .
+?source dcterms:isPartOf ?envelope .
+?source contreg:xmlSchema ?xmlSchema .
 }
 
-ORDER BY ?endOfPeriod ?Country
+ORDER BY ?source ?Country

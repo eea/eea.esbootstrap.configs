@@ -42,78 +42,165 @@ YEAR(xsd:date(?endOfPeriod)) AS ?ReportingYear
 #?exceedanceAffectedURI as ?SourceApportionmentId1 
 replace(replace(replace(str(?exceedanceAffectedURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace ,""),"/","") as ?SourceApportionmentId 
 #?usedForScenarioURI as ?ScenariosId1 
-replace(replace(replace(str(?usedForScenarioURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace ,""),"/","") as ?ScenariosId
+#replace(replace(replace(str(?usedForScenarioURI),"http://reference.eionet.europa.eu/aq/",""),?Namespace ,""),"/","") as ?ScenariosId
+?MeasureId as ?ScenariosId
 ?envelope
 
 WHERE {{
+  #test
+  #VALUES ?envelope { <http://cdr.eionet.europa.eu/at/eu/aqd/k/envwk0gw> }
+  #VALUES ?Country { 'Austria' }
+  #VALUES ?endOfPeriod { '2016-12-31' }
+  #VALUES ?source { <http://cdr.eionet.europa.eu/at/eu/aqd/k/envwk0gw/Measure_AT_0008_20_AQ_MEA_AT_07_M02_2017_02_23_14_00_793.xml> }
+
+  VALUES ?envelope { <<envelope>> }
+  VALUES ?Country { 'Country' }
+  VALUES ?endOfPeriod { 'endOfPeriod' }
+  VALUES ?source { <<source>> }
+
   GRAPH ?source {
     ?XMLURI a aq:AQD_Measures .
     ?XMLURI aq:inspireId ?inspireURI .
     ?XMLURI aq:code ?CodeOfMeasure .
     ?XMLURI aq:name ?Name .
     ?XMLURI aq:description ?Description .
-    ?XMLURI aq:classification ?classificationURI .
-    OPTIONAL{?XMLURI aq:measureType ?measureTypeURI} .
+
     ?XMLURI aq:administrativeLevel ?administrativeLevelURI .
     ?XMLURI aq:timeScale ?timeScaleURI .
-    ?XMLURI aq:spatialScale ?spatialScaleURI .
-    ?XMLURI aq:sourceSectors ?sourceSectorsURI .
     ?XMLURI aq:plannedImplementation ?plannedImplementationURI .
     ?XMLURI aq:reductionOfEmissions ?reductionOfEmissionsURI .
   }
-  ?source dcterms:isPartOf ?envelope .
-  ?envelope rod:released ?released .
-  ?envelope rod:locality ?locality .
-  ?envelope rod:obligation ?obliURI .
-  ?envelope rod:startOfPeriod ?startOfPeriod .
-  ?envelope rod:endOfPeriod ?endOfPeriod .
 
-  OPTIONAL {?XMLURI aq:costs ?costsURI} .
-  OPTIONAL{?XMLURI aq:expectedImpact ?expectedImpactURI} .
-  #OPTIONAL{?XMLURI aq:exceedanceAffected ?exceedanceAffectedURI} .
-  OPTIONAL{?XMLURI aq:usedForScenario ?usedForScenarioURI} .
-  OPTIONAL{?usedForScenarioURI aqr:hasDeclaration ?scenariosXMLURI} .
-  OPTIONAL {?scenariosXMLURI aq:sourceApportionment ?exceedanceAffectedURI} .
+  {
+    SELECT DISTINCT
+      ?MeasureClassification
+      ?XMLURI
+    WHERE {{
+      GRAPH ?source {
+       ?XMLURI aq:classification ?classificationURI .
+      }
+      ?classificationURI rdfs:label ?MeasureClassification .
+    }}
+  }
 
-  ?classificationURI rdfs:label ?MeasureClassification .
-  OPTIONAL{?measureTypeURI rdfs:label ?MeasureType} .
+  OPTIONAL{?XMLURI aq:measureType ?measureTypeURI .
+    ?measureTypeURI rdfs:label ?MeasureType
+  }
+
   ?administrativeLevelURI rdfs:label ?AdministrativeLevel .
   ?timeScaleURI rdfs:label ?TimeScale .
-  ?spatialScaleURI rdfs:label ?SpatialScale .
-  ?sourceSectorsURI rdfs:label ?SourceSectors .
 
-  OPTIONAL{?costsURI aq:comment ?CommentOnCosts} .
-  OPTIONAL{?costsURI aq:estimatedImplementationCosts ?estimatedImplementationCosts} .
-  OPTIONAL{?costsURI aq:currency ?currencyURI} .
-  OPTIONAL{?currencyURI rdfs:label ?Currency} .
+  {
+    SELECT DISTINCT
+      ?SourceSectors
+      ?XMLURI
+    WHERE {{
+      GRAPH ?source {
+        ?XMLURI aq:sourceSectors ?sourceSectorsURI .
+      }
+        ?sourceSectorsURI rdfs:label ?SourceSectors .
+    }}
+  }
+  
+  {
+    SELECT DISTINCT
+      ?SpatialScale
+      ?XMLURI
+    WHERE {{
+      GRAPH ?source {
+        ?XMLURI aq:spatialScale ?spatialScaleURI .
+      }
+        ?spatialScaleURI rdfs:label ?SpatialScale .
+    }}
+  }
 
-  OPTIONAL{?plannedImplementationURI aq:status ?statusURI} .
-  OPTIONAL{?plannedImplementationURI aq:implementationPlannedTimePeriod ?implementationPlannedTimePeriodURI} .
-  OPTIONAL{?plannedImplementationURI aq:plannedFullEffectDate ?plannedFullEffectDateURI} .
-  OPTIONAL{?plannedImplementationURI aq:comment ?CommentOnImplementation} .
-  OPTIONAL{?plannedImplementationURI aq:monitoringProgressIndicators ?MonitoringProgressIndicators} .
+  OPTIONAL{ ?plannedImplementationURI aq:status ?statusURI .
+            ?statusURI rdfs:label ?Status} .
 
-  OPTIONAL{?statusURI rdfs:label ?Status} .
-  OPTIONAL{?plannedFullEffectDateURI rdfs:label ?PlannedFullEffectDate} .
-  OPTIONAL{?implementationPlannedTimePeriodURI aq:beginPosition ?ImplementationBegin} .
-  OPTIONAL{?implementationPlannedTimePeriodURI aq:endPosition ?ImplementationEnd} .
+  OPTIONAL{ ?plannedImplementationURI aq:status ?statusURI .
+            ?plannedImplementationURI aq:implementationPlannedTimePeriod ?implementationPlannedTimePeriodURI} .
 
-  OPTIONAL{?reductionOfEmissionsURI aq:quantity ?QuantityOfReducedEmissions} .
-  OPTIONAL{?reductionOfEmissionsURI aq:comment ?CommentOnEmissionReductions} .
-  #OPTIONAL{?reductionOfEmissionsURI aq:unit ?unitURI} .
+  OPTIONAL{ ?plannedImplementationURI aq:status ?statusURI .
+            ?plannedImplementationURI aq:plannedFullEffectDate ?plannedFullEffectDateURI}
 
-  OPTIONAL{?expectedImpactURI aq:levelOfConcentration ?LevelOfConcentration} .
-  OPTIONAL{?expectedImpactURI aq:numberOfExceedances ?NumberOfExceedances} .
-  OPTIONAL{?expectedImpactURI aq:specificationOfHours ?SpecificationOfHours} .
-  OPTIONAL{?expectedImpactURI aq:comment ?CommentOnExpectedImpact} .
- 
-  ?locality rod:localityName ?Country .
-  ?obliURI rdfs:label ?Obligation .
+  OPTIONAL{ ?plannedImplementationURI aq:status ?statusURI .                          
+            ?plannedImplementationURI aq:comment ?CommentOnImplementation} .
+
+  OPTIONAL{ ?plannedImplementationURI aq:status ?statusURI .
+            ?plannedImplementationURI aq:monitoringProgressIndicators ?MonitoringProgressIndicators} .
+
+  OPTIONAL{ ?reductionOfEmissionsURI aq:quantity ?QuantityOfReducedEmissions} .
+  OPTIONAL{ ?reductionOfEmissionsURI aq:comment ?CommentOnEmissionReductions} .
+  
+  OPTIONAL{ ?plannedImplementationURI aq:implementationPlannedTimePeriod ?implementationPlannedTimePeriodURI . 
+           ?implementationPlannedTimePeriodURI aq:beginPosition ?ImplementationBegin 
+  }
+
+  OPTIONAL{ ?plannedImplementationURI aq:implementationPlannedTimePeriod ?implementationPlannedTimePeriodURI . 
+           ?implementationPlannedTimePeriodURI aq:endPosition ?ImplementationEnd
+  }
+
+  OPTIONAL{ ?plannedImplementationURI aq:plannedFullEffectDate ?plannedFullEffectDateURI .
+            ?plannedFullEffectDateURI rdfs:label ?PlannedFullEffectDate
+  } 
+
+  OPTIONAL{ ?plannedImplementationURI aq:plannedFullEffectDate ?plannedFullEffectDateURI .
+            ?plannedImplementationURI aq:comment ?CommentOnImplementation
+  }
+
+  OPTIONAL{ ?XMLURI aq:expectedImpact ?expectedImpactURI .
+            ?expectedImpactURI aq:levelOfConcentration ?LevelOfConcentration 
+          }
+
+  OPTIONAL{ ?XMLURI aq:expectedImpact ?expectedImpactURI .
+            ?expectedImpactURI aq:numberOfExceedances ?NumberOfExceedances 
+          }
+
+  OPTIONAL{ ?XMLURI aq:expectedImpact ?expectedImpactURI .
+            ?expectedImpactURI aq:levelOfConcentration ?LevelOfConcentration 
+          }
+
+  OPTIONAL{ ?XMLURI aq:expectedImpact ?expectedImpactURI .
+            ?expectedImpactURI aq:specificationOfHours ?SpecificationOfHours 
+          }
+
+  OPTIONAL{ ?XMLURI aq:expectedImpact ?expectedImpactURI .
+            ?expectedImpactURI aq:comment ?CommentOnExpectedImpact
+          }
+  
+  OPTIONAL{ ?XMLURI aq:usedForScenario ?usedForScenarioURI .
+            ?usedForScenarioURI aqr:hasDeclaration ?scenariosXMLURI .
+            ?scenariosXMLURI aq:sourceApportionment ?exceedanceAffectedURI
+          }
+
+  #OPTIONAL{ ?XMLURI aq:usedForScenario ?usedForScenarioURI }
+
+  OPTIONAL {
+    SELECT DISTINCT
+      ?Currency
+      ?XMLURI
+    WHERE {{
+      GRAPH ?source {
+        ?XMLURI aq:costs ?costsURI .
+      }     
+        ?costsURI aq:currency ?currencyURI .
+        ?currencyURI rdfs:label ?Currency .
+    }}
+  }
+
+  OPTIONAL {
+    SELECT DISTINCT
+      ?estimatedImplementationCosts
+      ?XMLURI
+    WHERE {{
+      GRAPH ?source {
+        ?XMLURI aq:costs ?costsURI .
+      }
+        ?costsURI aq:estimatedImplementationCosts ?estimatedImplementationCosts .
+    }}
+  }
 
   ?inspireURI aq:namespace ?Namespace .
   ?inspireURI aq:localId ?MeasureId .
   ?inspireURI aq:versionId ?VersionId .
-
-  #FILTER (?envelope = <http://cdr.eionet.europa.eu/bg/eu/aqd/k/envvjk7zg>)
-  FILTER (?envelope = <<envelope>>)
 }}

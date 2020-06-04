@@ -97,7 +97,7 @@
             "name": "Content_type",
             "listing": { "title": "Content type", "visible" : true, "pos" : 6 },
             "details": { "title": "Content type", "pos" : 60, "section": "info", "visible": true },
-            "facet": { "visible": true, "title": "Content type", "operator": "OR", "pos": 30, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Result Format"},
+            "facet": { "visible": true, "title": "Content type", "operator": "OR", "pos": 30, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"]},
             "csv_tsv": { "title": "Content_type", "visible": true, "pos": 6 },
             "list": {
                 "field": "format",
@@ -118,7 +118,7 @@
             "name": "Topics",
             "listing": { "title": "Topics", "visible" : true, "pos" : 7},
             "details": { "title": "Topic", "pos" : 70, "section": "info", "visible": true },
-            "facet": { "visible": true, "title": "Topics", "operator": "OR", "pos": 7, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Topic"},
+            "facet": { "visible": true, "title": "Topics", "operator": "OR", "pos": 7, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"]},
             "csv_tsv": { "title": "Topics", "visible": true, "pos": 7 },
             "list": {
                 "field": "topics",
@@ -278,7 +278,7 @@
             "values_blacklist":["N.A."],
             "listing": { "title": "Nuts levels", "visible" : true, "pos" : 25 },
             "details": { "title": "NUTS levels", "pos" : 110, "section": "info", "visible": true },
-            "facet": { "visible": true, "title": "NUTS Level", "operator": "OR", "pos": 25, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for NUTS Level"},
+            "facet": { "visible": true, "title": "NUTS Level", "operator": "OR", "pos": 25, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"]},
             "csv_tsv": { "title": "NUTS levels", "visible": true, "pos": 25 }
         },
         {
