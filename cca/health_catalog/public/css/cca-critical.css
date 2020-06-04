@@ -1272,7 +1272,7 @@ input[type=checkbox] {
 
   .right-column-area {
     width: 39%;
-    padding: 0 0 0 1em;
+    /* padding: 0 0 0 1em; */
     float: right
   }
 
@@ -2634,6 +2634,7 @@ div.content {
 }
 
 #content h1,div.content h1 {
+  display: none;
   color: #00446a;
   margin: .67em 0;
   border-bottom: 1px solid #e9efcd;

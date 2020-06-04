@@ -16,13 +16,14 @@
   height: 23px;
   display: inline;
 }
-/* @font-face{font-family:'FontAwesome';src:url("/observatory/catalogue/fonts-search/fontawesome-webfont.eot?v=4.7.0"), */
-/*   url("/observatory/catalogue/fonts-search/fontawesome-webfont.eot?v=4.7.0") format("embedded-opentype"), */
-/*   url("/observatory/catalogue/fonts-search/fontawesome-webfont.woff?v=4.7.0") format("woff"), */
-/*   url("/observatory/catalogue/fonts-search/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), */
-/*   url("/observatory/catalogue/fonts-search/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), */
-/*   url("/observatory/catalogue/fonts-search/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");font-weight:normal;font-style:normal */
-/* } */
+
+@font-face{font-family:'FontAwesome';src:url("/observatory/catalogue/fonts-search/fontawesome-webfont.eot?v=4.7.0"),
+  url("/observatory/catalogue/fonts-search/fontawesome-webfont.eot?v=4.7.0") format("embedded-opentype"),
+  url("/observatory/catalogue/fonts-search/fontawesome-webfont.woff?v=4.7.0") format("woff"),
+  url("/observatory/catalogue/fonts-search/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
+  url("/observatory/catalogue/fonts-search/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
+  url("/observatory/catalogue/fonts-search/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");font-weight:normal;font-style:normal
+}
 
 body {
   position: absolute !important;
@@ -32,4 +33,40 @@ body {
 
 div#facetview_rightcol {
   width: 76%;
+}
+
+.eea-icon {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1;
+  font-family: FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased
+}
+.eea-icon:before {
+  margin: 0 .3em;
+}
+.eea-icon-home:before {
+  content: "\f015";
+}
+
+.eea-icon-lg {
+  font-size: 1.333em;
+  line-height: .75em;
+  vertical-align: -15%
+}
+
+.eea-icon-2x {
+  font-size: 2em
+}
+
+.eea-icon-5x {
+  font-size: 5em
+}
+
+#content .jstree-container-ul {
+  padding: 0em;
 }

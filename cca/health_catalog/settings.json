@@ -29,7 +29,12 @@
       ],
       "details_page": [
       ],
+
       "layout_page": [
+        "css/cca-search.css",
+        "css/custom.css"
+      ],
+      "layout_page_commented": [
         "css/cca-search.css",
         "css/custom.css",
         "css/cca-critical.css"
@@ -49,7 +54,7 @@
         "javascripts/layoutFix.js"
       ]
     },
-    "site_title": "Climate-ADAPT search",
+    "site_title": "",
     "site_description": "",
     "enableBreadcrumbs": false,
     "breadcrumbs": [{"Home":"https://climate-adapt.eea.europa.eu/"}, {"Climate adapt search": ""}],

@@ -6,13 +6,11 @@ jQuery(document).ready(function($) {
   $('h2#typeOfData').click();
   // $("img.lazyLoad").Lazy();
 
-  // $(window).on('results_ready', function() {
-  //   console.log('results ready');
-  //     $(".lazyLoad").Lazy();
-  //     $(".lazyload").Lazy();
-  //   if ($.fn.Lazy) {
-  //     $(".lazyLoad").Lazy();
-  //     $(".lazyload").Lazy();
-  //   }
-  // });
+  $(window).on('results_ready', function() {
+    console.log('results ready');
+    $(".lazyload").Lazy();
+    if ($.fn.Lazy) {
+      $(".lazyload").Lazy();
+    }
+  });
 });
