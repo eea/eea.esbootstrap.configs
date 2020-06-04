@@ -1,18 +1,35 @@
 .eea-list-tiles .tileItem .tileImage {
-    max-width: 20%;
+  max-width: 20%;
 }
 
 .eea-list-tiles .tileItem .tileBody {
-    margin-left: 1em;
-    /* height: 9em; */
-    /* overflow: hidden; */
+  margin-left: 1em;
+  /* height: 9em; */
+  /* overflow: hidden; */
 }
 
 .image-hide {
-    display: none;
+  display: none;
 }
 
 .tileContent .logoAdapteCCA {
-    height: 23px;
-    display: inline;
+  height: 23px;
+  display: inline;
+}
+/* @font-face{font-family:'FontAwesome';src:url("/observatory/catalogue/fonts-search/fontawesome-webfont.eot?v=4.7.0"), */
+/*   url("/observatory/catalogue/fonts-search/fontawesome-webfont.eot?v=4.7.0") format("embedded-opentype"), */
+/*   url("/observatory/catalogue/fonts-search/fontawesome-webfont.woff?v=4.7.0") format("woff"), */
+/*   url("/observatory/catalogue/fonts-search/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), */
+/*   url("/observatory/catalogue/fonts-search/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), */
+/*   url("/observatory/catalogue/fonts-search/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");font-weight:normal;font-style:normal */
+/* } */
+
+body {
+  position: absolute !important;
+  width: 100%;
+  height: unset !important;
+}
+
+div#facetview_rightcol {
+  width: 76%;
 }

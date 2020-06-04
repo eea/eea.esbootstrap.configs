@@ -10,11 +10,12 @@
   },
   "external_templates": {
     "local_path": "/external_templates",
-    "protocol": "https",
-    "host": "climate-adapt.eea.europa.eu",
-    "head_path": "/cca/external-template-head",
-    "header_path": "/cca/external-template-header",
-    "footer_path": "/cca/external-template-footer"
+    "protocol": "http",
+    "host": "apache",
+    "port": "80",
+    "head_path": "/observatory/external-template-head-dont-load",
+    "header_path": "/observatory/external-template-header",
+    "footer_path": "/observatory/external-template-footer-dont-load"
   },
   "layout_vars": {
     "head_title": "Health Observatory Resource Catalogue",
@@ -24,57 +25,28 @@
     "override_searchserver_resources": false,
     "css_resources": {
       "index_page": [
-        "css/esbootstrap.facetview.css",
-        "css/climateadapt.facetview.css",
-        "css/custom.css",
-        "css/cca-search.css"
+        "css/climateadapt.facetview.css"
       ],
       "details_page": [
-        "css/esbootstrap.facetview.css"
       ],
       "layout_page": [
-        "facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.css",
-
-        "facetview/vendor/dist/themes/default/style.min.css",
-        "facetview/css/style.css",
-        "facetview/css/facetview.css",
-        "css/style.css",
-        "css/tiles.css",
-        "css/custom.css",
         "css/cca-search.css",
+        "css/custom.css",
         "css/cca-critical.css"
-
       ]
     },
     "js_resources": {
       "index_page": [
       ],
       "details_page": [],
+      "layout_page_commented": [
+      ],
       "layout_page" : [
-        "facetview/vendor/dist/libs/jquery.js",
-        "facetview/vendor/dist/libs/jquery.migrate.js",
-
-        "facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.min.js",
-
-        "facetview/vendor/bootstrap/js/bootstrap.min.js",
-        "facetview/vendor/jquery-lazy/jquery.lazy.min.js",
-        "facetview/vendor/dist/jstree.js",
-        "facetview/vendor/linkify/1.0/jquery.linkify-1.0-min.js",
-
-        "facetview/vendor/touchpunch/jquery.ui.touch-punch.min.js",
-        "facetview/vendor/d3/d3.v4.min.js",
-        "facetview/jquery.facetview.js",
-        "facetview/facetviewhelpers.js",
-        "facetview/landing.js",
-        "facetview/jquery.autocompletewithhighlight.js",
-        "facetview/jquery.autocompleteforfacet.js",
 
         "javascripts/climateadapt.facetview.js",
         "javascripts/esbootstrap.facetview.js",
 
-        "javascripts/main.js",
         "javascripts/layoutFix.js"
-
       ]
     },
     "site_title": "Climate-ADAPT search",

@@ -145,6 +145,44 @@ services:
 #        - ./eea.docker.esbootstrap/app/:/code/:z
 #        - ./eea.searchserver.js/index.js:/node_modules/eea-searchserver/index.js:z
 
+  health_catalog_app_2:
+    image: eeacms/esbootstrap:v3.0.10
+#    build: ../
+#    image: eeacms/esbootstrap:v2.0.18
+    ports:
+      - '3010:3000'
+    environment:
+      VERSION_INFO: eeacms/esbootstrap
+      elastic_host: esmaster
+      elastic_port: '9200'
+      elastic_index: 'climate'
+      AUTO_INDEXING: 'false'
+      APP_CONFIG_DIRNAME: health_catalog
+      elastic_rwuser: 'rw'
+      elastic_rwpass: 'rwtest'
+      elastic_rouser: 'ro'
+      elastic_ropass: 'rotest'
+      elastic_appalias: 'latest'
+      _API_token: 'default'
+      _sourceconf_bulksize: 10
+    entrypoint:
+      - /node_modules/.bin/nodemon
+      - --watch
+      - code/
+      - --watch
+      - /node_modules/eea-searchserver
+      - /code/app.js
+#      - --inspect-brk=0.0.0.0
+    command:
+      - runserver
+#    entrypoint: /bin/sh -c 'tail -f /dev/null'
+    volumes:
+        - ./health_catalog_2:/code/config/health_catalog
+        - ./eea.searchserver.js/lib/:/node_modules/eea-searchserver/lib/:z
+#        - ./start_dev.sh:/start_dev.sh
+#        - ./eea.docker.esbootstrap/app/:/code/:z
+#        - ./eea.searchserver.js/index.js:/node_modules/eea-searchserver/index.js:z
+
   health_contributors_app:
     image: eeacms/esbootstrap:v3.0.10
 #    build: ../

@@ -6,6 +6,7 @@ html
 
         meta(charset='utf-8')
         meta(name="viewport" content="width=device-width, initial-scale=1")
+        base(href="")
 
         script(type='text/javascript').
             var field_base="#{field_base}";
@@ -37,6 +38,8 @@ html
             != settings_default_external_configs
         script
             != mapping
+        script
+           != settings_translation
 
         link(rel="shortcut icon", type="image/x-icon", href="https://www.eea.europa.eu/favicon.ico")
 
@@ -67,9 +70,9 @@ html
 
         block extrastyles
 
-        link(rel='stylesheet', href="/++theme++climateadaptv2/static/css/compiled-css.css")
+        //- link(rel='stylesheet', href="/++theme++climateadaptv2/static/css/compiled-css.css")
 
-    body(class="fullwidth search-app " + app_id data-sentry-dsn=sentry_dsn data-sentry-ver=sentry_ver data-sentry-env=sentry_rancher_env data-sentry-instance=sentry_instance data-sentry-app-name=sentry_app_name id="app")
+    body(class="search-app section-observatory " + app_id data-sentry-dsn=sentry_dsn data-sentry-ver=sentry_ver data-sentry-env=sentry_rancher_env data-sentry-instance=sentry_instance data-sentry-app-name=sentry_app_name id="app")
         != templateRender(headerFile)
 
         if (enableBreadcrumbs)
@@ -84,8 +87,8 @@ html
                             - var container_info = getContainerInfo()
                             | Application data last refreshed <strong>#{creation_date}</strong>.
                             | Version info <strong>#{container_info.version_info}</strong> and tag version <strong>#{container_info.tag_info}</strong> on <strong>#{container_info.hostname}</strong>.
-                    div(class="documentActions")
-                        h5(class="hiddenStructure") Document Actions
+                    //- div(class="documentActions")
+                    //-     h5(class="hiddenStructure") Document Actions
                 div(id="right-column", class="right-column-area")
                     div(class="visualPadding")
                 div(class="visualClear")
@@ -103,7 +106,3 @@ html
                 each script in js_resources.layout_page
                     script(type='text/javascript', src=script)
         block extrajavascripts
-        script(type="text/javascript", src="https://www.eea.europa.eu/external_templates_scripts.js")
-
-        if google_map_key != "false"
-            script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?key=#{google_map_key}")
