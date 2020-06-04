@@ -115,7 +115,7 @@ services:
       elastic_port: '9200'
       elastic_index: 'climate'
       AUTO_INDEXING: 'false'
-      APP_CONFIG_DIRNAME: health_catalog
+      APP_CONFIG_DIRNAME: cca/catalog
       elastic_rwuser: 'rw'
       elastic_rwpass: 'rwtest'
       elastic_rouser: 'ro'
@@ -154,7 +154,7 @@ services:
       elastic_port: '9200'
       elastic_index: 'climate'
       AUTO_INDEXING: 'false'
-      APP_CONFIG_DIRNAME: health_contributors
+      APP_CONFIG_DIRNAME: cca/contributors
       elastic_rwuser: 'rw'
       elastic_rwpass: 'rwtest'
       elastic_rouser: 'ro'
