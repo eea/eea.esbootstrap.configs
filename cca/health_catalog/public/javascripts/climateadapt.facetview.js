@@ -15,9 +15,9 @@ window.esbootstrap_options = {
   ],
   paging: {
     from: 0,
-    size: 30
+    size: 12
   },
-  display_type: 'list',
+  display_type: 'card',   // list
   resultModifier: updateResult,
   initialsearch: true,
   predefined_filters: [{'term': {'hasWorkflowState': 'published'}}],

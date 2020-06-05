@@ -33,11 +33,6 @@
       "layout_page": [
         "css/cca-search.css",
         "css/custom.css"
-      ],
-      "layout_page_commented": [
-        "css/cca-search.css",
-        "css/custom.css",
-        "css/cca-critical.css"
       ]
     },
     "js_resources": {
@@ -49,12 +44,12 @@
       "layout_page" : [
 
         "javascripts/climateadapt.facetview.js",
-        "javascripts/esbootstrap.facetview.js",
+        "javascripts/cca.facetview.js",
 
         "javascripts/layoutFix.js"
       ]
     },
-    "site_title": "",
+    "site_title": "bla",
     "site_description": "",
     "enableBreadcrumbs": false,
     "breadcrumbs": [{"Home":"https://climate-adapt.eea.europa.eu/"}, {"Climate adapt search": ""}],

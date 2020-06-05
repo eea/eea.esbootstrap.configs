@@ -45,17 +45,6 @@ html
 
         - var debug_mode = skip_resources_bundling || false
 
-        if !skip_external_template_styles
-            != templateRender(headFile)
-        else
-            if !debug_mode
-                style
-                    include:clean-css ../public/css/cca-critical.css
-            else
-                link(rel='stylesheet', href="esbootstrap_resources/css/cca-critical.css")
-            link(rel="preload" href="https://www.eea.europa.eu/external_templates_custom.css" as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
-            <noscript><link rel="stylesheet" href="https://www.eea.europa.eu/external_templates_custom.css" /></noscript>
-
         if (renderStyles && !debug_mode)
             script
                 include:uglify-js ../public/javascripts/loadcss.js
@@ -69,8 +58,6 @@ html
                     link(rel='stylesheet', href=style)
 
         block extrastyles
-
-        //- link(rel='stylesheet', href="/++theme++climateadaptv2/static/css/compiled-css.css")
 
     body(class="search-app section-observatory " + app_id data-sentry-dsn=sentry_dsn data-sentry-ver=sentry_ver data-sentry-env=sentry_rancher_env data-sentry-instance=sentry_instance data-sentry-app-name=sentry_app_name id="app")
         != templateRender(headerFile)
@@ -87,11 +74,8 @@ html
                             - var container_info = getContainerInfo()
                             | Application data last refreshed <strong>#{creation_date}</strong>.
                             | Version info <strong>#{container_info.version_info}</strong> and tag version <strong>#{container_info.tag_info}</strong> on <strong>#{container_info.hostname}</strong>.
-                    //- div(class="documentActions")
-                    //-     h5(class="hiddenStructure") Document Actions
-                div(id="right-column", class="right-column-area")
-                    div(class="visualPadding")
                 div(class="visualClear")
+
         div(id="landing")
             block landing
 

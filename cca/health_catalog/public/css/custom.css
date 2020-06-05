@@ -32,7 +32,9 @@ body {
 }
 
 div#facetview_rightcol {
-  width: 76%;
+  /* width: 76%; */
+  margin-right: 0px;
+  padding-left: 1em;
 }
 
 .eea-icon {
@@ -69,4 +71,12 @@ div#facetview_rightcol {
 
 #content .jstree-container-ul {
   padding: 0em;
+}
+
+.eea-right-section {
+  float: left !important;
+}
+
+footer {
+  margin-top: 40px !important;
 }
