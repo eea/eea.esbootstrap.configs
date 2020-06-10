@@ -54,8 +54,8 @@ WHERE {{
   #VALUES ?source { <http://cdr.eionet.europa.eu/at/eu/aqd/k/envwk0gw/Measure_AT_0008_20_AQ_MEA_AT_07_M02_2017_02_23_14_00_793.xml> }
 
   VALUES ?envelope { <<envelope>> }
-  VALUES ?Country { 'Country' }
-  VALUES ?endOfPeriod { 'endOfPeriod' }
+  VALUES ?Country { '<Country>' }
+  VALUES ?endOfPeriod { '<endOfPeriod>' }
   VALUES ?source { <<source>> }
 
   GRAPH ?source {

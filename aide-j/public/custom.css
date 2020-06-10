@@ -26,3 +26,7 @@ tr:nth-of-type(odd) .results_text:after {
 tr:nth-of-type(even) .results_text:after {
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
 }
+
+.facetview_orderby{
+    display:none;
+}

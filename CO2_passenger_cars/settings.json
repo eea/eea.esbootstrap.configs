@@ -59,11 +59,17 @@
         "autoswitch": "true",
         "configuration": {
             "type": "json",
-            "subtype": "discomap",
+            "subtype": "discodata",
             "bulksize": 5000,
-            "url": "http://mudskipper.eea.dmz1:8083/sql?query=Select%0ACONCAT(ID%2C%20Status%2C%20year)%20as%20uid%2C%0Aconcat(year%2Ciif(status%3D%27F%27%2C%27-09%27%2C%27-03%27)%2C%27-1%27)%20as%20date%2C%0AID%2C%0AMS%2C%0AMp%2C%0AVFN%2C%0AMh%2C%0AMan%2C%0AMMS%2C%0ATAN%2C%0AT%2C%0AVa%2C%0AVe%2C%0AMk%2C%0ACn%2C%0ACt%2C%0ACr%2C%0A%22m%20(kg)%22%2C%0AMt%2C%0Aiif(%22Enedc%20(g%2Fkm)%22%20is%20null%2C%20%22E%20(g%2Fkm)%22%2C%20%22Enedc%20(g%2Fkm)%22)%20as%20%22Enedc%20(g%2Fkm)%22%2C%0A%22Ewltp%20(g%2Fkm)%22%2C%0A%22W%20(mm)%22%2C%0A%22At1%20(mm)%22%2C%0A%22At2%20(mm)%22%2C%0A%22Ft%22%2C%0A%22Fm%22%2C%0A%22ec%20(cm3)%22%2C%0A%22ep%20(KW)%22%2C%0A%22z%20(Wh%2Fkm)%22%2C%0AIt%2C%0Aiif(%22Ernedc%20(g%2Fkm)%22%20is%20null%2C%20%22Er%20(g%2Fkm)%22%2C%20%22Ernedc%20(g%2Fkm)%22)%20as%20%22Ernedc%20(g%2Fkm)%22%2C%0A%22Erwltp%20(g%2Fkm)%22%2C%0A%22De%22%2C%0A%22Vf%22%2C%0A%22r%22%2C%0A%22year%22%2C%0A%22Status%22%2C%0A%22version_file%22%2C%0Aiif%20(LOWER(TRIM(ft))%3D%27ng-biomethane%27%2C%20%27ng%27%2C%20%0Aiif(LOWER(TRIM(ft))%3D%27petrol-electric%27%2C%20%27petrol%2Felectric%27%2C%20%0Aiif(LOWER(TRIM(ft))%3D%27diesel-electric%27%2C%20%27diesel%2Felectric%27%2C%0Aiif(LOWER(TRIM(ft))%3D%27hybrid%2Fpetrol%2Fe%27%2C%20%27petrol%27%2C%20%0Aiif(LOWER(TRIM(ft))%3D%27petrol%20phev%27%2C%20%27petrol%2Felectric%27%2C%20%0Aiif(LOWER(TRIM(ft))%3D%27unknown%27%2C%20%27other%27%2C%20%0Aiif(LOWER(TRIM(ft))%3D%27ng_biomethane%27%2C%20%27ng%27%2C%20%0Aiif(LOWER(TRIM(ft))%3D%27petrol-gas%27%2C%20%27ng%27%2C%20%0Aiif(LOWER(TRIM(ft))%3D%27cng%27%2C%20%27ng%27%2C%20LOWER(TRIM(ft)))%0A)%0A)%0A)%0A)%0A)%0A)%0A)%0A)%20as%20FtTrim%2C%0Aiif(LOWER(TRIM(status))%3D%27f%27%2C%20%27Final%27%2C%20%27Provisional%27)%20as%20scStatus%0AFROM%20%5BCO2Emission_Internal%5D.%5Bstage%5D.%5Bco2cars%5D%20WHERE%20MS!%3D'M1'%20and%20ID>=<MIN_ID>%20and%20ID<<MAX_ID>%20order%20by%20uid",
-            "counturl": "http://mudskipper.eea.dmz1:8083/sql?query=Select%20COUNT(*)%20as%20total%20FROM%20%5BCO2Emission_Internal%5D.%5Bstage%5D.%5Bco2cars%5D%20WHERE%20MS!%3D'M1'",
-            "discomap_bulksize": 50000,
+
+            "sql": true,
+            "sql_url": "https://discodata.eea.europa.eu/sql",
+            "sql_table": "[CO2Emission].[v1r3].[co2cars]",
+            "query_attr": "query",
+            "query": "query.sql",
+            "query_count": "query_count.sql",
+
+            "discodata_bulksize": 50000,
             "format": "json",
             "data_path": "results.*",
             "encoding": "utf-8",
