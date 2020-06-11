@@ -1,0 +1,221 @@
+{
+  "Evaluation ID": {
+    "type": "long"
+  },
+  "Policy evaluation title": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Weblink / ref": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Evaluated policy (policies)": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Policy area(s)": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Sector(s)": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Commissioner": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Commissioner only fo r facets": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Author type": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Publication year": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Geographical scope": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Scope": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Type": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Period start": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Period end": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Technique": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Criterias - main": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Criterias - other": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Methods": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Methods - types": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Methods - others": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Output data": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Input data": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Policy recommendations": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  },
+  "Evaluation results": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  }
+}
