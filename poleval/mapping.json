@@ -1,4 +1,7 @@
 {
+  "did_you_mean": {"type": "text", "analyzer": "didYouMean"},
+  "autocomplete": {"type": "text", "analyzer": "autocomplete"},
+
   "Evaluation ID": {
     "type": "long"
   },
@@ -9,7 +12,8 @@
         "ignore_above": 256,
         "type": "keyword"
       }
-    }
+    },
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Weblink / ref": {
     "type": "text",
@@ -27,15 +31,18 @@
         "ignore_above": 256,
         "type": "keyword"
       }
-    }
+    },
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Policy area(s)": {
     "type": "text",
-    "analyzer": "semicolon"
+    "analyzer": "semicolon",
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Sector(s)": {
     "type": "text",
-    "analyzer": "semicolon"
+    "analyzer": "semicolon",
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Commissioner": {
     "type": "text",
@@ -44,7 +51,8 @@
         "ignore_above": 256,
         "type": "keyword"
       }
-    }
+    },
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Commissioner only for facets": {
     "type": "text",
@@ -52,7 +60,8 @@
   },
   "Author type": {
     "type": "text",
-    "analyzer": "none"
+    "analyzer": "none",
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Publication year": {
     "type": "text",
@@ -61,19 +70,23 @@
         "ignore_above": 256,
         "type": "keyword"
       }
-    }
+    },
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Geographical scope": {
     "type": "text",
-    "analyzer": "semicolon"
+    "analyzer": "semicolon",
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Scope": {
     "type": "text",
-    "analyzer": "none"
+    "analyzer": "none",
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Type": {
     "type": "text",
-    "analyzer": "semicolon"
+    "analyzer": "semicolon",
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Period start": {
     "type": "text",
@@ -82,7 +95,8 @@
         "ignore_above": 256,
         "type": "keyword"
       }
-    }
+    },
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Period end": {
     "type": "text",
@@ -91,47 +105,58 @@
         "ignore_above": 256,
         "type": "keyword"
       }
-    }
+    },
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Technique": {
     "type": "text",
-    "analyzer": "semicolon"
+    "analyzer": "semicolon",
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Criterias - main": {
     "type": "text",
-    "analyzer": "semicolon"
+    "analyzer": "semicolon",
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Criterias - other": {
     "type": "text",
-    "analyzer": "semicolon"
+    "analyzer": "semicolon",
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Methods": {
     "type": "text",
-    "analyzer": "semicolon"
+    "analyzer": "semicolon",
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Methods - types": {
     "type": "text",
-    "analyzer": "semicolon"
+    "analyzer": "semicolon",
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Methods - others": {
     "type": "text",
-    "analyzer": "semicolon"
+    "analyzer": "semicolon",
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Output data": {
     "type": "text",
-    "analyzer": "none"
+    "analyzer": "none",
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Input data": {
     "type": "text",
-    "analyzer": "none"
+    "analyzer": "none",
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Policy recommendations": {
     "type": "text",
-    "analyzer": "none"
+    "analyzer": "none",
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Evaluation results": {
     "type": "text",
-    "analyzer": "none"
+    "analyzer": "none",
+    "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Period range": {
     "type": "text",
