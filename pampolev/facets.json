@@ -38,15 +38,21 @@
             }
         },
         {
-            "name": "Policy evaluation title",
+            "name": "Weblink / ref.",
             "listing": {
                 "visible": true,
-                "title": "Policy evaluation title",
+                "title": "",
                 "width": "100px",
-                "pos": 20
+                "pos": 20,
+                "display": {
+                    "pre": "<td><a class='details_link' href='",
+                    "field": "Weblink / ref.",
+                    "post":"'>"
+                }
+
             },
             "csv_tsv": {
-                "title": "Policy evaluation title",
+                "title": "Weblink / ref.",
                 "visible": true,
                 "pos": 20
             },
@@ -55,15 +61,21 @@
             }
         },
         {
-            "name": "Weblink / ref.",
+            "name": "Policy evaluation title",
             "listing": {
                 "visible": true,
-                "title": "Weblink / ref.",
+                "title": "Policy evaluation title",
                 "width": "100px",
-                "pos": 30
+                "pos": 30,
+                "display": {
+                    "pre": "",
+                    "field": "Policy evaluation title",
+                    "post":"</a></td>"
+                }
+
             },
             "csv_tsv": {
-                "title": "Weblink / ref.",
+                "title": "Policy evaluation title",
                 "visible": true,
                 "pos": 30
             },
