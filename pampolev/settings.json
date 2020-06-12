@@ -3,7 +3,7 @@
         "port": 3000
     },
     "elastic": {
-        "index": "esbootstrapdata-pampolev",
+        "index": "esbootstrapdata-poleval",
         "type": "resources",
         "field_base":"",
         "default_appalias": "latest",
@@ -18,8 +18,8 @@
         "footer_path": "/templates/v3/getFooter?render_full_html=False"
     },
     "layout_vars": {
-        "head_title": "Catalogue of policy evaluations-publication",
-        "app_id": "pampolev",
+        "head_title": "Catalogue of policy evaluations",
+        "app_id": "poleval",
         "skip_external_template_styles": false,
         "skip_resources_bundling": true,
         "override_searchserver_resources": false,
@@ -37,13 +37,13 @@
             ],
             "details_page": []
         },
-        "site_title": "pampolev",
-        "site_description": "pampolev",
+        "site_title": "Catalogue of European environment and climate policy evaluations",
+        "site_description": "",
 
         "enableBreadcrumbs": true,
-        "breadcrumbs": "pampolev",
-        "dataprovencance_info_text": "pampolev",
-        "further_info": "pampolev"
+        "breadcrumbs": "poleval",
+        "dataprovencance_info_text": "poleval",
+        "further_info": "poleval"
     },
     "es_debug_enabled": false,
     "suggestions_enabled": true,
@@ -56,7 +56,7 @@
         "configuration": {
             "type": "csv",
             "bulksize": 3000,
-            "file": "pampolev.csv",
+            "file": "poleval.csv",
             "format": "csv",
             "encoding": "utf-8",
             "id_type": "field",
