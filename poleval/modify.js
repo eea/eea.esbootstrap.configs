@@ -4,6 +4,7 @@ function sanitize_csv(field, separator){
     for (let i = 0; i < values.length; i++){
         let clean_value = values[i].trim();
         if (clean_value.length > 0){
+            clean_value = clean_value.replace(/^\w/, (c) => c.toUpperCase());
             clean_values.push(clean_value)
         }
     }
@@ -37,7 +38,7 @@ module.exports = function(doc){
         modified_doc["Sector(s)"] = sanitize_csv(modified_doc["Sector(s)"], ";");
         modified_doc["Geographical scope"] = sanitize_csv(modified_doc["Geographical scope"], ";");
         modified_doc["Methods - types"] = sanitize_csv(modified_doc["Methods - types"], ";");
-
+        modified_doc["Methods"] = sanitize_csv(modified_doc["Methods"], ";");
     }
     catch(err){
         console.log(err);
