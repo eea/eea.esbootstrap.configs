@@ -132,5 +132,10 @@
   "Evaluation results": {
     "type": "text",
     "analyzer": "none"
+  },
+  "Period range": {
+    "type": "text",
+    "fielddata":true,
+    "analyzer": "coma"
   }
 }

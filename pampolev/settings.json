@@ -60,7 +60,8 @@
             "format": "csv",
             "encoding": "utf-8",
             "id_type": "field",
-            "id_field": "Evaluation ID"
+            "id_field": "Evaluation ID",
+            "data_modifier": "modify.js"
         }
     }
 

@@ -576,6 +576,63 @@
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"]
             }
+        },
+        {
+            "name": "Period range",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
+            },
+            "facet": {
+                "visible": true,
+                "title": "Period",
+                "pos": 155,
+                "type": "rangehistogram",
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "min_max_script" : "def vals = doc['Period range']; if (vals.length == 0){return null;}else{ def ret = [];for (val in vals){ret.add(Integer.parseInt(val))}return ret}",
+                    "aggs_script" : "def vals = doc['Period range']; if (vals.length == 0){return null;}else{ def ret = [];for (val in vals){ret.add(Integer.parseInt(val))}return ret}",
+
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+                    "slider_bucketsize" : 1,
+                    "columns_bucketsize" : 1,
+
+                    "histogram" : false,
+                    "measurement_unit": "year"
+                }
+            }
+        },
+        {
+            "name": "Publication year for facet",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
+            },
+            "facet": {
+                "visible": true,
+                "title": "Publication year",
+                "pos": 105,
+                "type": "rangehistogram",
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+                    "slider_bucketsize" : 1,
+                    "columns_bucketsize" : 1,
+
+                    "histogram" : false,
+                    "measurement_unit": "year"
+                }
+            }
         }
     ]
 }
