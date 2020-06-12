@@ -31,21 +31,11 @@
   },
   "Policy area(s)": {
     "type": "text",
-    "fields": {
-      "keyword": {
-        "ignore_above": 256,
-        "type": "keyword"
-      }
-    }
+    "analyzer": "semicolon"
   },
   "Sector(s)": {
     "type": "text",
-    "fields": {
-      "keyword": {
-        "ignore_above": 256,
-        "type": "keyword"
-      }
-    }
+    "analyzer": "semicolon"
   },
   "Commissioner": {
     "type": "text",
@@ -56,23 +46,13 @@
       }
     }
   },
-  "Commissioner only fo r facets": {
+  "Commissioner only for facets": {
     "type": "text",
-    "fields": {
-      "keyword": {
-        "ignore_above": 256,
-        "type": "keyword"
-      }
-    }
+    "analyzer": "none"
   },
   "Author type": {
     "type": "text",
-    "fields": {
-      "keyword": {
-        "ignore_above": 256,
-        "type": "keyword"
-      }
-    }
+    "analyzer": "none"
   },
   "Publication year": {
     "type": "text",
@@ -85,30 +65,15 @@
   },
   "Geographical scope": {
     "type": "text",
-    "fields": {
-      "keyword": {
-        "ignore_above": 256,
-        "type": "keyword"
-      }
-    }
+    "analyzer": "semicolon"
   },
   "Scope": {
     "type": "text",
-    "fields": {
-      "keyword": {
-        "ignore_above": 256,
-        "type": "keyword"
-      }
-    }
+    "analyzer": "none"
   },
   "Type": {
     "type": "text",
-    "fields": {
-      "keyword": {
-        "ignore_above": 256,
-        "type": "keyword"
-      }
-    }
+    "analyzer": "semicolon"
   },
   "Period start": {
     "type": "text",
@@ -130,92 +95,42 @@
   },
   "Technique": {
     "type": "text",
-    "fields": {
-      "keyword": {
-        "ignore_above": 256,
-        "type": "keyword"
-      }
-    }
+    "analyzer": "semicolon"
   },
   "Criterias - main": {
     "type": "text",
-    "fields": {
-      "keyword": {
-        "ignore_above": 256,
-        "type": "keyword"
-      }
-    }
+    "analyzer": "semicolon"
   },
   "Criterias - other": {
     "type": "text",
-    "fields": {
-      "keyword": {
-        "ignore_above": 256,
-        "type": "keyword"
-      }
-    }
+    "analyzer": "semicolon"
   },
   "Methods": {
     "type": "text",
-    "fields": {
-      "keyword": {
-        "ignore_above": 256,
-        "type": "keyword"
-      }
-    }
+    "analyzer": "semicolon"
   },
   "Methods - types": {
     "type": "text",
-    "fields": {
-      "keyword": {
-        "ignore_above": 256,
-        "type": "keyword"
-      }
-    }
+    "analyzer": "semicolon"
   },
   "Methods - others": {
     "type": "text",
-    "fields": {
-      "keyword": {
-        "ignore_above": 256,
-        "type": "keyword"
-      }
-    }
+    "analyzer": "semicolon"
   },
   "Output data": {
     "type": "text",
-    "fields": {
-      "keyword": {
-        "ignore_above": 256,
-        "type": "keyword"
-      }
-    }
+    "analyzer": "none"
   },
   "Input data": {
     "type": "text",
-    "fields": {
-      "keyword": {
-        "ignore_above": 256,
-        "type": "keyword"
-      }
-    }
+    "analyzer": "none"
   },
   "Policy recommendations": {
     "type": "text",
-    "fields": {
-      "keyword": {
-        "ignore_above": 256,
-        "type": "keyword"
-      }
-    }
+    "analyzer": "none"
   },
   "Evaluation results": {
     "type": "text",
-    "fields": {
-      "keyword": {
-        "ignore_above": 256,
-        "type": "keyword"
-      }
-    }
+    "analyzer": "none"
   }
 }

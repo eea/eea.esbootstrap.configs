@@ -1,1 +1,29 @@
 /* Add custom css here */
+
+.results_text {
+    display: block;
+    position: relative;
+    height: 60px;
+    overflow: hidden;
+    z-index: 1;
+}
+.results_text:after {
+   content: " ";
+    position: absolute;
+    top: 46px;
+    left: 0;
+    height: 15px;
+    width: 100%;
+    display: inline-block;
+}
+
+tr:nth-of-type(odd) .results_text:after {
+    background: linear-gradient(0deg, rgba(249, 249, 249, 0.75), rgba(249, 249, 249, 0));
+}
+tr:nth-of-type(even) .results_text:after {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+}
+
+.facetview_orderby{
+    display:none;
+}

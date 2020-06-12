@@ -65,7 +65,7 @@
             "listing": {
                 "visible": true,
                 "title": "Policy evaluation title",
-                "width": "100px",
+                "width": "300px",
                 "pos": 30,
                 "display": {
                     "pre": "",
@@ -114,7 +114,15 @@
                 "pos": 50
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Policy areas",
+                "pos": 50,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for area"
             }
         },
         {
@@ -131,7 +139,15 @@
                 "pos": 60
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Sectors",
+                "pos": 60,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for sector"
             }
         },
         {
@@ -154,7 +170,7 @@
         {
             "name": "Commissioner only for facets",
             "listing": {
-                "visible": true,
+                "visible": false,
                 "title": "Commissioner only for facets",
                 "width": "100px",
                 "pos": 80
@@ -165,7 +181,15 @@
                 "pos": 80
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Commissioner",
+                "pos": 80,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for commissioner"
             }
         },
         {
@@ -182,7 +206,15 @@
                 "pos": 90
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Author type",
+                "pos": 90,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for author"
             }
         },
         {
@@ -216,7 +248,15 @@
                 "pos": 110
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Geographical scope",
+                "pos": 100,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for geographical scope"
             }
         },
         {
@@ -233,7 +273,13 @@
                 "pos": 120
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Scope",
+                "pos": 120,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"]
             }
         },
         {
@@ -250,7 +296,13 @@
                 "pos": 130
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Type",
+                "pos": 130,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"]
             }
         },
         {
@@ -301,7 +353,13 @@
                 "pos": 160
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Technique",
+                "pos": 160,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"]
             }
         },
         {
@@ -318,7 +376,13 @@
                 "pos": 170
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Criterias - main",
+                "pos": 170,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"]
             }
         },
         {
@@ -335,7 +399,15 @@
                 "pos": 180
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Criterias - other",
+                "pos": 180,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for criterias"
             }
         },
         {
@@ -352,7 +424,13 @@
                 "pos": 190
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Methods",
+                "pos": 190,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"]
             }
         },
         {
@@ -369,7 +447,13 @@
                 "pos": 200
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Methods - types",
+                "pos": 200,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"]
             }
         },
         {
@@ -386,7 +470,15 @@
                 "pos": 210
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Methods - other",
+                "pos": 210,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for methods"
             }
         },
         {
@@ -403,7 +495,15 @@
                 "pos": 220
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Output data",
+                "pos": 220,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for output data"
             }
         },
         {
@@ -420,7 +520,15 @@
                 "pos": 230
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Input data",
+                "pos": 230,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for input data"
             }
         },
         {
@@ -437,7 +545,13 @@
                 "pos": 240
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Policy recommendations",
+                "pos": 240,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"]
             }
         },
         {
@@ -454,7 +568,13 @@
                 "pos": 250
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Evaluation results",
+                "pos": 250,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"]
             }
         }
     ]
