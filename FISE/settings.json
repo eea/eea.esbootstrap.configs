@@ -62,7 +62,6 @@
             "type": "csv",
             "bulksize": 5000,
             "url": "https://cmshare.eea.europa.eu/s/YZocgSHqKNbT4gn/download?path=/catalogue&files=catalogue.csv",
-            "format": "json",
             "id_type": "field",
             "id_field": "ID",
             "data_modifier": "modify.js",
