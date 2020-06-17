@@ -41,6 +41,9 @@ $(window).bind('post_search_callback', function () {
     $('body').removeClass('tabular-view')
    }
 
+   var download = $('#content .facetview_download')
+   $('.facetview_top').prepend(download)
+
   $('.details_link').click(function (e) {
     e.preventDefault();
     var opt = {
