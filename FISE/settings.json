@@ -58,6 +58,7 @@
     "source": {
         "type": "url",
         "autoswitch": "true",
+        "switch_condition_value_percent": 100,
         "configuration": {
             "type": "csv",
             "bulksize": 5000,
@@ -65,7 +66,7 @@
             "id_type": "field",
             "id_field": "ID",
             "data_modifier": "modify.js",
-            "encoding": "utf-8"
+            "encoding": "utf-8",
         }
     },
     "es_debug_enabled": false,
