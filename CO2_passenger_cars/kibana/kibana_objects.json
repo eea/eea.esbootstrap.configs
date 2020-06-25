@@ -1249,48 +1249,6 @@
     }
   },
   {
-    "_id": "c684df20-9678-11ea-8281-c55c6c0bef9d",
-    "_type": "visualization",
-    "_source": {
-      "title": "co2_2018_final_emissions_enecd_by_fuel_type",
-      "visState": "{\"title\":\"co2_2018_final_emissions_enecd_by_fuel_type\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100,\"rotate\":0},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Avg NECD Emissions (gCO2/km)\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"bottom\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"Enedc__g_km_\",\"customLabel\":\"Avg NECD Emissions (gCO2/km)\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"FtTrim\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Fuel type\"}}]}",
-      "uiStateJSON": "{\"vis\":{\"legendOpen\":false}}",
-      "description": "",
-      "savedSearchId": "d20657b0-96a6-11ea-8281-c55c6c0bef9d",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
-      }
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    },
-    "_migrationVersion": {
-      "visualization": "6.7.2"
-    }
-  },
-  {
-    "_id": "9bac6570-9678-11ea-8281-c55c6c0bef9d",
-    "_type": "visualization",
-    "_source": {
-      "title": "co2cars_2018_final_metrics",
-      "visState": "{\"title\":\"co2cars_2018_final_metrics\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":16}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"Enedc__g_km_\",\"customLabel\":\"Avg NEDC Emissions (gCO2/km)\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"Ewltp__g_km_\",\"customLabel\":\"Avg WLTP Emissions (gCO2/km)\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"m__kg_\",\"customLabel\":\"Avg Mass (Kg)\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"ep__KW_\",\"customLabel\":\"Avg Engine Power (kW)\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"ec__cm3_\",\"customLabel\":\"Avg Engine Capacity (cm3)\"}},{\"id\":\"7\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"r\",\"customLabel\":\"Car registrations\"}}]}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "d20657b0-96a6-11ea-8281-c55c6c0bef9d",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
-      }
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    },
-    "_migrationVersion": {
-      "visualization": "6.7.2"
-    }
-  },
-  {
     "_id": "0a036cc0-a435-11ea-873f-eb83d6861ff1",
     "_type": "visualization",
     "_source": {
@@ -1311,16 +1269,41 @@
     }
   },
   {
-    "_id": "e1876450-9678-11ea-8281-c55c6c0bef9d",
+    "_id": "87673f30-8de1-11ea-8281-c55c6c0bef9d",
+    "_type": "dashboard",
+    "_source": {
+      "title": "co2cars_dashboard_v2",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[\n  {\n    \"embeddableConfig\": {\n      \"vis\": {\n        \"colors\": {\n          \"NEDC\": \"#3F6833\",\n          \"NEDC CO2 emissions\": \"#64B0C8\",\n          \"WLTP\": \"#0A437C\",\n          \"WLTP CO2 emissions\": \"#052B51\"\n        },\n        \"legendOpen\": false\n      }\n    },\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 11,\n      \"w\": 23,\n      \"h\": 15,\n      \"i\": \"1\"\n    },\n    \"id\": \"b6c001a0-9678-11ea-8281-c55c6c0bef9d\",\n    \"panelIndex\": \"1\",\n    \"title\": \"Avg emissions by country (gCO2/km) - NEDC\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.3\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 13,\n      \"y\": 4,\n      \"w\": 35,\n      \"h\": 7,\n      \"i\": \"2\"\n    },\n    \"id\": \"9bac6570-9678-11ea-8281-c55c6c0bef9d\",\n    \"panelIndex\": \"2\",\n    \"title\": \"\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.3\"\n  },\n  {\n    \"embeddableConfig\": {\n      \"vis\": {\n        \"colors\": {\n          \"unknown\": \"#052B51\",\n          \"Number of registrations\": \"#65C5DB\",\n          \"diesel\": \"#5195CE\",\n          \"e85\": \"#508642\",\n          \"electric\": \"#58140C\",\n          \"hydrogen\": \"#447EBC\",\n          \"lpg\": \"#2F575E\",\n          \"ng\": \"#CCA300\",\n          \"petrol\": \"#65C5DB\",\n          \"petrol/electric\": \"#99440A\"\n        },\n        \"legendOpen\": true\n      }\n    },\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 45,\n      \"w\": 32,\n      \"h\": 18,\n      \"i\": \"8\"\n    },\n    \"id\": \"05f912c0-9679-11ea-8281-c55c6c0bef9d\",\n    \"panelIndex\": \"8\",\n    \"title\": \"Car registrations by country and fuel type\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.3\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 63,\n      \"w\": 48,\n      \"h\": 12,\n      \"i\": \"10\"\n    },\n    \"id\": \"1226e610-7fec-11ea-91cc-f57bdf5fafda\",\n    \"panelIndex\": \"10\",\n    \"title\": \"\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.3\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 32,\n      \"y\": 29,\n      \"w\": 16,\n      \"h\": 16,\n      \"i\": \"15\"\n    },\n    \"id\": \"f91bc4d0-9678-11ea-8281-c55c6c0bef9d\",\n    \"panelIndex\": \"15\",\n    \"title\": \"Avg emissions (gCO2/km) by engine power\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.8\"\n  },\n  {\n    \"embeddableConfig\": {\n      \"vis\": {\n        \"colors\": {\n          \"Avg NECD Emissions (gCO2/km)\": \"#64B0C8\"\n        },\n        \"legendOpen\": false\n      }\n    },\n    \"gridData\": {\n      \"x\": 23,\n      \"y\": 11,\n      \"w\": 25,\n      \"h\": 15,\n      \"i\": \"16\"\n    },\n    \"id\": \"c684df20-9678-11ea-8281-c55c6c0bef9d\",\n    \"panelIndex\": \"16\",\n    \"title\": \"Avg emissions by fuel type (gCO2/km) - NEDC\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.8\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 16,\n      \"y\": 29,\n      \"w\": 16,\n      \"h\": 16,\n      \"i\": \"18\"\n    },\n    \"id\": \"ee345370-9678-11ea-8281-c55c6c0bef9d\",\n    \"panelIndex\": \"18\",\n    \"title\": \"Avg emissions (gCO2/km) by car mass\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.8\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 29,\n      \"w\": 16,\n      \"h\": 16,\n      \"i\": \"20\"\n    },\n    \"id\": \"e1876450-9678-11ea-8281-c55c6c0bef9d\",\n    \"panelIndex\": \"20\",\n    \"title\": \"Avg emissions (gCO2/km) by engine capacity\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.8\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 26,\n      \"w\": 48,\n      \"h\": 3,\n      \"i\": \"22\"\n    },\n    \"id\": \"ab443df0-8ec1-11ea-8281-c55c6c0bef9d\",\n    \"panelIndex\": \"22\",\n    \"title\": \"\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.8\"\n  },\n  {\n    \"gridData\": {\n      \"x\": 32,\n      \"y\": 45,\n      \"w\": 16,\n      \"h\": 18,\n      \"i\": \"23\"\n    },\n    \"version\": \"6.8.8\",\n    \"panelIndex\": \"23\",\n    \"type\": \"visualization\",\n    \"id\": \"1003dfc0-9679-11ea-8281-c55c6c0bef9d\",\n    \"embeddableConfig\": {\n      \"vis\": {\n        \"colors\": {\n          \"unknown\": \"#052B51\",\n          \"Number of registrations\": \"#65C5DB\",\n          \"diesel\": \"#5195CE\",\n          \"e85\": \"#508642\",\n          \"electric\": \"#58140C\",\n          \"hydrogen\": \"#447EBC\",\n          \"lpg\": \"#2F575E\",\n          \"ng\": \"#CCA300\",\n          \"petrol\": \"#65C5DB\",\n          \"petrol/electric\": \"#99440A\"\n        }\n      }\n    },\n    \"title\": \"Car registrations by fuel type\"\n  },\n  {\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 0,\n      \"w\": 48,\n      \"h\": 4,\n      \"i\": \"24\"\n    },\n    \"version\": \"6.8.8\",\n    \"panelIndex\": \"24\",\n    \"type\": \"visualization\",\n    \"id\": \"0a036cc0-a435-11ea-873f-eb83d6861ff1\",\n    \"embeddableConfig\": {},\n    \"title\": \"\"\n  },\n  {\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 4,\n      \"w\": 13,\n      \"h\": 7,\n      \"i\": \"25\"\n    },\n    \"version\": \"6.8.8\",\n    \"panelIndex\": \"25\",\n    \"type\": \"visualization\",\n    \"id\": \"e3bfd290-a436-11ea-873f-eb83d6861ff1\",\n    \"embeddableConfig\": {},\n    \"title\": \"Note\"\n  }\n]",
+      "optionsJSON": "{\n  \"darkTheme\": false,\n  \"hidePanelTitles\": false,\n  \"useMargins\": true\n}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-2y",
+      "refreshInterval": {
+        "pause": true,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"query\": {\n    \"language\": \"lucene\",\n    \"query\": \"\"\n  },\n  \"filter\": []\n}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "f91bc4d0-9678-11ea-8281-c55c6c0bef9d",
     "_type": "visualization",
     "_source": {
-      "title": "vega-scaterplot_2018_final enedc-cm3 - v2",
-      "visState": "{\"title\":\"vega-scaterplot_2018_final enedc-cm3 - v2\",\"type\":\"vega\",\"params\":{\"spec\":\"{\\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: \\\"\\\"\\n  data: {\\n    url: {\\n      %context%: true\\n      %timefield%: date\\n      index: co2_passenger_cars_2018_final_prod\\n      body: {\\n        aggs: {\\n          full_enedc: {\\n            terms: {field: \\\"MS\\\", size: 100}\\n            aggs: {\\n              enedc: {\\n                avg: {field: \\\"Enedc__g_km_\\\"}\\n              }\\n              kw: {\\n                avg: {field: \\\"ep__KW_\\\"}\\n              }\\n              mass: {\\n                avg: {field: \\\"m__kg_\\\"}\\n              }\\n              cm3: {\\n                avg: {field: \\\"ec__cm3_\\\"}\\n              }\\n            }\\n          }\\n        }\\n        size: 10\\n      }\\n    }\\n    format: {property: \\\"aggregations.full_enedc.buckets\\\"}\\n  }\\n  layer: [\\n    {\\n      selection: {\\n        grid: {type: \\\"interval\\\", bind: \\\"scales\\\"}\\n      }\\n      mark: {type: \\\"point\\\", filled: true}\\n      encoding: {\\n        x: {\\n          field: cm3.value\\n          type: quantitative\\n          axis: {title: \\\"Avg engine capacity (cm3)\\\", grid: false}\\n          scale: {zero: false}\\n        }\\n        y: {\\n          field: enedc.value\\n          type: quantitative\\n          axis: {title: \\\"\\\", grid: false}\\n          scale: {zero: false}\\n        }\\n        tooltip: [\\n          {field: \\\"key\\\"}\\n          {field: \\\"enedc.value\\\", type: \\\"quantitative\\\"}\\n        ]\\n        color: {value: \\\"#58797F\\\"}\\n      }\\n    }\\n    {\\n      mark: {type: \\\"text\\\", filled: true, dy: -5}\\n      encoding: {\\n        x: {\\n          field: cm3.value\\n          type: quantitative\\n          axis: {grid: false}\\n          scale: {zero: false}\\n        }\\n        y: {\\n          field: enedc.value\\n          type: quantitative\\n          axis: {grid: false}\\n          scale: {zero: false}\\n        }\\n        color: {value: \\\"#58797F\\\"}\\n        tooltip: [\\n          {field: \\\"key\\\"}\\n          {field: \\\"enedc.value\\\", type: \\\"quantitative\\\"}\\n        ]\\n        text: {field: \\\"key\\\", type: \\\"nominal\\\"}\\n      }\\n    }\\n  ]\\n  size: 0\\n  config: {\\n    axis: {titleColor: \\\"#69707D\\\", titleFont: \\\"Open Sans\\\",labelColor: \\\"#69707D\\\", labelFont: \\\"Open Sans\\\", \\\"titleFontSize\\\":12}\\n  }\\n}\"},\"aggs\":[]}",
+      "title": "vega-scaterplot_2018_final enedc-kw - v2",
+      "visState": "{\"title\":\"vega-scaterplot_2018_final enedc-kw - v2\",\"type\":\"vega\",\"params\":{\"spec\":\"{\\n  \\\"$schema\\\": \\\"https://vega.github.io/schema/vega-lite/v2.json\\\",\\n  \\\"title\\\": \\\"\\\",\\n  \\\"data\\\": {\\n    \\\"url\\\": {\\n      \\\"%context%\\\": true,\\n      \\\"%timefield%\\\": \\\"date\\\",\\n      \\\"index\\\": \\\"co2_passenger_cars_2018_final_prod\\\",\\n      \\\"body\\\": {\\n        \\\"aggs\\\": {\\n          \\\"full_enedc\\\": {\\n            \\\"terms\\\": {\\\"field\\\": \\\"MS\\\", \\\"size\\\": 100},\\n            \\\"aggs\\\": {\\n              \\\"enedc\\\": {\\n                \\\"avg\\\": {\\\"field\\\": \\\"Enedc__g_km_\\\"}\\n              },\\n              \\\"kw\\\": {\\\"avg\\\": {\\\"field\\\": \\\"ep__KW_\\\"}},\\n              \\\"mass\\\": {\\\"avg\\\": {\\\"field\\\": \\\"m__kg_\\\"}},\\n              \\\"cm3\\\": {\\\"avg\\\": {\\\"field\\\": \\\"ec__cm3_\\\"}}\\n            }\\n          }\\n          \\n        },\\n        \\\"size\\\": 10\\n      }\\n    },\\n    \\\"format\\\": {\\\"property\\\": \\\"aggregations.full_enedc.buckets\\\"}\\n  },\\n  \\\"layer\\\": [\\n    {\\n    selection: {\\n           \\n            grid: {type: \\\"interval\\\", bind: \\\"scales\\\"}\\n          }\\n      \\\"mark\\\": {\\\"type\\\": \\\"point\\\", \\\"filled\\\": true},\\n      \\\"encoding\\\": {\\n        \\\"x\\\": {\\n          \\\"field\\\": \\\"kw.value\\\",\\n          \\\"type\\\": \\\"quantitative\\\",\\n          \\\"axis\\\": {\\\"title\\\": \\\"Avg engine power (kw)\\\", \\\"grid\\\": false}\\n          \\\"scale\\\": {\\\"zero\\\": false}\\n        },\\n        \\\"y\\\": {\\n          \\\"field\\\": \\\"enedc.value\\\",\\n          \\\"type\\\": \\\"quantitative\\\",\\n          \\\"axis\\\": {\\\"title\\\": \\\"\\\",\\\"grid\\\": false}\\n          \\\"scale\\\": {\\\"zero\\\": false}\\n          \\n        },\\n        \\\"tooltip\\\": [{\\n          \\\"field\\\": \\\"key\\\"\\n        }\\n        {\\n          \\\"field\\\": \\\"enedc.value\\\" , type: \\\"quantitative\\\" \\n        }\\n        ] \\n        \\\"color\\\":{value:\\\"#58797F\\\"}\\n      }\\n    }\\n    {\\n      \\\"mark\\\": {\\\"type\\\": \\\"text\\\", \\\"filled\\\": true, \\\"dy\\\": -5},\\n      \\\"encoding\\\": {\\n        \\\"x\\\": {\\n          \\\"field\\\": \\\"kw.value\\\",\\n          \\\"type\\\": \\\"quantitative\\\",\\n          \\\"axis\\\": {\\\"grid\\\": false}\\n          \\\"scale\\\": {\\\"zero\\\": false}\\n          \\n        },\\n        \\\"y\\\": {\\n          \\\"field\\\": \\\"enedc.value\\\",\\n          \\\"type\\\": \\\"quantitative\\\",\\n          \\\"axis\\\": {\\\"grid\\\": false}\\n          \\\"scale\\\": {\\\"zero\\\": false}\\n        },\\n        \\\"color\\\":{value:\\\"#58797F\\\"}\\n        \\\"tooltip\\\": [{\\n          \\\"field\\\": \\\"key\\\"\\n        }\\n        {\\n          \\\"field\\\": \\\"enedc.value\\\", type: \\\"quantitative\\\"\\n        }\\n        ] \\n        \\\"text\\\": {\\\"field\\\": \\\"key\\\", \\\"type\\\": \\\"nominal\\\"}\\n      }\\n    }\\n\\n  ],\\n  \\\"size\\\": 0\\n  config: {\\n    axis: {titleColor: \\\"#69707D\\\", titleFont: \\\"Open Sans\\\",labelColor: \\\"#69707D\\\", labelFont: \\\"Open Sans\\\", \\\"titleFontSize\\\":12}\\n  }\\n}\"},\"aggs\":[]}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
       }
     },
     "_meta": {
@@ -1351,31 +1334,11 @@
     }
   },
   {
-    "_id": "f91bc4d0-9678-11ea-8281-c55c6c0bef9d",
+    "_id": "e1876450-9678-11ea-8281-c55c6c0bef9d",
     "_type": "visualization",
     "_source": {
-      "title": "vega-scaterplot_2018_final enedc-kw - v2",
-      "visState": "{\"title\":\"vega-scaterplot_2018_final enedc-kw - v2\",\"type\":\"vega\",\"params\":{\"spec\":\"{\\n  \\\"$schema\\\": \\\"https://vega.github.io/schema/vega-lite/v2.json\\\",\\n  \\\"title\\\": \\\"\\\",\\n  \\\"data\\\": {\\n    \\\"url\\\": {\\n      \\\"%context%\\\": true,\\n      \\\"%timefield%\\\": \\\"date\\\",\\n      \\\"index\\\": \\\"co2_passenger_cars_2018_final_prod\\\",\\n      \\\"body\\\": {\\n        \\\"aggs\\\": {\\n          \\\"full_enedc\\\": {\\n            \\\"terms\\\": {\\\"field\\\": \\\"MS\\\", \\\"size\\\": 100},\\n            \\\"aggs\\\": {\\n              \\\"enedc\\\": {\\n                \\\"avg\\\": {\\\"field\\\": \\\"Enedc__g_km_\\\"}\\n              },\\n              \\\"kw\\\": {\\\"avg\\\": {\\\"field\\\": \\\"ep__KW_\\\"}},\\n              \\\"mass\\\": {\\\"avg\\\": {\\\"field\\\": \\\"m__kg_\\\"}},\\n              \\\"cm3\\\": {\\\"avg\\\": {\\\"field\\\": \\\"ec__cm3_\\\"}}\\n            }\\n          }\\n          \\n        },\\n        \\\"size\\\": 10\\n      }\\n    },\\n    \\\"format\\\": {\\\"property\\\": \\\"aggregations.full_enedc.buckets\\\"}\\n  },\\n  \\\"layer\\\": [\\n    {\\n    selection: {\\n           \\n            grid: {type: \\\"interval\\\", bind: \\\"scales\\\"}\\n          }\\n      \\\"mark\\\": {\\\"type\\\": \\\"point\\\", \\\"filled\\\": true},\\n      \\\"encoding\\\": {\\n        \\\"x\\\": {\\n          \\\"field\\\": \\\"kw.value\\\",\\n          \\\"type\\\": \\\"quantitative\\\",\\n          \\\"axis\\\": {\\\"title\\\": \\\"Avg engine power (kw)\\\", \\\"grid\\\": false}\\n          \\\"scale\\\": {\\\"zero\\\": false}\\n        },\\n        \\\"y\\\": {\\n          \\\"field\\\": \\\"enedc.value\\\",\\n          \\\"type\\\": \\\"quantitative\\\",\\n          \\\"axis\\\": {\\\"title\\\": \\\"\\\",\\\"grid\\\": false}\\n          \\\"scale\\\": {\\\"zero\\\": false}\\n          \\n        },\\n        \\\"tooltip\\\": [{\\n          \\\"field\\\": \\\"key\\\"\\n        }\\n        {\\n          \\\"field\\\": \\\"enedc.value\\\" , type: \\\"quantitative\\\" \\n        }\\n        ] \\n        \\\"color\\\":{value:\\\"#58797F\\\"}\\n      }\\n    }\\n    {\\n      \\\"mark\\\": {\\\"type\\\": \\\"text\\\", \\\"filled\\\": true, \\\"dy\\\": -5},\\n      \\\"encoding\\\": {\\n        \\\"x\\\": {\\n          \\\"field\\\": \\\"kw.value\\\",\\n          \\\"type\\\": \\\"quantitative\\\",\\n          \\\"axis\\\": {\\\"grid\\\": false}\\n          \\\"scale\\\": {\\\"zero\\\": false}\\n          \\n        },\\n        \\\"y\\\": {\\n          \\\"field\\\": \\\"enedc.value\\\",\\n          \\\"type\\\": \\\"quantitative\\\",\\n          \\\"axis\\\": {\\\"grid\\\": false}\\n          \\\"scale\\\": {\\\"zero\\\": false}\\n        },\\n        \\\"color\\\":{value:\\\"#58797F\\\"}\\n        \\\"tooltip\\\": [{\\n          \\\"field\\\": \\\"key\\\"\\n        }\\n        {\\n          \\\"field\\\": \\\"enedc.value\\\", type: \\\"quantitative\\\"\\n        }\\n        ] \\n        \\\"text\\\": {\\\"field\\\": \\\"key\\\", \\\"type\\\": \\\"nominal\\\"}\\n      }\\n    }\\n\\n  ],\\n  \\\"size\\\": 0\\n  config: {\\n    axis: {titleColor: \\\"#69707D\\\", titleFont: \\\"Open Sans\\\",labelColor: \\\"#69707D\\\", labelFont: \\\"Open Sans\\\", \\\"titleFontSize\\\":12}\\n  }\\n}\"},\"aggs\":[]}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
-      }
-    },
-    "_meta": {
-      "savedObjectVersion": 2
-    },
-    "_migrationVersion": {
-      "visualization": "6.7.2"
-    }
-  },
-  {
-    "_id": "e3bfd290-a436-11ea-873f-eb83d6861ff1",
-    "_type": "visualization",
-    "_source": {
-      "title": "Small note",
-      "visState": "{\"title\":\"Small note\",\"type\":\"markdown\",\"params\":{\"fontSize\":12,\"openLinksInNewTab\":false,\"markdown\":\"**This dashboard displays data of new passenger cars registered in 2018 across EU-27, UK and Iceland.** Previous years' data is only available in the *data table explorer*.\"},\"aggs\":[]}",
+      "title": "vega-scaterplot_2018_final enedc-cm3 - v2",
+      "visState": "{\"title\":\"vega-scaterplot_2018_final enedc-cm3 - v2\",\"type\":\"vega\",\"params\":{\"spec\":\"{\\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: \\\"\\\"\\n  data: {\\n    url: {\\n      %context%: true\\n      %timefield%: date\\n      index: co2_passenger_cars_2018_final_prod\\n      body: {\\n        aggs: {\\n          full_enedc: {\\n            terms: {field: \\\"MS\\\", size: 100}\\n            aggs: {\\n              enedc: {\\n                avg: {field: \\\"Enedc__g_km_\\\"}\\n              }\\n              kw: {\\n                avg: {field: \\\"ep__KW_\\\"}\\n              }\\n              mass: {\\n                avg: {field: \\\"m__kg_\\\"}\\n              }\\n              cm3: {\\n                avg: {field: \\\"ec__cm3_\\\"}\\n              }\\n            }\\n          }\\n        }\\n        size: 10\\n      }\\n    }\\n    format: {property: \\\"aggregations.full_enedc.buckets\\\"}\\n  }\\n  layer: [\\n    {\\n      selection: {\\n        grid: {type: \\\"interval\\\", bind: \\\"scales\\\"}\\n      }\\n      mark: {type: \\\"point\\\", filled: true}\\n      encoding: {\\n        x: {\\n          field: cm3.value\\n          type: quantitative\\n          axis: {title: \\\"Avg engine capacity (cm3)\\\", grid: false}\\n          scale: {zero: false}\\n        }\\n        y: {\\n          field: enedc.value\\n          type: quantitative\\n          axis: {title: \\\"\\\", grid: false}\\n          scale: {zero: false}\\n        }\\n        tooltip: [\\n          {field: \\\"key\\\"}\\n          {field: \\\"enedc.value\\\", type: \\\"quantitative\\\"}\\n        ]\\n        color: {value: \\\"#58797F\\\"}\\n      }\\n    }\\n    {\\n      mark: {type: \\\"text\\\", filled: true, dy: -5}\\n      encoding: {\\n        x: {\\n          field: cm3.value\\n          type: quantitative\\n          axis: {grid: false}\\n          scale: {zero: false}\\n        }\\n        y: {\\n          field: enedc.value\\n          type: quantitative\\n          axis: {grid: false}\\n          scale: {zero: false}\\n        }\\n        color: {value: \\\"#58797F\\\"}\\n        tooltip: [\\n          {field: \\\"key\\\"}\\n          {field: \\\"enedc.value\\\", type: \\\"quantitative\\\"}\\n        ]\\n        text: {field: \\\"key\\\", type: \\\"nominal\\\"}\\n      }\\n    }\\n  ]\\n  size: 0\\n  config: {\\n    axis: {titleColor: \\\"#69707D\\\", titleFont: \\\"Open Sans\\\",labelColor: \\\"#69707D\\\", labelFont: \\\"Open Sans\\\", \\\"titleFontSize\\\":12}\\n  }\\n}\"},\"aggs\":[]}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
@@ -1412,13 +1375,201 @@
     }
   },
   {
-    "_id": "87673f30-8de1-11ea-8281-c55c6c0bef9d",
+    "_id": "e3bfd290-a436-11ea-873f-eb83d6861ff1",
+    "_type": "visualization",
+    "_source": {
+      "title": "Small note",
+      "visState": "{\"title\":\"Small note\",\"type\":\"markdown\",\"params\":{\"fontSize\":12,\"openLinksInNewTab\":false,\"markdown\":\"**This dashboard displays data of new passenger cars registered in 2018 across EU-27, UK and Iceland.** Previous years' data is only available in the *data table explorer*.\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    },
+    "_migrationVersion": {
+      "visualization": "6.7.2"
+    }
+  },
+  {
+    "_id": "423316c0-b535-11ea-964c-ef027af40d2e",
+    "_type": "visualization",
+    "_source": {
+      "title": "co2_2019_provisional_emissions_enecd_by_fuel_type",
+      "visState": "{\n  \"title\": \"co2_2019_provisional_emissions_enecd_by_fuel_type\",\n  \"type\": \"histogram\",\n  \"params\": {\n    \"type\": \"histogram\",\n    \"grid\": {\n      \"categoryLines\": false,\n      \"style\": {\n        \"color\": \"#eee\"\n      }\n    },\n    \"categoryAxes\": [\n      {\n        \"id\": \"CategoryAxis-1\",\n        \"type\": \"category\",\n        \"position\": \"bottom\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"truncate\": 100,\n          \"rotate\": 0\n        },\n        \"title\": {}\n      }\n    ],\n    \"valueAxes\": [\n      {\n        \"id\": \"ValueAxis-1\",\n        \"name\": \"LeftAxis-1\",\n        \"type\": \"value\",\n        \"position\": \"left\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\",\n          \"mode\": \"normal\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 0,\n          \"filter\": false,\n          \"truncate\": 100\n        },\n        \"title\": {\n          \"text\": \"\"\n        }\n      }\n    ],\n    \"seriesParams\": [\n      {\n        \"show\": \"true\",\n        \"type\": \"histogram\",\n        \"mode\": \"stacked\",\n        \"data\": {\n          \"label\": \"Avg NECD Emissions (gCO2/km)\",\n          \"id\": \"1\"\n        },\n        \"valueAxis\": \"ValueAxis-1\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true\n      }\n    ],\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"legendPosition\": \"bottom\",\n    \"times\": [],\n    \"addTimeMarker\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"Enedc__g_km_\",\n        \"customLabel\": \"Avg NECD Emissions (gCO2/km)\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"FtTrim\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"otherBucket\": false,\n        \"otherBucketLabel\": \"Other\",\n        \"missingBucket\": false,\n        \"missingBucketLabel\": \"Missing\",\n        \"customLabel\": \"Fuel type\"\n      }\n    }\n  ]\n}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"legendOpen\": false\n  }\n}",
+      "description": "",
+      "savedSearchId": "db573f80-b52f-11ea-964c-ef027af40d2e",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"lucene\"\n  },\n  \"filter\": []\n}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    },
+    "_migrationVersion": {
+      "visualization": "6.7.2"
+    }
+  },
+  {
+    "_id": "4c10a420-b533-11ea-964c-ef027af40d2e",
+    "_type": "visualization",
+    "_source": {
+      "title": "co2cars_2019_provisional_average_emissions",
+      "visState": "{\n  \"title\": \"co2cars_2019_provisional_average_emissions\",\n  \"type\": \"histogram\",\n  \"params\": {\n    \"type\": \"histogram\",\n    \"grid\": {\n      \"categoryLines\": false,\n      \"style\": {\n        \"color\": \"#eee\"\n      }\n    },\n    \"categoryAxes\": [\n      {\n        \"id\": \"CategoryAxis-1\",\n        \"type\": \"category\",\n        \"position\": \"bottom\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"truncate\": 100,\n          \"filter\": false,\n          \"rotate\": 0\n        },\n        \"title\": {}\n      }\n    ],\n    \"valueAxes\": [\n      {\n        \"id\": \"ValueAxis-1\",\n        \"name\": \"LeftAxis-1\",\n        \"type\": \"value\",\n        \"position\": \"left\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\",\n          \"mode\": \"normal\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 0,\n          \"filter\": false,\n          \"truncate\": 100\n        },\n        \"title\": {\n          \"text\": \"\"\n        }\n      }\n    ],\n    \"seriesParams\": [\n      {\n        \"show\": \"true\",\n        \"type\": \"histogram\",\n        \"mode\": \"normal\",\n        \"data\": {\n          \"label\": \"NEDC CO2 emissions\",\n          \"id\": \"1\"\n        },\n        \"valueAxis\": \"ValueAxis-1\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true\n      }\n    ],\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"legendPosition\": \"bottom\",\n    \"times\": [],\n    \"addTimeMarker\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"Enedc__g_km_\",\n        \"customLabel\": \"NEDC CO2 emissions\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"MS\",\n        \"size\": 10000,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"otherBucket\": false,\n        \"otherBucketLabel\": \"Other\",\n        \"missingBucket\": false,\n        \"missingBucketLabel\": \"Missing\",\n        \"customLabel\": \"Countries\"\n      }\n    }\n  ]\n}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"colors\": {\n      \"NEDC CO2 emissions\": \"#3F6833\",\n      \"WLTP CO2 emissions\": \"#3F6833\"\n    }\n  }\n}",
+      "description": "",
+      "savedSearchId": "db573f80-b52f-11ea-964c-ef027af40d2e",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"lucene\"\n  },\n  \"filter\": []\n}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    },
+    "_migrationVersion": {
+      "visualization": "6.7.2"
+    }
+  },
+  {
+    "_id": "c684df20-9678-11ea-8281-c55c6c0bef9d",
+    "_type": "visualization",
+    "_source": {
+      "title": "co2_2018_final_emissions_enecd_by_fuel_type",
+      "visState": "{\"title\":\"co2_2018_final_emissions_enecd_by_fuel_type\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100,\"rotate\":0},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Avg NECD Emissions (gCO2/km)\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"bottom\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"Enedc__g_km_\",\"customLabel\":\"Avg NECD Emissions (gCO2/km)\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"FtTrim\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Fuel type\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":false}}",
+      "description": "",
+      "savedSearchId": "d20657b0-96a6-11ea-8281-c55c6c0bef9d",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    },
+    "_migrationVersion": {
+      "visualization": "6.7.2"
+    }
+  },
+  {
+    "_id": "b03a90e0-b52f-11ea-964c-ef027af40d2e",
+    "_type": "visualization",
+    "_source": {
+      "title": "co2cars_2019_provisional_metrics",
+      "visState": "{\"title\":\"co2cars_2019_provisional_metrics\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":16}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"Enedc__g_km_\",\"customLabel\":\"Avg NEDC Emissions (gCO2/km)\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"Ewltp__g_km_\",\"customLabel\":\"Avg WLTP Emissions (gCO2/km)\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"m__kg_\",\"customLabel\":\"Avg Mass (Kg)\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"ep__KW_\",\"customLabel\":\"Avg Engine Power (kW)\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"ec__cm3_\",\"customLabel\":\"Avg Engine Capacity (cm3)\"}},{\"id\":\"7\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"r\",\"customLabel\":\"Car registrations\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "db573f80-b52f-11ea-964c-ef027af40d2e",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    },
+    "_migrationVersion": {
+      "visualization": "6.7.2"
+    }
+  },
+  {
+    "_id": "9bac6570-9678-11ea-8281-c55c6c0bef9d",
+    "_type": "visualization",
+    "_source": {
+      "title": "co2cars_2018_final_metrics",
+      "visState": "{\"title\":\"co2cars_2018_final_metrics\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":16}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"Enedc__g_km_\",\"customLabel\":\"Avg NEDC Emissions (gCO2/km)\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"Ewltp__g_km_\",\"customLabel\":\"Avg WLTP Emissions (gCO2/km)\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"m__kg_\",\"customLabel\":\"Avg Mass (Kg)\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"ep__KW_\",\"customLabel\":\"Avg Engine Power (kW)\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"ec__cm3_\",\"customLabel\":\"Avg Engine Capacity (cm3)\"}},{\"id\":\"7\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"r\",\"customLabel\":\"Car registrations\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "d20657b0-96a6-11ea-8281-c55c6c0bef9d",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    },
+    "_migrationVersion": {
+      "visualization": "6.7.2"
+    }
+  },
+  {
+    "_id": "5e639d00-b527-11ea-964c-ef027af40d2e",
+    "_type": "visualization",
+    "_source": {
+      "title": "co2cars_2019_provisional_filters_basic",
+      "visState": "{\"title\":\"co2cars_2019_provisional_filters_basic\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1588597534961\",\"indexPattern\":\"db5ab100-b526-11ea-964c-ef027af40d2e\",\"fieldName\":\"MS\",\"parent\":\"\",\"label\":\"Country\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":false,\"size\":30,\"order\":\"desc\"}},{\"id\":\"1587108689614\",\"indexPattern\":\"db5ab100-b526-11ea-964c-ef027af40d2e\",\"fieldName\":\"FtTrim\",\"parent\":\"\",\"label\":\"Fuel type\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":true,\"size\":5,\"order\":\"desc\"}},{\"id\":\"1588586107817\",\"indexPattern\":\"db5ab100-b526-11ea-964c-ef027af40d2e\",\"fieldName\":\"Enedc__g_km_\",\"parent\":\"\",\"label\":\"CO2 emissions g/km (Enedc)\",\"type\":\"range\",\"options\":{\"decimalPlaces\":0,\"step\":1}},{\"id\":\"1591036322051\",\"indexPattern\":\"db5ab100-b526-11ea-964c-ef027af40d2e\",\"fieldName\":\"m__kg_\",\"parent\":\"\",\"label\":\"Car mass (kg)\",\"type\":\"range\",\"options\":{\"decimalPlaces\":0,\"step\":1}}],\"pinFilters\":false,\"updateFiltersOnChange\":true,\"useTimeFilter\":false},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    },
+    "_migrationVersion": {
+      "visualization": "6.7.2"
+    }
+  },
+  {
+    "_id": "d0d22ab0-b535-11ea-964c-ef027af40d2e",
+    "_type": "visualization",
+    "_source": {
+      "title": "co2cars_2019_provisional_correlation notes",
+      "visState": "{\"title\":\"co2cars_2019_provisional_correlation notes\",\"type\":\"markdown\",\"params\":{\"fontSize\":13,\"openLinksInNewTab\":false,\"markdown\":\"__Correlation between CO2 emissions and car mass, engine capacity and engine power__\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    },
+    "_migrationVersion": {
+      "visualization": "6.7.2"
+    }
+  },
+  {
+    "_id": "db573f80-b52f-11ea-964c-ef027af40d2e",
+    "_type": "search",
+    "_source": {
+      "title": "Co2_2019_provisional",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "date",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"db5ab100-b526-11ea-964c-ef027af40d2e\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"!(Mh:AA-IVA OR Mh:AA-NSS OR Mh:UNKNOWN OR Mh:duplicate  OR Mh:Duplicate  OR Mh:DUPLICATE)\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "3ba36f20-b527-11ea-964c-ef027af40d2e",
     "_type": "dashboard",
     "_source": {
-      "title": "co2cars_dashboard_v2",
+      "title": "co2cars_dashboard_v3",
       "hits": 0,
       "description": "",
-      "panelsJSON": "[\n  {\n    \"embeddableConfig\": {\n      \"vis\": {\n        \"colors\": {\n          \"NEDC\": \"#3F6833\",\n          \"NEDC CO2 emissions\": \"#64B0C8\",\n          \"WLTP\": \"#0A437C\",\n          \"WLTP CO2 emissions\": \"#052B51\"\n        },\n        \"legendOpen\": false\n      }\n    },\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 11,\n      \"w\": 23,\n      \"h\": 15,\n      \"i\": \"1\"\n    },\n    \"id\": \"b6c001a0-9678-11ea-8281-c55c6c0bef9d\",\n    \"panelIndex\": \"1\",\n    \"title\": \"Avg emissions by country (gCO2/km) - NEDC\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.3\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 13,\n      \"y\": 4,\n      \"w\": 35,\n      \"h\": 7,\n      \"i\": \"2\"\n    },\n    \"id\": \"9bac6570-9678-11ea-8281-c55c6c0bef9d\",\n    \"panelIndex\": \"2\",\n    \"title\": \"\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.3\"\n  },\n  {\n    \"embeddableConfig\": {\n      \"vis\": {\n        \"colors\": {\n          \"unknown\": \"#052B51\",\n          \"Number of registrations\": \"#65C5DB\",\n          \"diesel\": \"#5195CE\",\n          \"e85\": \"#508642\",\n          \"electric\": \"#58140C\",\n          \"hydrogen\": \"#447EBC\",\n          \"lpg\": \"#2F575E\",\n          \"ng\": \"#CCA300\",\n          \"petrol\": \"#65C5DB\",\n          \"petrol/electric\": \"#99440A\"\n        },\n        \"legendOpen\": true\n      }\n    },\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 45,\n      \"w\": 32,\n      \"h\": 18,\n      \"i\": \"8\"\n    },\n    \"id\": \"05f912c0-9679-11ea-8281-c55c6c0bef9d\",\n    \"panelIndex\": \"8\",\n    \"title\": \"Car registrations by country and fuel type\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.3\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 63,\n      \"w\": 48,\n      \"h\": 12,\n      \"i\": \"10\"\n    },\n    \"id\": \"1226e610-7fec-11ea-91cc-f57bdf5fafda\",\n    \"panelIndex\": \"10\",\n    \"title\": \"\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.3\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 32,\n      \"y\": 29,\n      \"w\": 16,\n      \"h\": 16,\n      \"i\": \"15\"\n    },\n    \"id\": \"f91bc4d0-9678-11ea-8281-c55c6c0bef9d\",\n    \"panelIndex\": \"15\",\n    \"title\": \"Avg emissions (gCO2/km) by engine power\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.8\"\n  },\n  {\n    \"embeddableConfig\": {\n      \"vis\": {\n        \"colors\": {\n          \"Avg NECD Emissions (gCO2/km)\": \"#64B0C8\"\n        },\n        \"legendOpen\": false\n      }\n    },\n    \"gridData\": {\n      \"x\": 23,\n      \"y\": 11,\n      \"w\": 25,\n      \"h\": 15,\n      \"i\": \"16\"\n    },\n    \"id\": \"c684df20-9678-11ea-8281-c55c6c0bef9d\",\n    \"panelIndex\": \"16\",\n    \"title\": \"Avg emissions by fuel type (gCO2/km) - NEDC\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.8\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 16,\n      \"y\": 29,\n      \"w\": 16,\n      \"h\": 16,\n      \"i\": \"18\"\n    },\n    \"id\": \"ee345370-9678-11ea-8281-c55c6c0bef9d\",\n    \"panelIndex\": \"18\",\n    \"title\": \"Avg emissions (gCO2/km) by car mass\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.8\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 29,\n      \"w\": 16,\n      \"h\": 16,\n      \"i\": \"20\"\n    },\n    \"id\": \"e1876450-9678-11ea-8281-c55c6c0bef9d\",\n    \"panelIndex\": \"20\",\n    \"title\": \"Avg emissions (gCO2/km) by engine capacity\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.8\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 26,\n      \"w\": 48,\n      \"h\": 3,\n      \"i\": \"22\"\n    },\n    \"id\": \"ab443df0-8ec1-11ea-8281-c55c6c0bef9d\",\n    \"panelIndex\": \"22\",\n    \"title\": \"\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.8\"\n  },\n  {\n    \"gridData\": {\n      \"x\": 32,\n      \"y\": 45,\n      \"w\": 16,\n      \"h\": 18,\n      \"i\": \"23\"\n    },\n    \"version\": \"6.8.8\",\n    \"panelIndex\": \"23\",\n    \"type\": \"visualization\",\n    \"id\": \"1003dfc0-9679-11ea-8281-c55c6c0bef9d\",\n    \"embeddableConfig\": {\n      \"vis\": {\n        \"colors\": {\n          \"unknown\": \"#052B51\",\n          \"Number of registrations\": \"#65C5DB\",\n          \"diesel\": \"#5195CE\",\n          \"e85\": \"#508642\",\n          \"electric\": \"#58140C\",\n          \"hydrogen\": \"#447EBC\",\n          \"lpg\": \"#2F575E\",\n          \"ng\": \"#CCA300\",\n          \"petrol\": \"#65C5DB\",\n          \"petrol/electric\": \"#99440A\"\n        }\n      }\n    },\n    \"title\": \"Car registrations by fuel type\"\n  },\n  {\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 0,\n      \"w\": 48,\n      \"h\": 4,\n      \"i\": \"24\"\n    },\n    \"version\": \"6.8.8\",\n    \"panelIndex\": \"24\",\n    \"type\": \"visualization\",\n    \"id\": \"0a036cc0-a435-11ea-873f-eb83d6861ff1\",\n    \"embeddableConfig\": {},\n    \"title\": \"\"\n  },\n  {\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 4,\n      \"w\": 13,\n      \"h\": 7,\n      \"i\": \"25\"\n    },\n    \"version\": \"6.8.8\",\n    \"panelIndex\": \"25\",\n    \"type\": \"visualization\",\n    \"id\": \"e3bfd290-a436-11ea-873f-eb83d6861ff1\",\n    \"embeddableConfig\": {},\n    \"title\": \"Note\"\n  }\n]",
+      "panelsJSON": "[\n  {\n    \"embeddableConfig\": {\n      \"vis\": {\n        \"colors\": {\n          \"NEDC\": \"#3F6833\",\n          \"NEDC CO2 emissions\": \"#64B0C8\",\n          \"WLTP\": \"#0A437C\",\n          \"WLTP CO2 emissions\": \"#052B51\"\n        },\n        \"legendOpen\": false\n      }\n    },\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 11,\n      \"w\": 23,\n      \"h\": 15,\n      \"i\": \"1\"\n    },\n    \"id\": \"4c10a420-b533-11ea-964c-ef027af40d2e\",\n    \"panelIndex\": \"1\",\n    \"title\": \"Avg emissions by country (gCO2/km) - NEDC\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.3\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 13,\n      \"y\": 4,\n      \"w\": 35,\n      \"h\": 7,\n      \"i\": \"2\"\n    },\n    \"id\": \"b03a90e0-b52f-11ea-964c-ef027af40d2e\",\n    \"panelIndex\": \"2\",\n    \"title\": \"\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.3\"\n  },\n  {\n    \"embeddableConfig\": {\n      \"vis\": {\n        \"colors\": {\n          \"unknown\": \"#052B51\",\n          \"Number of registrations\": \"#65C5DB\",\n          \"diesel\": \"#5195CE\",\n          \"e85\": \"#508642\",\n          \"electric\": \"#58140C\",\n          \"hydrogen\": \"#447EBC\",\n          \"lpg\": \"#2F575E\",\n          \"ng\": \"#CCA300\",\n          \"petrol\": \"#65C5DB\",\n          \"petrol/electric\": \"#99440A\"\n        },\n        \"legendOpen\": true\n      }\n    },\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 45,\n      \"w\": 32,\n      \"h\": 18,\n      \"i\": \"8\"\n    },\n    \"id\": \"a0dd9160-b539-11ea-964c-ef027af40d2e\",\n    \"panelIndex\": \"8\",\n    \"title\": \"Car registrations by country and fuel type\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.3\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 63,\n      \"w\": 48,\n      \"h\": 12,\n      \"i\": \"10\"\n    },\n    \"id\": \"71206320-b53a-11ea-964c-ef027af40d2e\",\n    \"panelIndex\": \"10\",\n    \"title\": \"\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.3\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 32,\n      \"y\": 29,\n      \"w\": 16,\n      \"h\": 16,\n      \"i\": \"15\"\n    },\n    \"id\": \"550cf510-b538-11ea-964c-ef027af40d2e\",\n    \"panelIndex\": \"15\",\n    \"title\": \"Avg emissions (gCO2/km) by engine power\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.8\"\n  },\n  {\n    \"embeddableConfig\": {\n      \"vis\": {\n        \"colors\": {\n          \"Avg NECD Emissions (gCO2/km)\": \"#64B0C8\"\n        },\n        \"legendOpen\": false\n      }\n    },\n    \"gridData\": {\n      \"x\": 23,\n      \"y\": 11,\n      \"w\": 25,\n      \"h\": 15,\n      \"i\": \"16\"\n    },\n    \"id\": \"423316c0-b535-11ea-964c-ef027af40d2e\",\n    \"panelIndex\": \"16\",\n    \"title\": \"Avg emissions by fuel type (gCO2/km) - NEDC\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.8\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 16,\n      \"y\": 29,\n      \"w\": 16,\n      \"h\": 16,\n      \"i\": \"18\"\n    },\n    \"id\": \"290f5c50-b538-11ea-964c-ef027af40d2e\",\n    \"panelIndex\": \"18\",\n    \"title\": \"Avg emissions (gCO2/km) by car mass\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.8\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 29,\n      \"w\": 16,\n      \"h\": 16,\n      \"i\": \"20\"\n    },\n    \"id\": \"e629a8a0-b537-11ea-964c-ef027af40d2e\",\n    \"panelIndex\": \"20\",\n    \"title\": \"Avg emissions (gCO2/km) by engine capacity\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.8\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 26,\n      \"w\": 48,\n      \"h\": 3,\n      \"i\": \"22\"\n    },\n    \"id\": \"d0d22ab0-b535-11ea-964c-ef027af40d2e\",\n    \"panelIndex\": \"22\",\n    \"title\": \"\",\n    \"type\": \"visualization\",\n    \"version\": \"6.8.8\"\n  },\n  {\n    \"gridData\": {\n      \"x\": 32,\n      \"y\": 45,\n      \"w\": 16,\n      \"h\": 18,\n      \"i\": \"23\"\n    },\n    \"version\": \"6.8.8\",\n    \"panelIndex\": \"23\",\n    \"type\": \"visualization\",\n    \"id\": \"044a4bd0-b53a-11ea-964c-ef027af40d2e\",\n    \"embeddableConfig\": {\n      \"vis\": {\n        \"colors\": {\n          \"unknown\": \"#052B51\",\n          \"Number of registrations\": \"#65C5DB\",\n          \"diesel\": \"#5195CE\",\n          \"e85\": \"#508642\",\n          \"electric\": \"#58140C\",\n          \"hydrogen\": \"#447EBC\",\n          \"lpg\": \"#2F575E\",\n          \"ng\": \"#CCA300\",\n          \"petrol\": \"#65C5DB\",\n          \"petrol/electric\": \"#99440A\"\n        }\n      }\n    },\n    \"title\": \"Car registrations by fuel type\"\n  },\n  {\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 0,\n      \"w\": 48,\n      \"h\": 4,\n      \"i\": \"24\"\n    },\n    \"version\": \"6.8.8\",\n    \"panelIndex\": \"24\",\n    \"type\": \"visualization\",\n    \"id\": \"5e639d00-b527-11ea-964c-ef027af40d2e\",\n    \"embeddableConfig\": {},\n    \"title\": \"\"\n  },\n  {\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 4,\n      \"w\": 13,\n      \"h\": 7,\n      \"i\": \"25\"\n    },\n    \"version\": \"6.8.8\",\n    \"panelIndex\": \"25\",\n    \"type\": \"visualization\",\n    \"id\": \"34011d00-b52f-11ea-964c-ef027af40d2e\",\n    \"embeddableConfig\": {},\n    \"title\": \"Note\"\n  }\n]",
       "optionsJSON": "{\n  \"darkTheme\": false,\n  \"hidePanelTitles\": false,\n  \"useMargins\": true\n}",
       "version": 1,
       "timeRestore": true,
@@ -1434,6 +1585,163 @@
     },
     "_meta": {
       "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "71206320-b53a-11ea-964c-ef027af40d2e",
+    "_type": "visualization",
+    "_source": {
+      "title": "co2cars_2019_provisional_Note",
+      "visState": "{\n  \"title\": \"co2cars_2019_provisional_Note\",\n  \"type\": \"markdown\",\n  \"params\": {\n    \"fontSize\": 9,\n    \"openLinksInNewTab\": true,\n    \"markdown\": \"### What data is included?\\n\\nThe Regulation (EU) No 631/2019 requires countries (EU Member states, UK, Iceland and Norway) to record information for each new passenger car registered in its territory. Every year, each country shall submit to the Commission all the information related to their new registration. In particular, the following details are required for each new passenger car registered: manufacturer name , specific emissions of CO2 and mass in running order. Additional information, such as fuel type, engine capacity and engine power are also submitted. **This dashboard displays only provisional data of new cars registered in 2019 across EU-27, UK, Iceland and Norway**. Previous years' data is only available in the [table explorer](http://co2cars.apps.eea.europa.eu#first-tab).\\n\\n### Why there are two emissions methods: NEDC and WLTP?\\n\\nAccording to EU legislation, vehicles must be tested to verify that they comply with the required environmental, climate, safety and security standards. To check that vehicles meet the official requirements for CO2 emissions, standardised measurements in laboratories are used. The results of these tests are the so-called 'type approval' emissions.\\n\\nUntil September 2017, these tests were based on the New European Driving Cycle (NEDC). Since then, the Worldwide Harmonised Light Vehicle Test Procedure (WLTP) applies as the new type approval test procedure. The WLTP was developed to be more representative of real world driving conditions. From 2021 onwards, the WLTP will replace fully the NEDC for the purpose of the CO2 emission standards.\"\n  },\n  \"aggs\": []\n}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"kuery\"\n  },\n  \"filter\": []\n}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    },
+    "_migrationVersion": {
+      "visualization": "6.7.2"
+    }
+  },
+  {
+    "_id": "a0dd9160-b539-11ea-964c-ef027af40d2e",
+    "_type": "visualization",
+    "_source": {
+      "title": "co2cars_2019_provisional_registrations",
+      "visState": "{\n  \"title\": \"co2cars_2019_provisional_registrations\",\n  \"type\": \"horizontal_bar\",\n  \"params\": {\n    \"type\": \"histogram\",\n    \"grid\": {\n      \"categoryLines\": false,\n      \"style\": {\n        \"color\": \"#eee\"\n      }\n    },\n    \"categoryAxes\": [\n      {\n        \"id\": \"CategoryAxis-1\",\n        \"type\": \"category\",\n        \"position\": \"left\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 0,\n          \"filter\": false,\n          \"truncate\": 200\n        },\n        \"title\": {}\n      }\n    ],\n    \"valueAxes\": [\n      {\n        \"id\": \"ValueAxis-1\",\n        \"name\": \"BottomAxis-1\",\n        \"type\": \"value\",\n        \"position\": \"bottom\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\",\n          \"mode\": \"normal\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 75,\n          \"filter\": true,\n          \"truncate\": 100\n        },\n        \"title\": {\n          \"text\": \"\"\n        }\n      }\n    ],\n    \"seriesParams\": [\n      {\n        \"show\": true,\n        \"type\": \"histogram\",\n        \"mode\": \"stacked\",\n        \"data\": {\n          \"label\": \"Number of registrations\",\n          \"id\": \"1\"\n        },\n        \"valueAxis\": \"ValueAxis-1\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true\n      }\n    ],\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"legendPosition\": \"bottom\",\n    \"times\": [],\n    \"addTimeMarker\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"sum\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"r\",\n        \"customLabel\": \"Number of registrations\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"MS\",\n        \"size\": 100,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"otherBucket\": false,\n        \"otherBucketLabel\": \"Other\",\n        \"missingBucket\": false,\n        \"missingBucketLabel\": \"Missing\",\n        \"customLabel\": \"Countries\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"FtTrim\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"otherBucket\": true,\n        \"otherBucketLabel\": \"Other\",\n        \"missingBucket\": false,\n        \"missingBucketLabel\": \"Missing\"\n      }\n    }\n  ]\n}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "db573f80-b52f-11ea-964c-ef027af40d2e",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"kuery\"\n  },\n  \"filter\": []\n}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    },
+    "_migrationVersion": {
+      "visualization": "6.7.2"
+    }
+  },
+  {
+    "_id": "550cf510-b538-11ea-964c-ef027af40d2e",
+    "_type": "visualization",
+    "_source": {
+      "title": "vega-scaterplot_2019_provisional enedc-kw - v2",
+      "visState": "{\"title\":\"vega-scaterplot_2019_provisional enedc-kw - v2\",\"type\":\"vega\",\"params\":{\"spec\":\"{\\n  \\\"$schema\\\": \\\"https://vega.github.io/schema/vega-lite/v2.json\\\",\\n  \\\"title\\\": \\\"\\\",\\n  \\\"data\\\": {\\n    \\\"url\\\": {\\n      \\\"%context%\\\": true,\\n      \\\"%timefield%\\\": \\\"date\\\",\\n      \\\"index\\\": \\\"co2_passenger_cars_2019_provisional_prod\\\",\\n      \\\"body\\\": {\\n        \\\"aggs\\\": {\\n          \\\"full_enedc\\\": {\\n            \\\"terms\\\": {\\\"field\\\": \\\"MS\\\", \\\"size\\\": 100},\\n            \\\"aggs\\\": {\\n              \\\"enedc\\\": {\\n                \\\"avg\\\": {\\\"field\\\": \\\"Enedc__g_km_\\\"}\\n              },\\n              \\\"kw\\\": {\\\"avg\\\": {\\\"field\\\": \\\"ep__KW_\\\"}},\\n              \\\"mass\\\": {\\\"avg\\\": {\\\"field\\\": \\\"m__kg_\\\"}},\\n              \\\"cm3\\\": {\\\"avg\\\": {\\\"field\\\": \\\"ec__cm3_\\\"}}\\n            }\\n          }\\n          \\n        },\\n        \\\"size\\\": 10\\n      }\\n    },\\n    \\\"format\\\": {\\\"property\\\": \\\"aggregations.full_enedc.buckets\\\"}\\n  },\\n  \\\"layer\\\": [\\n    {\\n    selection: {\\n           \\n            grid: {type: \\\"interval\\\", bind: \\\"scales\\\"}\\n          }\\n      \\\"mark\\\": {\\\"type\\\": \\\"point\\\", \\\"filled\\\": true},\\n      \\\"encoding\\\": {\\n        \\\"x\\\": {\\n          \\\"field\\\": \\\"kw.value\\\",\\n          \\\"type\\\": \\\"quantitative\\\",\\n          \\\"axis\\\": {\\\"title\\\": \\\"Avg engine power (kw)\\\", \\\"grid\\\": false}\\n          \\\"scale\\\": {\\\"zero\\\": false}\\n        },\\n        \\\"y\\\": {\\n          \\\"field\\\": \\\"enedc.value\\\",\\n          \\\"type\\\": \\\"quantitative\\\",\\n          \\\"axis\\\": {\\\"title\\\": \\\"\\\",\\\"grid\\\": false}\\n          \\\"scale\\\": {\\\"zero\\\": false}\\n          \\n        },\\n        \\\"tooltip\\\": [{\\n          \\\"field\\\": \\\"key\\\"\\n        }\\n        {\\n          \\\"field\\\": \\\"enedc.value\\\" , type: \\\"quantitative\\\" \\n        }\\n        ] \\n        \\\"color\\\":{value:\\\"#58797F\\\"}\\n      }\\n    }\\n    {\\n      \\\"mark\\\": {\\\"type\\\": \\\"text\\\", \\\"filled\\\": true, \\\"dy\\\": -5},\\n      \\\"encoding\\\": {\\n        \\\"x\\\": {\\n          \\\"field\\\": \\\"kw.value\\\",\\n          \\\"type\\\": \\\"quantitative\\\",\\n          \\\"axis\\\": {\\\"grid\\\": false}\\n          \\\"scale\\\": {\\\"zero\\\": false}\\n          \\n        },\\n        \\\"y\\\": {\\n          \\\"field\\\": \\\"enedc.value\\\",\\n          \\\"type\\\": \\\"quantitative\\\",\\n          \\\"axis\\\": {\\\"grid\\\": false}\\n          \\\"scale\\\": {\\\"zero\\\": false}\\n        },\\n        \\\"color\\\":{value:\\\"#58797F\\\"}\\n        \\\"tooltip\\\": [{\\n          \\\"field\\\": \\\"key\\\"\\n        }\\n        {\\n          \\\"field\\\": \\\"enedc.value\\\", type: \\\"quantitative\\\"\\n        }\\n        ] \\n        \\\"text\\\": {\\\"field\\\": \\\"key\\\", \\\"type\\\": \\\"nominal\\\"}\\n      }\\n    }\\n\\n  ],\\n  \\\"size\\\": 0\\n  config: {\\n    axis: {titleColor: \\\"#69707D\\\", titleFont: \\\"Open Sans\\\",labelColor: \\\"#69707D\\\", labelFont: \\\"Open Sans\\\", \\\"titleFontSize\\\":12}\\n  }\\n}\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    },
+    "_migrationVersion": {
+      "visualization": "6.7.2"
+    }
+  },
+  {
+    "_id": "290f5c50-b538-11ea-964c-ef027af40d2e",
+    "_type": "visualization",
+    "_source": {
+      "title": "vega-scaterplot_2019_provisional enedc-mass - v2",
+      "visState": "{\"title\":\"vega-scaterplot_2019_provisional enedc-mass - v2\",\"type\":\"vega\",\"params\":{\"spec\":\"{\\n  \\\"$schema\\\": \\\"https://vega.github.io/schema/vega-lite/v2.json\\\",\\n  \\\"title\\\": \\\"\\\",\\n  \\\"data\\\": {\\n    \\\"url\\\": {\\n      \\\"%context%\\\": true,\\n      \\\"%timefield%\\\": \\\"date\\\",\\n      \\\"index\\\": \\\"co2_passenger_cars_2019_provisional_prod\\\",\\n      \\\"body\\\": {\\n        \\\"aggs\\\": {\\n          \\\"full_enedc\\\": {\\n            \\\"terms\\\": {\\\"field\\\": \\\"MS\\\", \\\"size\\\": 100},\\n            \\\"aggs\\\": {\\n              \\\"enedc\\\": {\\n                \\\"avg\\\": {\\\"field\\\": \\\"Enedc__g_km_\\\"}\\n              },\\n              \\\"kw\\\": {\\\"avg\\\": {\\\"field\\\": \\\"ep__KW_\\\"}},\\n              \\\"mass\\\": {\\\"avg\\\": {\\\"field\\\": \\\"m__kg_\\\"}},\\n              \\\"cm3\\\": {\\\"avg\\\": {\\\"field\\\": \\\"ec__cm3_\\\"}}\\n            }\\n          }\\n          \\n        },\\n        \\\"size\\\": 10\\n      }\\n    },\\n    \\\"format\\\": {\\\"property\\\": \\\"aggregations.full_enedc.buckets\\\"}\\n  },\\n  \\\"layer\\\": [\\n    {\\n    selection: {\\n           \\n            grid: {type: \\\"interval\\\", bind: \\\"scales\\\"}\\n          }\\n      \\\"mark\\\": {\\\"type\\\": \\\"point\\\", \\\"filled\\\": true},\\n      \\\"encoding\\\": {\\n        \\\"x\\\": {\\n          \\\"field\\\": \\\"mass.value\\\",\\n          \\\"type\\\": \\\"quantitative\\\",\\n          \\\"axis\\\": {\\\"title\\\": \\\"Avg mass (kg)\\\", \\\"grid\\\": false}\\n          \\\"scale\\\": {\\\"zero\\\": false}\\n        },\\n        \\\"y\\\": {\\n          \\\"field\\\": \\\"enedc.value\\\",\\n          \\\"type\\\": \\\"quantitative\\\",\\n          \\\"axis\\\": {\\\"title\\\": \\\"\\\", \\\"grid\\\": false}\\n          \\\"scale\\\": {\\\"zero\\\": false}\\n          \\n        },\\n        \\\"tooltip\\\": [{\\n          \\\"field\\\": \\\"key\\\"\\n        }\\n        {\\n          \\\"field\\\": \\\"enedc.value\\\" , type: \\\"quantitative\\\" \\n        }\\n        ] \\n        \\\"color\\\":{value:\\\"#58797F\\\"}\\n      }\\n    }\\n    {\\n      \\\"mark\\\": {\\\"type\\\": \\\"text\\\", \\\"filled\\\": true, \\\"dy\\\": -5},\\n      \\\"encoding\\\": {\\n        \\\"x\\\": {\\n          \\\"field\\\": \\\"mass.value\\\",\\n          \\\"type\\\": \\\"quantitative\\\",\\n          \\\"axis\\\": { \\\"grid\\\": false}\\n          \\\"scale\\\": {\\\"zero\\\": false}\\n          \\n        },\\n        \\\"y\\\": {\\n          \\\"field\\\": \\\"enedc.value\\\",\\n          \\\"type\\\": \\\"quantitative\\\",\\n          \\\"axis\\\": {\\\"title\\\": \\\"\\\", \\\"grid\\\": false}\\n          \\\"scale\\\": {\\\"zero\\\": false}\\n        },\\n        \\\"color\\\":{value:\\\"#58797F\\\"}\\n        \\\"tooltip\\\": [{\\n          \\\"field\\\": \\\"key\\\"\\n        }\\n        {\\n          \\\"field\\\": \\\"enedc.value\\\", type: \\\"quantitative\\\"\\n        }\\n        ] \\n        \\\"text\\\": {\\\"field\\\": \\\"key\\\", \\\"type\\\": \\\"nominal\\\"}\\n      }\\n    }\\n\\n  ],\\n  \\\"size\\\": 0\\n  config: {\\n    axis: {titleColor: \\\"#69707D\\\", titleFont: \\\"Open Sans\\\",labelColor: \\\"#69707D\\\", labelFont: \\\"Open Sans\\\", \\\"titleFontSize\\\":12}\\n  }\\n}\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    },
+    "_migrationVersion": {
+      "visualization": "6.7.2"
+    }
+  },
+  {
+    "_id": "e629a8a0-b537-11ea-964c-ef027af40d2e",
+    "_type": "visualization",
+    "_source": {
+      "title": "vega-scaterplot_2019_provisional enedc-cm3 - v2",
+      "visState": "{\"title\":\"vega-scaterplot_2019_provisional enedc-cm3 - v2\",\"type\":\"vega\",\"params\":{\"spec\":\"{\\n  $schema: https://vega.github.io/schema/vega-lite/v2.json\\n  title: \\\"\\\"\\n  data: {\\n    url: {\\n      %context%: true\\n      %timefield%: date\\n      index: co2_passenger_cars_2019_provisional_prod\\n      body: {\\n        aggs: {\\n          full_enedc: {\\n            terms: {field: \\\"MS\\\", size: 100}\\n            aggs: {\\n              enedc: {\\n                avg: {field: \\\"Enedc__g_km_\\\"}\\n              }\\n              kw: {\\n                avg: {field: \\\"ep__KW_\\\"}\\n              }\\n              mass: {\\n                avg: {field: \\\"m__kg_\\\"}\\n              }\\n              cm3: {\\n                avg: {field: \\\"ec__cm3_\\\"}\\n              }\\n            }\\n          }\\n        }\\n        size: 10\\n      }\\n    }\\n    format: {property: \\\"aggregations.full_enedc.buckets\\\"}\\n  }\\n  layer: [\\n    {\\n      selection: {\\n        grid: {type: \\\"interval\\\", bind: \\\"scales\\\"}\\n      }\\n      mark: {type: \\\"point\\\", filled: true}\\n      encoding: {\\n        x: {\\n          field: cm3.value\\n          type: quantitative\\n          axis: {title: \\\"Avg engine capacity (cm3)\\\", grid: false}\\n          scale: {zero: false}\\n        }\\n        y: {\\n          field: enedc.value\\n          type: quantitative\\n          axis: {title: \\\"\\\", grid: false}\\n          scale: {zero: false}\\n        }\\n        tooltip: [\\n          {field: \\\"key\\\"}\\n          {field: \\\"enedc.value\\\", type: \\\"quantitative\\\"}\\n        ]\\n        color: {value: \\\"#58797F\\\"}\\n      }\\n    }\\n    {\\n      mark: {type: \\\"text\\\", filled: true, dy: -5}\\n      encoding: {\\n        x: {\\n          field: cm3.value\\n          type: quantitative\\n          axis: {grid: false}\\n          scale: {zero: false}\\n        }\\n        y: {\\n          field: enedc.value\\n          type: quantitative\\n          axis: {grid: false}\\n          scale: {zero: false}\\n        }\\n        color: {value: \\\"#58797F\\\"}\\n        tooltip: [\\n          {field: \\\"key\\\"}\\n          {field: \\\"enedc.value\\\", type: \\\"quantitative\\\"}\\n        ]\\n        text: {field: \\\"key\\\", type: \\\"nominal\\\"}\\n      }\\n    }\\n  ]\\n  size: 0\\n  config: {\\n    axis: {titleColor: \\\"#69707D\\\", titleFont: \\\"Open Sans\\\",labelColor: \\\"#69707D\\\", labelFont: \\\"Open Sans\\\", \\\"titleFontSize\\\":12}\\n  }\\n}\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    },
+    "_migrationVersion": {
+      "visualization": "6.7.2"
+    }
+  },
+  {
+    "_id": "044a4bd0-b53a-11ea-964c-ef027af40d2e",
+    "_type": "visualization",
+    "_source": {
+      "title": "co2cars_2019_provisional_fuel_type",
+      "visState": "{\n  \"title\": \"co2cars_2019_provisional_fuel_type\",\n  \"type\": \"pie\",\n  \"params\": {\n    \"addLegend\": true,\n    \"addTooltip\": true,\n    \"isDonut\": true,\n    \"labels\": {\n      \"last_level\": true,\n      \"show\": false,\n      \"truncate\": 1000,\n      \"values\": true\n    },\n    \"legendPosition\": \"bottom\",\n    \"type\": \"pie\"\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"FtTrim\",\n        \"size\": 1000,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"otherBucket\": false,\n        \"otherBucketLabel\": \"Other\",\n        \"missingBucket\": false,\n        \"missingBucketLabel\": \"Missing\"\n      }\n    }\n  ]\n}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "db573f80-b52f-11ea-964c-ef027af40d2e",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"query\": {\n    \"language\": \"lucene\",\n    \"query\": \"\"\n  },\n  \"filter\": []\n}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    },
+    "_migrationVersion": {
+      "visualization": "6.7.2"
+    }
+  },
+  {
+    "_id": "34011d00-b52f-11ea-964c-ef027af40d2e",
+    "_type": "visualization",
+    "_source": {
+      "title": "co2cars_2019_provisional_Small note",
+      "visState": "{\n  \"title\": \"co2cars_2019_provisional_Small note\",\n  \"type\": \"markdown\",\n  \"params\": {\n    \"fontSize\": 12,\n    \"openLinksInNewTab\": false,\n    \"markdown\": \"**This dashboard displays provisional data of new passenger cars registered in 2019 across EU-27, UK, Iceland and Norway.** Previous years' data is only available in the *data table explorer*.\"\n  },\n  \"aggs\": []\n}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"lucene\"\n  },\n  \"filter\": []\n}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    },
+    "_migrationVersion": {
+      "visualization": "6.7.2"
+    }
+  },
+  {
+    "_id": "db5ab100-b526-11ea-964c-ef027af40d2e",
+    "_type": "index-pattern",
+    "_source": {
+      "title": "co2_passenger_cars_2019_provisional_prod",
+      "fields": "[{\"name\":\"At1__mm_\",\"type\":\"number\",\"count\":2,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"At2__mm_\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"Cn\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"Cr\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"Ct\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"De\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"Enedc__g_km_\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"Ernedc__g_km_\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"Erwltp__g_km_\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"Ewltp__g_km_\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"Fm\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"Ft\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"FtTrim\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"ID\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"It\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"MMS\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"MS\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"Man\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"Mh\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"Mk\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"Mp\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"Mt\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"Status\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"T\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"TAN\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"VFN\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"Va\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"Ve\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"Vf\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"W__mm_\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"Y\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"_id\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_index\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_score\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_source\",\"type\":\"_source\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"all_fields_for_freetext\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"autocomplete\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"date\",\"type\":\"date\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"did_you_mean\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"ec__cm3_\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"ep__KW_\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"m__kg_\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"r\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"scStatus\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"uid\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"uid.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"version_file\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"version_file.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"year\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"z__Wh_km_\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true}]",
+      "fieldFormatMap": "{\"Enedc__g_km_\":{\"id\":\"number\",\"params\":{\"pattern\":\"0.0\"}},\"Ernedc__g_km_\":{\"id\":\"number\",\"params\":{\"pattern\":\"0.[000]\"}},\"Erwltp__g_km_\":{\"id\":\"number\",\"params\":{\"pattern\":\"0.[000]\"}},\"Ewltp__g_km_\":{\"id\":\"number\",\"params\":{\"pattern\":\"0.0\"}},\"ec__cm3_\":{\"id\":\"number\",\"params\":{\"pattern\":\"0\"}},\"ep__KW_\":{\"id\":\"number\",\"params\":{\"pattern\":\"0\"}},\"m__kg_\":{\"id\":\"number\",\"params\":{\"pattern\":\"0\"}},\"r\":{\"id\":\"number\",\"params\":{\"pattern\":\"0\"}},\"year\":{\"id\":\"number\",\"params\":{\"pattern\":\"0\"}}}"
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    },
+    "_migrationVersion": {
+      "index-pattern": "6.5.0"
     }
   }
 ]
