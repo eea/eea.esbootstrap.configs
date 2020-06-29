@@ -307,3 +307,6 @@
     }
 }
 
+.span9 .facetview_download {
+    display:none;
+}
