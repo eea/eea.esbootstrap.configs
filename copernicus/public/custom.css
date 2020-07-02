@@ -240,6 +240,10 @@ div.visualization-date,
     display: none;
 }
 
+div.right-column-area h3.filters-header-title {
+    display: none;
+}
+
 .facet-view-simple {
     margin-top: 2em;
 }
