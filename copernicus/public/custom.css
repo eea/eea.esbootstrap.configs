@@ -231,7 +231,7 @@ div.visualization-date,
   display: none !important;
 }
 
-#facetview_results_wrapper .eea-tiles .eea-tileHeadMetadata {
+#facetview_results_wrapper .eea-tiles .eea-tileHeadMetadata,
 div.right-column-area h3.filters-header-title {
   display: none;
 }
