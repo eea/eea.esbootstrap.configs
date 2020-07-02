@@ -51,7 +51,12 @@ div.tileItem.ribbon-parent {
   color: #1E1E1E;
 }
 
+.facetedview_search input {
+  border-radius: initial;
+}
+
 .facetedview_search .eea-icon-search {
+  color: gray !important;
   left: 1px;
 }
 
