@@ -2632,3 +2632,7 @@ div.facetedview_search span.eea-icon.eea-icon-search.eea-icon-2x {
   position: absolute;
   top: 8px;
 }
+
+div#facetview_rightcol {
+  margin-top: 0px;
+}
