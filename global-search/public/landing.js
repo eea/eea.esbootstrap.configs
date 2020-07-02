@@ -100,3 +100,12 @@ function adjustTileSize(){
 $( window ).resize(function() {
     adjustTileSize();
 });
+
+$(window).on("results_ready", function (event){
+    if ($("#facetview_results_wrapper").is(":visible")){
+        $(".span9 .facetview_download").show();
+    }
+    else {
+        $(".span9 .facetview_download").hide();
+    }
+});
