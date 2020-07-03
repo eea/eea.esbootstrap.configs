@@ -38,12 +38,19 @@ div.tileItem.ribbon-parent {
   color: #A0B228;
 }
 
-.eea-tile a {
+#content .eea-accordion-panels .eea-accordion-panel > h2 {
   color: #A0B228 !important;
 }
 
+#facetview_trees .jstree-clicked .jstree-checkbox:before,
+#facetview_trees .jstree-clicked .jstree-checkbox,
 .eea-tileTitle {
   color: #1E1E1E;
+}
+
+#content #facetview_trees .jstree-node.selected .jstree-anchor .facet_label_count,
+#content .facetview_tree a {
+  color: #1E1E1E !important;
 }
 
 .facetedview_search input.facetview_freetext {
