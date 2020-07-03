@@ -306,6 +306,7 @@ function checkSimplifiedViewMode() {
     }
     $("#facetview_results_wrapper").show();
     $(".facetview_metadata").show();
+    $(".facetview_download .eea_download_btn").show();
   }
 }
 
