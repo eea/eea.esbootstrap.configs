@@ -282,6 +282,7 @@ function setSimplifiedViewMode() {
   $(".facetview_top").hide();
   $("#facetview_results_wrapper").hide();
   $(".facetview_metadata").hide();
+  $(".facetview_download .eea_download_btn").hide();
 }
 
 function checkSimplifiedViewMode() {

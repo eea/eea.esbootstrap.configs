@@ -75,9 +75,13 @@ div.tileItem.ribbon-parent {
   border-color: #A0B228;
 }
 
-.facetview_download .eea_download_btn,
 .facetview_display_type .eea-icon.selected {
   color: white;
+}
+
+.facetview_download .eea_download_btn {
+  color: white !important;
+  background-color: #A0B228;
 }
 
 .eea-icon.selected, .facetview_display_type .eea-icon:hover,
