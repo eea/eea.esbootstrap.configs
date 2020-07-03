@@ -101,6 +101,15 @@ div.pagination.paginator.listingBar li a {
   padding-top: 4px;
 }
 
+a.facetview_filterselected.facetview_clear.btn {
+  position: relative;
+  top: 3px;
+}
+
+a.facetview_filterselected.facetview_clear.btn .icon-white.eea-icon.eea-icon-times:before {
+  margin: 0 !important;
+}
+
 .eea-icon.selected, .facetview_display_type .eea-icon:hover,
 #content .eea-accordion-panels .eea-accordion-panel > h2.facetview_open {
   background-color: #A0B228;
