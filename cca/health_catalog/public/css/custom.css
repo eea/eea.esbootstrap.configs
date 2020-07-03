@@ -77,6 +77,20 @@ div#facetview_rightcol {
   float: left !important;
 }
 
+.eea-icon.eea-icon-right {
+    padding-top: 15px !important;
+}
+
 footer {
   margin-top: 40px !important;
 }
+#facetview_article .content-sidebar,
+#facetview_article .content-column
+{
+    border:0px;
+}
+/*
+#facetview_results_wrapper {
+    display:none;
+}
+*/

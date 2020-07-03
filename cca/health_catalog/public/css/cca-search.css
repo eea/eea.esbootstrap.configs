@@ -411,3 +411,11 @@
 .header #main-nav-item-3 .sub-menu:last-child>.sub-menu-item {
   padding-left: 15px
 }
+
+.facetview_display_type .eea-icon,
+.eea-icon.selected,
+.eea-icon:hover,
+{
+    color: unset;
+    background-color: unset;
+}
