@@ -84,6 +84,14 @@ div.tileItem.ribbon-parent {
   background-color: #A0B228;
 }
 
+div.facetview_facetrange_histogram.facetview_rangecontainer input {
+  font-size: 14px;
+}
+
+div.facetview_facetrange_histogram.facetview_rangecontainer .eea-icon-times {
+  display: none;
+}
+
 div.pagination.paginator.listingBar li a {
   border: none !important;
 }
