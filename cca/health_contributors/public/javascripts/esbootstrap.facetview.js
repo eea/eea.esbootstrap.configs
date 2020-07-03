@@ -27,6 +27,7 @@ jQuery(document).ready(function($) {
             replaceNumbers();
             limitString();
             $(window).trigger('post_search_callback');
+            localTest();
         },
         paging: {
             from: 0,
@@ -44,6 +45,9 @@ jQuery(document).ready(function($) {
         opts.highlight_blacklist = eea_mapping.highlights.blacklist;
     }
     eea_facetview('.facet-view-simple', opts);
+    function localTest() {
+        console.log('esbootsrap abcdefg');
+    }
 });
 
 

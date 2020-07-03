@@ -20,8 +20,10 @@ window.esbootstrap_options = {
   display_type: 'card',   // list
   resultModifier: updateResult,
   initialsearch: true,
-  predefined_filters: [{'term': {'hasWorkflowState': 'published'}}],
-  /*predefined_filters : [
+  predefined_filters: [{'term': {'hasWorkflowState': 'published'}}, {'term': {'sectors': 'Health'}}],
+  //predefined_filters: [{'term': [{'hasWorkflowState': 'published'},{'sectors':'Health'}]}],
+  /*
+  predefined_filters : [
         {
             'constant_score': {
                 'filter': {
@@ -29,7 +31,7 @@ window.esbootstrap_options = {
                         'should': [
                             {
                                 'bool': {
-                                    'must_not': {'match': {'typeOfData': 'Indicators'}}
+                                    'must': {'match': {'sectors': 'Health'}}
                                 }
                             },
                             {
@@ -46,7 +48,8 @@ window.esbootstrap_options = {
                 }
             }
         }
-    ],*/
+    ],
+    */
   sort: [{'issued': {'order': 'desc'}}]
   /*
     predefined_filters : [
@@ -159,6 +162,8 @@ function updateContentTypes(element, result){
 }
 
 function updateResult(element, result){
+  $('#facetview_article').addClass('hide');
+  $('#facetview_rightcol').removeClass('hide');
   result = updateContentTypes(element, result);
   return(result);
 }
