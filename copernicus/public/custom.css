@@ -84,6 +84,10 @@ div.tileItem.ribbon-parent {
   background-color: #A0B228;
 }
 
+div.pagination.paginator.listingBar li a {
+  border: none !important;
+}
+
 .eea-icon.selected, .facetview_display_type .eea-icon:hover,
 #content .eea-accordion-panels .eea-accordion-panel > h2.facetview_open {
   background-color: #A0B228;
