@@ -88,6 +88,19 @@ div.pagination.paginator.listingBar li a {
   border: none !important;
 }
 
+#content .current-filters .filters-header h2 {
+  border-radius: none;
+  background-color: #A0B228;
+}
+
+#content .filters-header .current-filters-collapsible .filters-header__header .facetview_arrow_right {
+  margin-top: 0px;
+}
+
+#content .current-filters .filters-header h2 {
+  padding-top: 4px;
+}
+
 .eea-icon.selected, .facetview_display_type .eea-icon:hover,
 #content .eea-accordion-panels .eea-accordion-panel > h2.facetview_open {
   background-color: #A0B228;
