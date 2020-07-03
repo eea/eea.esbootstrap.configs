@@ -56,16 +56,17 @@
         "token": "default"
     },
     "source": {
-        "type": "file",
+        "type": "url",
         "autoswitch": "true",
+        "switch_condition_value_percent": 100,
         "configuration": {
             "type": "csv",
-            "file": "fise.csv",
             "bulksize": 5000,
-            "format": "csv",
-            "encoding": "utf-8",
+            "url": "https://cmshare.eea.europa.eu/s/YZocgSHqKNbT4gn/download?path=/catalogue&files=catalogue.csv",
             "id_type": "field",
-            "id_field": "ID"
+            "id_field": "ID",
+            "data_modifier": "modify.js",
+            "encoding": "utf-8"
         }
     },
     "es_debug_enabled": false,

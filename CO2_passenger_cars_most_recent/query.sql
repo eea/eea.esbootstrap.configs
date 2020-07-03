@@ -1,5 +1,3 @@
-This is just a helper file, please update when the query is changed, so next time when testing/modifying directly on discomap, will be easier
-
 Select
     CONCAT(ID, Status, year) as uid,
     concat(year,iif(status='F','-09','-03'),'-1') as date,
@@ -57,5 +55,12 @@ Select
         )
     ) as FtTrim,
     iif(LOWER(TRIM(status))='f', 'Final', 'Provisional') as scStatus
-from <TABLE> WHERE MS!='M1' and year=2018 and status='f' and ID>=0 and ID<10
+from
+    <TABLE>
+WHERE
+    MS!='M1' and
+    year=2019 and
+    status='p'and
+    ID>=<MIN_ID> and
+    ID<<MAX_ID>
 order by uid

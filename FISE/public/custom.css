@@ -20769,9 +20769,6 @@ html {
 .facetedview_search {
   display: none; }
 
-.facetview_download.filter-by a:first-child {
-  display: none; }
-
 div.content {
   padding: 0 !important;
   margin: 0 !important; }
@@ -21038,6 +21035,59 @@ h3#filters-title {
 .eea-icon-search:before {
   content: "\f002";
   font-family: 'FontAwesome'; }
+
+.filters-header-title {
+  display: none; }
+
+#content .current-filters .filters-header h2 {
+  background: none; }
+
+#content .filters-header .current-filters-collapsible .filters-header__header .facetview_arrow_right {
+  margin-top: 4px; }
+
+#content .status_facetview_selection span, #content .year_facetview_selection span, #content .facetview_selection span {
+  color: #251; }
+
+#content .year_facetview_selection a i, #content .facetview_selection a i {
+  color: #251; }
+
+#facetview_selected_filters .facetview_selected {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#content #facetview_trees .jstree-node.selected .jstree-anchor, #content #facetview_trees .jstree-node.selected .jstree-anchor .facet_label_count {
+  color: #c40; }
+
+#facetview_trees .jstree-clicked .jstree-checkbox:before {
+  color: #251; }
+
+#content .facetview_filter_typeahead .eea-icon-search {
+  color: #251; }
+
+#content div.facetview_filter_typeahead input:focus, #content div.facetview_filter_typeahead input:hover {
+  border-radius: 4px; }
+
+#content .current-filters .eea-reset-filters.clear-all {
+  color: initial !important;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid #eee !important; }
+
+#facetview_rightcol .facetview_metadata .listingBar li.prev a, #facetview_rightcol .facetview_metadata .listingBar li.next a {
+  background: none;
+  color: #303030 !important;
+  border-radius: 0;
+  border: none !important; }
+
+#content .facetview_metadata {
+  float: unset; }
+
+#content #facetview_rightcol .facetview_metadata .listingBar {
+  float: unset; }
+
+#facetview_rightcol .facetview_metadata .listingBar li.active a {
+  color: #c40 !important; }
 
 .ui-widget-overlay {
   background: rgba(0, 0, 0, 0.6);

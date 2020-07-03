@@ -1,0 +1,53 @@
+{
+    "http": {
+        "port": 3000
+    },
+    "elastic": {
+        "index": "co2_passenger_cars_2019_provisional",
+        "type": "resources",
+        "field_base":"",
+        "preload_cache": true
+    },
+    "layout_vars":{
+        "skip_resources_bundling": true,
+        "css_resources": {
+            "index_page": [
+            ],
+            "details_page": [
+            ]
+        },
+        "js_resources": {
+            "index_page": [
+            ],
+            "details_page": [
+            ]
+        }
+
+    },
+    "API":{
+        "token": "default"
+    },
+    "source": {
+        "type": "url",
+        "autoswitch": "true",
+        "configuration": {
+            "type": "json",
+            "subtype": "discodata",
+            "bulksize": 5000,
+
+            "sql": true,
+            "sql_url": "https://discodata.eea.europa.eu/sql",
+            "sql_table": "[CO2Emission].[v1r3].[co2cars]",
+            "query_attr": "query",
+            "query": "query.sql",
+            "query_count": "query_count.sql",
+
+            "discodata_bulksize": 50000,
+            "format": "json",
+            "data_path": "results.*",
+            "encoding": "utf-8",
+            "id_type": "field",
+            "id_field": "uid"
+        }
+    }
+}

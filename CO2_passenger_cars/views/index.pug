@@ -25,31 +25,31 @@ block content
     p!= site_description
     p(class='facets_footer_slot_init')!= facets_footer_slot
     ul(class="tabs")
-        li(class="dashboard-tab")
-            a(href="#dashboard-tab" class="tab-link selected_tab")
-                <i class="eea-icon eea-icon-2x eea-icon-bar-chart" aria-hidden="true"></i>
-                span
-                    | Dashboard
         li(class="explorer-tab")
-            a(href="#explorer-tab" class="tab-link")
+            a(href="#explorer-tab" class="tab-link selected_tab")
                 <i class="eea-icon eea-icon-2x eea-icon-table" aria-hidden="true"></i>
                 span
                     | Data table explorer
+        li(class="dashboard-tab")
+            a(href="#dashboard-tab" class="tab-link")
+                <i class="eea-icon eea-icon-2x eea-icon-bar-chart" aria-hidden="true"></i>
+                span
+                    | Dashboard
     div(class="tabs-content")
-        div(id="dashboard-tab" class="tab-content selected_tab") !{dashboard_src}
-        div(id="explorer-tab" class="tab-content")
+        div(id="explorer-tab" class="tab-content selected_tab")
             .facet-view-simple
+        div(id="dashboard-tab" class="tab-content") !{dashboard_src}
 
 
     +visualization_info (dataprovencance_info_url,dataprovencance_info_text)
-
+    div(class="visualization-info")
+        a(href="https://www.eea.europa.eu/data-and-maps/data/vans-14")= "EEA Data: Monitoring of CO2 emissions from vans – Regulation 510/2011"
+        span  provided by
+        a(href="http://www.eea.europa.eu")  European Environment Agency (EEA)
     div!= further_info
 
     h3 Related content
     ul(style="list-style:square")
      li
       | News: 
-      a(href="https://www.eea.europa.eu/highlights/new-cars-and-vans-sold")= "New cars and vans sold in 2018 more CO2 intensive, final data confirms"
-     li
-      | Publications: 
-      a(href="https://www.eea.europa.eu/publications/co2-emissions-from-cars-and-vans-2018")= "Monitoring CO2 emissions from passenger cars and vans in 2018"
+      a(href="https://www.eea.europa.eu/highlights/average-co2-emissions-from-new-cars-vans-2019")= "Average CO2 emissions from new cars and new vans increased again in 2019"
