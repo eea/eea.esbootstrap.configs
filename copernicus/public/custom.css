@@ -92,6 +92,10 @@ div.facetview_facetrange_histogram.facetview_rangecontainer .eea-icon-times {
   display: none;
 }
 
+div.pagination.paginator.listingBar li.active a {
+  color: #1E1E1E !important;
+}
+
 div.pagination.paginator.listingBar li a {
   border: none !important;
 }
