@@ -39,13 +39,16 @@ jQuery(document).ready(function($) {
   };
   function viewChartMode() {
     if ($('.i18n.eea-icon.tabular.selected').length) {
-      var resutls = $.fn.facetview.options.data;
+        var resutls = $.fn.facetview.options.data;
+      /*
       var content =
         '<div id="articleChart" style="border: 1px solid #000; width: 700px; height: 700px;overflow: hidden;"></div>'
-        +'<script>showChart(getChartTree());</script>';
-        //+'<script>vegaEmbed("#vegaChart", getVegaChart());</script>';
+        +'<script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>'
+        +'<script>console.log("test enter");showChart(getChartTree());</script>';
       $('#facetview_results_wrapper').html(content);
-
+        */
+        $('#facetview_results_wrapper').empty();
+        showChart('facetview_results_wrapper', getChartTree());
     }
   }
   function localArticleView() {
@@ -55,7 +58,7 @@ jQuery(document).ready(function($) {
         $('#facetview_rightcol').removeClass('hide');
         return false;
     });
-    $('#facetview_results_wrapper a.eea-tileInner').click(function(event) {
+    $('#facetview_results_wrapper a.eea-tileInner,a.state-published').click(function(event) {
       event.preventDefault();
       var pathName = $(this)[0].pathname;
       $.get(pathName+'?only_article=1', function(data) {
@@ -138,7 +141,7 @@ function populateChart(response, categories, current, parent = 0) {
     return [response, categories, catPosition];
 }
 
-function showChart(dataArray) {
+function showChart(divId, dataArray) {
     const width = 700;
     const height = 700;
     const x = 20
@@ -151,11 +154,11 @@ function showChart(dataArray) {
     jsonString = JSON.stringify(dataArray);
     const data = JSON.parse(jsonString);
 
-
+console.log(dataArray);
     const root = tree(d3.hierarchy(data).sort((a, b) => d3.ascending(a.name, b.name)));
 
     const svg = d3
-        .select('#articleChart')
+        .select('#'+divId)
         .append("svg")
         .call(d3.zoom().on("zoom", function () {
            svg.attr("transform", d3.event.transform)

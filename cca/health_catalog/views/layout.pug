@@ -45,8 +45,6 @@ html
 
         - var debug_mode = skip_resources_bundling || false
 
-        script(type="text/javascript", src="https://d3js.org/d3.v5.min.js")
-
         if (renderStyles && !debug_mode)
             script
                 include:uglify-js ../public/javascripts/loadcss.js

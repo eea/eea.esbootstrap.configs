@@ -46,6 +46,8 @@
         "javascripts/climateadapt.facetview.js",
         "javascripts/cca.facetview.js",
 
+        "javascripts/d3.v5.min.js",
+
         "javascripts/layoutFix.js"
       ]
     },
