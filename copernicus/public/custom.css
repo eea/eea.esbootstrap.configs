@@ -84,6 +84,11 @@ div.tileItem.ribbon-parent {
   background-color: #A0B228;
 }
 
+.facetview_download .eea_download_btn:hover {
+  text-decoration: none;
+  background-color: #819110;
+}
+
 div.facetview_facetrange_histogram.facetview_rangecontainer input {
   font-size: 14px;
 }
