@@ -89,6 +89,7 @@
     ]
   },
 
+
   "endpoint": "https://semantic.eea.europa.eu/sparql",
   "selected_navigation_tab": "data-and-maps"
 }

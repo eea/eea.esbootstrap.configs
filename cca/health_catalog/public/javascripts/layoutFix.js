@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
     }
   // adjust layout according to "CCA Observatory standard". See
   // https://taskman.eionet.europa.eu/attachments/download/86199/PILOT%20Health%20and%20Climate%20Adaptation%20Observatory_MockUpv4%20cleaned.pdf
-  $('#content').empty().append($('#portal-columns-app'));
+  $('#content').replace($('#portal-columns-app'));
 
   // /*
   $('#facetview_rightcol').prepend("<div class='row'>"
