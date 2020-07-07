@@ -93,6 +93,11 @@ div.facetview_facetrange_histogram.facetview_rangecontainer input {
   font-size: 14px;
 }
 
+div.facetview_facetrange_histogram.facetview_rangecontainer input.facetview_lowrangeval_1 {
+  position: relative;
+  top: -5px;
+}
+
 div.facetview_facetrange_histogram.facetview_rangecontainer .eea-icon-times {
   display: none;
 }
