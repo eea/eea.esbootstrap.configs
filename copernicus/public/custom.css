@@ -89,6 +89,12 @@ div.tileItem.ribbon-parent {
   background-color: #819110;
 }
 
+#content .current-filters .eea-reset-filters.clear-all {
+  background-color:transparent;
+  border:none !important;
+  color:white !important;
+}
+
 div.facetview_facetrange_histogram.facetview_rangecontainer input {
   font-size: 14px;
 }
