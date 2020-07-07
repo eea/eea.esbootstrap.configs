@@ -149,6 +149,10 @@ ul.jstree-container-ul li {
   background-color: white !important;
 }
 
+#content .current-filters .eea-icon-right {
+  width: 35px !important;
+}
+
 .eea-icon.selected, .facetview_display_type .eea-icon:hover,
 #content .eea-accordion-panels .eea-accordion-panel > h2.facetview_open {
   background-color: #A0B228;
