@@ -2698,10 +2698,6 @@ content: "\f1c9";
 .eea-icon-ppt:before {
 content: "\f1c4";
 }
-.eea-accordion-panel > h2 .eea-icon-right:before,
-.eea-accordion-title > .eea-icon-right:before {
-content: "\f053";
-}
 .eea-accordion-panel h2:hover > .eea-icon-right:before,
 .eea-accordion-panel .current > .eea-icon-right:before {
 content: "\f078";
