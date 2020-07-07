@@ -17,9 +17,14 @@ jQuery(document).ready(function($) {
             $.fn.facetview.options.paging.size=1000;
         }
     }
-  // adjust layout according to "CCA Observatory standard". See
-  // https://taskman.eionet.europa.eu/attachments/download/86199/PILOT%20Health%20and%20Climate%20Adaptation%20Observatory_MockUpv4%20cleaned.pdf
-  $('#content').replace($('#portal-columns-app'));
+    // adjust layout according to "CCA Observatory standard". See
+    // https://taskman.eionet.europa.eu/attachments/download/86199/PILOT%20Health%20and%20Climate%20Adaptation%20Observatory_MockUpv4%20cleaned.pdf
+    var checkExist = setInterval(function() {
+        if ($('#content').length) {
+            $('#content').empty().append($('#portal-columns-app'));
+            clearInterval(checkExist);
+        }
+    }, 100);
 
   // /*
   $('#facetview_rightcol').prepend("<div class='row'>"

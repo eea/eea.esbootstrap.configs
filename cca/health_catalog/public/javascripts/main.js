@@ -7,11 +7,13 @@ window.jQuery(document).ready(function($){
 
   $(window).one('results_ready', function() {
     // show and hide remove icon on hovering over added filters
+    /*
     $("#facetview_selected_filters").on("hover", ".facetview_selection", function(){
       $(this).find('i').toggleClass('hidden');
     }, function(){
       $(this).find('i').toggleClass('hidden');
     });
+    */
 
     $('#facetview_rightcol').on('hover', '.eea-tileBody', function() {
       var $this = $(this);
@@ -161,4 +163,3 @@ window.jQuery(document).ready(function($){
 
 
 });
-

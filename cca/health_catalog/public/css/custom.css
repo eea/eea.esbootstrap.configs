@@ -94,3 +94,49 @@ footer {
     display:none;
 }
 */
+/*
+#filterTitle h2{
+    margin-top: -5px;
+}
+*/
+#content .eea-accordion-panels .eea-accordion-panel > h2.facetview_open,
+#content .eea-accordion-panels .eea-accordion-panel > h2.facetview_showtree
+{
+    padding-left:5px;
+}
+#content .filters-header .current-filters-collapsible .filters-header__header .facetview_arrow_right {
+    margin-top: -10px;
+}
+.eea-right-section h3 {
+    display: none;
+}
+/*#facetview_trees {
+    padding-top:100px !important;
+}*/
+#facetview_rightcol {
+    margin-top: -5px;
+}
+#filterDisplayAs .i18n.eea-icon {
+    border:0px;
+    font-size:30px;
+    color:#000;
+    padding:0px;
+}
+#filterDisplayAs .i18n.eea-icon:hover {
+    border:0px;
+    color:#000;
+    background-color: #fff;
+}
+#filterDisplayAs .i18n.eea-icon.selected {
+    background-color: #fff;
+    color:#2d749c;
+}
+.eea-icon.list:before {
+    content: "\f0c9";
+}
+.eea-icon.card:before {
+    content: "\f00a";
+}
+.eea-icon.tabular:before {
+    content: "\f19e";
+}

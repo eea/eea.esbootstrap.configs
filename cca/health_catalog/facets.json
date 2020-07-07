@@ -205,7 +205,7 @@
                     "Research and knowledge projects"],
                 "autocomplete": false,
                 "visible": true,
-                "title": "Type of Data",
+                "title": "Type of item",
                 "pos": 3,
                 "type": "facet",
                 "size": 50,
@@ -318,7 +318,7 @@
                 "title": "Adaptation Elements",
                 "order": "term",
                 "operator": "OR",
-                "visible": true
+                "visible": false
             }
         },
         {
