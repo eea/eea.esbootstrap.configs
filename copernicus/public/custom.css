@@ -136,6 +136,10 @@ div.facetview_display_type.filter-by span {
   top: -1px;
 }
 
+#facetview_trees .jstree-checkbox:before {
+  content: "\f10c";
+}
+
 select.facetview_orderby {
   position: relative;
   top: 3px;
