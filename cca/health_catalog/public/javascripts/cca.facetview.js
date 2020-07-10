@@ -61,18 +61,11 @@ jQuery(document).ready(function($) {
     $('#facetview_results_wrapper a.eea-tileInner,a.state-published').click(function(event) {
       event.preventDefault();
       var pathName = $(this)[0].pathname;
-      $.get(pathName+'?only_article=1', function(data) {
-        var parser = new DOMParser();
-        var doc = parser.parseFromString(data, "text/html");
-        $('#facetview_article_content').html(doc.getElementById("content-core"));
-
-        $('.share-your-info-ace-button').addClass('hide');
-        $('#facetview_article').removeClass('hide');
-        $('#facetview_rightcol').addClass('hide');
-      });
+      showArticle(pathName);
       return false;
     });
   }
+
   if (window.esbootstrap_options) {
     $.extend(opts, esbootstrap_options);
   }
@@ -84,6 +77,17 @@ jQuery(document).ready(function($) {
   eea_facetview('.facet-view-simple', opts);
 });
 
+function showArticle(pathName) {
+  $.get(pathName+'?only_article=1', function(data) {
+    var parser = new DOMParser();
+    var doc = parser.parseFromString(data, "text/html");
+    $('#facetview_article_content').html(doc.getElementById("content-core"));
+
+    $('.share-your-info-ace-button').addClass('hide');
+    $('#facetview_article').removeClass('hide');
+    $('#facetview_rightcol').addClass('hide');
+  });
+}
 
 function limitString() {
   $.each($('.tileItem > .tileBody'), function(index, value) {
@@ -124,7 +128,15 @@ function getChartTree(matchSubcategory = false) {
                 }
             }
         } else {
-            response.children[catPosition].children.push({'name':results[i].title});
+            if (response.children[catPosition].children.length<41) {
+                if (response.children[catPosition].children.length<40) {
+                    var l = document.createElement("a");
+                    l.href = results[i].about;
+                    response.children[catPosition].children.push({'name':results[i].title, 'title':'ABC', 'url':l.pathname});
+                } else {
+                    response.children[catPosition].children.push({'name':'...'});
+                }
+            }
         }
     }
     return response;
@@ -142,20 +154,32 @@ function populateChart(response, categories, current, parent = 0) {
 }
 
 function showChart(divId, dataArray) {
-    const width = 700;
-    const height = 700;
+    const maxTitleLength = 40;
+    const zoomInDeep = 2;
+
+    box = document.querySelector('#'+divId);
+    const width = box.offsetWidth;
+    const height = box.offsetWidth;
     const x = 20
     const y = 20
     const radius = width / 2;
     const tree = d3.cluster().size([2 * Math.PI, Math.abs(radius - 100)]);
 
-    var jsonString = '';
-
-    jsonString = JSON.stringify(dataArray);
+    var jsonString = JSON.stringify(dataArray);
     const data = JSON.parse(jsonString);
 
-console.log(dataArray);
     const root = tree(d3.hierarchy(data).sort((a, b) => d3.ascending(a.name, b.name)));
+
+    colors = [
+        'B60505', '08822F', '3538A0', 'B11369', '09AB81'
+        ,'000000', '05638C', '8F0238', 'D1A007'
+    ];
+    for(i=0;i<root.children.length;i++) {
+        root.children[i].color = '#'+colors[i];
+        for(j=0;j<root.children[i].children.length;j++) {
+            root.children[i].children[j].color = '#'+colors[i];
+        }
+    }
 
     const svg = d3
         .select('#'+divId)
@@ -167,46 +191,101 @@ console.log(dataArray);
       //.attr("viewBox", [-100, -400, width + x, height + y])
       ;
 
+    //Lines
     svg.append("g")
         .attr("fill", "none")
-        .attr("stroke", "#555")
         .attr("stroke-opacity", 0.4)
         .attr("stroke-width", 1.5)
       .selectAll("path")
       .data(root.links())
       .join("path")
+        .attr('stroke', function(data) {
+            var node = data.source;
+            return node.parent ? node.color : '#ddd';
+        })
         .attr("d", d3.linkRadial()
             .angle(d => d.x)
-            .radius(d => d.y));
+            .radius(d => d.y/zoomInDeep));
 
+    //Circle for articles
     svg.append("g")
       .selectAll("circle")
       .data(root.descendants())
       .join("circle")
+        .style("cursor", function(data) {
+            console.log(data);
+            if(data.data.url) {
+                return 'pointer';
+            }
+        })
+        .on('click', function(d, i) {
+          if (!d.data.url) {
+              return false;
+          }
+          showArticle(d.data.url+'?only_article=1');
+        })
         .attr("transform", d => `
           rotate(${d.x * 180 / Math.PI - 90})
-          translate(${d.y},0)
+          translate(${d.y/zoomInDeep},0)
         `)
-        .attr("fill", d => d.children ? "#555" : "#999")
+        .attr("fill", d => d.color)
         .attr("r", 2.5);
 
+    //Text nodes
     svg.append("g")
         .attr("font-family", "sans-serif")
         .attr("font-size", 10)
         .attr("stroke-linejoin", "round")
         .attr("stroke-width", 3)
+
       .selectAll("text")
       .data(root.descendants())
       .join("text")
+        .style("cursor", function(data) {
+            console.log(data);
+            if(data.data.url) {
+                return 'pointer';
+            }
+        })
+        .on('click', function(d, i) {
+          if (!d.data.url) {
+              return false;
+          }
+          //debugger;
+          $.get(d.data.url+'?only_article=1', function(data) {
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(data, "text/html");
+            $('#facetview_article_content').html(doc.getElementById("content-core"));
+
+            $('.share-your-info-ace-button').addClass('hide');
+            $('#facetview_article').removeClass('hide');
+            $('#facetview_rightcol').addClass('hide');
+          });
+          // transition the clicked element
+          // to have a radius of 20
+        })
+        /*
+        .on({
+              "mouseover": function(d) {
+                d.select(this).attr("fill", '#ddd');
+              },
+              "mouseout": function(d) {
+                d.select(this).attr("fill", "green");
+              }
+            })
+*/
         .attr("transform", d => `
           rotate(${d.x * 180 / Math.PI - 90})
-          translate(${d.y},0)
+          translate(${d.y/zoomInDeep},0)
           rotate(${d.x >= Math.PI ? 180 : 0})
         `)
+
         .attr("dy", "0.31em")
+        .attr("fill", d => d.color)
         .attr("x", d => d.x < Math.PI === !d.children ? 6 : -6)
+        //.attr("x", d => d.x < Math.PI === !d.children ? 6 : -6)
         .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
-        .text(d => d.data.name)
+        .text(d => d.data.name.length<maxTitleLength ? d.data.name : d.data.name.substring(0,maxTitleLength)+'...')
       .clone(true).lower()
         .attr("stroke", "white");
 }
