@@ -213,7 +213,6 @@ function showChart(divId, dataArray) {
       .data(root.descendants())
       .join("circle")
         .style("cursor", function(data) {
-            console.log(data);
             if(data.data.url) {
                 return 'pointer';
             }
@@ -242,7 +241,6 @@ function showChart(divId, dataArray) {
       .data(root.descendants())
       .join("text")
         .style("cursor", function(data) {
-            console.log(data);
             if(data.data.url) {
                 return 'pointer';
             }
