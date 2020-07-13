@@ -11,10 +11,10 @@
     "external_templates": {
         "local_path": "/external_templates",
         "protocol": "https",
-        "host": "www.eea.europa.eu",
-        "head_path": "/templates/v3/getRequiredHead?render_full_html=False&cssonly=True&css_stack=external_templates",
-        "header_path": "/templates/v3/getHeader?render_full_html=False",
-        "footer_path": "/templates/v3/getFooter?render_full_html=False"
+        "host": "demo-forest.devel4cph.eea.europa.eu",
+        "head_path": "/head",
+        "header_path": "/header",
+        "footer_path": "/footer"
     },
     "layout_vars": {
         "head_title": "Forest Information",

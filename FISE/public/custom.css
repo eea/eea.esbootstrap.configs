@@ -20897,6 +20897,9 @@ td[data-title="Organisation email"] span {
 .eea-icon.eea-icon-times:before {
   content: "\f00d"; }
 
+.documentActions {
+  display: none; }
+
 #facetview_results_wrapper .tileItem {
   border-bottom: none; }
 

@@ -266,7 +266,9 @@ td[data-title="Organisation email"] span{
     content: "\f00d";
 }
 
-
+.documentActions {
+    display: none;
+}
 
 @import 'results';
 @import 'filters';

@@ -2528,3 +2528,9 @@ tr.RESOURCE_LOCATOR_INTERNAL_II {
     color: #929292;
     margin-left: 3px;
     font-size: 12px; }
+
+#main {
+  display: none; }
+
+.documentActions {
+  display: none; }
