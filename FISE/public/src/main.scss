@@ -90,7 +90,7 @@ i.fa {
 
 body,
 html {
-    background-color: #f6f6f6 !important;
+    background-color: #f9f9f7 !important;
 }
 
 .facetedview_search {
@@ -131,7 +131,8 @@ div.content {
 
     ul {
         font-size: $text;
-
+        margin: 0;
+        padding-left: 0;
         a {
             color: $black;
         }
@@ -163,7 +164,7 @@ div.content {
 
 #content,
 .facet-view-simple {
-    background: #f6f6f7 !important;
+    background: #f9f9f7 !important;
 }
 
 .ui.container {
@@ -275,6 +276,7 @@ td[data-title="Organisation email"] span{
     display: flex;
     justify-content: center;
     align-items: center;
+    background: transparent;
 }
 
 
@@ -294,6 +296,19 @@ td[data-title="Organisation email"] span{
     &.visible {
         display: flex;
     }
+    
+    h1 {
+        color: $orange;
+        margin-top: 0;
+        padding-right: 0;
+    }
+    h2 {
+        color: $green;
+    }
+    .close-popup {
+        cursor: pointer;
+        color: $green;
+    }
 
     .close-popup {
         float: right;
@@ -304,8 +319,13 @@ td[data-title="Organisation email"] span{
         width: 80%;
         max-width: 1200px;
         background: white;
-        padding: 1rem;
+        padding: 2rem;
         box-shadow: 1px 1px 3px #444;    
+        @media(max-width: 768px) {
+            width: 95%;
+            max-height: 100vh;
+            overflow: auto;
+        }
     }
 
     .popup-backdrop {

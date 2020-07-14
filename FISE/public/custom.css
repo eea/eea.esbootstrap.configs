@@ -474,7 +474,7 @@ body.has-toolbar .content-area main {
   content: "";
   left: 0;
   right: 0;
-  background: #f6f6f4;
+  background: #f9f9f7;
   height: 600px;
   top: calc(100% - 2rem); }
 
@@ -670,7 +670,7 @@ body.has-toolbar .content-area main {
   margin-top: -5rem; }
 
 .footerLinkBar {
-  background-color: #f6f6f4;
+  background-color: #f9f9f7;
   padding: 20px; }
 
 .footerLinkBar .separated {
@@ -20764,7 +20764,7 @@ i.fa {
 
 body,
 html {
-  background-color: #f6f6f6 !important; }
+  background-color: #f9f9f7 !important; }
 
 .facetedview_search {
   display: none; }
@@ -20795,7 +20795,9 @@ div.content {
   max-width: 300px;
   margin: 1rem 0; }
   .pagination ul {
-    font-size: 15px; }
+    font-size: 15px;
+    margin: 0;
+    padding-left: 0; }
     .pagination ul a {
       color: #303030; }
 
@@ -20821,7 +20823,7 @@ div.content {
 
 #content,
 .facet-view-simple {
-  background: #f6f6f7 !important; }
+  background: #f9f9f7 !important; }
 
 .ui.container {
   max-width: 1420px !important;
@@ -20903,7 +20905,8 @@ td[data-title="Organisation email"] span {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  background: transparent; }
 
 #intro-popup {
   position: fixed;
@@ -20919,6 +20922,15 @@ td[data-title="Organisation email"] span {
   display: none; }
   #intro-popup.visible {
     display: flex; }
+  #intro-popup h1 {
+    color: #c40;
+    margin-top: 0;
+    padding-right: 0; }
+  #intro-popup h2 {
+    color: #251; }
+  #intro-popup .close-popup {
+    cursor: pointer;
+    color: #251; }
   #intro-popup .close-popup {
     float: right;
     font-size: 1.5rem; }
@@ -20927,8 +20939,13 @@ td[data-title="Organisation email"] span {
     width: 80%;
     max-width: 1200px;
     background: white;
-    padding: 1rem;
+    padding: 2rem;
     box-shadow: 1px 1px 3px #444; }
+    @media (max-width: 768px) {
+      #intro-popup .popup-content {
+        width: 95%;
+        max-height: 100vh;
+        overflow: auto; } }
   #intro-popup .popup-backdrop {
     background: rgba(0, 0, 0, 0.5);
     position: fixed;
