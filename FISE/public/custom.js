@@ -6,7 +6,7 @@ window.esbootstrap_options = {
 settings_display_options = ['list', 'tabular'];
 settings_default_display = 'list';
 settings_suggestions_enabled = true;
-settings_sort = [{ 'ID': { 'order': 'asc' } }];
+settings_sort = [{ 'YEAR_PUBLISHED': { 'order': 'desc' } }];
 
 
 var snippets = {
