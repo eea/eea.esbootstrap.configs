@@ -44,6 +44,8 @@ function setCookie(cname, cvalue, exdays) {
 
 $(window).bind('post_search_callback', function () {
 
+  $('.breadcrumb .active').html('Data catalogue')
+  $('.header-image-content').html('<h1>Data catalogue</h1>')
 
 
   if (getCookie('popupCookie') != 'closed') {
