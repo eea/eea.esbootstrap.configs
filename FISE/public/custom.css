@@ -20900,6 +20900,44 @@ td[data-title="Organisation email"] span {
 .documentActions {
   display: none; }
 
+.footerLinkBar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#intro-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  display: none; }
+  #intro-popup.visible {
+    display: flex; }
+  #intro-popup .close-popup {
+    float: right;
+    font-size: 1.5rem; }
+  #intro-popup .popup-content {
+    position: relative;
+    width: 80%;
+    max-width: 1200px;
+    background: white;
+    padding: 1rem;
+    box-shadow: 1px 1px 3px #444; }
+  #intro-popup .popup-backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+
 #facetview_results_wrapper .tileItem {
   border-bottom: none; }
 

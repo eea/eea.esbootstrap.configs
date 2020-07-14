@@ -18,8 +18,43 @@ var snippets = {
 }
 
 
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+
+
 $(window).bind('post_search_callback', function () {
 
+
+
+  if (getCookie('popupCookie') != 'closed') {
+    $('#intro-popup').addClass('visible').hide().fadeIn();
+  }
+
+  $('a.close-popup').click(function () {
+    $('#intro-popup').fadeOut();
+    //sets the coookie to one minute if the popup is closed (whole numbers = days)
+    setCookie('popupCookie', 'closed', 29);
+  });
 
 
 
@@ -33,16 +68,16 @@ $(window).bind('post_search_callback', function () {
 
 
   if ($(".facetview_display_type .selected").hasClass("tabular")) {
-   $('body').addClass('tabular-view')
+    $('body').addClass('tabular-view')
   }
 
 
   if (!$(".facetview_display_type .selected").hasClass("tabular")) {
     $('body').removeClass('tabular-view')
-   }
+  }
 
-   var download = $('#content .facetview_download')
-   $('.facetview_top').prepend(download)
+  var download = $('#content .facetview_download')
+  $('.facetview_top').prepend(download)
 
   $('.details_link').click(function (e) {
     e.preventDefault();
@@ -64,7 +99,7 @@ $(window).bind('post_search_callback', function () {
   var paginationText = paginator.find('li.active').text().split(' of ')
   var totalPages = paginationText[0].split(' – ')[1]
   var currentPage = paginationText[1]
-  if(parseInt(currentPage) === parseInt(totalPages)) {
+  if (parseInt(currentPage) === parseInt(totalPages)) {
     $('a.facetview_increment').hide()
   } else {
     $('a.facetview_increment').show()
@@ -92,13 +127,13 @@ $(window).bind('post_search_callback', function () {
     xls: 'fa-file-excel-o'
   }
 
-    var downloadButton = $('.nfi-download-button')
-    downloadButton.each(function(index, item){
-      var downloadArr = $(item).attr('type').split('.')
-      var type = downloadArr[downloadArr.length - 1]
-      var icon = $(item).find('i.fa')
-      icon.addClass(downloadIconsClasses[type])
-    })
+  var downloadButton = $('.nfi-download-button')
+  downloadButton.each(function (index, item) {
+    var downloadArr = $(item).attr('type').split('.')
+    var type = downloadArr[downloadArr.length - 1]
+    var icon = $(item).find('i.fa')
+    icon.addClass(downloadIconsClasses[type])
+  })
 
 });
 
