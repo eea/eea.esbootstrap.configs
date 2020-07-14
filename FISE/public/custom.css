@@ -21027,6 +21027,11 @@ td[data-title="Organisation email"] span {
 .top-pagination {
   color: #929292; }
 
+#facetview_trees .facetview_rangecontainer,
+#facetview_trees .facetview_facetrange_histogram {
+  min-height: 61px;
+  margin-top: 1rem; }
+
 #facetview_trees h2.facetview_showtree {
   background-color: transparent !important;
   color: #251 !important;
@@ -21043,7 +21048,8 @@ td[data-title="Organisation email"] span {
 #facetview_trees .ui-resizable-s {
   background-color: white !important; }
 
-#facetview_trees .eea-icon.eea-icon-right, #facetview_trees .right-column-area .eea-icon.eea-icon-right {
+#facetview_trees .eea-icon.eea-icon-right,
+#facetview_trees .right-column-area .eea-icon.eea-icon-right {
   font-size: 11px !important; }
 
 h3#filters-title {
@@ -21062,7 +21068,8 @@ h3#filters-title {
   background: white;
   padding-left: 0; }
 
-.facetview_selection, .clear-all {
+.facetview_selection,
+.clear-all {
   border-radius: 4px;
   padding: 3px;
   padding-left: 16px;
@@ -21086,7 +21093,8 @@ h3#filters-title {
 .eea-icon-right {
   float: right; }
 
-.eea-accordion-panel > h2 .eea-icon-right:before, .eea-accordion-title > .eea-icon-right:before {
+.eea-accordion-panel > h2 .eea-icon-right:before,
+.eea-accordion-title > .eea-icon-right:before {
   content: "\f053"; }
 
 .eea-icon-search:before {
@@ -21102,10 +21110,13 @@ h3#filters-title {
 #content .filters-header .current-filters-collapsible .filters-header__header .facetview_arrow_right {
   margin-top: 4px; }
 
-#content .status_facetview_selection span, #content .year_facetview_selection span, #content .facetview_selection span {
+#content .status_facetview_selection span,
+#content .year_facetview_selection span,
+#content .facetview_selection span {
   color: #251; }
 
-#content .year_facetview_selection a i, #content .facetview_selection a i {
+#content .year_facetview_selection a i,
+#content .facetview_selection a i {
   color: #251; }
 
 #facetview_selected_filters .facetview_selected {
@@ -21113,7 +21124,8 @@ h3#filters-title {
   justify-content: center;
   align-items: center; }
 
-#content #facetview_trees .jstree-node.selected .jstree-anchor, #content #facetview_trees .jstree-node.selected .jstree-anchor .facet_label_count {
+#content #facetview_trees .jstree-node.selected .jstree-anchor,
+#content #facetview_trees .jstree-node.selected .jstree-anchor .facet_label_count {
   color: #c40; }
 
 #facetview_trees .jstree-clicked .jstree-checkbox:before {
@@ -21122,7 +21134,8 @@ h3#filters-title {
 #content .facetview_filter_typeahead .eea-icon-search {
   color: #251; }
 
-#content div.facetview_filter_typeahead input:focus, #content div.facetview_filter_typeahead input:hover {
+#content div.facetview_filter_typeahead input:focus,
+#content div.facetview_filter_typeahead input:hover {
   border-radius: 4px; }
 
 #content .current-filters .eea-reset-filters.clear-all {
@@ -21131,7 +21144,8 @@ h3#filters-title {
   padding-right: 5px;
   border: 1px solid #eee !important; }
 
-#facetview_rightcol .facetview_metadata .listingBar li.prev a, #facetview_rightcol .facetview_metadata .listingBar li.next a {
+#facetview_rightcol .facetview_metadata .listingBar li.prev a,
+#facetview_rightcol .facetview_metadata .listingBar li.next a {
   background: none;
   color: #303030 !important;
   border-radius: 0;

@@ -1,47 +1,57 @@
 #facetview_trees {
-    h2.facetview_showtree {
-        background-color: transparent!important;
-        color: $green!important;
-        font-size: $filterHeading!important;
-        font-weight: 500;
+
+
+    .facetview_rangecontainer,
+    .facetview_facetrange_histogram {
+        min-height: 61px;
+        margin-top: 1rem;
     }
+
+    h2.facetview_showtree {
+        background-color: transparent !important;
+        color           : $green !important;
+        font-size       : $filterHeading !important;
+        font-weight     : 500;
+    }
+
     .facetview_tree {
-        border-color: transparent!important;
+        border-color: transparent !important;
+
         ul {
             background: white;
+
             li {
                 background: white;
             }
         }
-        
-    }
-    .ui-resizable-s {
-        background-color: white!important;
-    }
-    .facetview_filter {
-        // margin-top: 1rem;
+
     }
 
-.eea-icon.eea-icon-right, .right-column-area .eea-icon.eea-icon-right {
-    font-size: 11px!important;
-}
+    .ui-resizable-s {
+        background-color: white !important;
+    }
+
+    .eea-icon.eea-icon-right,
+    .right-column-area .eea-icon.eea-icon-right {
+        font-size: 11px !important;
+    }
 }
 
 h3#filters-title {
-    color: $orange!important;
+    color: $orange !important;
 }
 
 
 .eea-accordion-panels {
-    border: none!important;
-    border-top: 3px solid $orange!important;
+    border    : none !important;
+    border-top: 3px solid $orange !important;
 }
 
 
 
 .facetview_filter_options select.facet_value_operator {
-    background: white;
-    border-color: #eee;
+    background   : white;
+    border-color : #eee;
     border-radius: 3px;
 }
 
@@ -51,20 +61,22 @@ h3#filters-title {
 
 
 .current-filters {
-    background: white;
+    background  : white;
     padding-left: 0;
 }
 
-.facetview_selection, .clear-all {
+.facetview_selection,
+.clear-all {
     border-radius: 4px;
-    padding: 3px;
-    padding-left: 16px;
+    padding      : 3px;
+    padding-left : 16px;
     padding-right: 16px;
 }
 
 .facetview_group_title {
-    color: $black;
+    color    : $black;
     font-size: $small;
+
     span {
         font-style: unset;
     }
@@ -72,26 +84,28 @@ h3#filters-title {
 
 .filters-header {
     margin-bottom: 1rem;
+
     h2 {
-        color: $green!important;
+        color: $green !important;
     }
 }
 
-#content .eea-accordion-panels .eea-accordion-panel > h2 {
+#content .eea-accordion-panels .eea-accordion-panel>h2 {
     line-height: 2;
-    padding: 1rem 0;
+    padding    : 1rem 0;
 }
 
 .eea-icon-right {
     float: right;
 }
 
-.eea-accordion-panel > h2 .eea-icon-right:before, .eea-accordion-title > .eea-icon-right:before {
+.eea-accordion-panel>h2 .eea-icon-right:before,
+.eea-accordion-title>.eea-icon-right:before {
     content: "\f053";
 }
 
 .eea-icon-search:before {
-    content: "\f002";
+    content    : "\f002";
     font-family: 'FontAwesome';
 }
 
@@ -108,23 +122,27 @@ h3#filters-title {
     margin-top: 4px;
 }
 
-#content .status_facetview_selection span, #content .year_facetview_selection span, #content .facetview_selection span {
+#content .status_facetview_selection span,
+#content .year_facetview_selection span,
+#content .facetview_selection span {
     color: $green;
 }
 
-#content .year_facetview_selection a i, #content .facetview_selection a i {
+#content .year_facetview_selection a i,
+#content .facetview_selection a i {
     color: $green;
 }
 
 #facetview_selected_filters {
     .facetview_selected {
-        display: flex;
+        display        : flex;
         justify-content: center;
-        align-items: center;
+        align-items    : center;
     }
 }
 
-#content #facetview_trees .jstree-node.selected .jstree-anchor, #content #facetview_trees .jstree-node.selected .jstree-anchor .facet_label_count {
+#content #facetview_trees .jstree-node.selected .jstree-anchor,
+#content #facetview_trees .jstree-node.selected .jstree-anchor .facet_label_count {
     color: $orange;
 }
 
@@ -136,22 +154,24 @@ h3#filters-title {
     color: $green;
 }
 
-#content div.facetview_filter_typeahead input:focus, #content div.facetview_filter_typeahead input:hover {
+#content div.facetview_filter_typeahead input:focus,
+#content div.facetview_filter_typeahead input:hover {
     border-radius: 4px;
 }
 
 #content .current-filters .eea-reset-filters.clear-all {
-    color: initial!important;
-    padding-left: 5px;
+    color        : initial !important;
+    padding-left : 5px;
     padding-right: 5px;
-    border: 1px solid #eee!important;
+    border       : 1px solid #eee !important;
 }
 
-#facetview_rightcol .facetview_metadata .listingBar li.prev a, #facetview_rightcol .facetview_metadata .listingBar li.next a {
-    background: none;
-    color: $black!important;
+#facetview_rightcol .facetview_metadata .listingBar li.prev a,
+#facetview_rightcol .facetview_metadata .listingBar li.next a {
+    background   : none;
+    color        : $black !important;
     border-radius: 0;
-    border: none!important;
+    border       : none !important;
 }
 
 #content .facetview_metadata {
@@ -163,5 +183,5 @@ h3#filters-title {
 }
 
 #facetview_rightcol .facetview_metadata .listingBar li.active a {
-    color: $orange!important;
+    color: $orange !important;
 }
