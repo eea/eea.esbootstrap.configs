@@ -338,6 +338,16 @@ td[data-title="Organisation email"] span{
     }
 }
 
+.remove-cookie {
+    line-height: 2.5;
+    cursor: pointer;
+    background: white;
+    color: #303030 !important;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 6px;
+}
+
 @import 'results';
 @import 'filters';
 @import 'modal';

@@ -44,6 +44,8 @@ function setCookie(cname, cvalue, exdays) {
 
 $(window).bind('post_search_callback', function () {
 
+  $('.facetview_top').append('<a class="remove-cookie">Using the catalogue</a>')
+
   $('.breadcrumb .active').html('Data catalogue')
   $('.header-image-content').html('<h1>Data catalogue</h1>')
 
@@ -51,6 +53,10 @@ $(window).bind('post_search_callback', function () {
   if (getCookie('popupCookie') != 'closed') {
     $('#intro-popup').addClass('visible').hide().fadeIn();
   }
+
+  $('a.remove-cookie').click(function(){
+    $('#intro-popup').addClass('visible').hide().fadeIn();
+  })
 
   $('a.close-popup').click(function () {
     $('#intro-popup').fadeOut();

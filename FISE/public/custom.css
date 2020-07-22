@@ -20954,6 +20954,15 @@ td[data-title="Organisation email"] span {
     left: 0;
     right: 0; }
 
+.remove-cookie {
+  line-height: 2.5;
+  cursor: pointer;
+  background: white;
+  color: #303030 !important;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 6px; }
+
 #facetview_results_wrapper .tileItem {
   border-bottom: none; }
 
