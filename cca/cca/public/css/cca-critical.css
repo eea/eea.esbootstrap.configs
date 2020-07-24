@@ -2175,9 +2175,11 @@ label {
 }
 
 .facetview_download {
-    background-color: #009590;
     padding: .2em .5em;
     margin-left: 2em
+}
+.facetview_download a{
+    color: #fff !important;
 }
 
 .exact_helper {
@@ -2665,7 +2667,7 @@ div.content {
 
 #facetview_rightcol .filters-header .clear-all,#facetview_rightcol .filters-header .clear-all:visited {
     padding-right: 12px;
-    color: #000!important;
+/*    color: #000!important;*/
     font-size: 12px!important
 }
 
@@ -3000,4 +3002,7 @@ a.did_you_mean:visited,a.original_term:visited {
     .eea-tile:nth-of-type(3n+1) {
         padding-left: 1px
     }
+}
+div.current-filters-collapsible.eea-accordion-panel a.clear-all {
+    color:#fff !important;
 }

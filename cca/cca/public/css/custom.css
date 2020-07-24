@@ -16,3 +16,11 @@
     height: 23px;
     display: inline;
 }
+
+div.current-filters-collapsible.eea-accordion-panel a.clear-all {
+    color:#fff !important;
+}
+.filter-by.facetview_orderby select {
+    width: 120px;
+    height: 30px;
+}

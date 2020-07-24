@@ -2,5 +2,8 @@
 // we need this function to insert the search app content into our template
 jQuery(document).ready(function($) {
 //  $('#portal-columns-app').appendTo('#portal-column-content');
-  $('#portal-columns').replaceWith($('#portal-columns-app'));
+    $('#portal-columns').replaceWith($('#portal-columns-app'));
+    if (window.location.search.includes('typeOfData') && !$('h2#typeOfData').hasClass('facetview_open')) {
+        $('h2#typeOfData').click();
+    }
 });
