@@ -22,9 +22,7 @@ jQuery(document).ready(function($) {
             $(window).trigger('post_init_callback');
         },
         post_search_callback: function() {
-            add_EEA_settings();
-            viewReady();
-            replaceNumbers();
+
             limitString();
             $(window).trigger('post_search_callback');
         },
@@ -48,6 +46,7 @@ jQuery(document).ready(function($) {
 
 
 function limitString() {
+console.log('limit string');
     $.each($('.tileItem > .tileBody'), function(index, value) {
       description = $(value).text();
       $(value).text(description.slice(0, 700) + '...');
