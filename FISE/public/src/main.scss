@@ -90,7 +90,7 @@ i.fa {
 
 body,
 html {
-    background-color: #f6f6f6 !important;
+    background-color: #f9f9f7 !important;
 }
 
 .facetedview_search {
@@ -131,7 +131,8 @@ div.content {
 
     ul {
         font-size: $text;
-
+        margin: 0;
+        padding-left: 0;
         a {
             color: $black;
         }
@@ -163,7 +164,7 @@ div.content {
 
 #content,
 .facet-view-simple {
-    background: #f6f6f7 !important;
+    background: #f9f9f7 !important;
 }
 
 .ui.container {
@@ -179,7 +180,7 @@ div.content {
         border-bottom: none !important;
         margin       : 0 auto !important;
         padding      : 0 !important;
-        margin-top   : 6rem !important;
+        // margin-top   : 6rem !important;
     }
 }
 
@@ -266,7 +267,86 @@ td[data-title="Organisation email"] span{
     content: "\f00d";
 }
 
+.documentActions {
+    display: none;
+}
 
+.footerLinkBar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+
+
+#intro-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    display: none;
+    &.visible {
+        display: flex;
+    }
+    
+    h1 {
+        color: $orange;
+        margin-top: 0;
+        padding-right: 0;
+    }
+    h2 {
+        color: $green;
+    }
+    .close-popup {
+        cursor: pointer;
+        color: $green;
+    }
+
+    .close-popup {
+        float: right;
+        font-size: 1.5rem;
+    }
+    .popup-content {
+        position: relative;
+        width: 80%;
+        max-width: 1200px;
+        background: white;
+        padding: 2rem;
+        box-shadow: 1px 1px 3px #444;    
+        @media(max-width: 768px) {
+            width: 95%;
+            max-height: 100vh;
+            overflow: auto;
+        }
+    }
+
+    .popup-backdrop {
+        background: rgba(0,0,0,0.5);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.remove-cookie {
+    line-height: 2.5;
+    cursor: pointer;
+    background: white;
+    color: #303030 !important;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 6px;
+}
 
 @import 'results';
 @import 'filters';
