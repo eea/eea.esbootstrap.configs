@@ -25,6 +25,7 @@ jQuery(document).ready(function($) {
       add_EEA_settings();
       viewReady();
       replaceNumbers();
+      updatePagination();
       limitString();
       $(window).trigger('post_search_callback');
       localArticleView();
@@ -37,6 +38,11 @@ jQuery(document).ready(function($) {
     display_type_options: settings_display_options,
     display_type: settings_default_display
   };
+  function updatePagination() {
+      $('.facetview_top').css("display", "block");
+      $('.top-pagination').css("display", "block");
+      $('.pagination').css("display", "none");
+  }
   function viewChartMode() {
     if ($('.i18n.eea-icon.tabular.selected').length) {
         var resutls = $.fn.facetview.options.data;
@@ -132,7 +138,12 @@ function getChartTree(matchSubcategory = false) {
                 if (response.children[catPosition].children.length<40) {
                     var l = document.createElement("a");
                     l.href = results[i].about;
-                    response.children[catPosition].children.push({'name':results[i].title, 'title':'ABC', 'url':l.pathname});
+                    title = results[i].title;
+                    //If highlight then title is not a string
+                    if (typeof title === 'object' || title instanceof Object) {
+                        title = title[0].replace(/(<([^>]+)>)/gi, "").trim();
+                    }
+                    response.children[catPosition].children.push({'name':title, 'url':l.pathname});
                 } else {
                     response.children[catPosition].children.push({'name':'...'});
                 }

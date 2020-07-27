@@ -3,7 +3,6 @@
 }
 
 .eea-list-tiles .tileItem .tileBody {
-  margin-left: 1em;
   /* height: 9em; */
   /* overflow: hidden; */
 }
@@ -34,7 +33,7 @@ body {
 div#facetview_rightcol {
   /* width: 76%; */
   margin-right: 0px;
-  padding-left: 1em;
+  padding-left: 3em;
 }
 
 .eea-icon {

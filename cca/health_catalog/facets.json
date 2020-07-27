@@ -13,6 +13,7 @@
             "title",
             "label",
             "description",
+            "long_description",
             "topic"
             ],
         "blacklist": []
@@ -200,7 +201,7 @@
             "facet": {
                 "values_whitelist":[
                     "Case studies", "Guidance", "Indicators",
-                    "Information portals", "Organisations",
+                    "Information portals", "Tools",
                     "Publications and reports",
                     "Research and knowledge projects"],
                 "autocomplete": false,
@@ -244,7 +245,7 @@
                 "title": "Adaptation Sectors",
                 "order": "term",
                 "operator": "OR",
-                "visible": true
+                "visible": false
             },
             "card": {
                 "field": "sectors",
@@ -270,7 +271,7 @@
             },
             "facet": {
                 "autocomplete": false,
-                "visible": true,
+                "visible": false,
                 "title": "Climate Impacts",
                 "size": 200,
                 "min_size": 10,
@@ -297,7 +298,7 @@
                 "title": "Transnational regions",
                 "order": "term",
                 "operator": "OR",
-                "visible": true
+                "visible": false
             }
         },
         {
@@ -339,7 +340,7 @@
                 "title": "Source Website",
                 "order": "term",
                 "operator": "OR",
-                "visible": true
+                "visible": false
             },
             "card": {
                 "field": "origin_website",
@@ -406,7 +407,7 @@
                 "visible": false
             },
             "facet": {
-                "visible": true,
+                "visible": false,
                 "title": "Countries",
                 "size": 500,
                 "min_size": 10,
