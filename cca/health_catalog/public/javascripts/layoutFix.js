@@ -41,7 +41,7 @@ jQuery(document).ready(function($) {
 
     // /*
     $('#facetview_rightcol').prepend("<div class='row'>"
-                                        +"<div class='column col-md-8' id='filterTitle'><h2>OBSERVATORY RESOURCE CATALOG search tool</h2></div>"
+                                        +"<div class='column col-md-8' id='filterTitle'><h2>OBSERVATORY RESOURCE CATALOGUE search tool</h2></div>"
                                         +"<div class='column col-md-4 text-right' id='filterDisplayAs'></div>"
                                     +"</div>"
                                     +"<div class='row'>"
