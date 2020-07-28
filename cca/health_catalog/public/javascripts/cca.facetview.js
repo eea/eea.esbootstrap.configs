@@ -41,7 +41,7 @@ jQuery(document).ready(function($) {
   function updatePagination() {
       $('.facetview_top').css("display", "block");
       $('.top-pagination').css("display", "block");
-      $('.pagination').css("display", "none");
+      //$('.pagination').css("display", "none");
   }
   function viewChartMode() {
     if ($('.i18n.eea-icon.tabular.selected').length) {
