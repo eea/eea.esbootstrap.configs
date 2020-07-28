@@ -44,7 +44,10 @@ function setCookie(cname, cvalue, exdays) {
 
 $(window).bind('post_search_callback', function () {
 
-  $('.facetview_top').append('<a class="remove-cookie">Using the catalogue</a>')
+  if($('.facetview_top .remove-cookie').length < 1) {
+    $('.facetview_top').append('<a class="remove-cookie">Using the catalogue</a>')
+  }
+
 
   $('.breadcrumb .active').html('Data catalogue')
   $('.header-image-content').html('<h1>Data catalogue</h1>')
