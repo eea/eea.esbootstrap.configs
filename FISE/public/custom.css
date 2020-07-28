@@ -474,7 +474,7 @@ body.has-toolbar .content-area main {
   content: "";
   left: 0;
   right: 0;
-  background: #f6f6f4;
+  background: #f9f9f7;
   height: 600px;
   top: calc(100% - 2rem); }
 
@@ -670,7 +670,7 @@ body.has-toolbar .content-area main {
   margin-top: -5rem; }
 
 .footerLinkBar {
-  background-color: #f6f6f4;
+  background-color: #f9f9f7;
   padding: 20px; }
 
 .footerLinkBar .separated {
@@ -20764,7 +20764,7 @@ i.fa {
 
 body,
 html {
-  background-color: #f6f6f6 !important; }
+  background-color: #f9f9f7 !important; }
 
 .facetedview_search {
   display: none; }
@@ -20795,7 +20795,9 @@ div.content {
   max-width: 300px;
   margin: 1rem 0; }
   .pagination ul {
-    font-size: 15px; }
+    font-size: 15px;
+    margin: 0;
+    padding-left: 0; }
     .pagination ul a {
       color: #303030; }
 
@@ -20821,7 +20823,7 @@ div.content {
 
 #content,
 .facet-view-simple {
-  background: #f6f6f7 !important; }
+  background: #f9f9f7 !important; }
 
 .ui.container {
   max-width: 1420px !important;
@@ -20833,8 +20835,7 @@ div.content {
   text-align: center !important;
   border-bottom: none !important;
   margin: 0 auto !important;
-  padding: 0 !important;
-  margin-top: 6rem !important; }
+  padding: 0 !important; }
 
 .facetview_top {
   border-bottom: 1px solid #eee;
@@ -20896,6 +20897,71 @@ td[data-title="Organisation email"] span {
 
 .eea-icon.eea-icon-times:before {
   content: "\f00d"; }
+
+.documentActions {
+  display: none; }
+
+.footerLinkBar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent; }
+
+#intro-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  display: none; }
+  #intro-popup.visible {
+    display: flex; }
+  #intro-popup h1 {
+    color: #c40;
+    margin-top: 0;
+    padding-right: 0; }
+  #intro-popup h2 {
+    color: #251; }
+  #intro-popup .close-popup {
+    cursor: pointer;
+    color: #251; }
+  #intro-popup .close-popup {
+    float: right;
+    font-size: 1.5rem; }
+  #intro-popup .popup-content {
+    position: relative;
+    width: 80%;
+    max-width: 1200px;
+    background: white;
+    padding: 2rem;
+    box-shadow: 1px 1px 3px #444; }
+    @media (max-width: 768px) {
+      #intro-popup .popup-content {
+        width: 95%;
+        max-height: 100vh;
+        overflow: auto; } }
+  #intro-popup .popup-backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+
+.remove-cookie {
+  line-height: 2.5;
+  cursor: pointer;
+  background: white;
+  color: #303030 !important;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 6px; }
 
 #facetview_results_wrapper .tileItem {
   border-bottom: none; }
@@ -20970,6 +21036,11 @@ td[data-title="Organisation email"] span {
 .top-pagination {
   color: #929292; }
 
+#facetview_trees .facetview_rangecontainer,
+#facetview_trees .facetview_facetrange_histogram {
+  min-height: 61px;
+  margin-top: 1rem; }
+
 #facetview_trees h2.facetview_showtree {
   background-color: transparent !important;
   color: #251 !important;
@@ -20986,7 +21057,8 @@ td[data-title="Organisation email"] span {
 #facetview_trees .ui-resizable-s {
   background-color: white !important; }
 
-#facetview_trees .eea-icon.eea-icon-right, #facetview_trees .right-column-area .eea-icon.eea-icon-right {
+#facetview_trees .eea-icon.eea-icon-right,
+#facetview_trees .right-column-area .eea-icon.eea-icon-right {
   font-size: 11px !important; }
 
 h3#filters-title {
@@ -21005,7 +21077,8 @@ h3#filters-title {
   background: white;
   padding-left: 0; }
 
-.facetview_selection, .clear-all {
+.facetview_selection,
+.clear-all {
   border-radius: 4px;
   padding: 3px;
   padding-left: 16px;
@@ -21029,7 +21102,8 @@ h3#filters-title {
 .eea-icon-right {
   float: right; }
 
-.eea-accordion-panel > h2 .eea-icon-right:before, .eea-accordion-title > .eea-icon-right:before {
+.eea-accordion-panel > h2 .eea-icon-right:before,
+.eea-accordion-title > .eea-icon-right:before {
   content: "\f053"; }
 
 .eea-icon-search:before {
@@ -21045,10 +21119,13 @@ h3#filters-title {
 #content .filters-header .current-filters-collapsible .filters-header__header .facetview_arrow_right {
   margin-top: 4px; }
 
-#content .status_facetview_selection span, #content .year_facetview_selection span, #content .facetview_selection span {
+#content .status_facetview_selection span,
+#content .year_facetview_selection span,
+#content .facetview_selection span {
   color: #251; }
 
-#content .year_facetview_selection a i, #content .facetview_selection a i {
+#content .year_facetview_selection a i,
+#content .facetview_selection a i {
   color: #251; }
 
 #facetview_selected_filters .facetview_selected {
@@ -21056,7 +21133,8 @@ h3#filters-title {
   justify-content: center;
   align-items: center; }
 
-#content #facetview_trees .jstree-node.selected .jstree-anchor, #content #facetview_trees .jstree-node.selected .jstree-anchor .facet_label_count {
+#content #facetview_trees .jstree-node.selected .jstree-anchor,
+#content #facetview_trees .jstree-node.selected .jstree-anchor .facet_label_count {
   color: #c40; }
 
 #facetview_trees .jstree-clicked .jstree-checkbox:before {
@@ -21065,7 +21143,8 @@ h3#filters-title {
 #content .facetview_filter_typeahead .eea-icon-search {
   color: #251; }
 
-#content div.facetview_filter_typeahead input:focus, #content div.facetview_filter_typeahead input:hover {
+#content div.facetview_filter_typeahead input:focus,
+#content div.facetview_filter_typeahead input:hover {
   border-radius: 4px; }
 
 #content .current-filters .eea-reset-filters.clear-all {
@@ -21074,7 +21153,8 @@ h3#filters-title {
   padding-right: 5px;
   border: 1px solid #eee !important; }
 
-#facetview_rightcol .facetview_metadata .listingBar li.prev a, #facetview_rightcol .facetview_metadata .listingBar li.next a {
+#facetview_rightcol .facetview_metadata .listingBar li.prev a,
+#facetview_rightcol .facetview_metadata .listingBar li.next a {
   background: none;
   color: #303030 !important;
   border-radius: 0;

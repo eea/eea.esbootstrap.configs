@@ -6,7 +6,7 @@ window.esbootstrap_options = {
 settings_display_options = ['list', 'tabular'];
 settings_default_display = 'list';
 settings_suggestions_enabled = true;
-settings_sort = [{ 'ID': { 'order': 'asc' } }];
+settings_sort = [{ 'YEAR_PUBLISHED': { 'order': 'desc' } }];
 
 
 var snippets = {
@@ -18,8 +18,54 @@ var snippets = {
 }
 
 
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+
+
 $(window).bind('post_search_callback', function () {
 
+  if($('.facetview_top .remove-cookie').length < 1) {
+    $('.facetview_top').append('<a class="remove-cookie">Using the catalogue</a>')
+  }
+
+
+  $('.breadcrumb .active').html('Data catalogue')
+  $('.header-image-content').html('<h1>Data catalogue</h1>')
+
+
+  if (getCookie('popupCookie') != 'closed') {
+    $('#intro-popup').addClass('visible').hide().fadeIn();
+  }
+
+  $('a.remove-cookie').click(function(){
+    $('#intro-popup').addClass('visible').hide().fadeIn();
+  })
+
+  $('a.close-popup').click(function () {
+    $('#intro-popup').fadeOut();
+    //sets the coookie to one minute if the popup is closed (whole numbers = days)
+    setCookie('popupCookie', 'closed', 29);
+  });
 
 
 
@@ -33,16 +79,16 @@ $(window).bind('post_search_callback', function () {
 
 
   if ($(".facetview_display_type .selected").hasClass("tabular")) {
-   $('body').addClass('tabular-view')
+    $('body').addClass('tabular-view')
   }
 
 
   if (!$(".facetview_display_type .selected").hasClass("tabular")) {
     $('body').removeClass('tabular-view')
-   }
+  }
 
-   var download = $('#content .facetview_download')
-   $('.facetview_top').prepend(download)
+  var download = $('#content .facetview_download')
+  $('.facetview_top').prepend(download)
 
   $('.details_link').click(function (e) {
     e.preventDefault();
@@ -64,7 +110,7 @@ $(window).bind('post_search_callback', function () {
   var paginationText = paginator.find('li.active').text().split(' of ')
   var totalPages = paginationText[0].split(' – ')[1]
   var currentPage = paginationText[1]
-  if(parseInt(currentPage) === parseInt(totalPages)) {
+  if (parseInt(currentPage) === parseInt(totalPages)) {
     $('a.facetview_increment').hide()
   } else {
     $('a.facetview_increment').show()
@@ -92,13 +138,13 @@ $(window).bind('post_search_callback', function () {
     xls: 'fa-file-excel-o'
   }
 
-    var downloadButton = $('.nfi-download-button')
-    downloadButton.each(function(index, item){
-      var downloadArr = $(item).attr('type').split('.')
-      var type = downloadArr[downloadArr.length - 1]
-      var icon = $(item).find('i.fa')
-      icon.addClass(downloadIconsClasses[type])
-    })
+  var downloadButton = $('.nfi-download-button')
+  downloadButton.each(function (index, item) {
+    var downloadArr = $(item).attr('type').split('.')
+    var type = downloadArr[downloadArr.length - 1]
+    var icon = $(item).find('i.fa')
+    icon.addClass(downloadIconsClasses[type])
+  })
 
 });
 
