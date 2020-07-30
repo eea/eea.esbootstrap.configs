@@ -25,6 +25,8 @@
     "override_searchserver_resources": false,
     "css_resources": {
       "index_page": [
+          "css/no-more-tables.css",
+          "css/esbootstrap.facetview.css",
         "css/climateadapt.facetview.css"
       ],
       "details_page": [

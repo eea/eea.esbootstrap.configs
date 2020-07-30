@@ -61,7 +61,9 @@ jQuery(document).ready(function($) {
     });
   $(window).on('post_search_callback', function() {
     $(".health-left").remove();
-    $('h2#typeOfData').click();
+    if (!$('h2#typeOfData').hasClass('facetview_open')) {
+        $('h2#typeOfData').click();
+    }
     // $("img.lazyLoad").Lazy();
     console.log('results ready');
     $(".lazyload").Lazy();

@@ -1,3 +1,4 @@
+//window.search_text_input_clear = true;
 jQuery(document).ready(function($) {
   if (window.settings_display_images === undefined){
     settings_display_images = true;
@@ -7,6 +8,7 @@ jQuery(document).ready(function($) {
     search_index: 'elasticsearch',
     datatype: 'json',
     initial_search: false,
+    search_text_input_clear: true,
     enable_rangeselect: true,
     enable_geoselect: true,
     display_images: settings_display_images,

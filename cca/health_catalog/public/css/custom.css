@@ -139,3 +139,17 @@ footer {
 .eea-icon.tabular:before {
     content: "\f19e";
 }
+.eea-icon-remove:before, .eea-icon-close:before, .eea-icon-times:before {
+    content: "\f00d";
+}
+.eea-icon-search:before {
+    content: "\f002";
+}
+#content .facetview_selection a {
+    padding-top: 3px;
+}
+#search_text {
+
+}
+
+<a id="search_text" class="eea-icon eea-icon-times eea-icon"></a>
