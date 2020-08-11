@@ -2152,10 +2152,6 @@ label {
     font-style: normal
 }
 
-#facetview_trees .jstree-checkbox::before {
-    content: '\f096'
-}
-
 #facetview_trees .jstree-node .jstree-anchor {
     width: 100%;
     color: #000;

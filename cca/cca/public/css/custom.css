@@ -2,12 +2,6 @@
     max-width: 20%;
 }
 
-.eea-list-tiles .tileItem .tileBody {
-    margin-left: 1em;
-    /* height: 9em; */
-    /* overflow: hidden; */
-}
-
 .image-hide {
     display: none;
 }
@@ -24,3 +18,151 @@ div.current-filters-collapsible.eea-accordion-panel a.clear-all {
     width: 120px;
     height: 30px;
 }
+
+
+.eea-list-tiles .tileItem .tileImage {
+  max-width: 20%;
+}
+
+.eea-list-tiles .tileItem .tileBody {
+  /* height: 9em; */
+  /* overflow: hidden; */
+}
+
+.image-hide {
+  display: none;
+}
+
+.tileContent .logoAdapteCCA {
+  height: 23px;
+  display: inline;
+}
+
+.eea-icon {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1;
+  font-family: FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased
+}
+.eea-icon:before {
+  margin: 0 .3em;
+}
+.eea-icon-home:before {
+  content: "\f015";
+}
+
+.eea-icon-lg {
+  font-size: 1.333em;
+  line-height: .75em;
+  vertical-align: -15%
+}
+
+.eea-icon-2x {
+  font-size: 2em
+}
+
+.eea-icon-5x {
+  font-size: 5em
+}
+
+#content .jstree-container-ul {
+  padding: 0em;
+}
+
+footer {
+  margin-top: 40px !important;
+}
+#facetview_article .content-sidebar,
+#facetview_article .content-column
+{
+    border:0px;
+}
+/*
+#facetview_results_wrapper {
+    display:none;
+}
+*/
+/*
+#filterTitle h2{
+    margin-top: -5px;
+}
+*/
+#content .eea-accordion-panels .eea-accordion-panel > h2.facetview_open,
+#content .eea-accordion-panels .eea-accordion-panel > h2.facetview_showtree
+{
+    padding-left:5px;
+}
+.eea-right-section h3 {
+    display: none;
+}
+/*#facetview_trees {
+    padding-top:100px !important;
+}*/
+#facetview_rightcol {
+    margin-top: -5px;
+}
+#filterDisplayAs .i18n.eea-icon {
+    border:0px;
+    font-size:30px;
+    color:#000;
+    padding:0px;
+}
+#filterDisplayAs .i18n.eea-icon:hover {
+    border:0px;
+    color:#000;
+    background-color: #fff;
+}
+#filterDisplayAs .i18n.eea-icon.selected {
+    background-color: #fff;
+    color:#2d749c;
+}
+.eea-icon.list:before {
+    content: "\f0c9";
+}
+.eea-icon.card:before {
+    content: "\f00a";
+}
+.eea-icon.tabular:before {
+    content: "\f0ce";
+}
+.eea-icon-remove:before, .eea-icon-close:before, .eea-icon-times:before {
+    content: "\f00d";
+}
+.eea-icon-search:before {
+    content: "\f002";
+}
+.eea-accordion-panel > h2 .eea-icon-right:before,
+.eea-accordion-title > .eea-icon-right:before {
+content: "\f054";
+}
+#content .facetview_selection a {
+    padding-top: 3px;
+}
+h2.facetview_showtree,
+.facetview_filter_options{
+    width:100%;
+}
+.facetview_showtree{
+    border-top:1px solid #E0E0E0 !important;
+}
+h2.facetview_showtree:not(.facetview_open):hover span.facetview_arrow_right.eea-icon-right::before{
+    content: "\f078";
+}
+h2.filters-header__header:not(.facetview_open):hover span.facetview_arrow_right.eea-icon-right::before{
+    content: "\f078";
+}
+#facetview h1, #facetview h2, #facetview h3, #facetview h4, #facetview h5, #facetview h6 {
+    font-family: "Open Sans", Verdana, Helvetica, Arial, sans-serif;
+}
+.facetview_display_type .eea-icon {
+    padding: 0.6em;
+}
+.facetview_orderby {
+    padding: 2px 12px !important;
+}
+/* from health */
