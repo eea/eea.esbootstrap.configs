@@ -27,3 +27,19 @@ tr:nth-of-type(even) .results_text:after {
 .facetview_orderby{
     display:none;
 }
+
+span.TODO {
+  background-color:yellow;
+}
+
+ul.information_and_findings{
+  list-style-type: disc;
+}
+
+ul.methodology_list1{
+  list-style-type: disc;
+}
+
+ul.methodology_list2{
+  list-style-type: circle;
+}

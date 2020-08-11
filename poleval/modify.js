@@ -1,4 +1,5 @@
 function sanitize_csv(field, separator){
+    console.log(field)
     let values = field.split(separator);
     let clean_values = [];
     for (let i = 0; i < values.length; i++){
@@ -34,11 +35,18 @@ module.exports = function(doc){
         }
 
         // remove trailing spaces from csv
-        modified_doc["Policy area(s)"] = sanitize_csv(modified_doc["Policy area(s)"], ";");
+//console.log(1)
+//console.log(modified_doc)
+        modified_doc["Policy area - main"] = sanitize_csv(modified_doc["Policy area - main"], ";");
+//console.log(2)
         modified_doc["Sector(s)"] = sanitize_csv(modified_doc["Sector(s)"], ";");
+//console.log(3)
         modified_doc["Geographical scope"] = sanitize_csv(modified_doc["Geographical scope"], ";");
+//console.log(4)
         modified_doc["Methods - types"] = sanitize_csv(modified_doc["Methods - types"], ";");
+//console.log(5)
         modified_doc["Methods"] = sanitize_csv(modified_doc["Methods"], ";");
+//console.log(6)
     }
     catch(err){
         console.log(err);
