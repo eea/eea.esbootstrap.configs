@@ -101,7 +101,7 @@
             }
         },
         {
-            "name": "Policy area(s)",
+            "name": "Policy area - main",
             "listing": {
                 "visible": true,
                 "title": "Policy area(s)",
@@ -119,7 +119,7 @@
                 "pos": 50,
                 "type": "facet",
                 "size": 100,
-                "order": "term",
+                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"],
                 "autocomplete": true,
                 "autocomplete_placeholder": "Search for area"
@@ -144,7 +144,7 @@
                 "pos": 60,
                 "type": "facet",
                 "size": 100,
-                "order": "term",
+                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"],
                 "autocomplete": true,
                 "autocomplete_placeholder": "Search for sector"
@@ -186,7 +186,7 @@
                 "pos": 80,
                 "type": "facet",
                 "size": 100,
-                "order": "term",
+                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"],
                 "autocomplete": true,
                 "autocomplete_placeholder": "Search for commissioner"
@@ -211,7 +211,7 @@
                 "pos": 90,
                 "type": "facet",
                 "size": 100,
-                "order": "term",
+                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"],
                 "autocomplete": true,
                 "autocomplete_placeholder": "Search for author"
@@ -248,12 +248,24 @@
                 "pos": 110
             },
             "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Geographical scope only for facets",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
+            },
+            "facet": {
                 "visible": true,
                 "title": "Geographical scope",
                 "pos": 100,
                 "type": "facet",
                 "size": 100,
-                "order": "term",
+                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"],
                 "autocomplete": true,
                 "autocomplete_placeholder": "Search for geographical scope"
@@ -278,7 +290,7 @@
                 "pos": 120,
                 "type": "facet",
                 "size": 100,
-                "order": "term",
+                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"]
             }
         },
@@ -301,7 +313,7 @@
                 "pos": 130,
                 "type": "facet",
                 "size": 100,
-                "order": "term",
+                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"]
             }
         },
@@ -358,7 +370,7 @@
                 "pos": 160,
                 "type": "facet",
                 "size": 100,
-                "order": "term",
+                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"]
             }
         },
@@ -381,7 +393,7 @@
                 "pos": 170,
                 "type": "facet",
                 "size": 100,
-                "order": "term",
+                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"]
             }
         },
@@ -404,7 +416,7 @@
                 "pos": 180,
                 "type": "facet",
                 "size": 100,
-                "order": "term",
+                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"],
                 "autocomplete": true,
                 "autocomplete_placeholder": "Search for criterias"
@@ -429,7 +441,7 @@
                 "pos": 190,
                 "type": "facet",
                 "size": 100,
-                "order": "term",
+                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"]
             }
         },
@@ -452,20 +464,20 @@
                 "pos": 200,
                 "type": "facet",
                 "size": 100,
-                "order": "term",
+                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"]
             }
         },
         {
-            "name": "Methods - others",
+            "name": "Methods - other",
             "listing": {
                 "visible": true,
-                "title": "Methods - others",
+                "title": "Methods - other",
                 "width": "100px",
                 "pos": 210
             },
             "csv_tsv": {
-                "title": "Methods - others",
+                "title": "Methods - other",
                 "visible": true,
                 "pos": 210
             },
@@ -475,7 +487,7 @@
                 "pos": 210,
                 "type": "facet",
                 "size": 100,
-                "order": "term",
+                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"],
                 "autocomplete": true,
                 "autocomplete_placeholder": "Search for methods"
@@ -500,7 +512,7 @@
                 "pos": 220,
                 "type": "facet",
                 "size": 100,
-                "order": "term",
+                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"],
                 "autocomplete": true,
                 "autocomplete_placeholder": "Search for output data"
@@ -525,7 +537,7 @@
                 "pos": 230,
                 "type": "facet",
                 "size": 100,
-                "order": "term",
+                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"],
                 "autocomplete": true,
                 "autocomplete_placeholder": "Search for input data"
@@ -550,7 +562,7 @@
                 "pos": 240,
                 "type": "facet",
                 "size": 100,
-                "order": "term",
+                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"]
             }
         },
@@ -573,7 +585,7 @@
                 "pos": 250,
                 "type": "facet",
                 "size": 100,
-                "order": "term",
+                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"]
             }
         },

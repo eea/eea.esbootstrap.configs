@@ -34,7 +34,7 @@
     },
     "copy_to" : ["did_you_mean", "autocomplete"]
   },
-  "Policy area(s)": {
+  "Policy area - main": {
     "type": "text",
     "analyzer": "semicolon",
     "copy_to" : ["did_you_mean", "autocomplete"]
@@ -74,6 +74,11 @@
     "copy_to" : ["did_you_mean", "autocomplete"]
   },
   "Geographical scope": {
+    "type": "text",
+    "analyzer": "none",
+    "copy_to" : ["did_you_mean", "autocomplete"]
+  },
+  "Geographical scope only for facets": {
     "type": "text",
     "analyzer": "semicolon",
     "copy_to" : ["did_you_mean", "autocomplete"]
@@ -133,7 +138,7 @@
     "analyzer": "semicolon",
     "copy_to" : ["did_you_mean", "autocomplete"]
   },
-  "Methods - others": {
+  "Methods - other": {
     "type": "text",
     "analyzer": "semicolon",
     "copy_to" : ["did_you_mean", "autocomplete"]

@@ -19,7 +19,7 @@
     },
     "layout_vars": {
         "head_title": "Catalogue of policy evaluations",
-        "app_id": "poleval",
+        "app_id": "policyevaluation",
         "skip_external_template_styles": false,
         "skip_resources_bundling": true,
         "override_searchserver_resources": false,
@@ -38,12 +38,12 @@
             "details_page": []
         },
         "site_title": "Catalogue of European environment and climate policy evaluations",
-        "site_description": "",
+        "site_description": "<span>The catalogue of available evaluations of European environment and climate policies resulting from the thorough review of almost 500 policy evaluations. The aim of the catalogue is to obtain an overview of policy evaluation practices in Europe, in the areas of environment and climate policy.</span><br/><br/><span>The policy evaluations included in the database have been documented according to a series of columns, in order to obtain an overview of policy evaluation practices. Some of the issues that the catalogue classifies the evaluations under include: policy areas covered; sectors discussed; type of commissioner and author; types, techniques and methods of evaluation and evaluation criteria used. More information available in the methodology section (<span class='TODO'>add link – cf point 9</span>).</span><br/><br/><span>Selection of some background information and findings:</span><ul class='information_and_findings'><li>‘Policy’ has been defined as a law, regulation, procedure, administrative action, incentive, programme or strategy, implemented (or planned) by governments or institutions. Policy ‘evaluation’ has been defined as the exercise of evaluating the quality, benefits, worth and utility of a given policy, using various research methods and evaluation practices. This is achieved by investigating the content, outcome, implementation or impact of a policy.</li><li>In total more than 1500 documents were identified as potential policy evaluations. 495 were fully reviewed. It is a sample and not fully comprehensive.</li><li>Almost half of the catalogue (47%) consist of the EU-wide policy evaluations, 43% were national evaluations. Very few sub national (regional) evaluations found.</li><li>Many evaluations included in the catalogue are linked to climate mitigation and energy, largely due to the large number of policies (and hence evaluations) in these areas in comparison to other environmental policy areas.</li><li>Half of the evaluations are linked to climate mitigation and energy, following by biodiversity, ecosystems, agriculture and forests.</li><li>The frequency (and sectoral focus) of evaluations roughly follows ‘peaks’ in policy activity (e.g. EU Emissions Trading System (ETS), Renewable energy directive (RES),  Energy performance of buildings directive (EPBD) recast)</li><li>Ex post evaluations appear slightly more common than ex ante evaluations</li><li>Majority of evaluations (75%) use combination of qualitative and quantitative methods</li><li>A large percentage of evaluations (36%) use a  combination of evaluation techniques (process evaluation and impact assessment, impact assessment and cost benefit analysis)</li><li>Cost-benefit analyses and modelling are used somewhat less than expected</li><li>‘Effectiveness’ is the most often used criterion (30%)</li><li>National evaluations seldom use the five standard criteria of relevance - effectiveness – efficiency – coherence – added value</ul>",
 
         "enableBreadcrumbs": true,
-        "breadcrumbs": "poleval",
+        "breadcrumbs": "Catalogue of policy evaluations",
         "dataprovencance_info_text": "poleval",
-        "further_info": "poleval"
+        "further_info": "policyevaluation"
     },
     "es_debug_enabled": false,
     "suggestions_enabled": true,
@@ -56,7 +56,7 @@
         "configuration": {
             "type": "csv",
             "bulksize": 3000,
-            "file": "poleval.csv",
+            "file": "poleval_v30.csv",
             "format": "csv",
             "encoding": "utf-8",
             "id_type": "field",
