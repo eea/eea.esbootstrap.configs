@@ -50,7 +50,7 @@ div.current-filters-collapsible.eea-accordion-panel a.clear-all {
   -webkit-font-smoothing: antialiased
 }
 .eea-icon:before {
-  margin: 0 .3em;
+  margin: 0;
 }
 .eea-icon-home:before {
   content: "\f015";
@@ -160,9 +160,29 @@ h2.filters-header__header:not(.facetview_open):hover span.facetview_arrow_right.
     font-family: "Open Sans", Verdana, Helvetica, Arial, sans-serif;
 }
 .facetview_display_type .eea-icon {
-    padding: 0.6em;
+    padding: 0.7em;
 }
 .facetview_orderby {
     padding: 2px 12px !important;
 }
 /* from health */
+#content .eea-accordion-panels .eea-accordion-panel > h2.facetview_open,
+#content #facetview_trees .eea-accordion-panel > h2.facetview_open:hover
+{
+    background-color: #1A679B !important;
+    color:#fff;
+}
+a.facetview_download {
+    background-color: #009590;
+    padding: 5px;
+}
+a.state-published {
+    text-decoration: none;
+}
+p.tileBody{
+    font-family: 'Open Sans',Verdana,Helvetica,Arial,sans-serif !important;
+}
+h2.facetview_showtree {
+    font-size:12px !important;
+    font-weight: bold !important;
+}

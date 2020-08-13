@@ -3,6 +3,7 @@ jQuery(document).ready(function($) {
   if (window.settings_display_images === undefined){
     settings_display_images = true;
   }
+  settings_default_display = 'list';
   var opts = {
     search_url: './tools/api',
     search_index: 'elasticsearch',
