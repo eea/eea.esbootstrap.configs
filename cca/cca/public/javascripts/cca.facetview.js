@@ -39,7 +39,8 @@ jQuery(document).ready(function($) {
       size: 10
     },
     display_type_options: settings_display_options,
-    display_type: settings_default_display
+    display_type: settings_default_display,
+    predefined_filters: [{'term': {'hasWorkflowState': 'published'}}]
   };
   function updatePagination() {
       $('.facetview_top').css("display", "block");
