@@ -186,3 +186,8 @@ h2.facetview_showtree {
     font-size:12px !important;
     font-weight: bold !important;
 }
+h2.facetview_showtree span.eea-icon {
+    float: right !important;
+    padding-right: 10px !important;
+    padding-top: 10px !important;
+}
