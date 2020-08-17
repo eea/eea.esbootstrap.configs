@@ -231,10 +231,11 @@ h2.facetview_showtree span.eea-icon {
 }
 #content .facetview_selection a i {
     display: none;
-    color:red;
+    background-color: #fff !important;
+    color:red !important;
     margin-left: -14px;
 }
-#content .facetview_selection a:hover i {
+#content .facetview_selection:hover a i {
     display: block !important;
 }
 #content .facetview_selection span {
