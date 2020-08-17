@@ -191,3 +191,69 @@ h2.facetview_showtree span.eea-icon {
     padding-right: 10px !important;
     padding-top: 10px !important;
 }
+.facetedview_search input{
+    border-radius:0px;
+}
+#content .facetedview_search .eea-icon {
+    color: gray;
+    padding-left: 7px;
+}
+#facetview_rightcol .current-filters {
+    margin:0;
+    padding:0;
+    background-color: #f5f9fc;
+    border-radius:0px;
+}
+#content .current-filters .filters-header h2 {
+    background-color: inherit;
+    color:#2d749c;
+}
+#content .current-filters .eea-reset-filters.clear-all{
+    text-decoration: none;
+    color:#000 !important;
+    background-color: white;
+    border-radius: 15px;
+    border: 1px solid gray !important;
+}
+#content .facetview_group_title {
+    color:#006699;
+    font-weight: bold;
+}
+#content .status_facetview_selection span, #content .year_facetview_selection span, #content .facetview_selection,
+#content .status_facetview_selection span, #content .year_facetview_selection span, #content .facetview_selection:hover,
+#content .status_facetview_selection span, #content .year_facetview_selection span, #content .facetview_selection span:hover,
+#content .status_facetview_selection span, #content .year_facetview_selection span, #content .facetview_selection span {
+    float: right;
+    background-color: #fff;
+}
+#content .facetview_selection {
+    border:1px gray solid !important;
+}
+#content .facetview_selection a i {
+    display: none;
+    color:red;
+    margin-left: -14px;
+}
+#content .facetview_selection a:hover i {
+    display: block !important;
+}
+#content .facetview_selection span {
+    color:#000;
+    font-weight: normal;
+}
+#content .eea-accordion-panel .eea-icon-eraser:before {
+    content: "\f12d" !important;
+}
+.facetview_download {
+    float: right !important;
+    background-color: #009590;
+    padding: 0.2em 0.5em;
+}
+.facetview_download .eea_custom_btn{
+    background-color: #009590;
+    border:0px !important;
+    text-decoration: none;
+    font-family: OpenSansM;
+    font-weight: bold;
+    font-size:14px;
+}

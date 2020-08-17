@@ -32,6 +32,7 @@ jQuery(document).ready(function($) {
       replaceNumbers();
       updatePagination();
       limitString();
+      setupPage();
       $(window).trigger('post_search_callback');
     },
     paging: {
@@ -42,6 +43,11 @@ jQuery(document).ready(function($) {
     display_type: settings_default_display,
     predefined_filters: [{'term': {'hasWorkflowState': 'published'}}]
   };
+  function setupPage() {
+    //$('.facetview_orderby').before($('.facetview_download'));
+    $('.facetview_download').insertAfter($('.pull-right'));
+    $('.facetview_download .eea_download_btn span').html('Download CSV');
+  }
   function updatePagination() {
       $('.facetview_top').css("display", "block");
       $('.top-pagination').css("display", "block");
