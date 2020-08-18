@@ -60,16 +60,6 @@ jQuery(document).ready(function($) {
     //$('.facetview_orderby').before($('.facetview_download'));
     $('.facetview_download').insertAfter($('.pull-right'));
     $('.facetview_download .eea_download_btn span').html('Download CSV');
-    $( ".facetview_filter.eea-accordion-panel" ).each(function() {
-        console.log('aaa');
-        console.log($( this ).find('li.selected').length, $( this ).find('h2.facetview_open').length);
-        console.log($( this ).find('a.jstree-clicked').length, $( this ).find('h2.facetview_open').length);
-        //if($( this ).find('a.jstree-clicked').length && 0==$( this ).find('h2.facetview_open').length) {
-        if($( this ).find('li.selected').length && 0==$( this ).find('h2.facetview_open').length) {
-            console.log('bbb');
-           $( this ).find('h2').click();
-        }
-    });
   }
   function updatePagination() {
       $('.facetview_top').css("display", "block");
