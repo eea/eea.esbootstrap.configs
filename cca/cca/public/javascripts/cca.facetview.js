@@ -16,8 +16,21 @@ jQuery(document).ready(function($) {
 
     display_images: settings_display_images,
     default_sort: [],
-    search_sortby: settings_search_sortby,
-    sort: settings_sort,
+    //search_sortby: settings_search_sortby,
+    search_sortby: [
+      {
+        'field': 'label',
+        'display_asc': 'Title a-z',
+        'display_desc': 'Title z-a'
+      },
+      {
+        'field': 'issued',
+        'display_asc': 'Oldest',
+        'display_desc': 'Newest'
+      }
+    ],
+    sort: [{'issued': {'order': 'desc'}}],
+    //sort: settings_sort,
     post_init_callback: function() {
       // 88482 avoid double add of eea settings and number replacing
       // since we call also post_search_callback
@@ -47,6 +60,16 @@ jQuery(document).ready(function($) {
     //$('.facetview_orderby').before($('.facetview_download'));
     $('.facetview_download').insertAfter($('.pull-right'));
     $('.facetview_download .eea_download_btn span').html('Download CSV');
+    $( ".facetview_filter.eea-accordion-panel" ).each(function() {
+        console.log('aaa');
+        console.log($( this ).find('li.selected').length, $( this ).find('h2.facetview_open').length);
+        console.log($( this ).find('a.jstree-clicked').length, $( this ).find('h2.facetview_open').length);
+        //if($( this ).find('a.jstree-clicked').length && 0==$( this ).find('h2.facetview_open').length) {
+        if($( this ).find('li.selected').length && 0==$( this ).find('h2.facetview_open').length) {
+            console.log('bbb');
+           $( this ).find('h2').click();
+        }
+    });
   }
   function updatePagination() {
       $('.facetview_top').css("display", "block");
