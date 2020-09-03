@@ -136,7 +136,7 @@
       "copy_to" : ["did_you_mean", "autocomplete"]
     },
     "year" : {
-      "type" : "text",
+      "type" : "integer",
       "analyzer" : "date2year"
     },
     "time_coverage" : {
