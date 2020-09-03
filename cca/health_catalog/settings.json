@@ -3,7 +3,7 @@
     "port": 3000
   },
   "elastic": {
-    "index": "esbootstrapdata-climate-health-catalog",
+    "index": "esbootstrapdata-climate",
     "type": "resource",
     "field_base":"",
     "enableValuesCounting": true

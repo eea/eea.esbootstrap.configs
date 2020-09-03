@@ -118,6 +118,10 @@
       "type" : "string",
       "analyzer" : "none"
     },
+    "include_in_observatory" : {
+      "type" : "string",
+      "analyzer" : "none"
+    },
     "title" : {
       "type" : "string",
       "fields" : {

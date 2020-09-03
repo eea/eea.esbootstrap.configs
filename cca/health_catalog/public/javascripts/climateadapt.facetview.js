@@ -20,7 +20,8 @@ window.esbootstrap_options = {
   display_type: 'card',   // list
   resultModifier: updateResult,
   initialsearch: true,
-  predefined_filters: [{'term': {'hasWorkflowState': 'published'}}, {'term': {'sectors': 'Health'}}],
+  //predefined_filters: [{'term': {'hasWorkflowState': 'published'}}, {'term': {'sectors': 'Health'}}, {'term': {'include_in_observatory': 'True'}}],
+  predefined_filters: [{'term': {'hasWorkflowState': 'published'}}, {'term': {'include_in_observatory': 'True'}}],
   //predefined_filters: [{'term': [{'hasWorkflowState': 'published'},{'sectors':'Health'}]}],
   /*
   predefined_filters : [
