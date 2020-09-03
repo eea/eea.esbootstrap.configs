@@ -474,14 +474,19 @@
                 "visible": true,
                 "title": "Year",
                 "pos": 7,
-                "type": "facet",
-                "size": 100,
-                "min_size": 10,
-                "order": "reverse_term",
-                "operator": "AND",
-                "facet_display_options": ["sort", "checkbox"],
-                "short_name": "Year",
-                "values_blacklist": ["undefined"]
+                "title": "Year",
+                "type": "rangehistogram",
+                "histogram_config": {
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+                    "columns_bucketsize" : 1,
+                    "columns_bucket_min" : 1988,
+                    "columns_bucket_max": 2020,
+                    "slider_bucketsize" : 1,
+                    "histogram" : false,
+                    "measurement_unit": "year",
+                    "discrete_values": true
+                }
             },
             "card": {
                 "field": "year",
