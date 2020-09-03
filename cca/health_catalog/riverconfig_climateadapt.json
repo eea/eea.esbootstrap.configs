@@ -28,6 +28,17 @@
   "listtype": "white",
   "normProp": {
 
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.guidancedocument#health_impacts": "health_impacts",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#health_impacts": "health_impacts",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.indicator#health_impacts": "health_impacts",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.adaptationoption#health_impacts": "health_impacts",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.informationportal#health_impacts": "health_impacts",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.video#health_impacts": "health_impacts",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.tool#health_impacts": "health_impacts",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.casestudy#health_impacts": "health_impacts",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#health_impacts": "health_impacts",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#health_impacts": "health_impacts",
+
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.guidancedocument#include_in_observatory": "include_in_observatory",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#include_in_observatory": "include_in_observatory",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.indicator#include_in_observatory": "include_in_observatory",

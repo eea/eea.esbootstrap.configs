@@ -118,6 +118,14 @@
       "type" : "string",
       "analyzer" : "none"
     },
+    "include_in_observatory" : {
+      "type" : "string",
+      "analyzer" : "none"
+    },
+    "health_impacts" : {
+      "type" : "string",
+      "analyzer" : "none"
+    },
     "title" : {
       "type" : "string",
       "fields" : {
