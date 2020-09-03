@@ -207,7 +207,7 @@
                 "autocomplete": false,
                 "visible": true,
                 "title": "Type of item",
-                "pos": 3,
+                "pos": 1,
                 "type": "facet",
                 "size": 50,
                 "min_size": 10,
@@ -225,6 +225,44 @@
                 "field": "typeOfData",
                 "default": "",
                 "visible": true
+            }
+        },
+        {
+            "name": "health_impacts",
+            "listing": {
+                "title": "Healh impacts",
+                "visible" : false
+            },
+            "csv_tsv": {
+                "title": "Health impacts",
+                "visible": false,
+                "pos": 3
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "autocomplete": false,
+                "visible": true,
+                "title": "Health impacts",
+                "pos": 2,
+                "type": "facet",
+                "size": 50,
+                "min_size": 10,
+                "order": "term",
+                "operator": "OR",
+                "facet_display_options": ["sort", "checkbox"],
+                "values_blacklist": ["Webpage", "File", "http://cr.eionet.europa.eu/ontologies/contreg.rdf#File"]
+            },
+            "card": {
+                "field": "health_impacts",
+                "default": "",
+                "visible": false
+            },
+            "list": {
+                "field": "health_impacts",
+                "default": "",
+                "visible": false
             }
         },
         {
@@ -433,16 +471,17 @@
                 "pos": 8
             },
             "facet": {
-                "visible": false,
+                "visible": true,
                 "title": "Year",
-                "type": "rangehistogram",
-                "histogram_config": {
-                    "columns_min_color" : "#DDDDDD",
-                    "columns_max_color" : "#AAAAAA",
-                    "slider_bucketsize" : 1,
-                    "histogram" : false,
-                    "measurement_unit": "year"
-                    }
+                "pos": 7,
+                "type": "facet",
+                "size": 100,
+                "min_size": 10,
+                "order": "reverse_term",
+                "operator": "AND",
+                "facet_display_options": ["sort", "checkbox"],
+                "short_name": "Year",
+                "values_blacklist": ["undefined"]
             },
             "card": {
                 "field": "year",
