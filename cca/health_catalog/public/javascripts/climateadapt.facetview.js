@@ -17,7 +17,7 @@ window.esbootstrap_options = {
     from: 0,
     size: 12
   },
-  display_type: 'card',   // list
+  display_type: 'list',   // list
   resultModifier: updateResult,
   initialsearch: true,
   //predefined_filters: [{'term': {'hasWorkflowState': 'published'}}, {'term': {'sectors': 'Health'}}, {'term': {'include_in_observatory': 'True'}}],
