@@ -87,6 +87,9 @@ jQuery(document).ready(function($) {
 
 function showArticle(pathName) {
   $.get(pathName+'?only_article=1', function(data) {
+    if ($('#facetview_article_content').length == 0) {
+        $( "#facetview_rightcol" ).after("<div id='facetview_article' class='hide row-fluid'><div style='width:100%' class='text-right'><a href='' style='color:white' class='button-field standard-button primary-button' id='faceview_article_back_to_list'>back to search results</a></div><div id='facetview_article_content'></div></div>");
+    }
     var parser = new DOMParser();
     var doc = parser.parseFromString(data, "text/html");
     $('#facetview_article_content').html(doc.getElementById("content-core"));
