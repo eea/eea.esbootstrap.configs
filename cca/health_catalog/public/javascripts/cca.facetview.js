@@ -121,6 +121,7 @@ function showArticle(pathName) {
         $('#facetview_article_content').html(doc.getElementById("content-core"));
         $('.content-sidebar').prepend(backButton);
 
+        $('.eea-section.eea-right-section').html('<div class="health_contribute"><h4>Contribute to the Observatory</h4><span class="link-mailto"><a href="mailto:climate.adapt@eea.europa.eu" class="submit-widget button-field standard-button primary-button" target="_blank">Send us an email <i class="pull-right fa fa-envelope"></i></a></span></div>');
         $('.share-your-info-ace-button').addClass('hide');
         $('#facetview_article').removeClass('hide');
         $('#facetview_rightcol').addClass('hide');
