@@ -170,7 +170,7 @@ function checkDefaultArticle(){
     sourceData = JSON.parse(source);
     path = '';
 
-    if (sourceData.hasOwnProperty('focusPath') && sourceData['focusPath'].charAt(0) == '/') {
+    if (sourceData && sourceData.hasOwnProperty('focusPath') && sourceData['focusPath'].charAt(0) == '/') {
         path = sourceData['focusPath'];
     }
     return path;

@@ -68,7 +68,10 @@ jQuery(document).ready(function($) {
         $('#facetview_article').addClass('hide');
         $('#facetview_rightcol').removeClass('hide');
         params = new URLSearchParams(window.location.search);
-        source = params.get('source');
+        sourceData = JSON.parse(params.get('source'));
+        if (sourceData.hasOwnProperty('focusPath')) {
+            delete sourceData.focusPath;
+        }
         history.pushState('', '', window.location.pathname+'?source='+encodeURIComponent(JSON.stringify(sourceData)));
         return false;
     });
