@@ -1,5 +1,7 @@
 var today = getTodayWithTime();
 
+focusArticlePath = checkDefaultArticle();
+
 window.esbootstrap_options = {
   search_sortby: [
     {
@@ -160,6 +162,18 @@ function updateContentTypes(element, result){
     }
   }
   return(result);
+}
+
+function checkDefaultArticle(){
+    params = new URLSearchParams(window.location.search);
+    source = params.get('source');
+    sourceData = JSON.parse(source);
+    path = '';
+
+    if (sourceData.hasOwnProperty('focusPath') && sourceData['focusPath'].charAt(0) == '/') {
+        path = sourceData['focusPath'];
+    }
+    return path;
 }
 
 function updateResult(element, result){

@@ -1,8 +1,10 @@
 //window.search_text_input_clear = true;
 jQuery(document).ready(function($) {
+
   if (window.settings_display_images === undefined){
     settings_display_images = true;
   }
+  settings_default_display = 'list';
   var opts = {
     search_url: './tools/api',
     search_index: 'elasticsearch',
@@ -32,6 +34,7 @@ jQuery(document).ready(function($) {
       $(window).trigger('post_search_callback');
       localArticleView();
       viewChartMode();
+      checkShowArticleDefault();
     },
     paging: {
       from: 0,
@@ -64,11 +67,22 @@ jQuery(document).ready(function($) {
         event.preventDefault();
         $('#facetview_article').addClass('hide');
         $('#facetview_rightcol').removeClass('hide');
+        params = new URLSearchParams(window.location.search);
+        source = params.get('source');
+        history.pushState('', '', window.location.pathname+'?source='+encodeURIComponent(JSON.stringify(sourceData)));
         return false;
     });
+
     $('#facetview_results_wrapper a.eea-tileInner,a.state-published').click(function(event) {
       event.preventDefault();
       var pathName = $(this)[0].pathname;
+
+      params = new URLSearchParams(window.location.search);
+      source = params.get('source');
+      var sourceData = JSON.parse(source);
+      sourceData['focusPath'] = pathName;
+      history.pushState('', '', window.location.pathname+'?source='+encodeURIComponent(JSON.stringify(sourceData)));
+
       showArticle(pathName);
       return false;
     });
@@ -84,6 +98,14 @@ jQuery(document).ready(function($) {
   }
   eea_facetview('.facet-view-simple', opts);
 });
+
+function checkShowArticleDefault() {
+    if (focusArticlePath.length) {
+        $('#facetview_rightcol').addClass('hide');
+        showArticle(focusArticlePath);
+        focusArticlePath = '';
+    }
+}
 
 function showArticle(pathName) {
   $.get(pathName+'?only_article=1', function(data) {
