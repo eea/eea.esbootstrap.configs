@@ -151,3 +151,6 @@ footer {
 #search_text {
 
 }
+#facetview_article p{
+    font-size: 14px !important;
+}
