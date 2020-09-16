@@ -119,7 +119,7 @@ function showArticle(pathName) {
         var parser = new DOMParser();
         var doc = parser.parseFromString(data, "text/html");
         $('#facetview_article_content').html(doc.getElementById("content-core"));
-        $('#aceitem_sidebar').prepend(backButton);
+        $('.content-sidebar').prepend(backButton);
 
         $('.share-your-info-ace-button').addClass('hide');
         $('#facetview_article').removeClass('hide');
