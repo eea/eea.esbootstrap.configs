@@ -154,6 +154,13 @@ footer {
 #facetview_article p{
     font-size: 14px !important;
 }
-#facetview_article_content .content-column{
+#facetview_article_content .content-column,
+#facetview_article_content .content-sidebar,
+#facetview_article_content .aceitem_top h2
+{
     padding-top:0px !important;
+}
+#facetview_article_content .aceitem_top h2
+{
+    margin-top:0px !important;
 }
