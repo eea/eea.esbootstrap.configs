@@ -63,19 +63,6 @@ jQuery(document).ready(function($) {
     }
   }
   function localArticleView() {
-    $('#faceview_article_back_to_list').click(function(event) {
-        event.preventDefault();
-        $('#facetview_article').addClass('hide');
-        $('#facetview_rightcol').removeClass('hide');
-        params = new URLSearchParams(window.location.search);
-        sourceData = JSON.parse(params.get('source'));
-        if (sourceData.hasOwnProperty('focusPath')) {
-            delete sourceData.focusPath;
-        }
-        history.pushState('', '', window.location.pathname+'?source='+encodeURIComponent(JSON.stringify(sourceData)));
-        return false;
-    });
-
     $('#facetview_results_wrapper a.eea-tileInner,a.state-published').click(function(event) {
       event.preventDefault();
       var pathName = $(this)[0].pathname;
@@ -111,18 +98,28 @@ function checkShowArticleDefault() {
 }
 
 function showArticle(pathName) {
-  $.get(pathName+'?only_article=1', function(data) {
     if ($('#facetview_article_content').length == 0) {
-        $( "#facetview_rightcol" ).after("<div id='facetview_article' class='hide row-fluid'><div style='width:100%' class='text-right'><a href='' style='color:white' class='button-field standard-button primary-button' id='faceview_article_back_to_list'>back to search results</a></div><div id='facetview_article_content'></div></div>");
+        $( "#facetview_rightcol" ).after("<div id='facetview_article' class='row-fluid'><div id='facetview_article_content'></div></div>");
     }
-    var parser = new DOMParser();
-    var doc = parser.parseFromString(data, "text/html");
-    $('#facetview_article_content').html(doc.getElementById("content-core"));
-
-    $('.share-your-info-ace-button').addClass('hide');
+    $('#facetview_article_content').html("<h1>Loading ...</h1>");
     $('#facetview_article').removeClass('hide');
     $('#facetview_rightcol').addClass('hide');
-  });
+    $.get(pathName+'?only_article=1', function(data) {
+        params = new URLSearchParams(window.location.search);
+        sourceData = JSON.parse(params.get('source'));
+        if (sourceData.hasOwnProperty('focusPath')) {
+            delete sourceData.focusPath;
+        }
+        backButtonPath = window.location.pathname+'?source='+encodeURIComponent(JSON.stringify(sourceData));
+        backButton = "<a href='"+backButtonPath+"' style='color:white;margin-bottom:10px;width:100%;text-align:center;' class='button-field standard-button primary-button' id='faceview_article_back_to_list'>back to search</a>";
+
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(data, "text/html");
+        $('#facetview_article_content').html(doc.getElementById("content-core"));
+        $('#aceitem_sidebar').prepend(backButton);
+
+        $('.share-your-info-ace-button').addClass('hide');
+    });
 }
 
 function limitString() {

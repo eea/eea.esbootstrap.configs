@@ -50,7 +50,7 @@ jQuery(document).ready(function($) {
                                     +"</div>"
                                 );
 
-    $( "#facetview_rightcol" ).after("<div id='facetview_article' class='hide row-fluid'><div style='width:100%' class='text-right'><a href='' style='color:white' class='button-field standard-button primary-button' id='faceview_article_back_to_list'>back to search results</a></div><div id='facetview_article_content'></div></div>");
+    $( "#facetview_rightcol" ).after("<div id='facetview_article' class='hide row-fluid'><div id='facetview_article_content'></div></div>");
     $('#filterInput').prepend($('.facetedview_search'));
     $('#filterDisplayAs').prepend($('.facetview_display_type'));
     $('#filterSort').prepend($('.facetview_orderby'));
