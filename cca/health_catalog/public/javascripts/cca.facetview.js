@@ -64,17 +64,22 @@ jQuery(document).ready(function($) {
   }
   function localArticleView() {
     $('#facetview_results_wrapper a.eea-tileInner,a.state-published').click(function(event) {
-      event.preventDefault();
-      var pathName = $(this)[0].pathname;
+        event.preventDefault();
+        var pathName = $(this)[0].pathname;
 
-      params = new URLSearchParams(window.location.search);
-      source = params.get('source');
-      var sourceData = JSON.parse(source);
-      sourceData['focusPath'] = pathName;
-      history.pushState('', '', window.location.pathname+'?source='+encodeURIComponent(JSON.stringify(sourceData)));
+        params = new URLSearchParams(window.location.search);
+        source = params.get('source');
+        var sourceData = JSON.parse(source);
+        sourceData['focusPath'] = pathName;
+        history.pushState('', '', window.location.pathname+'?source='+encodeURIComponent(JSON.stringify(sourceData)));
 
-      showArticle(pathName);
-      return false;
+        var els = $("a.state-published[href$='"+pathName+"']");
+        for(i=0;i<els.length;i++) {
+            console.log(els[i].text)
+            $(els[i]).html(els[i].text+' <img src="https://www.eea.europa.eu/++resource++faceted_images/ajax-loader-small.gif">');
+        }
+        showArticle(pathName);
+        return false;
     });
   }
 
@@ -99,11 +104,9 @@ function checkShowArticleDefault() {
 
 function showArticle(pathName) {
     if ($('#facetview_article_content').length == 0) {
-        $( "#facetview_rightcol" ).after("<div id='facetview_article' class='row-fluid'><div id='facetview_article_content'></div></div>");
+        $( "#facetview_rightcol" ).after("<div id='facetview_article' class='hide row-fluid'><div id='facetview_article_content'></div></div>");
     }
-    $('#facetview_article_content').html("<h1>Loading ...</h1>");
-    $('#facetview_article').removeClass('hide');
-    $('#facetview_rightcol').addClass('hide');
+    //$('#facetview_article_content').html("<h1>Loading ...</h1>");
     $.get(pathName+'?only_article=1', function(data) {
         params = new URLSearchParams(window.location.search);
         sourceData = JSON.parse(params.get('source'));
@@ -119,6 +122,8 @@ function showArticle(pathName) {
         $('#aceitem_sidebar').prepend(backButton);
 
         $('.share-your-info-ace-button').addClass('hide');
+        $('#facetview_article').removeClass('hide');
+        $('#facetview_rightcol').addClass('hide');
     });
 }
 
