@@ -122,7 +122,8 @@
                 "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"],
                 "autocomplete": true,
-                "autocomplete_placeholder": "Search for area"
+                "autocomplete_placeholder": "Search for area",
+                "last_value": "Other"
             }
         },
         {
@@ -147,7 +148,8 @@
                 "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"],
                 "autocomplete": true,
-                "autocomplete_placeholder": "Search for sector"
+                "autocomplete_placeholder": "Search for sector",
+                "last_value": "Other"
             }
         },
         {
@@ -189,7 +191,8 @@
                 "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"],
                 "autocomplete": true,
-                "autocomplete_placeholder": "Search for commissioner"
+                "autocomplete_placeholder": "Search for commissioner",
+                "last_value": "Other"
             }
         },
         {
@@ -214,7 +217,8 @@
                 "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"],
                 "autocomplete": true,
-                "autocomplete_placeholder": "Search for author"
+                "autocomplete_placeholder": "Search for author",
+                "last_value": "Other"
             }
         },
         {
@@ -268,7 +272,8 @@
                 "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"],
                 "autocomplete": true,
-                "autocomplete_placeholder": "Search for geographical scope"
+                "autocomplete_placeholder": "Search for geographical scope",
+                "last_value": "Other"
             }
         },
         {
