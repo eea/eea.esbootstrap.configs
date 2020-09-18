@@ -8,6 +8,7 @@ if [[ "${DEV_ENV:-false}" == "true" ]] ; then
     if [ -d ".git" ]; then
        git pull
     else
+       rm -r *
        git clone $github_repo . --depth=5
     fi 
     #on commit ignore the permission changes
