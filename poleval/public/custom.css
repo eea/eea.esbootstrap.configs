@@ -6,6 +6,7 @@
     height: 60px;
     overflow: hidden;
     z-index: 1;
+    max-height: 36px;
 }
 .results_text:after {
    content: " ";
