@@ -1,0 +1,881 @@
+{
+    "details_settings" : {
+        "sections": [
+            {"name":"info",
+             "title":"General info",
+             "pos":0},
+            {"name":"created",
+             "title":"Created",
+             "pos":1}
+        ]
+    },
+    "fields_mapping": [
+        {
+            "name": "ID",
+            "listing": {
+                "title": "ID",
+                "visible" : true,
+                "pos" : 1,
+                "display": {
+                    "field": "ID",
+                    "post": "</td>"
+                }
+            },
+            "details": {
+                "title": "ID",
+                "pos" : 1,
+                "section": "info",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "ID",
+                "visible": true,
+                "pos": 1
+            }
+        },
+        {
+            "name": "MS",
+            "listing": {
+                "title": "Country",
+                "visible" : true,
+                "pos" : 2
+            },
+            "details": {
+                "title": "Country",
+                "pos" : 2,
+                "section": "info",
+                "visible": true
+            },
+            "facet": {
+                "visible": true,
+                "title": "Country",
+                "short_name": "Country",
+                "pos": 10,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "operator": "OR",
+                "facet_display_options": ["sort", "checkbox"]
+            },
+            "csv_tsv": {
+                "title": "Country",
+                "visible": true,
+                "pos": 2
+            }
+        },
+        {
+            "name": "VFN",
+            "listing": {
+                "title": "Vehicle family identification number",
+                "visible" : true,
+                "pos" : 3
+            },
+            "details": {
+                "title": "Vehicle family identification number",
+                "width": "90px",
+                "pos" : 3,
+                "section": "info",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "VFN",
+                "visible": true,
+                "pos": 3
+            }
+        },
+        {
+            "name": "Mp",
+            "values_blacklist":[""],
+            "listing": {
+                "title": "Pool",
+                "visible" : true,
+                "pos" : 4
+            },
+            "details": {
+                "title": "Mp",
+                "pos" : 4,
+                "section": "Mp",
+                "visible": true
+            },
+            "facet": {
+                "visible": true,
+                "title": "Pool",
+                "short_name": "Pool",
+                "pos": 20,
+                "type": "facet",
+                "size": 9999,
+                "order": "term",
+                "operator": "OR",
+                "facet_display_options": ["sort", "checkbox"]
+            },
+            "csv_tsv": {
+                "title": "Mp",
+                "visible": true,
+                "pos": 4
+            }
+        },
+        {
+            "name": "Mh",
+            "listing": {
+                "title": "Manufacturer name (EU standard)",
+                "visible" : true,
+                "pos" : 5
+            },
+            "details": {
+                "title": "Mh",
+                "pos" : 4,
+                "section": "Mh",
+                "visible": true
+            },
+            "facet": {
+                "visible": true,
+                "title": "Manufacturer name",
+                "pos": 30,
+                "type": "facet",
+                "size": 9999,
+                "order": "term",
+                "operator": "OR",
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for manufacturer",
+                "empty_message": "No manufacturer to show",
+                "short_name": "Manufacturer",
+                "facet_display_options": ["sort", "checkbox"]
+            },
+            "csv_tsv": {
+                "title": "Mh",
+                "visible": true,
+                "pos": 5
+            }
+        },
+        {
+            "name": "Man",
+            "listing": {
+                "title": "Manufacturer name (OEM declaration)",
+                "visible" : true,
+                "pos" : 6
+            },
+            "details": {
+                "title": "Man",
+                "pos" : 4,
+                "section": "Man",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Man",
+                "visible": true,
+                "pos": 6
+            }
+        },
+        {
+            "name": "MMS",
+            "listing": {
+                "title": "Manufacturer name (MS registry denomination)",
+                "visible" : true,
+                "pos" : 7
+            },
+            "details": {
+                "title": "MMS",
+                "pos" : 4,
+                "section": "MMS",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "MMS",
+                "visible": true,
+                "pos": 7
+            }
+        },
+        {
+            "name": "TAN",
+            "listing": {
+                "title": "Type approval number",
+                "visible" : true,
+                "pos" : 8
+            },
+            "details": {
+                "title": "Tan",
+                "pos" : 4,
+                "section": "Tan",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Tan",
+                "visible": true,
+                "pos": 8
+            }
+        },
+        {
+            "name": "T",
+            "listing": {
+                "title": "Type",
+                "visible" : true,
+                "pos" : 9
+            },
+            "details": {
+                "title": "T",
+                "pos" : 4,
+                "section": "T",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "T",
+                "visible": true,
+                "pos": 9
+            }
+        },
+        {
+            "name": "Va",
+            "listing": {
+                "title": "Variant",
+                "visible" : true,
+                "pos" : 10
+            },
+            "details": {
+                "title": "Va",
+                "pos" : 4,
+                "section": "Va",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Va",
+                "visible": true,
+                "pos": 10
+            }
+        },
+        {
+            "name": "Ve",
+            "listing": {
+                "title": "Version",
+                "visible" : true,
+                "pos" : 11
+            },
+            "details": {
+                "title": "Ve",
+                "pos" : 4,
+                "section": "Ve",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Ve",
+                "visible": true,
+                "pos": 11
+            }
+        },
+        {
+            "name": "Mk",
+            "listing": {
+                "title": "Make",
+                "visible" : true,
+                "pos" : 12
+            },
+            "details": {
+                "title": "Mk",
+                "pos" : 4,
+                "section": "Mk",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Mk",
+                "visible": true,
+                "pos": 12
+            }
+        },
+        {
+            "name": "Cn",
+            "listing": {
+                "title": "Commercial name",
+                "visible" : true,
+                "pos" : 13
+            },
+            "details": {
+                "title": "Cn",
+                "pos" : 4,
+                "section": "Cn",
+                "visible": true
+            },
+            "facet": {
+                "visible": true,
+                "title": "Commercial name",
+                "pos": 40,
+                "type": "facet",
+                "size": 9999,
+                "order": "reverse_count",
+                "operator": "OR",
+                "autocomplete": true,
+                "autocomplete_placeholder": "Search for name",
+                "empty_message": "No name",
+                "short_name": "Commercial name",
+                "facet_display_options": ["sort", "checkbox"]
+
+            },
+            "csv_tsv": {
+                "title": "Cn",
+                "visible": true,
+                "pos": 13
+            }
+        },
+        {
+            "name": "Ct",
+            "listing": {
+                "title": "Category of the vehicle type approved",
+                "visible" : true,
+                "pos" : 14
+            },
+            "details": {
+                "title": "Ct",
+                "pos" : 4,
+                "section": "Ct",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Ct",
+                "visible": true,
+                "pos": 14
+            }
+        },
+        {
+            "name": "Cr",
+            "listing": {
+                "title": "Category of the vehicle registered",
+                "visible" : true,
+                "pos" : 15
+            },
+            "details": {
+                "title": "Cr",
+                "pos" : 4,
+                "section": "Cr",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Cr",
+                "visible": true,
+                "pos": 15
+            }
+        },
+        {
+            "name": "r",
+            "listing": {
+                "title": "Total new registrations",
+                "visible" : true,
+                "pos" : 16
+            },
+            "details": {
+                "title": "r",
+                "pos" : 4,
+                "section": "r",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "r",
+                "visible": true,
+                "pos": 16
+            }
+        },
+        {
+            "name": "m__kg_",
+            "listing": {
+                "title": "Mass in running order (kg)",
+                "visible" : true,
+                "pos" : 17,
+                "width": "90px"
+            },
+            "details": {
+                "title": "m",
+                "pos" : 4,
+                "section": "m",
+                "visible": true
+            },
+            "facet": {
+                "visible": true,
+                "title": "Mass in running order (kg)",
+                "pos": 50,
+                "type": "rangehistogram",
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "columns_bucketsize" : 10000,
+
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+                    "slider_bucketsize" : 10,
+                    "histogram" : false,
+                    "measurement_unit": "kg"
+                }
+
+            },
+            "csv_tsv": {
+                "title": "m (kg)",
+                "visible": true,
+                "pos": 17
+            }
+        },
+        {
+            "name": "Mt",
+            "listing": {
+                "title": "WLTP test mass",
+                "visible" : true,
+                "pos" : 18
+            },
+            "details": {
+                "title": "Mt",
+                "pos" : 4,
+                "section": "Mt",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Mt",
+                "visible": true,
+                "pos": 18
+            }
+        },
+        {
+            "name": "Enedc__g_km_",
+            "listing": {
+                "title": "Specific CO2 Emissions in g/km (NEDC)",
+                "visible" : true,
+                "pos" : 19
+            },
+            "details": {
+                "title": "Enedc",
+                "pos" : 4,
+                "section": "Enedc",
+                "visible": true
+            },
+            "facet": {
+                "visible": true,
+                "title": "Specific CO2 Emissions in g/km (NEDC)",
+                "pos": 60,
+                "type": "rangehistogram",
+                "size": 600,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "columns_bucketsize" : 20,
+
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+                    "slider_bucketsize" : 1,
+                    "histogram" : true,
+                    "measurement_unit": "g/km"
+                }
+
+            },
+            "csv_tsv": {
+                "title": "Enedc (g/km)",
+                "visible": true,
+                "pos": 19
+            }
+        },
+        {
+            "name": "Ewltp__g_km_",
+            "listing": {
+                "title": "Specific CO2 Emissions in g/km (WLTP)",
+                "visible" : true,
+                "pos" : 20
+            },
+            "details": {
+                "title": "Ewltp",
+                "pos" : 4,
+                "section": "Ewltp",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Ewltp (g/km)",
+                "visible": true,
+                "pos": 20
+            }
+        },
+        {
+            "name": "W__mm_",
+            "listing": {
+                "title": "Wheel base in mm",
+                "visible" : true,
+                "pos" : 21
+            },
+            "details": {
+                "title": "W",
+                "pos" : 4,
+                "section": "W",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "W (mm)",
+                "visible": true,
+                "pos": 21
+            }
+        },
+        {
+            "name": "At1__mm_",
+            "listing": {
+                "title": "Axle width steering axle in mm",
+                "visible" : true,
+                "pos" : 22
+            },
+            "details": {
+                "title": "At1",
+                "pos" : 4,
+                "section": "At1",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "At1 (mm)",
+                "visible": true,
+                "pos": 22
+            }
+        },
+        {
+            "name": "At2__mm_",
+            "listing": {
+                "title": "Axle width other axle in mm",
+                "visible" : true,
+                "pos" : 23
+            },
+            "details": {
+                "title": "At2",
+                "pos" : 4,
+                "section": "At2",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "At2 (mm)",
+                "visible": true,
+                "pos": 23
+            }
+        },
+        {
+            "name": "Ft",
+            "listing": {
+                "title": "Fuel type",
+                "visible" : true,
+                "pos" : 24
+            },
+            "details": {
+                "title": "Ft",
+                "pos" : 4,
+                "section": "Ft",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Ft",
+                "visible": true,
+                "pos": 24
+            }
+        },
+        {
+            "name": "Fm",
+            "listing": {
+                "title": "Fuel mode",
+                "visible" : true,
+                "pos" : 25
+            },
+            "details": {
+                "title": "Fm",
+                "pos" : 4,
+                "section": "Fm",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Fm",
+                "visible": true,
+                "pos": 25
+            }
+        },
+        {
+            "name": "ec__cm3_",
+            "listing": {
+                "title": "Engine capacity in cm3",
+                "visible" : true,
+                "pos" : 26
+            },
+            "details": {
+                "title": "Ec",
+                "pos" : 4,
+                "section": "Ec",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "ec (cm3)",
+                "visible": true,
+                "pos": 26
+            }
+        },
+        {
+            "name": "ep__KW_",
+            "listing": {
+                "title": "Engine power in KW",
+                "visible" : true,
+                "pos" : 27
+            },
+            "details": {
+                "title": "Ep",
+                "pos" : 4,
+                "section": "Ep",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "ep (KW)",
+                "visible": true,
+                "pos": 27
+            }
+        },
+        {
+            "name": "z__Wh_km_",
+            "listing": {
+                "title": "Electric energy consumption in Wh/km",
+                "visible" : true,
+                "pos" : 28
+            },
+            "details": {
+                "title": "Z",
+                "pos" : 4,
+                "section": "Z",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "z (Wh/km)",
+                "visible": true,
+                "pos": 28
+            }
+        },
+        {
+            "name": "It",
+            "listing": {
+                "title": "Innovative technology or group of innovative technologies",
+                "visible" : true,
+                "pos" : 29
+            },
+            "details": {
+                "title": "IT",
+                "pos" : 4,
+                "section": "IT",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "IT",
+                "visible": true,
+                "pos": 29
+            }
+        },
+        {
+            "name": "Ernedc__g_km_",
+            "listing": {
+                "title": "Emissions reduction through innovative technologies in g/km",
+                "visible" : true,
+                "pos" : 30
+            },
+            "details": {
+                "title": "Ernedc",
+                "pos" : 4,
+                "section": "Ernedc",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Ernedc (g/km)",
+                "visible": true,
+                "pos": 30
+            }
+        },
+        {
+            "name": "Erwltp__g_km_",
+            "listing": {
+                "title": "Emissions reduction through innovative technologies in g/km (WLTP)",
+                "visible" : true,
+                "pos" : 31
+            },
+            "details": {
+                "title": "Erwltp",
+                "pos" : 4,
+                "section": "Erwltp",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Erwltp (g/km)",
+                "visible": true,
+                "pos": 31
+            }
+        },
+        {
+            "name": "De",
+            "listing": {
+                "title": "Deviation factor",
+                "visible" : true,
+                "pos" : 32
+            },
+            "details": {
+                "title": "De",
+                "pos" : 4,
+                "section": "De",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "De",
+                "visible": true,
+                "pos": 32
+            }
+        },
+        {
+            "name": "Vf",
+            "listing": {
+                "title": "Verification factor",
+                "visible" : true,
+                "pos" : 33
+            },
+            "details": {
+                "title": "Vf",
+                "pos" : 4,
+                "section": "Vf",
+                "visible": true
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Vf",
+                "visible": true,
+                "pos": 33
+            }
+        },
+        {
+            "name": "Status",
+            "listing": {
+                "title": "Type of data",
+                "visible" : true,
+                "pos" : 34
+            },
+            "details": {
+                "title": "Status",
+                "pos" : 5,
+                "section": "Status",
+                "visible": true
+            },
+            "facet": {
+                "visible": false,
+                "title": "Type of data",
+                "pos": 3,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "operator": "OR",
+                "facet_display_options": ["sort", "checkbox"],
+                "empty_message": "No type of data",
+                "short_name": "Type of data"
+            },
+            "csv_tsv": {
+                "title": "Status",
+                "visible": true,
+                "pos": 34
+            }
+        },
+        {
+            "name": "year",
+            "listing": {
+                "title": "Registration year",
+                "visible" : true,
+                "pos" : 35
+            },
+            "details": {
+                "title": "year",
+                "pos" : 6,
+                "section": "year",
+                "visible": true
+            },
+            "facet": {
+                "visible": false,
+                "title": "Registration year",
+                "pos": 6,
+                "type": "facet",
+                "size": 100,
+                "order": "reverse_term",
+                "operator": "OR",
+                "facet_display_options": ["sort", "checkbox"],
+                "empty_message": "No registration year",
+                "short_name": "Registration year"
+            },
+            "csv_tsv": {
+                "title": "year",
+                "visible": true,
+                "pos": 35
+            }
+        }
+    ]
+}
