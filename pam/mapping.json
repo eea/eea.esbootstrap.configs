@@ -28,7 +28,7 @@
     },
     "Sector_s__affected"  : {
         "type" : "text",
-        "analyzer" : "semicolon"
+        "analyzer" : "coma"
     },
     "Objective_s__lookup_only4facets"  : {
         "type" : "text",
@@ -58,11 +58,11 @@
     },
     "Union_policies_lookup_only4facets" : {
         "type" : "text",
-        "analyzer" : "semicolon"
+        "analyzer" : "coma"
     },
     "GHG_s__affected"  : {
         "type" : "text",
-        "analyzer" : "semicolon"
+        "analyzer" : "coma"
     },
     "Projection_scenario_in_which_the_policy_or_measure_is_included"  : {
         "type" : "text",
