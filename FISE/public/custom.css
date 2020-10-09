@@ -20720,7 +20720,7 @@ tr:nth-of-type(even) .results_text:after {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)); }
 
 @font-face {
-  font-family: 'FontAwesome';
+  font-family: "FontAwesome";
   src: url("/fonts-search/fontawesome-webfont.eot?v=4.7.0"), url("/fonts-search/fontawesome-webfont.eot?v=4.7.0") format("embedded-opentype"), url("/fonts-search/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("/fonts-search/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("/fonts-search/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("/fonts-search/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
@@ -20791,7 +20791,7 @@ div.content {
   background: white;
   border: 1px solid #eee;
   border-radius: 5px;
-  padding: .3rem !important;
+  padding: 0.3rem !important;
   max-width: 300px;
   margin: 1rem 0; }
   .pagination ul {
@@ -20811,7 +20811,7 @@ div.content {
   border-radius: 4px;
   overflow: hidden;
   margin-right: 0.5rem;
-  margin-top: .5rem; }
+  margin-top: 0.5rem; }
 
 #facetview_rightcol {
   width: calc(70% - 3rem) !important;
@@ -20873,7 +20873,8 @@ div.content {
     width: 90% !important; }
   .eea-right-section-slider-active {
     top: 0; }
-  .row-fluid .span9, div#facetview_rightcol {
+  .row-fluid .span9,
+  div#facetview_rightcol {
     width: 100% !important; } }
 
 td[data-title="Source"] span,
@@ -20886,7 +20887,9 @@ td[data-title="Organisation email"] span {
 .tabular-view #facetview {
   max-width: 100%; }
 
-#facetview_rightcol .facetview_top .eea_download_btn, #facetview_rightcol .facetview_top .eea_download_btn:hover, #facetview_rightcol .facetview_top .eea_download_btn:visited {
+#facetview_rightcol .facetview_top .eea_download_btn,
+#facetview_rightcol .facetview_top .eea_download_btn:hover,
+#facetview_rightcol .facetview_top .eea_download_btn:visited {
   color: black !important; }
 
 .eea-icon.list:before,
@@ -21172,3 +21175,82 @@ h3#filters-title {
 .ui-widget-overlay {
   background: rgba(0, 0, 0, 0.6);
   opacity: 1; }
+
+.icon.searchIcon {
+  display: none !important; }
+
+@media (max-width: 768px) {
+  .hamburger-box {
+    width: 30px;
+    height: 30px; }
+  .mobile-nav-wrapper .hamburger {
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: none;
+    cursor: pointer; }
+  .mobile-nav-wrapper .hamburger:after {
+    content: "\f0c9";
+    font-family: fontAwesome; }
+  .mobile-nav-wrapper .hamburger-wrapper:first-of-type {
+    display: none; }
+  body.mobile-menu-open:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed)
+[class*="widescreen only"]:not(.mobile).menu {
+    display: block !important;
+    background: white;
+    right: 0;
+    max-width: 100%;
+    min-width: 300px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    padding-top: 2rem;
+    overflow: auto; }
+  body.mobile-menu-open:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed)
+[class*="widescreen only"]:not(.mobile).menu
+.menu {
+    display: block !important;
+    position: relative;
+    z-index: 1;
+    top: unset !important;
+    height: unset;
+    opacity: 1;
+    max-height: unset;
+    left: unset;
+    transform: unset; }
+  .menu .firstLevel {
+    display: flex;
+    flex-direction: column; }
+  .menu .item.firstLevel {
+    display: block !important; }
+  .mobile-nav-wrapper {
+    position: relative;
+    z-index: 1; }
+  body.mobile-menu-open {
+    overflow: hidden; }
+  .navigation .menu .Countries--section .item.Countries--section-item {
+    width: 100% !important; }
+  .navigation
+.menu
+.Countries--section
+.item.Countries--section-item:not(#Regions)
+a {
+    text-align: left !important;
+    color: #055 !important;
+    font-weight: 400 !important;
+    line-height: 2.5 !important;
+    padding: 0 1.5rem !important;
+    margin: 0 !important;
+    border-bottom-style: none; }
+  .navigation
+.menu
+.Countries--section
+.item.Countries--section-item#Regions
+> div.secondLevel {
+    padding-left: 1.5rem !important;
+    border: none !important;
+    text-align: left; } }

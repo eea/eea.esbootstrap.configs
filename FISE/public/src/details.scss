@@ -1,128 +1,144 @@
-@import 'variables';
-@import 'fa/font-awesome';
+@import "variables";
+@import "fa/font-awesome";
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,400italic,700italic|Roboto:300,400,500,600,700,400italic,700italic);
 
-body, html {
-    background: white;
+body,
+html {
+  background: white;
+  font-family: Roboto, sans-serif;
 }
 #content {
-    background:white;
-    font-size: $text;
+  background: white;
+  font-size: $text;
 }
 
 @font-face {
-    font-family: 'FontAwesome';
-    src        : url("/fonts-search/fontawesome-webfont.eot?v=4.7.0"),
-        url("/fonts-search/fontawesome-webfont.eot?v=4.7.0") format("embedded-opentype"),
-        url("/fonts-search/fontawesome-webfont.woff?v=4.7.0") format("woff"),
-        url("/fonts-search/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
-        url("/fonts-search/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
-        url("/fonts-search/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
-    font-weight: normal;
-    font-style : normal
+  font-family: "FontAwesome";
+  src: url("/fonts-search/fontawesome-webfont.eot?v=4.7.0"),
+    url("/fonts-search/fontawesome-webfont.eot?v=4.7.0")
+      format("embedded-opentype"),
+    url("/fonts-search/fontawesome-webfont.woff?v=4.7.0") format("woff"),
+    url("/fonts-search/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
+    url("/fonts-search/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
+    url("/fonts-search/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 
 i.fa {
-    font-family: FontAwesome;
+  font-family: FontAwesome;
 }
 
 .results_text {
-    display: block;
-    position: relative;
-    height: 60px;
-    overflow: hidden;
-    z-index: 1;
+  display: block;
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+  z-index: 1;
 }
 .results_text:after {
-   content: " ";
-    position: absolute;
-    top: 46px;
-    left: 0;
-    height: 15px;
-    width: 100%;
-    display: inline-block;
+  content: " ";
+  position: absolute;
+  top: 46px;
+  left: 0;
+  height: 15px;
+  width: 100%;
+  display: inline-block;
 }
 
 tr:nth-of-type(odd) .results_text:after {
-    background: linear-gradient(0deg, rgba(249, 249, 249, 0.75), rgba(249, 249, 249, 0));
+  background: linear-gradient(
+    0deg,
+    rgba(249, 249, 249, 0.75),
+    rgba(249, 249, 249, 0)
+  );
 }
 tr:nth-of-type(even) .results_text:after {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0)
+  );
 }
-
 
 .facetview_orderby {
-    display:none;
+  display: none;
 }
 
-#portal-header, #footer-wrapper, #portal-colophon, .visualization-info, #header-holder, .visualization-date {
-    display:none;
+#portal-header,
+#footer-wrapper,
+#portal-colophon,
+.visualization-info,
+#header-holder,
+.visualization-date {
+  display: none;
 }
-.facet-view-simple{
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 2em;
-    padding-right: 2em;
-    max-width: 1687px;
+.facet-view-simple {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 2em;
+  padding-right: 2em;
+  max-width: 1687px;
 }
 
 .ui-dialog-titlebar {
-    border:none;
-    background-color:white !important;
+  border: none;
+  background-color: white !important;
 }
 
 .ui-dialog {
-    border:none;
-    background-color:white !important;
-    padding:0;
-    background:none;
+  border: none;
+  background-color: white !important;
+  padding: 0;
+  background: none;
 }
 
 .ui-button {
-    border:none !important;
-    background-color:white !important;
+  border: none !important;
+  background-color: white !important;
 }
 
 #detailsmodal {
-    padding:0;
+  padding: 0;
 }
 
 .facetedview_search {
-    display: none;
+  display: none;
 }
 
-.facetview_download.filter-by a:first-child{
-    display: none;
+.facetview_download.filter-by a:first-child {
+  display: none;
 }
-
 
 // .header-bg.contentpage {
 //     display: none;
 // }
 
 div.content {
-    padding: 0!important;
-    margin: 0!important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 h2 {
-    color: $green!important;
-    border-bottom: none;
+  color: $green !important;
+  border-bottom: none;
 }
 
 .meta-data {
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #eee;;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
 }
 
 .item_detail_table.datatable {
-    border-collapse: collapse;
-    th,td {
-        border-bottom: 1px solid #eee;
-        border-top:none;
-    }
+  border-collapse: collapse;
+  th,
+  td {
+    border-bottom: 1px solid #eee;
+    border-top: none;
+  }
 }
-
 
 .RESOURCE_TITLE,
 .DATA_SETS,
@@ -134,51 +150,53 @@ tr.YEAR_PUBLISHED,
 tr.FILE_SIZE,
 tr.RESOURCE_LOCATOR_INTERNAL,
 tr.RESOURCE_LOCATOR_INTERNAL_II {
-    display: none;
+  display: none;
 }
 
-@import 'results';
-
+@import "results";
 
 .nfi-download-button {
-    // margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  // margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    float: right;
-    margin-bottom: 0;
-    margin-top: 0;
-    white-space: nowrap;
-    max-width    : 200px;
-    border       : 1px solid #eee;
-    border-radius: 6px;
-    padding: 5px;
-    color: $black!important;
-    font-size: $filterHeading;
+  float: right;
+  margin-bottom: 0;
+  margin-top: 0;
+  white-space: nowrap;
+  max-width: 200px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 5px;
+  color: $black !important;
+  font-size: $filterHeading;
 
-    i {
-        color  : $green!important;
-        margin-right: 5px;
-        margin-top:-2px;
-    }
+  i {
+    color: $green !important;
+    margin-right: 5px;
+    margin-top: -2px;
+  }
 
-    .file-size {
-        color: $muted;
-        margin-left: 3px;
-        font-size: $small;
-    }
+  .file-size {
+    color: $muted;
+    margin-left: 3px;
+    font-size: $small;
+  }
 }
 
 #main {
-    display: none;
+  display: none;
 }
 
-
 .documentActions {
-    display: none;
+  display: none;
 }
 
 // .ui-button-icon-primary.ui-icon.ui-icon-closethick {
 //     background: none!important;
 // }
+
+.container {
+  width: calc(100% - 30px) !important;
+}
