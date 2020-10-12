@@ -21179,10 +21179,12 @@ h3#filters-title {
 .icon.searchIcon {
   display: none !important; }
 
-@media (max-width: 768px) {
+@media (max-width: 1320px) {
   .hamburger-box {
     width: 30px;
     height: 30px; }
+  .header-wrapper {
+    z-index: 99; }
   .mobile-nav-wrapper .hamburger {
     width: 30px;
     height: 30px;

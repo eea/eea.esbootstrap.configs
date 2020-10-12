@@ -378,10 +378,13 @@ td[data-title="Organisation email"] span {
   display: none !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1320px ) {
   .hamburger-box {
     width: 30px;
     height: 30px;
+  }
+  .header-wrapper {
+    z-index: 99;
   }
 
   .mobile-nav-wrapper .hamburger {
@@ -479,3 +482,4 @@ td[data-title="Organisation email"] span {
     text-align: left;
   }
 }
+
