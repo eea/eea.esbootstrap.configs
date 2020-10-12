@@ -17,8 +17,8 @@ Select
     Ct,
     Cr,
     "m (kg)",
---    Mt,
-    iif("Enedc (g/km)" is null, "E (g/km)", "Enedc (g/km)") as "Enedc (g/km)",
+    "Mt (kg)",
+    "Enedc (g/km)",
     "Ewltp (g/km)",
     "W (mm)",
     "At1 (mm)",
@@ -29,7 +29,7 @@ Select
     "ep (KW)",
     "z (Wh/km)",
     It,
-    iif("Ernedc (g/km)" is null, "Er (g/km)", "Ernedc (g/km)") as "Ernedc (g/km)",
+    "Ernedc (g/km)",
     "Erwltp (g/km)",
     "De",
     "Vf",
@@ -54,7 +54,11 @@ Select
             )
         )
     ) as FtTrim,
-    iif(LOWER(TRIM(status))='f', 'Final', 'Provisional') as scStatus
+    iif(LOWER(TRIM(status))='f', 'Final', 'Provisional') as scStatus,
+    "Mb (kg)",
+    "TPMLM (kg)",
+    "Dam (kg)",
+    "Mf (kg)"
 from
     <TABLE>
 WHERE

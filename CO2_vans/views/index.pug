@@ -24,22 +24,8 @@ block content
     +download_data
     p!= site_description
     p(class='facets_footer_slot_init')!= facets_footer_slot
-    ul(class="tabs")
-        li(class="explorer-tab")
-            a(href="#explorer-tab" class="tab-link selected_tab")
-                <i class="eea-icon eea-icon-2x eea-icon-table" aria-hidden="true"></i>
-                span
-                    | Data table explorer
-        li(class="dashboard-tab")
-            a(href="#dashboard-tab" class="tab-link")
-                <i class="eea-icon eea-icon-2x eea-icon-bar-chart" aria-hidden="true"></i>
-                span
-                    | Dashboard
-    div(class="tabs-content")
-        div(id="explorer-tab" class="tab-content selected_tab")
-            .facet-view-simple
-        div(id="dashboard-tab" class="tab-content") !{dashboard_src}
 
+    .facet-view-simple
 
     +visualization_info (dataprovencance_info_url,dataprovencance_info_text)
     div(class="visualization-info")

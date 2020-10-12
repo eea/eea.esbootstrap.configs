@@ -447,7 +447,7 @@
             }
         },
         {
-            "name": "Mt",
+            "name": "Mt__kg_",
             "listing": {
                 "title": "WLTP test mass",
                 "visible" : true,
@@ -876,6 +876,83 @@
                 "visible": true,
                 "pos": 35
             }
-        }
+        },
+        {
+            "name": "Mb__kg_",
+            "listing": {
+                "title": "Mb (kg)",
+                "visible" : true,
+                "pos" : 36
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Mb (kg)",
+                "visible": true,
+                "pos": 36
+            }
+        },
+        {
+            "name": "TPMLM__kg_",
+            "listing": {
+                "title": "TPMLM (kg)",
+                "visible" : true,
+                "pos" : 37
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "TPMLM (kg)",
+                "visible": true,
+                "pos": 37
+            }
+        },
+        {
+            "name": "Dam__kg_",
+            "listing": {
+                "title": "Dam (kg)",
+                "visible" : true,
+                "pos" : 38
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Dam (kg)",
+                "visible": true,
+                "pos": 38
+            }
+        },
+        {
+            "name": "Mf__kg_",
+            "listing": {
+                "title": "Mf (kg)",
+                "visible" : true,
+                "pos" : 39
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Mf (kg)",
+                "visible": true,
+                "pos": 39
+            }
+        } 
+
     ]
 }
