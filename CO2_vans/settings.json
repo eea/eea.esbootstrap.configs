@@ -17,7 +17,7 @@
         "footer_path": "/templates/v3/getFooter?render_full_html=False"
     },
     "layout_vars": {
-        "head_title": "Monitoring of CO2 emissions from passenger cars",
+        "head_title": "Monitoring of CO2 emissions from vans",
         "app_id": "co2_vans",
         "skip_resources_bundling": true,
         "skip_external_template_styles": false,
@@ -42,7 +42,7 @@
                 "/custom.js"
             ]
         },
-        "site_title": "CO<sub>2</sub> emissions from new passenger cars",
+        "site_title": "CO<sub>2</sub> emissions from vans",
         "site_description": "<h3>Monitoring CO2 emission from new passenger cars in EU27 and UK &ndash; <a href='http://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX:32019R0631'>Regulation (EU) No 631/2019</a>. Form 1 January 2018 Iceland is also included and from 1 January 2019, Norway is also included.</h3>",
         "facets_footer_slot": "<span class='discreet'><strong>Note</strong>: The column 'Count' in the filters reports the sum of the rows and not the sum of the new car's registrations.</span>",
         "enableBreadcrumbs": true,
