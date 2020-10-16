@@ -2,7 +2,7 @@
     "did_you_mean": {"type": "text", "analyzer": "didYouMean"},
     "autocomplete": {"type": "text", "analyzer": "autocomplete"},
 
-    "Country" : {
+    "country" : {
         "type" : "text",
         "analyzer" : "coma",
         "fielddata": true
@@ -32,7 +32,7 @@
     },
     "Objective_s__lookup_only4facets"  : {
         "type" : "text",
-        "analyzer" : "semicolon"
+        "analyzer" : "coma"
     },
     "Total_GHG_emissions_reductions_in_2020__kt_CO2eq_y_"  : {
         "type" : "double"
@@ -58,7 +58,7 @@
     },
     "Union_policies_lookup_only4facets" : {
         "type" : "text",
-        "analyzer" : "coma"
+        "analyzer" : "semicolon"
     },
     "GHG_s__affected"  : {
         "type" : "text",

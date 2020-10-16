@@ -61,7 +61,7 @@ function removeMissingDetails(){
 
 var default_sort = [{}, {}];
 var field_base = window.field_base;
-default_sort[0][field_base + 'Country'] = {"order": 'asc'};
+default_sort[0][field_base + 'country'] = {"order": 'asc'};
 default_sort[1][field_base + 'ID_of_policy_or_measure'] = {"order": 'asc'};
 
 window.esbootstrap_options = {
