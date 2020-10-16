@@ -60,7 +60,7 @@
 
             "sql": true,
             "sql_url": "https://discodata.eea.europa.eu/sql",
-            "sql_table": "[GHGPAMS].[latest].[catalogue_evaluations]",
+            "sql_table": "[CataloguePolicyEvaluations].[latest].[catalogue_evaluations]",
             "query_attr": "query",
             "query": "query.sql",
             "_query_count": "query_count.sql",
