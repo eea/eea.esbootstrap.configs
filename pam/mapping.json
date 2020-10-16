@@ -2,7 +2,7 @@
     "did_you_mean": {"type": "text", "analyzer": "didYouMean"},
     "autocomplete": {"type": "text", "analyzer": "autocomplete"},
 
-    "country" : {
+    "Country" : {
         "type" : "text",
         "analyzer" : "coma",
         "fielddata": true

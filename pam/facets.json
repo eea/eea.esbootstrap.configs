@@ -15,7 +15,7 @@
     },
     "fields_mapping": [
         {
-            "name": "country",
+            "name": "Country",
             "listing": {
                 "visible": true,
                 "title": "Country",
