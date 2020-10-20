@@ -65,6 +65,18 @@ $(window).bind("post_search_callback", function () {
     //sets the coookie to one minute if the popup is closed (whole numbers = days)
     setCookie("popupCookie", "closed", 29);
   });
+  var closeBtnSidebar = $("<i class='sidebar-close fa fa-times'></i>")
+  $(".eea-section.eea-right-section").prepend("closeBtnSidebar")
+
+  $(".sidebar-close").on('click', function(){
+
+    $('body').removeClass('filters-open')
+  })
+
+  $('#eea-section-trigger').on("click", function(){
+    $('body').addClass('filters-open')
+  })
+
 
   if ($(".facetview_display_type .selected").hasClass("list")) {
     $(".block-item").each(function (idx, elem) {

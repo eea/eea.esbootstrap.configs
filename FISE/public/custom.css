@@ -20921,7 +20921,7 @@ td[data-title="Organisation email"] span {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  z-index: 92;
+  z-index: 99;
   display: none; }
   #intro-popup.visible {
     display: flex; }
@@ -21256,3 +21256,17 @@ a {
     padding-left: 1.5rem !important;
     border: none !important;
     text-align: left; } }
+
+.sidebar-close {
+  display: none; }
+
+@media (max-width: 768px) {
+  body.filters-open .span3.right-column-area.eea-section.eea-right-section {
+    transform: translateX(-100%); }
+  .sidebar-close {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: 1.2rem;
+    cursor: pointer; } }
