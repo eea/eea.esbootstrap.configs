@@ -378,7 +378,7 @@ td[data-title="Organisation email"] span {
   display: none !important;
 }
 
-@media (max-width: 1320px ) {
+@media (max-width: 1320px) {
   .hamburger-box {
     width: 30px;
     height: 30px;
@@ -488,7 +488,7 @@ td[data-title="Organisation email"] span {
 }
 @media (max-width: 768px) {
   body.filters-open .span3.right-column-area.eea-section.eea-right-section {
-    transform:translateX(-100%);
+    transform: translateX(-100%);
   }
 
   .sidebar-close {
@@ -498,5 +498,14 @@ td[data-title="Organisation email"] span {
     right: 2rem;
     font-size: 1.2rem;
     cursor: pointer;
+  }
+
+  .remove-cookie {
+    position: absolute;
+    top: -56px;
+    right: 0px;
+  }
+  .facetview_top {
+    position: relative;
   }
 }

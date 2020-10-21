@@ -1,105 +1,102 @@
 #facetview_results_wrapper {
-    .tileItem {
-        border-bottom: none;
+  .tileItem {
+    border-bottom: none;
+  }
+
+  article.block-item {
+    margin-bottom: 1.5rem;
+
+    > a {
+      font-size: $heading;
+      font-weight: 500;
+      color: $green !important;
     }
 
-    article.block-item {
-        margin-bottom: 1.5rem;
-
-        >a {
-            font-size  : $heading;
-            font-weight: 500;
-            color      : $green !important;
-        }
-
-
-        .block-content {
-            font-size      : $text;
-            display        : flex;
-            justify-content: space-between;
-            line-height: 1.4;
-            color: $black;
-            @media (max-width: 768px) {
-                flex-direction: column;
-            }
-        }
+    .block-content {
+      font-size: $text;
+      display: flex;
+      justify-content: space-between;
+      line-height: 1.4;
+      color: $black;
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
     }
+  }
 }
 
 .meta-data {
-    font-size    : $small;
-    margin-top   : .5rem;
-    margin-bottom: .3rem;
+  font-size: $small;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
 
-    svg {
-        fill           : $green !important;
-        // margin-right: .3rem;
+  svg {
+    fill: $green !important;
+    // margin-right: .3rem;
+  }
+
+  display: flex;
+
+  .text-tab {
+    .format-text {
+      color: $muted;
+      margin-right: 1px;
+      margin-left: 7px;
     }
-
-    display: flex;
-
-    .text-tab {
-        .format-text {
-            color       : $muted;
-            margin-right: 1px;
-            margin-left : 7px;
-        }
-    }
+  }
 }
 
-
 .nfi-download-button {
-    display        : flex;
-    // margin-top: 1rem;
-    justify-content: center;
-    align-items    : center;
-    margin-left    : 1rem;
-    white-space    : nowrap;
-    max-width      : 300px;
-    min-width:      174px;
-    border         : 1px solid #eee;
-    border-radius  : 6px;
-    padding        : 5px;
-    color          : $black !important;
-    font-size      : 15px;
+  display: flex;
+  // margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+  white-space: nowrap;
+  max-width: 300px;
+  min-width: 174px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 5px;
+  color: $black !important;
+  font-size: 15px;
 
-    i {
-        color       : $orange !important;
-        margin-right: 5px;
-        margin-top  : -2px;
-    }
+  i {
+    color: $orange !important;
+    margin-right: 5px;
+    margin-top: -2px;
+  }
 
-    .file-size {
-        color      : $muted;
-        margin-left: 3px;
-        font-size  : $small;
-    }
+  .file-size {
+    color: $muted;
+    margin-left: 3px;
+    font-size: $small;
+  }
 }
 
 .facetview_metadata .pagination {
-    margin: 0 auto;
-    max-width: 250px;
-    ul {
-        font-size: 16px;
+  margin: 0 auto;
+  max-width: 250px;
+  ul {
+    font-size: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-left: 0;
-    }
+  }
 
-    .active a {
-        color: $orange;
-    }
-    i {
-        font-size: 1.4rem;
-    }
+  .active a {
+    color: $orange;
+  }
+  i {
+    font-size: 1.4rem;
+  }
 }
 
 .facetview_decrement[href="1"] {
-    display: none;
+  display: none;
 }
 
-
 .top-pagination {
-    color: $muted;
+  color: $muted;
 }

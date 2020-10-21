@@ -2463,8 +2463,8 @@ tr.RESOURCE_LOCATOR_INTERNAL_II {
 
 .meta-data {
   font-size: 12px;
-  margin-top: .5rem;
-  margin-bottom: .3rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
   display: flex; }
   .meta-data svg {
     fill: #251 !important; }
