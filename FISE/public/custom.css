@@ -22690,3 +22690,6 @@ a {
     right: 0px; }
   .facetview_top {
     position: relative; } }
+
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-draggable.ui-resizable {
+  max-width: 100%; }
