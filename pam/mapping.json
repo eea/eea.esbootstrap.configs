@@ -28,21 +28,17 @@
     },
     "Sector_s__affected"  : {
         "type" : "text",
-        "analyzer" : "coma"
+        "analyzer" : "semicolon"
     },
     "Objective_s__lookup_only4facets"  : {
         "type" : "text",
-        "analyzer" : "coma"
+        "analyzer" : "semicolon"
     },
     "Total_GHG_emissions_reductions_in_2020__kt_CO2eq_y_"  : {
         "type" : "double"
     },
     "Total_GHG_emissions_reductions_in_2030__kt_CO2eq_y_"  : {
         "type" : "double"
-    },
-    "Entities_responsible_for_implementing_the_policy__type_"  : {
-        "type" : "text",
-        "analyzer" : "coma"
     },
     "Entities_responsible_for_implementing_the_policy__type_"  : {
         "type" : "text",
@@ -66,7 +62,7 @@
     },
     "Projection_scenario_in_which_the_policy_or_measure_is_included"  : {
         "type" : "text",
-        "analyzer" : "none"
+        "analyzer" : "coma"
     },
     "Description_of_projected_cost_estimates" :{
         "type" : "text",
