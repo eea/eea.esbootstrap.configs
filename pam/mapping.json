@@ -4,7 +4,7 @@
 
     "Country" : {
         "type" : "text",
-        "analyzer" : "coma",
+        "analyzer" : "semicolon",
         "fielddata": true
     },
     "ID_of_policy_or_measure": {
@@ -16,7 +16,7 @@
     },
     "Type_of_policy_instrument"  : {
         "type" : "text",
-        "analyzer" : "coma"
+        "analyzer" : "semicolon"
     },
     "Status_of_implementation"  : {
         "type" : "text",
@@ -42,7 +42,7 @@
     },
     "Entities_responsible_for_implementing_the_policy__type_"  : {
         "type" : "text",
-        "analyzer" : "coma"
+        "analyzer" : "semicolon"
     },
     "Implementation_period_start"  : {
         "type" : "text",
@@ -58,11 +58,11 @@
     },
     "GHG_s__affected"  : {
         "type" : "text",
-        "analyzer" : "coma"
+        "analyzer" : "semicolon"
     },
     "Projection_scenario_in_which_the_policy_or_measure_is_included"  : {
         "type" : "text",
-        "analyzer" : "coma"
+        "analyzer" : "semicolon"
     },
     "Description_of_projected_cost_estimates" :{
         "type" : "text",
