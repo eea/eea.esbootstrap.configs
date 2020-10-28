@@ -117,6 +117,8 @@
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#origin_website": ["origin_website"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#origin_website": ["origin_website"],
 
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#funding_programme": ["funding_programme"],
+
     "http://purl.org/dc/terms/creator": ["creator_cms"],
     "http://purl.org/dc/terms/title": ["title","label"],
     "http://purl.org/dc/terms/abstract": "text",

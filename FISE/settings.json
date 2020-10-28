@@ -1,74 +1,68 @@
 {
-    "http": {
-        "port": 3000
+  "http": {
+    "port": 3000
+  },
+  "elastic": {
+    "index": "fise",
+    "type": "resources",
+    "field_base": "",
+    "preload_cache": true
+  },
+  "external_templates": {
+    "local_path": "/external_templates",
+    "protocol": "https",
+    "host": "forest.eea.europa.eu",
+    "head_path": "/head",
+    "header_path": "/header",
+    "footer_path": "/footer"
+  },
+  "layout_vars": {
+    "head_title": "Forest Information",
+    "app_id": "FISE",
+    "skip_resources_bundling": true,
+    "skip_external_template_styles": false,
+    "override_searchserver_resources": false,
+    "css_resources": {
+      "index_page": [
+        "css/no-more-tables.css",
+        "css/esbootstrap.facetview.css",
+        "custom.css"
+      ],
+      "details_page": ["css/esbootstrap.facetview.css", "details.css"]
     },
-    "elastic": {
-        "index": "fise",
-        "type": "resources",
-        "field_base":"",
-        "preload_cache": true
+    "js_resources": {
+      "index_page": ["fise.facetview.js", "custom.js"],
+      "details_page": [
+        "https://www.eea.europa.eu/register_function.js",
+        "https://www.eea.europa.eu/nodeutilities.js",
+        "https://www.eea.europa.eu/mark_special_links.js",
+        "javascripts/jq.tools.js",
+        "details_custom.js"
+      ]
     },
-    "external_templates": {
-        "local_path": "/external_templates",
-        "protocol": "https",
-        "host": "forest.eea.europa.eu",
-        "head_path": "/head",
-        "header_path": "/header",
-        "footer_path": "/footer"
-    },
-    "layout_vars": {
-        "head_title": "Forest Information",
-        "app_id": "FISE",
-        "skip_resources_bundling": true,
-        "skip_external_template_styles": false,
-        "override_searchserver_resources": false,
-        "css_resources": {
-            "index_page": [
-                "css/no-more-tables.css",
-                "css/esbootstrap.facetview.css",
-                "custom.css"
-            ],
-            "details_page": [
-                "css/esbootstrap.facetview.css",
-                "details.css"
-            ]
-        },
-        "js_resources": {
-            "index_page": [
-                "fise.facetview.js",
-                "custom.js"
-            ],
-            "details_page": [
-                "http://www.eea.europa.eu/register_function.js",
-                "http://www.eea.europa.eu/nodeutilities.js",
-                "http://www.eea.europa.eu/mark_special_links.js",
-                "javascripts/jq.tools.js",
-                "details_custom.js"
-            ]
-        },
-        "site_title": "Forest Information",
-        "site_description": "<h3>Forest Information</h3>",
-        "enableBreadcrumbs": false,
-        "breadcrumbs": "Datasets",
-        "further_info": ""
-    },
-    "API":{
-        "token": "default"
-    },
-    "source": {
-        "type": "url",
-        "autoswitch": "true",
-        "switch_condition_value_percent": 100,
-        "configuration": {
-            "type": "csv",
-            "bulksize": 5000,
-            "url": "https://cmshare.eea.europa.eu/s/YZocgSHqKNbT4gn/download?path=/catalogue&files=catalogue.csv",
-            "id_type": "field",
-            "id_field": "ID",
-            "data_modifier": "modify.js",
-            "encoding": "utf-8"
-        }
-    },
-    "es_debug_enabled": false,
-    "suggestions_enabled": true
+    "site_title": "Forest Information",
+    "site_description": "<h3>Forest Information</h3>",
+    "enableBreadcrumbs": false,
+    "breadcrumbs": "Datasets",
+    "further_info": ""
+  },
+  "API": {
+    "token": "default"
+  },
+  "source": {
+    "type": "url",
+    "autoswitch": "true",
+    "switch_condition_value_percent": 100,
+    "configuration": {
+      "type": "csv",
+      "bulksize": 5000,
+      "url": "https://cmshare.eea.europa.eu/s/YZocgSHqKNbT4gn/download?path=/catalogue&files=catalogue.csv",
+      "id_type": "field",
+      "id_field": "ID",
+      "data_modifier": "modify.js",
+      "encoding": "utf-8"
+    }
+  },
+  "es_debug_enabled": false,
+  "suggestions_enabled": true
 }

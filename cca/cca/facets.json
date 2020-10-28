@@ -85,7 +85,7 @@
                     "field": "about",
                     "value": "//climate-adapt.eea.europa.eu",
                     "thumb_template": {
-                        "template": "https://www.eea.europa.eu/themes/air/multimedia/multimedia/image_preview",
+                        "template": "${url}/image_preview",
                         "variables": [{
                                 "name": "url",
                                 "type" : "field",
@@ -93,7 +93,7 @@
                         }]
                     },
                     "icon_template": {
-                        "template": "https://www.eea.europa.eu/portal_depiction/generic/image_thumb",
+                        "template": "${url}/image_mini",
                         "variables": [{
                                 "name": "generic",
                                 "type" : "variable",
@@ -311,6 +311,27 @@
                 "size": 100,
                 "min_size": 10,
                 "title": "Adaptation Elements",
+                "order": "term",
+                "operator": "OR",
+                "visible": true
+            }
+        },
+        {
+            "name": "funding_programme",
+            "listing": {
+                "title": "Funding Programme",
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Funding Programme",
+                "visible": false,
+                "pos": 6
+            },
+            "facet": {
+                "facet_display_options": ["sort", "checkbox"],
+                "size": 100,
+                "min_size": 10,
+                "title": "Funding Programme",
                 "order": "term",
                 "operator": "OR",
                 "visible": true
