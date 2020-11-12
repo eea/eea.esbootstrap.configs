@@ -562,6 +562,46 @@
             }
         },
         {
+            "name": "geolocation",
+            "csv_tsv": {
+                "title": "Coordinates",
+                "visible": true,
+                "pos": 11
+            }
+        },
+        {
+            "name": "cost_benefit",
+            "csv_tsv": {
+                "title": "Costs",
+                "visible": true,
+                "pos": 12
+            }
+        },
+        {
+            "name": "adaptationoption",
+            "csv_tsv": {
+                "title": "Implemented Adaptation option",
+                "visible": true,
+                "pos": 13
+            }
+        },
+        {
+            "name": "lead",
+            "csv_tsv": {
+                "title": "Lead",
+                "visible": true,
+                "pos": 14
+            }
+        },
+        {
+            "name": "websites",
+            "csv_tsv": {
+                "title": "Websites",
+                "visible": true,
+                "pos": 15
+            }
+        },
+        {
             "name": "depiction",
             "listing": {
                 "title": "depiction",
