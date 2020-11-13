@@ -59,7 +59,7 @@ html
 
         block extrastyles
 
-    body(class="search-app section-observatory " + app_id data-sentry-dsn=sentry_dsn data-sentry-ver=sentry_ver data-sentry-env=sentry_rancher_env data-sentry-instance=sentry_instance data-sentry-app-name=sentry_app_name id="app")
+    body(class="search-app site-observatory " + app_id data-sentry-dsn=sentry_dsn data-sentry-ver=sentry_ver data-sentry-env=sentry_rancher_env data-sentry-instance=sentry_instance data-sentry-app-name=sentry_app_name id="app")
         != templateRender(headerFile)
 
         if (enableBreadcrumbs)
