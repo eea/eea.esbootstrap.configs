@@ -59,6 +59,13 @@
   margin-top: -2px;
 }
 
+#content-core .content-column{
+    border:0px !important;
+}
+#content-core .content-sidebar{
+    border:0px !important;
+}
+
 @media handheld, screen and (max-device-width: 480px){
   input, textarea {
     font-size: 140% !important;
