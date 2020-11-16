@@ -65,6 +65,9 @@
 #content-core .content-sidebar{
     border:0px !important;
 }
+.visualization-info{
+    clear:both;
+}
 
 @media handheld, screen and (max-device-width: 480px){
   input, textarea {
