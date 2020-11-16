@@ -52,7 +52,7 @@
     "enableBreadcrumbs": false,
     "breadcrumbs": [{"Home":"https://climate-adapt.eea.europa.eu/"}, {"Climate adapt search": ""}],
     "dataprovencance_info_text": "Climate adapt search",
-    "dataprovencance_info_url": "climate adapt dev",
+    "dataprovencance_info_url": "https://github.com/eea/eea.esbootstrap.configs/tree/master/cca",
     "further_info": ""
   },
   "API":{
