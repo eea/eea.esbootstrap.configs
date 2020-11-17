@@ -73,7 +73,7 @@
     display: none !important;
 }
 
-#portal-columns {
+div[id^="portal-columns"] {
     margin-bottom: 20px;
 }
 
