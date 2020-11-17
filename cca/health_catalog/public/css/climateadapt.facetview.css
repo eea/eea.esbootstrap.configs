@@ -63,6 +63,14 @@
     clear:both;
 }
 
+#content-core #aceitem_sidebar .health-information {
+    display: block !important;
+}
+#content-core #aceitem_sidebar #cca-macro-category-elements{
+    display: none !important;
+}
+
+
 @media handheld, screen and (max-device-width: 480px){
   input, textarea {
     font-size: 140% !important;
