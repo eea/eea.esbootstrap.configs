@@ -131,7 +131,7 @@ function showArticle(pathName) {
         //$('#facetview_article_content').html(doc.getElementById("content-core"));
         $('#facetview').html(doc.getElementById("content-core"));
         $('#facetview').prepend(backButton);
-        $(".share-your-info-ace-button").appendTo("#aceitem_sidebar");
+        $(".share-your-info-ace-button").appendTo("#content-core");
     });
 }
 

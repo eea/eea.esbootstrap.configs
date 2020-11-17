@@ -66,8 +66,15 @@
 #content-core #aceitem_sidebar .health-information {
     display: block !important;
 }
+
+.visualization-date,
+.visualization-info,
 #content-core #aceitem_sidebar #cca-macro-category-elements{
     display: none !important;
+}
+
+#portal-columns {
+    margin-bottom: 20px;
 }
 
 
