@@ -114,7 +114,7 @@ function showArticle(pathName) {
             delete sourceData.focusPath;
         }
         backButtonPath = window.location.pathname+'?source='+encodeURIComponent(JSON.stringify(sourceData));
-        backButton = "<a href='"+backButtonPath+"' style='color:white;margin-bottom:10px;width:100%;text-align:center;' class='button-field standard-button primary-button' id='faceview_article_back_to_list'>back to search</a>";
+        backButton = '<div style="margin-bottom:25px !important;"><i class="fa fa-arrow-left" aria-hidden="true"></i>  <a style="text-decoration:none;" href="'+backButtonPath+'" id="faceview_article_back_to_list">back to search</a><br></div>';
 
         var parser = new DOMParser();
         var doc = parser.parseFromString(data, "text/html");
@@ -130,7 +130,8 @@ function showArticle(pathName) {
         //$('#facetview').html('<div class="row-fluid"><div class="span9" id="facetview_article_content"></div><div class="span3">'+backButton+'</div></div>');
         //$('#facetview_article_content').html(doc.getElementById("content-core"));
         $('#facetview').html(doc.getElementById("content-core"));
-        $('#aceitem_sidebar').html(backButton + $('#aceitem_sidebar').html());
+        $('#facetview').prepend(backButton);
+        $(".share-your-info-ace-button").appendTo("#aceitem_sidebar");
     });
 }
 
