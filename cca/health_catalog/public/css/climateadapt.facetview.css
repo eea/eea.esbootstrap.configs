@@ -73,7 +73,8 @@
     display: none !important;
 }
 
-div[id^="portal-columns"] {
+#portal-columns-app,
+#portal-columns {
     margin-bottom: 20px;
 }
 
