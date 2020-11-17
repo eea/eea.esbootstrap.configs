@@ -73,8 +73,7 @@
     display: none !important;
 }
 
-#portal-columns-app,
-#portal-columns {
+.content-column {
     margin-bottom: 20px;
 }
 
