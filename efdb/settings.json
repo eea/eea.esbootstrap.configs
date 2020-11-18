@@ -47,13 +47,13 @@
                 "custom.js"
             ]
         },
-        "site_title": "EMEP/EEA air pollutant emission inventory guidebook 2020",
-        "site_description": "This viewer presents selected emission factors and abatement efficiencies included in the EMEP/EEA Guidebook 2020. Information is ordered by the respective Nomenclature For Reporting (NFR) source category code. Not all emission factors included in the Guidebook are included in this viewer, users should always therefore consult the relevant chapter. In case of discrepancies between values appearing in this viewer and the published chapter, the values provided in the chapter are considered the official data.",
+        "site_title": "EMEP/EEA air pollutant emission inventory guidebook 2019",
+        "site_description": "This viewer presents selected emission factors and abatement efficiencies included in the EMEP/EEA Guidebook 2019. Information is ordered by the respective Nomenclature For Reporting (NFR) source category code. Not all emission factors included in the Guidebook are included in this viewer, users should always therefore consult the relevant chapter. In case of discrepancies between values appearing in this viewer and the published chapter, the values provided in the chapter are considered the official data.",
         "enableBreadcrumbs": true,
         "es_debug_enabled": false,
         "breadcrumbs": "EFDB",
-        "dataprovencance_info_text": "EMEP/EEA air pollutant emission inventory guidebook - 2020",
-        "dataprovencance_info_url": "https://www.eea.europa.eu/publications/emep-eea-guidebook-2020",
+        "dataprovencance_info_text": "EMEP/EEA air pollutant emission inventory guidebook - 2019",
+        "dataprovencance_info_url": "https://www.eea.europa.eu/publications/emep-eea-guidebook-2019",
         "further_info": ""
     },
     "source": {
