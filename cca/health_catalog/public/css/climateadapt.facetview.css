@@ -77,6 +77,38 @@
     margin-bottom: 20px;
 }
 
+/* article detail start */
+#content-core h1 span {
+    font-size:28px;
+}
+#content-core h3 {
+    font-size:16px;
+    color: #000;
+}
+#content-core li {
+    font-size:14px;
+}
+#content-core h4.reference-title {
+    color: #000;
+    font-size:16px;
+}
+#content-core h5 {
+    color: #000;
+    font-size:14px;
+    text-decoration: underline;
+}
+.aceitem-left div div{
+    font-size:14px;
+}
+
+.macro-category h4 {
+    font-size:15.68px;
+}
+.macro-category div {
+    font-size:14px;
+}
+
+/* article detail end */
 
 @media handheld, screen and (max-device-width: 480px){
   input, textarea {
