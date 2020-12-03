@@ -602,6 +602,22 @@
             }
         },
         {
+            "name": "source",
+            "csv_tsv": {
+                "title": "Referenc",
+                "visible": true,
+                "pos": 16
+            }
+        },
+        {
+            "name": "biographical-regions",
+            "csv_tsv": {
+                "title": "Biographical regions",
+                "visible": true,
+                "pos": 17
+            }
+        },
+        {
             "name": "depiction",
             "listing": {
                 "title": "depiction",
