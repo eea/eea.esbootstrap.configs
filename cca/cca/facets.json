@@ -618,6 +618,22 @@
             }
         },
         {
+            "name": "health_impacts",
+            "csv_tsv": {
+                "title": "Health Impacts",
+                "visible": true,
+                "pos": 18
+            }
+        },
+        {
+            "name": "include_in_observatory",
+            "csv_tsv": {
+                "title": "Include in observatory",
+                "visible": true,
+                "pos": 19
+            }
+        },
+        {
             "name": "depiction",
             "listing": {
                 "title": "depiction",
