@@ -2,10 +2,10 @@
   "did_you_mean": {"type": "text", "analyzer": "didYouMean"},
   "autocomplete": {"type": "text", "analyzer": "autocomplete"},
 
-  "Evaluation ID": {
+  "Evaluation_ID": {
     "type": "long"
   },
-  "Policy evaluation title": {
+  "Policy_evaluation_title": {
     "type": "text",
     "fields": {
       "keyword": {
@@ -15,7 +15,7 @@
     },
     "copy_to" : ["did_you_mean", "autocomplete"]
   },
-  "Weblink / ref": {
+  "Weblink___ref_": {
     "type": "text",
     "fields": {
       "keyword": {
@@ -24,7 +24,7 @@
       }
     }
   },
-  "Evaluated policy (policies)": {
+  "Evaluated_policy__policies_": {
     "type": "text",
     "fields": {
       "keyword": {
@@ -44,7 +44,7 @@
     "analyzer": "semicolon",
     "copy_to" : ["did_you_mean", "autocomplete"]
   },
-  "Commissioner": {
+  "Commissioner00": {
     "type": "text",
     "fields": {
       "keyword": {
@@ -54,16 +54,16 @@
     },
     "copy_to" : ["did_you_mean", "autocomplete"]
   },
-  "Commissioner only for facets": {
+  "Commissioner": {
     "type": "text",
     "analyzer": "none"
   },
-  "Author type": {
+  "Author_type": {
     "type": "text",
     "analyzer": "none",
     "copy_to" : ["did_you_mean", "autocomplete"]
   },
-  "Publication year": {
+  "Publication_year": {
     "type": "text",
     "fields": {
       "keyword": {
@@ -73,12 +73,10 @@
     },
     "copy_to" : ["did_you_mean", "autocomplete"]
   },
-  "Geographical scope": {
-    "type": "text",
-    "analyzer": "none",
-    "copy_to" : ["did_you_mean", "autocomplete"]
+  "Publication_year_for_facet": {
+    "type": "long"
   },
-  "Geographical scope only for facets": {
+  "Geographical_scope": {
     "type": "text",
     "analyzer": "semicolon",
     "copy_to" : ["did_you_mean", "autocomplete"]
@@ -93,7 +91,7 @@
     "analyzer": "semicolon",
     "copy_to" : ["did_you_mean", "autocomplete"]
   },
-  "Period start": {
+  "Period_start": {
     "type": "text",
     "fields": {
       "keyword": {
@@ -103,7 +101,7 @@
     },
     "copy_to" : ["did_you_mean", "autocomplete"]
   },
-  "Period end": {
+  "Period_end": {
     "type": "text",
     "fields": {
       "keyword": {
@@ -143,27 +141,27 @@
     "analyzer": "semicolon",
     "copy_to" : ["did_you_mean", "autocomplete"]
   },
-  "Output data": {
+  "Output_data": {
     "type": "text",
     "analyzer": "none",
     "copy_to" : ["did_you_mean", "autocomplete"]
   },
-  "Input data": {
+  "Input_data": {
     "type": "text",
     "analyzer": "none",
     "copy_to" : ["did_you_mean", "autocomplete"]
   },
-  "Policy recommendations": {
+  "Policy_recommendations": {
     "type": "text",
     "analyzer": "none",
     "copy_to" : ["did_you_mean", "autocomplete"]
   },
-  "Evaluation results": {
+  "Evaluation_results": {
     "type": "text",
     "analyzer": "none",
     "copy_to" : ["did_you_mean", "autocomplete"]
   },
-  "Period range": {
+  "Period_range": {
     "type": "text",
     "fielddata":true,
     "analyzer": "coma"

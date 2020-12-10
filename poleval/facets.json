@@ -15,7 +15,7 @@
     },
     "fields_mapping": [
         {
-            "name": "Evaluation ID",
+            "name": "Evaluation_ID",
             "listing": {
                 "visible": true,
                 "title": "Evaluation ID",
@@ -23,7 +23,7 @@
                 "pos": 10,
                 "display": {
                     "pre": "",
-                    "field": "Evaluation ID",
+                    "field": "Evaluation_ID",
                     "post": "</td>"
                 }
 
@@ -38,7 +38,7 @@
             }
         },
         {
-            "name": "Weblink / ref.",
+            "name": "Weblink___ref_",
             "listing": {
                 "visible": true,
                 "title": "",
@@ -46,7 +46,7 @@
                 "pos": 20,
                 "display": {
                     "pre": "<td><a class='details_link' href='",
-                    "field": "Weblink / ref.",
+                    "field": "Weblink___ref_",
                     "post":"'>"
                 }
 
@@ -61,7 +61,7 @@
             }
         },
         {
-            "name": "Policy evaluation title",
+            "name": "Policy_evaluation_title",
             "listing": {
                 "visible": true,
                 "title": "Policy evaluation title",
@@ -69,7 +69,7 @@
                 "pos": 30,
                 "display": {
                     "pre": "",
-                    "field": "Policy evaluation title",
+                    "field": "Policy_evaluation_title",
                     "post":"</a></td>"
                 }
 
@@ -84,7 +84,7 @@
             }
         },
         {
-            "name": "Evaluated policy (policies)",
+            "name": "Evaluated_policy__policies_",
             "listing": {
                 "visible": true,
                 "title": "Evaluated policy (policies)",
@@ -153,7 +153,7 @@
             }
         },
         {
-            "name": "Commissioner",
+            "name": "Commissioner00",
             "listing": {
                 "visible": true,
                 "title": "Commissioner",
@@ -170,7 +170,7 @@
             }
         },
         {
-            "name": "Commissioner only for facets",
+            "name": "Commissioner",
             "listing": {
                 "visible": false,
                 "title": "Commissioner only for facets",
@@ -179,7 +179,7 @@
             },
             "csv_tsv": {
                 "title": "Commissioner only for facets",
-                "visible": true,
+                "visible": false,
                 "pos": 80
             },
             "facet": {
@@ -196,7 +196,7 @@
             }
         },
         {
-            "name": "Author type",
+            "name": "Author_type",
             "listing": {
                 "visible": true,
                 "title": "Author type",
@@ -222,7 +222,7 @@
             }
         },
         {
-            "name": "Publication year",
+            "name": "Publication_year",
             "listing": {
                 "visible": true,
                 "title": "Publication year",
@@ -239,7 +239,7 @@
             }
         },
         {
-            "name": "Geographical scope",
+            "name": "Geographical_scope",
             "listing": {
                 "visible": true,
                 "title": "Geographical scope",
@@ -250,18 +250,6 @@
                 "title": "Geographical scope",
                 "visible": true,
                 "pos": 110
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-        {
-            "name": "Geographical scope only for facets",
-            "listing": {
-                "visible": false
-            },
-            "csv_tsv": {
-                "visible": false
             },
             "facet": {
                 "visible": true,
@@ -323,7 +311,7 @@
             }
         },
         {
-            "name": "Period start",
+            "name": "Period_start",
             "listing": {
                 "visible": true,
                 "title": "Period start",
@@ -340,7 +328,7 @@
             }
         },
         {
-            "name": "Period end",
+            "name": "Period_end",
             "listing": {
                 "visible": true,
                 "title": "Period end",
@@ -499,7 +487,7 @@
             }
         },
         {
-            "name": "Output data",
+            "name": "Output_data",
             "listing": {
                 "visible": true,
                 "title": "Output data",
@@ -524,7 +512,7 @@
             }
         },
         {
-            "name": "Input data",
+            "name": "Input_data",
             "listing": {
                 "visible": true,
                 "title": "Input data",
@@ -549,7 +537,7 @@
             }
         },
         {
-            "name": "Policy recommendations",
+            "name": "Policy_recommendations",
             "listing": {
                 "visible": true,
                 "title": "Policy recommendations",
@@ -572,7 +560,7 @@
             }
         },
         {
-            "name": "Evaluation results",
+            "name": "Evaluation_results",
             "listing": {
                 "visible": true,
                 "title": "Evaluation results",
@@ -595,7 +583,7 @@
             }
         },
         {
-            "name": "Period range",
+            "name": "Period_range",
             "listing": {
                 "visible": false
             },
@@ -610,8 +598,8 @@
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
-                    "min_max_script" : "def vals = doc['Period range']; if (vals.length == 0){return null;}else{ def ret = [];for (val in vals){ret.add(Integer.parseInt(val))}return ret}",
-                    "aggs_script" : "def vals = doc['Period range']; if (vals.length == 0){return null;}else{ def ret = [];for (val in vals){ret.add(Integer.parseInt(val))}return ret}",
+                    "min_max_script" : "def vals = doc['Period_range']; if (vals.length == 0){return null;}else{ def ret = [];for (val in vals){ret.add(Integer.parseInt(val))}return ret}",
+                    "aggs_script" : "def vals = doc['Period_range']; if (vals.length == 0){return null;}else{ def ret = [];for (val in vals){ret.add(Integer.parseInt(val))}return ret}",
 
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",
@@ -625,7 +613,7 @@
             }
         },
         {
-            "name": "Publication year for facet",
+            "name": "Publication_year_for_facet",
             "listing": {
                 "visible": false
             },

@@ -3,7 +3,7 @@
         "port": 3000
     },
     "elastic": {
-        "index": "esbootstrapdata-poleval",
+        "index": "esbootstrapdata-poleval-query",
         "type": "resources",
         "field_base":"",
         "default_appalias": "latest",
@@ -51,16 +51,26 @@
         "token": "default"
     },
     "source": {
-        "type": "file",
+        "type": "url",
         "autoswitch": false,
         "configuration": {
-            "type": "csv",
+            "type": "json",
             "bulksize": 3000,
-            "file": "poleval_v30.csv",
-            "format": "csv",
+            "subtype": "discodata",
+
+            "sql": true,
+            "sql_url": "https://discodata.eea.europa.eu/sql",
+            "sql_table": "[CataloguePolicyEvaluations].[latest].[catalogue_evaluations]",
+            "query_attr": "query",
+            "query": "query.sql",
+            "_query_count": "query_count.sql",
+
+
+            "format": "json",
+            "data_path": "results.*",
             "encoding": "utf-8",
             "id_type": "field",
-            "id_field": "Evaluation ID",
+            "id_field": "Evaluation_ID",
             "data_modifier": "modify.js"
         }
     }
