@@ -44,3 +44,12 @@ ul.methodology_list1{
 ul.methodology_list2{
   list-style-type: circle;
 }
+
+ul.methodology_list3{
+  list-style-type: decimal;
+}
+
+.methodology_bibliography{
+    font-size: 85%;
+    font-weight: 400;
+}
