@@ -58,7 +58,7 @@ jQuery(document).ready(function($) {
   };
   function setupPage() {
     //$('.facetview_orderby').before($('.facetview_download'));
-    $(".portalMessage.attentionMessage").insertAfter("#facetview_results_wrapper");
+    $(".portalMessage.attentionMessage").insertAfter(".facetview_top");
     $('.facetview_download').insertAfter($('.pull-right'));
     $('.facetview_download .eea_download_btn span').html('Download CSV');
   }
