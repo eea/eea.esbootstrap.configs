@@ -101,7 +101,7 @@
             }
         },
         {
-            "name": "Policy area - main",
+            "name": "Policy_area_s_",
             "listing": {
                 "visible": true,
                 "title": "Policy area(s)",
@@ -112,6 +112,19 @@
                 "title": "Policy area(s)",
                 "visible": true,
                 "pos": 50
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Policy_area_s__facets",
+            "listing": {
+                "visible": false,
+                "pos": 51
+            },
+            "csv_tsv": {
+                "visible": false
             },
             "facet": {
                 "visible": true,
@@ -127,7 +140,7 @@
             }
         },
         {
-            "name": "Sector(s)",
+            "name": "Sector_s_",
             "listing": {
                 "visible": true,
                 "title": "Sector(s)",
@@ -138,6 +151,19 @@
                 "title": "Sector(s)",
                 "visible": true,
                 "pos": 60
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Sector_s__facets",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Sector(s)",
+                "visible": false
             },
             "facet": {
                 "visible": true,
@@ -153,7 +179,7 @@
             }
         },
         {
-            "name": "Commissioner00",
+            "name": "Commissioner",
             "listing": {
                 "visible": true,
                 "title": "Commissioner",
@@ -170,7 +196,7 @@
             }
         },
         {
-            "name": "Commissioner",
+            "name": "Commissioner_facets",
             "listing": {
                 "visible": false,
                 "title": "Commissioner only for facets",
@@ -252,6 +278,18 @@
                 "pos": 110
             },
             "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Geographical_scope_facets",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
+            },
+            "facet": {
                 "visible": true,
                 "title": "Geographical scope",
                 "pos": 100,
@@ -307,7 +345,8 @@
                 "type": "facet",
                 "size": 100,
                 "order": "reverse_count",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": ["sort", "checkbox"],
+                "last_value": "No information"
             }
         },
         {
@@ -368,10 +407,10 @@
             }
         },
         {
-            "name": "Criterias - main",
+            "name": "Criterias___main",
             "listing": {
                 "visible": true,
-                "title": "Criterias - main",
+                "title": "Criterias",
                 "width": "100px",
                 "pos": 170
             },
@@ -381,38 +420,26 @@
                 "pos": 170
             },
             "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Criteria_facets",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
+            },
+            "facet": {
                 "visible": true,
-                "title": "Criterias - main",
+                "title": "Criterias",
                 "pos": 170,
                 "type": "facet",
                 "size": 100,
                 "order": "reverse_count",
-                "facet_display_options": ["sort", "checkbox"]
-            }
-        },
-        {
-            "name": "Criterias - other",
-            "listing": {
-                "visible": true,
-                "title": "Criterias - other",
-                "width": "100px",
-                "pos": 180
-            },
-            "csv_tsv": {
-                "title": "Criterias - other",
-                "visible": true,
-                "pos": 180
-            },
-            "facet": {
-                "visible": true,
-                "title": "Criterias - other",
-                "pos": 180,
-                "type": "facet",
-                "size": 100,
-                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"],
-                "autocomplete": true,
-                "autocomplete_placeholder": "Search for criterias"
+                "last_value": "Other"
             }
         },
         {
@@ -439,7 +466,7 @@
             }
         },
         {
-            "name": "Methods - types",
+            "name": "Methods___types",
             "listing": {
                 "visible": true,
                 "title": "Methods - types",
@@ -450,6 +477,18 @@
                 "title": "Methods - types",
                 "visible": true,
                 "pos": 200
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Methods___types_facet",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
             },
             "facet": {
                 "visible": true,
@@ -459,31 +498,6 @@
                 "size": 100,
                 "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"]
-            }
-        },
-        {
-            "name": "Methods - other",
-            "listing": {
-                "visible": true,
-                "title": "Methods - other",
-                "width": "100px",
-                "pos": 210
-            },
-            "csv_tsv": {
-                "title": "Methods - other",
-                "visible": true,
-                "pos": 210
-            },
-            "facet": {
-                "visible": true,
-                "title": "Methods - other",
-                "pos": 210,
-                "type": "facet",
-                "size": 100,
-                "order": "reverse_count",
-                "facet_display_options": ["sort", "checkbox"],
-                "autocomplete": true,
-                "autocomplete_placeholder": "Search for methods"
             }
         },
         {
@@ -556,7 +570,8 @@
                 "type": "facet",
                 "size": 100,
                 "order": "reverse_count",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": ["sort", "checkbox"],
+                "last_value": "No information"
             }
         },
         {
@@ -579,7 +594,8 @@
                 "type": "facet",
                 "size": 100,
                 "order": "reverse_count",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": ["sort", "checkbox"],
+                "last_value": "No information"
             }
         },
         {
