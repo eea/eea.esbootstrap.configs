@@ -68,3 +68,6 @@
         font-family: inherit !important;
     }
 }
+.portalMessage.attentionMessage.no-results-message {
+    font-size: 14px;
+}
