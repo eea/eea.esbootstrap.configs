@@ -32,9 +32,10 @@ jQuery(document).ready(function($) {
       updatePagination();
       limitString();
       $(window).trigger('post_search_callback');
-      localArticleView();
+      //localArticleView();
       viewChartMode();
       checkShowArticleDefault();
+      updateCurrentArticleLinks();
     },
     paging: {
       from: 0,
@@ -43,7 +44,30 @@ jQuery(document).ready(function($) {
     display_type_options: settings_display_options,
     display_type: settings_default_display
   };
+  function updateCurrentArticleLinks() {
+      console.log('post_search_callback');
+      params = new URLSearchParams(window.location.search);
+      source = params.get('source');
+      sourceData = JSON.parse(source);
+      console.log(sourceData);
+
+      $('#facetview_results_wrapper a').each(function(){
+          oldUrl = $(this).attr("href"); // Get current url
+          url = oldUrl.replace('https://','').split('/');
+          oldUrl = '/'+url.splice(1).join('/');
+
+          params = new URLSearchParams(window.location.search);
+          source = params.get('source');
+          var sourceData = JSON.parse(source);
+          sourceData['focusPath'] = oldUrl;
+          var newUrl = window.location.pathname+'?source='+encodeURIComponent(JSON.stringify(sourceData));
+
+          $(this).attr("href", newUrl);
+      });
+  }
+
   function updatePagination() {
+      console.log('aaa');
       $('.facetview_top').css("display", "block");
       $('.top-pagination').css("display", "block");
       //$('.pagination').css("display", "none");
