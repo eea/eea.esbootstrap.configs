@@ -32,7 +32,7 @@ jQuery(document).ready(function($) {
       updatePagination();
       limitString();
       $(window).trigger('post_search_callback');
-      //localArticleView();
+      localArticleView();
       viewChartMode();
       checkShowArticleDefault();
       updateCurrentArticleLinks();
@@ -89,20 +89,14 @@ jQuery(document).ready(function($) {
   function localArticleView() {
     $('#facetview_results_wrapper a.eea-tileInner,a.state-published').click(function(event) {
         event.preventDefault();
-        var pathName = $(this)[0].pathname;
 
-        params = new URLSearchParams(window.location.search);
+        link = this.href.substring(this.href.indexOf('?'))
+        params = new URLSearchParams(link);
         source = params.get('source');
-        var sourceData = JSON.parse(source);
-        sourceData['focusPath'] = pathName;
-        history.pushState('', '', window.location.pathname+'?source='+encodeURIComponent(JSON.stringify(sourceData)));
+        sourceData = JSON.parse(source);
+        $(this).html(this.text + ' <img src="https://www.eea.europa.eu/++resource++faceted_images/ajax-loader-small.gif">');
 
-        var els = $("a.state-published[href$='"+pathName+"']");
-        for(i=0;i<els.length;i++) {
-            console.log(els[i].text)
-            $(els[i]).html(els[i].text+' <img src="https://www.eea.europa.eu/++resource++faceted_images/ajax-loader-small.gif">');
-        }
-        showArticle(pathName);
+        showArticle(sourceData.focusPath, false);
         return false;
     });
   }
@@ -126,8 +120,10 @@ function checkShowArticleDefault() {
     }
 }
 
-function showArticle(pathName) {
-    $('#facetview').html('<img src="https://www.eea.europa.eu/++resource++faceted_images/ajax-loader.gif">');
+function showArticle(pathName, addLoader = true) {
+    if (addLoader) {
+        $('#facetview').html('<img src="https://www.eea.europa.eu/++resource++faceted_images/ajax-loader.gif">');
+    }
     if ($('#facetview_article_content').length == 0) {
         $( "#facetview_rightcol" ).after("<div id='facetview_article' class='hide row-fluid'><div id='facetview_article_content'></div></div>");
     }
