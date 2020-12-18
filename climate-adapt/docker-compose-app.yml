@@ -1,0 +1,31 @@
+search:
+  environment:
+    VERSION_INFO: eeacms/esbootstrap:v1.1.0
+    #elastic_host: 192.168.0.108
+    elastic_host: 192.168.0.125
+    elastic_port: '9200'
+    elastic_index: 'global-search'
+    AUTO_INDEXING: 'false'
+    APP_CONFIG_DIRNAME: climate-adapt
+  log_driver: ''
+  ports:
+    - '3000:3000'
+  log_opt: {}
+    
+  build: ../../eea.docker.esbootstrap
+  entrypoint:
+    - /node_modules/.bin/nodemon
+    - --watch
+    - code/
+    - --watch
+    - /node_modules/eea-searchserver
+    - /code/app.js
+  command:
+      - runserver
+  volumes:
+      - ../../eea.docker.esbootstrap/app/:/code/:z
+      - ../../eea.esbootstrap.configs:/code/config
+      - ../../eea.searchserver.js/lib/:/node_modules/eea-searchserver/lib/:z
+      - ../../eea.searchserver.js/index.js:/node_modules/eea-searchserver/index.js:z
+
+

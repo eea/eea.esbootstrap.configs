@@ -1,0 +1,40 @@
+mixin portal_breadcrumbs(parent_title, current_title)
+    div(id="eea-above-columns")
+        nav(id="portal-breadcrumbs",class="plone-breadcrumb")
+            div(class="container")
+                span(id="breadcrumbs-you-are-here", class="hiddenStructure")
+                    | You are here:
+                ol(aria-labelledby="breadcrumbs-you-are-here")
+                    -var index = 0
+                    each breadcrumb in breadcrumbs
+                        each val, key in breadcrumb
+                            if index == 0
+                                li(id="breadcrumbs-home")
+                                    a(title=key href=val)
+                                        i(class="eea-icon eea-icon-home")
+                            else
+                                if index < breadcrumbs.length - 1
+                                    li(id="breadcrumbs-"+index)
+                                        a(title=key href=val)
+                                            =key
+                                else
+                                    li(id="breadcrumbs-"+index)
+                                        span(id="breadcrumbs-current")
+                                        =key
+                        -index++
+
+mixin visualization_info(href, title)
+    div(class="visualization-info")
+        h3 Data sources
+        a(href=href)= title
+        span  provided by
+        a(href="http://www.eea.europa.eu")  European Environment Agency (EEA)
+
+mixin app_error(title, app_id)
+    div(class = "portalMessage errorMessage")
+        span= title
+        b= app_id
+        span= " does not exist"
+        
+mixin download_data
+    div(class="documentExportActions download_data")

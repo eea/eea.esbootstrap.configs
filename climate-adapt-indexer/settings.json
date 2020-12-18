@@ -1,0 +1,81 @@
+{
+    "http": {
+        "port": 3000
+    },
+    "elastic": {
+        "index": "esbootstrapdata-climate-strip",
+        "type": "resource",
+        "field_base":"",
+        "enableValuesCounting": true,
+        "default_appalias": "latest",
+        "increment_threshold": 2
+    },
+    "external_templates": {
+        "local_path": "/external_templates",
+        "protocol": "https",
+        "host": "climate-adapt.eea.europa.eu",
+        "head_path": "/cca/external-template-head",
+        "header_path": "/cca/external-template-header",
+        "footer_path": "/cca/external-template-footer",
+        "strip_templates": true
+    },
+    "layout_vars": {
+        "head_title": "Climate adapt search",
+        "app_id": "pam",
+        "skip_external_template_styles": true,
+        "skip_resources_bundling": false,
+        "override_searchserver_resources": true,
+        "css_resources": {
+            "index_page": [
+            ],
+            "details_page": [
+            ],
+            "layout_page": [
+            ]
+        },
+        "js_resources": {
+            "index_page": [
+            ],
+            "details_page": [],
+            "layout_page" : [
+            ]
+        },
+        "site_title": "Climate-ADAPT search",
+        "site_description": "",
+        "enableBreadcrumbs": false,
+        "breadcrumbs": [{"Home":"https://climate-adapt.eea.europa.eu/"}, {"Climate adapt search": ""}],
+        "dataprovencance_info_text": "Climate adapt search",
+        "dataprovencance_info_url": "climate adapt dev",
+        "further_info": ""
+    },
+    "es_debug_enabled": false,
+    "suggestions_enabled": true,
+    "relevance_enabled": true,
+       "river_configs": {
+        "configs": [
+            {
+                "id": "climateadapt",
+                "cluster_name": "climateadapt",
+                "config_file": "riverconfig_climateadapt.json"
+            }
+        ]
+    },
+
+    "endpoint": "https://semantic.eea.europa.eu/sparql",
+    "selected_navigation_tab": "data-and-maps",
+    "source": {
+        "type": "rdfriver",
+        "autoswitch": "true",
+        "configuration": {
+          "fullreindex": true,
+          "endpoint": "https://semantic.eea.europa.eu/sparql",
+            "river_configs": [
+              {
+                  "id": "climateadapt",
+                  "cluster_name": "climateadapt",
+                  "config_file": "riverconfig_climateadapt.json"
+              }
+            ]
+        }
+  }
+}
