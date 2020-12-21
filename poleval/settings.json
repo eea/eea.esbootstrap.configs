@@ -21,7 +21,7 @@
         "head_title": "Catalogue of policy evaluations",
         "app_id": "policyevaluation",
         "skip_external_template_styles": false,
-        "skip_resources_bundling": true,
+        "skip_resources_bundling": false,
         "override_searchserver_resources": false,
         "css_resources": {
             "index_page": [
@@ -60,7 +60,7 @@
 
             "sql": true,
             "sql_url": "https://discodata.eea.europa.eu/sql",
-            "sql_table": "[CataloguePolicyEvaluations].[latest].[catalogue_evaluations]",
+            "sql_table": "[CataloguePolicyEvaluations].[v7r2].[catalogue_evaluations]",
             "query_attr": "query",
             "query": "query.sql",
             "_query_count": "query_count.sql",
