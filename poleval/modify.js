@@ -1,5 +1,7 @@
 function sanitize_csv(field, separator){
-    console.log(field)
+    if (!field){
+      return;
+    }
     let values = field.split(separator);
     let clean_values = [];
     for (let i = 0; i < values.length; i++){
@@ -18,35 +20,31 @@ module.exports = function(doc){
     modified_doc = _.extend(modified_doc, doc);
 
     try{
+        modified_doc._timestamp = undefined;
         // create range for period
-        if ((!isNaN(modified_doc["Period start"])) && (!isNaN(modified_doc["Period end"]))){
-            modified_doc["Period range"] = ""
-            for (let i = modified_doc["Period start"]; i <= modified_doc["Period end"]; i++){
-                modified_doc["Period range"] += i;
-                if (i !== modified_doc["Period end"]){
-                    modified_doc["Period range"] += ", ";
+        if ((!isNaN(modified_doc["Period_start"])) && (!isNaN(modified_doc["Period_end"]))){
+            modified_doc["Period_range"] = ""
+            for (let i = modified_doc["Period_start"]; i <= modified_doc["Period_end"]; i++){
+                modified_doc["Period_range"] += i;
+                if (i !== parseInt(modified_doc["Period_end"])){
+                    modified_doc["Period_range"] += ", ";
                 }
             }
         }
-
         // create publication year that only contains numbers
-        if (!isNaN(modified_doc["Publication year"])){
-            modified_doc["Publication year for facet"] = modified_doc["Publication year"]
+        if (!isNaN(modified_doc["Publication_year"])){
+            modified_doc["Publication_year_for_facet"] = modified_doc["Publication_year"]
         }
 
+
         // remove trailing spaces from csv
-//console.log(1)
-//console.log(modified_doc)
-        modified_doc["Policy area - main"] = sanitize_csv(modified_doc["Policy area - main"], ";");
-//console.log(2)
-        modified_doc["Sector(s)"] = sanitize_csv(modified_doc["Sector(s)"], ";");
-//console.log(3)
-        modified_doc["Geographical scope"] = sanitize_csv(modified_doc["Geographical scope"], ";");
-//console.log(4)
-        modified_doc["Methods - types"] = sanitize_csv(modified_doc["Methods - types"], ";");
-//console.log(5)
-        modified_doc["Methods"] = sanitize_csv(modified_doc["Methods"], ";");
-//console.log(6)
+//        modified_doc["Policy area - main"] = sanitize_csv(modified_doc["Policy area - main"], ";");
+//        modified_doc["Sector(s)"] = sanitize_csv(modified_doc["Sector(s)"], ";");
+        modified_doc["Geographical_scope"] = sanitize_csv(modified_doc["Geographical_scope"], ";");
+//        modified_doc["Geographical_scope_only_for_facets"] = modified_doc["Geographical_scope"];
+//        modified_doc["Methods - types"] = sanitize_csv(modified_doc["Methods - types"], ";");
+//        modified_doc["Methods"] = sanitize_csv(modified_doc["Methods"], ";");
+//console.log("METHODS:",modified_doc["Methods"]);
     }
     catch(err){
         console.log(err);

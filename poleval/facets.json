@@ -15,7 +15,7 @@
     },
     "fields_mapping": [
         {
-            "name": "Evaluation ID",
+            "name": "Evaluation_ID",
             "listing": {
                 "visible": true,
                 "title": "Evaluation ID",
@@ -23,7 +23,7 @@
                 "pos": 10,
                 "display": {
                     "pre": "",
-                    "field": "Evaluation ID",
+                    "field": "Evaluation_ID",
                     "post": "</td>"
                 }
 
@@ -38,7 +38,7 @@
             }
         },
         {
-            "name": "Weblink / ref.",
+            "name": "Weblink___ref_",
             "listing": {
                 "visible": true,
                 "title": "",
@@ -46,7 +46,7 @@
                 "pos": 20,
                 "display": {
                     "pre": "<td><a class='details_link' href='",
-                    "field": "Weblink / ref.",
+                    "field": "Weblink___ref_",
                     "post":"'>"
                 }
 
@@ -61,7 +61,7 @@
             }
         },
         {
-            "name": "Policy evaluation title",
+            "name": "Policy_evaluation_title",
             "listing": {
                 "visible": true,
                 "title": "Policy evaluation title",
@@ -69,7 +69,7 @@
                 "pos": 30,
                 "display": {
                     "pre": "",
-                    "field": "Policy evaluation title",
+                    "field": "Policy_evaluation_title",
                     "post":"</a></td>"
                 }
 
@@ -84,7 +84,7 @@
             }
         },
         {
-            "name": "Evaluated policy (policies)",
+            "name": "Evaluated_policy__policies_",
             "listing": {
                 "visible": true,
                 "title": "Evaluated policy (policies)",
@@ -101,7 +101,7 @@
             }
         },
         {
-            "name": "Policy area - main",
+            "name": "Policy_area_s_",
             "listing": {
                 "visible": true,
                 "title": "Policy area(s)",
@@ -112,6 +112,19 @@
                 "title": "Policy area(s)",
                 "visible": true,
                 "pos": 50
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Policy_area_s__facets",
+            "listing": {
+                "visible": false,
+                "pos": 51
+            },
+            "csv_tsv": {
+                "visible": false
             },
             "facet": {
                 "visible": true,
@@ -127,7 +140,7 @@
             }
         },
         {
-            "name": "Sector(s)",
+            "name": "Sector_s_",
             "listing": {
                 "visible": true,
                 "title": "Sector(s)",
@@ -138,6 +151,19 @@
                 "title": "Sector(s)",
                 "visible": true,
                 "pos": 60
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Sector_s__facets",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Sector(s)",
+                "visible": false
             },
             "facet": {
                 "visible": true,
@@ -170,7 +196,7 @@
             }
         },
         {
-            "name": "Commissioner only for facets",
+            "name": "Commissioner_facets",
             "listing": {
                 "visible": false,
                 "title": "Commissioner only for facets",
@@ -179,7 +205,7 @@
             },
             "csv_tsv": {
                 "title": "Commissioner only for facets",
-                "visible": true,
+                "visible": false,
                 "pos": 80
             },
             "facet": {
@@ -196,7 +222,7 @@
             }
         },
         {
-            "name": "Author type",
+            "name": "Author_type",
             "listing": {
                 "visible": true,
                 "title": "Author type",
@@ -222,7 +248,7 @@
             }
         },
         {
-            "name": "Publication year",
+            "name": "Publication_year",
             "listing": {
                 "visible": true,
                 "title": "Publication year",
@@ -239,7 +265,7 @@
             }
         },
         {
-            "name": "Geographical scope",
+            "name": "Geographical_scope",
             "listing": {
                 "visible": true,
                 "title": "Geographical scope",
@@ -256,7 +282,7 @@
             }
         },
         {
-            "name": "Geographical scope only for facets",
+            "name": "Geographical_scope_facets",
             "listing": {
                 "visible": false
             },
@@ -319,11 +345,12 @@
                 "type": "facet",
                 "size": 100,
                 "order": "reverse_count",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": ["sort", "checkbox"],
+                "last_value": "No information"
             }
         },
         {
-            "name": "Period start",
+            "name": "Period_start",
             "listing": {
                 "visible": true,
                 "title": "Period start",
@@ -340,7 +367,7 @@
             }
         },
         {
-            "name": "Period end",
+            "name": "Period_end",
             "listing": {
                 "visible": true,
                 "title": "Period end",
@@ -380,10 +407,10 @@
             }
         },
         {
-            "name": "Criterias - main",
+            "name": "Criterias___main",
             "listing": {
                 "visible": true,
-                "title": "Criterias - main",
+                "title": "Criterias",
                 "width": "100px",
                 "pos": 170
             },
@@ -393,38 +420,26 @@
                 "pos": 170
             },
             "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Criteria_facets",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
+            },
+            "facet": {
                 "visible": true,
-                "title": "Criterias - main",
+                "title": "Criterias",
                 "pos": 170,
                 "type": "facet",
                 "size": 100,
                 "order": "reverse_count",
-                "facet_display_options": ["sort", "checkbox"]
-            }
-        },
-        {
-            "name": "Criterias - other",
-            "listing": {
-                "visible": true,
-                "title": "Criterias - other",
-                "width": "100px",
-                "pos": 180
-            },
-            "csv_tsv": {
-                "title": "Criterias - other",
-                "visible": true,
-                "pos": 180
-            },
-            "facet": {
-                "visible": true,
-                "title": "Criterias - other",
-                "pos": 180,
-                "type": "facet",
-                "size": 100,
-                "order": "reverse_count",
                 "facet_display_options": ["sort", "checkbox"],
-                "autocomplete": true,
-                "autocomplete_placeholder": "Search for criterias"
+                "last_value": "Other"
             }
         },
         {
@@ -451,7 +466,7 @@
             }
         },
         {
-            "name": "Methods - types",
+            "name": "Methods___types",
             "listing": {
                 "visible": true,
                 "title": "Methods - types",
@@ -462,6 +477,18 @@
                 "title": "Methods - types",
                 "visible": true,
                 "pos": 200
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Methods___types_facet",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
             },
             "facet": {
                 "visible": true,
@@ -474,32 +501,7 @@
             }
         },
         {
-            "name": "Methods - other",
-            "listing": {
-                "visible": true,
-                "title": "Methods - other",
-                "width": "100px",
-                "pos": 210
-            },
-            "csv_tsv": {
-                "title": "Methods - other",
-                "visible": true,
-                "pos": 210
-            },
-            "facet": {
-                "visible": true,
-                "title": "Methods - other",
-                "pos": 210,
-                "type": "facet",
-                "size": 100,
-                "order": "reverse_count",
-                "facet_display_options": ["sort", "checkbox"],
-                "autocomplete": true,
-                "autocomplete_placeholder": "Search for methods"
-            }
-        },
-        {
-            "name": "Output data",
+            "name": "Output_data",
             "listing": {
                 "visible": true,
                 "title": "Output data",
@@ -524,7 +526,7 @@
             }
         },
         {
-            "name": "Input data",
+            "name": "Input_data",
             "listing": {
                 "visible": true,
                 "title": "Input data",
@@ -549,7 +551,7 @@
             }
         },
         {
-            "name": "Policy recommendations",
+            "name": "Policy_recommendations",
             "listing": {
                 "visible": true,
                 "title": "Policy recommendations",
@@ -568,11 +570,12 @@
                 "type": "facet",
                 "size": 100,
                 "order": "reverse_count",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": ["sort", "checkbox"],
+                "last_value": "No information"
             }
         },
         {
-            "name": "Evaluation results",
+            "name": "Evaluation_results",
             "listing": {
                 "visible": true,
                 "title": "Evaluation results",
@@ -591,11 +594,12 @@
                 "type": "facet",
                 "size": 100,
                 "order": "reverse_count",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": ["sort", "checkbox"],
+                "last_value": "No information"
             }
         },
         {
-            "name": "Period range",
+            "name": "Period_range",
             "listing": {
                 "visible": false
             },
@@ -610,8 +614,8 @@
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
-                    "min_max_script" : "def vals = doc['Period range']; if (vals.length == 0){return null;}else{ def ret = [];for (val in vals){ret.add(Integer.parseInt(val))}return ret}",
-                    "aggs_script" : "def vals = doc['Period range']; if (vals.length == 0){return null;}else{ def ret = [];for (val in vals){ret.add(Integer.parseInt(val))}return ret}",
+                    "min_max_script" : "def vals = doc['Period_range']; if (vals.length == 0){return null;}else{ def ret = [];for (val in vals){ret.add(Integer.parseInt(val))}return ret}",
+                    "aggs_script" : "def vals = doc['Period_range']; if (vals.length == 0){return null;}else{ def ret = [];for (val in vals){ret.add(Integer.parseInt(val))}return ret}",
 
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",
@@ -625,7 +629,7 @@
             }
         },
         {
-            "name": "Publication year for facet",
+            "name": "Publication_year_for_facet",
             "listing": {
                 "visible": false
             },
