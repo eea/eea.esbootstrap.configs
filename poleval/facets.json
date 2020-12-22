@@ -87,12 +87,12 @@
             "name": "Evaluated_policy__policies_",
             "listing": {
                 "visible": true,
-                "title": "Evaluated policy (policies)",
+                "title": "Evaluation policy",
                 "width": "100px",
                 "pos": 40
             },
             "csv_tsv": {
-                "title": "Evaluated policy (policies)",
+                "title": "Evaluation policy",
                 "visible": true,
                 "pos": 40
             },
@@ -104,12 +104,12 @@
             "name": "Policy_area_s_",
             "listing": {
                 "visible": true,
-                "title": "Policy area(s)",
+                "title": "Policy area",
                 "width": "100px",
                 "pos": 50
             },
             "csv_tsv": {
-                "title": "Policy area(s)",
+                "title": "Policy area",
                 "visible": true,
                 "pos": 50
             },
@@ -128,7 +128,7 @@
             },
             "facet": {
                 "visible": true,
-                "title": "Policy areas",
+                "title": "Policy area",
                 "pos": 50,
                 "type": "facet",
                 "size": 100,
@@ -143,12 +143,12 @@
             "name": "Sector_s_",
             "listing": {
                 "visible": true,
-                "title": "Sector(s)",
+                "title": "Sector",
                 "width": "100px",
                 "pos": 60
             },
             "csv_tsv": {
-                "title": "Sector(s)",
+                "title": "Sector",
                 "visible": true,
                 "pos": 60
             },
@@ -167,7 +167,7 @@
             },
             "facet": {
                 "visible": true,
-                "title": "Sectors",
+                "title": "Sector",
                 "pos": 60,
                 "type": "facet",
                 "size": 100,
@@ -410,7 +410,7 @@
             "name": "Criterias___main",
             "listing": {
                 "visible": true,
-                "title": "Criterias",
+                "title": "Criteria",
                 "width": "100px",
                 "pos": 170
             },
@@ -433,7 +433,7 @@
             },
             "facet": {
                 "visible": true,
-                "title": "Criterias",
+                "title": "Criteria",
                 "pos": 170,
                 "type": "facet",
                 "size": 100,
@@ -446,18 +446,18 @@
             "name": "Methods",
             "listing": {
                 "visible": true,
-                "title": "Methods",
+                "title": "Method",
                 "width": "100px",
                 "pos": 190
             },
             "csv_tsv": {
-                "title": "Methods",
+                "title": "Method",
                 "visible": true,
                 "pos": 190
             },
             "facet": {
                 "visible": true,
-                "title": "Methods",
+                "title": "Method",
                 "pos": 190,
                 "type": "facet",
                 "size": 100,
@@ -469,12 +469,12 @@
             "name": "Methods___types",
             "listing": {
                 "visible": true,
-                "title": "Methods - types",
+                "title": "Method-type",
                 "width": "100px",
                 "pos": 200
             },
             "csv_tsv": {
-                "title": "Methods - types",
+                "title": "Method-type",
                 "visible": true,
                 "pos": 200
             },
@@ -492,7 +492,7 @@
             },
             "facet": {
                 "visible": true,
-                "title": "Methods - types",
+                "title": "Method-type",
                 "pos": 200,
                 "type": "facet",
                 "size": 100,
@@ -554,18 +554,18 @@
             "name": "Policy_recommendations",
             "listing": {
                 "visible": true,
-                "title": "Policy recommendations",
-                "width": "100px",
+                "title": "Policy recommendation",
+                "width": "105px",
                 "pos": 240
             },
             "csv_tsv": {
-                "title": "Policy recommendations",
+                "title": "Policy recommendation",
                 "visible": true,
                 "pos": 240
             },
             "facet": {
                 "visible": true,
-                "title": "Policy recommendations",
+                "title": "Policy recommendation",
                 "pos": 240,
                 "type": "facet",
                 "size": 100,
@@ -578,18 +578,18 @@
             "name": "Evaluation_results",
             "listing": {
                 "visible": true,
-                "title": "Evaluation results",
+                "title": "Evaluation result",
                 "width": "100px",
                 "pos": 250
             },
             "csv_tsv": {
-                "title": "Evaluation results",
+                "title": "Evaluation result",
                 "visible": true,
                 "pos": 250
             },
             "facet": {
                 "visible": true,
-                "title": "Evaluation results",
+                "title": "Evaluation result",
                 "pos": 250,
                 "type": "facet",
                 "size": 100,
