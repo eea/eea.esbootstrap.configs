@@ -1,5 +1,11 @@
 /* Add custom css here */
 
+/* Remove DRAFT watermark */
+#content {
+    background:white;
+}
+
+
 .results_text {
     display: block;
     position: relative;
