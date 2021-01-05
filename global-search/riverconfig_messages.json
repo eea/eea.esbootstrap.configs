@@ -8,7 +8,6 @@
   },
 
   "syncConditions": [
-    "{?resource a <http://www.eea.europa.eu/portal_types/KeyMessage#KeyMessage>} UNION ",
     "{?resource a <http://www.eea.europa.eu/portal_types/SOERKeyFact#SOERKeyFact>} UNION ",
     "{?resource a <http://www.eea.europa.eu/portal_types/SOERMEssage#SOERMEssage>}"
   ],

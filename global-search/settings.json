@@ -134,11 +134,6 @@
                 "config_file": "riverconfig_eeafolders.json"
             },
             {
-                "id": "eea_sparql",
-                "cluster_name": "EEA Website (www.eea.europa.eu)",
-                "config_file": "riverconfig_eeasparql.json"
-            },
-            {
                 "id": "eea_contracts",
                 "cluster_name": "EEA Website (www.eea.europa.eu)",
                 "config_file": "riverconfig_eeacontracts.json"
@@ -179,11 +174,6 @@
                 "config_file": "riverconfig_eea.europa.eu.json"
             },
             {
-                "id": "eea_vacancies",
-                "cluster_name": "EEA Website (www.eea.europa.eu)",
-                "config_file": "riverconfig_eeavacancies.json"
-            },
-            {
                 "id": "rod_instruments",
                 "cluster_name": "Eionet ROD (rod.eionet.europa.eu)",
                 "config_file": "riverconfig_instruments.json"
@@ -207,11 +197,6 @@
                 "id": "eea_organisations",
                 "cluster_name": "EEA Website (www.eea.europa.eu)",
                 "config_file": "riverconfig_organisations.json"
-            },
-            {
-                "id": "eea_messages",
-                "cluster_name": "EEA Website (www.eea.europa.eu)",
-                "config_file": "riverconfig_messages.json"
             },
             {
                 "id": "bise_factsheets",
