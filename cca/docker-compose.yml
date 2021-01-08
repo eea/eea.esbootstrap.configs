@@ -22,6 +22,8 @@ services:
             RewriteRule ^/observatory/catalogue/(.*) http://health_catalog_app:3000/$$1 [P]
             RewriteRule ^/observatory/contributors/(.*) http://health_contributors_app:3000/$$1 [P]
 
+            # RewriteRule /esbootstrap_resources/(.*) http://health-catalog-app:3000/esbootstrap_resources/$$1 [P]
+
             RewriteRule ^/(.*) http://plone:8080/VirtualHostBase/http/localhost:80/cca/VirtualHostRoot/$$1 [P,L]
 
             # RewriteRule ^/observatory/catalogue/(facetview.*) http://health_catalog_app:3000/$$1 [P]
@@ -46,7 +48,7 @@ services:
         </VirtualHost>
 
   plone:
-    image: eeacms/eea.docker.plone-climateadapt:v6.97
+    image: eeacms/eea.docker.plone-climateadapt:v7.33
     environment:
       TZ: Europe/Copenhagen
       ZOPE_MODE: standalone
@@ -69,9 +71,8 @@ services:
     - "2048"
 
   app:
-    image: eeacms/esbootstrap:v3.0.22
+    image: eeacms/esbootstrap:v3.0.28
 #    build: ../
-#    image: eeacms/esbootstrap:v2.0.18
     ports:
       - '3000:3000'
       - '9229:9229'
@@ -108,9 +109,8 @@ services:
 #        - ./eea.searchserver.js/index.js:/node_modules/eea-searchserver/index.js:z
 
   health_catalog_app:
-    image: eeacms/esbootstrap:v3.0.22
+    image: eeacms/esbootstrap:v3.0.28
 #    build: ../
-#    image: eeacms/esbootstrap:v2.0.18
     ports:
       - '3001:3000'
       - '9232:9229'
@@ -141,13 +141,15 @@ services:
 #    entrypoint: /bin/sh -c 'tail -f /dev/null'
     volumes:
         - ./health_catalog:/code/config/health_catalog
-        - ./eea.searchserver.js/lib/:/node_modules/eea-searchserver/lib/:z
+        # - ./eea.searchserver.js/lib/:/node_modules/eea-searchserver/lib/:z
+
+
 #        - ./start_dev.sh:/start_dev.sh
 #        - ./eea.docker.esbootstrap/app/:/code/:z
 #        - ./eea.searchserver.js/index.js:/node_modules/eea-searchserver/index.js:z
 
   health_contributors_app:
-    image: eeacms/esbootstrap:v3.0.10
+    image: eeacms/esbootstrap:v3.0.28
 #    build: ../
 #    image: eeacms/esbootstrap:v2.0.18
     ports:
@@ -186,8 +188,7 @@ services:
 #        - ./eea.searchserver.js/index.js:/node_modules/eea-searchserver/index.js:z
 
   esmaster:
-    # image: eeacms/elastic:1.7.5-1.6
-    image: eeacms/elastic:6.8-1.0
+    image: eeacms/elastic:6.8-1.1
     ports:
       - "9200:9200"
     environment:
@@ -219,7 +220,6 @@ services:
     mem_swappiness: 0
     cap_add:
         - IPC_LOCK
-
     depends_on:
         - es-sysctl
     volumes:

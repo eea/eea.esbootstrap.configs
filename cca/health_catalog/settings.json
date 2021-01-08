@@ -27,7 +27,7 @@
       "index_page": [
           "css/no-more-tables.css",
           "css/esbootstrap.facetview.css",
-        "css/climateadapt.facetview.css"
+          "css/climateadapt.facetview.css"
       ],
       "details_page": [
       ],
@@ -53,7 +53,7 @@
         "javascripts/layoutFix.js"
       ]
     },
-    "site_title": "bla",
+    "site_title": "Climate-ADAPT search health catalog",
     "site_description": "",
     "enableBreadcrumbs": false,
     "breadcrumbs": [{"Home":"https://climate-adapt.eea.europa.eu/"}, {"Climate adapt search": ""}],

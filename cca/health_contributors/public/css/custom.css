@@ -16,3 +16,152 @@
     height: 23px;
     display: inline;
 }
+
+@font-face{font-family:'FontAwesome';src:url("/observatory/catalogue/fonts-search/fontawesome-webfont.eot?v=4.7.0"),
+  url("/observatory/catalogue/fonts-search/fontawesome-webfont.eot?v=4.7.0") format("embedded-opentype"),
+  url("/observatory/catalogue/fonts-search/fontawesome-webfont.woff?v=4.7.0") format("woff"),
+  url("/observatory/catalogue/fonts-search/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
+  url("/observatory/catalogue/fonts-search/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
+  url("/observatory/catalogue/fonts-search/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");font-weight:normal;font-style:normal
+}
+
+body {
+  position: absolute !important;
+  width: 100%;
+  height: unset !important;
+}
+
+div#facetview_rightcol {
+  /* width: 76%; */
+  margin-right: 0px;
+  padding-left: 3em;
+}
+
+.eea-icon {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1;
+  font-family: FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased
+}
+.eea-icon:before {
+  margin: 0 .3em;
+}
+.eea-icon-home:before {
+  content: "\f015";
+}
+
+.eea-icon-lg {
+  font-size: 1.333em;
+  line-height: .75em;
+  vertical-align: -15%
+}
+
+.eea-icon-2x {
+  font-size: 2em
+}
+
+.eea-icon-5x {
+  font-size: 5em
+}
+
+#content .jstree-container-ul {
+  padding: 0em;
+}
+
+.eea-right-section {
+  float: left !important;
+}
+
+.eea-icon.eea-icon-right {
+    padding-top: 15px !important;
+}
+
+footer {
+  margin-top: 40px !important;
+}
+#facetview_article .content-sidebar,
+#facetview_article .content-column
+{
+    border:0px;
+}
+/*
+#facetview_results_wrapper {
+    display:none;
+}
+*/
+/*
+#filterTitle h2{
+    margin-top: -5px;
+}
+*/
+#content .eea-accordion-panels .eea-accordion-panel > h2.facetview_open,
+#content .eea-accordion-panels .eea-accordion-panel > h2.facetview_showtree
+{
+    padding-left:5px;
+}
+#content .filters-header .current-filters-collapsible .filters-header__header .facetview_arrow_right {
+    margin-top: -10px;
+}
+.eea-right-section h3 {
+    display: none;
+}
+/*#facetview_trees {
+    padding-top:100px !important;
+}*/
+#facetview_rightcol {
+    margin-top: -5px;
+}
+#filterDisplayAs .i18n.eea-icon {
+    border:0px;
+    font-size:30px;
+    color:#000;
+    padding:0px;
+}
+#filterDisplayAs .i18n.eea-icon:hover {
+    border:0px;
+    color:#000;
+    background-color: #fff;
+}
+#filterDisplayAs .i18n.eea-icon.selected {
+    background-color: #fff;
+    color:#2d749c;
+}
+.eea-icon.list:before {
+    content: "\f0c9";
+}
+.eea-icon.card:before {
+    content: "\f00a";
+}
+.eea-icon.tabular:before {
+    content: "\f19e";
+}
+.eea-icon-remove:before, .eea-icon-close:before, .eea-icon-times:before {
+    content: "\f00d";
+}
+.eea-icon-search:before {
+    content: "\f002";
+}
+#content .facetview_selection a {
+    padding-top: 3px;
+}
+#search_text {
+
+}
+#facetview_article p{
+    font-size: 14px !important;
+}
+#facetview_article_content .content-column,
+#facetview_article_content .content-sidebar,
+#facetview_article_content .aceitem_top h2
+{
+    padding-top:0px !important;
+}
+#facetview_article_content .aceitem_top h2
+{
+    margin-top:0px !important;
+}

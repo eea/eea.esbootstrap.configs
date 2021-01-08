@@ -10,11 +10,12 @@
   },
   "external_templates": {
     "local_path": "/external_templates",
-    "protocol": "https",
-    "host": "climate-adapt.eea.europa.eu",
-    "head_path": "/cca/external-template-head",
-    "header_path": "/cca/external-template-header",
-    "footer_path": "/cca/external-template-footer"
+    "protocol": "http",
+    "host": "apache",
+    "port": "80",
+    "head_path": "/observatory/external-template-head",
+    "header_path": "/observatory/external-template-header",
+    "footer_path": "/observatory/external-template-footer"
   },
   "layout_vars": {
     "head_title": "Health Observatory Contributors Network",
@@ -24,7 +25,10 @@
     "override_searchserver_resources": false,
     "css_resources": {
       "index_page": [
-        "css/climateadapt.facetview.css"
+          "css/no-more-tables.css",
+          "css/esbootstrap.facetview.css",
+
+          "css/climateadapt.facetview.css"
       ],
       "details_page": [
       ],
@@ -39,17 +43,17 @@
       "details_page": [],
       "layout_page" : [
         "javascripts/climateadapt.facetview.js",
-        "javascripts/cca.facetview.js",
+        "javascripts/esbootstrap.facetview.js",
 
         "javascripts/layoutFix.js"
       ]
     },
-    "site_title": "Climate-ADAPT search",
+    "site_title": "Climate-ADAPT search health contributors",
     "site_description": "",
     "enableBreadcrumbs": false,
     "breadcrumbs": [{"Home":"https://climate-adapt.eea.europa.eu/"}, {"Climate adapt search": ""}],
     "dataprovencance_info_text": "Climate adapt search",
-    "dataprovencance_info_url": "climate adapt dev",
+    "dataprovencance_info_url": "https://github.com/eea/eea.esbootstrap.configs/tree/master/cca",
     "further_info": ""
   },
   "API":{

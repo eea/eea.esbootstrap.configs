@@ -34,6 +34,7 @@ jQuery(document).ready(function($) {
 
     var checkExist = setInterval(function() {
         if ($('#content').length) {
+            // debugger;
             $('#content').empty().append($('#portal-columns-app'));
             clearInterval(checkExist);
         }
