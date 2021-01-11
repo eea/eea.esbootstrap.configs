@@ -87,12 +87,12 @@
             "name": "Evaluated_policy__policies_",
             "listing": {
                 "visible": true,
-                "title": "Evaluation policy",
+                "title": "Evaluated policy",
                 "width": "100px",
                 "pos": 40
             },
             "csv_tsv": {
-                "title": "Evaluation policy",
+                "title": "Evaluated policy",
                 "visible": true,
                 "pos": 40
             },
@@ -306,18 +306,18 @@
             "name": "Scope",
             "listing": {
                 "visible": true,
-                "title": "Scope",
+                "title": "Evaluation scope",
                 "width": "100px",
                 "pos": 120
             },
             "csv_tsv": {
-                "title": "Scope",
+                "title": "Evaluation scope",
                 "visible": true,
                 "pos": 120
             },
             "facet": {
                 "visible": true,
-                "title": "Scope",
+                "title": "Evaluation scope",
                 "pos": 120,
                 "type": "facet",
                 "size": 100,
