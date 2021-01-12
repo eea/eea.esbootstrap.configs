@@ -31,9 +31,9 @@ body {
 }
 
 div#facetview_rightcol {
-  /* width: 76%; */
+  width: 74%;
   margin-right: 0px;
-  padding-left: 3em;
+  /* padding-left: 3em; */
 }
 
 .eea-icon {
@@ -115,9 +115,28 @@ footer {
 #facetview_rightcol {
     margin-top: -5px;
 }
+
+#filterSort {
+    float: right;
+}
+
+#filterSort .facetview_orderby {
+    float: right;
+    color: grey;
+}
+
+#filterSort .filter-by.facetview_orderby {
+    float: left;
+    color: #2773B5;
+}
+
+#filterDisplayAs, #filterSort, .top-pagination {
+    display: inline-block;
+}
+
 #filterDisplayAs .i18n.eea-icon {
     border:0px;
-    font-size:30px;
+    font-size:20px;
     color:#000;
     padding:0px;
 }
@@ -130,6 +149,27 @@ footer {
     background-color: #fff;
     color:#2d749c;
 }
+
+.facetview_display_type {
+    color: #2773B5;
+}
+
+.top-pagination {
+    color: #2773B5;
+}
+
+.facetview_group_title.facetview_group_title4 {
+    display: none;
+}
+
+.facetview_selected {
+    margin-right: 0;
+}
+
+#content .facetview_top option {
+    color: grey;
+}
+
 .eea-icon.list:before {
     content: "\f0c9";
 }
@@ -163,4 +203,73 @@ footer {
 #facetview_article_content .aceitem_top h2
 {
     margin-top:0px !important;
+}
+
+#filterTitle {
+    background: linear-gradient(10deg, #1172b5 0, #1172b5 57%, #839948 100%);
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    height: 100px;
+    top: 140px;
+
+    /* width: 100vw;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: calc(-49.6vw + 50%); */
+    /* background: linear-gradient(10deg, #1172b5 0, #1172b5 57%, #839948 100%); */
+}
+
+#filterTitle h2 {
+    color: white;
+    font-size: 40px;
+}
+
+#portal-columns-app {
+    display: inline-block;
+}
+
+.filters-header {
+    display: none;
+}
+
+.facetview-filter-values {
+    display: block;
+}
+
+body.site-observatory .site-container.main-area {
+    top: 240px;
+}
+
+.facetview_top {
+    border-bottom: 1px solid #4A94C6;
+    text-align: right;
+}
+
+#content .status_facetview_selection, #content .year_facetview_selection, #content .facetview_selection {
+    background-color: #8A9B41;
+}
+
+#content .status_facetview_selection span, #content .year_facetview_selection span, #content .facetview_selection span {
+    color: white;
+}
+
+#content .year_facetview_selection a i, #content .facetview_selection a i {
+    color: black;
+}
+
+.facetview_filter.eea-accordion-panel {
+    border-bottom: 2px solid #ADADAD;
+}
+
+#content .facetview_filter_options {
+    border-bottom: none;
+    border-top: 2px solid #ADADAD;
+}
+
+.facetview_filter_options span, #content .facet_value_operator {
+    font-weight: bold;
 }

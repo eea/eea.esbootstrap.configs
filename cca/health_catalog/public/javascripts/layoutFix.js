@@ -42,14 +42,13 @@ jQuery(document).ready(function($) {
 
     // /*
     $('#facetview_rightcol').prepend("<div class='row'>"
-                                        +"<div class='column col-md-8' id='filterTitle'><h2>OBSERVATORY RESOURCE CATALOGUE search tool</h2></div>"
-                                        +"<div class='column col-md-4 text-right' id='filterDisplayAs'></div>"
-                                    +"</div>"
-                                    +"<div class='row'>"
-                                        +"<div class='column col-md-8' id='filterInput'></div>"
-                                        +"<div class='column col-md-4 text-right' id='filterSort'></div>"
+                                        +"<div class='column col-md-10' id='filterInput'></div>"
+                                        +"<div class='column text-right' id='filterDisplayAs'></div>"
+                                        +"<div class='column text-right' id='filterSort'></div>"
                                     +"</div>"
                                 );
+
+    $('#portal-columns-app').prepend("<div class='column col-md-12' id='filterTitle'><h2>Observatory resource catalogue</h2></div>");
 
     $( "#facetview_rightcol" ).after("<div id='facetview_article' class='hide row-fluid'><div id='facetview_article_content'></div></div>");
     $('#filterInput').prepend($('.facetedview_search'));
@@ -57,10 +56,26 @@ jQuery(document).ready(function($) {
     $('#filterSort').prepend($('.facetview_orderby'));
     $('.facetview_top').hide();
 //*/
+    $('#filterTitle').insertAfter('.header');
+    $('#filterSort').insertAfter('.top-pagination');
+    $('#filterDisplayAs').insertAfter('.top-pagination');
+
+    $('[i18n-variable=App_Search_Placeholder]').text("What are you looking for?");
+    $('[i18n-variable=App_Search_Placeholder]')[0].placeholder = "What are you looking for?";
+    $('[i18n-variable=Search_Display_As_Span_Text]').text("Display the results as");
+
+    var margin = $('.main-area').css('margin-left');
+    $('#filterTitle').css('padding-left', margin);
+    $('#filterTitle').css('padding-right', margin);
+
     $('#facetview_results_wrapper .eea-tileInner').on('click', function() {
         return false;
     });
   $(window).on('post_search_callback', function() {
+    // debugger;
+    // $('#content').prepend($('#filterTitle'));
+    // $('.filters-header').remove()
+
     $(".health-left").remove();
     if (!$('h2#typeOfData').hasClass('facetview_open')) {
         $('h2#typeOfData').click();
