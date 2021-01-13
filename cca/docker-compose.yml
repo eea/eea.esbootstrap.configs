@@ -71,7 +71,7 @@ services:
     - "2048"
 
   app:
-    image: eeacms/esbootstrap:v3.0.28
+    image: eeacms/esbootstrap:v3.0.30
 #    build: ../
     ports:
       - '3000:3000'
@@ -109,7 +109,7 @@ services:
 #        - ./eea.searchserver.js/index.js:/node_modules/eea-searchserver/index.js:z
 
   health_catalog_app:
-    image: eeacms/esbootstrap:v3.0.28
+    image: eeacms/esbootstrap:v3.0.30
 #    build: ../
     ports:
       - '3001:3000'
@@ -143,15 +143,32 @@ services:
         - ./health_catalog:/code/config/health_catalog
         # - ./eea.searchserver.js/lib/:/node_modules/eea-searchserver/lib/:z
 
-
-#        - ./start_dev.sh:/start_dev.sh
-#        - ./eea.docker.esbootstrap/app/:/code/:z
-#        - ./eea.searchserver.js/index.js:/node_modules/eea-searchserver/index.js:z
+  sync_health_catalog_app:
+    image: eeacms/esbootstrap:v3.0.30
+    ports:
+      - '4001:4000'
+      - '8232:8229'
+    environment:
+      SYNC_CRONTAB: 45 * * * *
+      VERSION_INFO: eeacms/esbootstrap
+      elastic_host: esmaster
+      elastic_port: '9200'
+      elastic_index: 'climate'
+      AUTO_INDEXING: 'false'
+      APP_CONFIG_DIRNAME: health_catalog
+      elastic_rwuser: 'rw'
+      elastic_rwpass: 'rwtest'
+      elastic_rouser: 'ro'
+      elastic_ropass: 'rotest'
+      elastic_appalias: 'latest'
+      _API_token: 'default'
+      _sourceconf_bulksize: 10
+    volumes:
+        - ./health_catalog:/code/config/health_catalog
 
   health_contributors_app:
-    image: eeacms/esbootstrap:v3.0.28
+    image: eeacms/esbootstrap:v3.0.30
 #    build: ../
-#    image: eeacms/esbootstrap:v2.0.18
     ports:
       - '3002:3000'
       - '9231:9229'
@@ -234,7 +251,16 @@ services:
           - "SYSCTL_KEY=vm.max_map_count"
           - "SYSCTL_VALUE=262144"
 
-# volumes:
-#   cca-async-data:
-#   cca-downloads:
-#   plone-data:
+  # zeoserver:
+  #   mem_limit: 1073741824
+  #   image: plone:4.3.10
+  #   environment:
+  #     TZ: Europe/Copenhagen
+  #   volumes:
+  #   - ./plone-data/:/data
+  #   mem_reservation: 471859200
+  #   command:
+  #   - zeoserver
+  #   labels:
+  #     io.rancher.scheduler.affinity:host_label_ne: reserved=yes
+  #   entrypoint: sh -c "tail -f /dev/null"

@@ -152,10 +152,16 @@ footer {
 
 .facetview_display_type {
     color: #2773B5;
+    font-weight: 700;
 }
 
 .top-pagination {
     color: #2773B5;
+    font-weight: 700;
+}
+
+.orderby {
+    font-weight: 700;
 }
 
 .facetview_group_title.facetview_group_title4 {
@@ -208,10 +214,11 @@ footer {
 #filterTitle {
     background: linear-gradient(10deg, #1172b5 0, #1172b5 57%, #839948 100%);
     width: 100%;
-    display: inline-block;
+    display: flex;
     position: absolute;
     height: 100px;
     top: 140px;
+    align-items: center;
 
     /* width: 100vw;
     height: 100px;
@@ -226,6 +233,8 @@ footer {
 #filterTitle h2 {
     color: white;
     font-size: 40px;
+    margin-bottom: 0;
+    font-family: OpenSansR;
 }
 
 #portal-columns-app {
@@ -241,12 +250,21 @@ footer {
 }
 
 body.site-observatory .site-container.main-area {
-    top: 240px;
+    top: 300px;
 }
 
 .facetview_top {
     border-bottom: 1px solid #4A94C6;
     text-align: right;
+}
+
+#eea-above-columns {
+    position: absolute;
+    top: 240px;
+}
+
+#portal-breadcrumbs li {
+    display: inline-block;
 }
 
 #content .status_facetview_selection, #content .year_facetview_selection, #content .facetview_selection {
@@ -272,4 +290,48 @@ body.site-observatory .site-container.main-area {
 
 .facetview_filter_options span, #content .facet_value_operator {
     font-weight: bold;
+    font-family: OpenSansB;
+}
+
+footer {
+    position: relative;
+    top: 150px;
+}
+
+.filters-text {
+    color: grey;
+    vertical-align: top;
+    font-weight: 700;
+}
+
+.facetview-filter-values {
+    margin-bottom: 0;
+}
+
+.current-filters {
+    display: flex;
+    align-items: center;
+}
+
+.facetview_showtree_eealabel {
+    color:#525964;
+}
+
+.facetedview_search input {
+    color: #2773B5;
+}
+
+.facetedview_search input::placeholder {
+    color: #2773B5;
+    font-style: normal;
+}
+
+.facet_order span {
+    font-weight: 700;
+    font-family: OpenSansB;
+    font-size: 11px;
+}
+
+.facet_value_operator .i18n {
+    font-family: OpenSansB;
 }

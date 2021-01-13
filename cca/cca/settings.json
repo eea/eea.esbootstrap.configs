@@ -63,6 +63,7 @@
     "autoswitch": "true",
     "configuration": {
       "endpoint": "https://semantic.eea.europa.eu/sparql",
+      "fullreindex": true,
       "river_configs": [
         {
           "id": "climateadapt",

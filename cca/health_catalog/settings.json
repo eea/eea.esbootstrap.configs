@@ -56,7 +56,7 @@
     "site_title": "Climate-ADAPT search health catalog",
     "site_description": "",
     "enableBreadcrumbs": true,
-    "breadcrumbs": [{"Home":"https://climate-adapt.eea.europa.eu/"}, {"Climate adapt search": ""}],
+    "breadcrumbs": [{"Home":"https://climate-adapt.eea.europa.eu/"}, {"Resource catalogue": ""}, {"Complete catalogue": ""}],
     "dataprovencance_info_text": "Climate adapt search",
     "dataprovencance_info_url": "https://github.com/eea/eea.esbootstrap.configs/tree/master/cca",
     "further_info": ""
@@ -68,6 +68,7 @@
     "type": "rdfriver",
     "autoswitch": "true",
     "configuration": {
+      "fullreindex": true,
       "endpoint": "https://semantic.eea.europa.eu/sparql",
       "river_configs": [
         {

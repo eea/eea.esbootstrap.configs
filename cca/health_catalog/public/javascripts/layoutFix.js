@@ -67,6 +67,21 @@ jQuery(document).ready(function($) {
     var margin = $('.main-area').css('margin-left');
     $('#filterTitle').css('padding-left', margin);
     $('#filterTitle').css('padding-right', margin);
+    $('#eea-above-columns').css('padding-left', margin);
+    $('#eea-above-columns').css('padding-right', margin);
+
+    $('#eea-above-columns').insertAfter($('#filterTitle'));
+    $('.facetview_freetext').css('background-color', '#EEEEEE');
+
+    var length = $("#portal-breadcrumbs li").length;
+    $("#portal-breadcrumbs li").each(function(index, item) {
+        if (index < length - 1) {
+            // inject element >
+            $("<span> </span>").insertAfter(item);
+        }
+    })
+
+    $("<span class='filters-text'>Filters applied</span>").insertBefore($('.facetview-filter-values'));
 
     $('#facetview_results_wrapper .eea-tileInner').on('click', function() {
         return false;
