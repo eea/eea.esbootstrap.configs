@@ -238,7 +238,7 @@ footer {
 }
 
 #portal-columns-app {
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 .filters-header {
@@ -334,4 +334,60 @@ footer {
 
 .facet_value_operator .i18n {
     font-family: OpenSansB;
+}
+
+#content #facetview_trees .jstree-node.selected .jstree-anchor, #content #facetview_trees .jstree-node.selected .jstree-anchor .facet_label_count {
+    color: black;
+}
+
+#facetview_trees .jstree-clicked .jstree-checkbox:before {
+    color: black;
+}
+
+.facetview_filter_options select.facet_value_operator {
+    width: 75px;
+}
+
+.eea-tileThumb {
+    display: none;
+}
+
+.eea-tileInner {
+    background-color: #fff;
+    box-shadow: 1px 1px 9px 0 rgba(105,105,105,0.45);
+    margin-bottom: 40px;
+    border-top: 10px solid #106cac;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+}
+
+.eea-tileBody {
+    position: relative;
+}
+
+.eea-tileDescription {
+    display: none;
+    height: 100%;
+    opacity: 1;
+}
+
+@media (min-width: 320px) {
+    .eea-tile .eea-tileTitle {
+        max-height: 100%;
+    }
+    .eea-tile:hover .eea-tileTitle {
+        max-height: auto;
+    }
+
+    .eea-tile:hover .eea-tileMetadata::after {
+        content: '';
+        position: absolute;
+        top: -7px;
+        left: 0;
+        right: 0;
+        height: .75em;
+        background-image: linear-gradient(rgba(255,255,255, .5), #fff);
+        display: block;
+    }
 }

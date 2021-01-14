@@ -110,6 +110,30 @@ jQuery(document).ready(function($) {
     opts.highlight_blacklist = eea_mapping.highlights.blacklist;
   }
   eea_facetview('.facet-view-simple', opts);
+
+  $('#facetview_rightcol').on('hover', '.eea-tileBody', function() {
+    var $this = $(this);
+    var $eea_tile_head = $this.prev();
+    var $description = $this.find('.eea-tileDescription');
+    if (!$description.html()) {
+      return;
+    }
+
+    if ($description.css('display') === "block") {
+        // $description.hide()
+        $this.children('h4').show();
+    }
+    else {
+        $this.children('h4').hide();
+        // $description.show();
+    }
+
+    // $eea_tile_head.find('.eea-tileThumb').toggleClass('eea-tileHovered');
+    // $description.stop().animate({
+    //   height: "toggle",
+    //   opacity: 'toggle'
+    // });
+  });
 });
 
 function checkShowArticleDefault() {

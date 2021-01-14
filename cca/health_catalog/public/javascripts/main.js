@@ -5,7 +5,7 @@ window.jQuery(document).ready(function($){
   var $navbar_header = $(".navbar-header");
   $("#portal-logo-link").clone().attr('id', 'portal-logo-link-header').prependTo($navbar_header);
 
-  $(window).one('results_ready', function() {
+  $(window).on('results_ready', function() {
     // show and hide remove icon on hovering over added filters
     /*
     $("#facetview_selected_filters").on("hover", ".facetview_selection", function(){
