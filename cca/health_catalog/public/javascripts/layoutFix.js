@@ -87,9 +87,12 @@ jQuery(document).ready(function($) {
         return false;
     });
   $(window).on('post_search_callback', function() {
-    // debugger;
-    // $('#content').prepend($('#filterTitle'));
-    // $('.filters-header').remove()
+    if ($('.eea-icon.card').hasClass('selected')) {
+        $('#filterSort').hide();
+    }
+    else {
+        $('#filterSort').show();
+    }
 
     $(".health-left").remove();
     if (!$('h2#typeOfData').hasClass('facetview_open')) {
