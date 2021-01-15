@@ -257,7 +257,7 @@
             "card": {
                 "field": "health_impacts",
                 "default": "",
-                "visible": false
+                "visible": true
             },
             "list": {
                 "field": "health_impacts",

@@ -364,12 +364,21 @@ footer {
 
 .eea-tileBody {
     position: relative;
+    min-height: 100%;
 }
 
 .eea-tileDescription {
     display: none;
-    height: 100%;
+    height: 80%;
     opacity: 1;
+}
+
+.eea-tileTypeSpan {
+    display: block;
+}
+
+.eea-tileMetadata {
+    min-height: 70px;
 }
 
 @media (min-width: 320px) {
