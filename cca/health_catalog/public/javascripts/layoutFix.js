@@ -76,12 +76,12 @@ jQuery(document).ready(function ($) {
     "Display the results as"
   );
 
-  var margin = $(".main-area").css("margin-left");
+  var margin = parseInt($(".main-area").css("margin-left"));
   margin = margin + 20;
-  $("#filterTitle").css("padding-left", margin);
-  $("#filterTitle").css("padding-right", margin);
-  $("#eea-above-columns").css("padding-left", margin);
-  $("#eea-above-columns").css("padding-right", margin);
+  $("#filterTitle").css("padding-left", margin.toString() + 'px');
+  $("#filterTitle").css("padding-right", margin.toString() + 'px');
+  $("#eea-above-columns").css("padding-left", margin.toString() + 'px');
+  $("#eea-above-columns").css("padding-right", margin.toString() + 'px');
 
   $("#eea-above-columns").insertAfter($("#filterTitle"));
   $(".facetview_freetext").css("background-color", "#EEEEEE");
