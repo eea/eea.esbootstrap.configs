@@ -10,9 +10,8 @@
   },
   "external_templates": {
     "local_path": "/external_templates",
-    "protocol": "http",
-    "host": "apache",
-    "port": "80",
+    "protocol": "https",
+    "host": "climate-adapt.eea.europa.eu",
     "head_path": "/observatory/external-template-head-dont-load",
     "header_path": "/observatory/external-template-header",
     "footer_path": "/observatory/external-template-footer-dont-load"
