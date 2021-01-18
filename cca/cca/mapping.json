@@ -174,5 +174,8 @@
     },
     "is_replaced": {
       "type" : "string"
+    },
+    "funding_programme": {
+      "type" : "keyword"
     }
 }
