@@ -23,7 +23,21 @@ window.esbootstrap_options = {
   resultModifier: updateResult,
   initialsearch: true,
   //predefined_filters: [{'term': {'hasWorkflowState': 'published'}}, {'term': {'sectors': 'Health'}}, {'term': {'include_in_observatory': 'True'}}],
-  predefined_filters: [{'term': {'hasWorkflowState': 'published'}}, {'term': {'include_in_observatory': 'True'}}],
+  //predefined_filters: [{'term': {'hasWorkflowState': 'published'}}, {'term': {'include_in_observatory': 'True'}}, {'term': {'typeOfData': 'Indicator', 'Tools', 'Guidance'}}],
+
+
+
+  predefined_filters: [
+      {'term': {'hasWorkflowState': 'published'}},
+      {'term': {'include_in_observatory': 'True'}},
+      {'query_string':
+        {
+          'default_field': 'typeOfData',
+          'query': 'NOT "Organisations"'
+        }
+      }
+  ],
+
   //predefined_filters: [{'term': [{'hasWorkflowState': 'published'},{'sectors':'Health'}]}],
   /*
   predefined_filters : [
