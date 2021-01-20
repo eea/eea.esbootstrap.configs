@@ -177,5 +177,14 @@
     },
     "funding_programme": {
       "type" : "keyword"
+    },
+    "long_description" : {
+      "type" : "string",
+      "fields" : {
+        "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
+        "index" : {"type" : "keyword"},
+        "eea_long_description": {"type": "keyword", "index": true}
+      },
+      "copy_to" : ["did_you_mean", "autocomplete"]
     }
 }
