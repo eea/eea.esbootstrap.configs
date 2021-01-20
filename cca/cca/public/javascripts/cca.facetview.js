@@ -70,8 +70,19 @@ jQuery(document).ready(function($) {
   }
   function limitString() {
     $.each($('.tileItem > .tileBody'), function(index, value) {
-      description = $(value).text();
-      $(value).text(description.slice(0, 400) + '...');
+      // description = $(value).text();
+      // $(value).text(description.slice(0, 400) + '...');
+      description = value.innerHTML;
+      if (description.length > 700) {
+        var new_description = description.slice(0, 700);
+        var slice_index = 700;
+        is_html = /<\/?[a-z][\s\S]*>/i.test(description.slice(slice_index - 5, slice_index + 5));
+        while(is_html) {
+            slice_index += 5;
+            is_html = /<\/?[a-z][\s\S]*>/i.test(description.slice(slice_index - 5, slice_index + 5));
+        }
+        value.innerHTML = new_description + '...';
+      }
     });
   }
 
