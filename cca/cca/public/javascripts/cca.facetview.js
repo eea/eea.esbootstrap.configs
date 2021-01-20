@@ -81,6 +81,11 @@ jQuery(document).ready(function($) {
             slice_index += 5;
             is_html = /<\/?[a-z][\s\S]*>/i.test(description.slice(slice_index - 5, slice_index + 5));
             new_description = description.slice(0, slice_index);
+
+            if (slice_index >= 900) {
+                new_description = description;
+                break;
+            }
         }
         value.innerHTML = new_description + '...';
       }
