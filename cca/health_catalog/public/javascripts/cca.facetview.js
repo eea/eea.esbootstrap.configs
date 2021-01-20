@@ -87,6 +87,7 @@ jQuery(document).ready(function($) {
     }
   }
   function localArticleView() {
+      /*
     $('#facetview_results_wrapper a.eea-tileInner,a.state-published').click(function(event) {
         event.preventDefault();
 
@@ -99,6 +100,7 @@ jQuery(document).ready(function($) {
         showArticle(sourceData.focusPath, false);
         return false;
     });
+    */
   }
 
   if (window.esbootstrap_options) {
@@ -140,6 +142,14 @@ function checkShowArticleDefault() {
     if (focusArticlePath.length) {
         $('#facetview_rightcol').addClass('hide');
         showArticle(focusArticlePath);
+
+        params = new URLSearchParams(window.location.search);
+        source = params.get('source');
+        var sourceData = JSON.parse(source);
+        sourceData['focusPath'] = focusArticlePath;
+        newUrl = window.location.origin+window.location.pathname+'?source='+encodeURIComponent(JSON.stringify(sourceData));
+        window.history.replaceState({}, 'Health Observatory Resource Catalogue', newUrl);
+
         focusArticlePath = '';
     }
 }
