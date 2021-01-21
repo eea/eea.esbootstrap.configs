@@ -12,6 +12,21 @@
       "type" : "pattern",
       "pattern" : "[-](.*)"
     },
+    "dot" : {
+      "type" : "pattern",
+      "lowercase" : false,
+      "pattern" : "."
+    },
+    "urlanalizer": {
+      "filter": [
+        "lowercase"
+      ],
+      "char_filter": [
+        "url_filter"
+      ],
+      "tokenizer": "url_tokenizer",
+      "type": "custom"
+    },
     "didYouMean": {
       "filter": [
         "lowercase"

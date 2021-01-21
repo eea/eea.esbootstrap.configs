@@ -49,9 +49,8 @@
       "fielddata": true
     },
     "websites":{
-      "type" : "string",
-      "analyzer" : "none",
-      "fielddata": true
+      "type" : "text",
+      "analyzer" : "urlanalizer"
     },
     "macro-transnational-region": {
       "type" : "string",
