@@ -126,6 +126,11 @@
       "type" : "string",
       "analyzer" : "none"
     },
+    "partner_contributors" : {
+      "type" : "string",
+      "fielddata": true,
+      "analyzer" : "none"
+    },
     "title" : {
       "type" : "string",
       "fields" : {

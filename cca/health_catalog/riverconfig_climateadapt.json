@@ -27,6 +27,7 @@
   ],
   "listtype": "white",
   "normProp": {
+    "http://www.eea.europa.eu/ontologies.rdf#partner_contributors": "partner_contributors",
 
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.guidancedocument#health_impacts": "health_impacts",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#health_impacts": "health_impacts",

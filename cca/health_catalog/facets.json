@@ -228,6 +228,22 @@
             }
         },
         {
+            "name": "partner_contributors",
+            "facet": {
+                "autocomplete": false,
+                "visible": true,
+                "title": "Organisation partner",
+                "pos": 3,
+                "type": "facet",
+                "size": 50,
+                "min_size": 10,
+                "order": "term",
+                "operator": "OR",
+                "facet_display_options": ["sort", "checkbox"],
+                "values_blacklist": ["Webpage", "File", "http://cr.eionet.europa.eu/ontologies/contreg.rdf#File"]
+            }
+        },
+        {
             "name": "health_impacts",
             "listing": {
                 "title": "Healh impacts",
@@ -265,6 +281,8 @@
                 "visible": false
             }
         },
+
+
         {
             "name": "sectors",
             "listing": {
@@ -474,7 +492,7 @@
                 "autocomplete": false,
                 "visible": true,
                 "title": "Year",
-                "pos": 2,
+                "pos": 4,
                 "type": "facet",
                 "size": 50,
                 "min_size": 10,
