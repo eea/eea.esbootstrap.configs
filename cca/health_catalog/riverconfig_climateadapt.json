@@ -116,6 +116,17 @@
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#origin_website": ["origin_website"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#origin_website": ["origin_website"],
 
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#websites": ["websites"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.guidancedocument#websites": ["websites"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.indicator#websites": ["websites"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.adaptationoption#websites": ["websites"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.informationportal#websites": ["websites"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.video#websites": ["websites"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.tool#websites": ["websites"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.casestudy#websites": ["websites"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#websites": ["websites"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#websites": ["websites"],
+
     "http://purl.org/dc/terms/creator": ["creator_cms"],
     "http://purl.org/dc/terms/title": ["title","label"],
     "http://purl.org/dc/terms/abstract": "text",
