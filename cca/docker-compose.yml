@@ -109,7 +109,7 @@ services:
 #        - ./eea.searchserver.js/index.js:/node_modules/eea-searchserver/index.js:z
 
   health_catalog_app:
-    image: eeacms/esbootstrap:v3.0.30
+    image: eeacms/esbootstrap:v3.0.31
 #    build: ../
     ports:
       - '3001:3000'

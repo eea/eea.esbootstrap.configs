@@ -28,6 +28,10 @@
       "analyzer" : "date2year",
       "copy_to" : ["searchable_time_coverage"]
     },
+    "publication_year": {
+      "type" : "string",
+      "analyzer" : "date2year"
+    },
     "climate_impacts": {
       "type" : "string",
       "analyzer" : "none",

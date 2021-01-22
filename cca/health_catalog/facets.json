@@ -477,39 +477,34 @@
             }
         },
         {
-            "name": "year",
+            "name": "publication_year",
             "values_blacklist": ["0", 0, "undefined", "None"],
-            "listing": {
-                "title": "Year",
-                "visible": true
-            },
-            "csv_tsv": {
-                "title": "Year",
-                "visible": true,
-                "pos": 8
-            },
             "facet": {
-                "autocomplete": false,
                 "visible": true,
                 "title": "Year",
-                "pos": 4,
-                "type": "facet",
-                "size": 50,
+                "pos": 7,
+                "type": "rangehistogram",
+                "size": 100,
                 "min_size": 10,
-                "order": "term",
-                "operator": "OR",
-                "facet_display_options": ["sort", "checkbox"]
-            },
-            "card": {
-                "field": "year",
-                "default": "",
-                "type": "simple",
-                "visible": true
-            },
-            "list": {
-                "field": "year",
-                "default": "",
-                "visible": true
+                "order": "reverse_term",
+                "operator": "AND",
+                "facet_display_options": ["sort", "checkbox"],
+                "short_name": "Year",
+                "values_blacklist": ["undefined"],
+                "histogram_config": {
+                    "discrete_values": true,
+                    "columns_bucketsize" : 1,
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+                    "outside_slider_columns_color": "rgb(227, 228, 228)",
+
+                    "slider_bucketsize" : 1,
+                    "histogram" : true,
+                    "show_results_in_tooltip": true,
+
+                    "min_max_script": "def vals = doc['publication_year']; if (vals.length == 0){return 2014} else {def ret = [];for (val in vals){def tmp_val = val.substring(0,4);ret.add(tmp_val.toLowerCase() == tmp_val.toUpperCase() ? Integer.parseInt(tmp_val) : 2000);}return ret;}",
+                    "aggs_script":  "def vals = doc['publication_year']; if (vals.length == 0){return 2500} else {def ret = [];for (val in vals){def tmp_val = val.substring(0,4);ret.add(tmp_val.toLowerCase() == tmp_val.toUpperCase() ? Integer.parseInt(tmp_val) : 2500);}return ret;}"
+                }
             }
         },
         {
