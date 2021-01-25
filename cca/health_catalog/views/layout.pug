@@ -57,6 +57,8 @@ html
                 each style in css_resources.layout_page
                     link(rel='stylesheet', href=style)
 
+        link(rel='stylesheet', href='//blueimp.github.io/Gallery/css/blueimp-gallery.min.css')
+
         block extrastyles
 
     body(class="search-app site-observatory " + app_id data-sentry-dsn=sentry_dsn data-sentry-ver=sentry_ver data-sentry-env=sentry_rancher_env data-sentry-instance=sentry_instance data-sentry-app-name=sentry_app_name id="app")
@@ -90,3 +92,5 @@ html
                 each script in js_resources.layout_page
                     script(type='text/javascript', src=script)
         block extrajavascripts
+
+        script(type='text/javascript', src='//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js')

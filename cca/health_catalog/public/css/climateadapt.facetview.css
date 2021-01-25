@@ -110,6 +110,11 @@
 
 /* article detail end */
 
+/* galery for case studies */
+.case-studies-illustrations #links .gallery-hide:first-of-type {
+    display: block !important;
+}
+
 @media handheld, screen and (max-device-width: 480px){
   input, textarea {
     font-size: 140% !important;
