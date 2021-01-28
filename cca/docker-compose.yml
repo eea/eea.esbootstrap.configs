@@ -149,7 +149,7 @@ services:
       - '4001:4000'
       - '8232:8229'
     environment:
-      SYNC_CRONTAB: 45 * * * *
+      SYNC_CRONTAB: 5,10,15,20,25,30,35,40,45,50,55 * * * *
       VERSION_INFO: eeacms/esbootstrap
       elastic_host: esmaster
       elastic_port: '9200'
