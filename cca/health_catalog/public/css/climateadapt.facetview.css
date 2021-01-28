@@ -115,6 +115,34 @@
     display: block !important;
 }
 
+.search-app.site-observatory .ace-label {
+    color: #fff;
+    background-color: #848484;
+    padding: 5px 10px;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 1em;
+    font-family: "OpenSansB";
+}
+.search-app.site-observatory .ace-content-column h5 {
+    text-decoration: underline;
+    margin:0 !important;
+}
+.search-app.site-observatory .macro-category h5 {
+    margin:0 !important;
+}
+
+.search-app.site-observatory .ace-content-column p {
+    font-size:14px;
+}
+.search-app.site-observatory .facet-view-simple {
+    margin-top: 0px;
+}
+.search-app.site-observatory .image-copyrigh {
+    left: 61px;
+    display: block;
+}
+
 @media handheld, screen and (max-device-width: 480px){
   input, textarea {
     font-size: 140% !important;
