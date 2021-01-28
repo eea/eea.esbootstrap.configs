@@ -232,7 +232,7 @@
             "facet": {
                 "autocomplete": false,
                 "visible": true,
-                "title": "Organisation partner",
+                "title": "Partner organisation",
                 "pos": 3,
                 "type": "facet",
                 "size": 50,
