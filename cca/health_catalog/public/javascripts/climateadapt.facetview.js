@@ -30,7 +30,7 @@ window.esbootstrap_options = {
 
   predefined_filters: [
       {'term': {'hasWorkflowState': 'published'}},
-      {'term': {'include_in_observatory': 'True'}},
+      {'term': {'include_in_observatory': 'True'}}
   ],
 
   //predefined_filters: [{'term': [{'hasWorkflowState': 'published'},{'sectors':'Health'}]}],
