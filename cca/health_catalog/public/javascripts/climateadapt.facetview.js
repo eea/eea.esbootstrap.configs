@@ -31,12 +31,6 @@ window.esbootstrap_options = {
   predefined_filters: [
       {'term': {'hasWorkflowState': 'published'}},
       {'term': {'include_in_observatory': 'True'}},
-      {'query_string':
-        {
-          'default_field': 'typeOfData',
-          'query': 'NOT "Organisations"'
-        }
-      }
   ],
 
   //predefined_filters: [{'term': [{'hasWorkflowState': 'published'},{'sectors':'Health'}]}],
