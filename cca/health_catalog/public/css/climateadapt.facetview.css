@@ -155,7 +155,7 @@ body.site-observatory .site-container #content .facetview_top {
     margin-bottom:0px;
 }
 body.site-observatory .site-container #content .eea-tileInner {
-    margin-bottom:0px;
+    margin-bottom:10px;
 }
 
 @media handheld, screen and (max-device-width: 480px){
