@@ -16,6 +16,10 @@
   display: inline;
 }
 
+.tileItem .visualClear {
+  padding: 0 !important;
+}
+
 @font-face {
   font-family: "FontAwesome";
   src: url("/observatory/catalogue/fonts-search/fontawesome-webfont.eot?v=4.7.0"),
@@ -43,6 +47,10 @@ div#facetview_rightcol {
   width: 74%;
   margin-right: 0px;
   /* padding-left: 3em; */
+}
+
+div#facetview_rightcol #filterInput {
+  width: 100%;
 }
 
 div#facetview_rightcol .row {
@@ -87,6 +95,8 @@ div#facetview_rightcol .row {
 
 .eea-right-section {
   float: right !important;
+  width: 22.5% !important;
+  margin-top: 80px;
 }
 
 .eea-icon.eea-icon-right {
@@ -114,6 +124,7 @@ footer {
 #content .eea-accordion-panels .eea-accordion-panel > h2.facetview_open,
 #content .eea-accordion-panels .eea-accordion-panel > h2.facetview_showtree {
   padding-left: 5px;
+  margin: 10px 0;
 }
 
 #content #facetview_trees .eea-accordion-panel > h2:hover,
@@ -256,7 +267,7 @@ footer {
 }
 
 #content .facetview_filterselected .eea-icon {
-  top: 1px;
+  top: 2px;
 }
 
 #content .facetview_filterselected .eea-icon-times:before {
@@ -311,7 +322,7 @@ footer {
 
 #filterTitle h2 {
   color: white;
-  font-size: 40px;
+  font-size: 35px;
   margin: 0;
   font-family: OpenSansR;
 }
@@ -336,7 +347,6 @@ body.site-observatory .site-container.main-area {
   border-bottom: 1px solid #4a94c6;
   text-align: right;
   margin-top: 3em;
-  margin-bottom: 3em;
 }
 
 .facetview_top .top-pagination,
@@ -370,6 +380,7 @@ body.site-observatory .site-container.main-area {
 #content .year_facetview_selection span,
 #content .facetview_selection span {
   color: white;
+  font-weight: normal;
 }
 
 #content .year_facetview_selection a i,
@@ -420,11 +431,21 @@ footer {
 .facetedview_search input {
   color: #2773b5;
   border-radius: 50px;
+  padding-left: 2.5em;
 }
 
 .facetedview_search input::placeholder {
   color: #2773b5;
   font-style: normal;
+}
+
+.facetedview_search .eea-icon-search {
+  top: 21%;
+  left: 10px;
+}
+
+#facetview_freetext_clear {
+  top: 21%;
 }
 
 .facet_order span {
@@ -454,6 +475,10 @@ footer {
   width: 75px;
 }
 
+.eea-tiles {
+  margin-top: 2em;
+}
+
 .eea-tileThumb {
   display: none;
 }
@@ -461,7 +486,7 @@ footer {
 .eea-tileInner {
   background-color: #fff;
   box-shadow: 1px 1px 9px 0 rgba(105, 105, 105, 0.45);
-  margin-bottom: 40px;
+  margin: 10px 0 40px 0;
   border-top: 10px solid #106cac;
   min-height: 280px;
   display: flex;
@@ -473,7 +498,7 @@ footer {
   font-family: "OpenSansR";
   font-size: 19px;
   color: #106cac;
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 
 .eea-tileBody {
@@ -501,6 +526,28 @@ footer {
 
 .eea-tileMetadata {
   min-height: 70px;
+}
+
+.eea-tile {
+  padding: 0 20px;
+}
+
+@media (min-width: 1281px) {
+  .eea-tile {
+    width: 33.3%;
+  }
+  .eea-tile:nth-of-type(3n + 1) {
+    padding-left: 4px !important;
+  }
+  .eea-tile:nth-of-type(3n) {
+    padding-right: 4px;
+  }
+  .eea-tile:nth-of-type(4n + 1) {
+    padding-left: 20px;
+  }
+  .eea-tile:nth-of-type(4n) {
+    padding-right: 20px;
+  }
 }
 
 @media (min-width: 320px) {

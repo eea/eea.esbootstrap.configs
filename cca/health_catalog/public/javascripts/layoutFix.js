@@ -54,7 +54,7 @@ jQuery(document).ready(function ($) {
   );
 
   $("#portal-columns-app").prepend(
-    "<div class='column col-md-12' id='filterTitle'><h2>Observatory resource catalogue</h2></div>"
+    "<div id='filterTitle'><h2>Observatory resource catalogue</h2></div>"
   );
 
   $("#facetview_rightcol").after(
@@ -78,10 +78,10 @@ jQuery(document).ready(function ($) {
 
   var margin = parseInt($(".main-area").css("margin-left"));
   margin = margin + 20;
-  $("#filterTitle").css("padding-left", margin.toString() + 'px');
-  $("#filterTitle").css("padding-right", margin.toString() + 'px');
-  $("#eea-above-columns").css("padding-left", margin.toString() + 'px');
-  $("#eea-above-columns").css("padding-right", margin.toString() + 'px');
+  $("#filterTitle").css("padding-left", margin.toString() + "px");
+  $("#filterTitle").css("padding-right", margin.toString() + "px");
+  $("#eea-above-columns").css("padding-left", margin.toString() + "px");
+  $("#eea-above-columns").css("padding-right", margin.toString() + "px");
 
   $("#eea-above-columns").insertAfter($("#filterTitle"));
   $(".facetview_freetext").css("background-color", "#EEEEEE");
