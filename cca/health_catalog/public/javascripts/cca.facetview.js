@@ -138,23 +138,6 @@ jQuery(document).ready(function($) {
     //   opacity: 'toggle'
     // });
   });
-
-  // $(".ui-autocomplete").on("autocompleteresponse", function(event,ui) {
-  //     debugger;
-  // });
-  //
-  //   $( ".ui-autocomplete" ).autocomplete({
-  //       response: function( event, ui ) {
-  //           debugger;
-  //       }
-  //   });
-
-    // $( ".ui-autocomplete" ).autocomplete({
-    //     open: function( event, ui ) {
-    //         debugger;
-    //     }
-    // });
-
 });
 
 function checkShowArticleDefault() {
