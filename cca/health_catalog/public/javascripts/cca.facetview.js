@@ -13,7 +13,7 @@ jQuery(document).ready(function($) {
     search_text_input_clear: true,
     enable_rangeselect: true,
     enable_geoselect: true,
-    settings_suggestions_enabled: false,
+    settings_suggestions_enabled: true,
     display_images: settings_display_images,
     default_sort: [],
     search_sortby: settings_search_sortby,
@@ -112,7 +112,6 @@ jQuery(document).ready(function($) {
     opts.highlight_whitelist = eea_mapping.highlights.whitelist;
     opts.highlight_blacklist = eea_mapping.highlights.blacklist;
   }
-  window.settings_suggestions_enabled = false;
   eea_facetview('.facet-view-simple', opts);
 
   $('#facetview_rightcol').on('hover', '.eea-tileBody', function() {
