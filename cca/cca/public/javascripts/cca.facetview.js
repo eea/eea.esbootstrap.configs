@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
     search_text_input_clear: true,
     enable_rangeselect: true,
     enable_geoselect: true,
-    settings_suggestions_enabled: false,
+    settings_suggestions_enabled: true,
     resultModifier: updateResult,
 
     display_images: settings_display_images,
@@ -100,7 +100,7 @@ jQuery(document).ready(function($) {
     opts.highlight_whitelist = eea_mapping.highlights.whitelist;
     opts.highlight_blacklist = eea_mapping.highlights.blacklist;
   }
-  window.settings_suggestions_enabled = false;
+  window.settings_suggestions_enabled = true;
   eea_facetview('.facet-view-simple', opts);
 });
 

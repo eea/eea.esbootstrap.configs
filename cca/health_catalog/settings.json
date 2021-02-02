@@ -55,7 +55,7 @@
     "site_title": "Climate-ADAPT search health catalog",
     "site_description": "",
     "enableBreadcrumbs": true,
-    "breadcrumbs": [{"Home":"https://climate-adapt.eea.europa.eu/"}, {"Resource catalogue": ""}, {"Complete catalogue": ""}],
+    "breadcrumbs": [{"Home":"/observatory"}, {"Resource catalogue": ""}, {"Complete catalogue": ""}],
     "dataprovencance_info_text": "Climate adapt search",
     "dataprovencance_info_url": "https://github.com/eea/eea.esbootstrap.configs/tree/master/cca",
     "further_info": ""
@@ -80,6 +80,7 @@
   },
   "es_debug_enabled": false,
   "suggestions_enabled": true,
+  "autocorrect_disable": true,
   "relevance_enabled": true,
   "river_configs": {
     "configs": [

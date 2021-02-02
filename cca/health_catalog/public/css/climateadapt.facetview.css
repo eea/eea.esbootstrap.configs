@@ -143,6 +143,21 @@
     display: block;
 }
 
+.search-app.site-observatory .eea-tileMetadata span[title="-NONSPECIFIC-"] {
+    display: none !important;
+}
+body.site-observatory .site-container #content h2.facetview_showtree {
+    margin-top:0px;
+    margin-bottom:0px;
+}
+body.site-observatory .site-container #content .facetview_top {
+    margin-top:0px;
+    margin-bottom:0px;
+}
+body.site-observatory .site-container #content .eea-tileInner {
+    margin-bottom:10px;
+}
+
 @media handheld, screen and (max-device-width: 480px){
   input, textarea {
     font-size: 140% !important;
