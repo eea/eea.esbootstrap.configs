@@ -345,7 +345,7 @@ body.site-observatory .site-container.main-area {
 .facetview_top {
   border-bottom: 1px solid #4a94c6;
   text-align: right;
-  margin-top: 28px;
+  margin-top: 8px !important;
 }
 
 .facetview_top .top-pagination,
