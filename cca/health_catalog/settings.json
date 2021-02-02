@@ -5,7 +5,7 @@
   "elastic": {
     "index": "climate-health",
     "type": "resource",
-    "field_base":"",
+    "field_base": "",
     "enableValuesCounting": true
   },
   "external_templates": {
@@ -24,26 +24,19 @@
     "override_searchserver_resources": false,
     "css_resources": {
       "index_page": [
-          "css/no-more-tables.css",
-          "css/esbootstrap.facetview.css",
-          "css/climateadapt.facetview.css"
-      ],
-      "details_page": [
-      ],
-
-      "layout_page": [
-        "css/cca-search.css",
-        "css/custom.css"
-      ]
-    },
-    "js_resources": {
-      "index_page": [
+        "css/no-more-tables.css",
+        "css/esbootstrap.facetview.css",
+        "css/climateadapt.facetview.css"
       ],
       "details_page": [],
-      "layout_page_commented": [
-      ],
-      "layout_page" : [
 
+      "layout_page": ["css/cca-search.css", "css/custom.css"]
+    },
+    "js_resources": {
+      "index_page": [],
+      "details_page": [],
+      "layout_page_commented": [],
+      "layout_page": [
         "javascripts/climateadapt.facetview.js",
         "javascripts/cca.facetview.js",
 
@@ -55,12 +48,16 @@
     "site_title": "Climate-ADAPT search health catalog",
     "site_description": "",
     "enableBreadcrumbs": true,
-    "breadcrumbs": [{"Home":"/observatory"}, {"Resource catalogue": ""}, {"Complete catalogue": ""}],
+    "breadcrumbs": [
+      { "Home": "/observatory" },
+      { "Resource catalogue": "" },
+      { "Complete catalogue": "" }
+    ],
     "dataprovencance_info_text": "Climate adapt search",
     "dataprovencance_info_url": "https://github.com/eea/eea.esbootstrap.configs/tree/master/cca",
     "further_info": ""
   },
-  "API":{
+  "API": {
     "token": "default"
   },
   "source": {
@@ -91,7 +88,6 @@
       }
     ]
   },
-
 
   "endpoint": "https://semantic.eea.europa.eu/sparql",
   "selected_navigation_tab": "data-and-maps"
