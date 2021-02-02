@@ -47,20 +47,26 @@ jQuery(document).ready(function ($) {
   // /*
   $("#facetview_rightcol").prepend(
     "<div class='row'>" +
-      "<div class='column col-md-10' id='filterInput'></div>" +
       "<div class='column text-right' id='filterDisplayAs'></div>" +
       "<div class='column text-right' id='filterSort'></div>" +
       "</div>"
   );
 
+  $("#facetview > .row-fluid").prepend(
+    "<div class='row'>" +
+      "<div class='column col-md-9' id='filterInput'></div>" +
+      "</div>"
+  );
+
   $("#portal-columns-app").prepend(
-    "<div id='filterTitle'><h2>Observatory resource catalogue</h2></div>"
+    "<div class='column col-md-12' id='filterTitle'><h2>Observatory resource catalogue</h2></div>"
   );
 
   $("#facetview_rightcol").after(
     "<div id='facetview_article' class='hide row-fluid'><div id='facetview_article_content'></div></div>"
   );
   $("#filterInput").prepend($(".facetedview_search"));
+
   $("#filterDisplayAs").prepend($(".facetview_display_type"));
   $("#filterSort").prepend($(".facetview_orderby"));
   $(".facetview_top").hide();
@@ -94,6 +100,8 @@ jQuery(document).ready(function ($) {
     }
   });
 
+  $(".current-filters").insertAfter($("#facetview_trees"));
+
   $("<span class='filters-text'>Filters applied</span>").insertBefore(
     $(".facetview-filter-values")
   );
@@ -101,6 +109,7 @@ jQuery(document).ready(function ($) {
   $("#facetview_results_wrapper .eea-tileInner").on("click", function () {
     return false;
   });
+
   $(window).on("post_search_callback", function () {
     if ($(".eea-icon.card").hasClass("selected")) {
       $("#filterSort").hide();
@@ -109,9 +118,11 @@ jQuery(document).ready(function ($) {
     }
 
     $(".health-left").remove();
+
     if (!$("h2#typeOfData").hasClass("facetview_open")) {
       $("h2#typeOfData").click();
     }
+
     // $("img.lazyLoad").Lazy();
     console.log("results ready");
     $(".lazyload").Lazy();

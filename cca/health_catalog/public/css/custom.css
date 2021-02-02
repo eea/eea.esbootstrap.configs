@@ -96,7 +96,6 @@ div#facetview_rightcol .row {
 .eea-right-section {
   float: right !important;
   width: 22.5% !important;
-  margin-top: 80px;
 }
 
 .eea-icon.eea-icon-right {
@@ -346,7 +345,7 @@ body.site-observatory .site-container.main-area {
 .facetview_top {
   border-bottom: 1px solid #4a94c6;
   text-align: right;
-  margin-top: 3em;
+  margin-top: 28px;
 }
 
 .facetview_top .top-pagination,
@@ -388,8 +387,23 @@ body.site-observatory .site-container.main-area {
   color: black;
 }
 
+#content .facetview_selection:hover {
+  background-color: #b0bfcc;
+}
+
 .facetview_filter.eea-accordion-panel {
   border-bottom: 1px solid #949494;
+}
+
+.facetview-filter-values {
+  padding-left: 5px !important;
+  margin-bottom: 0;
+}
+
+.facetview_selection {
+  float: none;
+  display: table;
+  margin: 13px 0 0 0 !important;
 }
 
 #content .facetview_filter_options {
@@ -409,19 +423,17 @@ footer {
 }
 
 .filters-text {
-  color: grey;
-  vertical-align: top;
-  font-family: "OpenSansL";
+  font-family: "OpenSansR";
   font-size: 15px;
-}
-
-.facetview-filter-values {
-  margin-bottom: 0;
+  margin-top: 30px;
+  display: block;
+  padding-left: 5px;
 }
 
 .current-filters {
-  display: flex;
+  display: block;
   align-items: center;
+  margin-top: 0 !important;
 }
 
 .facetview_showtree_eealabel {
@@ -486,7 +498,7 @@ footer {
 .eea-tileInner {
   background-color: #fff;
   box-shadow: 1px 1px 9px 0 rgba(105, 105, 105, 0.45);
-  margin: 10px 0 40px 0;
+  margin: 10px 0 40px 0 !important;
   border-top: 10px solid #106cac;
   min-height: 280px;
   display: flex;
@@ -547,6 +559,12 @@ footer {
   }
   .eea-tile:nth-of-type(4n) {
     padding-right: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .row-fluid .span3 {
+    width: 100% !important;
   }
 }
 
