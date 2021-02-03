@@ -1,25 +1,3 @@
-.eea-list-tiles .tileItem .tileImage {
-  max-width: 20%;
-}
-
-.eea-list-tiles .tileItem .tileBody {
-  /* height: 9em; */
-  /* overflow: hidden; */
-}
-
-.image-hide {
-  display: none;
-}
-
-.tileContent .logoAdapteCCA {
-  height: 23px;
-  display: inline;
-}
-
-.tileItem .visualClear {
-  padding: 0 !important;
-}
-
 @font-face {
   font-family: "FontAwesome";
   src: url("/observatory/catalogue/fonts-search/fontawesome-webfont.eot?v=4.7.0"),
@@ -46,7 +24,6 @@ body {
 div#facetview_rightcol {
   width: 74%;
   margin-right: 0px;
-  /* padding-left: 3em; */
 }
 
 div#facetview_rightcol #filterInput {
@@ -55,6 +32,31 @@ div#facetview_rightcol #filterInput {
 
 div#facetview_rightcol .row {
   margin-top: 0.7em;
+}
+
+.eea-list-tiles .tileItem .tileImage {
+  max-width: 20%;
+}
+
+.eea-list-tiles .tileItem .tileBody {
+  margin-top: 1em;
+}
+
+.tileHeadline {
+  margin-bottom: 0 !important;
+}
+
+.image-hide {
+  display: none;
+}
+
+.tileContent .logoAdapteCCA {
+  height: 23px;
+  display: inline;
+}
+
+.tileItem .visualClear {
+  padding: 0 !important;
 }
 
 .eea-icon {
@@ -563,8 +565,42 @@ footer {
 }
 
 @media (max-width: 767px) {
-  .row-fluid .span3 {
+  .right-column-area .eea-icon.eea-icon-right {
+    position: relative;
+    right: -25px;
+  }
+
+  .facetview_top .filter-by {
+    margin: 1em 1.5em 0 0;
+    clear: both;
+    float: none;
+  }
+
+  .facetview_top,
+  #filterDisplayAs {
+    text-align: left;
+  }
+
+  #filterDisplayAs,
+  #filterSort,
+  .top-pagination {
+    display: block;
+    padding: 0;
+    text-align: left;
+  }
+
+  #filterSort,
+  #filterSort .filter-by.facetview_orderby,
+  #filterSort .facetview_orderby,
+  .facetview_top .top-pagination {
+    float: none;
+  }
+
+  .row-fluid .span12 .span3,
+  .row-fluid .span12 .span9 {
     width: 100% !important;
+    float: left !important;
+    padding: 0;
   }
 }
 
