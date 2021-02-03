@@ -39,6 +39,10 @@ jQuery(document).ready(function ($) {
     if ($("#content").length) {
       // debugger;
       $("#content").empty().append($("#portal-columns-app"));
+
+      // auto scroll to top after the search app content is inserted into the template
+      window.scrollTo(0, 0);
+
       // $("#portal-columns").empty().append($("#portal-columns-app"));
       clearInterval(checkExist);
     }
