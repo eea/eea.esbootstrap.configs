@@ -158,6 +158,9 @@ body.site-observatory .site-container #content .eea-tileInner {
     margin-bottom:10px;
 }
 
+body.site-observatory #content .jstree-container-ul {
+    background-color: #ffffff;
+}
 @media handheld, screen and (max-device-width: 480px){
   input, textarea {
     font-size: 140% !important;

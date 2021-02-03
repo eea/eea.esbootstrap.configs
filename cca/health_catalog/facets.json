@@ -269,7 +269,8 @@
                 "order": "term",
                 "operator": "OR",
                 "facet_display_options": ["sort", "checkbox"],
-                "values_blacklist": ["Webpage", "File", "http://cr.eionet.europa.eu/ontologies/contreg.rdf#File"]
+                "values_blacklist": ["Webpage", "File", "http://cr.eionet.europa.eu/ontologies/contreg.rdf#File"],
+                "last_value": "-NONSPECIFIC-"
             },
             "card": {
                 "field": "health_impacts",
