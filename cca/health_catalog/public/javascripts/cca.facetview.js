@@ -310,7 +310,12 @@ function topTypeOfDataIcons() {
                 typeCount = countLabel[0].innerHTML;
                 opacityClass = '';
             }
-            response += '<div class="db-category-wrapper'+opacityClass+'">'
+
+            activeClass = '';
+            if ($("li.selected[title='"+types[i].name+"']").length) {
+                activeClass = ' active';
+            }
+            response += '<div class="db-category-wrapper'+opacityClass+activeClass+'">'
                 + '<a href="#" class="typeOfDataClick" title="'+types[i].name+'">'
                   + '<span class="db-category-icon">'
                     + '<i class="fa '+types[i].icon+'"></i>'

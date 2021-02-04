@@ -173,6 +173,10 @@ body.site-observatory .db-category-wrapper.opacity a>p
 {
     opacity: 0.3;
 }
+body.site-observatory .db-category-wrapper.active span.total-items {
+    background-color: #8a9b41;
+}
+
 @media handheld, screen and (max-device-width: 480px){
   input, textarea {
     font-size: 140% !important;
