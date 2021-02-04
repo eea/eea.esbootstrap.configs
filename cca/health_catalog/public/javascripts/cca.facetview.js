@@ -292,13 +292,13 @@ function populateChart(response, categories, current, parent = 0) {
 function topTypeOfDataIcons() {
     setTimeout(function(){
         types = [
-            {icon:'fa-info-circle', name:'Information portals'},
             {icon:'fa-file-text-o', name:'Case studies'},
             {icon:'fa-compass', name:'Guidance'},
             {icon:'fa-area-chart', name:'Indicators'},
-            {icon:'fa-wrench', name:'Tools'},
+            {icon:'fa-info-circle', name:'Information portals'},
+            {icon:'fa-newspaper-o', name:'Publications and reports'},
             {icon:'research-icon', name:'Research and knowledge projects'},
-            {icon:'fa-newspaper-o', name:'Publications and reports'}
+            {icon:'fa-wrench', name:'Tools'},
         ];
         $('div.db-categories.flex-wrapper').remove();
         response = '<div class="db-categories flex-wrapper">';
@@ -326,7 +326,7 @@ function topTypeOfDataIcons() {
               +'</div>';
         }
         response +="</div>";
-        $( response ).insertBefore( ".facetview_top" );
+        $( response ).insertAfter( ".facetedview_search" );
     },  $('div.db-categories.flex-wrapper').length ? 500 : 0);
 }
 

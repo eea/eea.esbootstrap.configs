@@ -485,6 +485,16 @@ footer {
   color: black;
 }
 
+#facetview_trees {
+  padding: 10px;
+  border: 1px solid #e4e4e4;
+  padding-top: 0;
+}
+
+#portal-columns-app .db-categories {
+  padding: 5px 3px;
+}
+
 .facetview_filter_options select.facet_value_operator {
   width: 75px;
 }
