@@ -37,6 +37,7 @@ jQuery(document).ready(function($) {
       viewChartMode();
       checkShowArticleDefault();
       updateCurrentArticleLinks();
+      topTypeOfDataIcons();
     },
     paging: {
       from: 0,
@@ -103,6 +104,12 @@ jQuery(document).ready(function($) {
     opts.highlight_blacklist = eea_mapping.highlights.blacklist;
   }
   eea_facetview('.facet-view-simple', opts);
+
+  $('body').on('click', '.typeOfDataClick', function() {
+      $("li[title='"+$(this).attr('title')+"'] a").click()
+      return false;
+  });
+
 
   $('#facetview_rightcol').on('hover', '.eea-tileBody', function() {
     var $this = $(this);
@@ -280,6 +287,42 @@ function populateChart(response, categories, current, parent = 0) {
         response.children.push({'name':current ,'children':[]});
     }
     return [response, categories, catPosition];
+}
+
+function topTypeOfDataIcons() {
+    setTimeout(function(){
+        types = [
+            {icon:'fa-info-circle', name:'Information portals'},
+            {icon:'fa-file-text-o', name:'Case studies'},
+            {icon:'fa-compass', name:'Guidance'},
+            {icon:'fa-area-chart', name:'Indicators'},
+            {icon:'fa-wrench', name:'Tools'},
+            {icon:'research-icon', name:'Research and knowledge projects'},
+            {icon:'fa-newspaper-o', name:'Publications and reports'}
+        ];
+        $('div.db-categories.flex-wrapper').remove();
+        response = '<div class="db-categories flex-wrapper">';
+        for (i=0;i<types.length;i++) {
+            countLabel = $("li[title='"+types[i].name+"'] span.facet_label_count")
+            typeCount = 0;
+            opacityClass = ' opacity';
+            if (countLabel.length) {
+                typeCount = countLabel[0].innerHTML;
+                opacityClass = '';
+            }
+            response += '<div class="db-category-wrapper'+opacityClass+'">'
+                + '<a href="#" class="typeOfDataClick" title="'+types[i].name+'">'
+                  + '<span class="db-category-icon">'
+                    + '<i class="fa '+types[i].icon+'"></i>'
+                    + '<span class="total-items">'+typeCount+'</span>'
+                  + '</span>'
+                  + '<p>'+types[i].name+'</p>'
+                +'</a>'
+              +'</div>';
+        }
+        response +="</div>";
+        $( response ).insertBefore( ".facetview_top" );
+    },  $('div.db-categories.flex-wrapper').length ? 500 : 0);
 }
 
 function showChart(divId, dataArray) {

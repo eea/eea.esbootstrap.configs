@@ -161,6 +161,18 @@ body.site-observatory .site-container #content .eea-tileInner {
 body.site-observatory #content .jstree-container-ul {
     background-color: #ffffff;
 }
+body.site-observatory .macro-category #content h5 {
+    margin:0px !important;
+}
+body.site-observatory .db-category-wrapper {
+    flex: 1 1 100px;
+}
+body.site-observatory .db-category-wrapper.opacity i,
+body.site-observatory .db-category-wrapper.opacity span.total-items,
+body.site-observatory .db-category-wrapper.opacity a>p
+{
+    opacity: 0.3;
+}
 @media handheld, screen and (max-device-width: 480px){
   input, textarea {
     font-size: 140% !important;
