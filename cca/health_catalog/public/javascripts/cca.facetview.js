@@ -37,7 +37,8 @@ jQuery(document).ready(function($) {
       viewChartMode();
       checkShowArticleDefault();
       updateCurrentArticleLinks();
-      topTypeOfDataIcons();
+      topTypeOfDataItems();
+      topTypeOfDataChange();
     },
     paging: {
       from: 0,
@@ -59,7 +60,6 @@ jQuery(document).ready(function($) {
   }
 
   function updatePagination() {
-      console.log('aaa');
       $('.facetview_top').css("display", "block");
       $('.top-pagination').css("display", "block");
       //$('.pagination').css("display", "none");
@@ -289,7 +289,35 @@ function populateChart(response, categories, current, parent = 0) {
     return [response, categories, catPosition];
 }
 
-function topTypeOfDataIcons() {
+function topTypeOfDataItems() {
+    if (0 == $('div.db-categories.flex-wrapper').length) {
+        types = [
+            {icon:'fa-file-text-o', name:'Case studies'},
+            {icon:'fa-compass', name:'Guidance'},
+            {icon:'fa-area-chart', name:'Indicators'},
+            {icon:'fa-info-circle', name:'Information portals'},
+            {icon:'fa-newspaper-o', name:'Publications and reports'},
+            {icon:'research-icon', name:'Research and knowledge projects'},
+            {icon:'fa-wrench', name:'Tools'},
+        ];
+        response = '<div class="db-categories flex-wrapper">';
+        for (i=0;i<types.length;i++) {
+            response += '<div class="db-category-wrapper">'
+                + '<a href="#" class="typeOfDataClick" title="'+types[i].name+'">'
+                  + '<span class="db-category-icon">'
+                    + '<i class="fa '+types[i].icon+'"></i>'
+                    + '<span class="total-items"></span>'
+                  + '</span>'
+                  + '<p>'+types[i].name+'</p>'
+                +'</a>'
+              +'</div>';
+        }
+        response +="</div>";
+        $( response ).insertAfter( ".facetedview_search" );
+    }
+}
+
+function topTypeOfDataChange() {
     setTimeout(function(){
         types = [
             {icon:'fa-file-text-o', name:'Case studies'},
@@ -300,34 +328,23 @@ function topTypeOfDataIcons() {
             {icon:'research-icon', name:'Research and knowledge projects'},
             {icon:'fa-wrench', name:'Tools'},
         ];
-        $('div.db-categories.flex-wrapper').remove();
-        response = '<div class="db-categories flex-wrapper">';
+        $('.db-category-wrapper').removeClass('opacity').removeClass('active');
         for (i=0;i<types.length;i++) {
             countLabel = $("li[title='"+types[i].name+"'] span.facet_label_count")
             typeCount = 0;
-            opacityClass = ' opacity';
             if (countLabel.length) {
                 typeCount = countLabel[0].innerHTML;
-                opacityClass = '';
+            }
+            $(".db-category-wrapper a[title='"+types[i].name+"'] span.total-items").html(typeCount);
+            if (0 == typeCount) {
+                $(".db-category-wrapper a[title='"+types[i].name+"']").parent().addClass('opacity');
             }
 
-            activeClass = '';
             if ($("li.selected[title='"+types[i].name+"']").length) {
-                activeClass = ' active';
+                $(".db-category-wrapper a[title='"+types[i].name+"']").parent().addClass('active');
             }
-            response += '<div class="db-category-wrapper'+opacityClass+activeClass+'">'
-                + '<a href="#" class="typeOfDataClick" title="'+types[i].name+'">'
-                  + '<span class="db-category-icon">'
-                    + '<i class="fa '+types[i].icon+'"></i>'
-                    + '<span class="total-items">'+typeCount+'</span>'
-                  + '</span>'
-                  + '<p>'+types[i].name+'</p>'
-                +'</a>'
-              +'</div>';
         }
-        response +="</div>";
-        $( response ).insertAfter( ".facetedview_search" );
-    },  $('div.db-categories.flex-wrapper').length ? 500 : 0);
+    }, 500);
 }
 
 function showChart(divId, dataArray) {
