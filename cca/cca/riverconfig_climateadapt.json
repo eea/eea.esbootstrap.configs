@@ -30,6 +30,9 @@
 
     "http://www.eea.europa.eu/ontologies.rdf#biographical-regions": "biographical-regions",
 
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#acronym": "acronym",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#acronym": "acronym",
+
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#source": "source",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.adaptationoption#source": "source",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.casestudy#source": "source",
@@ -169,6 +172,9 @@
   "normalisedProperties": {
   },
   "blackMap": {
+    "acronym": ["None"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#acronym": ["None"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#acronym": ["None"],
     "year": ["None", "Unknown"],
     "issued": ["None", "Unknown"],
     "http://purl.org/dc/terms/issued": ["None", "Unknown"],
