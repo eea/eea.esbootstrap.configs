@@ -491,8 +491,16 @@ footer {
   padding-top: 0;
 }
 
+.search-suggestions {
+  margin-bottom: 1.2rem;
+}
+
 #portal-columns-app .db-categories {
-  padding: 5px 3px;
+  padding: 8px 3px;
+}
+
+#portal-columns-app .db-categories p {
+  margin: 0;
 }
 
 .facetview_filter_options select.facet_value_operator {

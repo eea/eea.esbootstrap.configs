@@ -69,6 +69,7 @@ jQuery(document).ready(function ($) {
   $("#facetview_rightcol").after(
     "<div id='facetview_article' class='hide row-fluid'><div id='facetview_article_content'></div></div>"
   );
+
   $("#filterInput").prepend($(".facetedview_search"));
 
   $("#filterDisplayAs").prepend($(".facetview_display_type"));
@@ -105,6 +106,7 @@ jQuery(document).ready(function ($) {
   });
 
   $(".current-filters").insertAfter($("#facetview_trees"));
+  $("#filterInput").append($(".search-suggestions"));
 
   $("<span class='filters-text'>Filters applied</span>").insertBefore(
     $(".facetview-filter-values")
