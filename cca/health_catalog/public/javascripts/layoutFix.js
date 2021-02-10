@@ -112,7 +112,7 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  $(".current-filters").insertAfter($("#facetview_trees"));
+  $("#facetview_trees").append($(".current-filters"));
   $("#filterInput").append($(".search-suggestions"));
 
   $("<span class='filters-text'>Filters applied</span>").insertBefore(

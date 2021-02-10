@@ -313,7 +313,7 @@ function topTypeOfDataItems() {
               +'</div>';
         }
         response +="</div>";
-        $( response ).insertAfter( ".facetedview_search" );
+        $( response ).insertBefore( ".facetedview_search" );
     }
 }
 

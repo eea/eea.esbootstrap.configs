@@ -485,8 +485,29 @@ footer {
 
 #facetview_trees {
   padding: 10px;
-  border: 1px solid #e4e4e4;
   padding-top: 0;
+  position: relative;
+  margin-top: 41px;
+}
+
+#facetview_trees:before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: -10px;
+  width: 1px;
+  height: 100%;
+  background-color: #4a94c6;
+}
+
+.facetview_showtree_eealabel,
+.eea-icon.eea-icon-right {
+  color: #2773b5;
+}
+
+#content .eea-accordion-panels .eea-accordion-panel > h2,
+#content .eea-accordion-panels .eea-accordion-panel > h2.facetview_open {
+  font-size: 15px;
 }
 
 .search-suggestions {
