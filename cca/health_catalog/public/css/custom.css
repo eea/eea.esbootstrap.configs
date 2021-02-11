@@ -244,7 +244,10 @@ footer {
 }
 
 #content .facetview_selection a {
-  padding-top: 3px;
+  position: absolute;
+  top: 0;
+  right: -8px;
+  transform: translate(-50%);
 }
 
 #content .status_facetview_selection:hover {
@@ -265,12 +268,13 @@ footer {
 }
 
 #content .facetview_filterselected .eea-icon {
-  top: 2px;
+  position: relative;
 }
 
 #content .facetview_filterselected .eea-icon-times:before {
   position: relative;
   top: 2px;
+  left: 1px;
 }
 
 .facet-view-simple {
@@ -373,6 +377,8 @@ body.site-observatory .site-container.main-area {
 #content .year_facetview_selection,
 #content .facetview_selection {
   background-color: #8a9b41;
+  padding: 3px 2em 3px 0.8em;
+  position: relative;
 }
 
 #content .status_facetview_selection span,
@@ -380,6 +386,7 @@ body.site-observatory .site-container.main-area {
 #content .facetview_selection span {
   color: white;
   font-weight: normal;
+  margin-right: 8px;
 }
 
 #content .year_facetview_selection a i,
@@ -396,7 +403,7 @@ body.site-observatory .site-container.main-area {
 }
 
 .facetview-filter-values {
-  padding-left: 5px !important;
+  padding-left: 0 !important;
   margin-bottom: 0;
 }
 
@@ -484,7 +491,7 @@ footer {
 }
 
 #facetview_trees {
-  padding: 10px;
+  padding: 10px 0 0 10px;
   padding-top: 0;
   position: relative;
   margin-top: 41px;
