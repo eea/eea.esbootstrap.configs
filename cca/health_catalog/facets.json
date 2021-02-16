@@ -616,7 +616,7 @@
             "list": {
                 "field": "acronym",
                 "default": "",
-                "visible": false
+                "visible": true
             }
         },
         {
