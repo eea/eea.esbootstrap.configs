@@ -600,6 +600,26 @@
             }
         },
         {
+            "name": "acronym",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "card": {
+                "visible": false
+            },
+            "list": {
+                "field": "acronym",
+                "default": "",
+                "visible": false
+            }
+        },
+        {
             "name": "depiction",
             "listing": {
                 "title": "depiction",
