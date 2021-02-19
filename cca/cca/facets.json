@@ -563,6 +563,26 @@
             }
         },
         {
+            "name": "acronym",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "card": {
+                "visible": false
+            },
+            "list": {
+                "field": "acronym",
+                "default": "",
+                "visible": true
+            }
+        },
+        {
             "name": "geolocation",
             "csv_tsv": {
                 "title": "Coordinates",

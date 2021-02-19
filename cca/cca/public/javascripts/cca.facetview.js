@@ -47,6 +47,7 @@ jQuery(document).ready(function($) {
       updatePagination();
       limitString();
       setupPage();
+      updateTitlesEmptyAcronym();
       $(window).trigger('post_search_callback');
     },
     paging: {
@@ -62,6 +63,14 @@ jQuery(document).ready(function($) {
     $(".portalMessage.attentionMessage").insertAfter(".facetview_top");
     $('.facetview_download').insertAfter($('.pull-right'));
     $('.facetview_download .eea_download_btn span').html('Download CSV');
+  }
+  function updateTitlesEmptyAcronym() {
+      $('#facetview_results_wrapper a').each(function(){
+          title = $(this).text(); // Get current url
+          if (title.endsWith(' ()')) {
+              $(this).text(title.substr(0, title.length-3));
+          }
+      });
   }
   function updatePagination() {
       $('.facetview_top').css("display", "block");
