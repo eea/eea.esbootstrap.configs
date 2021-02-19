@@ -70,6 +70,9 @@ jQuery(document).ready(function($) {
           if (title.endsWith(' ()')) {
               $(this).text(title.substr(0, title.length-3));
           }
+          if (title.endsWith(' (undefined)')) {
+              $(this).text(title.substr(0, title.length-12));
+          }
       });
   }
   function updatePagination() {
