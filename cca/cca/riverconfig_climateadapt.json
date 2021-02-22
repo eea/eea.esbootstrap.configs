@@ -302,6 +302,10 @@
     "https://climate-adapt.eea.europa.eu/portal_workflow/cca_webpages_workflow/states/archived": "archived",
     "https://climate-adapt.eea.europa.eu/portal_workflow/newsevents_workflow/states/archived": "archived",
 
+    "https://climate-adapt.eea.europa.eu/portal_workflow/cca_items_workflow/states/private": "private",
+    "https://climate-adapt.eea.europa.eu/portal_workflow/cca_webpages_workflow/states/private": "private",
+    "https://climate-adapt.eea.europa.eu/portal_workflow/newsevents_workflow/states/private": "private",
+
     "Amazonia": "Other Regions",
     "Caribbean Area": "Other Regions",
     "Indian Ocean Area": "Other Regions"
