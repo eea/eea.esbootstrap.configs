@@ -172,6 +172,9 @@
   "normalisedProperties": {
   },
   "blackMap": {
+    "funding_programme": ["None"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#funding_programme": ["None"],
+
     "acronym": ["None"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#acronym": ["None"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#acronym": ["None"],
