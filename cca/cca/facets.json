@@ -187,11 +187,11 @@
         {
             "name": "typeOfData",
             "listing": {
-                "title": "Type of Data",
+                "title": "Type of Item",
                 "visible" : true
             },
             "csv_tsv": {
-                "title": "Type of Data",
+                "title": "Type of Item",
                 "visible": true,
                 "pos": 3
             },
@@ -201,7 +201,7 @@
             "facet": {
                 "autocomplete": false,
                 "visible": true,
-                "title": "Type of Data",
+                "title": "Type of Item",
                 "pos": 3,
                 "type": "facet",
                 "size": 50,
@@ -335,17 +335,18 @@
                 "title": "Funding Programme",
                 "order": "term",
                 "operator": "OR",
+                "last_value": "Other",
                 "visible": true
             }
         },
         {
             "name": "origin_website",
             "listing": {
-                "title": "Source Website",
+                "title": "Item from third parties",
                 "visible": true
             },
             "csv_tsv": {
-                "title": "Source Website",
+                "title": "Item from third parties",
                 "visible": true,
                 "pos": 7
             },
@@ -353,7 +354,7 @@
                 "facet_display_options": ["sort", "checkbox"],
                 "size": 100,
                 "min_size": 10,
-                "title": "Source Website",
+                "title": "Item from third parties",
                 "order": "term",
                 "operator": "OR",
                 "visible": true
