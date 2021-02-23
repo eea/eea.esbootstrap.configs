@@ -352,6 +352,7 @@
             },
             "facet": {
                 "facet_display_options": ["sort", "checkbox"],
+                "values_blacklist": ["Climate-ADAPT"],
                 "size": 100,
                 "min_size": 10,
                 "title": "Item from third parties",
