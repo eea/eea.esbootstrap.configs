@@ -14,16 +14,16 @@
             "all_fields_for_freetext"
         ]
     },
-    "functions":{
-        "gauss": {
+    "functions":[
+        {"gauss": {
             "issued.date": {
                 "scale": "14d"
             }
-        },
-        "script_score": {
+        }},
+        {"script_score": {
             "script": "doc['items_count_references'].value*0.01"
-        }
-    },
+        }}
+    ],
     "score_mode":"sum",
     "facet_decay_functions": {
         "topic": {

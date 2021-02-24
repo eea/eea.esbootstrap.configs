@@ -101,6 +101,7 @@ jQuery(document).ready(function($) {
     opts.highlight_blacklist = eea_mapping.highlights.blacklist;
   }
   window.settings_suggestions_enabled = true;
+  opts.relevance = settings_relevance,
   eea_facetview('.facet-view-simple', opts);
 });
 
