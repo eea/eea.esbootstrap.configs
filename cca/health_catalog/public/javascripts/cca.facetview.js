@@ -62,7 +62,7 @@ jQuery(document).ready(function($) {
           url = oldUrl.replace('https://','').split('/');
           oldUrl = '/'+url.splice(2).join('/');
 
-          var newUrl = '/observatory/++aq++metadata' + oldUrl;
+          var newUrl = '/observatory/++aq++metadata' + oldUrl + '?bs=1';
 
           $(this).attr("href", newUrl);
       });
