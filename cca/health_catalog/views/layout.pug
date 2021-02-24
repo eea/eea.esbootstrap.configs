@@ -43,7 +43,7 @@ html
         script
            != settings_translation
 
-        link(rel="shortcut icon", type="image/x-icon", href="https://www.eea.europa.eu/favicon.ico")
+        link(rel="shortcut icon", type="image/x-icon", href="/++theme++climateadaptv2/static/images/favicon/favicon.ico")
 
         - var debug_mode = skip_resources_bundling || false
 
@@ -96,3 +96,4 @@ html
         block extrajavascripts
 
         script(type='text/javascript', src='//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js')
+        script(type='text/javascript', src='/++theme++climateadaptv2/static/js/main.js')

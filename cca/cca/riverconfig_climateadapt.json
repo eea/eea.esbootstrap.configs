@@ -30,6 +30,9 @@
 
     "http://www.eea.europa.eu/ontologies.rdf#biographical-regions": "biographical-regions",
 
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#acronym": "acronym",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#acronym": "acronym",
+
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#source": "source",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.adaptationoption#source": "source",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.casestudy#source": "source",
@@ -169,6 +172,12 @@
   "normalisedProperties": {
   },
   "blackMap": {
+    "funding_programme": ["None"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#funding_programme": ["None"],
+
+    "acronym": ["None"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#acronym": ["None"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#acronym": ["None"],
     "year": ["None", "Unknown"],
     "issued": ["None", "Unknown"],
     "http://purl.org/dc/terms/issued": ["None", "Unknown"],
@@ -295,6 +304,10 @@
     "https://climate-adapt.eea.europa.eu/portal_workflow/cca_items_workflow/states/archived": "archived",
     "https://climate-adapt.eea.europa.eu/portal_workflow/cca_webpages_workflow/states/archived": "archived",
     "https://climate-adapt.eea.europa.eu/portal_workflow/newsevents_workflow/states/archived": "archived",
+
+    "https://climate-adapt.eea.europa.eu/portal_workflow/cca_items_workflow/states/private": "private",
+    "https://climate-adapt.eea.europa.eu/portal_workflow/cca_webpages_workflow/states/private": "private",
+    "https://climate-adapt.eea.europa.eu/portal_workflow/newsevents_workflow/states/private": "private",
 
     "Amazonia": "Other Regions",
     "Caribbean Area": "Other Regions",

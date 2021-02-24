@@ -76,6 +76,7 @@
   "es_debug_enabled": false,
   "suggestions_enabled": true,
   "autocorrect_disable": true,
+  "autocomplete_include_searchterm": true,
   "relevance_enabled": true,
   "river_configs": {
     "configs": [

@@ -232,7 +232,7 @@
             "facet": {
                 "autocomplete": false,
                 "visible": true,
-                "title": "Partner organisation",
+                "title": "Observatory partner",
                 "pos": 3,
                 "type": "facet",
                 "size": 50,
@@ -595,6 +595,26 @@
             },
             "list": {
                 "field": "long_description",
+                "default": "",
+                "visible": true
+            }
+        },
+        {
+            "name": "acronym",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "card": {
+                "visible": false
+            },
+            "list": {
+                "field": "acronym",
                 "default": "",
                 "visible": true
             }

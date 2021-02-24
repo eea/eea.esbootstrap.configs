@@ -6,4 +6,6 @@ jQuery(document).ready(function($) {
     if (window.location.search.includes('typeOfData') && !$('h2#typeOfData').hasClass('facetview_open')) {
         $('h2#typeOfData').click();
     }
+    $('.current-filters-collapsible').click();
+    $('.eea-reset-filters').insertAfter($('.top-pagination'));
 });

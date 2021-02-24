@@ -37,6 +37,7 @@ jQuery(document).ready(function($) {
       viewChartMode();
       checkShowArticleDefault();
       updateCurrentArticleLinks();
+      updateTitlesEmptyAcronym();
       topTypeOfDataItems();
       topTypeOfDataChange();
     },
@@ -47,6 +48,14 @@ jQuery(document).ready(function($) {
     display_type_options: settings_display_options,
     display_type: settings_default_display
   };
+  function updateTitlesEmptyAcronym() {
+      $('#facetview_results_wrapper a').each(function(){
+          title = $(this).text(); // Get current url
+          if (title.endsWith(' ()')) {
+              $(this).text(title.substr(0, title.length-3));
+          }
+      });
+  }
   function updateCurrentArticleLinks() {
       $('#facetview_results_wrapper a').each(function(){
           oldUrl = $(this).attr("href"); // Get current url
@@ -313,7 +322,7 @@ function topTypeOfDataItems() {
               +'</div>';
         }
         response +="</div>";
-        $( response ).insertAfter( ".facetedview_search" );
+        $( response ).insertBefore( ".facetedview_search" );
     }
 }
 

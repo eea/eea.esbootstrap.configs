@@ -37,18 +37,13 @@ jQuery(document).ready(function ($) {
 
   var checkExist = setInterval(function () {
     if ($("#content").length) {
-      // debugger;
       $("#content").empty().append($("#portal-columns-app"));
-
       // auto scroll to top after the search app content is inserted into the template
       window.scrollTo(0, 0);
-
-      // $("#portal-columns").empty().append($("#portal-columns-app"));
       clearInterval(checkExist);
     }
   }, 100);
 
-  // /*
   $("#facetview_rightcol").prepend(
     "<div class='row'>" +
       "<div class='column text-right' id='filterDisplayAs'></div>" +
@@ -63,18 +58,19 @@ jQuery(document).ready(function ($) {
   );
 
   $("#portal-columns-app").prepend(
-    "<div class='column col-md-12' id='filterTitle'><h2>Observatory resource catalogue</h2></div>"
+    "<div id='filterTitle'><h2>Observatory resource catalogue</h2></div>"
   );
 
   $("#facetview_rightcol").after(
     "<div id='facetview_article' class='hide row-fluid'><div id='facetview_article_content'></div></div>"
   );
+
   $("#filterInput").prepend($(".facetedview_search"));
 
   $("#filterDisplayAs").prepend($(".facetview_display_type"));
   $("#filterSort").prepend($(".facetview_orderby"));
   $(".facetview_top").hide();
-  //*/
+
   $("#filterTitle").insertAfter(".header");
   $("#filterSort").insertAfter(".top-pagination");
   $("#filterDisplayAs").insertAfter(".top-pagination");
@@ -86,12 +82,24 @@ jQuery(document).ready(function ($) {
     "Display the results as"
   );
 
-  var margin = parseInt($(".main-area").css("margin-left"));
-  margin = margin + 20;
-  $("#filterTitle").css("padding-left", margin.toString() + "px");
-  $("#filterTitle").css("padding-right", margin.toString() + "px");
-  $("#eea-above-columns").css("padding-left", margin.toString() + "px");
-  $("#eea-above-columns").css("padding-right", margin.toString() + "px");
+  function setElementPosition() {
+    var contentLeft = $(".main-area").offset().left + 20;
+    $("#filterTitle, #eea-above-columns").css({
+      "padding-left": contentLeft + "px",
+      "padding-right": contentLeft + "px",
+    });
+  }
+
+  var resizeTimer;
+  $(window).on("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(doneResizing, 50);
+  });
+
+  setElementPosition();
+  function doneResizing() {
+    setElementPosition();
+  }
 
   $("#eea-above-columns").insertAfter($("#filterTitle"));
   $(".facetview_freetext").css("background-color", "#EEEEEE");
@@ -104,7 +112,8 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  $(".current-filters").insertAfter($("#facetview_trees"));
+  $("#facetview_trees").append($(".current-filters"));
+  $("#filterInput").append($(".search-suggestions"));
 
   $("<span class='filters-text'>Filters applied</span>").insertBefore(
     $(".facetview-filter-values")
