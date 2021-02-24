@@ -17,12 +17,9 @@
     },
     "functions":[
         {"gauss": {
-            "issued.date": {
+            "issued": {
                 "scale": "14d"
             }
-        }},
-        {"script_score": {
-            "script": "doc['items_count_references'].value*0.01"
         }}
     ],
     "score_mode":"sum",
