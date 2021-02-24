@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
     //search_sortby: settings_search_sortby,
     search_sortby: [
       {
-        'field': 'label',
+        'field': 'label.index',
         'display_asc': 'Title a-z',
         'display_desc': 'Title z-a'
       },
