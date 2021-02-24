@@ -2,6 +2,9 @@
 // we need this function to insert the search app content into our template
 jQuery(document).ready(function ($) {
   setResultsPaging(checkIfTabular());
+  $(window).on('beforeunload', function() {
+      $(window).scrollTop(0);
+  });
   $(document).on("mousedown", "#filterDisplayAs span.eea-icon", function (
     event
   ) {
