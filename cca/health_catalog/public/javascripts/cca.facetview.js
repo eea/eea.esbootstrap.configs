@@ -112,6 +112,7 @@ jQuery(document).ready(function($) {
     opts.highlight_whitelist = eea_mapping.highlights.whitelist;
     opts.highlight_blacklist = eea_mapping.highlights.blacklist;
   }
+  opts.relevance = settings_relevance,
   eea_facetview('.facet-view-simple', opts);
 
   $('body').on('click', '.typeOfDataClick', function() {

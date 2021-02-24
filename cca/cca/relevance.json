@@ -2,6 +2,7 @@
     "fields_boosting":{
         "fields":[
             "title^2",
+            "acronym^3",
             "subject^1.5",
             "description^1.5",
             "searchable_spatial^1.2",
