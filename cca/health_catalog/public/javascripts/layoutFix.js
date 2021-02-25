@@ -1,10 +1,15 @@
 // Beacause we use a single external template (with header and footer in the same template)
 // we need this function to insert the search app content into our template
+
 jQuery(document).ready(function ($) {
   setResultsPaging(checkIfTabular());
-  $(window).on('beforeunload', function() {
-      $(window).scrollTop(0);
-  });
+
+  window.onload = function () {
+    setTimeout(function () {
+      scrollTo(0, 0);
+    }, 120);
+  };
+
   $(document).on("mousedown", "#filterDisplayAs span.eea-icon", function (
     event
   ) {
@@ -41,8 +46,6 @@ jQuery(document).ready(function ($) {
   var checkExist = setInterval(function () {
     if ($("#content").length) {
       $("#content").empty().append($("#portal-columns-app"));
-      // auto scroll to top after the search app content is inserted into the template
-      window.scrollTo(0, 0);
       clearInterval(checkExist);
     }
   }, 100);
