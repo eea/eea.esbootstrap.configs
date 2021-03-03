@@ -171,23 +171,15 @@
   "syncConditions": [
       "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/collective.cover.content#collectivecovercontent> } UNION ",
       "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/Document#Document> } UNION ",
-      "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/File#File> } UNION ",
-      "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/Collection#Collection> } UNION ",
-      "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/Image#Image> } UNION ",
       "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/News%20Item#NewsItem> } UNION ",
-      "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/Event#Event> } UNION ",
-      "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/Folder#Folder> } "
+      "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/Event#Event> } "
   ],
 
   "syncConditions_back": [
       "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/collective.cover.content#collectivecovercontent> } UNION ",
       "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/Document#Document> } UNION ",
-      "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/File#File> } UNION ",
-      "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/Collection#Collection> } UNION ",
-      "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/Image#Image> } UNION ",
       "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/News%20Item#NewsItem> } UNION ",
-      "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/Event#Event> } UNION ",
-      "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/Folder#Folder> } "
+      "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/Event#Event> } "
   ],
   "graphSyncConditions": ["FILTER (?time > xsd:dateTime('1990-01-01T00:00:00')). FILTER (?time < xsd:dateTime('2100-01-01T00:00:00'))"],
   "syncTimeProp": "http://cr.eionet.europa.eu/ontologies/contreg.rdf#lastRefreshed"
