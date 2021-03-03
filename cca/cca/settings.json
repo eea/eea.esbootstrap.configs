@@ -69,6 +69,11 @@
           "id": "climateadapt",
           "cluster_name": "climateadapt",
           "config_file": "riverconfig_aceitem.json"
+        },
+        {
+          "id": "climateadapt",
+          "cluster_name": "climateadapt",
+          "config_file": "riverconfig_webpage.json"
         }
       ]
     }
