@@ -68,7 +68,12 @@
         {
           "id": "climateadapt",
           "cluster_name": "climateadapt",
-          "config_file": "riverconfig_climateadapt.json"
+          "config_file": "riverconfig_aceitem.json"
+      },
+        {
+          "id": "climateadapt",
+          "cluster_name": "climateadapt",
+          "config_file": "riverconfig_webpage.json"
         }
       ]
     }
@@ -78,15 +83,6 @@
   "autocorrect_disable": true,
   "autocomplete_include_searchterm": true,
   "relevance_enabled": true,
-  "river_configs": {
-    "configs": [
-      {
-        "id": "climateadapt",
-        "cluster_name": "climateadapt",
-        "config_file": "riverconfig_climateadapt.json"
-      }
-    ]
-  },
 
   "endpoint": "https://semantic.eea.europa.eu/sparql",
   "selected_navigation_tab": "data-and-maps"
