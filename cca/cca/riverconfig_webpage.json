@@ -31,6 +31,7 @@
     "http://www.eea.europa.eu/ontologies.rdf#biographical-regions": "biographical-regions",
 
     "http://www.eea.europa.eu/ontologies.rdf#cover_tiles": ["long_description"],
+    "https://climate-adapt.eea.europa.eu/portal_types/Document#text": ["long_description"],
 
     "http://purl.org/dc/terms/creator": ["creator_cms"],
     "http://purl.org/dc/terms/title": ["title","label"],
