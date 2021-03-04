@@ -48,6 +48,7 @@ jQuery(document).ready(function($) {
       limitString();
       setupPage();
       updateTitlesEmptyAcronym();
+      footerYearTypesInfo();
       $(window).trigger('post_search_callback');
     },
     paging: {
@@ -58,6 +59,41 @@ jQuery(document).ready(function($) {
     display_type: settings_default_display,
     predefined_filters: [{'term': {'hasWorkflowState': 'published'}}]
   };
+  function footerYearTypesInfo() {
+    setTimeout(function(){
+      $("h2.facetview_showtree[title='Year']").parent().hide();
+      types = [];
+      typeItems = $("li.selected[rel='typeOfData'] span.facet_label_text");
+      for (i=0;i<typeItems.length;i++) {
+          item = typeItems[i].textContent;
+          if (!['Organisations','Tools'].includes(item)) {
+              types.push(item);
+          }
+      }
+      typesYear1 = types.filter(value => ['Guidance','Indicators','Publications and reports'].includes(value));
+      typesYear2 = types.filter(value => ['Adaptation options','Case studies','Videos','Research and knowledge projects'].includes(value));
+      console.log(types);
+      console.log(typesYear1);
+      console.log(typesYear2);
+      if (0 == $("div#typeOfDataYearInfo").length ) {
+          $("<div id='typeOfDataYearInfo'></div>").insertAfter("div#facetview_results_wrapper");
+      }
+      htmlData = '';
+      if (typesYear1.length || typesYear2.length) {
+          if (typesYear1.length) {
+              htmlData += "<p>For "+typesYear1.join(", ")+" the year is the date of Publication</p>";
+          }
+          if (typesYear2.length) {
+              htmlData += "<p>For "+typesYear2.join(", ")+" the year is the publication in Climate ADAPT";
+          }
+          if (typesYear1.length || typesYear2.length) {
+              $("h2.facetview_showtree[title='Year']").parent().show();
+          }
+      }
+      $("#typeOfDataYearInfo").html(htmlData);
+    }, 500);
+  }
+
   function setupPage() {
     //$('.facetview_orderby').before($('.facetview_download'));
     $(".portalMessage.attentionMessage").insertAfter(".facetview_top");
