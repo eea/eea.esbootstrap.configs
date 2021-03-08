@@ -240,6 +240,7 @@
                 "title": "Adaptation Sectors",
                 "order": "term",
                 "operator": "OR",
+                "last_value": "NONSPECIFIC",
                 "visible": true
             },
             "card": {
@@ -272,6 +273,7 @@
                 "min_size": 10,
                 "order": "term",
                 "operator": "OR",
+                "last_value": "NONSPECIFIC",
                 "facet_display_options": ["sort", "checkbox"]
             }
         },
@@ -293,6 +295,7 @@
                 "title": "Transnational regions",
                 "order": "term",
                 "operator": "OR",
+                "last_value": "Other Regions",
                 "visible": true
             }
         },
