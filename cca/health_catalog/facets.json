@@ -201,7 +201,7 @@
             "facet": {
                 "values_whitelist":[
                     "Case studies", "Guidance", "Indicators",
-                    "Information portals", "Tools",
+                    "Information portals", "Tools", "Videos",
                     "Publications and reports",
                     "Research and knowledge projects"],
                 "autocomplete": false,
