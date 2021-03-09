@@ -338,6 +338,7 @@ function topTypeOfDataChange() {
             {icon:'fa-newspaper-o', name:'Publications and reports'},
             {icon:'research-icon', name:'Research and knowledge projects'},
             {icon:'fa-wrench', name:'Tools'},
+            {icon:'fa-file-video-o', name:'Videos'},
         ];
         $('.db-category-wrapper').removeClass('opacity').removeClass('active');
         for (i=0;i<types.length;i++) {
