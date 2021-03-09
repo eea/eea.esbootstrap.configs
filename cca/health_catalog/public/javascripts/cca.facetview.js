@@ -309,6 +309,7 @@ function topTypeOfDataItems() {
             {icon:'fa-newspaper-o', name:'Publications and reports'},
             {icon:'research-icon', name:'Research and knowledge projects'},
             {icon:'fa-wrench', name:'Tools'},
+            {icon:'fa-file-video-o', name:'Videos'},
         ];
         response = '<div class="db-categories flex-wrapper">';
         for (i=0;i<types.length;i++) {
