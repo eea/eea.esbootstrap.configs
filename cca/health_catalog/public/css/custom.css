@@ -533,8 +533,17 @@ footer {
   width: 75px;
 }
 
+#facetview_results_wrapper {
+  margin-bottom: 1em;
+  overflow: initial;
+}
+
 .eea-tiles {
-  margin-top: 2em;
+  margin: 36px -14px 0 -14px;
+}
+
+.eea-tile {
+  padding: 0 18px !important;
 }
 
 .eea-tileThumb {
@@ -544,7 +553,7 @@ footer {
 .eea-tileInner {
   background-color: #fff;
   box-shadow: 1px 1px 9px 0 rgba(105, 105, 105, 0.45);
-  margin: 10px 0 40px 0 !important;
+  margin-bottom: 36px !important;
   border-top: 10px solid #106cac;
   min-height: 280px;
   display: flex;
@@ -586,29 +595,9 @@ footer {
   min-height: 70px;
 }
 
-.eea-tile {
-  padding: 0 20px;
-}
-
 @media (min-width: 1281px) {
   .eea-tile {
     width: 33.3%;
-  }
-
-  .eea-tile:nth-of-type(3n + 1) {
-    padding-left: 4px !important;
-  }
-
-  .eea-tile:nth-of-type(3n) {
-    padding-right: 4px;
-  }
-
-  .eea-tile:nth-of-type(4n + 1) {
-    padding-left: 20px;
-  }
-
-  .eea-tile:nth-of-type(4n) {
-    padding-right: 20px;
   }
 }
 
