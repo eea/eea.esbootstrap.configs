@@ -33,22 +33,22 @@
         "skip_external_template_styles": false,
         "override_searchserver_resources": true,
         "css_resources": {
-            "index_page": [
-		"css/esbootstrap.facetview.css",
-		"css/no-more-tables.css",
-		"css/style.css",
-		"facetview/css/facetview.css",
-		"facetview/css/style.css",
-		"facetview/vendor/dist/themes/default/style.min.css",
-		"facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.css",
+            "layout_page": [
                 "css/esbootstrap.facetview.css",
-		"esbootstrap_resources/css/critical.css",
-		"css/tiles.css",
+                "css/no-more-tables.css",
+                "css/style.css",
+                "facetview/css/facetview.css",
+                "facetview/css/style.css",
+                "facetview/vendor/dist/themes/default/style.min.css",
+                "facetview/vendor/jquery-ui-1.11.4.custom/jquery-ui.css",
+                "css/esbootstrap.facetview.css",
+                "esbootstrap_resources/css/critical.css",
+                "css/tiles.css",
                 "/custom.css"
             ]
         },
         "js_resources": {
-            "index_page": [
+            "layout_page": [
                 "facetview/vendor/raven/raven.min.js",
                 "facetview/vendor/dist/libs/jquery.migrate.js",
                 "facetview/vendor/jquery-lazy/jquery.lazy.min.js",
