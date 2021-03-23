@@ -31,8 +31,6 @@
         "app_id": "copernicus-search",
         "skip_resources_bundling": false,
         "skip_external_template_styles": false,
-        "skip_resources_bundling_eea": true,
-        "skip_external_template_styles_eea": false,
         "override_searchserver_resources": true,
         "css_resources": {
             "index_page": [
