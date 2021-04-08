@@ -43,12 +43,12 @@
             ]
         },
         "site_title": "CO<sub>2</sub> emissions from vans",
-        "site_description": "<h3>Monitoring CO2 emission from new vans in EU27 and UK &ndash; <a href='http://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX:32019R0631'>Regulation (EU) No 631/2019</a>. Form 1 January 2018 Iceland is also included and from 1 January 2019, Norway is also included.</h3>",
+        "site_description": "<h3>Monitoring CO2 emission from new vans in EU27 and UK &ndash; <a href='http://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX:32019R0631'>Regulation (EU) No 631/2019</a>. From 1 January 2018 Iceland is also included and from 1 January 2019, Norway is also included.</h3>",
         "facets_footer_slot": "<span class='discreet'><strong>Note</strong>: The column 'Count' in the filters reports the sum of the rows and not the sum of the new car's registrations.</span>",
         "enableBreadcrumbs": true,
         "breadcrumbs": "Datasets",
-        "dataprovencance_info_text": "EEA Data: Monitoring of CO2 emissions from passenger cars – Regulation (EU) 2019/631",
-        "dataprovencance_info_url": "https://www.eea.europa.eu/data-and-maps/data/co2-cars-emission-18",
+        "dataprovencance_info_text": "EEA Data: Monitoring of CO2 emissions from vans – Regulation 510/2011",
+        "dataprovencance_info_url": "https://www.eea.europa.eu/data-and-maps/data/vans-14",
         "further_info": ""
     },
     "API":{

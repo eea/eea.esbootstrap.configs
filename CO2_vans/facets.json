@@ -451,7 +451,7 @@
             "listing": {
                 "title": "WLTP test mass",
                 "visible" : true,
-                "pos" : 18
+                "pos" : 28
             },
             "details": {
                 "title": "Mt",
@@ -473,7 +473,7 @@
             "listing": {
                 "title": "Specific CO2 Emissions in g/km (NEDC)",
                 "visible" : true,
-                "pos" : 19
+                "pos" : 29
             },
             "details": {
                 "title": "Enedc",
@@ -512,7 +512,7 @@
             "listing": {
                 "title": "Specific CO2 Emissions in g/km (WLTP)",
                 "visible" : true,
-                "pos" : 20
+                "pos" : 30
             },
             "details": {
                 "title": "Ewltp",
@@ -534,7 +534,7 @@
             "listing": {
                 "title": "Wheel base in mm",
                 "visible" : true,
-                "pos" : 21
+                "pos" : 31
             },
             "details": {
                 "title": "W",
@@ -556,7 +556,7 @@
             "listing": {
                 "title": "Axle width steering axle in mm",
                 "visible" : true,
-                "pos" : 22
+                "pos" : 32
             },
             "details": {
                 "title": "At1",
@@ -578,7 +578,7 @@
             "listing": {
                 "title": "Axle width other axle in mm",
                 "visible" : true,
-                "pos" : 23
+                "pos" : 33
             },
             "details": {
                 "title": "At2",
@@ -600,7 +600,7 @@
             "listing": {
                 "title": "Fuel type",
                 "visible" : true,
-                "pos" : 24
+                "pos" : 34
             },
             "details": {
                 "title": "Ft",
@@ -622,7 +622,7 @@
             "listing": {
                 "title": "Fuel mode",
                 "visible" : true,
-                "pos" : 25
+                "pos" : 35
             },
             "details": {
                 "title": "Fm",
@@ -644,7 +644,7 @@
             "listing": {
                 "title": "Engine capacity in cm3",
                 "visible" : true,
-                "pos" : 26
+                "pos" : 36
             },
             "details": {
                 "title": "Ec",
@@ -666,7 +666,7 @@
             "listing": {
                 "title": "Engine power in KW",
                 "visible" : true,
-                "pos" : 27
+                "pos" : 37
             },
             "details": {
                 "title": "Ep",
@@ -688,7 +688,7 @@
             "listing": {
                 "title": "Electric energy consumption in Wh/km",
                 "visible" : true,
-                "pos" : 28
+                "pos" : 38
             },
             "details": {
                 "title": "Z",
@@ -710,7 +710,7 @@
             "listing": {
                 "title": "Innovative technology or group of innovative technologies",
                 "visible" : true,
-                "pos" : 29
+                "pos" : 39
             },
             "details": {
                 "title": "IT",
@@ -732,7 +732,7 @@
             "listing": {
                 "title": "Emissions reduction through innovative technologies in g/km",
                 "visible" : true,
-                "pos" : 30
+                "pos" : 40
             },
             "details": {
                 "title": "Ernedc",
@@ -754,7 +754,7 @@
             "listing": {
                 "title": "Emissions reduction through innovative technologies in g/km (WLTP)",
                 "visible" : true,
-                "pos" : 31
+                "pos" : 41
             },
             "details": {
                 "title": "Erwltp",
@@ -776,7 +776,7 @@
             "listing": {
                 "title": "Deviation factor",
                 "visible" : true,
-                "pos" : 32
+                "pos" : 42
             },
             "details": {
                 "title": "De",
@@ -798,7 +798,7 @@
             "listing": {
                 "title": "Verification factor",
                 "visible" : true,
-                "pos" : 33
+                "pos" : 43
             },
             "details": {
                 "title": "Vf",
@@ -820,7 +820,7 @@
             "listing": {
                 "title": "Type of data",
                 "visible" : true,
-                "pos" : 34
+                "pos" : 44
             },
             "details": {
                 "title": "Status",
@@ -851,7 +851,7 @@
             "listing": {
                 "title": "Registration year",
                 "visible" : true,
-                "pos" : 35
+                "pos" : 45
             },
             "details": {
                 "title": "year",
@@ -880,9 +880,9 @@
         {
             "name": "Mb__kg_",
             "listing": {
-                "title": "Mb (kg)",
+                "title": "Mass in running order of the base vehicle in kg",
                 "visible" : true,
-                "pos" : 36
+                "pos" : 20
             },
             "details": {
                 "visible": false
@@ -899,9 +899,9 @@
         {
             "name": "TPMLM__kg_",
             "listing": {
-                "title": "TPMLM (kg)",
+                "title": "Technically permissible maximum laden mass in kg",
                 "visible" : true,
-                "pos" : 37
+                "pos" : 21
             },
             "details": {
                 "visible": false
@@ -918,9 +918,9 @@
         {
             "name": "Dam__kg_",
             "listing": {
-                "title": "Dam (kg)",
+                "title": "Default added mass in kg",
                 "visible" : true,
-                "pos" : 38
+                "pos" : 22
             },
             "details": {
                 "visible": false
@@ -937,9 +937,9 @@
         {
             "name": "Mf__kg_",
             "listing": {
-                "title": "Mf (kg)",
+                "title": "Final mass in kg",
                 "visible" : true,
-                "pos" : 39
+                "pos" : 23
             },
             "details": {
                 "visible": false
