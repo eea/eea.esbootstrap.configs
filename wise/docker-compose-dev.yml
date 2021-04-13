@@ -1,6 +1,6 @@
 version: '2'
 services:
-    wise:
+    wise_indexer:
         image: eeacms/esbootstrap:v3.0.36
         environment:
           VERSION_INFO: eeacms/esbootstrap:v3.0.22

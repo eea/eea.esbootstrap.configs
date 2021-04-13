@@ -31,7 +31,7 @@
             }
         },
         {
-            "name": "Use or activity",
+            "name": "Use_or_activity",
             "listing": {
                 "visible": true,
                 "title": "Use or activity",
@@ -48,7 +48,7 @@
             }
         },
         {
-            "name": "Measure name",
+            "name": "Measure_name",
             "listing": {
                 "visible": true,
                 "title": "Measure name",
@@ -77,7 +77,7 @@
             }
         },
         {
-            "name": "Origin of the measure",
+            "name": "Origin_of_the_measure",
             "listing": {
                 "visible": true,
                 "title": "Origin of the measure",
@@ -94,7 +94,7 @@
             }
         },
         {
-            "name": "Nature of the measure",
+            "name": "Nature_of_the_measure",
             "listing": {
                 "visible": true,
                 "title": "Nature of the measure",
@@ -111,7 +111,7 @@
             }
         },
         {
-            "name": "Water body category",
+            "name": "Water_body_category",
             "listing": {
                 "visible": true,
                 "title": "Water body category",
@@ -128,7 +128,7 @@
             }
         },
         {
-            "name": "Spatial scope",
+            "name": "Spatial_scope",
             "listing": {
                 "visible": true,
                 "title": "Spatial scope",
@@ -162,7 +162,7 @@
             }
         },
         {
-            "name": "Measure Impacts to",
+            "name": "Measure_Impacts_to",
             "listing": {
                 "visible": true,
                 "title": "Measure Impacts to",
@@ -179,7 +179,7 @@
             }
         },
         {
-            "name": "Measure Impacts to (further details)",
+            "name": "Measure_Impacts_to__further_details_",
             "listing": {
                 "visible": true,
                 "title": "Measure Impacts to (further details)",

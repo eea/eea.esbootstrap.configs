@@ -4,15 +4,15 @@
 
     "CodeCatalogue":{"type" : "text","analyzer" : "none"},
     "Sector": {"type" :"text", "analyzer" : "coma", "fielddata": true },
-    "Use or activity": {"type" :"text", "analyzer" : "none", "fielddata": true },
-    "Measure name":{"type" : "text","analyzer" : "none"},
+    "Use_or_activity": {"type" :"text", "analyzer" : "none", "fielddata": true },
+    "Measure_name":{"type" : "text","analyzer" : "none"},
     "Status": {"type" :"text", "analyzer" : "none", "fielddata": true },
-    "Origin of the measure": {"type" :"text", "analyzer" : "coma", "fielddata": true },
-    "Nature of the measure": {"type" :"text", "analyzer" : "none", "fielddata": true },
-    "Water body category": {"type" :"text", "analyzer" : "coma", "fielddata": true },
-    "Spatial scope": {"type" :"text", "analyzer" : "coma", "fielddata": true },
+    "Origin_of_the_measure": {"type" :"text", "analyzer" : "coma", "fielddata": true },
+    "Nature_of_the_measure": {"type" :"text", "analyzer" : "none", "fielddata": true },
+    "Water_body_category": {"type" :"text", "analyzer" : "coma", "fielddata": true },
+    "Spatial_scope": {"type" :"text", "analyzer" : "coma", "fielddata": true },
     "Country": {"type" :"text", "analyzer" : "coma", "fielddata": true },
-    "Measure Impacts to": {"type" :"text", "analyzer" : "coma", "fielddata": true },
-    "Measure Impacts to (further details)":{"type" : "text","analyzer" : "none"},
+    "Measure_Impacts_to": {"type" :"text", "analyzer" : "coma", "fielddata": true },
+    "Measure_Impacts_to__further_details_":{"type" : "text","analyzer" : "none"},
     "Descriptors": {"type" :"text", "analyzer" : "coma", "fielddata": true }
 }

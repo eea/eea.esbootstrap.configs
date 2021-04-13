@@ -11,12 +11,32 @@ descr_values = {
   "D10":"Marine litter",
   "D11":"Introduction of energy"
 }
+
+function rename_key(doc, old_key, new_key){
+  if (old_key !== new_key) {
+    doc[new_key] = doc[old_key];
+    delete doc[old_key];
+  }
+  return doc;
+}
+
+function normalize_doc(doc){
+  let keys = Object.keys(doc)
+  for (var i = 1; i < keys.length; i++){
+    let old_key = keys[i];
+    let new_key = old_key.replace(/[\W_]+?/g,"_");
+    doc = rename_key(doc, old_key, new_key)
+  }
+  return doc;
+}
+
 module.exports = function(doc){
     const _ = require('underscore');
     let modified_doc = {}
     modified_doc = _.extend(modified_doc, doc);
 
 //console.log(modified_doc)
+
     try{
       var descriptors = [];
       for (var i = 1; i < 12; i++){
@@ -53,8 +73,7 @@ module.exports = function(doc){
       if (modified_doc['Nature of the measure'] === 'technical measure'){
         modified_doc['Nature of the measure'] = 'technical measures';
       }
-
-
+      modified_doc = normalize_doc(modified_doc);
     }
     catch(err){
         console.log(err);
