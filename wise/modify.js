@@ -2,7 +2,7 @@ descr_values = {
   "D1":"Biodiversity",
   "D2":"NIS",
   "D3":"Commercial fish",
-  "D4":"food webs",
+  "D4":"Food webs",
   "D5":"Eutrophication",
   "D6":"Sea floor integrity",
   "D7":"Hydrographical alteration",
@@ -30,6 +30,10 @@ function normalize_doc(doc){
   return doc;
 }
 
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
 module.exports = function(doc){
     const _ = require('underscore');
     let modified_doc = {}
@@ -39,12 +43,15 @@ module.exports = function(doc){
 
     try{
       var descriptors = [];
+      var descriptors_flags = [];
       for (var i = 1; i < 12; i++){
         if (modified_doc['D' + i] !== 0){
           descriptors.push(descr_values['D' + i]);
+          descriptors_flags.push('D' + i);
         }
       }
-      modified_doc['Descriptors'] = descriptors.join(', ');
+      modified_doc['Descriptors'] = descriptors;
+      modified_doc['Descriptors_flags'] = descriptors_flags;
 
       if (modified_doc['Sector'] === 'Ports and Traffic'){
         modified_doc['Sector'] = 'Ports and traffic';
@@ -54,8 +61,20 @@ module.exports = function(doc){
         modified_doc['Use or activity'] = 'Not specified';
       }
 
-      if (modified_doc['Status'] === 'not specified'){
+      if ((modified_doc['Status'] === 'not specified') || (modified_doc['Status'] === '')){
         modified_doc['Status'] = 'Not specified';
+      }
+
+      if (modified_doc['Status'] === 'ident'){
+        modified_doc['Status'] = 'Identified';
+      }
+
+      if (modified_doc['Status'] === 'taken'){
+        modified_doc['Status'] = 'Taken';
+      }
+
+      if (modified_doc['Status'] === 'notident'){
+        modified_doc['Status'] = 'Not identified';
       }
 
       if (modified_doc['Spatial scope'] === 'not specified'){
@@ -66,13 +85,15 @@ module.exports = function(doc){
         modified_doc['Measure impacts to'] = 'Not specified';
       }
 
-      if (modified_doc['Nature of the measure'] === 'awareness raising, technical measure'){
-        modified_doc['Nature of the measure'] = 'awareness raising, technical measures';
+      let notm = modified_doc['Nature of the measure'].split(", ");
+      let notm_list = [];
+      for (var i = 0; i < notm.length; i++){
+        if (notm[i] === "technical measure"){
+          notm[i] = "technical measures"
+        }
+        notm_list.push(notm[i].capitalize());
       }
-
-      if (modified_doc['Nature of the measure'] === 'technical measure'){
-        modified_doc['Nature of the measure'] = 'technical measures';
-      }
+      modified_doc['Nature of the measure'] = notm_list;
       modified_doc = normalize_doc(modified_doc);
     }
     catch(err){
@@ -80,6 +101,5 @@ module.exports = function(doc){
         console.log("Index the document without modifications");
         modified_doc = doc;
     }
-//console.log(modified_doc)
     return modified_doc;
 }
