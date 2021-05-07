@@ -60,11 +60,12 @@
         "configuration": {
             "type": "json",
             "subtype": "discodata",
-            "bulksize": 5000,
+            "bulksize": 50000,
 
             "sql": true,
-            "sql_url": "https://discodata.eea.europa.eu/sql",
-            "sql_table": "[CO2Emission].[latest].[co2vans]",
+            "sql_url": "http://mudskipper.eea.dmz1:8083/sql",
+            "sql_table": "[CO2Emission_Internal].[stage].[co2vans]",
+
             "query_attr": "query",
             "query": "query.sql",
             "query_count": "query_count.sql",

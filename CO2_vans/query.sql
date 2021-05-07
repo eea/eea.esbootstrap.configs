@@ -63,6 +63,7 @@ from
     <TABLE>
 WHERE
     MS!='M1' and
-    ID>=<MIN_ID> and
-    ID<<MAX_ID>
+    ((ID>=<MIN_ID> and
+    ID<<MAX_ID>) or
+    len(id) > 7)
 order by uid

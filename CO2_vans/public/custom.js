@@ -181,7 +181,7 @@ $(window).bind('post_init_callback', function(){
             query = '{"query": {"bool": {"must": [{"term": {"year": "LAST_YEAR"}},{"match": {"Status": "f"}}],"must_not": [],"should": []}},"sort": [],"size": 0}';
             url = base_url + query.replace("LAST_YEAR", years[0].key);
             $.ajax({url: url, success: function(result){
-                if (result.hits.total > 0) {
+                if (result.hits.total.value > 0) {
                     // check final checkbox
                     $('.status_facet_checkbox[value="f"]').trigger("click");
                 }
