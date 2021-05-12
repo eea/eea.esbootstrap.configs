@@ -60,7 +60,7 @@ from
 WHERE
     MS!='M1' and
     year=2019 and
-    status='p'and
+    status='f'and
     ID>=<MIN_ID> and
     ID<<MAX_ID>
 order by uid
