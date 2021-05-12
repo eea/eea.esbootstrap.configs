@@ -9,12 +9,12 @@ function getMinMaxYear(callback){
 }
 
 function getStatus(min, max, callback){
-    query = '{"query": {"bool": {"must": [{"term": {"year": "' + max + '"}},{"match": {"scStatus": "Final"}}],"must_not": [],"should": []}},"sort": [],"size": 0}';
+    query = '{"track_total_hits": true, "query": {"bool": {"must": [{"term": {"year": "' + max + '"}},{"match": {"scStatus": "Final"}}],"must_not": [],"should": []}},"sort": [],"size": 0}';
     var url = window.location.origin + "/tools/api?source=" + query;
 
     $.ajax({url: url, success: function(result){
         status = 'Provisional';
-        if (result.hits.total > 0) {
+        if (result.hits.total.value > 0) {
             status = 'Final'
         }
         callback(min, max, status);
