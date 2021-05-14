@@ -1,9 +1,9 @@
 version: '2'
 services:
     wise_indexer:
-        image: eeacms/esbootstrap:v3.0.36
+        image: eeacms/esbootstrap:branch-es7
         environment:
-          VERSION_INFO: eeacms/esbootstrap:v3.0.22
+          VERSION_INFO: eeacms/esbootstrap:branch-es7
           elastic_host: es
           AUTO_INDEXING: 'false'
           elastic_index: wise
@@ -15,31 +15,19 @@ services:
           - ..:/code/config
 
     es:
-        image: eeacms/elastic:6.8-1.1
-        ports:
-            - 9200:9200
+        image: eeacms/elastic:7
         depends_on:
             - es-sysctl
+        ports:
+            - 9200:9200
         volumes:
             - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:z
 
         environment:
-            - "cluster.name=es6_test"
-            - "node.name=es6"
-            - "bootstrap.memory_lock=true"
-            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-            - "node.master=true"
-            - "node.data=true"
-            - "http.enabled=true"
-            - "RW_USER=rw"
-            - "RO_USER=ro"
-            - "RW_PASSWORD=rwtest"
-            - "RO_PASSWORD=rotest"
-            - "KIBANA_USER=user_kibana"
-            - "KIBANA_PASSWORD=kibana_pass"
-            - "KEY_PASSWORD=Abc123;"
-            - "KEYSTORE_PASSWORD=Def123;"
-            - "ENABLE_READONLY_REST=false"
+            - "cluster.name=es7_test"
+            - "node.name=es7_standalone"
+            - "discovery.type=single-node"
+            - "name=elastic7"
         ulimits:
             memlock:
                 soft: -1
@@ -53,7 +41,7 @@ services:
             - IPC_LOCK
 
         volumes_from:
-            - es-storage-volume
+            - es7-storage-volume
 
     es-sysctl:
         network_mode: none
@@ -63,7 +51,7 @@ services:
             - "SYSCTL_KEY=vm.max_map_count"
             - "SYSCTL_VALUE=262144"
 
-    es-storage-volume:
+    es7-storage-volume:
         network_mode: none
         image: rawmind/alpine-volume:0.0.2-1
         environment:
@@ -71,10 +59,8 @@ services:
             - SERVICE_GID=1000
             - SERVICE_VOLUME=/usr/share/elasticsearch/data
         volumes:
-            - es-storage-volume:/usr/share/elasticsearch/data
+            - es7-storage-volume:/usr/share/elasticsearch/data
 
 volumes:
-  es-storage-volume:
+  es7-storage-volume:
     driver: local 
-
-
