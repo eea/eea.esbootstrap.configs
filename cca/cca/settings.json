@@ -52,7 +52,7 @@
     "enableBreadcrumbs": false,
     "breadcrumbs": [{"Home":"https://climate-adapt.eea.europa.eu/"}, {"Climate adapt search": ""}],
     "dataprovencance_info_text": "Climate adapt search",
-    "dataprovencance_info_url": "climate adapt dev",
+    "dataprovencance_info_url": "https://github.com/eea/eea.esbootstrap.configs/tree/master/cca",
     "further_info": ""
   },
   "API":{
@@ -63,27 +63,21 @@
     "autoswitch": "true",
     "configuration": {
       "endpoint": "https://semantic.eea.europa.eu/sparql",
+      "fullreindex": true,
       "river_configs": [
         {
           "id": "climateadapt",
           "cluster_name": "climateadapt",
-          "config_file": "riverconfig_climateadapt.json"
+          "config_file": "riverconfig_aceitem.json"
         }
       ]
     }
   },
   "es_debug_enabled": false,
   "suggestions_enabled": true,
+  "autocorrect_disable": true,
+  "autocomplete_include_searchterm": true,
   "relevance_enabled": true,
-  "river_configs": {
-    "configs": [
-      {
-        "id": "climateadapt",
-        "cluster_name": "climateadapt",
-        "config_file": "riverconfig_climateadapt.json"
-      }
-    ]
-  },
 
   "endpoint": "https://semantic.eea.europa.eu/sparql",
   "selected_navigation_tab": "data-and-maps"

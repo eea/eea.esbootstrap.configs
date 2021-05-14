@@ -12,6 +12,7 @@ jQuery(document).ready(function($) {
     search_text_input_clear: true,
     enable_rangeselect: true,
     enable_geoselect: true,
+    settings_suggestions_enabled: true,
     resultModifier: updateResult,
 
     display_images: settings_display_images,
@@ -19,7 +20,7 @@ jQuery(document).ready(function($) {
     //search_sortby: settings_search_sortby,
     search_sortby: [
       {
-        'field': 'label',
+        'field': 'label.index',
         'display_asc': 'Title a-z',
         'display_desc': 'Title z-a'
       },
@@ -46,6 +47,8 @@ jQuery(document).ready(function($) {
       updatePagination();
       limitString();
       setupPage();
+      updateTitlesEmptyAcronym();
+      footerYearTypesInfo();
       $(window).trigger('post_search_callback');
     },
     paging: {
@@ -56,10 +59,57 @@ jQuery(document).ready(function($) {
     display_type: settings_default_display,
     predefined_filters: [{'term': {'hasWorkflowState': 'published'}}]
   };
+  function footerYearTypesInfo() {
+    setTimeout(function(){
+      $("h2.facetview_showtree[title='Year']").parent().hide();
+      types = [];
+      typeItems = $("li.selected[rel='typeOfData'] span.facet_label_text");
+      for (i=0;i<typeItems.length;i++) {
+          item = typeItems[i].textContent;
+          if (!['Organisations','Tools'].includes(item)) {
+              types.push(item);
+          }
+      }
+      typesYear1 = types.filter(value => ['Guidance','Indicators','Publications and reports'].includes(value));
+      typesYear2 = types.filter(value => ['Adaptation options','Case studies','Videos','Research and knowledge projects'].includes(value));
+      console.log(types);
+      console.log(typesYear1);
+      console.log(typesYear2);
+      if (0 == $("div#typeOfDataYearInfo").length ) {
+          $("<div id='typeOfDataYearInfo'></div>").insertAfter("div#facetview_results_wrapper");
+      }
+      htmlData = '';
+      if (typesYear1.length || typesYear2.length) {
+          if (typesYear1.length) {
+              htmlData += "<p>For "+typesYear1.join(", ")+" the year is the date of Publication</p>";
+          }
+          if (typesYear2.length) {
+              htmlData += "<p>For "+typesYear2.join(", ")+" the year is the publication in Climate ADAPT";
+          }
+          if (typesYear1.length || typesYear2.length) {
+              $("h2.facetview_showtree[title='Year']").parent().show();
+          }
+      }
+      $("#typeOfDataYearInfo").html(htmlData);
+    }, 500);
+  }
+
   function setupPage() {
     //$('.facetview_orderby').before($('.facetview_download'));
+    $(".portalMessage.attentionMessage").insertAfter(".facetview_top");
     $('.facetview_download').insertAfter($('.pull-right'));
     $('.facetview_download .eea_download_btn span').html('Download CSV');
+  }
+  function updateTitlesEmptyAcronym() {
+      $('#facetview_results_wrapper a').each(function(){
+          title = $(this).text(); // Get current url
+          if (title.endsWith(' ()')) {
+              $(this).text(title.substr(0, title.length-3));
+          }
+          if (title.endsWith(' (undefined)')) {
+              $(this).text(title.substr(0, title.length-12));
+          }
+      });
   }
   function updatePagination() {
       $('.facetview_top').css("display", "block");
@@ -68,8 +118,25 @@ jQuery(document).ready(function($) {
   }
   function limitString() {
     $.each($('.tileItem > .tileBody'), function(index, value) {
-      description = $(value).text();
-      $(value).text(description.slice(0, 400) + '...');
+      // description = $(value).text();
+      // $(value).text(description.slice(0, 400) + '...');
+      description = value.innerHTML;
+      if (description.length > 700) {
+        var new_description = description.slice(0, 700);
+        var slice_index = 700;
+        is_html = /<\/?[a-z][\s\S]*>/i.test(description.slice(slice_index - 5, slice_index + 5));
+        while(is_html) {
+            slice_index += 5;
+            is_html = /<\/?[a-z][\s\S]*>/i.test(description.slice(slice_index - 5, slice_index + 5));
+            new_description = description.slice(0, slice_index);
+
+            if (slice_index >= 900) {
+                new_description = description;
+                break;
+            }
+        }
+        value.innerHTML = new_description + '...';
+      }
     });
   }
 
@@ -81,6 +148,8 @@ jQuery(document).ready(function($) {
     opts.highlight_whitelist = eea_mapping.highlights.whitelist;
     opts.highlight_blacklist = eea_mapping.highlights.blacklist;
   }
+  window.settings_suggestions_enabled = true;
+  opts.relevance = settings_relevance,
   eea_facetview('.facet-view-simple', opts);
 });
 

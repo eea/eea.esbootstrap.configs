@@ -19,7 +19,7 @@
 
 var default_sort = [{}, {}];
 //default_sort[0][field_base + 'Country'] = {"order": 'asc'};
-default_sort[0]['Evaluation ID'] = {"order": 'asc'};
+default_sort[0]['Evaluation_ID'] = {"order": 'asc'};
 
 window.esbootstrap_options = {
     default_sort: default_sort

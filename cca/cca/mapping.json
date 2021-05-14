@@ -28,6 +28,10 @@
       "analyzer" : "date2year",
       "copy_to" : ["searchable_time_coverage"]
     },
+    "publication_year": {
+      "type" : "string",
+      "analyzer" : "date2year"
+    },
     "climate_impacts": {
       "type" : "string",
       "analyzer" : "none",
@@ -47,6 +51,10 @@
       "type" : "string",
       "analyzer" : "none",
       "fielddata": true
+    },
+    "websites":{
+      "type" : "text",
+      "analyzer" : "urlanalizer"
     },
     "macro-transnational-region": {
       "type" : "string",
@@ -68,10 +76,6 @@
       "null_value" : "en",
       "index": true
     },
-    "dataProvider":{
-       "type" : "string",
-       "copy_to" : ["organisation", "searchable_organisation"]
-     },
      "dataProcessor":{
        "type" : "string",
        "copy_to" : ["organisation", "searchable_organisation"]
@@ -138,11 +142,6 @@
     "year" : {
       "type" : "integer"
     },
-    "time_coverage" : {
-      "type" : "string",
-      "analyzer" : "date2year",
-      "copy_to" : ["searchable_time_coverage"]
-    },
     "format": {
       "type" : "string",
       "analyzer" : "none"
@@ -174,5 +173,17 @@
     },
     "is_replaced": {
       "type" : "string"
+    },
+    "funding_programme": {
+      "type" : "keyword"
+    },
+    "long_description" : {
+      "type" : "string",
+      "fields" : {
+        "toindex" : {"type" : "text", "analyzer" : "default", "fielddata": true},
+        "index" : {"type" : "keyword"},
+        "eea_long_description": {"type": "keyword", "index": true}
+      },
+      "copy_to" : ["did_you_mean", "autocomplete"]
     }
 }

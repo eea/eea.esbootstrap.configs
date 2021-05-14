@@ -5,16 +5,15 @@
   "elastic": {
     "index": "climate-health",
     "type": "resource",
-    "field_base":"",
+    "field_base": "",
     "enableValuesCounting": true
   },
   "external_templates": {
     "local_path": "/external_templates",
-    "protocol": "http",
-    "host": "apache",
-    "port": "80",
+    "protocol": "https",
+    "host": "climate-adapt.eea.europa.eu",
     "head_path": "/observatory/external-template-head-dont-load",
-    "header_path": "/observatory/external-template-header",
+    "header_path": "/observatory/About/external-template-header",
     "footer_path": "/observatory/external-template-footer-dont-load"
   },
   "layout_vars": {
@@ -25,26 +24,19 @@
     "override_searchserver_resources": false,
     "css_resources": {
       "index_page": [
-          "css/no-more-tables.css",
-          "css/esbootstrap.facetview.css",
+        "css/no-more-tables.css",
+        "css/esbootstrap.facetview.css",
         "css/climateadapt.facetview.css"
       ],
-      "details_page": [
-      ],
+      "details_page": [],
 
-      "layout_page": [
-        "css/cca-search.css",
-        "css/custom.css"
-      ]
+      "layout_page": ["css/cca-search.css", "css/custom.css"]
     },
     "js_resources": {
-      "index_page": [
-      ],
+      "index_page": [],
       "details_page": [],
-      "layout_page_commented": [
-      ],
-      "layout_page" : [
-
+      "layout_page_commented": [],
+      "layout_page": [
         "javascripts/climateadapt.facetview.js",
         "javascripts/cca.facetview.js",
 
@@ -53,21 +45,26 @@
         "javascripts/layoutFix.js"
       ]
     },
-    "site_title": "bla",
+    "site_title": "Climate-ADAPT search health catalog",
     "site_description": "",
-    "enableBreadcrumbs": false,
-    "breadcrumbs": [{"Home":"https://climate-adapt.eea.europa.eu/"}, {"Climate adapt search": ""}],
+    "enableBreadcrumbs": true,
+    "breadcrumbs": [
+      { "Home": "/observatory" },
+      { "Resource catalogue": "" },
+      { "Complete catalogue": "" }
+    ],
     "dataprovencance_info_text": "Climate adapt search",
-    "dataprovencance_info_url": "climate adapt dev",
+    "dataprovencance_info_url": "https://github.com/eea/eea.esbootstrap.configs/tree/master/cca",
     "further_info": ""
   },
-  "API":{
+  "API": {
     "token": "default"
   },
   "source": {
     "type": "rdfriver",
     "autoswitch": "true",
     "configuration": {
+      "fullreindex": true,
       "endpoint": "https://semantic.eea.europa.eu/sparql",
       "river_configs": [
         {
@@ -80,6 +77,7 @@
   },
   "es_debug_enabled": false,
   "suggestions_enabled": true,
+  "autocorrect_disable": true,
   "relevance_enabled": true,
   "river_configs": {
     "configs": [
@@ -90,7 +88,6 @@
       }
     ]
   },
-
 
   "endpoint": "https://semantic.eea.europa.eu/sparql",
   "selected_navigation_tab": "data-and-maps"

@@ -2,6 +2,7 @@
     "fields_boosting":{
         "fields":[
             "title^2",
+            "acronym^3",
             "subject^1.5",
             "description^1.5",
             "searchable_spatial^1.2",
@@ -14,16 +15,13 @@
             "all_fields_for_freetext"
         ]
     },
-    "functions":{
-        "gauss": {
-            "issued.date": {
+    "functions":[
+        {"gauss": {
+            "issued": {
                 "scale": "14d"
             }
-        },
-        "script_score": {
-            "script": "doc['items_count_references'].value*0.01"
-        }
-    },
+        }}
+    ],
     "score_mode":"sum",
     "facet_decay_functions": {
         "topic": {

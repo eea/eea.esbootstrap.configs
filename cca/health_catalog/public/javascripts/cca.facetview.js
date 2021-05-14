@@ -13,6 +13,7 @@ jQuery(document).ready(function($) {
     search_text_input_clear: true,
     enable_rangeselect: true,
     enable_geoselect: true,
+    settings_suggestions_enabled: true,
     display_images: settings_display_images,
     default_sort: [],
     search_sortby: settings_search_sortby,
@@ -35,6 +36,10 @@ jQuery(document).ready(function($) {
       localArticleView();
       viewChartMode();
       checkShowArticleDefault();
+      updateCurrentArticleLinks();
+      updateTitlesEmptyAcronym();
+      topTypeOfDataItems();
+      topTypeOfDataChange();
     },
     paging: {
       from: 0,
@@ -43,6 +48,26 @@ jQuery(document).ready(function($) {
     display_type_options: settings_display_options,
     display_type: settings_default_display
   };
+  function updateTitlesEmptyAcronym() {
+      $('#facetview_results_wrapper a').each(function(){
+          title = $(this).text(); // Get current url
+          if (title.endsWith(' ()')) {
+              $(this).text(title.substr(0, title.length-3));
+          }
+      });
+  }
+  function updateCurrentArticleLinks() {
+      $('#facetview_results_wrapper a').each(function(){
+          oldUrl = $(this).attr("href"); // Get current url
+          url = oldUrl.replace('https://','').split('/');
+          oldUrl = '/'+url.splice(2).join('/');
+
+          var newUrl = '/observatory/++aq++metadata' + oldUrl + '?bs=1';
+
+          $(this).attr("href", newUrl);
+      });
+  }
+
   function updatePagination() {
       $('.facetview_top').css("display", "block");
       $('.top-pagination').css("display", "block");
@@ -63,24 +88,20 @@ jQuery(document).ready(function($) {
     }
   }
   function localArticleView() {
+      /*
     $('#facetview_results_wrapper a.eea-tileInner,a.state-published').click(function(event) {
         event.preventDefault();
-        var pathName = $(this)[0].pathname;
 
-        params = new URLSearchParams(window.location.search);
+        link = this.href.substring(this.href.indexOf('?'))
+        params = new URLSearchParams(link);
         source = params.get('source');
-        var sourceData = JSON.parse(source);
-        sourceData['focusPath'] = pathName;
-        history.pushState('', '', window.location.pathname+'?source='+encodeURIComponent(JSON.stringify(sourceData)));
+        sourceData = JSON.parse(source);
+        $(this).html(this.text + ' <img src="https://www.eea.europa.eu/++resource++faceted_images/ajax-loader-small.gif">');
 
-        var els = $("a.state-published[href$='"+pathName+"']");
-        for(i=0;i<els.length;i++) {
-            console.log(els[i].text)
-            $(els[i]).html(els[i].text+' <img src="https://www.eea.europa.eu/++resource++faceted_images/ajax-loader-small.gif">');
-        }
-        showArticle(pathName);
+        showArticle(sourceData.focusPath, false);
         return false;
     });
+    */
   }
 
   if (window.esbootstrap_options) {
@@ -91,18 +112,60 @@ jQuery(document).ready(function($) {
     opts.highlight_whitelist = eea_mapping.highlights.whitelist;
     opts.highlight_blacklist = eea_mapping.highlights.blacklist;
   }
+  opts.relevance = settings_relevance,
   eea_facetview('.facet-view-simple', opts);
+
+  $('body').on('click', '.typeOfDataClick', function() {
+      $("li[title='"+$(this).attr('title')+"'] a").click()
+      return false;
+  });
+
+
+  $('#facetview_rightcol').on('hover', '.eea-tileBody', function() {
+    var $this = $(this);
+    var $eea_tile_head = $this.prev();
+    var $description = $this.find('.eea-tileDescription');
+    if (!$description.html()) {
+      return;
+    }
+
+    if ($description.css('display') === "block") {
+        // $description.hide()
+        $this.children('h4').show();
+    }
+    else {
+        $this.children('h4').hide();
+        // $description.show();
+    }
+
+    // $eea_tile_head.find('.eea-tileThumb').toggleClass('eea-tileHovered');
+    // $description.stop().animate({
+    //   height: "toggle",
+    //   opacity: 'toggle'
+    // });
+  });
 });
 
 function checkShowArticleDefault() {
     if (focusArticlePath.length) {
         $('#facetview_rightcol').addClass('hide');
         showArticle(focusArticlePath);
+
+        params = new URLSearchParams(window.location.search);
+        source = params.get('source');
+        var sourceData = JSON.parse(source);
+        sourceData['focusPath'] = focusArticlePath;
+        newUrl = window.location.origin+window.location.pathname+'?source='+encodeURIComponent(JSON.stringify(sourceData));
+        window.history.replaceState({}, 'Health Observatory Resource Catalogue', newUrl);
+
         focusArticlePath = '';
     }
 }
 
-function showArticle(pathName) {
+function showArticle(pathName, addLoader = true) {
+    if (addLoader) {
+        $('#facetview').html('<img src="https://www.eea.europa.eu/++resource++faceted_images/ajax-loader.gif">');
+    }
     if ($('#facetview_article_content').length == 0) {
         $( "#facetview_rightcol" ).after("<div id='facetview_article' class='hide row-fluid'><div id='facetview_article_content'></div></div>");
     }
@@ -114,24 +177,63 @@ function showArticle(pathName) {
             delete sourceData.focusPath;
         }
         backButtonPath = window.location.pathname+'?source='+encodeURIComponent(JSON.stringify(sourceData));
-        backButton = "<a href='"+backButtonPath+"' style='color:white;margin-bottom:10px;width:100%;text-align:center;' class='button-field standard-button primary-button' id='faceview_article_back_to_list'>back to search</a>";
+        backButton = '<div style="margin-bottom:25px !important;"><i class="fa fa-arrow-left" aria-hidden="true"></i>  <a style="text-decoration:none;" href="'+backButtonPath+'" id="faceview_article_back_to_list">back to search</a><br></div>';
 
         var parser = new DOMParser();
         var doc = parser.parseFromString(data, "text/html");
-        $('#facetview_article_content').html(doc.getElementById("content-core"));
-        $('.content-sidebar').prepend(backButton);
 
-        $('.eea-section.eea-right-section').html('<div class="health_contribute"><h4>Contribute to the Observatory</h4><span class="link-mailto"><a href="mailto:climate.adapt@eea.europa.eu" class="submit-widget button-field standard-button primary-button" target="_blank">Send us an email <i class="pull-right fa fa-envelope"></i></a></span></div>');
-        $('.share-your-info-ace-button').addClass('hide');
-        $('#facetview_article').removeClass('hide');
-        $('#facetview_rightcol').addClass('hide');
+        $('#facetview').html(doc.getElementById("content-core"));
+        $('#facetview').prepend(backButton);
+        $(".share-your-info-ace-button").appendTo("#content-core");
+
+        document.getElementById('links').onclick = function (event) {
+          event = event || window.event;
+          var target = event.target || event.srcElement,
+            link = target.src ? target.parentNode : target,
+            options = {
+              index: link, event: event,
+              onslide: function (index, slide) {
+                self = this;
+                var initializeAdditional = function (index, data, klass, self) {
+                  var text = self.list[index].getAttribute(data),
+                    node = self.container.find(klass);
+                  node.empty();
+                  if (text) {
+                    node[0].appendChild(document.createTextNode(text));
+                  }
+                };
+                initializeAdditional(index, 'data-description', '.description', self);
+                initializeAdditional(index, 'data-copyright', '.casestudies-gallery-copyright', self);
+              }
+            },
+            links = this.getElementsByTagName('a');
+          blueimp.Gallery(links, options);
+        };
+
     });
 }
 
 function limitString() {
   $.each($('.tileItem > .tileBody'), function(index, value) {
-    description = $(value).text();
-    $(value).text(description.slice(0, 700) + '...');
+    // description = $(value).text();
+    // $(value).text(description.slice(0, 700) + '...');
+
+    description = value.innerHTML;
+    if (description.length > 700) {
+      var new_description = description.slice(0, 700);
+      var slice_index = 700;
+      is_html = /<\/?[a-z][\s\S]*>/i.test(description.slice(slice_index - 5, slice_index + 5));
+      while(is_html) {
+          slice_index += 5;
+          is_html = /<\/?[a-z][\s\S]*>/i.test(description.slice(slice_index - 5, slice_index + 5));
+          new_description = description.slice(0, slice_index);
+          if (slice_index >= 900) {
+              new_description = description;
+              break;
+          }
+      }
+      value.innerHTML = new_description + '...';
+    }
   });
 }
 
@@ -195,6 +297,66 @@ function populateChart(response, categories, current, parent = 0) {
         response.children.push({'name':current ,'children':[]});
     }
     return [response, categories, catPosition];
+}
+
+function topTypeOfDataItems() {
+    if (0 == $('div.db-categories.flex-wrapper').length) {
+        types = [
+            {icon:'fa-file-text-o', name:'Case studies'},
+            {icon:'fa-compass', name:'Guidance'},
+            {icon:'fa-area-chart', name:'Indicators'},
+            {icon:'fa-info-circle', name:'Information portals'},
+            {icon:'fa-newspaper-o', name:'Publications and reports'},
+            {icon:'research-icon', name:'Research and knowledge projects'},
+            {icon:'fa-wrench', name:'Tools'},
+            {icon:'fa-file-video-o', name:'Videos'},
+        ];
+        response = '<div class="db-categories flex-wrapper">';
+        for (i=0;i<types.length;i++) {
+            response += '<div class="db-category-wrapper">'
+                + '<a href="#" class="typeOfDataClick" title="'+types[i].name+'">'
+                  + '<span class="db-category-icon">'
+                    + '<i class="fa '+types[i].icon+'"></i>'
+                    + '<span class="total-items"></span>'
+                  + '</span>'
+                  + '<p>'+types[i].name+'</p>'
+                +'</a>'
+              +'</div>';
+        }
+        response +="</div>";
+        $( response ).insertBefore( ".facetedview_search" );
+    }
+}
+
+function topTypeOfDataChange() {
+    setTimeout(function(){
+        types = [
+            {icon:'fa-file-text-o', name:'Case studies'},
+            {icon:'fa-compass', name:'Guidance'},
+            {icon:'fa-area-chart', name:'Indicators'},
+            {icon:'fa-info-circle', name:'Information portals'},
+            {icon:'fa-newspaper-o', name:'Publications and reports'},
+            {icon:'research-icon', name:'Research and knowledge projects'},
+            {icon:'fa-wrench', name:'Tools'},
+            {icon:'fa-file-video-o', name:'Videos'},
+        ];
+        $('.db-category-wrapper').removeClass('opacity').removeClass('active');
+        for (i=0;i<types.length;i++) {
+            countLabel = $("li[title='"+types[i].name+"'] span.facet_label_count")
+            typeCount = 0;
+            if (countLabel.length) {
+                typeCount = countLabel[0].innerHTML;
+            }
+            $(".db-category-wrapper a[title='"+types[i].name+"'] span.total-items").html(typeCount);
+            if (0 == typeCount) {
+                $(".db-category-wrapper a[title='"+types[i].name+"']").parent().addClass('opacity');
+            }
+
+            if ($("li.selected[title='"+types[i].name+"']").length) {
+                $(".db-category-wrapper a[title='"+types[i].name+"']").parent().addClass('active');
+            }
+        }
+    }, 500);
 }
 
 function showChart(divId, dataArray) {

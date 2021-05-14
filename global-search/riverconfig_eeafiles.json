@@ -3,5 +3,8 @@
 
   "syncConditions": [
     "{?resource a <http://www.eea.europa.eu/portal_types/File#File>}"
-  ]
+  ],
+
+  "graphSyncConditions": ["?resource <http://www.eea.europa.eu/ontologies.rdf#objectProvides> ?op .FILTER (?op in ('eea.mediacentre.interfaces.IVideo', 'Products.EEAContentTypes.content.interfaces.ICountryProfile'))"]
+
 }

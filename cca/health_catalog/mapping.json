@@ -28,6 +28,10 @@
       "analyzer" : "date2year",
       "copy_to" : ["searchable_time_coverage"]
     },
+    "publication_year": {
+      "type" : "string",
+      "analyzer" : "date2year"
+    },
     "climate_impacts": {
       "type" : "string",
       "analyzer" : "none",
@@ -44,6 +48,11 @@
       "fielddata": true
     },
     "origin_website":{
+      "type" : "string",
+      "analyzer" : "none",
+      "fielddata": true
+    },
+    "websites":{
       "type" : "string",
       "analyzer" : "none",
       "fielddata": true
@@ -124,6 +133,11 @@
     },
     "health_impacts" : {
       "type" : "string",
+      "analyzer" : "none"
+    },
+    "partner_contributors" : {
+      "type" : "string",
+      "fielddata": true,
       "analyzer" : "none"
     },
     "title" : {

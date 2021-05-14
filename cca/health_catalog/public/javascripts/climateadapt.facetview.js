@@ -21,9 +21,18 @@ window.esbootstrap_options = {
   },
   display_type: 'list',   // list
   resultModifier: updateResult,
+  settings_suggestions_enabled: true,
   initialsearch: true,
   //predefined_filters: [{'term': {'hasWorkflowState': 'published'}}, {'term': {'sectors': 'Health'}}, {'term': {'include_in_observatory': 'True'}}],
-  predefined_filters: [{'term': {'hasWorkflowState': 'published'}}, {'term': {'include_in_observatory': 'True'}}],
+  //predefined_filters: [{'term': {'hasWorkflowState': 'published'}}, {'term': {'include_in_observatory': 'True'}}, {'term': {'typeOfData': 'Indicator', 'Tools', 'Guidance'}}],
+
+
+
+  predefined_filters: [
+      {'term': {'hasWorkflowState': 'published'}},
+      {'term': {'include_in_observatory': 'True'}}
+  ],
+
   //predefined_filters: [{'term': [{'hasWorkflowState': 'published'},{'sectors':'Health'}]}],
   /*
   predefined_filters : [

@@ -1,0 +1,80 @@
+version: '2'
+services:
+    wise_indexer:
+        image: eeacms/esbootstrap:v3.0.36
+        environment:
+          VERSION_INFO: eeacms/esbootstrap:v3.0.22
+          elastic_host: es
+          AUTO_INDEXING: 'false'
+          elastic_index: wise
+          APP_CONFIG_DIRNAME: wise
+          elastic_appalias: 'latest'
+        ports:
+          - '3000:3000'
+        volumes:
+          - ..:/code/config
+
+    es:
+        image: eeacms/elastic:6.8-1.1
+        ports:
+            - 9200:9200
+        depends_on:
+            - es-sysctl
+        volumes:
+            - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:z
+
+        environment:
+            - "cluster.name=es6_test"
+            - "node.name=es6"
+            - "bootstrap.memory_lock=true"
+            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+            - "node.master=true"
+            - "node.data=true"
+            - "http.enabled=true"
+            - "RW_USER=rw"
+            - "RO_USER=ro"
+            - "RW_PASSWORD=rwtest"
+            - "RO_PASSWORD=rotest"
+            - "KIBANA_USER=user_kibana"
+            - "KIBANA_PASSWORD=kibana_pass"
+            - "KEY_PASSWORD=Abc123;"
+            - "KEYSTORE_PASSWORD=Def123;"
+            - "ENABLE_READONLY_REST=false"
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+            nofile:
+                soft: 65536
+                hard: 65536
+        mem_limit: 4073741824
+        mem_swappiness: 0
+        cap_add:
+            - IPC_LOCK
+
+        volumes_from:
+            - es-storage-volume
+
+    es-sysctl:
+        network_mode: none
+        image: rawmind/alpine-sysctl:0.1
+        privileged: true
+        environment:
+            - "SYSCTL_KEY=vm.max_map_count"
+            - "SYSCTL_VALUE=262144"
+
+    es-storage-volume:
+        network_mode: none
+        image: rawmind/alpine-volume:0.0.2-1
+        environment:
+            - SERVICE_UID=1000
+            - SERVICE_GID=1000
+            - SERVICE_VOLUME=/usr/share/elasticsearch/data
+        volumes:
+            - es-storage-volume:/usr/share/elasticsearch/data
+
+volumes:
+  es-storage-volume:
+    driver: local 
+
+

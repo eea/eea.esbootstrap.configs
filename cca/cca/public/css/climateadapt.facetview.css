@@ -59,9 +59,15 @@
     margin-top: -2px;
 }
 
+.eea-list-tiles div.tileItem h2 img {
+    display:none;
+}
 @media handheld, screen and (max-device-width: 480px){
     input, textarea {
         font-size: 140% !important;
         font-family: inherit !important;
     }
+}
+.portalMessage.attentionMessage.no-results-message {
+    font-size: 14px;
 }

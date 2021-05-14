@@ -1,10 +1,49 @@
+@font-face {
+  font-family: "FontAwesome";
+  src: url("/observatory/catalogue/fonts-search/fontawesome-webfont.eot?v=4.7.0"),
+    url("/observatory/catalogue/fonts-search/fontawesome-webfont.eot?v=4.7.0")
+      format("embedded-opentype"),
+    url("/observatory/catalogue/fonts-search/fontawesome-webfont.woff?v=4.7.0")
+      format("woff"),
+    url("/observatory/catalogue/fonts-search/fontawesome-webfont.woff2?v=4.7.0")
+      format("woff2"),
+    url("/observatory/catalogue/fonts-search/fontawesome-webfont.ttf?v=4.7.0")
+      format("truetype"),
+    url("/observatory/catalogue/fonts-search/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  position: absolute !important;
+  width: 100%;
+  height: unset !important;
+}
+
+div#facetview_rightcol {
+  width: 74%;
+  margin-right: 0px;
+}
+
+div#facetview_rightcol #filterInput {
+  width: 100%;
+}
+
+div#facetview_rightcol .row {
+  margin-top: 0.7em;
+}
+
 .eea-list-tiles .tileItem .tileImage {
   max-width: 20%;
 }
 
 .eea-list-tiles .tileItem .tileBody {
-  /* height: 9em; */
-  /* overflow: hidden; */
+  margin-top: 1em;
+}
+
+.tileHeadline {
+  margin-bottom: 0 !important;
 }
 
 .image-hide {
@@ -16,24 +55,8 @@
   display: inline;
 }
 
-@font-face{font-family:'FontAwesome';src:url("/observatory/catalogue/fonts-search/fontawesome-webfont.eot?v=4.7.0"),
-  url("/observatory/catalogue/fonts-search/fontawesome-webfont.eot?v=4.7.0") format("embedded-opentype"),
-  url("/observatory/catalogue/fonts-search/fontawesome-webfont.woff?v=4.7.0") format("woff"),
-  url("/observatory/catalogue/fonts-search/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
-  url("/observatory/catalogue/fonts-search/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
-  url("/observatory/catalogue/fonts-search/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");font-weight:normal;font-style:normal
-}
-
-body {
-  position: absolute !important;
-  width: 100%;
-  height: unset !important;
-}
-
-div#facetview_rightcol {
-  /* width: 76%; */
-  margin-right: 0px;
-  padding-left: 3em;
+.tileItem .visualClear {
+  padding: 0 !important;
 }
 
 .eea-icon {
@@ -45,27 +68,29 @@ div#facetview_rightcol {
   font-family: FontAwesome;
   font-size: inherit;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased
+  -webkit-font-smoothing: antialiased;
 }
+
 .eea-icon:before {
-  margin: 0 .3em;
+  margin: 0 0.3em;
 }
+
 .eea-icon-home:before {
   content: "\f015";
 }
 
 .eea-icon-lg {
   font-size: 1.333em;
-  line-height: .75em;
-  vertical-align: -15%
+  line-height: 0.75em;
+  vertical-align: -15%;
 }
 
 .eea-icon-2x {
-  font-size: 2em
+  font-size: 2em;
 }
 
 .eea-icon-5x {
-  font-size: 5em
+  font-size: 5em;
 }
 
 #content .jstree-container-ul {
@@ -73,94 +98,611 @@ div#facetview_rightcol {
 }
 
 .eea-right-section {
-  float: left !important;
+  float: right !important;
+  width: 22.5% !important;
 }
 
 .eea-icon.eea-icon-right {
-    padding-top: 15px !important;
+  padding-top: 15px !important;
+  color: #3a3a3a;
 }
 
 footer {
   margin-top: 40px !important;
 }
-#facetview_article .content-sidebar,
-#facetview_article .content-column
-{
-    border:0px;
-}
-/*
-#facetview_results_wrapper {
-    display:none;
-}
-*/
-/*
-#filterTitle h2{
-    margin-top: -5px;
-}
-*/
-#content .eea-accordion-panels .eea-accordion-panel > h2.facetview_open,
-#content .eea-accordion-panels .eea-accordion-panel > h2.facetview_showtree
-{
-    padding-left:5px;
-}
-#content .filters-header .current-filters-collapsible .filters-header__header .facetview_arrow_right {
-    margin-top: -10px;
-}
-.eea-right-section h3 {
-    display: none;
-}
-/*#facetview_trees {
-    padding-top:100px !important;
-}*/
-#facetview_rightcol {
-    margin-top: -5px;
-}
-#filterDisplayAs .i18n.eea-icon {
-    border:0px;
-    font-size:30px;
-    color:#000;
-    padding:0px;
-}
-#filterDisplayAs .i18n.eea-icon:hover {
-    border:0px;
-    color:#000;
-    background-color: #fff;
-}
-#filterDisplayAs .i18n.eea-icon.selected {
-    background-color: #fff;
-    color:#2d749c;
-}
-.eea-icon.list:before {
-    content: "\f0c9";
-}
-.eea-icon.card:before {
-    content: "\f00a";
-}
-.eea-icon.tabular:before {
-    content: "\f19e";
-}
-.eea-icon-remove:before, .eea-icon-close:before, .eea-icon-times:before {
-    content: "\f00d";
-}
-.eea-icon-search:before {
-    content: "\f002";
-}
-#content .facetview_selection a {
-    padding-top: 3px;
-}
-#search_text {
 
+#facetview_article .content-sidebar,
+#facetview_article .content-column {
+  border: 0px;
 }
-#facetview_article p{
-    font-size: 14px !important;
+
+#content .eea-accordion-panels .eea-accordion-panel > h2.facetview_open,
+#content .eea-accordion-panels .eea-accordion-panel > h2.facetview_showtree {
+  padding-left: 5px;
+  margin: 10px 0;
 }
+
+#content #facetview_trees .eea-accordion-panel > h2:hover,
+#content #facetview_trees .eea-accordion-panel > h2.facetview_open:hover {
+  background-color: transparent !important;
+}
+
+#content
+  .filters-header
+  .current-filters-collapsible
+  .filters-header__header
+  .facetview_arrow_right {
+  margin-top: -10px;
+}
+
+.eea-right-section h3 {
+  display: none;
+}
+
+#facetview_rightcol {
+  margin-top: -5px;
+}
+
+#filterSort {
+  float: right;
+}
+
+#filterSort .facetview_orderby {
+  float: right;
+  color: grey;
+  border-color: #2773b5;
+  height: 22px;
+  width: 79px;
+  position: relative;
+  top: 3px;
+  border-radius: 0;
+  padding: 0;
+}
+
+#filterSort .facetview_orderby span.i18n:first-child {
+  font-size: 15px;
+  font-family: "OpenSansB";
+  position: relative;
+  top: -7px;
+}
+
+#filterSort .filter-by.facetview_orderby {
+  float: left;
+  color: #2773b5;
+}
+
+#filterDisplayAs,
+#filterSort,
+.top-pagination {
+  display: inline-block;
+}
+
+#filterDisplayAs .i18n.eea-icon {
+  border: 0px;
+  font-size: 20px;
+  color: #000;
+  padding: 0px;
+}
+
+#filterDisplayAs .i18n.eea-icon:hover {
+  border: 0px;
+  color: #000;
+  background-color: #fff;
+}
+
+#filterDisplayAs .i18n.eea-icon.selected {
+  background-color: #fff;
+  color: #2d749c;
+}
+
+.facetview_display_type {
+  color: #2773b5;
+  font-weight: 700;
+}
+
+.top-pagination {
+  color: #2773b5;
+  font-weight: 700;
+}
+
+.orderby {
+  font-weight: 700;
+}
+
+.facetview_group_title.facetview_group_title4 {
+  display: none;
+}
+
+.facetview_selected {
+  margin-right: 0;
+}
+
+#content .facetview_top option {
+  color: grey;
+}
+
+.eea-icon.list:before {
+  content: "\f0c9";
+}
+
+.eea-icon.card:before {
+  content: "\f00a";
+}
+
+.eea-icon.tabular:before {
+  content: "\f19e";
+}
+
+.eea-icon-remove:before,
+.eea-icon-close:before,
+.eea-icon-times:before {
+  content: "\f00d";
+}
+
+.eea-icon-search:before {
+  content: "\f002";
+}
+
+#content .facetview_selection a {
+  position: absolute;
+  top: 0;
+  right: -8px;
+  transform: translate(-50%);
+}
+
+#content .status_facetview_selection:hover {
+  background-color: #8a9b41;
+}
+
+#content .status_facetview_selection span {
+  color: white;
+  font-family: "OpenSansL";
+  font-weight: inherit;
+  font-size: 14px;
+}
+
+#content .facetview_selection a i {
+  color: black;
+  height: 17px;
+  width: 17px;
+}
+
+#content .facetview_filterselected .eea-icon {
+  position: relative;
+}
+
+#content .facetview_filterselected .eea-icon-times:before {
+  position: relative;
+  top: 2px;
+  left: 1px;
+}
+
+.facet-view-simple {
+  margin-top: 3em;
+}
+
+.facetedview_search {
+  margin-bottom: 2em;
+}
+
+.facetview_filterselected .eea-icon {
+  margin-top: 0;
+}
+
+#facetview_article p {
+  font-size: 14px !important;
+}
+
 #facetview_article_content .content-column,
 #facetview_article_content .content-sidebar,
-#facetview_article_content .aceitem_top h2
-{
-    padding-top:0px !important;
+#facetview_article_content .aceitem_top h2 {
+  padding-top: 0px !important;
 }
-#facetview_article_content .aceitem_top h2
-{
-    margin-top:0px !important;
+
+#facetview_article_content .aceitem_top h2 {
+  margin-top: 0px !important;
+}
+
+body.collapsed #filterTitle {
+  top: 65px;
+}
+
+body.collapsed #eea-above-columns {
+  top: 180px;
+}
+
+#filterTitle {
+  background: linear-gradient(10deg, #1172b5 0, #1172b5 57%, #839948 100%);
+  width: 100%;
+  display: flex;
+  position: absolute;
+  height: 100px;
+  top: 127px;
+  align-items: center;
+}
+
+#filterTitle h2 {
+  color: white;
+  font-size: 35px;
+  margin: 0;
+  font-family: "OpenSansR";
+}
+
+@media only screen and (max-width: 1240px) and (min-width: 1160px) {
+  #filterTitle {
+    top: 125px;
+  }
+}
+
+.filters-header {
+  display: none;
+}
+
+.facetview-filter-values {
+  display: block;
+}
+
+body.site-observatory .site-container.main-area {
+  top: 140px;
+}
+
+.facetview_top {
+  border-bottom: 1px solid #4a94c6;
+  text-align: right;
+  margin-top: 8px !important;
+}
+
+.facetview_top .top-pagination,
+.facetview_display_type span.i18n:first-child,
+.facetview_orderby span.i18n:first-child {
+  font-size: 15px;
+  font-family: "OpenSansB";
+}
+
+.facetview_orderby span.i18n:first-child {
+  position: relative;
+  top: -4px;
+}
+
+#eea-above-columns {
+  position: absolute;
+  top: 240px;
+}
+
+#portal-breadcrumbs li {
+  display: inline-block;
+}
+
+#content .status_facetview_selection,
+#content .year_facetview_selection,
+#content .facetview_selection {
+  background-color: #8a9b41;
+  padding: 3px 2em 3px 0.8em;
+  position: relative;
+}
+
+#content .status_facetview_selection span,
+#content .year_facetview_selection span,
+#content .facetview_selection span {
+  color: white;
+  font-weight: normal;
+  margin-right: 8px;
+}
+
+#content .year_facetview_selection a i,
+#content .facetview_selection a i {
+  color: black;
+}
+
+#content .facetview_selection:hover {
+  background-color: #b0bfcc;
+}
+
+.facetview_filter.eea-accordion-panel {
+  border-bottom: 1px solid #949494;
+}
+
+.facetview-filter-values {
+  padding-left: 0 !important;
+  margin-bottom: 0;
+}
+
+.facetview_selection {
+  float: none;
+  display: table;
+  margin: 13px 0 0 0 !important;
+}
+
+#content .facetview_filter_options {
+  border-bottom: none;
+  border-top: 1px solid #949494;
+}
+
+.facetview_filter_options span,
+#content .facet_value_operator {
+  font-weight: bold;
+  font-family: "OpenSansB";
+}
+
+footer {
+  position: relative;
+  top: 150px;
+}
+
+.filters-text {
+  font-family: "OpenSansR";
+  font-size: 15px;
+  margin-top: 30px;
+  display: block;
+  padding-left: 5px;
+}
+
+.current-filters {
+  display: block;
+  align-items: center;
+  margin-top: 0 !important;
+}
+
+.facetview_showtree_eealabel {
+  color: #3a3a3a;
+}
+
+.facetedview_search input {
+  color: #2773b5;
+  border-radius: 50px;
+  padding-left: 2.5em;
+}
+
+.facetedview_search input::placeholder {
+  color: #2773b5;
+  font-style: normal;
+}
+
+.facetedview_search .eea-icon-search {
+  top: 21%;
+  left: 10px;
+}
+
+#facetview_freetext_clear {
+  top: 21%;
+}
+
+.facet_order span {
+  font-weight: 700;
+  font-family: "OpenSansB";
+  font-size: 11px;
+}
+
+.facet_value_operator .i18n {
+  font-family: "OpenSansB";
+}
+
+#content #facetview_trees .jstree-node.selected .jstree-anchor,
+#content
+  #facetview_trees
+  .jstree-node.selected
+  .jstree-anchor
+  .facet_label_count {
+  color: black;
+}
+
+#facetview_trees .jstree-clicked .jstree-checkbox:before {
+  color: black;
+}
+
+#facetview_trees {
+  padding: 10px 0 0 10px;
+  padding-top: 0;
+  position: relative;
+  margin-top: 41px;
+}
+
+#facetview_trees:before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: -10px;
+  width: 1px;
+  height: 100%;
+  background-color: #4a94c6;
+}
+
+.facetview_showtree_eealabel,
+.eea-icon.eea-icon-right {
+  color: #2773b5;
+}
+
+#content .eea-accordion-panels .eea-accordion-panel > h2,
+#content .eea-accordion-panels .eea-accordion-panel > h2.facetview_open {
+  font-size: 15px;
+}
+
+.search-suggestions {
+  margin-bottom: 1.2rem;
+}
+
+#portal-columns-app .db-categories {
+  padding: 8px 3px;
+}
+
+#portal-columns-app .db-categories p {
+  margin: 0;
+}
+
+.facetview_filter_options select.facet_value_operator {
+  width: 75px;
+}
+
+#facetview_results_wrapper {
+  margin-bottom: 1em;
+  overflow: initial;
+}
+
+.eea-tiles {
+  margin: 36px -14px 0 -14px;
+}
+
+.eea-tile {
+  padding: 0 18px !important;
+}
+
+.eea-tileThumb {
+  display: none;
+}
+
+.eea-tileInner {
+  background-color: #fff;
+  box-shadow: 1px 1px 9px 0 rgba(105, 105, 105, 0.45);
+  margin-bottom: 36px !important;
+  border-top: 10px solid #106cac;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0;
+}
+
+.eea-tile .eea-tileTitle {
+  font-family: "OpenSansR";
+  font-size: 19px;
+  color: #106cac;
+  margin-top: 0 !important;
+}
+
+.eea-tileBody {
+  position: relative;
+  min-height: 100%;
+  padding: 15px;
+}
+
+.eea-tileType {
+  right: 13px;
+}
+
+.eea-tileDescription {
+  display: none;
+  height: 75%;
+  opacity: 1;
+  color: #555;
+  font-family: "OpenSansL";
+  font-size: 15px;
+}
+
+.eea-tileTypeSpan {
+  display: block;
+}
+
+.eea-tileMetadata {
+  min-height: 70px;
+}
+
+@media (min-width: 1281px) {
+  .eea-tile {
+    width: 33.3%;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 800px) {
+  div#facetview_rightcol {
+    width: 66%;
+  }
+
+  .row-fluid .span3 {
+    width: 30% !important;
+  }
+
+  .facetview_top {
+    padding-bottom: 1em;
+  }
+}
+
+@media (max-width: 800px) and (min-width: 768px) {
+  div#facetview_rightcol {
+    width: 62%;
+  }
+
+  .row-fluid .span3 {
+    width: 35% !important;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .facetview_top {
+    padding-bottom: 1em;
+  }
+
+  #facetview_trees {
+    margin-top: 72px;
+  }
+}
+
+@media (max-width: 767px) {
+  .right-column-area .eea-icon.eea-icon-right {
+    position: relative;
+    right: -25px;
+  }
+
+  .facetview_top .filter-by {
+    margin: 1em 1.5em 0 0;
+    clear: both;
+    float: none;
+  }
+
+  .facetview_top,
+  #filterDisplayAs {
+    text-align: left;
+  }
+
+  #filterDisplayAs,
+  #filterSort,
+  .top-pagination {
+    display: block;
+    padding: 0;
+    text-align: left;
+  }
+
+  #filterSort,
+  #filterSort .filter-by.facetview_orderby,
+  #filterSort .facetview_orderby,
+  .facetview_top .top-pagination {
+    float: none;
+  }
+
+  .row-fluid .span12 .span3,
+  .row-fluid .span12 .span9 {
+    width: 100% !important;
+    float: left !important;
+    padding: 0;
+    margin-top: 0;
+  }
+
+  body.site-observatory .db-category-wrapper {
+    flex-basis: 25% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body.site-observatory .db-category-wrapper {
+    flex-basis: 35% !important;
+  }
+}
+
+@media (min-width: 320px) {
+  .eea-tile .eea-tileTitle {
+    max-height: 100%;
+  }
+
+  .eea-tile:hover .eea-tileTitle {
+    max-height: auto;
+  }
+
+  .eea-tile:hover .eea-tileMetadata::after {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 0;
+    right: 0;
+    height: 0.75em;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), #fff);
+    display: block;
+  }
 }

@@ -201,7 +201,7 @@
             "facet": {
                 "values_whitelist":[
                     "Case studies", "Guidance", "Indicators",
-                    "Information portals", "Tools",
+                    "Information portals", "Tools", "Videos",
                     "Publications and reports",
                     "Research and knowledge projects"],
                 "autocomplete": false,
@@ -225,6 +225,23 @@
                 "field": "typeOfData",
                 "default": "",
                 "visible": true
+            }
+        },
+        {
+            "name": "partner_contributors",
+            "facet": {
+                "autocomplete": false,
+                "visible": true,
+                "title": "Observatory partner",
+                "pos": 3,
+                "type": "facet",
+                "size": 50,
+                "min_size": 10,
+                "order": "term",
+                "operator": "OR",
+                "facet_display_options": ["sort", "checkbox"],
+                "values_blacklist": ["Webpage", "File", "http://cr.eionet.europa.eu/ontologies/contreg.rdf#File"],
+                "last_value": "Other Organisation"
             }
         },
         {
@@ -252,12 +269,13 @@
                 "order": "term",
                 "operator": "OR",
                 "facet_display_options": ["sort", "checkbox"],
-                "values_blacklist": ["Webpage", "File", "http://cr.eionet.europa.eu/ontologies/contreg.rdf#File"]
+                "values_blacklist": ["Webpage", "File", "http://cr.eionet.europa.eu/ontologies/contreg.rdf#File"],
+                "last_value": "-NONSPECIFIC-"
             },
             "card": {
                 "field": "health_impacts",
                 "default": "",
-                "visible": false
+                "visible": true
             },
             "list": {
                 "field": "health_impacts",
@@ -265,6 +283,8 @@
                 "visible": false
             }
         },
+
+
         {
             "name": "sectors",
             "listing": {
@@ -459,39 +479,34 @@
             }
         },
         {
-            "name": "year",
+            "name": "publication_year",
             "values_blacklist": ["0", 0, "undefined", "None"],
-            "listing": {
-                "title": "Year",
-                "visible": true
-            },
-            "csv_tsv": {
-                "title": "Year",
-                "visible": true,
-                "pos": 8
-            },
             "facet": {
-                "autocomplete": false,
                 "visible": true,
                 "title": "Year",
-                "pos": 2,
-                "type": "facet",
-                "size": 50,
+                "pos": 7,
+                "type": "rangehistogram",
+                "size": 100,
                 "min_size": 10,
-                "order": "term",
-                "operator": "OR",
-                "facet_display_options": ["sort", "checkbox"]
-            },
-            "card": {
-                "field": "year",
-                "default": "",
-                "type": "simple",
-                "visible": true
-            },
-            "list": {
-                "field": "year",
-                "default": "",
-                "visible": true
+                "order": "reverse_term",
+                "operator": "AND",
+                "facet_display_options": ["sort", "checkbox"],
+                "short_name": "Year",
+                "values_blacklist": ["undefined"],
+                "histogram_config": {
+                    "discrete_values": true,
+                    "columns_bucketsize" : 1,
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+                    "outside_slider_columns_color": "rgb(227, 228, 228)",
+
+                    "slider_bucketsize" : 1,
+                    "histogram" : true,
+                    "show_results_in_tooltip": true,
+
+                    "min_max_script": "def vals = doc['publication_year']; if (vals.length == 0){return 2014} else {def ret = [];for (val in vals){def tmp_val = val.substring(0,4);ret.add(tmp_val.toLowerCase() == tmp_val.toUpperCase() ? Integer.parseInt(tmp_val) : 2000);}return ret;}",
+                    "aggs_script":  "def vals = doc['publication_year']; if (vals.length == 0){return 2500} else {def ret = [];for (val in vals){def tmp_val = val.substring(0,4);ret.add(tmp_val.toLowerCase() == tmp_val.toUpperCase() ? Integer.parseInt(tmp_val) : 2500);}return ret;}"
+                }
             }
         },
         {
@@ -580,6 +595,26 @@
             },
             "list": {
                 "field": "long_description",
+                "default": "",
+                "visible": true
+            }
+        },
+        {
+            "name": "acronym",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "card": {
+                "visible": false
+            },
+            "list": {
+                "field": "acronym",
                 "default": "",
                 "visible": true
             }

@@ -59,6 +59,124 @@
   margin-top: -2px;
 }
 
+.visualization-info{
+    clear:both;
+}
+
+#content-core #aceitem_sidebar .health-information {
+    display: block !important;
+}
+
+.visualization-date,
+.visualization-info,
+#content-core #aceitem_sidebar #cca-macro-category-elements{
+    display: none !important;
+}
+
+.content-column {
+    margin-bottom: 20px;
+}
+
+/* article detail start */
+#content-core h1 span {
+    font-size:28px;
+}
+#content-core h3 {
+    font-size:16px;
+    color: #000;
+}
+#content-core li {
+    font-size:14px;
+}
+#content-core h4.reference-title {
+    color: #000;
+    font-size:16px;
+}
+#content-core h5 {
+    color: #000;
+    font-size:14px;
+    text-decoration: underline;
+}
+.aceitem-left div div{
+    font-size:14px;
+}
+
+.macro-category h4 {
+    font-size:15.68px;
+}
+.macro-category div {
+    font-size:14px;
+}
+
+/* article detail end */
+
+/* galery for case studies */
+.case-studies-illustrations #links .gallery-hide:first-of-type {
+    display: block !important;
+}
+
+.search-app.site-observatory .ace-label {
+    color: #fff;
+    background-color: #848484;
+    padding: 5px 10px;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 1em;
+    font-family: "OpenSansB";
+}
+.search-app.site-observatory .ace-content-column h5 {
+    text-decoration: underline;
+    margin:0 !important;
+}
+.search-app.site-observatory .macro-category h5 {
+    margin:0 !important;
+}
+
+.search-app.site-observatory .ace-content-column p {
+    font-size:14px;
+}
+.search-app.site-observatory .facet-view-simple {
+    margin-top: 0px;
+}
+.search-app.site-observatory .image-copyrigh {
+    left: 61px;
+    display: block;
+}
+
+.search-app.site-observatory .eea-tileMetadata span[title="-NONSPECIFIC-"] {
+    display: none !important;
+}
+body.site-observatory .site-container #content h2.facetview_showtree {
+    margin-top:0px;
+    margin-bottom:0px;
+}
+body.site-observatory .site-container #content .facetview_top {
+    margin-top:0px;
+    margin-bottom:0px;
+}
+body.site-observatory .site-container #content .eea-tileInner {
+    margin-bottom:10px;
+}
+
+body.site-observatory #content .jstree-container-ul {
+    background-color: #ffffff;
+}
+body.site-observatory .macro-category #content h5 {
+    margin:0px !important;
+}
+body.site-observatory .db-category-wrapper {
+    flex: 1 1 100px;
+}
+body.site-observatory .db-category-wrapper.opacity i,
+body.site-observatory .db-category-wrapper.opacity span.total-items,
+body.site-observatory .db-category-wrapper.opacity a>p
+{
+    opacity: 0.3;
+}
+body.site-observatory .db-category-wrapper.active span.total-items {
+    background-color: #8a9b41;
+}
+
 @media handheld, screen and (max-device-width: 480px){
   input, textarea {
     font-size: 140% !important;

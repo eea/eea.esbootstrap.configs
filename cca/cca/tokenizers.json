@@ -1,0 +1,6 @@
+{
+    "url_tokenizer": {
+      "type": "simple_pattern",
+      "pattern": "[a-zA-Z0-9\\.\\-]*"
+    }
+}

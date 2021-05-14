@@ -13,6 +13,7 @@
             "title",
             "label",
             "description",
+            "long_description",
             "topic"
             ],
         "blacklist": []
@@ -85,7 +86,7 @@
                     "field": "about",
                     "value": "//climate-adapt.eea.europa.eu",
                     "thumb_template": {
-                        "template": "https://www.eea.europa.eu/themes/air/multimedia/multimedia/image_preview",
+                        "template": "${url}/image_preview",
                         "variables": [{
                                 "name": "url",
                                 "type" : "field",
@@ -93,7 +94,7 @@
                         }]
                     },
                     "icon_template": {
-                        "template": "https://www.eea.europa.eu/portal_depiction/generic/image_thumb",
+                        "template": "${url}/image_mini",
                         "variables": [{
                                 "name": "generic",
                                 "type" : "variable",
@@ -186,11 +187,11 @@
         {
             "name": "typeOfData",
             "listing": {
-                "title": "Type of Data",
+                "title": "Type of Item",
                 "visible" : true
             },
             "csv_tsv": {
-                "title": "Type of Data",
+                "title": "Type of Item",
                 "visible": true,
                 "pos": 3
             },
@@ -200,7 +201,7 @@
             "facet": {
                 "autocomplete": false,
                 "visible": true,
-                "title": "Type of Data",
+                "title": "Type of Item",
                 "pos": 3,
                 "type": "facet",
                 "size": 50,
@@ -208,7 +209,7 @@
                 "order": "term",
                 "operator": "OR",
                 "facet_display_options": ["sort", "checkbox"],
-                "values_blacklist": ["Webpage", "File", "http://cr.eionet.europa.eu/ontologies/contreg.rdf#File"]
+                "values_blacklist": ["File", "http://cr.eionet.europa.eu/ontologies/contreg.rdf#File"]
             },
             "card": {
                 "field": "typeOfData",
@@ -239,6 +240,7 @@
                 "title": "Adaptation Sectors",
                 "order": "term",
                 "operator": "OR",
+                "last_value": "NONSPECIFIC",
                 "visible": true
             },
             "card": {
@@ -271,6 +273,7 @@
                 "min_size": 10,
                 "order": "term",
                 "operator": "OR",
+                "last_value": "NONSPECIFIC",
                 "facet_display_options": ["sort", "checkbox"]
             }
         },
@@ -292,6 +295,7 @@
                 "title": "Transnational regions",
                 "order": "term",
                 "operator": "OR",
+                "last_value": "Other Regions",
                 "visible": true
             }
         },
@@ -317,21 +321,44 @@
             }
         },
         {
-            "name": "origin_website",
+            "name": "funding_programme",
             "listing": {
-                "title": "Source Website",
-                "visible": true
+                "title": "Funding Programme",
+                "visible": false
             },
             "csv_tsv": {
-                "title": "Source Website",
-                "visible": true,
-                "pos": 7
+                "title": "Funding Programme",
+                "visible": false,
+                "pos": 6
             },
             "facet": {
                 "facet_display_options": ["sort", "checkbox"],
                 "size": 100,
                 "min_size": 10,
-                "title": "Source Website",
+                "title": "Funding Programme",
+                "order": "term",
+                "operator": "OR",
+                "last_value": "Other",
+                "visible": true
+            }
+        },
+        {
+            "name": "origin_website",
+            "listing": {
+                "title": "Item from third parties",
+                "visible": true
+            },
+            "csv_tsv": {
+                "title": "Item from third parties",
+                "visible": true,
+                "pos": 7
+            },
+            "facet": {
+                "facet_display_options": ["sort", "checkbox"],
+                "values_blacklist": ["Climate-ADAPT"],
+                "size": 100,
+                "min_size": 10,
+                "title": "Item from third parties",
                 "order": "term",
                 "operator": "OR",
                 "visible": true
@@ -412,6 +439,37 @@
                 "empty_message": "No countries to show",
                 "short_name": "Country",
                 "facet_display_options": ["sort", "checkbox"]
+            }
+        },
+        {
+            "name": "publication_year",
+            "values_blacklist": ["0", 0, "undefined", "None"],
+            "facet": {
+                "visible": true,
+                "title": "Year",
+                "pos": 7,
+                "type": "rangehistogram",
+                "size": 100,
+                "min_size": 10,
+                "order": "reverse_term",
+                "operator": "AND",
+                "facet_display_options": ["sort", "checkbox"],
+                "short_name": "Year",
+                "values_blacklist": ["undefined"],
+                "histogram_config": {
+                    "discrete_values": true,
+                    "columns_bucketsize" : 1,
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+                    "outside_slider_columns_color": "rgb(227, 228, 228)",
+
+                    "slider_bucketsize" : 1,
+                    "histogram" : true,
+                    "show_results_in_tooltip": true,
+
+                    "min_max_script": "def vals = doc['publication_year']; if (vals.length == 0){return 2014} else {def ret = [];for (val in vals){def tmp_val = val.substring(0,4);ret.add(tmp_val.toLowerCase() == tmp_val.toUpperCase() ? Integer.parseInt(tmp_val) : 2000);}return ret;}",
+                    "aggs_script":  "def vals = doc['publication_year']; if (vals.length == 0){return 2500} else {def ret = [];for (val in vals){def tmp_val = val.substring(0,4);ret.add(tmp_val.toLowerCase() == tmp_val.toUpperCase() ? Integer.parseInt(tmp_val) : 2500);}return ret;}"
+                }
             }
         },
         {
@@ -538,6 +596,98 @@
                 "field": "long_description",
                 "default": "",
                 "visible": true
+            }
+        },
+        {
+            "name": "acronym",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "card": {
+                "visible": false
+            },
+            "list": {
+                "field": "acronym",
+                "default": "",
+                "visible": true
+            }
+        },
+        {
+            "name": "geolocation",
+            "csv_tsv": {
+                "title": "Coordinates",
+                "visible": true,
+                "pos": 11
+            }
+        },
+        {
+            "name": "cost_benefit",
+            "csv_tsv": {
+                "title": "Costs",
+                "visible": true,
+                "pos": 12
+            }
+        },
+        {
+            "name": "adaptationoption",
+            "csv_tsv": {
+                "title": "Implemented Adaptation option",
+                "visible": true,
+                "pos": 13
+            }
+        },
+        {
+            "name": "lead",
+            "csv_tsv": {
+                "title": "Lead",
+                "visible": true,
+                "pos": 14
+            }
+        },
+        {
+            "name": "websites",
+            "csv_tsv": {
+                "title": "Websites",
+                "visible": true,
+                "pos": 15
+            }
+        },
+        {
+            "name": "source",
+            "csv_tsv": {
+                "title": "Referenc",
+                "visible": true,
+                "pos": 16
+            }
+        },
+        {
+            "name": "biographical-regions",
+            "csv_tsv": {
+                "title": "Biographical regions",
+                "visible": true,
+                "pos": 17
+            }
+        },
+        {
+            "name": "health_impacts",
+            "csv_tsv": {
+                "title": "Health Impacts",
+                "visible": true,
+                "pos": 18
+            }
+        },
+        {
+            "name": "include_in_observatory",
+            "csv_tsv": {
+                "title": "Include in observatory",
+                "visible": true,
+                "pos": 19
             }
         },
         {

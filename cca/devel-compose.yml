@@ -1,0 +1,28 @@
+version: "2"
+
+services:
+  plone:
+    # image: eeacms/eea.docker.plone-climateadapt:v7.22
+    # NOTE: clone https://github.com/eea/eea.docker.plone-climateadapt
+    build: ./eea.docker.plone-climateadapt
+    environment:
+      TZ: Europe/Copenhagen
+      ZOPE_MODE: standalone
+    volumes:
+      - ./plone-data/:/data
+      - ./src/:/plone/instance/src/
+      - ./src/buildout.cfg:/plone/instance/buildout.cfg
+    ports:
+    - 8090:8080/tcp
+    entrypoint: sh -c "tail -f /dev/null"
+    # Run with docker-compose exec plone bash, then: bin/standalone fg
+
+  memcached:
+    image: memcached:1.4.35
+    labels:
+      io.rancher.scheduler.affinity:host_label: cca=yes
+    environment:
+      TZ: "Europe/Copenhagen"
+    command:
+    - "-m"
+    - "2048"
