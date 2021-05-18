@@ -209,6 +209,8 @@
   "whiteMap": {
   },
   "normObj": {
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.c3sindicator#eeaclimateadaptc3sindicator": "Indicators",
+
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.guidancedocument#eeaclimateadaptguidancedocument": "Guidance",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#eeaclimateadaptaceproject": "Research and knowledge projects",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.indicator#eeaclimateadaptindicator": "Indicators",
@@ -307,7 +309,8 @@
       "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.tool#eeaclimateadapttool> } UNION ",
       "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.casestudy#eeaclimateadaptcasestudy> } UNION ",
       "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#eeaclimateadaptorganisation> } UNION ",
-      "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#eeaclimateadaptpublicationreport> } "
+      "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#eeaclimateadaptpublicationreport> } UNION ",
+      "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.c3sindicator#eeaclimateadaptc3sindicator> } "
   ]
 
 }
