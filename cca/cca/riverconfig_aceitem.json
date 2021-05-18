@@ -24,6 +24,7 @@
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#publication_date": "publication_year",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.tool#publication_date": "publication_year",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.video#publication_date": "publication_year",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.c3sindicator#publication_date": "publication_year",
 
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#source": "source",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.adaptationoption#source": "source",
@@ -35,6 +36,7 @@
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#source": "source",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.tool#source": "source",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.video#source": "source",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.c3sindicator#source": "source",
 
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.casestudy#cost_benefit": "cost_benefit",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.casestudy#geolocation": "geolocation",
@@ -51,6 +53,7 @@
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.casestudy#health_impacts": "health_impacts",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#health_impacts": "health_impacts",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#health_impacts": "health_impacts",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.c3sindicator#health_impacts": "health_impacts",
 
 
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.guidancedocument#include_in_observatory": "include_in_observatory",
@@ -63,6 +66,7 @@
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.casestudy#include_in_observatory": "include_in_observatory",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#include_in_observatory": "include_in_observatory",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#include_in_observatory": "include_in_observatory",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.c3sindicator#include_in_observatory": "include_in_observatory",
 
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.guidancedocument#sectors": "sectors",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#sectors": "sectors",
@@ -74,6 +78,7 @@
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.casestudy#sectors": "sectors",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#sectors": "sectors",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#sectors": "sectors",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.c3sindicator#sectors": "sectors",
 
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.guidancedocument#climate_impacts": ["climate_impacts"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#climate_impacts": ["climate_impacts"],
@@ -85,6 +90,7 @@
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.casestudy#climate_impacts": ["climate_impacts"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#climate_impacts": ["climate_impacts"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#climate_impacts": ["climate_impacts"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.c3sindicator#climate_impacts": ["climate_impacts"],
 
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.guidancedocument#year": ["year"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#year": ["year"],
@@ -96,6 +102,7 @@
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.casestudy#year": ["year"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#year": ["year"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#year": ["year"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.c3sindicator#year": ["year"],
 
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.guidancedocument#elements": ["elements"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#elements": ["elements"],
@@ -107,6 +114,7 @@
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.casestudy#elements": ["elements"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#elements": ["elements"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#elements": ["elements"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.c3sindicator#elements": ["elements"],
 
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.guidancedocument#long_description": ["long_description"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#long_description": ["long_description"],
@@ -118,6 +126,7 @@
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.casestudy#long_description": ["long_description"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#long_description": ["long_description"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#long_description": ["long_description"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.c3sindicator#long_description": ["long_description"],
 
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.guidancedocument#origin_website": ["origin_website"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#origin_website": ["origin_website"],
@@ -129,6 +138,7 @@
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.casestudy#origin_website": ["origin_website"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#origin_website": ["origin_website"],
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#origin_website": ["origin_website"],
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.c3sindicator#origin_website": ["origin_website"],
 
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#websites": "websites",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.guidancedocument#websites": "websites",
@@ -140,6 +150,7 @@
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.casestudy#websites": "websites",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#websites": "websites",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#websites": "websites",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.c3sindicator#websites": "websites",
 
 
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#funding_programme": ["funding_programme"],
