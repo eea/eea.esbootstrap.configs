@@ -1,0 +1,51 @@
+block title
+    title!= head_title
+
+block extrajavascripts
+    if renderJs && !debug_mode
+        != renderJs('index_page')
+    else
+        each script in js_resources.index_page
+            script(type='text/javascript', src=script)
+
+block extrastyles
+    if renderStyles && !debug_mode
+        - var css_render = renderStyles('index_page')
+        - var only_css = css_render.match(/href\='([^\s]*)'\s/)[1]
+        link(rel="preload" href=only_css as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
+        <noscript><link rel="stylesheet" href="#{only_css}" /></noscript>
+    else
+        each style in css_resources.index_page
+            link(rel='stylesheet', href=style)
+
+block content
+    h1!= site_title
+
+    +download_data
+    p!= site_description
+    p(class='facets_footer_slot_init')!= facets_footer_slot
+    ul(class="tabs")
+        li(class="explorer-tab")
+            a(href="#explorer-tab" class="tab-link selected_tab")
+                <i class="eea-icon eea-icon-2x eea-icon-table" aria-hidden="true"></i>
+                span
+                    | Data table explorer
+        li(class="dashboard-tab")
+            a(href="#dashboard-tab" class="tab-link")
+                <i class="eea-icon eea-icon-2x eea-icon-bar-chart" aria-hidden="true"></i>
+                span
+                    | Dashboard
+    div(class="tabs-content")
+        div(id="explorer-tab" class="tab-content selected_tab")
+            .facet-view-simple
+        div(id="dashboard-tab" class="tab-content") !{dashboard_src}
+
+
+    +visualization_info (dataprovencance_info_url,dataprovencance_info_text)
+    div!= further_info
+
+    h3 Related content
+    ul(style="list-style:square")
+     li
+      | News: 
+      a(href="https://www.eea.europa.eu/highlights/average-co2-emissions-from-new-cars-vans-2019")= "Average CO2 emissions from new cars and new vans increased again in 2019"

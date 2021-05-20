@@ -1,0 +1,340 @@
+/* Add custom css here */
+
+/* No need for orderby */
+.facetview_orderby {
+   display: none;
+}
+
+.facet_label_count {
+    width: 50px;
+}
+
+.facet_label_text {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.current-filters {
+    min-height: 0px;
+}
+
+.facetview-filter-values {
+    margin-bottom: 0;
+}
+
+/* tabs css */
+#facetview_rightcol .current-filters {
+    border-radius:15px;
+    margin-top:10px;
+    padding-top:0;
+}
+
+div.span9{
+    margin-top:20px;
+}
+.facetedview_search input{
+    border-radius:15px;
+}
+
+.current-filters-collapsible {
+    margin-top:12px;
+}
+ul.tabs {
+    padding-left:5px;
+    margin-left: 0;
+    background-color:#EEEEEE;
+    height:50px
+}
+
+ul.tabs li {
+    display: inline;
+}
+
+ul.tabs li a.tab-link {
+    display: inline-block;
+    line-height: 26px;
+    text-decoration: none;
+    border: none;
+    margin: 0;
+    padding: 1rem 2em 1rem 6px;
+    margin-right: 0.25em;
+    cursor: pointer;
+    background: #EEEEEE;
+    color:#808285;
+    height:40px;
+}
+
+ul.tabs li a.tab-link span {
+    font-size: 17px;
+}
+
+ul.tabs li a.tab-link i {
+    color: #3385AA;
+}
+.tabs-content div.tab-content {
+    display: none;
+}
+
+.tabs-content div.tab-content.selected_tab {
+    display: block;
+}
+
+#content .facetview_top {
+    margin-top:5px;
+}
+
+/*.abovescrollbar {
+    display:none;
+}*/
+/*#content .tabs-content .facetview_filter h2,
+.tabs-content .row-fluid {
+    background-color: #f5f9fc;
+}*/
+
+
+ul.tabs .selected_tab {
+    color: black;
+    /* font-weight: bold; */
+}
+
+ul.tabs li a.tab-link.selected_tab {
+    background:white;
+    color:#808285;
+    border-radius: 15px 15px 0px 0px;
+    padding-top:6px;
+}
+/* Remove DRAFT watermark */
+#content {
+    background:white;
+}
+
+/* Hide year/status filters */
+/*#facetview_group_year,
+#facetview_group_Status {
+    display: none;
+}*/
+
+.year-facet-section, .status-facet-section{
+    display:none;
+}
+
+
+.year_facet_value, .status_facet_value {
+    cursor: pointer;
+}
+
+.year_facet, .status_facet{
+    height:24px;
+}
+
+.year_facet_group, .status_facet_group {
+    margin-left:0;
+}
+
+.year_facet a, .status_facet a{
+    padding-top:3px;
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        -ms-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+.eea-icon-spinner {
+    vertical-align: -webkit-baseline-middle;
+    position: absolute;
+    top: 40%;
+    left: 38%;
+}
+
+.eea-icon-anim-spin.animated, .eea-icon-anim-spin.animated-hover:hover, .eea-icon-anim-parent.animated-hover:hover > .eea-icon-anim-spin {
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+
+@media screen and (max-width: 805px) {
+    .year_facet_group, .status_facet_group {
+        margin-left: 2em;
+        -webkit-flex-basis: 45%;
+        -moz-flex-basis: 45%;
+        -ms-flex-basis: 45%;
+        flex-basis: 45%;
+    }
+}
+
+@media screen and (max-width: 919px) {
+    .year-facet-section, .status-facet-section {
+        min-height: 100%;
+    }
+    .year_facet_title, .status_facet_title {
+        position: relative;
+        min-width: 115px;
+        width: 100%;
+        margin-top: 1em;
+        cursor: pointer;
+        display: none;
+    }
+
+    .year_facet_title--text, .status_facet_title--text {
+        display: block;
+        color: #009590;
+        font-weight: bold;
+        position: relative;
+        float: left;
+        font-size: 140%;
+        margin: 0 1em 1.5em 1.5em;
+    }
+    .year_facet_title--text-border, .status_facet_title--text-border {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: flex;
+        height: 2px;
+        background-color: #009590;
+        content: " ";
+        margin-top: 1em;
+    }
+}
+
+@media screen and (min-width: 920px) {
+    .year_facet_title, .status_facet_title {
+        background-color: #009590;
+        -webkit-flex: 0.5;
+        -moz-flex: 0.5;
+        -ms-flex: 0.5;
+        flex: 0.5;
+        /* display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: flex; */
+        position: relative;
+        min-width: 115px;
+        display: none;
+    }
+
+    .year_facet_title:after, .status_facet_title:after {
+        top: 45%;
+        left: 100%;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border: 13px solid transparent;
+        border-left-color: #009590;
+    }
+
+    .year_facet_title--text-border, .status_facet_title--text-border {
+        display: none;
+    }
+    .year_facet_group, .status_facet_group {
+        display: block !important;
+    }
+}
+
+@font-face{font-family:'FontAwesome';src:url("/fonts-search/fontawesome-webfont.eot?v=4.7.0"),
+        url("/fonts-search/fontawesome-webfont.eot?v=4.7.0") format("embedded-opentype"),
+        url("/fonts-search/fontawesome-webfont.woff?v=4.7.0") format("woff"),
+        url("/fonts-search/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
+        url("/fonts-search/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
+        url("/fonts-search/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");font-weight:normal;font-style:normal
+}
+
+
+div[rel='scStatus'] .facet_label_count,
+div[rel='year'] .facet_label_count,
+.facetview_filter_options[rel='scStatus'] .facet_value_operator,
+.facetview_filter_options[rel='year'] .facet_value_operator,
+.facetview_filter_options[rel='scStatus'] .facet_count_order,
+.facetview_filter_options[rel='year'] .facet_count_order{
+    display:none;
+}
+
+.status_facetview_selected h3,
+.year_facetview_selected h3{
+    border: 0;
+}
+
+.status_facetview_selected,
+.year_facetview_selected {
+    float: left;
+    margin-right: 2em;
+    min-width: 10.7%;
+}
+
+.status_facetview_selected:last-child,
+.year_facetview_selected:last-child {
+    margin-right: 0;
+}
+
+.status_facetview_selected .rel-between,
+.year_facetview_selected .rel-between {
+    padding: 0 0 2px;
+    display: none;
+}
+
+.status_facetview_selected .facetview_clear,
+.year_facetview_selected .facetview_clear {
+    padding: 1px;
+    background: #f0f0f0 none;
+    border-color: #ccc;
+}
+
+.status_facetview_selection,
+.year_facetview_selection,
+.clear-all {
+    margin-bottom: 4px;
+    background-color: white;
+    border-radius: 15px;
+    clear: both;
+    border: 1px solid #ccc !important;
+}
+
+.status_facetview_selection,
+.year_facetview_selection {
+    float: left;
+    padding: 0.5em 1.5em;
+/*    padding: 5px 1.5em;*/
+}
+
+.status_facetview_selection .status_facetview_filterselected,
+.year_facetview_selection .year_facetview_filterselected {
+    float: none;
+    margin-right: 3px;
+    padding: 0;
+    vertical-align: baseline;
+}
+.status_facetview_selection i,
+.year_facetview_selection i {
+    width: 17px;
+    background-image: none !important;
+}
+
+.status_facetview_filterselected .eea-icon,
+.year_facetview_filterselected .eea-icon {
+    color: red;
+    text-shadow: none;
+    margin-left: -1.2em;
+    position: absolute;
+    left: 0;
+}
+.status_facetview_filterselected .eea-icon{
+    color: gray;
+}

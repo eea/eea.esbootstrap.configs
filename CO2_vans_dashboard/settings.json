@@ -1,0 +1,52 @@
+{
+    "http": {
+        "port": 3000
+    },
+    "elastic": {
+        "index": "co2_vans_dashboard",
+        "type": "resources",
+        "field_base":"",
+        "preload_cache": true
+    },
+    "layout_vars": {
+        "css_resources": {
+            "index_page": [
+            ],
+            "details_page": [
+            ]
+        },
+        "js_resources": {
+            "index_page": [
+            ],
+            "details_page": [
+            ]
+        }
+    },
+    "API":{
+        "token": "default"
+    },
+    "source": {
+        "type": "url",
+        "autoswitch": "false",
+        "configuration": {
+            "type": "json",
+            "subtype": "discodata",
+            "bulksize": 50000,
+
+            "sql": true,
+            "sql_url": "http://mudskipper.eea.dmz1:8083/sql",
+            "sql_table": "[CO2Emission_Internal].[stage].[co2vans]",
+
+            "query_attr": "query",
+            "query": "query.sql",
+            "query_count": "query_count.sql",
+
+            "discodata_bulksize": 50000,
+            "format": "json",
+            "data_path": "results.*",
+            "encoding": "utf-8",
+            "id_type": "field",
+            "id_field": "uid"
+        }
+    }
+}

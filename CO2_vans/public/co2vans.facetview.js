@@ -11,7 +11,6 @@ function getMinMaxYear(callback){
 function getStatus(min, max, callback){
     query = '{"track_total_hits": true, "query": {"bool": {"must": [{"term": {"year": "' + max + '"}},{"match": {"scStatus": "Final"}}],"must_not": [],"should": []}},"sort": [],"size": 0}';
     var url = window.location.origin + "/tools/api?source=" + query;
-
     $.ajax({url: url, success: function(result){
         status = 'Provisional';
         if (result.hits.total.value > 0) {
