@@ -52,6 +52,7 @@
     "layout_vars": {
         "head_title": "Global catalogue of the European Environment Agency (EEA)",
         "app_id": "global-search",
+        "matomo_id":"37",
         "skip_resources_bundling": false,
         "skip_external_template_styles": false,
         "override_searchserver_resources": false,

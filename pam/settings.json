@@ -20,6 +20,7 @@
     "layout_vars": {
         "head_title": "EEA database on climate change mitigation policies and measures in Europe &mdash; European Environment Agency",
         "app_id": "pam",
+        "matomo_id":"55",
         "skip_external_template_styles": false,
         "skip_resources_bundling": false,
         "override_searchserver_resources": false,

@@ -438,7 +438,6 @@ function update_results_count(){
 jQuery(document).ready(function($) {
   $.extend(true, settings_default_external_configs, settings_external_configs);
   var url = $(location).attr('href');
-
   var spatial_info = getSpatialFromUrl();
   var spatial = spatial_info.spatial_value;
   var spatial_field = spatial_info.spatial_field;
@@ -571,6 +570,7 @@ jQuery(document).ready(function($) {
       mark_recent();
       update_results_count();
       $("#car_facet").carFacet.loadValuesFromFacet();
+      $(window).trigger('post_search_callback');
     },
     linkify: false,
     paging: {

@@ -19,6 +19,7 @@
     "layout_vars": {
         "head_title": "Monitoring of CO2 emissions from vans",
         "app_id": "co2_vans",
+        "matomo_id": "54",
         "skip_resources_bundling": true,
         "skip_external_template_styles": false,
         "override_searchserver_resources": false,

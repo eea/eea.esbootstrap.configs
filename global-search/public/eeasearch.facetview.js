@@ -335,6 +335,7 @@ jQuery(document).ready(function($) {
       add_titles();
       mark_expired();
       mark_recent();
+      $(window).trigger('post_search_callback');
     },
     linkify: false,
     paging: {

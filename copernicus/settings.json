@@ -29,6 +29,7 @@
     "layout_vars": {
         "head_title": "Land Copernicus search",
         "app_id": "copernicus-search",
+        "matomo_id": "17",
         "skip_resources_bundling": false,
         "skip_external_template_styles": false,
         "override_searchserver_resources": true,
