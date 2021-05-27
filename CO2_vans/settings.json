@@ -6,7 +6,8 @@
         "index": "co2_vans",
         "type": "resources",
         "field_base":"",
-        "preload_cache": true
+        "preload_cache": true,
+        "version":"7"
     },
     "external_templates": {
         "local_path": "/external_templates",
