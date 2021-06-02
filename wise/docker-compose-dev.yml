@@ -10,9 +10,10 @@ services:
           APP_CONFIG_DIRNAME: wise
           elastic_appalias: 'latest'
         ports:
-          - '3000:3000'
+          - '4000:3000'
         volumes:
           - ..:/code/config
+        # entrypoint: /code/app create_index
 
     es:
         image: eeacms/elastic:7
@@ -63,4 +64,4 @@ services:
 
 volumes:
   es7-storage-volume:
-    driver: local 
+    driver: local
