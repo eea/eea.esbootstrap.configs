@@ -1,6 +1,6 @@
 include ./mixins.pug
 doctype html
-html
+html(data-siteid=(settings_matomo_id ? settings_matomo_id : false))
     head
         block title
         meta(charset='utf-8')
