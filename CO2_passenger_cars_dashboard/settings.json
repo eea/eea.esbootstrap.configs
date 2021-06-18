@@ -6,7 +6,8 @@
         "index": "co2_cars_dashboard",
         "type": "resources",
         "field_base":"",
-        "preload_cache": true
+        "preload_cache": true,
+        "version": "7"
     },
     "layout_vars":{
         "skip_resources_bundling": true,
@@ -29,7 +30,7 @@
     },
     "source": {
         "type": "url",
-        "autoswitch": "true",
+        "autoswitch": "false",
         "configuration": {
             "type": "json",
             "subtype": "discodata",

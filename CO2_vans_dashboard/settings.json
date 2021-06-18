@@ -6,7 +6,8 @@
         "index": "co2_vans_dashboard",
         "type": "resources",
         "field_base":"",
-        "preload_cache": true
+        "preload_cache": true,
+        "version":"7"
     },
     "layout_vars": {
         "css_resources": {
