@@ -37,6 +37,7 @@ Select
     "year",
     "Status",
     "version_file",
+    "Zr",
     iif (LOWER(TRIM(ft))='ng-biomethane', 'ng', 
         iif(LOWER(TRIM(ft))='petrol-electric', 'petrol/electric', 
             iif(LOWER(TRIM(ft))='diesel-electric', 'diesel/electric',

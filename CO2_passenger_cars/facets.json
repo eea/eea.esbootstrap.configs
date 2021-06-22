@@ -876,6 +876,25 @@
                 "visible": true,
                 "pos": 35
             }
+        },
+        {
+            "name": "Zr",
+            "listing": {
+                "title": "Electric range (km)",
+                "visible" : true,
+                "pos" : 22
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Electric range (km)",
+                "visible": true,
+                "pos": 100
+            }
         }
     ]
 }

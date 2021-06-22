@@ -58,7 +58,8 @@ Select
     "Mb (kg)",
     "TPMLM (kg)",
     "Dam (kg)",
-    "Mf (kg)"
+    "Mf (kg)",
+    "Zr"
 from
     <TABLE>
 WHERE
