@@ -269,3 +269,8 @@ h2.facetview_showtree span.eea-icon {
 #content .facetview_top .eea-icon-eraser:before {
     content: "\f12d" !important;
 }
+
+.right-column-area.eea-section.eea-right-section {
+    padding:0px;
+    margin-top:0px;
+}
