@@ -151,13 +151,26 @@ $(window).bind("post_search_callback", function () {
     PDF: "fa-file-pdf-o",
     doc: "fa-file-text",
     xls: "fa-file-excel-o",
+    link: "fa-external-link"
   };
 
   var downloadButton = $(".nfi-download-button");
   downloadButton.each(function (index, item) {
     var downloadArr = $(item).attr("type").split(".");
     var type = downloadArr[downloadArr.length - 1];
+    var filesize = $(item).find('.file-size').text();
     var icon = $(item).find("i.fa");
+
+    if (type === '' && filesize === '(  )') {
+      let source_url = $(item).find('.source-url').val();
+
+      type = 'link';
+
+      $(item).attr("href",source_url);
+      $(item).find('.nfi-download-text').text('Go to source');
+      $(item).find('.file-size').remove();
+    }
+
     icon.addClass(downloadIconsClasses[type]);
   });
 
