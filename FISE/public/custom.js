@@ -1,8 +1,4 @@
 /* Add custom js here */
-window.esbootstrap_options = {
-  enable_async_load: true,
-};
-
 settings_display_options = ["list", "tabular"];
 settings_default_display = "list";
 settings_suggestions_enabled = true;
