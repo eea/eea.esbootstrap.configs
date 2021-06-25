@@ -29,7 +29,7 @@ block content
                 span(class="file-size")
                     != data.FILE_SIZE.value
         else
-            a(class="nfi-download-button" target="_blank" href!=data.Source.value type!=data.Source.value)
+            a(class="nfi-download-button" target="_blank" href!=data.Source.value type="link")
                 i(class="fa fa-external-link")
                 span(class="nfi-external-link-text") Go to source
         div(class="search-page")
