@@ -18,7 +18,8 @@ window.jQuery(document).ready(function ($) {
     pdf: 'fa-file-pdf-o',
     PDF: 'fa-file-pdf-o',
     doc: 'fa-file-text',
-    xls: 'fa-file-excel-o'
+    xls: 'fa-file-excel-o',
+    link: "fa-external-link"
   }
 
   var item = $('.nfi-download-button')
