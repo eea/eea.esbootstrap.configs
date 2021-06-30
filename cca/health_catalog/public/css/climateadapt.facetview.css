@@ -178,8 +178,17 @@ body.site-observatory .db-category-wrapper.active span.total-items {
 }
 
 @media handheld, screen and (max-device-width: 480px){
-  input, textarea {
-    font-size: 140% !important;
-    font-family: inherit !important;
-  }
+    input, textarea {
+        font-size: 140% !important;
+        font-family: inherit !important;
+    }
+    .jstree-default-responsive .jstree-icon, .jstree-default-responsive .jstree-icon:empty,
+    .jstree-default-responsive .jstree-node {
+        min-height: inherit;
+        line-height: inherit;
+    }
+    .jstree-default-responsive .jstree-anchor {
+        line-height: inherit;
+    }
+
 }

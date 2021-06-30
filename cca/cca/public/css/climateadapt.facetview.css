@@ -68,6 +68,16 @@
         font-family: inherit !important;
     }
 }
+@media screen and (max-width: 500px) {
+    .jstree-default-responsive .jstree-icon, .jstree-default-responsive .jstree-icon:empty,
+    .jstree-default-responsive .jstree-node {
+        min-height: inherit;
+        line-height: inherit;
+    }
+    .jstree-default-responsive .jstree-anchor {
+        line-height: inherit;
+    }
+}
 .portalMessage.attentionMessage.no-results-message {
     font-size: 14px;
 }
