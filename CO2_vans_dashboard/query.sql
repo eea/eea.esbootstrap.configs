@@ -58,13 +58,14 @@ Select
     "Mb (kg)",
     "TPMLM (kg)",
     "Dam (kg)",
-    "Mf (kg)"
+    "Mf (kg)",
+    "Zr"
 from
     <TABLE>
 WHERE
     MS!='M1' and
-    year=2019 and
-    status='f' and
+    year=2020 and
+    status='p' and
     ((ID>=<MIN_ID> and
     ID<<MAX_ID>) or
     len(id) > 7)

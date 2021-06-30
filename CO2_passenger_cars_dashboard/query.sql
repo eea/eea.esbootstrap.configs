@@ -37,6 +37,7 @@ Select
     "year",
     "Status",
     "version_file",
+    "Zr",
     iif (LOWER(TRIM(ft))='ng-biomethane', 'ng', 
         iif(LOWER(TRIM(ft))='petrol-electric', 'petrol/electric', 
             iif(LOWER(TRIM(ft))='diesel-electric', 'diesel/electric',
@@ -59,8 +60,8 @@ from
     <TABLE>
 WHERE
     MS!='M1' and
-    year=2019 and
-    status='f'and
+    year=2020 and
+    status='p'and
     ID>=<MIN_ID> and
     ID<<MAX_ID>
 order by uid

@@ -22,11 +22,16 @@ block content
     if (data)
         h2
             != data.RESOURCE_TITLE.value
-        a(class="nfi-download-button" target="_blank" href!=data.RESOURCE_LOCATOR_INTERNAL.value type!=data.RESOURCE_LOCATOR_INTERNAL.value)
-                    i(class="fa fa-download")
-                    span(class="nfi-download-text") Download
-                    span(class="file-size") 
-                        != data.FILE_SIZE.value
+        if (data.RESOURCE_LOCATOR_INTERNAL.value)
+            a(class="nfi-download-button" target="_blank" href!=data.RESOURCE_LOCATOR_INTERNAL.value type!=data.RESOURCE_LOCATOR_INTERNAL.value)
+                i(class="fa fa-download")
+                span(class="nfi-download-text") Download
+                span(class="file-size")
+                    != data.FILE_SIZE.value
+        else
+            a(class="nfi-download-button" target="_blank" href!=data.Source.value type="link")
+                i(class="fa fa-external-link")
+                span(class="nfi-external-link-text") Go to source
         div(class="search-page")
             div(class="meta-data")
                 div(class="text-tab")

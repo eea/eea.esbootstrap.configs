@@ -920,6 +920,25 @@
             }
         },
         {
+            "name": "Zr",
+            "listing": {
+                "title": "Electric range (km)",
+                "visible" : true,
+                "pos" : 22
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Electric range (km)",
+                "visible": true,
+                "pos": 100
+            }
+        },
+        {
             "name": "Mf__kg_",
             "listing": {
                 "title": "Final mass in kg",

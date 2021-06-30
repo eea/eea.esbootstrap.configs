@@ -187,7 +187,13 @@
             "listing": { "title": "Source", "visible" : true, "pos" : 15 },
             "details": { "title": "Source", "pos" : 80, "section": "info", "visible": true },
             "facet": { "visible": false},
-            "csv_tsv": { "title": "Source", "visible": true, "pos": 15 }
+            "csv_tsv": { "title": "Source", "visible": true, "pos": 15 },
+            "list": {
+                "field": "source",
+                "default": "",
+                "visible": true,
+                "type": "list"
+            }
         },
         {
             "name": "RESPONSIBLE_ORGANISATION_MAIN_PAGE",

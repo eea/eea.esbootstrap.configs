@@ -6,14 +6,6 @@ window.jQuery(document).ready(function($){
   $("#portal-logo-link").clone().attr('id', 'portal-logo-link-header').prependTo($navbar_header);
 
   $(window).on('results_ready', function() {
-    // show and hide remove icon on hovering over added filters
-    /*
-    $("#facetview_selected_filters").on("hover", ".facetview_selection", function(){
-      $(this).find('i').toggleClass('hidden');
-    }, function(){
-      $(this).find('i').toggleClass('hidden');
-    });
-    */
 
     $('#facetview_rightcol').on('hover', '.eea-tileBody', function() {
       var $this = $(this);
@@ -35,19 +27,6 @@ window.jQuery(document).ready(function($){
       $(".lazyLoad").Lazy();
     });
   }
-
-  /*$(".search-app #personaltools-login").on("click", function (ev) {
-       ev.preventDefault();
-       window.location.href = $("#personaltools-login").attr("href");
-    });*/
-
-  /*$(".search-app #personal-menu").on("mouseenter click", function(ev){
-          ev.preventDefault();
-          $(".login-container").css("display","block");
-    }).on("mouseleave", function (ev) {
-          ev.preventDefault();
-          if( $(ev.target)[0] == $(".login-container")[0] || $(ev.target)[0] == $#login-form .formControls input(".login-text")[0] )  $(".login-container").css("display","none");
-    });*/
 
   $(".mobile-menu .fa").on("click touch", function (ev) {
     if($(ev.target).hasClass("fa-bars")){
