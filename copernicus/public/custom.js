@@ -272,6 +272,36 @@ function searchModifications() {
             $('.eea-icon.tabular').hide();
         }
     }
+
+    $('.eea-section-trigger').click(function(event){
+        event.preventDefault();
+        $("#facetview_trees_loader").css('z-index', 'auto')
+
+        if ($("#facetview_trees_loader").is(":hidden") == false) {
+            $("#facetview_trees_loader").hide("slow");
+            $('.eea-right-section').removeClass('eea-right-section-active');
+        }
+        else {
+            $("#facetview_trees_loader").show("slow");
+            $('.eea-right-section').addClass('eea-right-section-active');
+        }
+    });
+
+    $(document).click(function(event) {
+        if ($("#facetview_trees_loader").is(":hidden") == false && !event.target.matches('.eea-section-trigger')) {
+
+            targets = ["#facetview_trees_loader", ".eea-right-section-active"];
+
+            if (!event.target.matches(targets) ||
+                !event.target.closest(targets))
+            {
+                event.preventDefault();
+                $("#facetview_trees_loader").hide("slow");
+                $('.eea-right-section').removeClass('eea-right-section-active');
+            }
+        }
+    });
+
 }
 
 function setUrl(stateObj, page, url) {
