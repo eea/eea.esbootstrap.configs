@@ -56,7 +56,8 @@
     "configuration": {
       "type": "csv",
       "bulksize": 2000,
-      "file": "./tools/FISE_catalogue_updated.csv",
+      "file": "/tmp/FISE_catalogue_updated.csv",
+      "create_file_script": "/code/config/FISE/tools/add-sdi-records.py",
       "id_type": "field",
       "id_field": "ID",
       "data_modifier": "modify.js",

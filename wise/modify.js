@@ -1,3 +1,5 @@
+var CsvReadableStream = require('csv-reader');
+
 descr_values = {
   "D1":"Biodiversity",
   "D2":"NIS",
@@ -28,6 +30,172 @@ function normalize_doc(doc){
     doc = rename_key(doc, old_key, new_key)
   }
   return doc;
+}
+
+
+function joinCSV(doc, csv, fields){
+  const detectCharacterEncoding = require('detect-character-encoding');
+  const fileBuffer = fs.readFileSync(csv);
+  const charsetMatch = detectCharacterEncoding(fileBuffer);
+  const inputStream = fs.createReadStream(csv, charsetMatch.encoding)
+  let stream = inputStream
+    .pipe(CsvReadableStream({ parseNumbers: true, parseBooleans: true, trim: true , delimiter: ','}));
+  stream
+    .on('data', function (row) {
+      console.log(row)
+    }).on('end', function (data) {
+      console.log('No more rows!');
+    });
+
+}
+
+function joinBD(doc){
+  joinCSV(doc, './data/BD.csv', {'key':'MeasureCode','simple_fields':{'Country_code':'c_code','season':'season','Feature code':'f_code'}})
+/*Region
+Country_code
+Season
+Feature code
+Sub-unit
+Pressure code
+Pressure name
+Pressure type
+Pressure location
+Ranking
+Measure code
+Measure type recommended to address E02 and/or E03
+measure purpose
+Measure location
+Measure response
+Measure additional info
+*/
+}
+
+function joinHDH(doc){
+/*Region
+Country_code
+Feature code
+Pressure code
+Pressure name
+Pressure type
+Pressure location
+Ranking
+Measure code
+Measure type recommended to address E02 and/or E03
+Measure purpose
+Measure location
+Measure response
+Measure additional info
+*/
+}
+
+function joinHDS(doc){
+/*Region
+Country_code
+Feature code
+Pressure code
+Pressure name
+Pressure type
+Pressure location
+Ranking
+Measure code
+Measure type recommended to address E02 and/or E03
+measure purpose
+Measure location
+Measure response
+Measure additional info
+*/
+}
+
+function joinMSFD(doc){
+/*Country
+Measure Number
+Link to existing policies
+KTMs it links to
+Relevant targets
+Descriptors it links to 
+Relevant features from MSFD Annex III
+Spatial  scope_MSFD
+Other (if applicable)
+PORTS
+SHIPPING
+BOTH
+accident management
+administrative
+air pollution
+anchoring/mooring
+awareness raising
+ballast waters
+construction
+dredging
+EU policies
+hull fouling
+international agreements
+legislation/regulation
+maintenence
+marine litter
+navigation
+NIS
+noise
+pollution
+regional sea convention
+PSSA/ZMES
+technical measures
+waste management
+water pollution
+TEST
+1
+1b (not related to WFD)
+1b (related to WFD)
+2
+2a
+2b
+unknown
+TEST
+Status Resume
+*/
+}
+
+function joinMSPD(doc){
+/*MSPD implementation status
+Shipping Tackled
+Traffic separation scheme
+Priority Areas
+Approaching Areas
+Precautionary areas
+Areas to be avoided
+Future Scenarios
+Source
+Keywords
+Authority
+General View
+Ports
+Future Expectations
+Safety manner
+Objective
+Categories
+*/
+}
+
+function joinSEC(doc){
+/*IMPACTS Waste management
+IMPACTS Air pollution
+IMPACTS Marine litter
+IMPACTS NIS
+IMPACTS Noise
+IMPACTS Pollution
+IMPACTS Water pollution
+IMPACTS Other
+Spatial scale
+Source(s)
+*/
+}
+
+function joinWFD(doc){
+Nature of physical modification
+Effect on hydromorphology
+Ecological impacts
+
+]
 }
 
 String.prototype.capitalize = function() {
@@ -95,6 +263,7 @@ module.exports = function(doc){
       }
       modified_doc['Nature of the measure'] = notm_list;
       modified_doc = normalize_doc(modified_doc);
+joinBD(doc);
     }
     catch(err){
         console.log(err);

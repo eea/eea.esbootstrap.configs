@@ -425,7 +425,7 @@ def main():
     sdirecords = getSDIRecords(data)
 
     # store new items in a csv file
-    savetoCSV(sdirecords, 'FISE_catalogue_updated.csv')
+    savetoCSV(sdirecords, '/tmp/FISE_catalogue_updated.csv')
 
 if __name__ == "__main__":
     main()
