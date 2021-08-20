@@ -56,7 +56,7 @@
     "configuration": {
       "type": "csv",
       "bulksize": 2000,
-      "file": "FISE_catalogue_updated.csv",
+      "file": "./tools/FISE_catalogue_updated.csv",
       "id_type": "field",
       "id_field": "ID",
       "data_modifier": "modify.js",
