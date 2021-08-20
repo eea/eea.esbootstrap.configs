@@ -50,12 +50,12 @@
     "token": "default"
   },
   "source": {
-    "type": "url",
+    "type": "file",
     "autoswitch": "true",
     "switch_condition_value_percent": 100,
     "configuration": {
       "type": "csv",
-      "bulksize": 5000,
+      "bulksize": 2000,
       "file": "FISE_catalogue_updated.csv",
       "id_type": "field",
       "id_field": "ID",
