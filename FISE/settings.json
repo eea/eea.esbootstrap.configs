@@ -56,13 +56,13 @@
     "configuration": {
       "type": "csv",
       "bulksize": 5000,
-      "url": "https://cmshare.eea.europa.eu/s/fd8gyYk2YMiedQd/download/catalogue.csv",
+      "file": "FISE_catalogue_updated.csv",
       "id_type": "field",
       "id_field": "ID",
       "data_modifier": "modify.js",
       "encoding": "utf-8"
     }
   },
-  "es_debug_enabled": false,
+  "es_debug_enabled": true,
   "suggestions_enabled": true
 }
