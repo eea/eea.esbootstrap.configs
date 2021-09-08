@@ -390,7 +390,7 @@ def savetoCSV(records, filename):
         'Changed'
     ]
 
-    catalog_url = 'https://cmshare.eea.europa.eu/s/fd8gyYk2YMiedQd/download/catalogue.csv'
+    catalog_url = 'https://cmshare.eea.europa.eu/s/YZocgSHqKNbT4gn/download?path=/catalogue&files=catalogue.csv'
 
     # writing to csv file
     with open(filename, 'w') as csvfile:
