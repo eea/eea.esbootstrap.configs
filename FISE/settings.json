@@ -52,7 +52,7 @@
   "source": {
     "type": "url",
     "autoswitch": "true",
-    "switch_condition_value_percent": 100,
+    "switch_condition_value_percent": 90,
     "configuration": {
       "type": "csv",
       "bulksize": 5000,
