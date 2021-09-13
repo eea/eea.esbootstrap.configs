@@ -56,7 +56,7 @@
     "configuration": {
       "type": "csv",
       "bulksize": 5000,
-      "url": "https://cmshare.eea.europa.eu/s/fd8gyYk2YMiedQd/download/catalogue.csv",
+      "url": "https://cmshare.eea.europa.eu/s/YZocgSHqKNbT4gn/download?path=/catalogue&files=catalogue.csv",
       "id_type": "field",
       "id_field": "ID",
       "data_modifier": "modify.js",
