@@ -288,11 +288,11 @@ function searchModifications() {
     });
 
     $(document).click(function(event) {
-        if ($("#facetview_trees_loader").is(":hidden") == false && !event.target.matches('.eea-section-trigger')) {
+        if ($("#facetview_trees_loader").is(":hidden") == false && !event.target.is('.eea-section-trigger')) {
 
             targets = ["#facetview_trees_loader", ".eea-right-section-active"];
 
-            if (!event.target.matches(targets) ||
+            if (!event.target.is(targets) ||
                 !event.target.closest(targets))
             {
                 event.preventDefault();
