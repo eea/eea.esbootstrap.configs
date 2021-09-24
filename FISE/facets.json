@@ -64,12 +64,25 @@
                 "type": "list"
             }
         },
+        {
+            "name": "Content_type",
+            "listing": { "title": "Content type", "visible" : true, "pos" : 6 },
+            "details": { "title": "Content type", "pos" : 60, "section": "info", "visible": true },
+            "facet": { "visible": true, "title": "Content type", "operator": "OR", "pos": 2, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"]},
+            "csv_tsv": { "title": "Content_type", "visible": true, "pos": 6 },
+            "list": {
+                "field": "format",
+                "default": "",
+                "visible": true,
+                "type": "list"
+            }
 
+        },
         {
             "name": "COUNTRY",
             "listing": { "title": "Country", "visible" : true, "pos" : 2 },
             "details": { "title": "Country", "pos" : 20, "section": "info", "visible": true },
-            "facet": { "visible": true, "title": "Countries", "pos": 2, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Country/Region"},
+            "facet": { "visible": true, "title": "Geographical coverage", "pos": 3, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"], "autocomplete": true, "autocomplete_placeholder": "Search for Country/Region"},
             "csv_tsv": { "title": "COUNTRY", "visible": true, "pos": 2 }
         },
         {
@@ -92,20 +105,6 @@
             "details": { "title": "Data set", "pos" : 30, "section": "info", "visible": true },
             "facet": { "visible": false},
             "csv_tsv": { "title": "DATA_SETS", "visible": false, "pos": 5 }
-        },
-        {
-            "name": "Content_type",
-            "listing": { "title": "Content type", "visible" : true, "pos" : 6 },
-            "details": { "title": "Content type", "pos" : 60, "section": "info", "visible": true },
-            "facet": { "visible": true, "title": "Content type", "operator": "OR", "pos": 30, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"]},
-            "csv_tsv": { "title": "Content_type", "visible": true, "pos": 6 },
-            "list": {
-                "field": "format",
-                "default": "",
-                "visible": true,
-                "type": "list"
-            }
-
         },
         {
             "name": "INFO_LEVEL",

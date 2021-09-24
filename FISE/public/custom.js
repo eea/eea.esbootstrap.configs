@@ -127,7 +127,7 @@ $(window).bind("post_search_callback", function () {
   // Open search filters on page load
   $(".facetview_filter h2").each(function (index, item) {
     if (!$(item).hasClass("facetview_open")) {
-      if (item.title === "Countries") {
+      if (item.title === "Geographical coverage" || item.title === "Content type") {
         setTimeout(function () {
           $(item).trigger("click");
         }, 400);
