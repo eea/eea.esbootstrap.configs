@@ -31,7 +31,10 @@ block content
         else
             a(class="nfi-download-button" target="_blank" href!=data.Source.value type="link")
                 i(class="fa fa-external-link")
-                span(class="nfi-external-link-text") Go to source
+                    if (data.Source.value.startsWith("https://sdi.eea.europa.eu/catalogue/fise/api/records"))
+                        span(class="nfi-external-link-text") EEA SDI
+                    else
+                        span(class="nfi-external-link-text") Go to source
         div(class="search-page")
             div(class="meta-data")
                 div(class="text-tab")
