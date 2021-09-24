@@ -162,8 +162,13 @@ $(window).bind("post_search_callback", function () {
 
       type = 'link';
 
+      if (source_url.startsWith("https://sdi.eea.europa.eu/catalogue/fise/api/records")) {
+        $(item).find('.nfi-download-text').text('EEA SDI');
+      } else {
+        $(item).find('.nfi-download-text').text('Go to source');
+      }
+
       $(item).attr("href",source_url);
-      $(item).find('.nfi-download-text').text('Go to source');
       $(item).find('.file-size').remove();
     }
 
