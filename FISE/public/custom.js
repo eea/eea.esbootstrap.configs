@@ -178,4 +178,44 @@ $(window).bind("post_search_callback", function () {
   $(".mobile-nav-wrapper .hamburger").click(function () {
     $("body").toggleClass("mobile-menu-open");
   });
+
+  const LIMIT = 600;
+
+  $('.eea-list-tiles span.description:not(.expandable)').each(function() {
+    const self = this;
+    const text = this.innerHTML;
+    const length = text.length;
+    if (length <= LIMIT) return;
+    $(this).addClass('expandable');
+    const readMoreElement = document.createElement('span');
+    const readLessElement = document.createElement('span');
+    const visibleTextElement = document.createElement('span');
+    const hiddenTextElement = document.createElement('span');
+    readMoreElement.innerHTML = 'Read more >>';
+    readLessElement.innerHTML = '<< Read less';
+    visibleTextElement.innerHTML = text.slice(0, LIMIT);
+    hiddenTextElement.innerHTML = text.slice(LIMIT, length);
+    $(readMoreElement).addClass('read-more');
+    $(readLessElement).addClass('read-less');
+    $(visibleTextElement).addClass('visible-text');
+    $(hiddenTextElement).addClass('hidden-text');
+    
+    $(readMoreElement).click(function() {
+      if (!$(self).hasClass('expanded')) {
+        $(self).addClass('expanded');
+      }
+    })
+
+    $(readLessElement).click(function() {
+      if ($(self).hasClass('expanded')) {
+        $(self).removeClass('expanded');
+      }
+    })
+
+    this.innerHTML = '';
+    this.append(visibleTextElement);
+    this.append(readMoreElement);
+    this.append(hiddenTextElement);
+    this.append(readLessElement);
+  })
 });

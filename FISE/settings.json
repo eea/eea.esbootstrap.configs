@@ -31,7 +31,10 @@
       "details_page": ["css/esbootstrap.facetview.css", "details.css"]
     },
     "js_resources": {
-      "index_page": ["fise.facetview.js", "custom.js"],
+      "index_page": [
+        "fise.facetview.js",
+        "custom.js"
+      ],
       "details_page": [
         "https://www.eea.europa.eu/register_function.js",
         "https://www.eea.europa.eu/nodeutilities.js",
