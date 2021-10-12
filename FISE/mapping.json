@@ -22,6 +22,7 @@
   "YEAR_DATA_COLLECTION_END" : {"type" :"text", "analyzer" : "coma", "copy_to":["range"] },
   "COUNTRY" : {"type": "string", "analyzer" : "coma", "copy_to" : ["did_you_mean", "autocomplete"]},
   "Topics" : {"type": "string", "analyzer" : "coma"},
+  "UPDATE_FREQUENCY" :  {"type": "string", "analyzer" : "coma"},
   "Content_type" :  {"type": "string", "analyzer" : "coma", "copy_to" : ["did_you_mean", "autocomplete"]},
   "COLLECTIONS_RANGE" :  {"type": "text","fielddata":true, "analyzer" : "coma"},
   "RESOURCE_TITLE" : {"type": "text", "fields": {"keyword": {"ignore_above": 256,"type": "keyword"}}, "copy_to" : ["did_you_mean", "autocomplete"]},
