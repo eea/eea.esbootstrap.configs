@@ -472,6 +472,19 @@
                 }
             },
             "csv_tsv": { "visible": false }
+        },
+        {
+            "name": "UPDATE_FREQUENCY",
+            "listing": { "visible" : false },
+            "details": { "visible": false },
+            "facet": { "visible": true, "title": "Update frequency", "operator": "OR", "pos": 28, "type": "facet", "size": 100, "order": "term", "facet_display_options": ["sort", "checkbox"]},
+            "csv_tsv": { "title": "UPDATE_FREQUENCY", "visible": true, "pos": 49 },
+            "list": {
+                "field": "format",
+                "default": "",
+                "visible": true,
+                "type": "list"
+            }
         }
     ]
 }
