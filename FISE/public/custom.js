@@ -124,15 +124,38 @@ $(window).bind("post_search_callback", function () {
   } else {
     $("a.facetview_increment").show();
   }
+
   // Open search filters on page load
   $(".facetview_filter h2").each(function (index, item) {
     if (!$(item).hasClass("facetview_open")) {
       if (item.title === "Geographical coverage" || item.title === "Content type") {
         setTimeout(function () {
           $(item).trigger("click");
+
+          if (item.title === "Content type") {
+            $(item.nextElementSibling.firstChild).trigger("click").trigger("click");
+          }
         }, 400);
       }
     }
+
+    if (item.title === "Geographical coverage") {
+      let pan_euro = null;
+      let list = $(item).parent().children()[6].firstElementChild;
+      let lis = $(list).children();
+
+      for(let i=0; i < lis.length; i++) {
+        if (lis[i].title == "Pan European (EEA)") {
+          pan_euro = lis[i];
+          lis[i].remove();
+        }
+      }
+
+      if (pan_euro !== null) {
+        list.prepend(pan_euro);
+      }
+    }
+
   });
 
   if (!$("#filters-title").length) {
@@ -179,7 +202,7 @@ $(window).bind("post_search_callback", function () {
     $("body").toggleClass("mobile-menu-open");
   });
 
-  const LIMIT = 600;
+  const LIMIT = 300;
 
   $('.eea-list-tiles span.description:not(.expandable)').each(function() {
     const self = this;
