@@ -486,6 +486,30 @@ td[data-title="Organisation email"] span {
 .sidebar-close {
   display: none;
 }
+
+.eea-list-tiles span.description.expandable:not(.expanded) .hidden-text {
+  display: none;
+}
+
+.eea-list-tiles span.description.expandable:not(.expanded) .visible-text::after {
+  content: "\00a0...";
+  display: inline-block;
+}
+
+.eea-list-tiles span.description.expandable.expanded .read-more {
+  display: none;
+}
+
+.eea-list-tiles span.description.expandable:not(.expanded) .read-less {
+  display: none;
+}
+
+.read-more, .read-less {
+  cursor: pointer;
+  text-decoration: underline;
+  display: block;
+}
+
 @media (max-width: 768px) {
   body.filters-open .span3.right-column-area.eea-section.eea-right-section {
     transform: translateX(-100%);
