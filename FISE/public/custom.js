@@ -149,26 +149,25 @@ $(window).bind("post_search_callback", function () {
 
         switch (span[0].innerText) {
           case "Tabular data":
-            console.dir("intra tabular")
-            icon = "<i class='fa fa-table'></i>&nbsp;";
+            icon = "<i class='fas fa-table'></i>&nbsp;";
             break;
           case "Report":
-            icon = "<i class='fa fa-bar-chart'></i>&nbsp;";
+            icon = "<i class='fas fa-chart-line'></i>&nbsp;";
             break;
           case "Data services":
-            icon = "<i class='fa fa-cog'></i>&nbsp;";
+            icon = "<i class='fas fa-cog'></i>&nbsp;";
             break;
           case "Documentation":
-            icon = "<i class='fa fa-file'></i>&nbsp;";
+            icon = "<i class='fas fa-file'></i>&nbsp;";
             break;
           case "Database":
-            icon = "<i class='fa fa-database'></i>&nbsp;";
+            icon = "<i class='fas fa-database'></i>&nbsp;";
             break;
           case "Spacial dataset":
-            icon = "<i class='fa fa-rocket'></i>&nbsp;"
+            icon = "<i class='fas fa-globe-europe'></i>&nbsp;"
             break;
           case "Others":
-            icon = "<i class='fa fa-list'></i>&nbsp;"
+            icon = "<i class='fas fa-list'></i>&nbsp;"
             break;
         }
 
@@ -202,12 +201,12 @@ $(window).bind("post_search_callback", function () {
   }
 
   var downloadIconsClasses = {
-    xlsx: "fa-file-excel-o",
-    pdf: "fa-file-pdf-o",
-    PDF: "fa-file-pdf-o",
-    doc: "fa-file-text",
-    xls: "fa-file-excel-o",
-    link: "fa-external-link"
+    xlsx: "fa-file-excel",
+    pdf: "fa-file-pdf",
+    PDF: "fa-file-pdf",
+    doc: "fa-file-word",
+    xls: "fa-file-excel",
+    link: "fa-external-link-alt"
   };
 
   var downloadButton = $(".nfi-download-button");
@@ -215,7 +214,7 @@ $(window).bind("post_search_callback", function () {
     var downloadArr = $(item).attr("type").split(".");
     var type = downloadArr[downloadArr.length - 1];
     var filesize = $(item).find('.file-size').text();
-    var icon = $(item).find("i.fa");
+    var icon = $(item).find("i.fas");
 
     if (type === '' && filesize === '(  )') {
       let source_url = $(item).find('.source-url').val();

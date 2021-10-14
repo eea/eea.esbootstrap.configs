@@ -24,13 +24,13 @@ block content
             != data.RESOURCE_TITLE.value
         if (data.RESOURCE_LOCATOR_INTERNAL.value)
             a(class="nfi-download-button" target="_blank" href!=data.RESOURCE_LOCATOR_INTERNAL.value type!=data.RESOURCE_LOCATOR_INTERNAL.value)
-                i(class="fa fa-download")
+                i(class="fas fa-download")
                 span(class="nfi-download-text") Download
                 span(class="file-size")
                     != data.FILE_SIZE.value
         else
             a(class="nfi-download-button" target="_blank" href!=data.Source.value type="link")
-                i(class="fa fa-external-link")
+                i(class="fas fa-external-link-alt")
                     if (data.Source.value.startsWith("https://sdi.eea.europa.eu/catalogue/fise/api/records"))
                         span(class="nfi-external-link-text") EEA SDI
                     else
