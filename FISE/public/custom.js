@@ -139,6 +139,43 @@ $(window).bind("post_search_callback", function () {
       }
     }
 
+    if (item.title === "Content type") {
+      let list = $(item).parent().children()[4].firstElementChild;
+      let lis = $(list).children();
+
+      for(let i=0; i < lis.length; i++) {
+        let span = $(lis[i]).find("span.facet_label_text.i18n");
+        let icon = "";
+
+        switch (span[0].innerText) {
+          case "Tabular data":
+            console.dir("intra tabular")
+            icon = "<i class='fa fa-table'></i>&nbsp;";
+            break;
+          case "Report":
+            icon = "<i class='fa fa-bar-chart'></i>&nbsp;";
+            break;
+          case "Data services":
+            icon = "<i class='fa fa-cog'></i>&nbsp;";
+            break;
+          case "Documentation":
+            icon = "<i class='fa fa-file'></i>&nbsp;";
+            break;
+          case "Database":
+            icon = "<i class='fa fa-database'></i>&nbsp;";
+            break;
+          case "Spacial dataset":
+            icon = "<i class='fa fa-rocket'></i>&nbsp;"
+            break;
+          case "Others":
+            icon = "<i class='fa fa-list'></i>&nbsp;"
+            break;
+        }
+
+        span[0].innerHTML = icon + span[0].innerText;
+      }
+    }
+
     if (item.title === "Geographical coverage") {
       let pan_euro = null;
       let list = $(item).parent().children()[6].firstElementChild;
