@@ -14,18 +14,18 @@ window.jQuery(document).ready(function ($) {
 
 
   var downloadIconsClasses = {
-    xlsx: 'fa-file-excel-o',
-    pdf: 'fa-file-pdf-o',
-    PDF: 'fa-file-pdf-o',
-    doc: 'fa-file-text',
-    xls: 'fa-file-excel-o',
-    link: "fa-external-link"
+    xlsx: "fa-file-excel",
+    pdf: "fa-file-pdf",
+    PDF: "fa-file-pdf",
+    doc: "fa-file-word",
+    xls: "fa-file-excel",
+    link: "fa-external-link-alt"
   }
 
   var item = $('.nfi-download-button')
   var downloadArr = $(item).attr('type').split('.')
   var type = downloadArr[downloadArr.length - 1]
-  var icon = $(item).find('i.fa')
+  var icon = $(item).find('i.fas')
   icon.addClass(downloadIconsClasses[type])
 
 });
