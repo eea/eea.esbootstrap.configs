@@ -20,7 +20,7 @@ block extrastyles
 
 block content
     if (data)
-        h2
+        h2(class="resource-title")
             != data.RESOURCE_TITLE.value
         if (data.RESOURCE_LOCATOR_INTERNAL.value)
             a(class="nfi-download-button" target="_blank" href!=data.RESOURCE_LOCATOR_INTERNAL.value type!=data.RESOURCE_LOCATOR_INTERNAL.value)
@@ -43,7 +43,7 @@ block content
                         != data.YEAR_PUBLISHED.value
                 div(class="text-tab")
                     span(class="format-text") Content type: 
-                    span(class="format-type format")
+                    span(class="format-type format content-type")
                         != data.Content_type.value
                 div(class="text-tab")
                     span(class="format-text") Topics: 

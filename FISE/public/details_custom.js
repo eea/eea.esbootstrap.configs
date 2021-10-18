@@ -28,4 +28,35 @@ window.jQuery(document).ready(function ($) {
   var icon = $(item).find('i.fas')
   icon.addClass(downloadIconsClasses[type])
 
+
+  let title = $('.resource-title')[0];
+  let content_type = $(title.parentElement).find('.content-type')[0].innerHTML;
+
+  icon = "";
+
+  switch (content_type) {
+    case "Tabular data":
+      icon = "<i class='fas fa-table'></i>&nbsp;";
+      break;
+    case "Report":
+      icon = "<i class='fas fa-chart-line'></i>&nbsp;";
+      break;
+    case "Data services":
+      icon = "<i class='fas fa-cog'></i>&nbsp;";
+      break;
+    case "Documentation":
+      icon = "<i class='fas fa-file'></i>&nbsp;";
+      break;
+    case "Database":
+      icon = "<i class='fas fa-database'></i>&nbsp;";
+      break;
+    case "Spacial dataset":
+      icon = "<i class='fas fa-globe-europe'></i>&nbsp;"
+      break;
+    case "Others":
+      icon = "<i class='fas fa-list'></i>&nbsp;"
+      break;
+  }
+
+  title.innerHTML = icon + title.innerHTML;
 });

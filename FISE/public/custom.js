@@ -234,6 +234,38 @@ $(window).bind("post_search_callback", function () {
     icon.addClass(downloadIconsClasses[type]);
   });
 
+  var titles = $("article.block-item a span.details_link");
+  titles.each(function (index, item) {
+    let content_type = $(item.parentElement.parentElement).find('.content-type')[0].innerHTML;
+    let icon = "";
+
+    switch (content_type) {
+      case "Tabular data":
+        icon = "<i class='fas fa-table'></i>&nbsp;";
+        break;
+      case "Report":
+        icon = "<i class='fas fa-chart-line'></i>&nbsp;";
+        break;
+      case "Data services":
+        icon = "<i class='fas fa-cog'></i>&nbsp;";
+        break;
+      case "Documentation":
+        icon = "<i class='fas fa-file'></i>&nbsp;";
+        break;
+      case "Database":
+        icon = "<i class='fas fa-database'></i>&nbsp;";
+        break;
+      case "Spacial dataset":
+        icon = "<i class='fas fa-globe-europe'></i>&nbsp;"
+        break;
+      case "Others":
+        icon = "<i class='fas fa-list'></i>&nbsp;"
+        break;
+    }
+
+    $(item.parentElement).prepend(icon);
+  });
+
   $(".mobile-nav-wrapper .hamburger").click(function () {
     $("body").toggleClass("mobile-menu-open");
   });
