@@ -50,7 +50,7 @@ window.jQuery(document).ready(function ($) {
     case "Database":
       icon = "<i class='fas fa-database'></i>&nbsp;";
       break;
-    case "Spacial dataset":
+    case "Spatial dataset":
       icon = "<i class='fas fa-globe-europe'></i>&nbsp;"
       break;
     case "Others":

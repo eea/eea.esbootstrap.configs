@@ -135,44 +135,48 @@ $(window).bind("post_search_callback", function () {
           if (item.title === "Content type") {
             $(item.nextElementSibling.firstChild).trigger("click").trigger("click");
           }
-        }, 400);
+        }, 300);
       }
     }
 
     if (item.title === "Content type") {
-      let list = $(item).parent().children()[4].firstElementChild;
-      let lis = $(list).children();
+      setTimeout(function () {
+        let list = $($(item)[0].parentElement).find("div.facetview_tree ul");
 
-      for(let i=0; i < lis.length; i++) {
-        let span = $(lis[i]).find("span.facet_label_text.i18n");
-        let icon = "";
+        let lis = $(list).children();
 
-        switch (span[0].innerText) {
-          case "Tabular data":
-            icon = "<i class='fas fa-table'></i>&nbsp;";
-            break;
-          case "Report":
-            icon = "<i class='fas fa-chart-line'></i>&nbsp;";
-            break;
-          case "Data services":
-            icon = "<i class='fas fa-cog'></i>&nbsp;";
-            break;
-          case "Documentation":
-            icon = "<i class='fas fa-file'></i>&nbsp;";
-            break;
-          case "Database":
-            icon = "<i class='fas fa-database'></i>&nbsp;";
-            break;
-          case "Spacial dataset":
-            icon = "<i class='fas fa-globe-europe'></i>&nbsp;"
-            break;
-          case "Others":
-            icon = "<i class='fas fa-list'></i>&nbsp;"
-            break;
+        for (let i = 0; i < lis.length; i++) {
+          let span = $(lis[i]).find("span.facet_label_text.i18n")[0];
+          let content_type = span.innerText.trim();
+          let icon = "";
+
+          switch (content_type) {
+            case "Tabular data":
+              icon = "<i class='fas fa-table'></i>&nbsp;";
+              break;
+            case "Report":
+              icon = "<i class='fas fa-chart-line'></i>&nbsp;";
+              break;
+            case "Data services":
+              icon = "<i class='fas fa-cog'></i>&nbsp;";
+              break;
+            case "Documentation":
+              icon = "<i class='fas fa-file'></i>&nbsp;";
+              break;
+            case "Database":
+              icon = "<i class='fas fa-database'></i>&nbsp;";
+              break;
+            case "Spatial dataset":
+              icon = "<i class='fas fa-globe-europe'></i>&nbsp;"
+              break;
+            case "Others":
+              icon = "<i class='fas fa-list'></i>&nbsp;"
+              break;
+          }
+
+          span.innerHTML = icon + content_type;
         }
-
-        span[0].innerHTML = icon + span[0].innerText;
-      }
+      }, 600);
     }
 
     if (item.title === "Geographical coverage") {
@@ -180,7 +184,7 @@ $(window).bind("post_search_callback", function () {
       let list = $(item).parent().children()[6].firstElementChild;
       let lis = $(list).children();
 
-      for(let i=0; i < lis.length; i++) {
+      for (let i = 0; i < lis.length; i++) {
         if (lis[i].title == "Pan European (EEA)") {
           pan_euro = lis[i];
           lis[i].remove();
@@ -227,7 +231,7 @@ $(window).bind("post_search_callback", function () {
         $(item).find('.nfi-download-text').text('Go to source');
       }
 
-      $(item).attr("href",source_url);
+      $(item).attr("href", source_url);
       $(item).find('.file-size').remove();
     }
 
@@ -236,7 +240,7 @@ $(window).bind("post_search_callback", function () {
 
   var titles = $("article.block-item a span.details_link");
   titles.each(function (index, item) {
-    let content_type = $(item.parentElement.parentElement).find('.content-type')[0].innerHTML;
+    let content_type = $(item.parentElement.parentElement).find('.content-type')[0].innerText;
     let icon = "";
 
     switch (content_type) {
@@ -255,7 +259,7 @@ $(window).bind("post_search_callback", function () {
       case "Database":
         icon = "<i class='fas fa-database'></i>&nbsp;";
         break;
-      case "Spacial dataset":
+      case "Spatial dataset":
         icon = "<i class='fas fa-globe-europe'></i>&nbsp;"
         break;
       case "Others":
@@ -272,7 +276,7 @@ $(window).bind("post_search_callback", function () {
 
   const LIMIT = 300;
 
-  $('.eea-list-tiles span.description:not(.expandable)').each(function() {
+  $('.eea-list-tiles span.description:not(.expandable)').each(function () {
     const self = this;
     const text = this.innerHTML;
     const length = text.length;
@@ -290,14 +294,14 @@ $(window).bind("post_search_callback", function () {
     $(readLessElement).addClass('read-less');
     $(visibleTextElement).addClass('visible-text');
     $(hiddenTextElement).addClass('hidden-text');
-    
-    $(readMoreElement).click(function() {
+
+    $(readMoreElement).click(function () {
       if (!$(self).hasClass('expanded')) {
         $(self).addClass('expanded');
       }
     })
 
-    $(readLessElement).click(function() {
+    $(readLessElement).click(function () {
       if ($(self).hasClass('expanded')) {
         $(self).removeClass('expanded');
       }

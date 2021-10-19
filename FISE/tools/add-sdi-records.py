@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 
 SDI_API_URL = 'https://sdi.eea.europa.eu/catalogue/fise/api'
 
-# get spacial datasets form SDI
+# get Spatial datasets form SDI
 
 def querySDIDatasetsRecords():
     records  = {"datasets" : []}
@@ -547,7 +547,7 @@ def parseSDIMetadataXML(xml_content):
         resource_type = tree.find(".//{http://www.isotc211.org/2005/gmd}hierarchyLevel/{http://www.isotc211.org/2005/gmd}MD_ScopeCode").get('codeListValue').encode('utf8')
 
         if resource_type == 'dataset':
-            record['Content_type'] = 'Spacial dataset'
+            record['Content_type'] = 'Spatial dataset'
         
         if resource_type == 'service':
             record['Content_type'] = 'Data services'
