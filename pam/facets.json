@@ -50,7 +50,7 @@
                 "pos": 20,
                 "display": {
                     "pre": "<td><a class='details_link' href='",
-                    "field": "Report_ID_ES",
+                    "field": "pdf",
                     "post":"'>"
                 }
             },
