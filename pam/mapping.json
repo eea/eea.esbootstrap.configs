@@ -34,10 +34,16 @@
         "type" : "text",
         "analyzer" : "semicolon"
     },
-    "Total_GHG_emissions_reductions_in_2020__kt_CO2eq_y_"  : {
+    "Total_GHG_emissions_reductions_in_2025__kt_CO2eq_y_"  : {
         "type" : "double"
     },
     "Total_GHG_emissions_reductions_in_2030__kt_CO2eq_y_"  : {
+        "type" : "double"
+    },
+    "Total_GHG_emissions_reductions_in_2035__kt_CO2eq_y_"  : {
+        "type" : "double"
+    },
+    "Total_GHG_emissions_reductions_in_2040__kt_CO2eq_y_"  : {
         "type" : "double"
     },
     "Entities_responsible_for_implementing_the_policy__type_"  : {

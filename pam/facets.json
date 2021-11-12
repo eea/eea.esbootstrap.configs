@@ -292,21 +292,21 @@
             }
         },
         {
-            "name": "Total_GHG_emissions_reductions_in_2020__kt_CO2eq_y_",
+            "name": "Total_GHG_emissions_reductions_in_2025__kt_CO2eq_y_",
             "listing": {
                 "visible": true,
-                "title": "Total GHG emissions reductions in 2020 (kt CO2eq/y)",
+                "title": "Total GHG emissions reductions in 2025 (kt CO2eq/y)",
                 "pos": 150,
                 "width": "110px"
             },
             "csv_tsv": {
-                "title": "Total GHG emissions reductions in 2020 (kt CO2eq/y)",
+                "title": "Total GHG emissions reductions in 2025 (kt CO2eq/y)",
                 "visible": true,
                 "pos": 150
             },
             "facet": {
                 "visible": true,
-                "title": "Total GHG emissions reductions in 2020 (kt CO2eq/y)",
+                "title": "Total GHG emissions reductions in 2025 (kt CO2eq/y)",
                 "pos": 150,
                 "type": "rangehistogram",
                 "order": "term",
@@ -322,21 +322,21 @@
             }
         },
         {
-            "name": "Total_GHG_emissions_reductions_in_2030__kt_CO2eq_y_",
+            "name": "Total_GHG_emissions_reductions_in_2035__kt_CO2eq_y_",
             "listing": {
                 "visible": true,
-                "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
+                "title": "Total GHG emissions reductions in 2035 (kt CO2eq/y)",
                 "pos": 160,
                 "width": "110px"
             },
             "csv_tsv": {
-                "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
+                "title": "Total GHG emissions reductions in 2035 (kt CO2eq/y)",
                 "visible": true,
                 "pos": 160
             },
             "facet": {
                 "visible": true,
-                "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
+                "title": "Total GHG emissions reductions in 2035 (kt CO2eq/y)",
                 "pos": 160,
                 "type": "rangehistogram",
                 "order": "term",
@@ -670,51 +670,17 @@
             }
         },
         {
-            "name": "GHG_emissions_reductions_EU_ETS_in_2020__kt_CO2eq_y_",
-            "listing": {
-                "visible": true,
-                "title": "GHG emissions reductions EU ETS in 2020 (kt CO2eq/y)",
-                "pos": 340,
-                "width": "100px"
-            },
-            "csv_tsv": {
-                "title": "GHG emissions reductions EU ETS in 2020 (kt CO2eq/y)",
-                "visible": true,
-                "pos": 340
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-        {
-            "name": "GHG_emissions_reductions_ESD_in_2020__kt_CO2eq_y_",
-            "listing": {
-                "visible": true,
-                "title": "GHG emissions reductions ESD in 2020 (kt CO2eq/y)",
-                "pos": 350,
-                "width": "100px"
-            },
-            "csv_tsv": {
-                "title": "GHG emissions reductions ESD in 2020 (kt CO2eq/y)",
-                "visible": true,
-                "pos": 350
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-        {
             "name": "GHG_emissions_reductions_EU_ETS_in_2025__kt_CO2eq_y_",
             "listing": {
                 "visible": true,
                 "title": "GHG emissions reductions EU ETS in 2025 (kt CO2eq/y)",
-                "pos": 360,
+                "pos": 340,
                 "width": "100px"
             },
             "csv_tsv": {
                 "title": "GHG emissions reductions EU ETS in 2025 (kt CO2eq/y)",
                 "visible": true,
-                "pos": 360
+                "pos": 340
             },
             "facet": {
                 "visible": false
@@ -725,30 +691,13 @@
             "listing": {
                 "visible": true,
                 "title": "GHG emissions reductions ESD in 2025 (kt CO2eq/y)",
-                "pos": 370,
+                "pos": 350,
                 "width": "100px"
             },
             "csv_tsv": {
                 "title": "GHG emissions reductions ESD in 2025 (kt CO2eq/y)",
                 "visible": true,
-                "pos": 370
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-        {
-            "name": "Total_GHG_emissions_reductions_in_2025__kt_CO2eq_y_",
-            "listing": {
-                "visible": true,
-                "title": "Total GHG emissions reductions in 2025 (kt CO2eq/y)",
-                "pos": 380,
-                "width": "100px"
-            },
-            "csv_tsv": {
-                "title": "Total GHG emissions reductions in 2025 (kt CO2eq/y)",
-                "visible": true,
-                "pos": 380
+                "pos": 350
             },
             "facet": {
                 "visible": false
@@ -759,13 +708,13 @@
             "listing": {
                 "visible": true,
                 "title": "GHG emissions reductions EU ETS in 2030 (kt CO2eq/y)",
-                "pos": 390,
+                "pos": 360,
                 "width": "100px"
             },
             "csv_tsv": {
                 "title": "GHG emissions reductions EU ETS in 2030 (kt CO2eq/y)",
                 "visible": true,
-                "pos": 390
+                "pos": 360
             },
             "facet": {
                 "visible": false
@@ -776,13 +725,30 @@
             "listing": {
                 "visible": true,
                 "title": "GHG emissions reductions ESD in 2030 (kt CO2eq/y)",
-                "pos": 400,
+                "pos": 370,
                 "width": "100px"
             },
             "csv_tsv": {
                 "title": "GHG emissions reductions ESD in 2030 (kt CO2eq/y)",
                 "visible": true,
-                "pos": 400
+                "pos": 370
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Total_GHG_emissions_reductions_in_2030__kt_CO2eq_y_",
+            "listing": {
+                "visible": true,
+                "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
+                "pos": 380,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 380
             },
             "facet": {
                 "visible": false
@@ -793,13 +759,13 @@
             "listing": {
                 "visible": true,
                 "title": "GHG emissions reductions EU ETS in 2035 (kt CO2eq/y)",
-                "pos": 410,
+                "pos": 390,
                 "width": "100px"
             },
             "csv_tsv": {
                 "title": "GHG emissions reductions EU ETS in 2035 (kt CO2eq/y)",
                 "visible": true,
-                "pos": 410
+                "pos": 390
             },
             "facet": {
                 "visible": false
@@ -810,11 +776,45 @@
             "listing": {
                 "visible": true,
                 "title": "GHG emissions reductions ESD in 2035 (kt CO2eq/y)",
-                "pos": 420,
+                "pos": 400,
                 "width": "100px"
             },
             "csv_tsv": {
                 "title": "GHG emissions reductions ESD in 2035 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 400
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "GHG_emissions_reductions_EU_ETS_in_2040__kt_CO2eq_y_",
+            "listing": {
+                "visible": true,
+                "title": "GHG emissions reductions EU ETS in 2040 (kt CO2eq/y)",
+                "pos": 410,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "GHG emissions reductions EU ETS in 2040 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 410
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "GHG_emissions_reductions_ESD_in_2040__kt_CO2eq_y_",
+            "listing": {
+                "visible": true,
+                "title": "GHG emissions reductions ESD in 2040 (kt CO2eq/y)",
+                "pos": 420,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "GHG emissions reductions ESD in 2040 (kt CO2eq/y)",
                 "visible": true,
                 "pos": 420
             },
@@ -823,15 +823,15 @@
             }
         },
         {
-            "name": "Total_GHG_emissions_reductions_in_2035__kt_CO2eq_y_",
+            "name": "Total_GHG_emissions_reductions_in_2040__kt_CO2eq_y_",
             "listing": {
                 "visible": true,
-                "title": "Total GHG emissions reductions in 2035 (kt CO2eq/y)",
+                "title": "Total GHG emissions reductions in 2040 (kt CO2eq/y)",
                 "pos": 430,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Total GHG emissions reductions in 2035 (kt CO2eq/y)",
+                "title": "Total GHG emissions reductions in 2040 (kt CO2eq/y)",
                 "visible": true,
                 "pos": 430
             },
