@@ -46,7 +46,10 @@
     "site_title": "Forest Information",
     "site_description": "<h3>Forest Information</h3>",
     "enableBreadcrumbs": false,
-    "breadcrumbs": "Datasets",
+    "breadcrumbs": [
+      { "Home": "https://forest.eea.europa.eu/" },
+      { "Data catalogue": "" }
+    ],
     "further_info": ""
   },
   "API": {

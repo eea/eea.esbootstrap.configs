@@ -576,7 +576,8 @@ def parseSDIMetadataXML(xml_content):
             ".//{http://www.isotc211.org/2005/gmd}descriptiveKeywords/{http://www.isotc211.org/2005/gmd}MD_Keywords/{http://www.isotc211.org/2005/gmd}type/{http://www.isotc211.org/2005/gmd}MD_KeywordTypeCode[@codeListValue='theme']/../../{http://www.isotc211.org/2005/gmd}keyword/{http://www.isotc211.org/2005/gco}CharacterString")
 
         for k in keywords:
-            record['KEYWORDS'] += k.text.encode('utf8') + ', '
+            if k.text is not None:
+                record['KEYWORDS'] += k.text.encode('utf8') + ', '
     except ET.ParseError as err:
         print(err)
 

@@ -45,8 +45,8 @@ $(window).bind("post_search_callback", function () {
     );
   }
 
-  $(".breadcrumb .active").html("Data catalogue");
-  $(".header-image-content").html("<h1>Data catalogue</h1>");
+  $(".ui .breadcrumb").append('<div class="divider">/</div><div class="active section">Data catalogue</div></div>');
+  $(".header-image-content:first").html("<h1>Data catalogue</h1>");
 
   if (getCookie("popupCookie") != "closed") {
     $("#intro-popup").addClass("visible").hide().fadeIn();
