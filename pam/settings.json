@@ -67,7 +67,7 @@
 
             "sql": true,
             "sql_url": "https://discodata.eea.europa.eu/sql",
-            "sql_table": "[GHGPAMS].[v6r2].[PAMs_Viewer_Flat_file_final_elasticsearch]",
+            "sql_table": "[GHGPAMS].[v6r6].[PAMs_Viewer_Flat_file_final_elasticsearch]",
 
             "query_attr": "query",
             "query": "query.sql",
