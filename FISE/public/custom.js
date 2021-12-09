@@ -45,7 +45,7 @@ $(window).bind("post_search_callback", function () {
     );
   }
 
-  $(".ui .breadcrumb").append('<div class="divider">/</div><div class="active section">Data catalogue</div></div>');
+  $(".ui .breadcrumb").html('<a class="section" title="Home" href="/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" style="height:18px;width:auto;fill:currentColor" class="icon"><g fill-rule="evenodd"><path d="M18 4.826L4.476 13.148 5.524 14.851 18 7.174 30.476 14.851 31.524 13.148zM25 27L21 27 21 19 15 19 15 27 11 27 11 15 9 15 9 29 17 29 17 21 19 21 19 29 27 29 27 15 25 15z"></path></g></svg></a><div class="divider">/</div><div class="active section">Data catalogue</div></div>');
   $(".header-image-content:first").html("<h1>Data catalogue</h1>");
 
   if (getCookie("popupCookie") != "closed") {
