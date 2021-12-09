@@ -45,7 +45,7 @@
         {
             "name": "Report_ID_ES",
             "listing": {
-                "visible": true,
+                "visible": false,
                 "title": "",
                 "pos": 20,
                 "display": {
@@ -56,7 +56,7 @@
             },
             "csv_tsv": {
                 "title": "Report ID ES",
-                "visible": true,
+                "visible": false,
                 "pos": 20
             },
             "facet": {
@@ -69,17 +69,29 @@
                 "visible": true,
                 "title": "Name of policy or measure",
                 "pos": 30,
-                "width":"200px",
-                "display": {
-                    "pre": "",
-                    "field": "Name_of_policy_or_measure",
-                    "post":"</a></td>"
-                }
+                "width":"200px"
             },
             "csv_tsv": {
                 "title": "Name of policy or measure",
                 "visible": true,
                 "pos": 30
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Geographical_coverage",
+            "listing": {
+                "visible": true,
+                "title": "Geographical coverage",
+                "pos": 37,
+                "width":"200px"
+            },
+            "csv_tsv": {
+                "title": "Geographical_coverage",
+                "visible": true,
+                "pos": 37
             },
             "facet": {
                 "visible": false
@@ -466,6 +478,23 @@
             }
         },
         {
+            "name": "Does_the_PaM_relate_to_Air_Pollution_policy_",
+            "listing": {
+                "visible": true,
+                "title": "Does the PaM relate to Air Pollution policy?",
+                "pos": 225,
+                "width": "200px"
+            },
+            "csv_tsv": {
+                "title": "Does_the_PaM_relate_to_Air_Pollution_policy?",
+                "visible": true,
+                "pos": 225
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
             "name": "Union_policies_lookup_only4facets",
             "listing": {
                 "visible": false,
@@ -497,13 +526,13 @@
             "listing": {
                 "title": "GHG(s) affected",
                 "visible": true,
-                "pos": 240,
+                "pos": 147,
                 "width": "80px"
             },
             "csv_tsv": {
                 "title": "GHG(s) affected",
                 "visible": true,
-                "pos": 240
+                "pos": 147
             },
             "facet": {
                 "visible": true,
@@ -548,7 +577,7 @@
             },
             "csv_tsv": {
                 "title": "Link to national report",
-                "visible": true,
+                "visible": false,
                 "pos": 260
             },
             "facet": {
@@ -556,17 +585,17 @@
             }
         },
         {
-            "name": "Description",
+            "name": "description",
             "listing": {
                 "visible": true,
                 "title": "Description",
-                "pos": 270,
+                "pos": 35,
                 "width": "200px"
             },
             "csv_tsv": {
                 "title": "Description",
                 "visible": true,
-                "pos": 270
+                "pos": 35
             },
             "facet": {
                 "visible": false
@@ -577,12 +606,12 @@
             "listing": {
                 "visible": true,
                 "title": "Quantified objective",
-                "pos": 280
+                "pos": 144
             },
             "csv_tsv": {
                 "title": "Quantified objective",
                 "visible": true,
-                "pos": 280
+                "pos": 144
             },
             "facet": {
                 "visible": false
@@ -593,12 +622,12 @@
             "listing": {
                 "visible": true,
                 "title": "Implementation period finish",
-                "pos": 290
+                "pos": 195
             },
             "csv_tsv": {
                 "title": "Implementation period finish",
                 "visible": true,
-                "pos": 290
+                "pos": 195
             },
             "facet": {
                 "visible": false
@@ -615,6 +644,22 @@
                 "title": "Indicator used to monitor and evaluate progress over time",
                 "visible": true,
                 "pos": 300
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Assessment_of_the_contribution",
+            "listing": {
+                "visible": true,
+                "title": "Contribution to the LTS",
+                "pos": 305
+            },
+            "csv_tsv": {
+                "title": "Contribution to the LTS",
+                "visible": true,
+                "pos": 305
             },
             "facet": {
                 "visible": false
@@ -687,15 +732,15 @@
             }
         },
         {
-            "name": "GHG_emissions_reductions_ESD_in_2025__kt_CO2eq_y_",
+            "name": "GHG_emissions_reductions_ESR_in_2025__kt_CO2eq_y_",
             "listing": {
                 "visible": true,
-                "title": "GHG emissions reductions ESD in 2025 (kt CO2eq/y)",
+                "title": "GHG emissions reductions ESR in 2025 (kt CO2eq/y)",
                 "pos": 350,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "GHG emissions reductions ESD in 2025 (kt CO2eq/y)",
+                "title": "GHG emissions reductions ESR in 2025 (kt CO2eq/y)",
                 "visible": true,
                 "pos": 350
             },
@@ -704,7 +749,24 @@
             }
         },
         {
-            "name": "GHG_emissions_reductions_EU_ETS_in_2030__kt_CO2eq_y_",
+            "name": "GHG_emissions_reductions_LULUCF_in_2025__kt_CO2eq_y_",
+            "listing": {
+                "visible": true,
+                "title": "GHG emissions reductions LULUCF in 2025 (kt CO2eq/y)",
+                "pos": 355,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "GHG emissions reductions LULUCF in 2025 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 355
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "GHG_emissions_reductions_EU_ETS_in_2030__kt_CO2eq_y",
             "listing": {
                 "visible": true,
                 "title": "GHG emissions reductions EU ETS in 2030 (kt CO2eq/y)",
@@ -721,7 +783,7 @@
             }
         },
         {
-            "name": "GHG_emissions_reductions_ESD_in_2030__kt_CO2eq_y_",
+            "name": "GHG_emissions_reductions_ESR_in_2030__kt_CO2eq_y_",
             "listing": {
                 "visible": true,
                 "title": "GHG emissions reductions ESD in 2030 (kt CO2eq/y)",
@@ -738,17 +800,35 @@
             }
         },
         {
+            "name": "GHG_emissions_reductions_LULUCF_in_2030__kt_CO2eq_y_",
+            "listing": {
+                "visible": true,
+                "title": "GHG emissions reductions LULUCF in 2030 (kt CO2eq/y)",
+                "pos": 375,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "GHG emissions reductions LULUCF in 2030 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 375
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+
+        {
             "name": "Total_GHG_emissions_reductions_in_2030__kt_CO2eq_y_",
             "listing": {
                 "visible": true,
                 "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
-                "pos": 380,
-                "width": "100px"
+                "pos": 155,
+                "width": "110px"
             },
             "csv_tsv": {
                 "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
                 "visible": true,
-                "pos": 380
+                "pos": 155
             },
             "facet": {
                 "visible": false
@@ -772,7 +852,7 @@
             }
         },
         {
-            "name": "GHG_emissions_reductions_ESD_in_2035__kt_CO2eq_y_",
+            "name": "GHG_emissions_reductions_ESR_in_2035__kt_CO2eq_y_",
             "listing": {
                 "visible": true,
                 "title": "GHG emissions reductions ESD in 2035 (kt CO2eq/y)",
@@ -783,6 +863,23 @@
                 "title": "GHG emissions reductions ESD in 2035 (kt CO2eq/y)",
                 "visible": true,
                 "pos": 400
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "GHG_emissions_reductions_LULUCF_in_2035__kt_CO2eq_y_",
+            "listing": {
+                "visible": true,
+                "title": "GHG emissions reductions LULUCF in 2035 (kt CO2eq/y)",
+                "pos": 405,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "GHG emissions reductions LULUCF in 2035 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 405
             },
             "facet": {
                 "visible": false
@@ -806,7 +903,7 @@
             }
         },
         {
-            "name": "GHG_emissions_reductions_ESD_in_2040__kt_CO2eq_y_",
+            "name": "GHG_emissions_reductions_ESR_in_2040__kt_CO2eq_y_",
             "listing": {
                 "visible": true,
                 "title": "GHG emissions reductions ESD in 2040 (kt CO2eq/y)",
@@ -823,17 +920,34 @@
             }
         },
         {
+            "name": "GHG_emissions_reductions_LULUCF_in_2040__kt_CO2eq_y_",
+            "listing": {
+                "visible": true,
+                "title": "GHG emissions reductions LULUCF in 2040 (kt CO2eq/y)",
+                "pos": 425,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "GHG emissions reductions LULUCF in 2040 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 425
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
             "name": "Total_GHG_emissions_reductions_in_2040__kt_CO2eq_y_",
             "listing": {
                 "visible": true,
                 "title": "Total GHG emissions reductions in 2040 (kt CO2eq/y)",
-                "pos": 430,
-                "width": "100px"
+                "pos": 165,
+                "width": "110px"
             },
             "csv_tsv": {
                 "title": "Total GHG emissions reductions in 2040 (kt CO2eq/y)",
                 "visible": true,
-                "pos": 430
+                "pos": 165
             },
             "facet": {
                 "visible": false
@@ -910,13 +1024,13 @@
             "listing": {
                 "visible": true,
                 "title": "Explanation of the basis for the mitigation estimates",
-                "pos": 480,
+                "pos": 434,
                 "width": "100px"
             },
             "csv_tsv": {
                 "title": "Explanation of the basis for the mitigation estimates",
                 "visible": true,
-                "pos": 480
+                "pos": 434
             },
             "facet": {
                 "visible": false
@@ -926,14 +1040,14 @@
             "name": "Factors_affected_by_the_policy_or_measure",
             "listing": {
                 "visible": true,
-                "title": "Factors affected by the policy or measure",
-                "pos": 490,
+                "title": "Factors affected by the PaM",
+                "pos": 437,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Factors affected by the policy or measure",
+                "title": "Factors affected by the PaM",
                 "visible": true,
-                "pos": 490
+                "pos": 437
             },
             "facet": {
                 "visible": false
@@ -975,12 +1089,12 @@
             "name": "Projected_costs__EUR_per_tonne_CO2eq_reduced__sequestered_",
             "listing": {
                 "visible": true,
-                "title": "Projected costs (EUR per tonne CO2eq reduced/ sequestered)",
+                "title": "Projected gross costs (EUR per tonne CO2eq reduced/ sequestered)",
                 "pos": 520,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Projected costs (EUR per tonne CO2eq reduced/ sequestered)",
+                "title": "Projected gross costs (EUR per tonne CO2eq reduced/ sequestered)",
                 "visible": true,
                 "pos": 520
             },
@@ -1125,6 +1239,23 @@
             }
         },
         {
+            "name": "Description_of_non_GHG_mitigation_projected_benefits",
+            "listing": {
+                "visible": true,
+                "title": "Description of non-GHG mitigation projected benefits",
+                "pos": 605,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Description of non-GHG mitigation projected benefits",
+                "visible": true,
+                "pos": 605
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
             "name": "Reference_for_projected_costs_and_benefits",
             "listing": {
                 "visible": true,
@@ -1162,12 +1293,12 @@
             "name": "Realised_costs___EUR_per_tonne_CO2eq_reduced__sequestered_",
             "listing": {
                 "visible": true,
-                "title": "Realised costs  (EUR per tonne CO2eq reduced/ sequestered)",
+                "title": "Realised gross costs (EUR per tonne CO2eq reduced/ sequestered)",
                 "pos": 630,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Realised costs  (EUR per tonne CO2eq reduced/ sequestered)",
+                "title": "Realised gross costs (EUR per tonne CO2eq reduced/ sequestered)",
                 "visible": true,
                 "pos": 630
             },
@@ -1312,6 +1443,23 @@
             }
         },
         {
+            "name": "Description_of_non_GHG_mitigation_realized_benefits",
+            "listing": {
+                "visible": true,
+                "title": "Description of non-GHG mitigation realized benefits",
+                "pos": 715,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Description of non-GHG mitigation realized benefits",
+                "visible": true,
+                "pos": 715
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
             "name": "Reference_for_realised_costs_and_benefits",
             "listing": {
                 "visible": true,
@@ -1354,7 +1502,7 @@
             },
             "csv_tsv": {
                 "title": "Projected net cost per year (EUR)",
-                "visible": true,
+                "visible": false,
                 "pos": 740
             },
             "facet": {
@@ -1376,7 +1524,7 @@
             },
             "csv_tsv": {
                 "title": "Realised net cost per year (EUR)",
-                "visible": true,
+                "visible": false,
                 "pos": 750
             },
             "facet": {
