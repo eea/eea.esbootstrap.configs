@@ -54,7 +54,7 @@ html(data-siteid=(settings_matomo_id ? settings_matomo_id : false))
 
         if !debug_mode
             style
-                include:clean-css ../public/css/critical.css
+                include:clean-css /node_modules/eea-searchserver/lib/framework/public/css/critical.css
         else
             link(rel='stylesheet', href="esbootstrap_resources/css/critical.css")
 
@@ -70,7 +70,7 @@ html(data-siteid=(settings_matomo_id ? settings_matomo_id : false))
 
         if (renderStyles && !debug_mode)
             script
-                include:uglify-js ../public/javascripts/loadcss.js
+                include:uglify-js ../public/loadcss.js
             - var css_render = renderStyles('layout_page')
             - var only_css = css_render.match(/href\='([^\s]*)'\s/)[1]
             link(rel="preload" href=only_css as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'")
