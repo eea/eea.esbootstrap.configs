@@ -103,12 +103,12 @@
         },
         "copy_to" : ["did_you_mean", "autocomplete"]
     },
-    "description": {
+    "Description": {
         "type": "text",
         "fields" : {
                 "toindex" : {"type" : "text", "analyzer" : "default"},
                 "index" : {"type" : "text", "analyzer" : "none"},
-                "description": {"type": "text"}
+                "Description": {"type": "text"}
         },
         "copy_to" : ["did_you_mean", "autocomplete"]
     },

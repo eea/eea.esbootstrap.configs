@@ -501,7 +501,7 @@
                 "pos": 170,
                 "type": "facet",
                 "size": 100,
-                "order": "term",
+                "order": "count",
                 "facet_display_options": ["sort", "checkbox"]
             }
         },
@@ -596,7 +596,7 @@
             }
         },
         {
-            "name": "description",
+            "name": "Description",
             "listing": {
                 "visible": true,
                 "title": "Description",
@@ -777,7 +777,7 @@
             }
         },
         {
-            "name": "GHG_emissions_reductions_EU_ETS_in_2030__kt_CO2eq_y",
+            "name": "GHG_emissions_reductions_EU_ETS_in_2030__kt_CO2eq_y_",
             "listing": {
                 "visible": true,
                 "title": "GHG emissions reductions EU ETS in 2030 (kt CO2eq/y)",
