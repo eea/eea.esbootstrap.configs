@@ -43,9 +43,9 @@
             }
         },
         {
-            "name": "Report_ID_ES",
+            "name": "pdf",
             "listing": {
-                "visible": false,
+                "visible": true,
                 "title": "",
                 "pos": 20,
                 "display": {
@@ -55,7 +55,7 @@
                 }
             },
             "csv_tsv": {
-                "title": "Report ID ES",
+                "title": "pdf",
                 "visible": false,
                 "pos": 20
             },
@@ -69,7 +69,12 @@
                 "visible": true,
                 "title": "Name of policy or measure",
                 "pos": 30,
-                "width":"200px"
+                "width":"200px",
+                "display": {
+                    "pre": "",
+                    "field": "Name_of_policy_or_measure",
+                    "post":"</a></td>"
+                }
             },
             "csv_tsv": {
                 "title": "Name of policy or measure",
@@ -491,7 +496,13 @@
                 "pos": 225
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "PaM related to Air Pollution policy",
+                "pos": 170,
+                "type": "facet",
+                "size": 100,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"]
             }
         },
         {

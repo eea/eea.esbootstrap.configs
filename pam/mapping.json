@@ -129,5 +129,9 @@
                 "Reference_for_ex_ante_assessment": {"type": "text"}
         },
         "copy_to" : ["did_you_mean", "autocomplete"]
+    },
+    "Does_the_PaM_relate_to_Air_Pollution_policy_"  : {
+        "type" : "text",
+        "analyzer" : "none"
     }
 }
