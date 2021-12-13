@@ -8,7 +8,7 @@
         "field_base":"",
         "default_appalias": "prod",
         "increment_threshold": 1,
-        "version":"7"
+        "version":"6"
     },
     "external_templates": {
         "local_path": "/external_templates",
