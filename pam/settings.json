@@ -3,12 +3,12 @@
         "port": 3000
     },
     "elastic": {
-        "index": "esbootstrapdata-pam-withrest",
+        "index": "esbootstrapdata-pam-2021",
         "type": "resources",
         "field_base":"",
         "default_appalias": "latest",
         "increment_threshold": 1,
-        "version":"7"
+        "version":"6"
     },
     "external_templates": {
         "local_path": "/external_templates",
