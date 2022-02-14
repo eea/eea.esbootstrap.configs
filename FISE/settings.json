@@ -58,7 +58,7 @@
   "source": {
     "type": "file",
     "autoswitch": "true",
-    "switch_condition_value_percent": 5,
+    "switch_condition_value_percent": 50,
     "configuration": {
       "type": "csv",
       "bulksize": 2000,
