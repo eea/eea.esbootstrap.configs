@@ -185,5 +185,10 @@
         "eea_long_description": {"type": "keyword", "index": true}
       },
       "copy_to" : ["did_you_mean", "autocomplete"]
+    },
+    "special_tags":{
+        "type" : "string",
+        "analyzer" : "none",
+        "fielddata": true
     }
 }
