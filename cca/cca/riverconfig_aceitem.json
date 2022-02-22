@@ -152,6 +152,18 @@
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#websites": "websites",
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.c3sindicator#websites": "websites",
 
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#special_tags": "special_tags",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.adaptationoption#special_tags": "special_tags",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.casestudy#special_tags": "special_tags",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.guidancedocument#special_tags": "special_tags",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.indicator#special_tags": "special_tags",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.informationportal#special_tags": "special_tags",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.organisation#special_tags": "special_tags",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#special_tags": "special_tags",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.tool#special_tags": "special_tags",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.video#special_tags": "special_tags",
+    "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.c3sindicator#special_tags": "special_tags",
+
 
     "https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.aceproject#funding_programme": ["funding_programme"],
 

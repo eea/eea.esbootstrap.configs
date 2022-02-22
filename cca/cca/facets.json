@@ -691,6 +691,14 @@
             }
         },
         {
+            "name": "special_tags",
+            "csv_tsv": {
+                "title": "Special Tags",
+                "visible": true,
+                "pos": 20
+            }
+        },
+        {
             "name": "depiction",
             "listing": {
                 "title": "depiction",
