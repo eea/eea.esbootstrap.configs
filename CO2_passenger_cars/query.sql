@@ -29,7 +29,7 @@ Select
     "ep (KW)",
     "z (Wh/km)",
     It,
-    iif("Ernedc (g/km)" is null, "Er (g/km)", "Ernedc (g/km)") as "Ernedc (g/km)",
+    iif(year>2020, null, iif("Ernedc (g/km)" is null, "Er (g/km)", "Ernedc (g/km)")) as "Ernedc (g/km)",
     "Erwltp (g/km)",
     "De",
     "Vf",
@@ -55,7 +55,9 @@ Select
             )
         )
     ) as FtTrim,
-    iif(LOWER(TRIM(status))='f', 'Final', 'Provisional') as scStatus
+    iif(LOWER(TRIM(status))='f', 'Final', 'Provisional') as scStatus,
+    Dr,
+    Fc
 from
     <TABLE>
 WHERE

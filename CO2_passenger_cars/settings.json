@@ -66,7 +66,7 @@
 
             "sql": true,
             "sql_url": "http://mudskipper.eea.dmz1:8083/sql",
-            "sql_table": "[CO2Emission_Internal].[stage].[co2cars]",
+            "sql_table": "[CO2Emission_Internal].[stage].[co2cars_2021P]",
             "query_attr": "query",
             "query": "query.sql",
             "query_count": "query_count.sql",
