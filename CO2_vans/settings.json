@@ -45,7 +45,7 @@
             ]
         },
         "site_title": "CO<sub>2</sub> emissions from vans",
-        "site_description": "<h3>CO2 emissions from new vans registered in EU27, UK, Iceland (from 2018) and Norway (from 2019) &ndash; <a href='http://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX:32019R0631'>Regulation (EU) 2019/631</a>.</h3>",
+        "site_description": "<h3>CO2 emissions from new vans registered in EU27, Iceland (from 2018) and Norway (from 2019) &ndash; <a href='http://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX:32019R0631'>Regulation (EU) 2019/631</a>.</h3>",
         "facets_footer_slot": "<span class='discreet'><strong>Note</strong>: The column 'Count' in the filters reports the sum of the rows and not the sum of the new car's registrations.</span>",
         "enableBreadcrumbs": true,
         "breadcrumbs": "Datasets",
@@ -66,7 +66,7 @@
 
             "sql": true,
             "sql_url": "http://mudskipper.eea.dmz1:8083/sql",
-            "sql_table": "[CO2Emission_Internal].[stage].[co2vans]",
+            "sql_table": "[CO2Emission_Internal].[stage].[co2vans_2021P]",
 
             "query_attr": "query",
             "query": "query.sql",

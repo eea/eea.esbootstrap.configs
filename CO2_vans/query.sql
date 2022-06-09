@@ -17,7 +17,7 @@ Select
     Ct,
     Cr,
     "m (kg)",
-    "Mt (kg)",
+    "Mt (kg)" as Mt,
     "Enedc (g/km)",
     "Ewltp (g/km)",
     "W (mm)",
@@ -59,12 +59,13 @@ Select
     "TPMLM (kg)",
     "Dam (kg)",
     "Mf (kg)",
-    "Zr"
+    "Zr",
+    Dr,
+    Fc
 from
     <TABLE>
 WHERE
     MS!='M1' and
-    ((ID>=<MIN_ID> and
-    ID<<MAX_ID>) or
-    len(id) > 7)
+    ID>=5691761 + <MIN_ID> and
+    ID<5691761 + <MAX_ID>
 order by uid

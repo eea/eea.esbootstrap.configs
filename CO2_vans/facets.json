@@ -467,7 +467,7 @@
                 "visible": true
             },
             "facet": {
-                "visible": true,
+                "visible": false,
                 "title": "Specific CO2 Emissions in g/km (NEDC)",
                 "pos": 60,
                 "type": "rangehistogram",
@@ -506,7 +506,24 @@
                 "visible": true
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Specific CO2 Emissions in g/km (WLTP)",
+                "pos": 60,
+                "type": "rangehistogram",
+                "size": 600,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "columns_bucketsize" : 20,
+
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+                    "slider_bucketsize" : 1,
+                    "histogram" : true,
+                    "measurement_unit": "g/km"
+                }
+
             },
             "csv_tsv": {
                 "title": "Ewltp (g/km)",
@@ -805,7 +822,7 @@
             "listing": {
                 "title": "Type of data",
                 "visible" : true,
-                "pos" : 44
+                "pos" : 60
             },
             "details": {
                 "title": "Status",
@@ -836,7 +853,7 @@
             "listing": {
                 "title": "Registration year",
                 "visible" : true,
-                "pos" : 45
+                "pos" : 61
             },
             "details": {
                 "title": "year",
@@ -972,7 +989,45 @@
                 "visible": true,
                 "pos": 39
             }
-        } 
+        },
+        {
+            "name": "Dr",
+            "listing": {
+                "title": "Date of registration",
+                "visible" : true,
+                "pos" : 50
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Date of registration",
+                "visible": true,
+                "pos": 36
+            }
+        },
+        {
+            "name": "Fc",
+            "listing": {
+                "title": "Fuel consumption ",
+                "visible" : true,
+                "pos" : 51
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Fuel consumption ",
+                "visible": true,
+                "pos": 37
+            }
+        }
 
     ]
 }
