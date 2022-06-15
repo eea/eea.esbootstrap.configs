@@ -1012,7 +1012,7 @@
         {
             "name": "Fc",
             "listing": {
-                "title": "Fuel consumption ",
+                "title": "Fuel consumption",
                 "visible" : true,
                 "pos" : 51
             },
@@ -1023,9 +1023,199 @@
                 "visible": false
             },
             "csv_tsv": {
-                "title": "Fuel consumption ",
+                "title": "Fuel consumption",
                 "visible": true,
                 "pos": 37
+            }
+        },
+        {
+            "name": "CO2mon",
+            "listing": {
+                "title": "Monitoring CO2 emissions (incomplete base vehicle)",
+                "visible" : true,
+                "pos" : 101
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Monitoring CO2 emissions (incomplete base vehicle)",
+                "visible": true,
+                "pos": 101
+            }
+        },
+        {
+            "name": "CO2",
+            "listing": {
+                "title": "CO2 emissions complete base vehicle",
+                "visible" : true,
+                "pos" : 102
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "CO2 emissions complete base vehicle",
+                "visible": true,
+                "pos": 102
+            }
+        },
+        {
+            "name": "Af1",
+            "listing": {
+                "title": "Frontal Area - Method (i)",
+                "visible" : true,
+                "pos" : 103
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Frontal Area - Method (i)",
+                "visible": true,
+                "pos": 103
+            }
+        },
+        {
+            "name": "Af2",
+            "listing": {
+                "title": "Frontal Area - Method (ii)",
+                "visible" : true,
+                "pos" : 104
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Frontal Area - Method (ii)",
+                "visible": true,
+                "pos": 104
+            }
+        },
+        {
+            "name": "Af3",
+            "listing": {
+                "title": "Frontal Area - Method (iii)",
+                "visible" : true,
+                "pos" : 105
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Frontal Area - Method (iii)",
+                "visible": true,
+                "pos": 105
+            }
+        },
+        {
+            "name": "RR",
+            "listing": {
+                "title": "Rolling resistance",
+                "visible" : true,
+                "pos" : 106
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Rolling resistance",
+                "visible": true,
+                "pos": 106
+            }
+        },
+        {
+            "name": "Mmon",
+            "listing": {
+                "title": "Monitoring mass",
+                "visible" : true,
+                "pos" : 107
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Monitoring mass",
+                "visible": true,
+                "pos": 107
+            }
+        },
+        {
+            "name": "MRObaseI",
+            "listing": {
+                "title": "Mass in running order incomplete base vehicle",
+                "visible" : true,
+                "pos" : 108
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Mass in running order incomplete base vehicle",
+                "visible": true,
+                "pos": 108
+            }
+        },
+        {
+            "name": "MRObaseC",
+            "listing": {
+                "title": "Mass in running order complete base vehicle",
+                "visible" : true,
+                "pos" : 109
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Mass in running order complete base vehicle",
+                "visible": true,
+                "pos": 109
+            }
+        },
+        {
+            "name": "MvL",
+            "listing": {
+                "title": "Mass representative of vehicle load",
+                "visible" : true,
+                "pos" : 110
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Mass representative of vehicle load",
+                "visible": true,
+                "pos": 110
             }
         }
 

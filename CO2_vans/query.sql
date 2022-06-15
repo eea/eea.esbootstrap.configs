@@ -61,7 +61,17 @@ Select
     "Mf (kg)",
     "Zr",
     Dr,
-    Fc
+    Fc,
+    CO2mon,
+    CO2,
+    Af1,
+    Af2,
+    Af3,
+    RR,
+    Mmon,
+    MRObaseI,
+    MRObaseC,
+    MvL
 from
     <TABLE>
 WHERE
