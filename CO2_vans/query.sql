@@ -17,7 +17,7 @@ Select
     Ct,
     Cr,
     "m (kg)",
-    "Mt (kg)" as Mt,
+    "Mt (kg)",
     "Enedc (g/km)",
     "Ewltp (g/km)",
     "W (mm)",

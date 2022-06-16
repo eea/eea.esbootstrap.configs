@@ -422,7 +422,22 @@
                 "visible": true
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Mass in running order (kg)",
+                "pos": 50,
+                "type": "rangehistogram",
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "columns_bucketsize" : 10000,
+
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+                    "slider_bucketsize" : 10,
+                    "histogram" : false,
+                    "measurement_unit": "kg"
+                }
 
             },
             "csv_tsv": {
@@ -966,7 +981,7 @@
                 "visible": false
             },
             "facet": {
-                "visible": true,
+                "visible": false,
                 "title": "Final mass (kg)",
                 "pos": 50,
                 "type": "rangehistogram",
