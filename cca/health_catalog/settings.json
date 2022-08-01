@@ -24,9 +24,9 @@
     "local_path": "/external_templates",
     "protocol": "https",
     "host": "climate-adapt.eea.europa.eu",
-    "head_path": "/observatory/external-template-head-dont-load",
-    "header_path": "/observatory/About/external-template-header",
-    "footer_path": "/observatory/external-template-footer-dont-load"
+    "head_path": "/{lang}/observatory/external-template-head-dont-load",
+    "header_path": "/{lang}/observatory/About/external-template-header",
+    "footer_path": "/{lang}/observatory/external-template-footer-dont-load"
   },
   "layout_vars": {
     "head_title": "Health Observatory Resource Catalogue",
