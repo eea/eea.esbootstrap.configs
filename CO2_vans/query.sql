@@ -59,12 +59,23 @@ Select
     "TPMLM (kg)",
     "Dam (kg)",
     "Mf (kg)",
-    "Zr"
+    "Zr",
+    Dr,
+    Fc,
+    CO2mon,
+    CO2,
+    Af1,
+    Af2,
+    Af3,
+    RR,
+    Mmon,
+    MRObaseI,
+    MRObaseC,
+    MvL
 from
     <TABLE>
 WHERE
     MS!='M1' and
-    ((ID>=<MIN_ID> and
-    ID<<MAX_ID>) or
-    len(id) > 7)
+    ID>=5691761 + <MIN_ID> and
+    ID<5691761 + <MAX_ID>
 order by uid

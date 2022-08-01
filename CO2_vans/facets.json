@@ -422,7 +422,22 @@
                 "visible": true
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Mass in running order (kg)",
+                "pos": 50,
+                "type": "rangehistogram",
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "columns_bucketsize" : 10000,
+
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+                    "slider_bucketsize" : 10,
+                    "histogram" : false,
+                    "measurement_unit": "kg"
+                }
 
             },
             "csv_tsv": {
@@ -467,7 +482,7 @@
                 "visible": true
             },
             "facet": {
-                "visible": true,
+                "visible": false,
                 "title": "Specific CO2 Emissions in g/km (NEDC)",
                 "pos": 60,
                 "type": "rangehistogram",
@@ -506,7 +521,24 @@
                 "visible": true
             },
             "facet": {
-                "visible": false
+                "visible": true,
+                "title": "Specific CO2 Emissions in g/km (WLTP)",
+                "pos": 60,
+                "type": "rangehistogram",
+                "size": 600,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "columns_bucketsize" : 20,
+
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+                    "slider_bucketsize" : 1,
+                    "histogram" : true,
+                    "measurement_unit": "g/km"
+                }
+
             },
             "csv_tsv": {
                 "title": "Ewltp (g/km)",
@@ -805,7 +837,7 @@
             "listing": {
                 "title": "Type of data",
                 "visible" : true,
-                "pos" : 44
+                "pos" : 60
             },
             "details": {
                 "title": "Status",
@@ -836,7 +868,7 @@
             "listing": {
                 "title": "Registration year",
                 "visible" : true,
-                "pos" : 45
+                "pos" : 61
             },
             "details": {
                 "title": "year",
@@ -949,7 +981,7 @@
                 "visible": false
             },
             "facet": {
-                "visible": true,
+                "visible": false,
                 "title": "Final mass (kg)",
                 "pos": 50,
                 "type": "rangehistogram",
@@ -972,7 +1004,235 @@
                 "visible": true,
                 "pos": 39
             }
-        } 
+        },
+        {
+            "name": "Dr",
+            "listing": {
+                "title": "Date of registration",
+                "visible" : true,
+                "pos" : 50
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Date of registration",
+                "visible": true,
+                "pos": 36
+            }
+        },
+        {
+            "name": "Fc",
+            "listing": {
+                "title": "Fuel consumption",
+                "visible" : true,
+                "pos" : 51
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Fuel consumption",
+                "visible": true,
+                "pos": 37
+            }
+        },
+        {
+            "name": "CO2mon",
+            "listing": {
+                "title": "Monitoring CO2 emissions (incomplete base vehicle)",
+                "visible" : true,
+                "pos" : 101
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Monitoring CO2 emissions (incomplete base vehicle)",
+                "visible": true,
+                "pos": 101
+            }
+        },
+        {
+            "name": "CO2",
+            "listing": {
+                "title": "CO2 emissions complete base vehicle",
+                "visible" : true,
+                "pos" : 102
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "CO2 emissions complete base vehicle",
+                "visible": true,
+                "pos": 102
+            }
+        },
+        {
+            "name": "Af1",
+            "listing": {
+                "title": "Frontal Area - Method (i)",
+                "visible" : true,
+                "pos" : 103
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Frontal Area - Method (i)",
+                "visible": true,
+                "pos": 103
+            }
+        },
+        {
+            "name": "Af2",
+            "listing": {
+                "title": "Frontal Area - Method (ii)",
+                "visible" : true,
+                "pos" : 104
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Frontal Area - Method (ii)",
+                "visible": true,
+                "pos": 104
+            }
+        },
+        {
+            "name": "Af3",
+            "listing": {
+                "title": "Frontal Area - Method (iii)",
+                "visible" : true,
+                "pos" : 105
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Frontal Area - Method (iii)",
+                "visible": true,
+                "pos": 105
+            }
+        },
+        {
+            "name": "RR",
+            "listing": {
+                "title": "Rolling resistance",
+                "visible" : true,
+                "pos" : 106
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Rolling resistance",
+                "visible": true,
+                "pos": 106
+            }
+        },
+        {
+            "name": "Mmon",
+            "listing": {
+                "title": "Monitoring mass",
+                "visible" : true,
+                "pos" : 107
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Monitoring mass",
+                "visible": true,
+                "pos": 107
+            }
+        },
+        {
+            "name": "MRObaseI",
+            "listing": {
+                "title": "Mass in running order incomplete base vehicle",
+                "visible" : true,
+                "pos" : 108
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Mass in running order incomplete base vehicle",
+                "visible": true,
+                "pos": 108
+            }
+        },
+        {
+            "name": "MRObaseC",
+            "listing": {
+                "title": "Mass in running order complete base vehicle",
+                "visible" : true,
+                "pos" : 109
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Mass in running order complete base vehicle",
+                "visible": true,
+                "pos": 109
+            }
+        },
+        {
+            "name": "MvL",
+            "listing": {
+                "title": "Mass representative of vehicle load",
+                "visible" : true,
+                "pos" : 110
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "Mass representative of vehicle load",
+                "visible": true,
+                "pos": 110
+            }
+        }
 
     ]
 }
