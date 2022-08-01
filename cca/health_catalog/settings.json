@@ -8,6 +8,18 @@
     "field_base": "",
     "enableValuesCounting": true
   },
+  "translation": {
+      "default_language": "en",
+      "languages": {
+          "en": "/en",
+          "de": "/de",
+          "fr": "/fr",
+          "it": "/it",
+          "pl": "/pl",
+          "es": "/es"
+      },
+      "enabled": true
+  },
   "external_templates": {
     "local_path": "/external_templates",
     "protocol": "https",
