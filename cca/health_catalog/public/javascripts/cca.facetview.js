@@ -1,6 +1,5 @@
 //window.search_text_input_clear = true;
 jQuery(document).ready(function($) {
-
   if (window.settings_display_images === undefined){
     settings_display_images = true;
   }
@@ -40,6 +39,8 @@ jQuery(document).ready(function($) {
       updateTitlesEmptyAcronym();
       topTypeOfDataItems();
       topTypeOfDataChange();
+
+      $.fn.i18nRender(langObj, langObj['lang']);
     },
     paging: {
       from: 0,

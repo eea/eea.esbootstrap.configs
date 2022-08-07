@@ -3,24 +3,6 @@
 
 jQuery(document).ready(function ($) {
 
-  //Move language div if exist in header
-  li = document.querySelectorAll("ul#portal-languageselector > li.currentLanguage");
-  if (li.length) {
-    var clone = document.createElementNS('http://www.w3.org/1999/xhtml', 'div');
-    clone.id = "cca-lang-menu";
-    clone.className = "dropdown";
-    clone.style.display = "inline-block";
-    var element = document.getElementById('portal-languageselector');
-    clone.innerHTML =
-      '<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: 0;background-color: inherit;">'
-          +'<i class="fa fa-globe"></i> '+ li[0].outerText
-          +'<span class="caret"></span>'
-      +'</button>'
-      + element.outerHTML.replace('<ul ', '<ul class="dropdown-menu" style="list-style:none;"');
-    element.replaceWith(clone);
-      $("#cca-lang-menu").appendTo(".menu-nav-item-language-observatory");
-  }
-
   setResultsPaging(checkIfTabular());
 
   window.onload = function () {
@@ -32,6 +14,9 @@ jQuery(document).ready(function ($) {
   $(document).on("mousedown", "#filterDisplayAs span.eea-icon", function (
     event
   ) {
+    if (!$.fn.facetview.options.hasOwnProperty('paging'))  {
+      return;
+    }
     $.fn.facetview.options.paging.size = 16;
     if ($(this).attr("class").indexOf("tabular") > 0) {
       $.fn.facetview.options.paging.size = 1000;
@@ -122,7 +107,9 @@ jQuery(document).ready(function ($) {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(doneResizing, 50);
   });
-
+  $(window).on('facet_ready', function() {
+    $.fn.i18nRender(langObj, langObj['lang']);
+  });
   setElementPosition();
   function doneResizing() {
     setElementPosition();
@@ -170,4 +157,5 @@ jQuery(document).ready(function ($) {
       $(".lazyload").Lazy();
     }
   });
+  //$.fn.i18nRender(langObj, langObj['lang']);
 });
