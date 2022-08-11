@@ -6,15 +6,28 @@
     "index": "esbootstrapdata-climate",
     "type": "resource",
     "field_base":"",
-    "enableValuesCounting": true
+    "enableValuesCounting": true,
+    "version": "6"
+  },
+  "translation": {
+      "default_language": "en",
+      "languages": {
+          "en": "/en",
+          "de": "/de",
+          "fr": "/fr",
+          "it": "/it",
+          "pl": "/pl",
+          "es": "/es"
+      },
+      "enabled": true
   },
   "external_templates": {
     "local_path": "/external_templates",
     "protocol": "https",
-    "host": "climate-adapt.eea.europa.eu",
-    "head_path": "/cca/external-template-head",
-    "header_path": "/cca/external-template-header",
-    "footer_path": "/cca/external-template-footer"
+    "host": "cca.devel5cph.eionet.europa.eu",
+    "head_path": "${lang}/external-template-head",
+    "header_path": "${lang}/external-template-header",
+    "footer_path": "${lang}/external-template-footer"
   },
   "layout_vars": {
     "head_title": "Climate adapt search",
