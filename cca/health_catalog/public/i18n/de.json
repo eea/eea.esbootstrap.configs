@@ -8,14 +8,8 @@
         "message-documentation": "DE translations"
     },
 
-    "Facet_Title(Type of item)": "Art des Artikels",
-    "Type of item": "Art des Artikels2",
 
-    "Facet_TypeOfData_Item(Case studies)": "Fallstudien",
-
-
-
-    "App_Title": "Globale Suche und Katalog",
+    "App_Title": "GRessourcenkatalog der Beobachtungsstelle",
     "App_Further_Info": "Der Inhalt dieses Katalogs wurde dank des Open-Data-Ansatzes der EU und des Beitrags vieler Organisationen des EUA-Netzes (Eionet) erstellt.",
     "App_Search_Placeholder": "Suchbegriff",
 
@@ -52,6 +46,11 @@
     "Landing_H3(Documents)": "Dokumente",
     "Landing_H3(Languages)": "Sprachen",
     "Landing_All_Results": "Alle Ergebnisse anzeigen",
+
+    "Facet_Title(Type of item)": "Art des Artikels",
+    "Facet_Title(Health impacts)": "Auswirkungen auf die Gesundheit",
+    "Facet_Title(Observatory partner)": "Partner der Sternwarte",
+    "Facet_Title(Year)": "Jahr",
 
     "Facet_Title(Topics)": "Themen",
     "Facet_Title(Countries)": "Länder",
@@ -100,6 +99,33 @@
     "Table_Header(Issued)": "Veröffentlicht",
     "Table_Header(Time coverage)": "Zeitabdeckung",
     "Table_Header(Format)": "Format",
+
+    " --- ": "asda===========",
+
+    "Facet_TypeOfData_Item(Case studies)": "Fallstudien",
+    "Facet_TypeOfData_Item(Guidance)": "Orientierungshilfe",
+    "Facet_TypeOfData_Item(Indicators)": "Indikatoren",
+    "Facet_TypeOfData_Item(Information portals)": "Informationsportale",
+    "Facet_TypeOfData_Item(Publications and reports)": "Veröffentlichungen und Berichte",
+    "Facet_TypeOfData_Item(Research and knowledge projects)": "Forschungs- und Wissensprojekte",
+    "Facet_TypeOfData_Item(Tools)": "Werkzeug",
+    "Facet_TypeOfData_Item(Videos)": "Videos",
+
+    "Facet_Health_impacts_Item(Air quality and aeroallergens)": "Luftqualität und Aeroallergene",
+    "Facet_Health_impacts_Item(Floods and storms)": "Überschwemmungen und Stürme",
+    "Facet_Health_impacts_Item(Heat and cold)": "Hitze und Kälte",
+    "Facet_Health_impacts_Item(Infectious diseases)": "Infektionskrankheiten",
+    "Facet_Health_impacts_Item(-NONSPECIFIC-)": "-UNSPEZIFISCH-",
+
+    "Facet_Partner_contributors_Item(Copernicus Climate Change Service and Copernicus Atmosphere Monitoring Service)": "Copernicus Climate Change Service und Copernicus Atmosphere Monitoring Service",
+    "Facet_Partner_contributors_Item(European Centre for Disease Prevention and Control)":"Europäisches Zentrum für die Prävention und die Kontrolle von Krankheiten",
+    "Facet_Partner_contributors_Item(European Commission)":"Europäische Kommission",
+    "Facet_Partner_contributors_Item(European Environment Agency)":"Europäische Umweltagentur",
+    "Facet_Partner_contributors_Item(European Food Safety Authority)":"Europäische Behörde für Lebensmittelsicherheit",
+    "Facet_Partner_contributors_Item(Lancet Countdown)":"Lanzetten-Countdown",
+    "Facet_Partner_contributors_Item(WHO Regional Office for Europe)":"WHO-Regionalbüro für Europa",
+    "Facet_Partner_contributors_Item(World Health Organization)":"Weltgesundheitsorganisation",
+    "Facet_Partner_contributors_Item(Other Organisation)":"Andere Organisation",
 
     "Facet_Topic_Item(Agriculture)": "Landwirtschaft",
     "Facet_Topic_Item(Air pollution)": "Luftverschmutzung",

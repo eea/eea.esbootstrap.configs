@@ -322,7 +322,7 @@ function topTypeOfDataItems() {
                     + '<i class="fa '+types[i].icon+'"></i>'
                     + '<span class="total-items"></span>'
                   + '</span>'
-                  + '<p>'+types[i].name+'</p>'
+                  + '<p class="i18n" i18n-variable="Facet_TypeOfData_Item('+types[i].name+')" i18n-change="html">'+types[i].name+'</p>'
                 +'</a>'
               +'</div>';
         }

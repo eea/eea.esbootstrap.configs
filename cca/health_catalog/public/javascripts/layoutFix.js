@@ -71,7 +71,7 @@ jQuery(document).ready(function ($) {
   );
 
   $("#portal-columns-app").prepend(
-    "<div id='filterTitle'><h2>Observatory resource catalogue</h2></div>"
+    "<div id='filterTitle'><h2 class=\"facet_label_text i18n\" i18n-variable=\"App_Title\" i18n-change=\"html\"></h2></div>"
   );
 
   $("#facetview_rightcol").after(
