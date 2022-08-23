@@ -196,7 +196,8 @@
     "eea.indicators.content.interfaces.IIndicatorsDatabase": "Catalogue / listing",
     "plone.app.collection.interfaces.ICollection":"Catalogue / listing",
     "Products.EEAContentTypes.content.interfaces.ICountryProfile": "Country profile",
-    "Products.ATContentTypes.interfaces.topic.IATTopic": "Catalogue / listing"
+    "Products.ATContentTypes.interfaces.topic.IATTopic": "Catalogue / listing",
+    "Marine": "Water and marine environment"
   },
   "//": "Normalise missing properties with the given values",
   "normMissing": {
