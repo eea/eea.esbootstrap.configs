@@ -2,6 +2,7 @@
 // we need this function to insert the search app content into our template
 
 jQuery(document).ready(function ($) {
+
   setResultsPaging(checkIfTabular());
 
   window.onload = function () {
@@ -13,6 +14,9 @@ jQuery(document).ready(function ($) {
   $(document).on("mousedown", "#filterDisplayAs span.eea-icon", function (
     event
   ) {
+    if (!$.fn.facetview.options.hasOwnProperty('paging'))  {
+      return;
+    }
     $.fn.facetview.options.paging.size = 16;
     if ($(this).attr("class").indexOf("tabular") > 0) {
       $.fn.facetview.options.paging.size = 1000;
@@ -34,11 +38,14 @@ jQuery(document).ready(function ($) {
   }
 
   function setResultsPaging(showChart = false) {
+    if (!$.fn.facetview.options.hasOwnProperty('paging'))  {
+      return;
+    }
     $.fn.facetview.options.paging.size = 12;
     if (showChart > 0) {
       $.fn.facetview.options.paging.size = 1000;
     }
-    console.log("Will display:" + $.fn.facetview.options.paging.size);
+//    console.log("Will display:" + $.fn.facetview.options.paging.size);
   }
   // adjust layout according to "CCA Observatory standard". See
   // https://taskman.eionet.europa.eu/attachments/download/86199/PILOT%20Health%20and%20Climate%20Adaptation%20Observatory_MockUpv4%20cleaned.pdf
@@ -64,7 +71,7 @@ jQuery(document).ready(function ($) {
   );
 
   $("#portal-columns-app").prepend(
-    "<div id='filterTitle'><h2>Observatory resource catalogue</h2></div>"
+    "<div id='filterTitle'><h2 class=\"facet_label_text i18n\" i18n-variable=\"App_Title\" i18n-change=\"html\"></h2></div>"
   );
 
   $("#facetview_rightcol").after(
@@ -82,8 +89,7 @@ jQuery(document).ready(function ($) {
   $("#filterDisplayAs").insertAfter(".top-pagination");
 
   $("[i18n-variable=App_Search_Placeholder]").text("What are you looking for?");
-  $("[i18n-variable=App_Search_Placeholder]")[0].placeholder =
-    "What are you looking for?";
+  //$("[i18n-variable=App_Search_Placeholder]")[0].placeholder = "What are you looking for?";
   $("[i18n-variable=Search_Display_As_Span_Text]").text(
     "Display the results as"
   );
@@ -101,7 +107,9 @@ jQuery(document).ready(function ($) {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(doneResizing, 50);
   });
-
+  $(window).on('facet_ready', function() {
+    $.fn.i18nRender(langObj, langObj['lang']);
+  });
   setElementPosition();
   function doneResizing() {
     setElementPosition();
@@ -149,4 +157,5 @@ jQuery(document).ready(function ($) {
       $(".lazyload").Lazy();
     }
   });
+  //$.fn.i18nRender(langObj, langObj['lang']);
 });

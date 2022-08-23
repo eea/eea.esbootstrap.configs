@@ -50,6 +50,7 @@ jQuery(document).ready(function($) {
       updateTitlesEmptyAcronym();
       footerYearTypesInfo();
       $(window).trigger('post_search_callback');
+      $.fn.i18nRender(langObj, langObj['lang']);
     },
     paging: {
       from: 0,
@@ -228,7 +229,24 @@ function updateContentTypes(element, result){
     return(result);
 }
 
+function updateLanguageLinks() {
+  $('ul#portal-languageselector a[target="_blank"]').removeAttr('target');
+
+  pathname = window.location.pathname.substring(3)
+  //search = window.location.search
+  params = new URLSearchParams(location.search);
+  search = 'source='+encodeURIComponent(params.get('source'))
+
+  as = document.querySelectorAll("ul#portal-languageselector > li a");
+  for (i=0;i<as.length;i++) {
+    language = as[i].href;
+    language = language.substring(language.length-2)
+    as[i].href= '/' + language + pathname + '?'+ search + '&lang=' + language;
+  }
+}
+
 function updateResult(element, result){
     result = updateContentTypes(element, result);
+    updateLanguageLinks();
     return(result);
 }

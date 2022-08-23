@@ -8,4 +8,9 @@ jQuery(document).ready(function($) {
     }
     $('.current-filters-collapsible').click();
     $('.eea-reset-filters').insertAfter($('.top-pagination'));
+
+    $(window).on('facet_ready', function() {
+      $.fn.i18nRender(langObj, langObj['lang']);
+    });
+
 });

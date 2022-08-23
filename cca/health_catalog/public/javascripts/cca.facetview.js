@@ -1,6 +1,5 @@
 //window.search_text_input_clear = true;
 jQuery(document).ready(function($) {
-
   if (window.settings_display_images === undefined){
     settings_display_images = true;
   }
@@ -40,6 +39,8 @@ jQuery(document).ready(function($) {
       updateTitlesEmptyAcronym();
       topTypeOfDataItems();
       topTypeOfDataChange();
+
+      $.fn.i18nRender(langObj, langObj['lang']);
     },
     paging: {
       from: 0,
@@ -62,7 +63,9 @@ jQuery(document).ready(function($) {
           url = oldUrl.replace('https://','').split('/');
           oldUrl = '/'+url.splice(2).join('/');
 
-          var newUrl = '/observatory/++aq++metadata' + oldUrl + '?bs=1';
+          var language = window.location.pathname.substring(1,3);
+
+          var newUrl = '/'+language+'/observatory/++aq++metadata' + oldUrl + '?bs=1';
 
           $(this).attr("href", newUrl);
       });
@@ -319,7 +322,7 @@ function topTypeOfDataItems() {
                     + '<i class="fa '+types[i].icon+'"></i>'
                     + '<span class="total-items"></span>'
                   + '</span>'
-                  + '<p>'+types[i].name+'</p>'
+                  + '<p class="i18n" i18n-variable="Facet_TypeOfData_Item('+types[i].name+')" i18n-change="html">'+types[i].name+'</p>'
                 +'</a>'
               +'</div>';
         }

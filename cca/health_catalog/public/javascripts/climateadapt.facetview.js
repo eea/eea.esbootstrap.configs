@@ -2,6 +2,22 @@ var today = getTodayWithTime();
 
 focusArticlePath = checkDefaultArticle();
 
+function updateLanguageLinks() {
+  $('ul#portal-languageselector a[target="_blank"]').removeAttr('target');
+
+  pathname = window.location.pathname.substring(3)
+  //search = window.location.search
+  params = new URLSearchParams(location.search);
+  search = 'source='+encodeURIComponent(params.get('source'))
+
+  as = document.querySelectorAll("ul#portal-languageselector > li a");
+  for (i=0;i<as.length;i++) {
+    language = as[i].href;
+    language = language.substring(language.length-2)
+    as[i].href= '/' + language + pathname + '?'+ search + '&lang=' + language;
+  }
+}
+
 window.esbootstrap_options = {
   search_sortby: [
     {
@@ -189,5 +205,6 @@ function updateResult(element, result){
   $('#facetview_article').addClass('hide');
   $('#facetview_rightcol').removeClass('hide');
   result = updateContentTypes(element, result);
+  updateLanguageLinks();
   return(result);
 }
