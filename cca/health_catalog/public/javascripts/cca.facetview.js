@@ -65,7 +65,7 @@ jQuery(document).ready(function($) {
 
           var language = window.location.pathname.substring(1,3);
 
-          var newUrl = '/'+language+'/observatory/++aq++metadata' + oldUrl + '?bs=1';
+          var newUrl = '/'+language+'/observatory/++aq++metadata' + oldUrl + '?bs=1&langflag=1';
 
           $(this).attr("href", newUrl);
       });
