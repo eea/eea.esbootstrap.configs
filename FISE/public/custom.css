@@ -24609,7 +24609,8 @@ td[data-title="Organisation email"] span {
     max-width: 1200px;
     background: white;
     padding: 2rem;
-    box-shadow: 1px 1px 3px #444; }
+    box-shadow: 1px 1px 3px #444; 
+    overflow-y: auto; }
     @media (max-width: 768px) {
       #intro-popup .popup-content {
         width: 95%;
