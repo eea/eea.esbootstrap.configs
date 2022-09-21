@@ -471,7 +471,7 @@
         {
             "name": "Enedc__g_km_",
             "listing": {
-                "title": "Specific CO2 Emissions in g/km (NEDC)",
+                "title": "Final specific CO2 Emissions in g/km (NEDC)",
                 "visible" : true,
                 "pos" : 29
             },
@@ -483,7 +483,7 @@
             },
             "facet": {
                 "visible": false,
-                "title": "Specific CO2 Emissions in g/km (NEDC)",
+                "title": "Final specific CO2 Emissions in g/km (NEDC)",
                 "pos": 60,
                 "type": "rangehistogram",
                 "size": 600,
