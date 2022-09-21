@@ -1236,7 +1236,7 @@
         {
             "name": "Ewltp_MS__g_km_",
             "listing": {
-                "title": "Ewltp_MS (g/km)",
+                "title": "Ewltp MS (g/km)",
                 "visible" : true,
                 "pos" : 120
             },
@@ -1255,7 +1255,7 @@
         {
             "name": "Ewltp_OEM__g_km_",
             "listing": {
-                "title": "Ewltp_OEM (g/km)",
+                "title": "Ewltp OEM (g/km)",
                 "visible" : true,
                 "pos" : 130
             },
