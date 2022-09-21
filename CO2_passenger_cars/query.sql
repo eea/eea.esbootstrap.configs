@@ -55,9 +55,7 @@ Select
             )
         )
     ) as FtTrim,
-    iif(LOWER(TRIM(status))='f', 'Final', 'Provisional') as scStatus,
-    Dr,
-    Fc
+    iif(LOWER(TRIM(status))='f', 'Final', 'Provisional') as scStatus
 from
     <TABLE>
 WHERE

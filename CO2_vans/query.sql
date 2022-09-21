@@ -19,7 +19,7 @@ Select
     "m (kg)",
     "Mt (kg)",
     "Enedc (g/km)",
-    "Ewltp (g/km)",
+    "Ewltp_Final (g/km)" as "Ewltp (g/km)",
     "W (mm)",
     "At1 (mm)",
     "At2 (mm)",
@@ -60,22 +60,18 @@ Select
     "Dam (kg)",
     "Mf (kg)",
     "Zr",
-    Dr,
-    Fc,
-    CO2mon,
-    CO2,
-    Af1,
-    Af2,
-    Af3,
-    RR,
-    Mmon,
-    MRObaseI,
-    MRObaseC,
-    MvL
+    "Af1 (m2)" as Af1,
+    "Af2 (m2)" as Af2,
+    "Af3 (m2)" as Af3,
+    "RR (kg/t)" as RR,
+    "Mmon (kg)" as Mmon,
+    "MvL (kg)" as MvL,
+    "Ewltp_MS (g/km)",
+    "Ewltp_OEM (g/km)"
 from
     <TABLE>
 WHERE
     MS!='M1' and
-    ID>=5691761 + <MIN_ID> and
-    ID<5691761 + <MAX_ID>
+    ID>=<MIN_ID> and
+    ID<<MAX_ID>
 order by uid
