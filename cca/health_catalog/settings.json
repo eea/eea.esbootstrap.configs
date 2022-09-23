@@ -24,7 +24,7 @@
   "external_templates": {
     "local_path": "/external_templates",
     "protocol": "https",
-    "host": "cca.devel5cph.eionet.europa.eu",
+    "host": "climate-adapt.eea.europa.eu",
     "head_path": "${lang}/observatory/external-template-head-dont-load",
     "header_path": "${lang}/observatory/About/external-template-header",
     "footer_path": "${lang}/observatory/external-template-footer-dont-load"

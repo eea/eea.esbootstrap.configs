@@ -24,7 +24,7 @@
   "external_templates": {
     "local_path": "/external_templates",
     "protocol": "https",
-    "host": "cca.devel5cph.eionet.europa.eu",
+    "host": "climate-adapt.eea.europa.eu",
     "head_path": "${lang}/external-template-head",
     "header_path": "${lang}/external-template-header",
     "footer_path": "${lang}/external-template-footer"
