@@ -510,7 +510,7 @@
         {
             "name": "Ewltp__g_km_",
             "listing": {
-                "title": "Specific CO2 Emissions in g/km (WLTP)",
+                "title": "Final specific CO2 Emissions in g/km (WLTP)",
                 "visible" : true,
                 "pos" : 30
             },
@@ -522,7 +522,7 @@
             },
             "facet": {
                 "visible": true,
-                "title": "Specific CO2 Emissions in g/km (WLTP)",
+                "title": "Final specific CO2 Emissions in g/km (WLTP)",
                 "pos": 60,
                 "type": "rangehistogram",
                 "size": 600,
