@@ -20,7 +20,7 @@ window.esbootstrap_options = {
     display_type: 'list',
     resultModifier: updateResult,
     initialsearch: true,
-    predefined_filters: [{'term': {'hasWorkflowState': 'published'}},{'term': {'languge': 'en'}}],
+    predefined_filters: [{'term': {'hasWorkflowState': 'published'}}],
     /*predefined_filters : [
         {
             'constant_score': {
