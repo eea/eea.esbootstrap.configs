@@ -344,7 +344,7 @@
     "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.casestudy#eeaclimateadaptcasestudy> } UNION ",
     "{?resource a <https://climate-adapt.eea.europa.eu/portal_types/eea.climateadapt.publicationreport#eeaclimateadaptpublicationreport> } "
   ],
-  "graphSyncConditions": ["FILTER (?time > xsd:dateTime('1990-01-01T00:00:00')). FILTER (?time < xsd:dateTime('2100-01-01T00:00:00'))"],
+  "graphSyncConditions": ["FILTER (?time > xsd:dateTime('1990-01-01T00:00:00')). FILTER (?time < xsd:dateTime('2100-01-01T00:00:00')). FILTER (regex(str(?resource), 'https://climate-adapt.eea.europa.eu/en'))"],
   "syncTimeProp": "http://cr.eionet.europa.eu/ontologies/contreg.rdf#lastRefreshed"
 
 }
