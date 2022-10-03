@@ -62,6 +62,7 @@ jQuery(document).ready(function($) {
           oldUrl = $(this).attr("href"); // Get current url
           url = oldUrl.replace('https://','').split('/');
           oldUrl = '/'+url.splice(2).join('/');
+          oldUrl = oldUrl.replace('/metadata','')
 
           var language = window.location.pathname.substring(1,3);
 
