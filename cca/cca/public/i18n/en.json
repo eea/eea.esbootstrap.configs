@@ -8,7 +8,7 @@
     "message-documentation": "English translations"
   },
 
-  "App_Title": "Global search and catalogue",
+  "App_Title": "Climate-ADAPT search",
   "App_Further_Info": "The content of this catalogue has been created thanks to the EU's open data approach and the contribution of many organisations part of EEA's network (Eionet).",
   "App_Search_Placeholder": "Search term",
 
@@ -93,7 +93,7 @@
   "Table_Header(Issued)": "Issued",
   "Table_Header(Time coverage)": "Time coverage",
   "Table_Header(Format)": "Format",
-  
+
   "Facet_Topic_Item(Agriculture)": "Agriculture",
   "Facet_Topic_Item(Air pollution)": "Air pollution",
   "Facet_Topic_Item(Biodiversity - Ecosystems)": "Biodiversity - Ecosystems",

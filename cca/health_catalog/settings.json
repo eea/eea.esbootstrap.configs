@@ -26,7 +26,7 @@
     "protocol": "https",
     "host": "climate-adapt.eea.europa.eu",
     "head_path": "${lang}/observatory/external-template-head-dont-load",
-    "header_path": "${lang}/observatory/About/external-template-header",
+    "header_path": "${lang}/observatory/external-template-header",
     "footer_path": "${lang}/observatory/external-template-footer-dont-load"
   },
   "layout_vars": {
