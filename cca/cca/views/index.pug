@@ -20,6 +20,7 @@ block extrastyles
 
 block content
     h1(class="i18n" i18n-variable="App_Title" i18n-change="html")!= site_title
+    p(class="i18n small-under-h1" i18n-variable="App_Title_Notice" i18n-change="html")
     +download_data
     p!= site_description
     p(class='facets_footer_slot_init')!= facets_footer_slot
