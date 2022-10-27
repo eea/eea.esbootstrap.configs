@@ -9,7 +9,7 @@
     },
 
     "App_Title": "Wyszukiwanie Climate-ADAPT",
-    "App_Title_Notice": "Wyniki (i wyszukiwane hasła, które mają być użyte) należy podawać tylko w języku angielskim",    
+    "App_Title_Notice": "Wyniki (i wyszukiwane hasła, które mają być użyte) należy podawać tylko w języku angielskim",
     "App_Further_Info": "Zawartość tego katalogu została utworzona dzięki otwartemu podejściu UE do danych i wkładowi wielu organizacji należących do sieci EEA (Eionet).",
     "App_Search_Placeholder": "Wyszukaj termin",
 
@@ -117,6 +117,14 @@
     "Facet_Macro-transnational-region_Item(Northern Periphery)": "Północne peryferie",
     "Facet_Macro-transnational-region_Item(South West Europe)": "Europa południowo -zachodniej",
     "Facet_Macro-transnational-region_Item(Other Regions)": "Inne regiony",
+
+    "Facet_Elements_Item(Adaptation Measures and Actions)":"Środki i działania adaptacyjne  ",
+    "Facet_Elements_Item(Adaptation Plans and Strategies)":"Plany i strategie adaptacyjne",
+    "Facet_Elements_Item(Climate Services)":"Usługi klimatyczne",
+    "Facet_Elements_Item(Observations and Scenarios)":"Obserwacje i scenariusze",
+    "Facet_Elements_Item(Nature-based solutions)":"Rozwiązania oparte na przyrodzie",
+    "Facet_Elements_Item(Sector Policies)":"Polityka sektorowa",
+    "Facet_Elements_Item(Vulnerability Assessment)":"Ocena podatności",
 
     "Facet_Funding_programme_Item(National Funding)":"Finansowanie krajowe",
     "Facet_Funding_programme_Item(COPERNICUS - European earth observation programme)":"Kopernik - Europejski program obserwacji Ziemi",

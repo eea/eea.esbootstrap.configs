@@ -9,7 +9,7 @@
     },
 
     "App_Title": "Búsqueda Clima-ADAPT",
-    "App_Title_Notice": "Los resultados (y los términos de búsqueda que se utilizarán) se proporcionarán únicamente en inglés",    
+    "App_Title_Notice": "Los resultados (y los términos de búsqueda que se utilizarán) se proporcionarán únicamente en inglés",
     "App_Further_Info": "El contenido de este catálogo se ha creado mediante el enfoque de datos abiertos de la UE y la contribución de muchas organizaciones que forman parte de la red del EEE (Eionet).",
     "App_Search_Placeholder": "Búsqueda de términos",
 
@@ -123,6 +123,7 @@
     "Facet_Elements_Item(Climate Services)":"Servicios climáticos",
     "Facet_Elements_Item(Observations and Scenarios)":"Observaciones y escenarios",
     "Facet_Elements_Item(Sector Policies)":"Políticas del sector",
+    "Facet_Elements_Item(Nature-based solutions)":"Soluciones basadas en la naturaleza",
     "Facet_Elements_Item(Vulnerability Assessment)":"Evaluación de vulnerabilidad",
 
     "Facet_Funding_programme_Item(National Funding)":"Financiación nacional",
