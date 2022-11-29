@@ -64,6 +64,10 @@
     "Facet_Health_impacts_Item(Floods and storms)": "Powodzie i burze",
     "Facet_Health_impacts_Item(Heat and cold)": "Ciepło i zimno",
     "Facet_Health_impacts_Item(Infectious diseases)": "Choroba zakaźna",
+    "Facet_Health_impacts_Item(Air pollution and aero-allergens)": "Zanieczyszczenia powietrza i alergeny wziewne",
+    "Facet_Health_impacts_Item(Climate-sensitive diseases)": "Choroby zależne od klimatu",
+    "Facet_Health_impacts_Item(Droughts and floods)": "Susze i powodzie",
+    "Facet_Health_impacts_Item(Heat)": "Ciepło",
     "Facet_Health_impacts_Item(-NONSPECIFIC-)": "-NIESPECYFICZNY-",
 
     "Facet_Partner_contributors_Item(Copernicus Climate Change Service and Copernicus Atmosphere Monitoring Service)": "Usługa Copernicus dotycząca zmian klimatu i usługa monitorowania atmosfery Copernicus",
