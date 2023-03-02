@@ -26,25 +26,16 @@
             "index_page": [
                 "css/no-more-tables.css",
                 "css/esbootstrap.facetview.css",
-                "custom.css"
+                "/custom.css"
             ],
-            "details_page": [
-                "css/esbootstrap.facetview.css",
-                "custom.css"
-            ]
+            "details_page": []
         },
         "js_resources": {
             "index_page": [
                 "javascripts/esbootstrap.facetview.js",
-                "custom.js"
+                "/custom.js"
             ],
-            "details_page": [
-                "http://www.eea.europa.eu/register_function.js",
-                "http://www.eea.europa.eu/nodeutilities.js",
-                "http://www.eea.europa.eu/mark_special_links.js",
-                "javascripts/jq.tools.js",
-                "custom.js"
-            ]
+            "details_page": []
         },
         "site_title": "Air quality zones (data flow B)",
         "site_description": "Information on air quality zones (AQ Zones), <a href='http://rod.eionet.europa.eu/obligations/670'>data flow B</a>.",
