@@ -13,7 +13,7 @@
     "external_templates": {
         "local_path": "/external_templates",
         "protocol": "https",
-        "host": "staging.eea.europa.eu",
+        "host": "www.eea.europa.eu",
         "head_path": "/templates/v3/getRequiredHead?render_full_html=False&cssonly=True&css_stack=external_templates",
         "header_path": "/templates/v3/getHeader?render_full_html=False",
         "footer_path": "/templates/v3/getFooter?render_full_html=False"
