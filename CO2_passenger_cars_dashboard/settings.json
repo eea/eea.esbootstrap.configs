@@ -3,7 +3,7 @@
         "port": 3000
     },
     "elastic": {
-        "index": "co2_cars_dashboard",
+        "index": "co2_cars_dashboard_2022p",
         "type": "resources",
         "field_base":"",
         "preload_cache": true,
@@ -38,7 +38,7 @@
 
             "sql": true,
             "sql_url": "http://mudskipper.eea.dmz1:8083/sql",
-            "sql_table": "[CO2Emission_Internal].[stage].[co2cars]",
+            "sql_table": "[CO2Emission_Internal].[stage].[co2cars_2022p]",
             "query_attr": "query",
             "query": "query.sql",
             "query_count": "query_count.sql",
