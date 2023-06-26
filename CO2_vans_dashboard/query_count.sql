@@ -3,5 +3,5 @@ Select
 from <TABLE>
 WHERE
     MS!='M1' and
-    year=2020 and
+    year=2022 and
     status='p'
