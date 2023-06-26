@@ -63,7 +63,7 @@ from
 WHERE
     MS!='M1' and
     year=2022 and
-    status='p'
+    status='p' and
     ID>=<MIN_ID> and
     ID<<MAX_ID>
 order by uid
