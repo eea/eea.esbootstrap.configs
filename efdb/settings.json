@@ -3,7 +3,7 @@
         "port": 3000
     },
     "elastic": {
-        "index": "esbootstrapdata-efdb",
+        "index": "esbootstrapdata-efdb-2023",
         "type": "resources",
         "field_base":"",
         "default_appalias": "prod",
@@ -48,13 +48,13 @@
                 "custom.js"
             ]
         },
-        "site_title": "EMEP/EEA air pollutant emission inventory guidebook 2019",
-        "site_description": "This viewer presents selected emission factors and abatement efficiencies included in the EMEP/EEA Guidebook 2019. Information is ordered by the respective Nomenclature For Reporting (NFR) source category code. Not all emission factors included in the Guidebook are included in this viewer, users should always therefore consult the relevant chapter. In case of discrepancies between values appearing in this viewer and the published chapter, the values provided in the chapter are considered the official data.",
+        "site_title": "EMEP/EEA air pollutant emission inventory guidebook 2023",
+        "site_description": "This viewer presents selected emission factors and abatement efficiencies included in the EMEP/EEA Guidebook 2023. Information is ordered by the respective Nomenclature For Reporting (NFR) source category code. Not all emission factors included in the Guidebook are included in this viewer, users should always therefore consult the relevant chapter. In case of discrepancies between values appearing in this viewer and the published chapter, the values provided in the chapter are considered the official data.",
         "enableBreadcrumbs": true,
         "es_debug_enabled": false,
         "breadcrumbs": "EFDB",
-        "dataprovencance_info_text": "EMEP/EEA air pollutant emission inventory guidebook - 2019",
-        "dataprovencance_info_url": "https://www.eea.europa.eu/publications/emep-eea-guidebook-2019",
+        "dataprovencance_info_text": "EMEP/EEA air pollutant emission inventory guidebook - 2023",
+        "dataprovencance_info_url": "https://www.eea.europa.eu/publications/emep-eea-guidebook-2023",
         "further_info": ""
     },
     "source": {
@@ -63,7 +63,7 @@
         "configuration": {
             "type": "csv",
             "bulksize": 2000,
-            "file": "2019_Flatfile_EFDB_for_dataviewer_December 2021.csv",
+            "file": "2023_Flatfile_EFDB_for_dataviewer_August_2023.csv",
             "data_modifier": "modify.js",
             "encoding": "utf-8",
             "delimiter": ",",
