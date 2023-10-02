@@ -33,7 +33,7 @@
         },
         {
             "name": "Sector",
-            "listing": { "title": "Sector", "visible" : true, "pos" : 3 },
+            "listing": { "title": "Sector", "visible" : true, "pos" : 3, "width":"250px" },
             "details": { "title": "Sector", "pos" : 3, "section": "info", "visible": false },
             "facet": { "visible": false },
             "csv_tsv": { "title": "Sector", "visible": true, "pos": 3 }
@@ -54,7 +54,7 @@
         },
         {
             "name": "Technology",
-            "listing": { "title": "Technology", "visible" : true, "pos" : 6 },
+            "listing": { "title": "Technology", "visible" : true, "pos" : 6, "width":"150px" },
             "details": { "title": "Technology", "pos" : 4, "section": "info", "visible": false },
             "facet": { "visible": false },
            "csv_tsv": { "title": "Technology", "visible": true, "pos": 4 }
@@ -96,7 +96,7 @@
         },
         {
             "name": "Unit",
-            "listing": { "title": "Unit", "visible" : true, "pos" : 6 },
+            "listing": { "title": "Unit", "visible" : true, "pos" : 6, "width": "80px" },
             "details": { "title": "Unit", "pos" : 4, "section": "info", "visible": false },
             "facet": { "visible": false },
            "csv_tsv": { "title": "Unit", "visible": true, "pos": 4 }
