@@ -328,7 +328,7 @@
             },
             "csv_tsv": {
                 "title": "Funding Programme",
-                "visible": false,
+                "visible": true,
                 "pos": 6
             },
             "facet": {
