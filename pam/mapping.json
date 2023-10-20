@@ -22,7 +22,15 @@
         "type" : "text",
         "analyzer" : "none"
     },
-    "Policy_impacting_EU_ETS__ESD_or_LULUCF_emissions" : {
+    "Policy_impacting_EU_ETS__ESD_or_LULUCF_emissions_GHG" : {
+        "type" : "text",
+        "analyzer" : "semicolon"
+    },
+    "Relevant_union_dimensions_affected" : {
+        "type" : "text",
+        "analyzer" : "semicolon"
+    },
+    "Relevant_objective_target_or_contribution_the_policy_or_measure_contributes_to" :{
         "type" : "text",
         "analyzer" : "semicolon"
     },
@@ -34,16 +42,16 @@
         "type" : "text",
         "analyzer" : "semicolon"
     },
-    "Total_GHG_emissions_reductions_in_2025__kt_CO2eq_y_"  : {
+    "Total_GHG_emissions_reductions_in_2025__kt_CO2eq_y_GHG"  : {
         "type" : "double"
     },
-    "Total_GHG_emissions_reductions_in_2030__kt_CO2eq_y_"  : {
+    "Total_GHG_emissions_reductions_in_2030__kt_CO2eq_y_GHG"  : {
         "type" : "double"
     },
-    "Total_GHG_emissions_reductions_in_2035__kt_CO2eq_y_"  : {
+    "Total_GHG_emissions_reductions_in_2035__kt_CO2eq_y_GHG"  : {
         "type" : "double"
     },
-    "Total_GHG_emissions_reductions_in_2040__kt_CO2eq_y_"  : {
+    "Total_GHG_emissions_reductions_in_2040__kt_CO2eq_y_GHG"  : {
         "type" : "double"
     },
     "Entities_responsible_for_implementing_the_policy__type_"  : {
@@ -95,12 +103,8 @@
         "copy_to" : ["did_you_mean", "autocomplete"]
     },
     "Related_Union_Policy": {
-        "type": "keyword",
-        "fields" : {
-                "toindex" : {"type" : "text", "analyzer" : "default"},
-                "index" : {"type" : "text", "analyzer" : "none"},
-                "Related_Union_Policy": {"type": "text"}
-        },
+        "type": "text",
+        "analyzer" : "semicolon",
         "copy_to" : ["did_you_mean", "autocomplete"]
     },
     "Description": {
@@ -131,6 +135,22 @@
         "copy_to" : ["did_you_mean", "autocomplete"]
     },
     "Does_the_PaM_relate_to_Air_Pollution_policy_"  : {
+        "type" : "text",
+        "analyzer" : "none"
+    },
+    "Average_expost_emission_reduction__kt_CO2eq_y_GHG_BOOL" : {
+        "type" : "text",
+        "analyzer" : "none"
+    },
+    "Expost_production_ktoe_year_RES_BOOL": {
+        "type" : "text",
+        "analyzer" : "none"
+    },
+    "Expost_reductions_ktoe_year_final_energy_EE_BOOL" :{
+        "type" : "text",
+        "analyzer" : "none"
+    },
+    "pdf": {
         "type" : "text",
         "analyzer" : "none"
     }

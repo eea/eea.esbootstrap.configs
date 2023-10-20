@@ -19,8 +19,8 @@
             "listing": {
                 "visible": true,
                 "title": "Country",
+                "pos": 0,
                 "width": "100px",
-                "pos": 10,
                 "display": {
                     "pre": "",
                     "field": "Country",
@@ -30,9 +30,10 @@
             "csv_tsv": {
                 "title": "Country",
                 "visible": true,
-                "pos": 10
+                "pos": 0
             },
             "facet": {
+                "hasfacet": true,
                 "visible": true,
                 "title": "Country",
                 "pos": 10,
@@ -43,11 +44,28 @@
             }
         },
         {
+            "name": "ID_of_policy_or_measure",
+            "listing": {
+                "visible": true,
+                "title": "ID of policy or measure",
+                "pos": 10,
+                "width": "50px"
+            },
+            "csv_tsv": {
+                "title": "ID of policy or measure",
+                "visible": true,
+                "pos": 10
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
             "name": "pdf",
             "listing": {
                 "visible": true,
                 "title": "",
-                "pos": 20,
+                "pos": 15,
                 "display": {
                     "pre": "<td><a class='details_link' href='",
                     "field": "pdf",
@@ -55,9 +73,9 @@
                 }
             },
             "csv_tsv": {
-                "title": "pdf",
-                "visible": false,
-                "pos": 20
+                "visible": true,
+                "pos": 15,
+                "title": "pdf"
             },
             "facet": {
                 "visible": false
@@ -68,8 +86,8 @@
             "listing": {
                 "visible": true,
                 "title": "Name of policy or measure",
-                "pos": 30,
-                "width":"200px",
+                "pos": 20,
+                "width": "200px",
                 "display": {
                     "pre": "",
                     "field": "Name_of_policy_or_measure",
@@ -78,6 +96,23 @@
             },
             "csv_tsv": {
                 "title": "Name of policy or measure",
+                "visible": true,
+                "pos": 20
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Description",
+            "listing": {
+                "visible": true,
+                "title": "Description",
+                "pos": 30,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Description",
                 "visible": true,
                 "pos": 30
             },
@@ -90,13 +125,13 @@
             "listing": {
                 "visible": true,
                 "title": "Geographical coverage",
-                "pos": 37,
-                "width":"200px"
+                "pos": 40,
+                "width": "200px"
             },
             "csv_tsv": {
-                "title": "Geographical_coverage",
+                "title": "Geographical coverage",
                 "visible": true,
-                "pos": 37
+                "pos": 40
             },
             "facet": {
                 "visible": false
@@ -106,18 +141,19 @@
             "name": "Single_policy_or_measure__or_group_of_measures",
             "listing": {
                 "visible": true,
-                "title": "Single policy or measure, or group of measures",
-                "pos": 40,
+                "title": "Single policy or measure or group of measures",
+                "pos": 50,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Single policy or measure, or group of measures",
+                "title": "Single policy or measure or group of measures",
                 "visible": true,
-                "pos": 40
+                "pos": 50
             },
             "facet": {
+                "hasfacet": true,
                 "visible": true,
-                "title": "Single policy or measure, or group of measures",
+                "title": "Single policy or measure or group of measures",
                 "pos": 20,
                 "type": "facet",
                 "size": 50,
@@ -133,31 +169,10 @@
             "csv_tsv": {
                 "title": "Report_ID",
                 "visible": true,
-                "pos": 50
+                "pos": 60
             },
             "facet": {
-                "visible": false,
-                "title": "Report ID",
-                "pos": 1,
-                "type": "facet",
-                "size": 50,
-                "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
-            }
-        },
-
-        {
-            "name": "ID_of_policy_or_measure",
-            "listing": {
-                "visible": true,
-                "title": "ID of policy or measure",
-                "pos": 15,
-                "width": "50px"
-            },
-            "csv_tsv": {
-                "title": "ID of policy or measure",
-                "visible": true,
-                "pos": 15
+                "visible": false
             }
         },
         {
@@ -172,6 +187,9 @@
                 "title": "Policies or measures included in the group",
                 "visible": true,
                 "pos": 70
+            },
+            "facet": {
+                "visible": false
             }
         },
         {
@@ -179,14 +197,16 @@
             "listing": {
                 "visible": true,
                 "title": "Type of policy instrument",
-                "pos": 100
+                "pos": 80,
+                "width": "100px"
             },
             "csv_tsv": {
                 "title": "Type of policy instrument",
                 "visible": true,
-                "pos": 100
+                "pos": 80
             },
             "facet": {
+                "hasfacet": true,
                 "visible": true,
                 "title": "Type of policy instrument",
                 "pos": 60,
@@ -201,15 +221,16 @@
             "listing": {
                 "visible": true,
                 "title": "Status of implementation",
-                "pos": 110,
+                "pos": 90,
                 "width": "100px"
             },
             "csv_tsv": {
                 "title": "Status of implementation",
                 "visible": true,
-                "pos": 110
+                "pos": 90
             },
             "facet": {
+                "hasfacet": true,
                 "visible": true,
                 "title": "Status of implementation",
                 "pos": 70,
@@ -220,22 +241,71 @@
             }
         },
         {
-            "name": "Policy_impacting_EU_ETS__ESD_or_LULUCF_emissions",
+            "name": "Policy_impacting_EU_ETS__ESD_or_LULUCF_emissions_GHG",
             "listing": {
                 "visible": true,
-                "title": "Policy impacting EU ETS, ESD or LULUCF emissions",
+                "title": "Policy impacting EU ETS ESD or LULUCF emissions",
+                "pos": 100,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Policy impacting EU ETS ESD or LULUCF emissions",
+                "visible": true,
+                "pos": 100
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Policy impacting EU ETS ESD or LULUCF emissions",
+                "pos": 130,
+                "type": "facet",
+                "size": 50,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"]
+            }
+        },
+        {
+            "name": "Relevant_union_dimensions_affected",
+            "listing": {
+                "visible": true,
+                "title": "Relevant Union dimension(s) affected",
+                "pos": 110,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Relevant Union dimension(s) affected",
+                "visible": true,
+                "pos": 110
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Relevant Union dimension(s) affected",
+                "pos": 160,
+                "type": "facet",
+                "size": 50,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"]
+            }
+        },
+        {
+            "name": "Relevant_objective_target_or_contribution_the_policy_or_measure_contributes_to",
+            "listing": {
+                "visible": true,
+                "title": "Relevant objective target or contribution the policy or measure contributes to",
                 "pos": 120,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Policy impacting EU ETS, ESD or LULUCF emissions",
+                "title": "Relevant objective target or contribution the policy or measure contributes to",
                 "visible": true,
                 "pos": 120
             },
-            "facet": {
+            "facet_": {
+                "hasfacet": true,
                 "visible": true,
-                "title": "Policy impacting EU ETS, ESD or LULUCF emissions",
-                "pos": 140,
+                "title": "Relevant objective target or contribution the policy or measure contributes to",
+                "pos": 170,
                 "type": "facet",
                 "size": 50,
                 "order": "term",
@@ -247,7 +317,8 @@
             "listing": {
                 "visible": true,
                 "title": "Sector(s) affected",
-                "pos": 130
+                "pos": 130,
+                "width": "100px"
             },
             "csv_tsv": {
                 "title": "Sector(s) affected",
@@ -255,6 +326,7 @@
                 "pos": 130
             },
             "facet": {
+                "hasfacet": true,
                 "visible": true,
                 "title": "Sector(s) affected",
                 "pos": 40,
@@ -268,23 +340,17 @@
             "name": "Objective_s_",
             "listing": {
                 "visible": true,
-                "title": "Objective(s)",
+                "title": "Sector objective(s)",
                 "pos": 140,
                 "width": "200px"
             },
             "csv_tsv": {
-                "title": "Objective(s)",
+                "title": "Sector objective(s)",
                 "visible": true,
                 "pos": 140
             },
             "facet": {
-                "visible": false,
-                "title": "Objective(s)",
-                "pos": 50,
-                "type": "facet",
-                "size": 100,
-                "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "visible": false
             }
         },
         {
@@ -296,8 +362,9 @@
                 "visible": false
             },
             "facet": {
+                "hasfacet": true,
                 "visible": true,
-                "title": "Objective(s)",
+                "title": "Sector objective(s)",
                 "pos": 50,
                 "type": "facet",
                 "size": 100,
@@ -309,22 +376,132 @@
             }
         },
         {
-            "name": "Total_GHG_emissions_reductions_in_2025__kt_CO2eq_y_",
+            "name": "Quantified_objective",
+            "listing": {
+                "visible": true,
+                "title": "Quantified objective",
+                "pos": 150,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Quantified objective",
+                "visible": true,
+                "pos": 150
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "GHG_s__affected",
+            "listing": {
+                "visible": true,
+                "title": "GHG(s) affected",
+                "pos": 160,
+                "width": "150px"
+            },
+            "csv_tsv": {
+                "title": "GHG(s) affected",
+                "visible": true,
+                "pos": 160
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "GHG(s) affected",
+                "pos": 30,
+                "type": "facet",
+                "size": 50,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"]
+            }
+        },
+        {
+            "name": "Energy_security_vectors_affected",
+            "listing": {
+                "visible": true,
+                "title": "Energy Security Vector(s) affected",
+                "pos": 170,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Energy Security Vector(s) affected",
+                "visible": true,
+                "pos": 170
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Supported_energy_union_ri_priority",
+            "listing": {
+                "visible": true,
+                "title": "Supported Energy Union R&I priority",
+                "pos": 180,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Supported Energy Union R&I priority",
+                "visible": true,
+                "pos": 180
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Supported_clean_energy_low_carbon_technologies_by_ri",
+            "listing": {
+                "visible": true,
+                "title": "Supported Clean energy/low carbon technologies by R&I",
+                "pos": 190,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Supported Clean energy/low carbon technologies by R&I",
+                "visible": true,
+                "pos": 190
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Total_GHG_emissions_reductions_in_2025__kt_CO2eq_y_GHG",
             "listing": {
                 "visible": true,
                 "title": "Total GHG emissions reductions in 2025 (kt CO2eq/y)",
-                "pos": 150,
+                "pos": 200,
                 "width": "110px"
             },
             "csv_tsv": {
                 "title": "Total GHG emissions reductions in 2025 (kt CO2eq/y)",
                 "visible": true,
-                "pos": 150
+                "pos": 200
             },
             "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Total_GHG_emissions_reductions_in_2030__kt_CO2eq_y_GHG",
+            "listing": {
                 "visible": true,
-                "title": "Total GHG emissions reductions in 2025 (kt CO2eq/y)",
-                "pos": 150,
+                "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
+                "pos": 210,
+                "width": "110px"
+            },
+            "csv_tsv": {
+                "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 210
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
+                "pos": 140,
                 "type": "rangehistogram",
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"],
@@ -339,34 +516,50 @@
             }
         },
         {
-            "name": "Total_GHG_emissions_reductions_in_2035__kt_CO2eq_y_",
+            "name": "Total_GHG_emissions_reductions_in_2035__kt_CO2eq_y_GHG",
             "listing": {
                 "visible": true,
                 "title": "Total GHG emissions reductions in 2035 (kt CO2eq/y)",
-                "pos": 160,
+                "pos": 220,
                 "width": "110px"
             },
             "csv_tsv": {
                 "title": "Total GHG emissions reductions in 2035 (kt CO2eq/y)",
                 "visible": true,
-                "pos": 160
+                "pos": 220
             },
             "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Total_GHG_emissions_reductions_in_2040__kt_CO2eq_y_GHG",
+            "listing": {
                 "visible": true,
-                "title": "Total GHG emissions reductions in 2035 (kt CO2eq/y)",
-                "pos": 160,
+                "title": "Total GHG emissions reductions in 2040 (kt CO2eq/y)",
+                "pos": 230,
+                "width": "110px"
+            },
+            "csv_tsv": {
+                "title": "Total GHG emissions reductions in 2040 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 230
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Total GHG emissions reductions in 2040 (kt CO2eq/y)",
+                "pos": 150,
                 "type": "rangehistogram",
                 "order": "term",
                 "facet_display_options": ["sort", "checkbox"],
                 "histogram_config": {
-
                     "columns_min_color" : "#DDDDDD",
                     "columns_max_color" : "#AAAAAA",
 
                     "slider_bucketsize" : 100,
                     "histogram" : false,
                     "measurement_unit": "kt CO2eq/y"
-
                 }
             }
         },
@@ -378,30 +571,30 @@
             "csv_tsv": {
                 "title": "Entities responsible for implementing the policy (type)",
                 "visible": true,
-                "pos": 170
+                "pos": 240
             },
             "facet": {
+                "hasfacet": true,
                 "visible": true,
                 "title": "Entities responsible for implementing the policy (type)",
                 "pos": 80,
                 "type": "facet",
                 "size": 50,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
-            }
+                "facet_display_options": ["sort", "checkbox"]            }
         },
         {
             "name": "Entities_responsible_for_implementing_the_policy",
             "listing": {
                 "visible": true,
                 "title": "Entities responsible for implementing the policy",
-                "pos": 180,
+                "pos": 250,
                 "width": "200px"
             },
             "csv_tsv": {
                 "title": "Entities responsible for implementing the policy",
                 "visible": true,
-                "pos": 180
+                "pos": 250
             },
             "facet": {
                 "visible": false
@@ -412,14 +605,16 @@
             "listing": {
                 "visible": true,
                 "title": "Implementation period start",
-                "pos": 190
+                "pos": 260,
+                "width": "100px"
             },
             "csv_tsv": {
                 "title": "Implementation period start",
                 "visible": true,
-                "pos": 190
+                "pos": 260
             },
             "facet": {
+                "hasfacet": true,
                 "visible": true,
                 "title": "Implementation period start",
                 "pos": 90,
@@ -437,19 +632,37 @@
             }
         },
         {
+            "name": "Implementation_period_finish",
+            "listing": {
+                "visible": true,
+                "title": "Implementation period finish",
+                "pos": 270,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Implementation period finish",
+                "visible": true,
+                "pos": 270
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
             "name": "Is_the_policy_or_measure_related_to_a_Union_policy_",
             "listing": {
                 "visible": true,
                 "title": "Is the policy or measure related to a Union policy?",
-                "pos": 200,
+                "pos": 280,
                 "width": "80px"
             },
             "csv_tsv": {
                 "title": "Is the policy or measure related to a Union policy?",
                 "visible": true,
-                "pos": 200
+                "pos": 280
             },
             "facet": {
+                "hasfacet": true,
                 "visible": true,
                 "title": "Is the policy or measure related to a Union policy?",
                 "pos": 100,
@@ -464,16 +677,17 @@
             "listing": {
                 "visible": true,
                 "title": "Related Union Policy",
-                "pos": 220,
+                "pos": 290,
                 "width": "200px"
             },
             "csv_tsv": {
                 "title": "Related Union Policy",
                 "visible": true,
-                "pos": 220
+                "pos": 290
             },
             "facet": {
-                "visible": false,
+                "hasfacet": true,
+                "visible": true,
                 "title": "Related Union Policy",
                 "pos": 110,
                 "type": "facet",
@@ -482,166 +696,29 @@
                 "facet_display_options": ["sort", "checkbox"]
             }
         },
+    
         {
-            "name": "Does_the_PaM_relate_to_Air_Pollution_policy_",
+            "name": "Projection_scenario_in_which_the_policy_or_measure_is_included",
             "listing": {
                 "visible": true,
-                "title": "Does the PaM relate to Air Pollution policy?",
-                "pos": 225,
-                "width": "200px"
+                "title": "Projection scenario in which the policy or measure is included",
+                "pos": 300,
+                "width": "120px"
             },
             "csv_tsv": {
-                "title": "Does_the_PaM_relate_to_Air_Pollution_policy?",
+                "title": "Projection scenario in which the policy or measure is included",
                 "visible": true,
-                "pos": 225
+                "pos": 300
             },
             "facet": {
+                "hasfacet": true,
                 "visible": true,
-                "title": "PaM related to Air Pollution policy",
-                "pos": 170,
-                "type": "facet",
-                "size": 100,
-                "order": "count",
-                "facet_display_options": ["sort", "checkbox"]
-            }
-        },
-        {
-            "name": "Union_policies_lookup_only4facets",
-            "listing": {
-                "visible": false,
-                "title": "Union policy which resulted in the implementation of the policy or measure",
-                "pos": 230,
-                "width": "200px"
-            },
-            "csv_tsv": {
-                "title": "Union policy which resulted in the implementation of the policy or measure",
-                "visible": false,
-                "pos": 230
-            },
-            "facet": {
-                "visible": true,
-                "title": "Union policy which resulted in the implementation of the policy or measure",
+                "title": "Projection scenario in which the policy or measure is included",
                 "pos": 120,
                 "type": "facet",
                 "size": 100,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"],
-                "autocomplete": true,
-                "autocomplete_placeholder": "Search for union policy",
-                "empty_message": "No union policy to show"
-
-            }
-        },
-        {
-            "name": "GHG_s__affected",
-            "listing": {
-                "title": "GHG(s) affected",
-                "visible": true,
-                "pos": 147,
-                "width": "80px"
-            },
-            "csv_tsv": {
-                "title": "GHG(s) affected",
-                "visible": true,
-                "pos": 147
-            },
-            "facet": {
-                "visible": true,
-                "title": "GHG(s) affected",
-                "pos": 30,
-                "type": "facet",
-                "size": 50,
-                "order": "term",
                 "facet_display_options": ["sort", "checkbox"]
-            }
-        },
-        {
-            "name": "Projection_scenario_in_which_the_policy_or_measure_is_included",
-            "listing": {
-                "title": "Projection scenario in which the policy or measure is included",
-                "visible": true,
-                "pos": 250,
-                "width":"120px"
-            },
-            "csv_tsv": {
-                "title": "Projection scenario in which the policy or measure is included",
-                "visible": true,
-                "pos": 250
-            },
-            "facet": {
-                "visible": true,
-                "title": "Projection scenario in which the policy or measure is included",
-                "pos": 130,
-                "type": "facet",
-                "size": 100,
-                "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
-            }
-        },
-        {
-            "name": "Link_to_national_report",
-            "listing": {
-                "visible":false,
-                "title": "Link to national report",
-                "pos": 260,
-                "width": "300px"
-            },
-            "csv_tsv": {
-                "title": "Link to national report",
-                "visible": false,
-                "pos": 260
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-        {
-            "name": "Description",
-            "listing": {
-                "visible": true,
-                "title": "Description",
-                "pos": 35,
-                "width": "200px"
-            },
-            "csv_tsv": {
-                "title": "Description",
-                "visible": true,
-                "pos": 35
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-        {
-            "name": "Quantified_objective",
-            "listing": {
-                "visible": true,
-                "title": "Quantified objective",
-                "pos": 144
-            },
-            "csv_tsv": {
-                "title": "Quantified objective",
-                "visible": true,
-                "pos": 144
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-        {
-            "name": "Implementation_period_finish",
-            "listing": {
-                "visible": true,
-                "title": "Implementation period finish",
-                "pos": 195
-            },
-            "csv_tsv": {
-                "title": "Implementation period finish",
-                "visible": true,
-                "pos": 195
-            },
-            "facet": {
-                "visible": false
             }
         },
         {
@@ -649,28 +726,13 @@
             "listing": {
                 "visible": true,
                 "title": "Indicator used to monitor and evaluate progress over time",
-                "pos": 300
+                "pos": 310,
+                "width": "100px"
             },
             "csv_tsv": {
                 "title": "Indicator used to monitor and evaluate progress over time",
                 "visible": true,
-                "pos": 300
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-        {
-            "name": "Assessment_of_the_contribution",
-            "listing": {
-                "visible": true,
-                "title": "Contribution to the LTS",
-                "pos": 305
-            },
-            "csv_tsv": {
-                "title": "Contribution to the LTS",
-                "visible": true,
-                "pos": 305
+                "pos": 310
             },
             "facet": {
                 "visible": false
@@ -681,12 +743,13 @@
             "listing": {
                 "visible": true,
                 "title": "General comment",
-                "pos": 310
+                "pos": 330,
+                "width": "100px"
             },
             "csv_tsv": {
                 "title": "General comment",
                 "visible": true,
-                "pos": 310
+                "pos": 330
             },
             "facet": {
                 "visible": false
@@ -697,12 +760,13 @@
             "listing": {
                 "visible": true,
                 "title": "Main reference",
-                "pos": 320
+                "pos": 340,
+                "width": "100px"
             },
             "csv_tsv": {
                 "title": "Main reference",
                 "visible": true,
-                "pos": 320
+                "pos": 340
             },
             "facet": {
                 "visible": false
@@ -713,45 +777,11 @@
             "listing": {
                 "visible": true,
                 "title": "URL to main reference",
-                "pos": 330
-
-            },
-            "csv_tsv": {
-                "title": "URL to main reference",
-                "visible": true,
-                "pos": 330
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-        {
-            "name": "GHG_emissions_reductions_EU_ETS_in_2025__kt_CO2eq_y_",
-            "listing": {
-                "visible": true,
-                "title": "GHG emissions reductions EU ETS in 2025 (kt CO2eq/y)",
-                "pos": 340,
-                "width": "100px"
-            },
-            "csv_tsv": {
-                "title": "GHG emissions reductions EU ETS in 2025 (kt CO2eq/y)",
-                "visible": true,
-                "pos": 340
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-        {
-            "name": "GHG_emissions_reductions_ESR_in_2025__kt_CO2eq_y_",
-            "listing": {
-                "visible": true,
-                "title": "GHG emissions reductions ESR in 2025 (kt CO2eq/y)",
                 "pos": 350,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "GHG emissions reductions ESR in 2025 (kt CO2eq/y)",
+                "title": "URL to main reference",
                 "visible": true,
                 "pos": 350
             },
@@ -760,32 +790,15 @@
             }
         },
         {
-            "name": "GHG_emissions_reductions_LULUCF_in_2025__kt_CO2eq_y_",
+            "name": "GHG_emissions_reductions_EU_ETS_in_2025__kt_CO2eq_y_GHG",
             "listing": {
                 "visible": true,
-                "title": "GHG emissions reductions LULUCF in 2025 (kt CO2eq/y)",
-                "pos": 355,
-                "width": "100px"
-            },
-            "csv_tsv": {
-                "title": "GHG emissions reductions LULUCF in 2025 (kt CO2eq/y)",
-                "visible": true,
-                "pos": 355
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-        {
-            "name": "GHG_emissions_reductions_EU_ETS_in_2030__kt_CO2eq_y_",
-            "listing": {
-                "visible": true,
-                "title": "GHG emissions reductions EU ETS in 2030 (kt CO2eq/y)",
+                "title": "GHG emissions reductions EU ETS in 2025 (kt CO2eq/y)",
                 "pos": 360,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "GHG emissions reductions EU ETS in 2030 (kt CO2eq/y)",
+                "title": "GHG emissions reductions EU ETS in 2025 (kt CO2eq/y)",
                 "visible": true,
                 "pos": 360
             },
@@ -794,15 +807,15 @@
             }
         },
         {
-            "name": "GHG_emissions_reductions_ESR_in_2030__kt_CO2eq_y_",
+            "name": "GHG_emissions_reductions_ESR_in_2025__kt_CO2eq_y_GHG",
             "listing": {
                 "visible": true,
-                "title": "GHG emissions reductions ESD in 2030 (kt CO2eq/y)",
+                "title": "GHG emissions reductions ESR in 2025 (kt CO2eq/y)",
                 "pos": 370,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "GHG emissions reductions ESD in 2030 (kt CO2eq/y)",
+                "title": "GHG emissions reductions ESR in 2025 (kt CO2eq/y)",
                 "visible": true,
                 "pos": 370
             },
@@ -811,50 +824,32 @@
             }
         },
         {
-            "name": "GHG_emissions_reductions_LULUCF_in_2030__kt_CO2eq_y_",
+            "name": "GHG_emissions_reductions_LULUCF_in_2025__kt_CO2eq_y_GHG",
             "listing": {
                 "visible": true,
-                "title": "GHG emissions reductions LULUCF in 2030 (kt CO2eq/y)",
-                "pos": 375,
+                "title": "GHG emissions reductions LULUCF in 2025 (kt CO2eq/y)",
+                "pos": 380,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "GHG emissions reductions LULUCF in 2030 (kt CO2eq/y)",
+                "title": "GHG emissions reductions LULUCF in 2025 (kt CO2eq/y)",
                 "visible": true,
-                "pos": 375
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-
-        {
-            "name": "Total_GHG_emissions_reductions_in_2030__kt_CO2eq_y_",
-            "listing": {
-                "visible": true,
-                "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
-                "pos": 155,
-                "width": "110px"
-            },
-            "csv_tsv": {
-                "title": "Total GHG emissions reductions in 2030 (kt CO2eq/y)",
-                "visible": true,
-                "pos": 155
+                "pos": 380
             },
             "facet": {
                 "visible": false
             }
         },
         {
-            "name": "GHG_emissions_reductions_EU_ETS_in_2035__kt_CO2eq_y_",
+            "name": "GHG_emissions_reductions_EU_ETS_in_2030__kt_CO2eq_y_GHG",
             "listing": {
                 "visible": true,
-                "title": "GHG emissions reductions EU ETS in 2035 (kt CO2eq/y)",
+                "title": "GHG emissions reductions EU ETS in 2030 (kt CO2eq/y)",
                 "pos": 390,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "GHG emissions reductions EU ETS in 2035 (kt CO2eq/y)",
+                "title": "GHG emissions reductions EU ETS in 2030 (kt CO2eq/y)",
                 "visible": true,
                 "pos": 390
             },
@@ -863,15 +858,15 @@
             }
         },
         {
-            "name": "GHG_emissions_reductions_ESR_in_2035__kt_CO2eq_y_",
+            "name": "GHG_emissions_reductions_ESR_in_2030__kt_CO2eq_y_GHG",
             "listing": {
                 "visible": true,
-                "title": "GHG emissions reductions ESD in 2035 (kt CO2eq/y)",
+                "title": "GHG emissions reductions ESD in 2030 (kt CO2eq/y)",
                 "pos": 400,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "GHG emissions reductions ESD in 2035 (kt CO2eq/y)",
+                "title": "GHG emissions reductions ESD in 2030 (kt CO2eq/y)",
                 "visible": true,
                 "pos": 400
             },
@@ -880,32 +875,15 @@
             }
         },
         {
-            "name": "GHG_emissions_reductions_LULUCF_in_2035__kt_CO2eq_y_",
+            "name": "GHG_emissions_reductions_LULUCF_in_2030__kt_CO2eq_y_GHG",
             "listing": {
                 "visible": true,
-                "title": "GHG emissions reductions LULUCF in 2035 (kt CO2eq/y)",
-                "pos": 405,
-                "width": "100px"
-            },
-            "csv_tsv": {
-                "title": "GHG emissions reductions LULUCF in 2035 (kt CO2eq/y)",
-                "visible": true,
-                "pos": 405
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-        {
-            "name": "GHG_emissions_reductions_EU_ETS_in_2040__kt_CO2eq_y_",
-            "listing": {
-                "visible": true,
-                "title": "GHG emissions reductions EU ETS in 2040 (kt CO2eq/y)",
+                "title": "GHG emissions reductions LULUCF in 2030 (kt CO2eq/y)",
                 "pos": 410,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "GHG emissions reductions EU ETS in 2040 (kt CO2eq/y)",
+                "title": "GHG emissions reductions LULUCF in 2030 (kt CO2eq/y)",
                 "visible": true,
                 "pos": 410
             },
@@ -914,15 +892,15 @@
             }
         },
         {
-            "name": "GHG_emissions_reductions_ESR_in_2040__kt_CO2eq_y_",
+            "name": "GHG_emissions_reductions_EU_ETS_in_2035__kt_CO2eq_y_GHG",
             "listing": {
                 "visible": true,
-                "title": "GHG emissions reductions ESD in 2040 (kt CO2eq/y)",
+                "title": "GHG emissions reductions EU ETS in 2035 (kt CO2eq/y)",
                 "pos": 420,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "GHG emissions reductions ESD in 2040 (kt CO2eq/y)",
+                "title": "GHG emissions reductions EU ETS in 2035 (kt CO2eq/y)",
                 "visible": true,
                 "pos": 420
             },
@@ -931,48 +909,32 @@
             }
         },
         {
-            "name": "GHG_emissions_reductions_LULUCF_in_2040__kt_CO2eq_y_",
+            "name": "GHG_emissions_reductions_ESR_in_2035__kt_CO2eq_y_GHG",
             "listing": {
                 "visible": true,
-                "title": "GHG emissions reductions LULUCF in 2040 (kt CO2eq/y)",
-                "pos": 425,
+                "title": "GHG emissions reductions ESD in 2035 (kt CO2eq/y)",
+                "pos": 430,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "GHG emissions reductions LULUCF in 2040 (kt CO2eq/y)",
+                "title": "GHG emissions reductions ESD in 2035 (kt CO2eq/y)",
                 "visible": true,
-                "pos": 425
+                "pos": 430
             },
             "facet": {
                 "visible": false
             }
         },
         {
-            "name": "Total_GHG_emissions_reductions_in_2040__kt_CO2eq_y_",
+            "name": "GHG_emissions_reductions_LULUCF_in_2035__kt_CO2eq_y_GHG",
             "listing": {
                 "visible": true,
-                "title": "Total GHG emissions reductions in 2040 (kt CO2eq/y)",
-                "pos": 165,
-                "width": "110px"
+                "title": "GHG emissions reductions LULUCF in 2035 (kt CO2eq/y)",
+                "pos": 440,
+                "width": "100px"
             },
             "csv_tsv": {
-                "title": "Total GHG emissions reductions in 2040 (kt CO2eq/y)",
-                "visible": true,
-                "pos": 165
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-        {
-            "name": "Reference_for_ex_ante_assessment",
-            "listing": {
-                "visible": true,
-                "title": "Reference for ex-ante assessment",
-                "pos": 440
-            },
-            "csv_tsv": {
-                "title": "Reference for ex-ante assessment",
+                "title": "GHG emissions reductions LULUCF in 2035 (kt CO2eq/y)",
                 "visible": true,
                 "pos": 440
             },
@@ -981,14 +943,15 @@
             }
         },
         {
-            "name": "Web_link_for_ex_ante_assessment",
+            "name": "GHG_emissions_reductions_EU_ETS_in_2040__kt_CO2eq_y_GHG",
             "listing": {
                 "visible": true,
-                "title": "Web link for ex-ante assessment",
-                "pos": 450
+                "title": "GHG emissions reductions EU ETS in 2040 (kt CO2eq/y)",
+                "pos": 450,
+                "width": "100px"
             },
             "csv_tsv": {
-                "title": "Web link for ex-ante assessment",
+                "title": "GHG emissions reductions EU ETS in 2040 (kt CO2eq/y)",
                 "visible": true,
                 "pos": 450
             },
@@ -997,15 +960,15 @@
             }
         },
         {
-            "name": "Year_for_which_reduction_applies__ex_post_",
+            "name": "GHG_emissions_reductions_ESR_in_2040__kt_CO2eq_y_GHG",
             "listing": {
                 "visible": true,
-                "title": "Year for which reduction applies (ex post)",
+                "title": "GHG emissions reductions ESD in 2040 (kt CO2eq/y)",
                 "pos": 460,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Year for which reduction applies (ex post)",
+                "title": "GHG emissions reductions ESD in 2040 (kt CO2eq/y)",
                 "visible": true,
                 "pos": 460
             },
@@ -1014,15 +977,15 @@
             }
         },
         {
-            "name": "Average_ex_post_emission_reduction__kt_CO2eq_y_",
+            "name": "GHG_emissions_reductions_LULUCF_in_2040__kt_CO2eq_y_GHG",
             "listing": {
                 "visible": true,
-                "title": "Average ex post emission reduction (kt CO2eq/y)",
+                "title": "GHG emissions reductions LULUCF in 2040 (kt CO2eq/y)",
                 "pos": 470,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Average ex post emission reduction (kt CO2eq/y)",
+                "title": "GHG emissions reductions LULUCF in 2040 (kt CO2eq/y)",
                 "visible": true,
                 "pos": 470
             },
@@ -1031,48 +994,49 @@
             }
         },
         {
-            "name": "Explanation_of_the_basis_for_the_mitigation_estimates",
+            "name": "Explanation_of_the_basis_for_the_mitigation_estimates_exante_GHG",
             "listing": {
                 "visible": true,
-                "title": "Explanation of the basis for the mitigation estimates",
-                "pos": 434,
+                "title": "Explanation of the basis for the mitigation estimates (Ex-Ante)",
+                "pos": 480,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Explanation of the basis for the mitigation estimates",
+                "title": "Explanation of the basis for the mitigation estimates (Ex-Ante)",
                 "visible": true,
-                "pos": 434
+                "pos": 480
             },
             "facet": {
                 "visible": false
             }
         },
         {
-            "name": "Factors_affected_by_the_policy_or_measure",
+            "name": "Factors_affected_by_the_policy_or_measure_exante_GHG",
             "listing": {
                 "visible": true,
-                "title": "Factors affected by the PaM",
-                "pos": 437,
+                "title": "Factors affected by the PaM (Ex-Ante for GHG)",
+                "pos": 490,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Factors affected by the PaM",
+                "title": "Factors affected by the PaM (Ex-Ante for GHG)",
                 "visible": true,
-                "pos": 437
+                "pos": 490
             },
             "facet": {
                 "visible": false
             }
         },
         {
-            "name": "Reference_for_ex_post_assessment",
+            "name": "Reference_for_exante_assessment_GHG",
             "listing": {
                 "visible": true,
-                "title": "Reference for ex-post assessment",
-                "pos": 500
+                "title": "Reference for ex-ante assessment (GHG)",
+                "pos": 500,
+                "width": "100px"
             },
             "csv_tsv": {
-                "title": "Reference for ex-post assessment",
+                "title": "Reference for ex-ante assessment (GHG)",
                 "visible": true,
                 "pos": 500
             },
@@ -1081,14 +1045,15 @@
             }
         },
         {
-            "name": "Web_link_for_ex_post_assessment",
+            "name": "Web_link_for_exante_assessment_GHG",
             "listing": {
                 "visible": true,
-                "title": "Web link for ex-post assessment",
-                "pos": 510
+                "title": "Web link for ex-ante assessment (GHG)",
+                "pos": 510,
+                "width": "100px"
             },
             "csv_tsv": {
-                "title": "Web link for ex-post assessment",
+                "title": "Web link for ex-ante assessment (GHG)",
                 "visible": true,
                 "pos": 510
             },
@@ -1097,15 +1062,15 @@
             }
         },
         {
-            "name": "Projected_costs__EUR_per_tonne_CO2eq_reduced__sequestered_",
+            "name": "Year_for_which_reduction_applies__expost_GHG",
             "listing": {
                 "visible": true,
-                "title": "Projected gross costs (EUR per tonne CO2eq reduced/ sequestered)",
+                "title": "Year for which ex-post reduction applies (GHG)",
                 "pos": 520,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Projected gross costs (EUR per tonne CO2eq reduced/ sequestered)",
+                "title": "Year for which ex-post reduction applies (GHG)",
                 "visible": true,
                 "pos": 520
             },
@@ -1114,32 +1079,33 @@
             }
         },
         {
-            "name": "Projected_absolute_costs_per_year__EUR_",
+            "name": "Average_expost_emission_reduction__kt_CO2eq_y_GHG",
             "listing": {
                 "visible": true,
-                "title": "Projected absolute costs per year (EUR)",
-                "pos": 530,
+                "title": "Average ex post emission reduction (kt CO2eq/y)",
+                "pos": 525,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Projected absolute costs per year (EUR)",
                 "visible": true,
-                "pos": 530
+                "title": "Average ex post emission reduction (kt CO2eq/y)",
+                "pos": 525,
+                "width": "100px"
             },
             "facet": {
                 "visible": false
             }
         },
         {
-            "name": "Year_projected_cost_has_been_calculated_for",
+            "name": "Explanation_of_the_basis_for_the_mitigation_estimates_expost_GHG",
             "listing": {
                 "visible": true,
-                "title": "Year projected cost has been calculated for",
+                "title": "Explanation of the basis for the mitigation estimates (Ex-Post)",
                 "pos": 540,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Year projected cost has been calculated for",
+                "title": "Explanation of the basis for the mitigation estimates (Ex-Post)",
                 "visible": true,
                 "pos": 540
             },
@@ -1148,15 +1114,15 @@
             }
         },
         {
-            "name": "Price_reference_year__projected_costs_",
+            "name": "Factors_affected_by_the_policy_or_measure_expost_GHG",
             "listing": {
                 "visible": true,
-                "title": "Price reference year (projected costs)",
+                "title": "Factors affected by the PaM (Ex-Post for GHG)",
                 "pos": 550,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Price reference year (projected costs)",
+                "title": "Factors affected by the PaM (Ex-Post for GHG)",
                 "visible": true,
                 "pos": 550
             },
@@ -1165,15 +1131,15 @@
             }
         },
         {
-            "name": "Projected_benefits__EUR_per_tonne_CO2eq_reduced__sequestered_",
+            "name": "Reference_for_expost_assessment_GHG",
             "listing": {
                 "visible": true,
-                "title": "Projected benefits (EUR per tonne CO2eq reduced/ sequestered)",
+                "title": "Reference for ex-post assessment (GHG)",
                 "pos": 560,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Projected benefits (EUR per tonne CO2eq reduced/ sequestered)",
+                "title": "Reference for ex-post assessment (GHG)",
                 "visible": true,
                 "pos": 560
             },
@@ -1182,15 +1148,15 @@
             }
         },
         {
-            "name": "Projected_absolute_benefit_per_year__EUR_",
+            "name": "Web_link_for_expost_assessment_GHG",
             "listing": {
                 "visible": true,
-                "title": "Projected absolute benefit per year (EUR)",
+                "title": "Web link for ex-post assessment (GHG)",
                 "pos": 570,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Projected absolute benefit per year (EUR)",
+                "title": "Web link for ex-post assessment (GHG)",
                 "visible": true,
                 "pos": 570
             },
@@ -1199,15 +1165,15 @@
             }
         },
         {
-            "name": "Projected_net_costs__EUR_per_tonne_CO2eq_reduced__sequestered_",
+            "name": "Projected_costs__EUR_per_tonne_CO2eq_reduced__sequestered_GHG",
             "listing": {
                 "visible": true,
-                "title": "Projected net costs (EUR per tonne CO2eq reduced/ sequestered)",
+                "title": "Projected gross costs (EUR per tonne CO2eq reduced / sequestered)",
                 "pos": 580,
-                "width": "110px"
+                "width": "100px"
             },
             "csv_tsv": {
-                "title": "Projected net costs (EUR per tonne CO2eq reduced/ sequestered)",
+                "title": "Projected gross costs (EUR per tonne CO2eq reduced / sequestered)",
                 "visible": true,
                 "pos": 580
             },
@@ -1216,15 +1182,15 @@
             }
         },
         {
-            "name": "Projected_net_cost_per_year__EUR_",
+            "name": "Projected_absolute_costs_per_year__EUR_GHG",
             "listing": {
                 "visible": true,
-                "title": "Projected net cost per year (EUR)",
+                "title": "Projected absolute costs per year in EUR (GHG)",
                 "pos": 590,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Projected net cost per year (EUR)",
+                "title": "Projected absolute costs per year in EUR (GHG)",
                 "visible": true,
                 "pos": 590
             },
@@ -1233,15 +1199,15 @@
             }
         },
         {
-            "name": "Description_of_projected_cost_estimates",
+            "name": "Year_projected_cost_has_been_calculated_for_GHG",
             "listing": {
                 "visible": true,
-                "title": "Description of projected cost estimates",
+                "title": "Year projected cost has been calculated for (GHG)",
                 "pos": 600,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Description of projected cost estimates",
+                "title": "Year projected cost has been calculated for (GHG)",
                 "visible": true,
                 "pos": 600
             },
@@ -1250,32 +1216,15 @@
             }
         },
         {
-            "name": "Description_of_non_GHG_mitigation_projected_benefits",
+            "name": "Price_reference_year__projected_costs_GHG",
             "listing": {
                 "visible": true,
-                "title": "Description of non-GHG mitigation projected benefits",
-                "pos": 605,
-                "width": "100px"
-            },
-            "csv_tsv": {
-                "title": "Description of non-GHG mitigation projected benefits",
-                "visible": true,
-                "pos": 605
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-        {
-            "name": "Reference_for_projected_costs_and_benefits",
-            "listing": {
-                "visible": true,
-                "title": "Reference for projected costs and benefits",
+                "title": "Price reference year (projected costs for GHG)",
                 "pos": 610,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Reference for projected costs and benefits",
+                "title": "Price reference year (projected costs for GHG)",
                 "visible": true,
                 "pos": 610
             },
@@ -1284,15 +1233,15 @@
             }
         },
         {
-            "name": "Web_link_for_projected_costs_and_benefits",
+            "name": "Projected_benefits__EUR_per_tonne_CO2eq_reduced__sequestered_GHG",
             "listing": {
                 "visible": true,
-                "title": "Web link for projected costs and benefits",
+                "title": "Projected benefits (EUR per tonne CO2eq reduced / sequestered)",
                 "pos": 620,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Web link for projected costs and benefits",
+                "title": "Projected benefits (EUR per tonne CO2eq reduced / sequestered)",
                 "visible": true,
                 "pos": 620
             },
@@ -1301,15 +1250,15 @@
             }
         },
         {
-            "name": "Realised_costs___EUR_per_tonne_CO2eq_reduced__sequestered_",
+            "name": "Projected_absolute_benefit_per_year__EUR_GHG",
             "listing": {
                 "visible": true,
-                "title": "Realised gross costs (EUR per tonne CO2eq reduced/ sequestered)",
+                "title": "Projected absolute benefit per year in EUR (GHG)",
                 "pos": 630,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Realised gross costs (EUR per tonne CO2eq reduced/ sequestered)",
+                "title": "Projected absolute benefit per year in EUR (GHG)",
                 "visible": true,
                 "pos": 630
             },
@@ -1318,15 +1267,15 @@
             }
         },
         {
-            "name": "Realised_absolute_costs_per_year__EUR_",
+            "name": "Projected_net_costs__EUR_per_tonne_CO2eq_reduced__sequestered_GHG",
             "listing": {
                 "visible": true,
-                "title": "Realised absolute costs per year (EUR)",
+                "title": "Projected net costs (EUR per tonne CO2eq reduced/ sequestered)",
                 "pos": 640,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Realised absolute costs per year (EUR)",
+                "title": "Projected net costs (EUR per tonne CO2eq reduced/ sequestered)",
                 "visible": true,
                 "pos": 640
             },
@@ -1335,15 +1284,15 @@
             }
         },
         {
-            "name": "Year_realised_cost_has_been_calculated_for",
+            "name": "Projected_net_cost_per_year__EUR_GHG",
             "listing": {
                 "visible": true,
-                "title": "Year realised cost has been calculated for",
+                "title": "Projected net cost per year in EUR (GHG)",
                 "pos": 650,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Year realised cost has been calculated for",
+                "title": "Projected net cost per year in EUR (GHG)",
                 "visible": true,
                 "pos": 650
             },
@@ -1352,15 +1301,15 @@
             }
         },
         {
-            "name": "Price_reference_year__realised_costs_",
+            "name": "Description_of_projected_cost_estimates_GHG",
             "listing": {
                 "visible": true,
-                "title": "Price reference year (realised costs)",
+                "title": "Description of projected cost estimates (GHG)",
                 "pos": 660,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Price reference year (realised costs)",
+                "title": "Description of projected cost estimates (GHG)",
                 "visible": true,
                 "pos": 660
             },
@@ -1369,15 +1318,15 @@
             }
         },
         {
-            "name": "Realised_benefits__EUR_per_tonne_CO2eq_reduced__sequestered_",
+            "name": "Description_of_non_RES_production_realised_benefits_RES",
             "listing": {
                 "visible": true,
-                "title": "Realised benefits (EUR per tonne CO2eq reduced/ sequestered)",
+                "title": "Description of non-GHG mitigation projected benefits",
                 "pos": 670,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Realised benefits (EUR per tonne CO2eq reduced/ sequestered)",
+                "title": "Description of non-GHG mitigation projected benefits",
                 "visible": true,
                 "pos": 670
             },
@@ -1386,15 +1335,15 @@
             }
         },
         {
-            "name": "Realised_absolute_benefit_per_year__EUR_",
+            "name": "Reference_for_projected_costs_and_benefits_GHG",
             "listing": {
                 "visible": true,
-                "title": "Realised absolute benefit per year (EUR)",
+                "title": "Reference for projected costs and benefits (GHG)",
                 "pos": 680,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Realised absolute benefit per year (EUR)",
+                "title": "Reference for projected costs and benefits (GHG)",
                 "visible": true,
                 "pos": 680
             },
@@ -1403,15 +1352,15 @@
             }
         },
         {
-            "name": "Realised_net_costs__EUR_per_tonne_CO2eq_reduced__sequestered_",
+            "name": "Web_link_for_projected_costs_and_benefits_GHG",
             "listing": {
                 "visible": true,
-                "title": "Realised net costs (EUR per tonne CO2eq reduced/ sequestered)",
+                "title": "Web link for projected costs and benefits (GHG)",
                 "pos": 690,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Realised net costs (EUR per tonne CO2eq reduced/ sequestered)",
+                "title": "Web link for projected costs and benefits (GHG)",
                 "visible": true,
                 "pos": 690
             },
@@ -1420,15 +1369,15 @@
             }
         },
         {
-            "name": "Realised_net_cost_per_year__EUR_",
+            "name": "Realised_costs___EUR_per_tonne_CO2eq_reduced__sequestered_GHG",
             "listing": {
                 "visible": true,
-                "title": "Realised net cost per year (EUR)",
+                "title": "Realised gross costs (EUR per tonne CO2eq reduced / sequestered)",
                 "pos": 700,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Realised net cost per year (EUR)",
+                "title": "Realised gross costs (EUR per tonne CO2eq reduced / sequestered)",
                 "visible": true,
                 "pos": 700
             },
@@ -1437,15 +1386,15 @@
             }
         },
         {
-            "name": "Description_of_realised_cost_estimates",
+            "name": "Realised_absolute_costs_per_year__EUR_GHG",
             "listing": {
                 "visible": true,
-                "title": "Description of realised cost estimates",
+                "title": "Realised absolute costs per year in EUR (GHG)",
                 "pos": 710,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Description of realised cost estimates",
+                "title": "Realised absolute costs per year in EUR (GHG)",
                 "visible": true,
                 "pos": 710
             },
@@ -1454,32 +1403,15 @@
             }
         },
         {
-            "name": "Description_of_non_GHG_mitigation_realized_benefits",
+            "name": "Year_realised_cost_has_been_calculated_for_GHG",
             "listing": {
                 "visible": true,
-                "title": "Description of non-GHG mitigation realized benefits",
-                "pos": 715,
-                "width": "100px"
-            },
-            "csv_tsv": {
-                "title": "Description of non-GHG mitigation realized benefits",
-                "visible": true,
-                "pos": 715
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-        {
-            "name": "Reference_for_realised_costs_and_benefits",
-            "listing": {
-                "visible": true,
-                "title": "Reference for realised costs and benefits",
+                "title": "Year realised cost has been calculated for (GHG)",
                 "pos": 720,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Reference for realised costs and benefits",
+                "title": "Year realised cost has been calculated for (GHG)",
                 "visible": true,
                 "pos": 720
             },
@@ -1488,15 +1420,15 @@
             }
         },
         {
-            "name": "Web_link_for_realised_costs_and_benefits",
+            "name": "Price_reference_year__realised_costs_GHG",
             "listing": {
                 "visible": true,
-                "title": "Web link for realised costs and benefits",
+                "title": "Price reference year (realised costs for GHG)",
                 "pos": 730,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Web link for realised costs and benefits",
+                "title": "Price reference year (realised costs for GHG)",
                 "visible": true,
                 "pos": 730
             },
@@ -1505,21 +1437,1435 @@
             }
         },
         {
-            "name": "Projected_net_cost_per_year__EUR_",
+            "name": "Realised_benefits__EUR_per_tonne_CO2eq_reduced__sequestered_GHG",
             "listing": {
-                "visible":false,
-                "title": "Projected net cost per year (EUR)",
-                "pos": 740
+                "visible": true,
+                "title": "Realised benefits (EUR per tonne CO2eq reduced / sequestered)",
+                "pos": 740,
+                "width": "100px"
             },
             "csv_tsv": {
-                "title": "Projected net cost per year (EUR)",
-                "visible": false,
+                "title": "Realised benefits (EUR per tonne CO2eq reduced / sequestered)",
+                "visible": true,
                 "pos": 740
             },
             "facet": {
-                "visible": false,
-                "title": "Projected net cost per year (EUR)",
-                "pos": 15,
+                "visible": false
+            }
+        },
+        {
+            "name": "Realised_absolute_benefit_per_year__EUR_GHG",
+            "listing": {
+                "visible": true,
+                "title": "Realised absolute benefit per year in EUR (GHG)",
+                "pos": 750,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Realised absolute benefit per year in EUR (GHG)",
+                "visible": true,
+                "pos": 750
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Realised_net_costs__EUR_per_tonne_CO2eq_reduced__sequestered_GHG",
+            "listing": {
+                "visible": true,
+                "title": "Realised net costs (EUR per tonne CO2eq reduced / sequestered)",
+                "pos": 760,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Realised net costs (EUR per tonne CO2eq reduced / sequestered)",
+                "visible": true,
+                "pos": 760
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Realised_net_cost_per_year__EUR_GHG",
+            "listing": {
+                "visible": true,
+                "title": "Realised net cost per year in EUR (GHG)",
+                "pos": 770,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Realised net cost per year in EUR (GHG)",
+                "visible": true,
+                "pos": 770
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Description_of_realised_cost_estimates_GHG",
+            "listing": {
+                "visible": true,
+                "title": "Description of realised cost estimates (GHG)",
+                "pos": 780,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Description of realised cost estimates (GHG)",
+                "visible": true,
+                "pos": 780
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Description_of_non-GHG_mitigation_projected_benefits_GHG",
+            "listing": {
+                "visible": true,
+                "title": "Description of non-GHG mitigation realized benefits",
+                "pos": 790,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Description of non-GHG mitigation realized benefits",
+                "visible": true,
+                "pos": 790
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Reference_for_realised_costs_and_benefits_GHG",
+            "listing": {
+                "visible": true,
+                "title": "Reference for realised costs and benefits (GHG)",
+                "pos": 800,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Reference for realised costs and benefits (GHG)",
+                "visible": true,
+                "pos": 800
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Web_link_for_realised_costs_and_benefits_GHG",
+            "listing": {
+                "visible": true,
+                "title": "Web link for realised costs and benefits (GHG)",
+                "pos": 810,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Web link for realised costs and benefits (GHG)",
+                "visible": true,
+                "pos": 810
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "production_in_2025_ktoe_year_RES",
+            "listing": {
+                "visible": true,
+                "title": "Renewable energy production in 2025 (ktoe/year)",
+                "pos": 820,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Renewable energy production in 2025 (ktoe/year)",
+                "visible": true,
+                "pos": 820
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "production_in_2030_ktoe_year_RES",
+            "listing": {
+                "visible": true,
+                "title": "Renewable energy production in 2030 (ktoe/year)",
+                "pos": 830,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Renewable energy production in 2030 (ktoe/year)",
+                "visible": true,
+                "pos": 830
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Renewable energy production in 2030 (ktoe/year)",
+                "pos": 190,
+                "type": "rangehistogram",
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+                    "slider_bucketsize" : 100,
+                    "histogram" : false,
+                    "measurement_unit": "kt CO2eq/y"
+                }
+            }
+        },
+        {
+            "name": "production_in_2035_ktoe_year_RES",
+            "listing": {
+                "visible": true,
+                "title": "Renewable energy production in 2035 (ktoe/year)",
+                "pos": 840,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Renewable energy production in 2035 (ktoe/year)",
+                "visible": true,
+                "pos": 840
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "production_in_2040_ktoe_year_RES",
+            "listing": {
+                "visible": true,
+                "title": "Renewable energy production in 2040 (ktoe/year)",
+                "pos": 850,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Renewable energy production in 2040 (ktoe/year)",
+                "visible": true,
+                "pos": 850
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Renewable energy production in 2040 (ktoe/year)",
+                "pos": 200,
+                "type": "rangehistogram",
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+                    "slider_bucketsize" : 100,
+                    "histogram" : false,
+                    "measurement_unit": "kt CO2eq/y"
+                }
+            }
+        },
+        {
+            "name": "Explanation_of_the_basis_for_the_estimates_exante_RES",
+            "listing": {
+                "visible": true,
+                "title": "Explanation of the basis for the estimates (ex-ante)",
+                "pos": 860,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Explanation of the basis for the estimates (ex-ante)",
+                "visible": true,
+                "pos": 860
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Reference_for_exante_assessment_RES",
+            "listing": {
+                "visible": true,
+                "title": "Reference for ex-ante assessment (renewable energy)",
+                "pos": 870,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Reference for ex-ante assessment (renewable energy)",
+                "visible": true,
+                "pos": 870
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Web_link_for_exante_assessment_RES",
+            "listing": {
+                "visible": true,
+                "title": "Web link for ex-ante assessment (renewable energy)",
+                "pos": 880,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Web link for ex-ante assessment (renewable energy)",
+                "visible": true,
+                "pos": 880
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Expost_production_ktoe_year_RES",
+            "listing": {
+                "visible": true,
+                "title": "Ex-post renewable energy production (ktoe/year)",
+                "pos": 890,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Ex-post renewable energy production (ktoe/year)",
+                "visible": true,
+                "pos": 890
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Year_for_which_expost_production_applies_RES",
+            "listing": {
+                "visible": true,
+                "title": "Year for which ex-post reduction applies (renewable energy)",
+                "pos": 900,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Year for which ex-post reduction applies (renewable energy)",
+                "visible": true,
+                "pos": 900
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Explanation_of_the_basis_for_the_production_estimates_expost_RES",
+            "listing": {
+                "visible": true,
+                "title": "Explanation of the basis for the renewable energy production estimates (ex-post)",
+                "pos": 910,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Explanation of the basis for the renewable energy production estimates (ex-post)",
+                "visible": true,
+                "pos": 910
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Reference_for_expost_assessment_RES",
+            "listing": {
+                "visible": true,
+                "title": "Reference for ex-post assessment (renewable energy)",
+                "pos": 920,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Reference for ex-post assessment (renewable energy)",
+                "visible": true,
+                "pos": 920
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Web_link_for_expost_assessment_RES",
+            "listing": {
+                "visible": true,
+                "title": "Web link for ex-post assessment (renewable energy)",
+                "pos": 930,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Web link for ex-post assessment (renewable energy)",
+                "visible": true,
+                "pos": 930
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Year_projected_cost_has_been_calculated_for_RES",
+            "listing": {
+                "visible": true,
+                "title": "Year projected cost has been calculated for (renewable energy)",
+                "pos": 940,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Year projected cost has been calculated for (renewable energy)",
+                "visible": true,
+                "pos": 940
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Price_reference_year__projected_costs_RES",
+            "listing": {
+                "visible": true,
+                "title": "Price reference year (projected costs for renewable energy)",
+                "pos": 950,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Price reference year (projected costs for renewable energy)",
+                "visible": true,
+                "pos": 950
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Projected_gross_cost_in_EUR_per_toe_production_RES",
+            "listing": {
+                "visible": true,
+                "title": "Projected gross cost in EUR per toe renewable energy production",
+                "pos": 960,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Projected gross cost in EUR per toe renewable energy production",
+                "visible": true,
+                "pos": 960
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Projected_absolute_gross_costs_per_year_in_EUR_RES",
+            "listing": {
+                "visible": true,
+                "title": "Projected absolute gross costs per year in EUR (renewable energy)",
+                "pos": 970,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Projected absolute gross costs per year in EUR (renewable energy)",
+                "visible": true,
+                "pos": 970
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Projected_absolute_benefits_per_year_in_EUR_RES",
+            "listing": {
+                "visible": true,
+                "title": "Projected absolute benefits per year in EUR (renewable energy)",
+                "pos": 980,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Projected absolute benefits per year in EUR (renewable energy)",
+                "visible": true,
+                "pos": 980
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Projected_benefits_in_EUR_per_toe_production_RES",
+            "listing": {
+                "visible": true,
+                "title": "Projected benefits in EUR per toe renewable energy production",
+                "pos": 990,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Projected benefits in EUR per toe renewable energy production",
+                "visible": true,
+                "pos": 990
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Projected_net_costs_in_EUR_per_toe_production_RES",
+            "listing": {
+                "visible": true,
+                "title": "Projected net costs in EUR per toe renewable energy production",
+                "pos": 1000,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Projected net costs in EUR per toe renewable energy production",
+                "visible": true,
+                "pos": 1000
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Projected_absolute_net_cost_per_year_in_EUR_RES",
+            "listing": {
+                "visible": true,
+                "title": "Projected absolute net cost per year in EUR (renewable energy)",
+                "pos": 1010,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Projected absolute net cost per year in EUR (renewable energy)",
+                "visible": true,
+                "pos": 1010
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Description_of_projected_cost_estimates_RES",
+            "listing": {
+                "visible": true,
+                "title": "Description of projected cost estimates (renewable energy)",
+                "pos": 1020,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Description of projected cost estimates (renewable energy)",
+                "visible": true,
+                "pos": 1020
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Description_of_non-GHG_mitigation_realized_benefits_GHG",
+            "listing": {
+                "visible": true,
+                "title": "Description of non-renewable energy production projected benefits",
+                "pos": 1030,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Description of non-renewable energy production projected benefits",
+                "visible": true,
+                "pos": 1030
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Year_realised_cost_has_been_calculated_for_RES",
+            "listing": {
+                "visible": true,
+                "title": "Year realised cost has been calculated for (renewable energy)",
+                "pos": 1040,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Year realised cost has been calculated for (renewable energy)",
+                "visible": true,
+                "pos": 1040
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Price_reference_year__realised_costs_RES",
+            "listing": {
+                "visible": true,
+                "title": "Price reference year (realised costs for renewable energy)",
+                "pos": 1050,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Price reference year (realised costs for renewable energy)",
+                "visible": true,
+                "pos": 1050
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Realised_gross_cost_in_EUR_per_toe_production_RES",
+            "listing": {
+                "visible": true,
+                "title": "Realised gross cost in EUR per toe renewable energy production",
+                "pos": 1060,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Realised gross cost in EUR per toe renewable energy production",
+                "visible": true,
+                "pos": 1060
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Realised_absolute_gross_costs_per_year_in_EUR_RES",
+            "listing": {
+                "visible": true,
+                "title": "Realised absolute gross costs per year in EUR (renewable energy)",
+                "pos": 1070,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Realised absolute gross costs per year in EUR (renewable energy)",
+                "visible": true,
+                "pos": 1070
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Realised_benefits_in_EUR_per_toe_production_RES",
+            "listing": {
+                "visible": true,
+                "title": "Realised benefits in EUR per toe renewable energy production",
+                "pos": 1080,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Realised benefits in EUR per toe renewable energy production",
+                "visible": true,
+                "pos": 1080
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Realised_absolute_benefits_per_year_in_EUR_RES",
+            "listing": {
+                "visible": true,
+                "title": "Realised absolute benefits per year in EUR (renewable energy)",
+                "pos": 1090,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Realised absolute benefits per year in EUR (renewable energy)",
+                "visible": true,
+                "pos": 1090
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Realised_net_costs_in_EUR_per_toe_production_RES",
+            "listing": {
+                "visible": true,
+                "title": "Realised net costs in EUR per toe renewable energy production",
+                "pos": 1100,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Realised net costs in EUR per toe renewable energy production",
+                "visible": true,
+                "pos": 1100
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Realised_absolute_net_costs_per_year_in_EUR_RES",
+            "listing": {
+                "visible": true,
+                "title": "Realised absolute net costs per year in EUR (renewable energy)",
+                "pos": 1110,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Realised absolute net costs per year in EUR (renewable energy)",
+                "visible": true,
+                "pos": 1110
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Description_of_realised_cost_estimates_RES",
+            "listing": {
+                "visible": true,
+                "title": "Description of realised cost estimates (renewable energy)",
+                "pos": 1120,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Description of realised cost estimates (renewable energy)",
+                "visible": true,
+                "pos": 1120
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Description_of_non-renewable_energy_production_projected_benefits_RES",
+            "listing": {
+                "visible": true,
+                "title": "Description of non-renewable energy production realised benefits (renewable energy)",
+                "pos": 1130,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Description of non-renewable energy production realised benefits (renewable energy)",
+                "visible": true,
+                "pos": 1130
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Reference_for_projected_costs_and_benefits_RES",
+            "listing": {
+                "visible": true,
+                "title": "Reference for projected costs and benefits (renewable energy)",
+                "pos": 1140,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Reference for projected costs and benefits (renewable energy)",
+                "visible": true,
+                "pos": 1140
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Web_link_for_projected_costs_and_benefits_RES",
+            "listing": {
+                "visible": true,
+                "title": "Web link for projected costs and benefits (renewable energy)",
+                "pos": 1150,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Web link for projected costs and benefits (renewable energy)",
+                "visible": true,
+                "pos": 1150
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Reference_for_realised_costs_and_benefits_RES",
+            "listing": {
+                "visible": true,
+                "title": "Reference for realised costs and benefits (renewable energy)",
+                "pos": 1160,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Reference for realised costs and benefits (renewable energy)",
+                "visible": true,
+                "pos": 1160
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Web_link_for_realised_costs_and_benefits_RES",
+            "listing": {
+                "visible": true,
+                "title": "Web link for realised costs and benefits (renewable energy)",
+                "pos": 1170,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Web link for realised costs and benefits (renewable energy)",
+                "visible": true,
+                "pos": 1170
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "reductions_in_2025_ktoe_year_final_energy_EE",
+            "listing": {
+                "visible": true,
+                "title": "Energy reductions in 2025 (ktoe/year final energy)",
+                "pos": 1180,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Energy reductions in 2025 (ktoe/year final energy)",
+                "visible": true,
+                "pos": 1180
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "reductions_in_2030_ktoe_year_final_energy_EE",
+            "listing": {
+                "visible": true,
+                "title": "Energy reductions in 2030 (ktoe/year final energy)",
+                "pos": 1190,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Energy reductions in 2030 (ktoe/year final energy)",
+                "visible": true,
+                "pos": 1190
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Energy reductions in 2030 (ktoe/year final energy)",
+                "pos": 220,
+                "type": "rangehistogram",
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+                    "slider_bucketsize" : 100,
+                    "histogram" : false,
+                    "measurement_unit": "kt CO2eq/y"
+                }
+            }
+        },
+        {
+            "name": "reductions_in_2035_ktoe_year_final_energy_EE",
+            "listing": {
+                "visible": true,
+                "title": "Energy reductions in 2035 (ktoe/year final energy)",
+                "pos": 1200,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Energy reductions in 2035 (ktoe/year final energy)",
+                "visible": true,
+                "pos": 1200
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "reductions_in_2040_ktoe_year_final_energy_EE",
+            "listing": {
+                "visible": true,
+                "title": "Energy reductions in 2040 (ktoe/year final energy)",
+                "pos": 1210,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Energy reductions in 2040 (ktoe/year final energy)",
+                "visible": true,
+                "pos": 1210
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Energy reductions in 2040 (ktoe/year final energy)",
+                "pos": 230,
+                "type": "rangehistogram",
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"],
+                "histogram_config": {
+                    "columns_min_color" : "#DDDDDD",
+                    "columns_max_color" : "#AAAAAA",
+
+                    "slider_bucketsize" : 100,
+                    "histogram" : false,
+                    "measurement_unit": "kt CO2eq/y"
+                }
+            }
+        },
+        {
+            "name": "Explanation_of_the_basis_for_the_estimates_exante_EE",
+            "listing": {
+                "visible": true,
+                "title": "Explanation of the basis for the energy reduction estimates (ex-ante)",
+                "pos": 1220,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Explanation of the basis for the energy reduction estimates (ex-ante)",
+                "visible": true,
+                "pos": 1220
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Reference_for_ex_ante_assessment_EE",
+            "listing": {
+                "visible": true,
+                "title": "Reference for ex-ante assessment (energy efficiency)",
+                "pos": 1230,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Reference for ex-ante assessment (energy efficiency)",
+                "visible": true,
+                "pos": 1230
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Web_link_for_ex_ante_assessment_EE",
+            "listing": {
+                "visible": true,
+                "title": "Web link for ex-ante assessment (energy efficiency)",
+                "pos": 1240,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Web link for ex-ante assessment (energy efficiency)",
+                "visible": true,
+                "pos": 1240
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Year_for_which_expost_reductions_applies_EE",
+            "listing": {
+                "visible": true,
+                "title": "Year for which ex post reduction applies (energy efficiency)",
+                "pos": 1250,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Year for which ex post reduction applies (energy efficiency)",
+                "visible": true,
+                "pos": 1250
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Expost_reductions_ktoe_year_final_energy_EE",
+            "listing": {
+                "visible": true,
+                "title": "Ex post energy reductions (ktoe/year final energy)",
+                "pos": 1260,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Ex post energy reductions (ktoe/year final energy)",
+                "visible": true,
+                "pos": 1260
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Explanation_of_the_basis_for_the_reductions_estimates_expost_EE",
+            "listing": {
+                "visible": true,
+                "title": "Explanation of the basis for the energy reduction estimates (ex-post)",
+                "pos": 1270,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Explanation of the basis for the energy reduction estimates (ex-post)",
+                "visible": true,
+                "pos": 1270
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Reference_for_ex_post_assessment_EE",
+            "listing": {
+                "visible": true,
+                "title": "Reference for ex-post assessment (energy efficiency)",
+                "pos": 1280,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Reference for ex-post assessment (energy efficiency)",
+                "visible": true,
+                "pos": 1280
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Web_link_for_ex_post_assessment_EE",
+            "listing": {
+                "visible": true,
+                "title": "Web link for ex-post assessment (energy efficiency)",
+                "pos": 1290,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Web link for ex-post assessment (energy efficiency)",
+                "visible": true,
+                "pos": 1290
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Year_projected_cost_has_been_calculated_for_EE",
+            "listing": {
+                "visible": true,
+                "title": "Year projected cost has been calculated for (energy efficiency)",
+                "pos": 1300,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Year projected cost has been calculated for (energy efficiency)",
+                "visible": true,
+                "pos": 1300
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Price_reference_year__projected_costs_EE",
+            "listing": {
+                "visible": true,
+                "title": "Price reference year (projected costs for energy efficiency)",
+                "pos": 1310,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Price reference year (projected costs for energy efficiency)",
+                "visible": true,
+                "pos": 1310
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Projected_gross_cost_in_EUR_per_toe_reduction_EE",
+            "listing": {
+                "visible": true,
+                "title": "Projected gross cost in EUR per toe final energy reduction",
+                "pos": 1320,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Projected gross cost in EUR per toe final energy reduction",
+                "visible": true,
+                "pos": 1320
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Projected_absolute_gross_costs_per_year_in_EUR_EE",
+            "listing": {
+                "visible": true,
+                "title": "Projected absolute gross costs per year in EUR (energy efficiency)",
+                "pos": 1330,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Projected absolute gross costs per year in EUR (energy efficiency)",
+                "visible": true,
+                "pos": 1330
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Projected_absolute_benefits_per_year_in_EUR_EE",
+            "listing": {
+                "visible": true,
+                "title": "Projected absolute benefits per year in EUR (energy efficiency)",
+                "pos": 1340,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Projected absolute benefits per year in EUR (energy efficiency)",
+                "visible": true,
+                "pos": 1340
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Projected_benefits_in_EUR_per_toe_reduction_EE",
+            "listing": {
+                "visible": true,
+                "title": "Projected benefits in EUR per toe final energy reduction",
+                "pos": 1350,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Projected benefits in EUR per toe final energy reduction",
+                "visible": true,
+                "pos": 1350
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Projected_net_costs_in_EUR_per_toe_reduction_EE",
+            "listing": {
+                "visible": true,
+                "title": "Projected net costs in EUR per toe final energy reduction",
+                "pos": 1360,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Projected net costs in EUR per toe final energy reduction",
+                "visible": true,
+                "pos": 1360
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Projected_absolute_net_cost_per_year_in_EUR_EE",
+            "listing": {
+                "visible": true,
+                "title": "Projected absolute net cost per year in EUR (energy efficiency)",
+                "pos": 1370,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Projected absolute net cost per year in EUR (energy efficiency)",
+                "visible": true,
+                "pos": 1370
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Description_of_projected_cost_estimates_EE",
+            "listing": {
+                "visible": true,
+                "title": "Description of projected cost estimates (energy efficiency)",
+                "pos": 1380,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Description of projected cost estimates (energy efficiency)",
+                "visible": true,
+                "pos": 1380
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Description_of_EE_reduction_projected_benefits_EE",
+            "listing": {
+                "visible": true,
+                "title": "Description of non-energy reduction projected benefits",
+                "pos": 1390,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Description of non-energy reduction projected benefits",
+                "visible": true,
+                "pos": 1390
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Year_realised_cost_has_been_calculated_for_EE",
+            "listing": {
+                "visible": true,
+                "title": "Year realised cost has been calculated for (energy efficiency)",
+                "pos": 1400,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Year realised cost has been calculated for (energy efficiency)",
+                "visible": true,
+                "pos": 1400
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Price_reference_year_realised_costs_EE",
+            "listing": {
+                "visible": true,
+                "title": "Price reference year (realised costs for energy efficiency)",
+                "pos": 1410,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Price reference year (realised costs for energy efficiency)",
+                "visible": true,
+                "pos": 1410
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Realised_gross_cost_in_EUR_per_toe_reduction_EE",
+            "listing": {
+                "visible": true,
+                "title": "Realised gross cost in EUR per toe final energy reduction",
+                "pos": 1420,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Realised gross cost in EUR per toe final energy reduction",
+                "visible": true,
+                "pos": 1420
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Realised_absolute_gross_costs_per_year_in_EUR_EE",
+            "listing": {
+                "visible": true,
+                "title": "Realised absolute gross costs per year in EUR (energy efficiency)",
+                "pos": 1430,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Realised absolute gross costs per year in EUR (energy efficiency)",
+                "visible": true,
+                "pos": 1430
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Realised_benefits_in_EUR_per_toe_reduction_EE",
+            "listing": {
+                "visible": true,
+                "title": "Realised benefits in EUR per toe final energy reduction",
+                "pos": 1440,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Realised benefits in EUR per toe final energy reduction",
+                "visible": true,
+                "pos": 1440
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Realised_absolute_benefits_per_year_in_EUR_EE",
+            "listing": {
+                "visible": true,
+                "title": "Realised absolute benefits per year in EUR (energy efficiency)",
+                "pos": 1450,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Realised absolute benefits per year in EUR (energy efficiency)",
+                "visible": true,
+                "pos": 1450
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Realised_net_costs_in_EUR_per_toe_reduction_EE",
+            "listing": {
+                "visible": true,
+                "title": "Realised net costs in EUR per toe final energy reduction",
+                "pos": 1460,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Realised net costs in EUR per toe final energy reduction",
+                "visible": true,
+                "pos": 1460
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Realised_absolute_net_costs_per_year_in_EUR_EE",
+            "listing": {
+                "visible": true,
+                "title": "Realised absolute net costs per year in EUR (energy efficiency)",
+                "pos": 1470,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Realised absolute net costs per year in EUR (energy efficiency)",
+                "visible": true,
+                "pos": 1470
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Description_of_realised_cost_estimates_EE",
+            "listing": {
+                "visible": true,
+                "title": "Description of realised cost estimates (energy efficiency)",
+                "pos": 1480,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Description of realised cost estimates (energy efficiency)",
+                "visible": true,
+                "pos": 1480
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Description_of_EE_reduction_realised_benefits_EE",
+            "listing": {
+                "visible": true,
+                "title": "Description of non-energy reduction realised benefits",
+                "pos": 1490,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Description of non-energy reduction realised benefits",
+                "visible": true,
+                "pos": 1490
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Reference_for_projected_costs_and_benefits_EE",
+            "listing": {
+                "visible": true,
+                "title": "Reference for projected costs and benefits (energy efficiency)",
+                "pos": 1500,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Reference for projected costs and benefits (energy efficiency)",
+                "visible": true,
+                "pos": 1500
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Web_link_for_projected_costs_and_benefits_EE",
+            "listing": {
+                "visible": true,
+                "title": "Web link for projected costs and benefits (energy efficiency)",
+                "pos": 1510,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Web link for projected costs and benefits (energy efficiency)",
+                "visible": true,
+                "pos": 1510
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Reference_for_realised_costs_and_benefits_EE",
+            "listing": {
+                "visible": true,
+                "title": "Reference for realised costs and benefits (energy efficiency)",
+                "pos": 1520,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Reference for realised costs and benefits (energy efficiency)",
+                "visible": true,
+                "pos": 1520
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Web_link_for_realised_costs_and_benefits_EE",
+            "listing": {
+                "visible": true,
+                "title": "Web link for realised costs and benefits (energy efficiency)",
+                "pos": 1530,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Web link for realised costs and benefits (energy efficiency)",
+                "visible": true,
+                "pos": 1530
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+
+        {
+            "name": "Average_expost_emission_reduction__kt_CO2eq_y_GHG_BOOL",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Average ex post emission reduction (kt CO2eq/y)",
+                "pos": 180,
                 "type": "facet",
                 "size": 50,
                 "order": "term",
@@ -1527,21 +2873,37 @@
             }
         },
         {
-            "name": "Realised_net_cost_per_year__EUR_",
+            "name": "Expost_production_ktoe_year_RES_BOOL",
             "listing": {
-                "visible":false,
-                "title": "Realised net cost per year (EUR)",
-                "pos": 750
+                "visible": false
             },
             "csv_tsv": {
-                "title": "Realised net cost per year (EUR)",
-                "visible": false,
-                "pos": 750
+                "visible": false
             },
             "facet": {
-                "visible": false,
-                "title": "Realised net cost per year (EUR)",
-                "pos": 15,
+                "hasfacet": true,
+                "visible": true,
+                "title": "Ex-post renewable energy production (ktoe/year)",
+                "pos": 210,
+                "type": "facet",
+                "size": 50,
+                "order": "term",
+                "facet_display_options": ["sort", "checkbox"]
+            }
+        },
+        {
+            "name": "Expost_reductions_ktoe_year_final_energy_EE_BOOL",
+            "listing": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "visible": false
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Ex post energy reductions (ktoe/year final energy)",
+                "pos": 240,
                 "type": "facet",
                 "size": 50,
                 "order": "term",
