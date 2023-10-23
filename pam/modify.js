@@ -34,6 +34,9 @@ module.exports = function(doc){
         modified_doc[fields[i]] = 'No information';
       }
     }
+    if (modified_doc['Entities_responsible_for_implementing_the_policy__type_'].slice(-1) == ';'){
+      modified_doc['Entities_responsible_for_implementing_the_policy__type_'] = modified_doc['Entities_responsible_for_implementing_the_policy__type_'].slice(0,-1)
+    }
 
     return modified_doc;
 }
