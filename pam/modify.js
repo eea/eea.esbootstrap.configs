@@ -1,3 +1,4 @@
+const { indexOf } = require('underscore');
 
 module.exports = function(doc){
     const _ = require('underscore');
@@ -37,6 +38,11 @@ module.exports = function(doc){
     if (modified_doc['Entities_responsible_for_implementing_the_policy__type_'].slice(-1) == ';'){
       modified_doc['Entities_responsible_for_implementing_the_policy__type_'] = modified_doc['Entities_responsible_for_implementing_the_policy__type_'].slice(0,-1)
     }
-
+    modified_doc['Entities_responsible_for_implementing_the_policy__type_'] = modified_doc['Entities_responsible_for_implementing_the_policy__type_'].split('/').map(function(item) {
+      return item.trim();
+    }).join('/');
+    modified_doc['Entities_responsible_for_implementing_the_policy__type_'] = modified_doc['Entities_responsible_for_implementing_the_policy__type_'].split(';').map(function(item) {
+      return item.trim();
+    }).join('; ');
     return modified_doc;
 }
