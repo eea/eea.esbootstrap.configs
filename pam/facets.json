@@ -280,8 +280,8 @@
             "facet": {
                 "hasfacet": true,
                 "visible": true,
-                "title": "Relevant Union dimension(s) affected",
-                "pos": 160,
+                "title": "Relevant Union dimension(s)",
+                "pos": 25,
                 "type": "facet",
                 "size": 50,
                 "order": "term",
@@ -1082,13 +1082,13 @@
             "name": "Average_expost_emission_reduction__kt_CO2eq_y_GHG",
             "listing": {
                 "visible": true,
-                "title": "Average ex post emission reduction (kt CO2eq/y)",
+                "title": "Average ex-post emission reduction (kt CO2eq/y)",
                 "pos": 525,
                 "width": "100px"
             },
             "csv_tsv": {
                 "visible": true,
-                "title": "Average ex post emission reduction (kt CO2eq/y)",
+                "title": "Average ex-post emission reduction (kt CO2eq/y)",
                 "pos": 525,
                 "width": "100px"
             },
@@ -2363,12 +2363,12 @@
             "name": "Year_for_which_expost_reductions_applies_EE",
             "listing": {
                 "visible": true,
-                "title": "Year for which ex post reduction applies (energy efficiency)",
+                "title": "Year for which ex-post reduction applies (energy efficiency)",
                 "pos": 1250,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Year for which ex post reduction applies (energy efficiency)",
+                "title": "Year for which ex-post reduction applies (energy efficiency)",
                 "visible": true,
                 "pos": 1250
             },
@@ -2380,12 +2380,12 @@
             "name": "Expost_reductions_ktoe_year_final_energy_EE",
             "listing": {
                 "visible": true,
-                "title": "Ex post energy reductions (ktoe/year final energy)",
+                "title": "Ex-post energy reductions (ktoe/year final energy)",
                 "pos": 1260,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Ex post energy reductions (ktoe/year final energy)",
+                "title": "Ex-post energy reductions (ktoe/year final energy)",
                 "visible": true,
                 "pos": 1260
             },
@@ -2864,7 +2864,7 @@
             "facet": {
                 "hasfacet": true,
                 "visible": true,
-                "title": "Average ex post emission reduction (kt CO2eq/y)",
+                "title": "Ex-post GHG emission reduction (kt CO2eq/y)",
                 "pos": 180,
                 "type": "facet",
                 "size": 50,
@@ -2902,7 +2902,7 @@
             "facet": {
                 "hasfacet": true,
                 "visible": true,
-                "title": "Ex post energy reductions (ktoe/year final energy)",
+                "title": "Ex-post energy reductions (ktoe/year final energy)",
                 "pos": 240,
                 "type": "facet",
                 "size": 50,
