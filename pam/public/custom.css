@@ -87,3 +87,8 @@ td[data-title="Web link for realised costs and benefits"] div{
 .visualization-date {
     display: none;
 }
+
+p.no-bottom-margin,
+ul li p {
+    margin-bottom: 0;
+}

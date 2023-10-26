@@ -25,7 +25,43 @@ block content
 
     h1!= site_title
     +download_data
-    p!= site_description
+    div
+        p
+            span This database contains a number of policies and measures (PaM) implemented, adopted or planned by European countries to achieve climate change mitigation and energy targets, such as reducing greenhouse gas (GHG) emissions, producing additional renewable energy, or reducing overall energy consumption. These PaMs contribute to meeting the objectives of the integrated national energy and climate plans. They were reported in 2023 by European countries under the&nbsp;
+                a(href='https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1999&from=EN')= "Governance of the Energy Union and Climate Action Regulation"
+                |&nbsp;and its two Implementing Regulations&nbsp;
+                a(href='https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32020R1208&from=EN')= "(EU) 2020/1208"
+                |&nbsp;and&nbsp;
+                a(href='https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32022R2299&from=EN')= "(EU) 2022/2299"
+        p
+            span This information is submitted through&nbsp;
+                a(href='https://reportnet.europa.eu/public/dataflow/900')= "Reportnet platform"
+                |where individual submissions and supporting documents, such as reporting guidelines can be accessed. The EEA compiles, checks the quality, and disseminates officially reported, annually updated, information.
+        p(class='no-bottom-margin')
+            span The search engine gives access to detailed information for each of the single PaMs (or groups of PaMs). Countries report:
+        ul
+            li 
+                p
+                    key characteristics of the PaMs, such as their&nbsp;
+                    a(href='https://energy.ec.europa.eu/topics/energy-strategy/energy-union_en#five-dimensions-of-the-energy-union')= "relevant dimension(s) of the Energy Union"
+                    |, description, objective, type, status, sectors affected, related Union Policy, entities responsible for their implementation, implementation period, etc;
+            li 
+                p
+                    where available, quantitative information on the expected (ex-ante) and achieved (ex-post) policy effects, such as GHG emissions savings achieved by PaMs (or groups of PaMs), as well as renewable energy produced and energy reductions delivered by energy efficiency;
+            li 
+                p
+                    where available, the projected and realised costs and benefits of the reported individual or groups of PaMs on mitigation of climate change, renewable energy production and energy efficiency.
+        p
+        p
+            span The data can be filtered by different parameters using the right-hand drop-down options. The values can be rearranged, counted by ‘match all’ or ‘match any’ criteria. The entire database or the selection can be downloaded as a CSV file. You'll find the download button below the database.
+        p
+            span The most recent analysis of the complete dataset on integrated national climate and energy policies and measures is available in the report:&nbsp;
+                a(href='https://www.eionet.europa.eu/etcs/etc-cm/products/etc-cm-report-2023-06')= "Overview of reported integrated national climate and energy policies and measures in Europe in 2023"
+                |. For more information, check links available below the database as well as the&nbsp;
+                a(href='https://climate-energy.eea.europa.eu/topics/policies-and-measures/climate-and-energy-policies-and-measures/data')= "Climate and Energy in the EU platform"
+                |&nbsp;and&nbsp;
+                a(href='https://www.eea.europa.eu/en/topics/in-depth/climate-change-mitigation-reducing-emissions/how-is-europe-fighting-against-climate-change')= "Policies and measures dedicated subpage"
+                |.
     .facet-view-simple.pam
 
     div(class="visualization-info")
@@ -43,7 +79,7 @@ block content
         h3 Related content
         ul
          li
-          a(href="https://www.eea.europa.eu/themes/climate/national-policies-and-measures/policies-and-measures")= "EEA thematic page for climate policies and measures"
+          a(href="https://www.eea.europa.eu/en/topics/in-depth/climate-change-mitigation-reducing-emissions/how-is-europe-fighting-against-climate-change")= "EEA thematic page for climate policies and measures"
          li
           a(href="https://climate-energy.eea.europa.eu/topics/policies-and-measures/climate-and-energy-policies-and-measures/data")= "Climate and Energy in the EU platform"
          li
