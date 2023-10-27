@@ -99,11 +99,19 @@ function updateNumbers(){
     });
 
 }
-
+function fixTable(){
+    if ($("#facetview_results").find('tr').length < 2){
+        $("#facetview_results_wrapper").hide();
+    }
+    else{
+        $("#facetview_results_wrapper").show();
+    }
+}
 jQuery(document).ready(function($) {
     $(window).bind('post_search_callback', function(){
         removeMissingDetails();
         updateNumbers()
+        fixTable();
         // fixHeights();
     });
 });
