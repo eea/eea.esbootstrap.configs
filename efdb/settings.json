@@ -63,7 +63,7 @@
         "configuration": {
             "type": "csv",
             "bulksize": 2000,
-            "file": "2023_Flatfile_EFDB_for_dataviewer_November_2023.csv",
+            "file": "2023_Flatfile_EFDB_for_dataviewer_December_2023.csv",
             "data_modifier": "modify.js",
             "encoding": "utf-8",
             "delimiter": ",",
