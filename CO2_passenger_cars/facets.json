@@ -950,6 +950,44 @@
                 "visible": true,
                 "pos": 37
             }
+        },
+        {
+            "name": "ech",
+            "listing": {
+                "title": "Character corresponding to the provisions used for the type-approval",
+                "visible" : true,
+                "pos" : 70
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "ech",
+                "visible": true,
+                "pos": 70
+            }
+        },
+        {
+            "name": "RLFI",
+            "listing": {
+                "title": "Roadload (Matrix) family’s identifier",
+                "visible" : true,
+                "pos" : 80
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "RLFI",
+                "visible": true,
+                "pos": 80
+            }
         }
     ]
 }

@@ -1270,6 +1270,63 @@
                 "visible": true,
                 "pos": 130
             }
+        },
+        {
+            "name": "ech",
+            "listing": {
+                "title": "Character corresponding to the provisions used for the type-approval",
+                "visible" : true,
+                "pos" : 140
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "ech",
+                "visible": true,
+                "pos": 140
+            }
+        },
+        {
+            "name": "RLFI",
+            "listing": {
+                "title": "Roadload (Matrix) family’s identifier",
+                "visible" : true,
+                "pos" : 150
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "RLFI1",
+                "visible": true,
+                "pos": 150
+            }
+        },
+        {
+            "name": "S",
+            "listing": {
+                "title": "Indication if a vehicle is complete or completed",
+                "visible" : true,
+                "pos" : 160
+            },
+            "details": {
+                "visible": false
+            },
+            "facet": {
+                "visible": false
+            },
+            "csv_tsv": {
+                "title": "S",
+                "visible": true,
+                "pos": 160
+            }
         }
     ]
 }

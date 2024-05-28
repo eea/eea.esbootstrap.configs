@@ -49,5 +49,14 @@
   "date": {"type": "date","format": "yyyy-MM-dd"},
   "FtTrim": {"type": "keyword", "index":true, "eager_global_ordinals": true},
   "scStatus": {"type": "keyword", "index":true, "eager_global_ordinals": true},
-  "year": {"type": "integer"}
+  "year": {"type": "integer"},
+  "ech": {
+    "type": "text",
+    "fields": {
+      "keyword": {
+        "ignore_above": 256,
+        "type": "keyword"
+      }
+    }
+  }
 }

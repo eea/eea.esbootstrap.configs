@@ -61,14 +61,26 @@ Select
     "Mf (kg)",
     "Zr",
     "Dr",
-    "Fc"
+    "Fc",
+    "MRObaseI",
+    "MRObaseC",
+    "CO2",
+    "CO2mon",
+    "Af1",
+    "Af2",
+    "Af3",
+    "RR",
+    "Mmon",
+    "MvL",
+    "ech",
+    "RLFI",
+    "S"
 from
     <TABLE>
 WHERE
     MS!='M1' and
-    year=2022 and
+    year=2023 and
     status='p' and
-    ((ID>=<MIN_ID> and
-    ID<<MAX_ID>) or
-    len(id) > 7)
+    ID>=<MIN_ID> + 14100000 and
+    ID<<MAX_ID> + 14100000
 order by uid

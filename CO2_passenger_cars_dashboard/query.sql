@@ -57,13 +57,15 @@ Select
     ) as FtTrim,
     iif(LOWER(TRIM(status))='f', 'Final', 'Provisional') as scStatus,
     "Dr",
-    "Fc"
+    "Fc",
+    "ech",
+    "RLFI"
 from
     <TABLE>
 WHERE
     MS!='M1' and
-    year=2022 and
-    status='p' and
-    ID>=<MIN_ID> and
-    ID<<MAX_ID>
+    year=2023 and
+    status='P' and
+    ID>=<MIN_ID> + 90200000 and
+    ID<<MAX_ID> + 90200000
 order by uid
