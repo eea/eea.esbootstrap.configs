@@ -49,8 +49,8 @@
         "facets_footer_slot": "<span class='discreet'><strong>Note</strong>: The column 'Count' in the filters reports the sum of the rows and not the sum of the new car's registrations.</span>",
         "enableBreadcrumbs": true,
         "breadcrumbs": "Datasets",
-        "dataprovencance_info_text": "EEA Data: Monitoring of CO2 emissions from vans – Regulation 510/2011",
-        "dataprovencance_info_url": "https://www.eea.europa.eu/data-and-maps/data/vans-16",
+        "dataprovencance_info_text": "Monitoring of CO2 emissions from vans - Regulation (EU) No 2019/631",
+        "dataprovencance_info_url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/9636827c-bd0c-40f5-814e-c4065c11c9a0",
         "further_info": ""
     },
     "API":{
