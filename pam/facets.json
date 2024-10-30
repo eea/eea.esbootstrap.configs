@@ -244,19 +244,19 @@
             "name": "Policy_impacting_EU_ETS__ESD_or_LULUCF_emissions_GHG",
             "listing": {
                 "visible": true,
-                "title": "Policy impacting EU ETS ESD or LULUCF emissions",
+                "title": "Policy impacting EU ETS, ESD/ESR or LULUCF emissions",
                 "pos": 100,
                 "width": "100px"
             },
             "csv_tsv": {
-                "title": "Policy impacting EU ETS ESD or LULUCF emissions",
+                "title": "Policy impacting EU ETS, ESD/ESR or LULUCF emissions",
                 "visible": true,
                 "pos": 100
             },
             "facet": {
                 "hasfacet": true,
                 "visible": true,
-                "title": "Policy impacting EU ETS ESD or LULUCF emissions",
+                "title": "Policy impacting EU ETS, ESD/ESR or LULUCF emissions",
                 "pos": 130,
                 "type": "facet",
                 "size": 50,
@@ -2922,7 +2922,7 @@
                 "hasfacet": true,
                 "visible": true,
                 "title": "Are ex-ante GHG emissions reported?",
-                "pos": 175,
+                "pos": 135,
                 "type": "facet",
                 "size": 50,
                 "order": "term",
@@ -2931,3 +2931,4 @@
         }
     ]
 }
+
