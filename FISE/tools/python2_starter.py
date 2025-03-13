@@ -5,7 +5,7 @@ import sys
 python3_executable = "python3"  # Adjust this if necessary (e.g., "/usr/bin/python3")
 
 # Define the Python 3 script you want to run
-script_path = "add-sdi-records.py"  # Replace with your actual script
+script_path = "/code/config/FISE/tools/add-sdi-records.py"
 
 # Run the Python 3 script
 try:
