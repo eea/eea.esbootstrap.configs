@@ -52,5 +52,6 @@
   "Mt__kg_": {"type" :"integer" },
   "TPMLM__kg_": {"type" :"integer" },
   "Dam__kg_": {"type": "integer"},
-  "Mf__kg_": {"type": "integer"}
+  "Mf__kg_": {"type": "integer"},
+  "Fc": {"type": "float"}
 }

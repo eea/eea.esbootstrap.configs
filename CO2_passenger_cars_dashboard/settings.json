@@ -3,7 +3,7 @@
         "port": 3000
     },
     "elastic": {
-        "index": "co2_cars_dashboard_2023p",
+        "index": "co2_cars_dashboard_2023f",
         "type": "resources",
         "field_base":"",
         "preload_cache": true,
@@ -38,12 +38,12 @@
 
             "sql": true,
             "sql_url": "http://rockskipper.eea.dmz1:8083/sql",
-            "sql_table": "[CO2Emission_Internal].[stage].[co2cars_2023P]",
+            "sql_table": "[CO2Emission_Internal].[stage].[co2cars_2023F]",
             "query_attr": "query",
             "query": "query.sql",
             "query_count": "query_count.sql",
 
-            "discodata_bulksize": 50000,
+            "discodata_bulksize": 500000,
             "format": "json",
             "data_path": "results.*",
             "encoding": "utf-8",

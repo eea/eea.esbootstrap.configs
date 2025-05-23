@@ -80,7 +80,8 @@ from
 WHERE
     MS!='M1' and
     year=2023 and
-    status='p' and
-    ID>=<MIN_ID> + 14100000 and
-    ID<<MAX_ID> + 14100000
+    status='f' and
+    ID>=<MIN_ID> + 14150000 and
+    ID<<MAX_ID> + 14150000
+
 order by uid

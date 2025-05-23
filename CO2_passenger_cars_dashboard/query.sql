@@ -65,7 +65,8 @@ from
 WHERE
     MS!='M1' and
     year=2023 and
-    status='P' and
-    ID>=<MIN_ID> + 90200000 and
-    ID<<MAX_ID> + 90200000
+    status='F' and
+    ID>=<MIN_ID> and
+    ID<<MAX_ID>
+
 order by uid
