@@ -3,7 +3,7 @@
         "port": 3000
     },
     "elastic": {
-        "index": "co2_vans_dashboard_2023f",
+        "index": "co2_vans_dashboard_2024p",
         "type": "resources",
         "field_base":"",
         "preload_cache": true,
@@ -36,7 +36,7 @@
 
             "sql": true,
             "sql_url": "http://rockskipper.eea.dmz1:8083/sql",
-            "sql_table": "[CO2Emission_Internal].[stage].[co2vans_2023F]",
+            "sql_table": "[CO2Emission_Internal].[stage].[co2vans_2024P]",
 
             "query_attr": "query",
             "query": "query.sql",
