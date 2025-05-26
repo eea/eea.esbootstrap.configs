@@ -495,6 +495,12 @@ def querySDIServicesRecords():
 
     return records["services"]
 
+
+# Function to decode byte strings to normal strings
+def decode_value(value):
+    if isinstance(value, bytes):
+        return value.decode("utf-8", errors="ignore")
+
 # Parse record metadata xml file - eg: https://sdi.eea.europa.eu/catalogue/fise/api/records/94530236-1a4e-450f-8ae4-87899dc4b141/formatters/xml
 
 def parseSDIMetadataXML(xml_content):
@@ -506,31 +512,37 @@ def parseSDIMetadataXML(xml_content):
         title = tree.find(
             ".//{http://www.isotc211.org/2005/gmd}MD_DataIdentification/{http://www.isotc211.org/2005/gmd}citation/{http://www.isotc211.org/2005/gmd}CI_Citation/{http://www.isotc211.org/2005/gmd}title/{http://www.isotc211.org/2005/gco}CharacterString")
         if title is not None:
-            record['RESOURCE_TITLE'] = title.text.encode('utf8').strip()
+            record['RESOURCE_TITLE'] = str(title.text.strip())
         else:
             title = tree.find(
             ".//{http://www.isotc211.org/2005/gmd}identificationInfo/{http://www.isotc211.org/2005/srv}SV_ServiceIdentification/{http://www.isotc211.org/2005/gmd}citation/{http://www.isotc211.org/2005/gmd}CI_Citation/{http://www.isotc211.org/2005/gmd}title/{http://www.isotc211.org/2005/gco}CharacterString")
 
             if title is not None:
-                record['RESOURCE_TITLE'] = title.text.encode('utf8').strip()
+                record['RESOURCE_TITLE'] = str(title.text.strip())
 
         record['Description'] = 'Unknown'
         abstract = tree.find(
             ".//{http://www.isotc211.org/2005/gmd}MD_DataIdentification/{http://www.isotc211.org/2005/gmd}abstract/{http://www.isotc211.org/2005/gco}CharacterString")
 
         if abstract is not None:
-            record['Description'] = abstract.text.encode('utf8').strip()
+            record['Description'] = str(abstract.text.strip())
         else:
             abstract = tree.find(
             ".//{http://www.isotc211.org/2005/gmd}identificationInfo/{http://www.isotc211.org/2005/srv}SV_ServiceIdentification/{http://www.isotc211.org/2005/gmd}abstract/{http://www.isotc211.org/2005/gco}CharacterString")
 
             if abstract is not None:
-                record['Description'] = abstract.text.encode('utf8').strip()
+                record['Description'] = str(abstract.text.strip())
 
         record['RESPONSIBLE_ORGANISATION_MAIN_PAGE'] = ''
-        record['Organisation_name'] = tree.find(
-            ".//{http://www.isotc211.org/2005/gmd}contact/{http://www.isotc211.org/2005/gmd}CI_ResponsibleParty/{http://www.isotc211.org/2005/gmd}organisationName/{http://www.isotc211.org/2005/gco}CharacterString").text.encode('utf8')
-        record['Organisation_email'] = tree.find(".//{http://www.isotc211.org/2005/gmd}contact/{http://www.isotc211.org/2005/gmd}CI_ResponsibleParty/{http://www.isotc211.org/2005/gmd}contactInfo/{http://www.isotc211.org/2005/gmd}CI_Contact/{http://www.isotc211.org/2005/gmd}address/{http://www.isotc211.org/2005/gmd}CI_Address/{http://www.isotc211.org/2005/gmd}electronicMailAddress/{http://www.isotc211.org/2005/gco}CharacterString").text.encode('utf8')
+        record['Organisation_name'] = str(tree.find(
+            ".//{http://www.isotc211.org/2005/gmd}contact/{http://www.isotc211.org/2005/gmd}CI_ResponsibleParty/{http://www.isotc211.org/2005/gmd}organisationName/{http://www.isotc211.org/2005/gco}CharacterString").text)
+        email_element = tree.find(".//{http://www.isotc211.org/2005/gmd}contact/{http://www.isotc211.org/2005/gmd}CI_ResponsibleParty/{http://www.isotc211.org/2005/gmd}contactInfo/{http://www.isotc211.org/2005/gmd}CI_Contact/{http://www.isotc211.org/2005/gmd}address/{http://www.isotc211.org/2005/gmd}CI_Address/{http://www.isotc211.org/2005/gmd}electronicMailAddress/{http://www.isotc211.org/2005/gco}CharacterString")
+
+        if email_element is not None and email_element.text is not None:
+            record['Organisation_email'] = str(email_element.text)
+        else:
+            record['Organisation_email'] = str("")  # Set to empty string or an appropriate default value
+
         language = tree.find(".//{http://www.isotc211.org/2005/gmd}language/{http://www.isotc211.org/2005/gmd}LanguageCode")
         if language is None:
             language = tree.find(".//{http://www.isotc211.org/2005/gmd}language/{http://www.isotc211.org/2005/gco}CharacterString")
@@ -546,10 +558,10 @@ def parseSDIMetadataXML(xml_content):
 
         resource_type = tree.find(".//{http://www.isotc211.org/2005/gmd}hierarchyLevel/{http://www.isotc211.org/2005/gmd}MD_ScopeCode").get('codeListValue').encode('utf8')
 
-        if resource_type == 'dataset':
+        if resource_type.decode('utf-8') == 'dataset':
             record['Content_type'] = 'Spatial dataset'
         
-        if resource_type == 'service':
+        if resource_type.decode('utf-8') == 'service':
             record['Content_type'] = 'Data services'
 
         record['UPDATE_FREQUENCY'] = 'unknown'
@@ -557,7 +569,7 @@ def parseSDIMetadataXML(xml_content):
         maintain = tree.find(".//{http://www.isotc211.org/2005/gmd}maintenanceAndUpdateFrequency/{http://www.isotc211.org/2005/gmd}MD_MaintenanceFrequencyCode")
 
         if maintain is not None:
-            record['UPDATE_FREQUENCY'] = maintain.get('codeListValue').encode('utf8')
+            record['UPDATE_FREQUENCY'] = str(maintain.get('codeListValue'))
 
 
         # tree.find(".//{http://www.isotc211.org/2005/gmd}resourceMaintenance/{http://www.isotc211.org/2005/gmd}MD_MaintenanceInformation/{http://www.isotc211.org/2005/gmd}maintenanceAndUpdateFrequency/{http://www.isotc211.org/2005/gmd}MD_MaintenanceFrequencyCode").get('codeListValue').encode('utf8')
@@ -577,12 +589,11 @@ def parseSDIMetadataXML(xml_content):
 
         for k in keywords:
             if k.text is not None:
-                record['KEYWORDS'] += k.text.encode('utf8') + ', '
+                record['KEYWORDS'] += k.text + ', '
     except ET.ParseError as err:
         print(err)
 
     return record
-
 
 def getSDIRecords(uuid_list):
     lang_names = {
@@ -621,9 +632,10 @@ def getSDIRecords(uuid_list):
                     print('ERROR: For record ' + record_url_metadata + ' XML parse error arised!')
                 else:
                     record['ID'] = item['uuid']
-                    record['COUNTRY'] = country_names[record['LANGUAGE']]
+                    language_key = record['LANGUAGE'].decode('utf-8') if isinstance(record['LANGUAGE'], bytes) else record['LANGUAGE']
+                    record['COUNTRY'] = country_names.get(language_key, "Unknown Country")
                     record['COUNTRY_ID'] = 300
-                    record['LANGUAGE'] = lang_names[record['LANGUAGE']]
+                    record['LANGUAGE'] = lang_names.get(language_key, "Unknown Language")
                     record['Topics'] = 'All'
                     record['YEAR_DATA_COLLECTION_START'] = 'N.A.'
                     record['YEAR_DATA_COLLECTION_END'] = 'N.A.'
@@ -699,8 +711,7 @@ def savetoCSV(records, filename):
     catalog_url = 'https://cmshare.eea.europa.eu/s/YZocgSHqKNbT4gn/download?path=/catalogue&files=catalogue.csv'
 
     # writing to csv file
-    with open(filename, 'w') as csvfile:
-
+    with open(filename, mode="w", newline="", encoding="utf-8") as csvfile:
         # creating a csv dict writer object
         writer = csv.DictWriter(csvfile, fieldnames=fields)
 
@@ -709,9 +720,10 @@ def savetoCSV(records, filename):
 
         print('Writing records to ' + filename + ' csv file!')
 
-        # get rows form catalog
+        # get rows from catalog
         with closing(requests.get(catalog_url, stream=True)) as r:
-            catalogReader = csv.DictReader(r.iter_lines())
+            # Decode the response content and pass as text
+            catalogReader = csv.DictReader(r.iter_lines(decode_unicode=True))
 
             item = 0
 

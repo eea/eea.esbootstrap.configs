@@ -3,7 +3,7 @@
         "port": 3000
     },
     "elastic": {
-        "index": "esbootstrapdata-pam-2023",
+        "index": "esbootstrapdata-pam-2024",
         "type": "resources",
         "field_base":"",
         "default_appalias": "latest",
@@ -40,7 +40,7 @@
             "details_page": []
         },
         "site_title": "EEA database on integrated national climate and energy policies and measures in Europe",
-        "site_description": "<span>This database contains a number of policies and measures (PaM) implemented, adopted or planned by European countries to achieve climate change mitigation and energy targets, such as reducing greenhouse gas (GHG) emissions, producing additional renewable energy, or reducing overall energy consumption. These PaMs contribute to meeting the objectives of the integrated national energy and climate plans. They were reported in 2023 by European countries under the <a href='https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1999&from=EN'>Governance of the Energy Union and Climate Action Regulation</a> and its two Implementing Regulations <a href='https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32020R1208&from=EN'>(EU) 2020/1208</a> and <a href='https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32022R2299&from=EN'>(EU) 2022/2299</a></span><br/><br/><span>This information is submitted through <a href='https://reportnet.europa.eu/public/dataflow/900'>Reportnet platform</a> where individual submissions and supporting documents, such as reporting guidelines can be accessed. The EEA compiles, checks the quality, and disseminates officially reported, annually updated, information.</span><br/><br/><span>The search engine gives access to detailed information for each of the single PaMs (or groups of PaMs). Countries report:</span><br/><span>- key characteristics of the PaMs, such as their <a href='https://energy.ec.europa.eu/topics/energy-strategy/energy-union_en#five-dimensions-of-the-energy-union'>relevant dimension(s) of the Energy Union</a>, description, objective, type, status, sectors affected, related Union Policy, entities responsible for their implementation, implementation period, etc;</span><br/><span>- where available, quantitative information on the expected (ex-ante) and achieved (ex-post) policy effects, such as GHG emissions savings achieved by PaMs (or groups of PaMs), as well as renewable energy produced and energy reductions delivered by energy efficiency;</span><br/><span>- where available, the projected and realised costs and benefits of the reported individual or groups of PaMs on mitigation of climate change, renewable energy production and energy efficiency.</span><br/><br/><span>The data can be filtered by different parameters using the right-hand drop-down options. The values can be rearranged, counted by ‘match all’ or ‘match any’ criteria. The entire database or the selection can be downloaded as a CSV file. You'll find the download button below the database.</span><br/><br/><span>The most recent analysis of the complete dataset on integrated national climate and energy policies and measures is available in the report: <a href='https://www.eionet.europa.eu/etcs/etc-cm/products/etc-cm-report-2023-06'>Overview of reported integrated national climate and energy policies and measures in Europe in 2023</a>. For more information, check links available below the database as well as the <a href='https://climate-energy.eea.europa.eu/topics/policies-and-measures/climate-and-energy-policies-and-measures/data'>Climate and Energy in the EU platform</a> and <a href='https://www.eea.europa.eu/en/topics/in-depth/climate-change-mitigation-reducing-emissions/how-is-europe-fighting-against-climate-change'>Policies and measures dedicated subpage</a>.</span>",
+        "site_description": "",
         "enableBreadcrumbs": true,
         "breadcrumbs": [{"Home":"https://www.eea.europa.eu/"}, {"Topics and subtopics": "https://www.eea.europa.eu/themes"},{"Climate change mitigation":"https://www.eea.europa.eu/themes/climate"},{"Policies and measures":""}],
         "dataprovencance_info_text": "Climate change mitigation policies and measures",
@@ -76,4 +76,5 @@
         }
     }
 }
+
 
