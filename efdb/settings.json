@@ -3,7 +3,7 @@
         "port": 3000
     },
     "elastic": {
-        "index": "esbootstrapdata-efdb-2024",
+        "index": "esbootstrapdata-efdb-2025",
         "type": "resources",
         "field_base":"",
         "default_appalias": "prod",
@@ -63,7 +63,7 @@
         "configuration": {
             "type": "csv",
             "bulksize": 2000,
-            "file": "2023_Flatfile_EFDB_for_dataviewer_Sep2024.csv",
+            "file": "2023_Flatfile_EFDB_for_dataviewer_October_2025.csv",
             "data_modifier": "modify.js",
             "encoding": "utf-8",
             "delimiter": ",",
