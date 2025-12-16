@@ -1,11 +1,15 @@
 {
-    "details_settings" : {
+    "details_settings": {
         "show_links": true,
         "sections": [
-            {"name":"default", "title":"", "pos":0}
+            {
+                "name": "default",
+                "title": "",
+                "pos": 0
+            }
         ]
     },
-    "listing_settings" : {
+    "listing_settings": {
         "show_links": false
     },
     "highlights": {
@@ -40,7 +44,10 @@
                 "type": "facet",
                 "size": 50,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ]
             }
         },
         {
@@ -69,7 +76,7 @@
                 "display": {
                     "pre": "<td><a class='details_link' href='",
                     "field": "pdf",
-                    "post":"'>"
+                    "post": "'>"
                 }
             },
             "csv_tsv": {
@@ -91,7 +98,7 @@
                 "display": {
                     "pre": "",
                     "field": "Name_of_policy_or_measure",
-                    "post":"</a></td>"
+                    "post": "</a></td>"
                 }
             },
             "csv_tsv": {
@@ -158,7 +165,10 @@
                 "type": "facet",
                 "size": 50,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ]
             }
         },
         {
@@ -213,7 +223,10 @@
                 "type": "facet",
                 "size": 50,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ]
             }
         },
         {
@@ -237,7 +250,10 @@
                 "type": "facet",
                 "size": 100,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ]
             }
         },
         {
@@ -261,7 +277,10 @@
                 "type": "facet",
                 "size": 50,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ]
             }
         },
         {
@@ -285,7 +304,10 @@
                 "type": "facet",
                 "size": 50,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ]
             }
         },
         {
@@ -309,7 +331,10 @@
                 "type": "facet",
                 "size": 50,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ]
             }
         },
         {
@@ -333,7 +358,10 @@
                 "type": "facet",
                 "size": 50,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ]
             }
         },
         {
@@ -369,7 +397,10 @@
                 "type": "facet",
                 "size": 100,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"],
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ],
                 "autocomplete": true,
                 "autocomplete_placeholder": "Search for objective",
                 "empty_message": "No objective to show"
@@ -413,7 +444,10 @@
                 "type": "facet",
                 "size": 50,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ]
             }
         },
         {
@@ -504,13 +538,15 @@
                 "pos": 140,
                 "type": "rangehistogram",
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"],
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ],
                 "histogram_config": {
-                    "columns_min_color" : "#DDDDDD",
-                    "columns_max_color" : "#AAAAAA",
-
-                    "slider_bucketsize" : 100,
-                    "histogram" : false,
+                    "columns_min_color": "#DDDDDD",
+                    "columns_max_color": "#AAAAAA",
+                    "slider_bucketsize": 100,
+                    "histogram": false,
                     "measurement_unit": "kt CO2eq/y"
                 }
             }
@@ -552,13 +588,15 @@
                 "pos": 150,
                 "type": "rangehistogram",
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"],
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ],
                 "histogram_config": {
-                    "columns_min_color" : "#DDDDDD",
-                    "columns_max_color" : "#AAAAAA",
-
-                    "slider_bucketsize" : 100,
-                    "histogram" : false,
+                    "columns_min_color": "#DDDDDD",
+                    "columns_max_color": "#AAAAAA",
+                    "slider_bucketsize": 100,
+                    "histogram": false,
                     "measurement_unit": "kt CO2eq/y"
                 }
             }
@@ -581,7 +619,11 @@
                 "type": "facet",
                 "size": 50,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]            }
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ]
+            }
         },
         {
             "name": "Entities_responsible_for_implementing_the_policy",
@@ -621,12 +663,15 @@
                 "type": "facet",
                 "size": 100,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"],
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ],
                 "histogram_config": {
-                    "bar_color" : "#5393B4",
-                    "container_height" : 75,
-                    "columns_bucketsize" : 10,
-                    "slider_bucketsize" : 5,
+                    "bar_color": "#5393B4",
+                    "container_height": 75,
+                    "columns_bucketsize": 10,
+                    "slider_bucketsize": 5,
                     "histogram": true
                 }
             }
@@ -669,7 +714,10 @@
                 "type": "facet",
                 "size": 50,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ]
             }
         },
         {
@@ -693,10 +741,12 @@
                 "type": "facet",
                 "size": 100,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ]
             }
         },
-    
         {
             "name": "Projection_scenario_in_which_the_policy_or_measure_is_included",
             "listing": {
@@ -718,7 +768,10 @@
                 "type": "facet",
                 "size": 100,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ]
             }
         },
         {
@@ -1201,14 +1254,14 @@
         {
             "name": "Year_projected_cost_has_been_calculated_for_GHG",
             "listing": {
-                "visible": true,
+                "visible": false,
                 "title": "Year projected cost has been calculated for (GHG)",
                 "pos": 600,
                 "width": "100px"
             },
             "csv_tsv": {
                 "title": "Year projected cost has been calculated for (GHG)",
-                "visible": true,
+                "visible": false,
                 "pos": 600
             },
             "facet": {
@@ -1405,14 +1458,14 @@
         {
             "name": "Year_realised_cost_has_been_calculated_for_GHG",
             "listing": {
-                "visible": true,
+                "visible": false,
                 "title": "Year realised cost has been calculated for (GHG)",
                 "pos": 720,
                 "width": "100px"
             },
             "csv_tsv": {
                 "title": "Year realised cost has been calculated for (GHG)",
-                "visible": true,
+                "visible": false,
                 "pos": 720
             },
             "facet": {
@@ -1609,13 +1662,15 @@
                 "pos": 190,
                 "type": "rangehistogram",
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"],
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ],
                 "histogram_config": {
-                    "columns_min_color" : "#DDDDDD",
-                    "columns_max_color" : "#AAAAAA",
-
-                    "slider_bucketsize" : 100,
-                    "histogram" : false,
+                    "columns_min_color": "#DDDDDD",
+                    "columns_max_color": "#AAAAAA",
+                    "slider_bucketsize": 100,
+                    "histogram": false,
                     "measurement_unit": "kt CO2eq/y"
                 }
             }
@@ -1657,13 +1712,15 @@
                 "pos": 200,
                 "type": "rangehistogram",
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"],
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ],
                 "histogram_config": {
-                    "columns_min_color" : "#DDDDDD",
-                    "columns_max_color" : "#AAAAAA",
-
-                    "slider_bucketsize" : 100,
-                    "histogram" : false,
+                    "columns_min_color": "#DDDDDD",
+                    "columns_max_color": "#AAAAAA",
+                    "slider_bucketsize": 100,
+                    "histogram": false,
                     "measurement_unit": "kt CO2eq/y"
                 }
             }
@@ -1807,14 +1864,14 @@
         {
             "name": "Year_projected_cost_has_been_calculated_for_RES",
             "listing": {
-                "visible": true,
+                "visible": false,
                 "title": "Year projected cost has been calculated for (renewable energy)",
                 "pos": 940,
                 "width": "100px"
             },
             "csv_tsv": {
                 "title": "Year projected cost has been calculated for (renewable energy)",
-                "visible": true,
+                "visible": false,
                 "pos": 940
             },
             "facet": {
@@ -1977,14 +2034,14 @@
         {
             "name": "Year_realised_cost_has_been_calculated_for_RES",
             "listing": {
-                "visible": true,
+                "visible": false,
                 "title": "Year realised cost has been calculated for (renewable energy)",
                 "pos": 1040,
                 "width": "100px"
             },
             "csv_tsv": {
                 "title": "Year realised cost has been calculated for (renewable energy)",
-                "visible": true,
+                "visible": false,
                 "pos": 1040
             },
             "facet": {
@@ -2249,13 +2306,15 @@
                 "pos": 220,
                 "type": "rangehistogram",
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"],
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ],
                 "histogram_config": {
-                    "columns_min_color" : "#DDDDDD",
-                    "columns_max_color" : "#AAAAAA",
-
-                    "slider_bucketsize" : 100,
-                    "histogram" : false,
+                    "columns_min_color": "#DDDDDD",
+                    "columns_max_color": "#AAAAAA",
+                    "slider_bucketsize": 100,
+                    "histogram": false,
                     "measurement_unit": "kt CO2eq/y"
                 }
             }
@@ -2297,13 +2356,15 @@
                 "pos": 230,
                 "type": "rangehistogram",
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"],
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ],
                 "histogram_config": {
-                    "columns_min_color" : "#DDDDDD",
-                    "columns_max_color" : "#AAAAAA",
-
-                    "slider_bucketsize" : 100,
-                    "histogram" : false,
+                    "columns_min_color": "#DDDDDD",
+                    "columns_max_color": "#AAAAAA",
+                    "slider_bucketsize": 100,
+                    "histogram": false,
                     "measurement_unit": "kt CO2eq/y"
                 }
             }
@@ -2447,14 +2508,14 @@
         {
             "name": "Year_projected_cost_has_been_calculated_for_EE",
             "listing": {
-                "visible": true,
+                "visible": false,
                 "title": "Year projected cost has been calculated for (energy efficiency)",
                 "pos": 1300,
                 "width": "100px"
             },
             "csv_tsv": {
                 "title": "Year projected cost has been calculated for (energy efficiency)",
-                "visible": true,
+                "visible": false,
                 "pos": 1300
             },
             "facet": {
@@ -2617,14 +2678,14 @@
         {
             "name": "Year_realised_cost_has_been_calculated_for_EE",
             "listing": {
-                "visible": true,
+                "visible": false,
                 "title": "Year realised cost has been calculated for (energy efficiency)",
                 "pos": 1400,
                 "width": "100px"
             },
             "csv_tsv": {
                 "title": "Year realised cost has been calculated for (energy efficiency)",
-                "visible": true,
+                "visible": false,
                 "pos": 1400
             },
             "facet": {
@@ -2852,7 +2913,6 @@
                 "visible": false
             }
         },
-
         {
             "name": "Average_expost_emission_reduction__kt_CO2eq_y_GHG_BOOL",
             "listing": {
@@ -2869,7 +2929,10 @@
                 "type": "facet",
                 "size": 50,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ]
             }
         },
         {
@@ -2888,7 +2951,10 @@
                 "type": "facet",
                 "size": 50,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ]
             }
         },
         {
@@ -2907,7 +2973,10 @@
                 "type": "facet",
                 "size": 50,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ]
             }
         },
         {
@@ -2926,9 +2995,699 @@
                 "type": "facet",
                 "size": 50,
                 "order": "term",
-                "facet_display_options": ["sort", "checkbox"]
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ]
+            }
+        },
+        {
+            "name": "PaM_number_in_NECP",
+            "listing": {
+                "visible": true,
+                "title": "PaM number in NECP",
+                "pos": 35,
+                "width": "200px"
+            },
+            "csv_tsv": {
+                "title": "PaM number in NECP",
+                "visible": true,
+                "pos": 35
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Relevant_provision",
+            "listing": {
+                "visible": true,
+                "title": "Relevant provision",
+                "pos": 295,
+                "width": "200px"
+            },
+            "csv_tsv": {
+                "title": "Relevant provision",
+                "visible": true,
+                "pos": 295
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "GHG_emissions_reductions_EU_ETS_in_2045__kt_CO2eq_y_GHG",
+            "listing": {
+                "visible": true,
+                "title": "GHG emissions reductions EU ETS in 2045 (kt CO2eq/y)",
+                "pos": 471,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "GHG emissions reductions EU ETS in 2045 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 471
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "GHG_emissions_reductions_ESR_in_2045__kt_CO2eq_y_GHG",
+            "listing": {
+                "visible": true,
+                "title": "GHG emissions reductions ESR in 2045 (kt CO2eq/y)",
+                "pos": 472,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "GHG emissions reductions ESR in 2045 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 472
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "GHG_emissions_reductions_LULUCF_in_2045__kt_CO2eq_y_GHG",
+            "listing": {
+                "visible": true,
+                "title": "GHG emissions reductions LULUCF in 2045 (kt CO2eq/y)",
+                "pos": 473,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "GHG emissions reductions LULUCF in 2045 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 473
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Total_GHG_emissions_reductions_in_2045__kt_CO2eq_y_GHG",
+            "listing": {
+                "visible": true,
+                "title": "Total GHG emissions reductions in 2045 (kt CO2eq/y)",
+                "pos": 231,
+                "width": "200px"
+            },
+            "csv_tsv": {
+                "title": "Total GHG emissions reductions in 2045 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 231
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Total GHG emissions reductions in 2045 (kt CO2eq/y)",
+                "pos": 151,
+                "type": "rangehistogram",
+                "order": "term",
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ],
+                "histogram_config": {
+                    "columns_min_color": "#DDDDDD",
+                    "columns_max_color": "#AAAAAA",
+                    "slider_bucketsize": 100,
+                    "histogram": false,
+                    "measurement_unit": "kt CO2eq/y"
+                }
+            }
+        },
+        {
+            "name": "GHG_emissions_reductions_EU_ETS_in_2050__kt_CO2eq_y_GHG",
+            "listing": {
+                "visible": true,
+                "title": "GHG emissions reductions EU ETS in 2050 (kt CO2eq/y)",
+                "pos": 474,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "GHG emissions reductions EU ETS in 2050 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 474
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "GHG_emissions_reductions_ESR_in_2050__kt_CO2eq_y_GHG",
+            "listing": {
+                "visible": true,
+                "title": "GHG emissions reductions ESR in 2050 (kt CO2eq/y)",
+                "pos": 475,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "GHG emissions reductions ESR in 2050 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 475
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "GHG_emissions_reductions_LULUCF_in_2050__kt_CO2eq_y_GHG",
+            "listing": {
+                "visible": true,
+                "title": "GHG emissions reductions LULUCF in 2050 (kt CO2eq/y)",
+                "pos": 476,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "GHG emissions reductions LULUCF in 2050 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 476
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Total_GHG_emissions_reductions_in_2050__kt_CO2eq_y_GHG",
+            "listing": {
+                "visible": true,
+                "title": "Total GHG emissions reductions in 2050 (kt CO2eq/y)",
+                "pos": 232,
+                "width": "200px"
+            },
+            "csv_tsv": {
+                "title": "Total GHG emissions reductions in 2050 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 232
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Total GHG emissions reductions in 2050 (kt CO2eq/y)",
+                "pos": 152,
+                "type": "rangehistogram",
+                "order": "term",
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ],
+                "histogram_config": {
+                    "columns_min_color": "#DDDDDD",
+                    "columns_max_color": "#AAAAAA",
+                    "slider_bucketsize": 100,
+                    "histogram": false,
+                    "measurement_unit": "kt CO2eq/y"
+                }
+            }
+        },
+        {
+            "name": "GHG_emissions_reductions_EU_ETS_in_2055__kt_CO2eq_y_GHG",
+            "listing": {
+                "visible": true,
+                "title": "GHG emissions reductions EU ETS in 2055 (kt CO2eq/y)",
+                "pos": 477,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "GHG emissions reductions EU ETS in 2055 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 477
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "GHG_emissions_reductions_ESR_in_2055__kt_CO2eq_y_GHG",
+            "listing": {
+                "visible": true,
+                "title": "GHG emissions reductions ESR in 2055 (kt CO2eq/y)",
+                "pos": 478,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "GHG emissions reductions ESR in 2055 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 478
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "GHG_emissions_reductions_LULUCF_in_2055__kt_CO2eq_y_GHG",
+            "listing": {
+                "visible": true,
+                "title": "GHG emissions reductions LULUCF in 2055 (kt CO2eq/y)",
+                "pos": 479,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "GHG emissions reductions LULUCF in 2055 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 479
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Total_GHG_emissions_reductions_in_2055__kt_CO2eq_y_GHG",
+            "listing": {
+                "visible": true,
+                "title": "Total GHG emissions reductions in 2055 (kt CO2eq/y)",
+                "pos": 233,
+                "width": "200px"
+            },
+            "csv_tsv": {
+                "title": "Total GHG emissions reductions in 2055 (kt CO2eq/y)",
+                "visible": true,
+                "pos": 233
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Total GHG emissions reductions in 2055 (kt CO2eq/y)",
+                "pos": 153,
+                "type": "rangehistogram",
+                "order": "term",
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ],
+                "histogram_config": {
+                    "columns_min_color": "#DDDDDD",
+                    "columns_max_color": "#AAAAAA",
+                    "slider_bucketsize": 100,
+                    "histogram": false,
+                    "measurement_unit": "kt CO2eq/y"
+                }
+            }
+        },
+        {
+            "name": "Start_Year_projected_cost_has_been_calculated_for_GHG",
+            "listing": {
+                "visible": true,
+                "title": "Start Year projected cost has been calculated for (GHG)",
+                "pos": 601,
+                "width": "110px"
+            },
+            "csv_tsv": {
+                "title": "Start Year projected cost has been calculated for (GHG)",
+                "visible": true,
+                "pos": 601
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Finish_Year_projected_cost_has_been_calculated_for_GHG",
+            "listing": {
+                "visible": true,
+                "title": "Finish Year projected cost has been calculated for (GHG)",
+                "pos": 602,
+                "width": "110px"
+            },
+            "csv_tsv": {
+                "title": "Finish Year projected cost has been calculated for (GHG)",
+                "visible": true,
+                "pos": 602
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Start_Year_realised_cost_has_been_calculated_for_GHG",
+            "listing": {
+                "visible": true,
+                "title": "Start Year realised cost has been calculated for (GHG)",
+                "pos": 721,
+                "width": "110px"
+            },
+            "csv_tsv": {
+                "title": "Start Year realised cost has been calculated for (GHG)",
+                "visible": true,
+                "pos": 721
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Finish_Year_realised_cost_has_been_calculated_for_GHG",
+            "listing": {
+                "visible": true,
+                "title": "Finish Year realised cost has been calculated for (GHG)",
+                "pos": 722,
+                "width": "110px"
+            },
+            "csv_tsv": {
+                "title": "Finish Year realised cost has been calculated for (GHG)",
+                "visible": true,
+                "pos": 722
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "production_in_2045_ktoe_year_RES",
+            "listing": {
+                "visible": true,
+                "title": "Renewable energy production in 2045 (ktoe/year)",
+                "pos": 851,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Renewable energy production in 2045 (ktoe/year)",
+                "visible": true,
+                "pos": 851
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Renewable energy production in 2045 (ktoe/year)",
+                "pos": 201,
+                "type": "rangehistogram",
+                "order": "term",
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ],
+                "histogram_config": {
+                    "columns_min_color": "#DDDDDD",
+                    "columns_max_color": "#AAAAAA",
+                    "slider_bucketsize": 100,
+                    "histogram": false,
+                    "measurement_unit": "kt CO2eq/y"
+                }
+            }
+        },
+        {
+            "name": "production_in_2050_ktoe_year_RES",
+            "listing": {
+                "visible": true,
+                "title": "Renewable energy production in 2050 (ktoe/year)",
+                "pos": 852,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Renewable energy production in 2050 (ktoe/year)",
+                "visible": true,
+                "pos": 852
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Renewable energy production in 2050 (ktoe/year)",
+                "pos": 202,
+                "type": "rangehistogram",
+                "order": "term",
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ],
+                "histogram_config": {
+                    "columns_min_color": "#DDDDDD",
+                    "columns_max_color": "#AAAAAA",
+                    "slider_bucketsize": 100,
+                    "histogram": false,
+                    "measurement_unit": "kt CO2eq/y"
+                }
+            }
+        },
+        {
+            "name": "production_in_2055_ktoe_year_RES",
+            "listing": {
+                "visible": true,
+                "title": "Renewable energy production in 2055 (ktoe/year)",
+                "pos": 853,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Renewable energy production in 2055 (ktoe/year)",
+                "visible": true,
+                "pos": 853
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Renewable energy production in 2055 (ktoe/year)",
+                "pos": 203,
+                "type": "rangehistogram",
+                "order": "term",
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ],
+                "histogram_config": {
+                    "columns_min_color": "#DDDDDD",
+                    "columns_max_color": "#AAAAAA",
+                    "slider_bucketsize": 100,
+                    "histogram": false,
+                    "measurement_unit": "kt CO2eq/y"
+                }
+            }
+        },
+        {
+            "name": "Start_Year_projected_cost_has_been_calculated_for_RES",
+            "listing": {
+                "visible": true,
+                "title": "Start Year projected cost has been calculated for (renewable energy)",
+                "pos": 941,
+                "width": "110px"
+            },
+            "csv_tsv": {
+                "title": "Start Year projected cost has been calculated for (renewable energy)",
+                "visible": true,
+                "pos": 941
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Finish_Year_projected_cost_has_been_calculated_for_RES",
+            "listing": {
+                "visible": true,
+                "title": "Finish Year projected cost has been calculated for (renewable energy)",
+                "pos": 942,
+                "width": "110px"
+            },
+            "csv_tsv": {
+                "title": "Finish Year projected cost has been calculated for (renewable energy)",
+                "visible": true,
+                "pos": 942
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Start_Year_realised_cost_has_been_calculated_for_RES",
+            "listing": {
+                "visible": true,
+                "title": "Start Year realised cost has been calculated for (renewable energy)",
+                "pos": 1041,
+                "width": "110px"
+            },
+            "csv_tsv": {
+                "title": "Start Year realised cost has been calculated for (renewable energy)",
+                "visible": true,
+                "pos": 1041
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Finish_Year_realised_cost_has_been_calculated_for_RES",
+            "listing": {
+                "visible": true,
+                "title": "Finish Year realised cost has been calculated for (renewable energy)",
+                "pos": 1042,
+                "width": "110px"
+            },
+            "csv_tsv": {
+                "title": "FinishYear realised cost has been calculated for (renewable energy)",
+                "visible": true,
+                "pos": 1042
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "reductions_in_2045_ktoe_year_final_energy_EE",
+            "listing": {
+                "visible": true,
+                "title": "Energy reductions in 2045 (ktoe/year final energy)",
+                "pos": 1211,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Energy reductions in 2045 (ktoe/year final energy)",
+                "visible": true,
+                "pos": 1211
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Energy reductions in 2045 (ktoe/year final energy)",
+                "pos": 231,
+                "type": "rangehistogram",
+                "order": "term",
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ],
+                "histogram_config": {
+                    "columns_min_color": "#DDDDDD",
+                    "columns_max_color": "#AAAAAA",
+                    "slider_bucketsize": 100,
+                    "histogram": false,
+                    "measurement_unit": "kt CO2eq/y"
+                }
+            }
+        },
+        {
+            "name": "reductions_in_2050_ktoe_year_final_energy_EE",
+            "listing": {
+                "visible": true,
+                "title": "Energy reductions in 2050 (ktoe/year final energy)",
+                "pos": 1212,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Energy reductions in 2050 (ktoe/year final energy)",
+                "visible": true,
+                "pos": 1212
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Energy reductions in 2050 (ktoe/year final energy)",
+                "pos": 232,
+                "type": "rangehistogram",
+                "order": "term",
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ],
+                "histogram_config": {
+                    "columns_min_color": "#DDDDDD",
+                    "columns_max_color": "#AAAAAA",
+                    "slider_bucketsize": 100,
+                    "histogram": false,
+                    "measurement_unit": "kt CO2eq/y"
+                }
+            }
+        },
+        {
+            "name": "reductions_in_2055_ktoe_year_final_energy_EE",
+            "listing": {
+                "visible": true,
+                "title": "Energy reductions in 2055 (ktoe/year final energy)",
+                "pos": 1213,
+                "width": "100px"
+            },
+            "csv_tsv": {
+                "title": "Energy reductions in 2055 (ktoe/year final energy)",
+                "visible": true,
+                "pos": 1213
+            },
+            "facet": {
+                "hasfacet": true,
+                "visible": true,
+                "title": "Energy reductions in 2055 (ktoe/year final energy)",
+                "pos": 233,
+                "type": "rangehistogram",
+                "order": "term",
+                "facet_display_options": [
+                    "sort",
+                    "checkbox"
+                ],
+                "histogram_config": {
+                    "columns_min_color": "#DDDDDD",
+                    "columns_max_color": "#AAAAAA",
+                    "slider_bucketsize": 100,
+                    "histogram": false,
+                    "measurement_unit": "kt CO2eq/y"
+                }
+            }
+        },
+        {
+            "name": "Start_Year_projected_cost_has_been_calculated_for_EE",
+            "listing": {
+                "visible": true,
+                "title": "Start Year projected cost has been calculated for (energy efficiency)",
+                "pos": 1301,
+                "width": "110px"
+            },
+            "csv_tsv": {
+                "title": "Start Year projected cost has been calculated for (energy efficiency)",
+                "visible": true,
+                "pos": 1301
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Finish_Year_projected_cost_has_been_calculated_for_EE",
+            "listing": {
+                "visible": true,
+                "title": "Finish Year projected cost has been calculated for (energy efficiency)",
+                "pos": 1302,
+                "width": "110px"
+            },
+            "csv_tsv": {
+                "title": "Finish Year projected cost has been calculated for (energy efficiency)",
+                "visible": true,
+                "pos": 1302
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Start_Year_realised_cost_has_been_calculated_for_EE",
+            "listing": {
+                "visible": true,
+                "title": "Start Year realised cost has been calculated for (energy efficiency)",
+                "pos": 1401,
+                "width": "110px"
+            },
+            "csv_tsv": {
+                "title": "Start Year realised cost has been calculated for (energy efficiency)",
+                "visible": true,
+                "pos": 1401
+            },
+            "facet": {
+                "visible": false
+            }
+        },
+        {
+            "name": "Finish_Year_realised_cost_has_been_calculated_for_EE",
+            "listing": {
+                "visible": true,
+                "title": "Finish Year realised cost has been calculated for (energy efficiency)",
+                "pos": 1402,
+                "width": "200px"
+            },
+            "csv_tsv": {
+                "title": "Finish Year realised cost has been calculated for (energy efficiency)",
+                "visible": true,
+                "pos": 1402
+            },
+            "facet": {
+                "visible": false
             }
         }
     ]
 }
-

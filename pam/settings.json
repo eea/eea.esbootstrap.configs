@@ -3,12 +3,12 @@
         "port": 3000
     },
     "elastic": {
-        "index": "esbootstrapdata-pam-2024",
+        "index": "esbootstrapdata-pam-2025",
         "type": "resources",
-        "field_base":"",
+        "field_base": "",
         "default_appalias": "latest",
-        "increment_threshold": 1,
-        "version":"6"
+        "preload_cache": true,
+        "version": "7"
     },
     "external_templates": {
         "local_path": "/external_templates",
@@ -21,7 +21,7 @@
     "layout_vars": {
         "head_title": "EEA database on greenhouse gas policies and measures in Europe &mdash; European Environment Agency",
         "app_id": "pam",
-        "matomo_id":"55",
+        "matomo_id": "55",
         "skip_external_template_styles": false,
         "skip_resources_bundling": false,
         "override_searchserver_resources": false,
@@ -42,7 +42,20 @@
         "site_title": "EEA database on integrated national climate and energy policies and measures in Europe",
         "site_description": "",
         "enableBreadcrumbs": true,
-        "breadcrumbs": [{"Home":"https://www.eea.europa.eu/"}, {"Topics and subtopics": "https://www.eea.europa.eu/themes"},{"Climate change mitigation":"https://www.eea.europa.eu/themes/climate"},{"Policies and measures":""}],
+        "breadcrumbs": [
+            {
+                "Home": "https://www.eea.europa.eu/"
+            },
+            {
+                "Topics and subtopics": "https://www.eea.europa.eu/themes"
+            },
+            {
+                "Climate change mitigation": "https://www.eea.europa.eu/themes/climate"
+            },
+            {
+                "Policies and measures": ""
+            }
+        ],
         "dataprovencance_info_text": "Climate change mitigation policies and measures",
         "further_info_": "To facilitate reporting, the EEA has developed an online reporting questionnaire, ‘Guidelines Reporting on greenhouse gas policies and measures under Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action’ and other supporting documents, available at: <a href='https://www.eionet.europa.eu/reportnet/docs/govreg/policies-and-measures'>https://www.eionet.europa.eu/reportnet/docs/govreg/policies-and-measures</a>"
     },
@@ -50,7 +63,7 @@
     "suggestions_enabled": true,
     "endpoint": "https://semantic.eea.europa.eu/sparql",
     "selected_navigation_tab": "data-and-maps",
-    "API":{
+    "API": {
         "token": "default"
     },
     "source": {
@@ -64,17 +77,13 @@
             "format": "json",
             "data_path": "results.*",
             "encoding": "utf-8",
-
             "sql": true,
             "sql_url": "https://discodata.eea.europa.eu/sql",
             "sql_table": "[GHGPAMS].[latest].[annexIX_flat_view_PaMs_elasticsearch]",
             "data_modifier": "modify.js",
-
             "query_attr": "query",
             "query": "query.sql",
             "query_count": "query_count.sql"
         }
     }
 }
-
-
