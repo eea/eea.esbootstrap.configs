@@ -1,0 +1,72 @@
+h3 {
+    font-size: 125%;
+    line-height: 1.5;
+    margin: 1em 0;
+    font-weight: bold;
+}
+
+#header-holder, #footer-wrapper, #portal-colophon {
+   font-family: 'Open Sans', Verdana, sans-serif;
+}
+
+/* normalize size of search input */
+.gsc-search-button-v2 {
+    height: 30px;
+    font-size: 12px;
+}
+#portal-top {
+    color: #333;
+}
+
+div#portal-header {
+    padding-right: 0 !important;
+}
+#siteaction-login-menu,
+#eap-siteaction-login-menu,
+#eap-siteaction-search-menu,
+#eap-siteaction-chooselang-menu .pane {
+    display: none;
+}
+
+#eea-above-columns {
+    background-color: #FFF;
+}
+
+.eea-accordion-panels {
+    border-top-width: 0;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+
+.portal-globalnav > li > a, .eea-siteaction > a {
+    font-family: "Open Sans", Verdana, sans-serif;
+}
+
+#portal-colophon {
+    color: #333;
+}
+
+/* 111371 avoid large title size for instant search title */
+#landing .available_content .eea_tile_content h2 {
+  font-size: 200%;
+}
+.eea_tile_count {
+   line-height: 0;
+}
+/* end 111371 fixes */
+
+@media screen and (max-width: 1199px) {
+    #header-holder .navbar-collapse {
+        height: 95vh !important; /* bootstrap.js adds height auto */
+    }
+}
+
+#content .eea-accordion-panels .eea-accordion-panel > h2.exact_helper {
+    display: none;
+}
+
+#content .eea-accordion-panels .facetview_filter.eea-accordion-panel > h2 {
+    padding: 0;
+}

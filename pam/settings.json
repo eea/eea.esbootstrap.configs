@@ -13,10 +13,10 @@
     "external_templates": {
         "local_path": "/external_templates",
         "protocol": "https",
-        "host": "www.eea.europa.eu",
-        "head_path": "/templates/v3/getRequiredHead?render_full_html=False&cssonly=True&css_stack=external_templates",
-        "header_path": "/templates/v3/getHeader?render_full_html=False",
-        "footer_path": "/templates/v3/getFooter?render_full_html=False"
+        "host": "pam.apps.eea.europa.eu",
+        "head_path": "/templates/head_en.html",
+        "header_path": "/templates/header_en.html",
+        "footer_path": "/templates/footer_en.html"
     },
     "layout_vars": {
         "head_title": "EEA database on greenhouse gas policies and measures in Europe &mdash; European Environment Agency",
