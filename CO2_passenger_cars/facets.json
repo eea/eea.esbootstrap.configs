@@ -550,21 +550,21 @@
             "name": "W__mm_",
             "listing": {
                 "title": "Wheel base in mm",
-                "visible" : true,
+                "visible" : false,
                 "pos" : 21
             },
             "details": {
                 "title": "W",
                 "pos" : 4,
                 "section": "W",
-                "visible": true
+                "visible": false
             },
             "facet": {
                 "visible": false
             },
             "csv_tsv": {
                 "title": "W (mm)",
-                "visible": true,
+                "visible": false,
                 "pos": 21
             }
         },
@@ -572,21 +572,21 @@
             "name": "At1__mm_",
             "listing": {
                 "title": "Axle width steering axle in mm",
-                "visible" : true,
+                "visible" : false,
                 "pos" : 22
             },
             "details": {
                 "title": "At1",
                 "pos" : 4,
                 "section": "At1",
-                "visible": true
+                "visible": false
             },
             "facet": {
                 "visible": false
             },
             "csv_tsv": {
                 "title": "At1 (mm)",
-                "visible": true,
+                "visible": false,
                 "pos": 22
             }
         },
@@ -594,21 +594,21 @@
             "name": "At2__mm_",
             "listing": {
                 "title": "Axle width other axle in mm",
-                "visible" : true,
+                "visible" : false,
                 "pos" : 23
             },
             "details": {
                 "title": "At2",
                 "pos" : 4,
                 "section": "At2",
-                "visible": true
+                "visible": false
             },
             "facet": {
                 "visible": false
             },
             "csv_tsv": {
                 "title": "At2 (mm)",
-                "visible": true,
+                "visible": false,
                 "pos": 23
             }
         },
@@ -935,7 +935,7 @@
         {
             "name": "Fc",
             "listing": {
-                "title": "Fuel consumption ",
+                "title": "Fuel consumption",
                 "visible" : true,
                 "pos" : 37
             },
@@ -946,7 +946,7 @@
                 "visible": false
             },
             "csv_tsv": {
-                "title": "Fuel consumption ",
+                "title": "Fuel consumption",
                 "visible": true,
                 "pos": 37
             }
