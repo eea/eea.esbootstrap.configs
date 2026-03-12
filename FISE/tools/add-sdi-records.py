@@ -13,7 +13,7 @@ def querySDIDatasetsRecords():
     search_url = SDI_API_URL + "/search/records/_search?bucket=metadata"
     payload = {
         "from": 0,
-        "size": 120,
+        "size": 10000,
         "sort": [
             "_score"
         ],
@@ -60,9 +60,11 @@ def querySDIDatasetsRecords():
                     "bool": {
                         "must": [
                             {
-                                "query_string": {
-                                    "query": "(cl_hierarchyLevel.key:\"dataset\")"
-                                }
+                                "terms": {
+                                      "resourceType": [
+                                          "dataset"
+                                      ]
+                                  }
                             },
                             {
                                 "terms": {
@@ -227,7 +229,7 @@ def querySDIDatasetsRecords():
     with closing(requests.post(search_url, headers=headers, json=payload, stream=True)) as response:
         if response:
             results = response.json()
-
+            print(results['hits']['total'])
             for item in results['hits']['hits']:
                 tmp = {"uuid": item['_source']['uuid']}
                 records["datasets"].append(tmp)
@@ -243,7 +245,7 @@ def querySDIServicesRecords():
     search_url = SDI_API_URL + "/search/records/_search?bucket=metadata"
     payload = {
         "from":0,
-        "size":120,
+        "size": 10000,
         "sort":[
             "_score"
         ],
@@ -534,10 +536,15 @@ def parseSDIMetadataXML(xml_content):
                 record['Description'] = str(abstract.text.strip())
 
         record['RESPONSIBLE_ORGANISATION_MAIN_PAGE'] = ''
-        record['Organisation_name'] = str(tree.find(
-            ".//{http://www.isotc211.org/2005/gmd}contact/{http://www.isotc211.org/2005/gmd}CI_ResponsibleParty/{http://www.isotc211.org/2005/gmd}organisationName/{http://www.isotc211.org/2005/gco}CharacterString").text)
-        email_element = tree.find(".//{http://www.isotc211.org/2005/gmd}contact/{http://www.isotc211.org/2005/gmd}CI_ResponsibleParty/{http://www.isotc211.org/2005/gmd}contactInfo/{http://www.isotc211.org/2005/gmd}CI_Contact/{http://www.isotc211.org/2005/gmd}address/{http://www.isotc211.org/2005/gmd}CI_Address/{http://www.isotc211.org/2005/gmd}electronicMailAddress/{http://www.isotc211.org/2005/gco}CharacterString")
-
+        try:
+            record['Organisation_name'] = str(tree.find(
+                ".//{http://www.isotc211.org/2005/gmd}contact/{http://www.isotc211.org/2005/gmd}CI_ResponsibleParty/{http://www.isotc211.org/2005/gmd}organisationName/{http://www.isotc211.org/2005/gco}CharacterString").text)
+        except:
+            record['Organisation_name'] = "Unknown"
+        try:
+            email_element = tree.find(".//{http://www.isotc211.org/2005/gmd}contact/{http://www.isotc211.org/2005/gmd}CI_ResponsibleParty/{http://www.isotc211.org/2005/gmd}contactInfo/{http://www.isotc211.org/2005/gmd}CI_Contact/{http://www.isotc211.org/2005/gmd}address/{http://www.isotc211.org/2005/gmd}CI_Address/{http://www.isotc211.org/2005/gmd}electronicMailAddress/{http://www.isotc211.org/2005/gco}CharacterString")
+        except:
+            email_element = None
         if email_element is not None and email_element.text is not None:
             record['Organisation_email'] = str(email_element.text)
         else:
@@ -556,13 +563,17 @@ def parseSDIMetadataXML(xml_content):
 
         record['Content_type'] = 'SDI'
 
-        resource_type = tree.find(".//{http://www.isotc211.org/2005/gmd}hierarchyLevel/{http://www.isotc211.org/2005/gmd}MD_ScopeCode").get('codeListValue').encode('utf8')
+        try:
+          resource_type = tree.find(".//{http://www.isotc211.org/2005/gmd}hierarchyLevel/{http://www.isotc211.org/2005/gmd}MD_ScopeCode").get('codeListValue').encode('utf8')
+          if resource_type.decode('utf-8') == 'dataset':
+              record['Content_type'] = 'Spatial dataset'
 
-        if resource_type.decode('utf-8') == 'dataset':
-            record['Content_type'] = 'Spatial dataset'
-        
-        if resource_type.decode('utf-8') == 'service':
-            record['Content_type'] = 'Data services'
+          if resource_type.decode('utf-8') == 'service':
+              record['Content_type'] = 'Data services'
+
+        except:
+          record['Content_type'] = 'Spatial dataset'
+
 
         record['UPDATE_FREQUENCY'] = 'unknown'
 
@@ -617,8 +628,10 @@ def getSDIRecords(uuid_list):
     }
 
     sdirecords = []
-
+    cnt = 0
     for item in uuid_list:
+        print(cnt)
+        cnt+=1
         record_url = SDI_API_URL + '/records/' + item['uuid']
         record_url_metadata = SDI_API_URL + \
             '/records/' + item['uuid'] + "/formatters/xml"
@@ -708,7 +721,7 @@ def savetoCSV(records, filename):
         'UPDATE_FREQUENCY'
     ]
 
-    catalog_url = 'https://cmshare.eea.europa.eu/s/YZocgSHqKNbT4gn/download?path=/catalogue&files=catalogue.csv'
+    catalog_url = 'https://cmshare.eea.europa.eu/public.php/dav/files/anSMboBrJp3GdKQ/?accept=zip&files=catalogue.csv'
 
     # writing to csv file
     with open(filename, mode="w", newline="", encoding="utf-8") as csvfile:
