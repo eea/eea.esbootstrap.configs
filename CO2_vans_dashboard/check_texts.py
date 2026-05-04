@@ -1,10 +1,14 @@
 import requests
 import json
 
+#endpoint = ""
+#user=
+#password=""
+ENDPOINT=""
+USER=""
+PASSWORD=""
 
 fields = [
-"MS",
-"Mp",
 "VFN",
 "Mh",
 "Man",
@@ -19,8 +23,10 @@ fields = [
 "Ft",
 "Fm",
 "It",
+"Mp",
 "ech.keyword",
 "RLFI.keyword",
+"S.keyword"
 ]
 
 for field in fields:
@@ -42,12 +48,12 @@ for field in fields:
     },
     "size": 0
   }
-  r = requests.get('<endpoint>', auth=('user', 'password'),verify=False, json=query)
+  r = requests.get(ENDPOINT, auth=(USER, PASSWORD),verify=False, json=query)
 
   try:
     rr = json.loads(r.text)
     value= int(rr['aggregations']['sum_len_tmp']['value'])
-    print(f"|{field}|{val}|")
+    print(f"|{field}|{value}|")
   except:
     print(r.text)
     import pdb; pdb.set_trace()
