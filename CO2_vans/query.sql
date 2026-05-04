@@ -17,9 +17,9 @@ Select
     Ct,
     Cr,
     "m (kg)",
-    "Mt (kg)",
-    "Enedc (g/km)",
-    "Ewltp_Final (g/km)" as "Ewltp (g/km)",
+    Mt,
+    iif("Enedc (g/km)" is null, "E (g/km)", "Enedc (g/km)") as "Enedc (g/km)",
+    "Ewltp (g/km)",
     "W (mm)",
     "At1 (mm)",
     "At2 (mm)",
@@ -29,7 +29,7 @@ Select
     "ep (KW)",
     "z (Wh/km)",
     It,
-    "Ernedc (g/km)",
+    iif("Ernedc (g/km)" is null, "Er (g/km)", "Ernedc (g/km)") as "Ernedc (g/km)",
     "Erwltp (g/km)",
     "De",
     "Vf",
@@ -37,6 +37,7 @@ Select
     "year",
     "Status",
     "version_file",
+    "Zr",
     iif (LOWER(TRIM(ft))='ng-biomethane', 'ng', 
         iif(LOWER(TRIM(ft))='petrol-electric', 'petrol/electric', 
             iif(LOWER(TRIM(ft))='diesel-electric', 'diesel/electric',
@@ -55,23 +56,17 @@ Select
         )
     ) as FtTrim,
     iif(LOWER(TRIM(status))='f', 'Final', 'Provisional') as scStatus,
-    "Mb (kg)",
-    "TPMLM (kg)",
-    "Dam (kg)",
-    "Mf (kg)",
-    "Zr",
-    "Af1 (m2)" as Af1,
-    "Af2 (m2)" as Af2,
-    "Af3 (m2)" as Af3,
-    "RR (kg/t)" as RR,
-    "Mmon (kg)" as Mmon,
-    "MvL (kg)" as MvL,
-    "Ewltp_MS (g/km)",
-    "Ewltp_OEM (g/km)"
+    "Dr",
+    "Fc",
+    "ech",
+    "RLFI"
 from
     <TABLE>
 WHERE
     MS!='M1' and
+    year=2024 and
+    status='F' and
     ID>=<MIN_ID> and
     ID<<MAX_ID>
+
 order by uid
