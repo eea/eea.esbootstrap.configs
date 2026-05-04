@@ -3,7 +3,7 @@
         "port": 3000
     },
     "elastic": {
-        "index": "co2_cars",
+        "index": "co2_passenger_cars",
         "type": "resources",
         "field_base":"",
         "preload_cache": true,
@@ -71,7 +71,7 @@
             "query": "query.sql",
             "query_count": "query_count.sql",
 
-            "discodata_bulksize": 50000,
+            "discodata_bulksize": 10000,
             "format": "json",
             "data_path": "results.*",
             "encoding": "utf-8",
