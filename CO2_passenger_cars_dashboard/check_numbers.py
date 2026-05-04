@@ -1,6 +1,9 @@
 import requests
 import json
 
+ENDPOINT=""
+USER=""
+PASSWORD=""
 
 fields = [
 "m__kg_",
@@ -35,7 +38,7 @@ for field in fields:
     },
     "size": 0
   }
-  r = requests.get('<endpoint>', auth=('user', 'password'),verify=False, json=query)
+  r = requests.get(ENDPOINT, auth=(USER, PASSWORD),verify=False, json=query)
   try:
     rr = json.loads(r.text)
     val = int(rr['aggregations']['sum_tmp']['value'])
