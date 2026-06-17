@@ -37,11 +37,13 @@
         },
         "js_resources": {
             "index_page": [
-                "/co2cars.facetview.js"
+                "/co2cars.facetview.js",
+                "/es_matomo.js"
             ],
             "details_page": [
                 "javascripts/jq.tools.js",
-                "/custom.js"
+                "/custom.js",
+                "/es_matomo.js"
             ]
         },
         "site_title": "CO<sub>2</sub> emissions from new passenger cars",
