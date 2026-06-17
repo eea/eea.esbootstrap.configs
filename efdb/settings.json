@@ -38,14 +38,16 @@
         "js_resources": {
             "index_page": [
                 "javascripts/esbootstrap.facetview.js",
-                "custom.js"
+                "custom.js",
+                "/es_matomo.js"
             ],
             "details_page": [
                 "http://www.eea.europa.eu/register_function.js",
                 "http://www.eea.europa.eu/nodeutilities.js",
                 "http://www.eea.europa.eu/mark_special_links.js",
                 "javascripts/jq.tools.js",
-                "custom.js"
+                "custom.js",
+                "/es_matomo.js"
             ]
         },
         "site_title": "EMEP/EEA air pollutant emission inventory guidebook 2023",
