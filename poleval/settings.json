@@ -34,7 +34,8 @@
         "js_resources": {
             "index_page": [
                 "javascripts/esbootstrap.facetview.js",
-                "/custom.js"
+                "/custom.js",
+                "/es_matomo.js"
             ],
             "details_page": []
         },
@@ -52,6 +53,22 @@
         "token": "default"
     },
     "source": {
+        "type": "file",
+        "autoswitch": "true",
+        "configuration": {
+            "type": "csv",
+            "bulksize": 2000,
+            "file": "poleval_data.csv",
+            "data_modifier": "modify.js",
+            "encoding": "utf-8",
+            "delimiter": ",",
+            "id_type": "field",
+            "id_field": "Evaluation_ID",
+            "data_modifier": "modify.js"
+        }
+    },
+
+    "_source": {
         "type": "url",
         "autoswitch": false,
         "configuration": {
