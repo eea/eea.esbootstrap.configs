@@ -35,7 +35,8 @@
         "js_resources": {
             "index_page": [
                 "javascripts/esbootstrap.facetview.js",
-                "/custom.js"
+                "/custom.js",
+                "/es_matomo.js"
             ],
             "details_page": []
         },
