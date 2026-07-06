@@ -3,12 +3,12 @@
         "port": 3000
     },
     "elastic": {
-        "index": "esbootstrapdata-efdb-2025",
+        "index": "efdb",
         "type": "resources",
         "field_base":"",
         "default_appalias": "prod",
         "increment_threshold": 1,
-        "version":"6"
+        "version":"7"
     },
     "external_templates": {
         "local_path": "/external_templates",

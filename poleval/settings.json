@@ -3,11 +3,12 @@
         "port": 3000
     },
     "elastic": {
-        "index": "esbootstrapdata-poleval-query",
+        "index": "poleval",
         "type": "resources",
         "field_base":"",
         "default_appalias": "latest",
-        "increment_threshold": 1
+        "increment_threshold": 1,
+        "version": "7"
     },
     "external_templates": {
         "local_path": "/external_templates",

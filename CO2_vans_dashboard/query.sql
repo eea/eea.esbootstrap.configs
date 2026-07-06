@@ -79,8 +79,8 @@ from
     <TABLE>
 WHERE
     MS!='M1' and
-    year=2023 and
-    status='f' and
-    ID>=<MIN_ID>+14159000 and
-    ID<<MAX_ID>+14159000
+    year=2025 and
+    status='P' and
+    ID>=<MIN_ID>+19990000 and
+    ID<<MAX_ID>+19990000
 order by uid

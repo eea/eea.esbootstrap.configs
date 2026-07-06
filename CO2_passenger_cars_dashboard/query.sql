@@ -64,9 +64,9 @@ from
     <TABLE>
 WHERE
     MS!='M1' and
-    year=2024 and
-    status='F' and
-    ID>=<MIN_ID> and
-    ID<<MAX_ID>
+    year=2025 and
+    status='P' and
+    ID>=162740000+<MIN_ID> and
+    ID<162740000+<MAX_ID>
 
 order by uid
