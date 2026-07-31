@@ -68,38 +68,12 @@
             }
         },
         {
-            "name": "pdf",
-            "listing": {
-                "visible": true,
-                "title": "",
-                "pos": 15,
-                "display": {
-                    "pre": "<td><a class='details_link' href='",
-                    "field": "pdf",
-                    "post": "'>"
-                }
-            },
-            "csv_tsv": {
-                "visible": true,
-                "pos": 15,
-                "title": "pdf"
-            },
-            "facet": {
-                "visible": false
-            }
-        },
-        {
             "name": "Name_of_policy_or_measure",
             "listing": {
                 "visible": true,
                 "title": "Name of policy or measure",
                 "pos": 20,
-                "width": "200px",
-                "display": {
-                    "pre": "",
-                    "field": "Name_of_policy_or_measure",
-                    "post": "</a></td>"
-                }
+                "width": "200px"
             },
             "csv_tsv": {
                 "title": "Name of policy or measure",
